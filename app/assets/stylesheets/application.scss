@@ -1,0 +1,29 @@
+.container {
+  composes: primaryFont from './variables.scss';
+  display: block;
+  padding: 0px 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerCenter {
+  composes: container;
+  composes: primaryFont from './variables.scss';
+  text-align: center;
+}
+
+.appHeaderContainer {
+  display: block;
+  margin: 50px;
+}
+
+.appHeader {
+  composes: primaryColor from './variables.scss';
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.appText {
+  composes: secondaryColor from './variables.scss';
+  font-size: 20px;
+}
