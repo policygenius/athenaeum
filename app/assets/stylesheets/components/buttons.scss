@@ -1,0 +1,37 @@
+@value colors: '../base_styles/colors.scss';
+@value typography: '../base_styles/typography.scss';
+@value action-2, action-3, neutral-8 from colors;
+@value font-family-sans-serif from typography;
+
+// Variables
+$button-color:                             action-2;
+$button-background-color:                  neutral-8;
+$button-hover-background-color:            action-2;
+$button-border-color:                      action-3;
+$button-hover-color:                       neutral-8;
+$button-border-radius:                     .375rem;
+$button-font:                              font-family-sans-serif;
+
+.button {
+  background-color: $button-background-color;
+  border: 1px solid $button-border-color;
+  border-radius: $button-border-radius;
+  color: action-2;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $button-font;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: .75rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 300ms ease-out, border-color 300ms ease-out,
+                top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+
+  &:hover {
+    background-color: $button-hover-background-color;
+    border: 1px solid $button-border-color;
+    color: $button-hover-color;
+  }
+}

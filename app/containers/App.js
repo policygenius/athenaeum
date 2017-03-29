@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../components/buttons/simpleButton';
 import styles from '../assets/stylesheets/application.scss';
 
 class App extends Component {
@@ -9,6 +10,10 @@ class App extends Component {
           <h1 className={ styles.appHeader }>React-Webpack Boilerplate</h1>
           <p className={ styles.appText }>Basic set-up for running React with Webpack.</p>
           <p className={ styles.appText }>Dev server and production build available.</p>
+
+          <Button>
+            Praesent quis rhoncus
+          </Button>
         </div>
       </div>
     )

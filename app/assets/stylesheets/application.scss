@@ -1,14 +1,22 @@
+@value colors: './base_styles/colors.scss';
+@value typography: './base_styles/typography.scss';
+@value action-2, action-3, neutral-2 from colors;
+@value font-family-sans-serif from typography;
+
+$header-color: action-2;
+$text-color: neutral-2;
+$sans-serif: font-family-sans-serif;
+
 .container {
-  composes: primaryFont from './variables.scss';
   display: block;
   padding: 0px 15px;
   margin-left: auto;
   margin-right: auto;
+  font-family: $sans-serif;
 }
 
 .containerCenter {
   composes: container;
-  composes: primaryFont from './variables.scss';
   text-align: center;
 }
 
@@ -18,12 +26,12 @@
 }
 
 .appHeader {
-  composes: primaryColor from './variables.scss';
+  color: $header-color;
   font-weight: bold;
   font-size: 40px;
 }
 
 .appText {
-  composes: secondaryColor from './variables.scss';
+  color: $text-color;
   font-size: 20px;
 }
