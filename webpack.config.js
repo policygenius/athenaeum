@@ -24,8 +24,9 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'react-hot' },
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: [ 'react', 'es2015' ] } },
-      { test: /\.css$/, loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' },
-      { test: /\.scss$/, loaders: [ 'style?sourceMap', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader', 'sass?sourceMap' ] }
+      // { test: /\.css$/, loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader' },
+      { test: /\.module\.scss$/, loaders: [ 'style-loader?sourceMap', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader', 'sass-loader?sourceMap' ] },
+      { test: /\.scss$/, exclude: /\.module\.scss$/, loaders: ['style-loader?sourceMap', 'css-loader!postcss-loader', 'sass-loader?sourceMap'] }
     ]
   },
   postcss: [

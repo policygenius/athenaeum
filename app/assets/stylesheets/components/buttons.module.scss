@@ -1,0 +1,107 @@
+// @value colors: '../base_styles/colors.scss';
+// @value typography: '../base_styles/typography.scss';
+// @value accent-1, accent-2, action-2, action-3, brand-1, brand-2, brand-3, brand-5, neutral-2, neutral-3, neutral-4, neutral-5, neutral-8 from colors;
+// @value font-family-sans-serif from typography;
+
+@import '../base_styles/typography';
+@import '../base_styles/colors';
+@import '../utilities/functions';
+@import '../utilities/mixins';
+
+$button-background-color:                  $neutral-8;
+$button-border-color:                      $accent-2;
+$button-border-radius:                     ru(.25);
+$button-color:                             $accent-2;
+$button-hover-background-color:            $accent-2;
+$button-hover-color:                       $neutral-8;
+$button-disabled-border-color:             $neutral-5;
+$button-disabled-color:                    $neutral-4;
+$button-info-color:                        $brand-2;
+$button-info-hover-color:                  $neutral-8;
+$button-shaking-offset:                    ru(.25);
+$button-action-background-color:           $accent-2;
+$button-action-border-color:               $accent-1;
+$button-action-color:                      $neutral-8;
+$button-action-lowlight-background-color:  $brand-2;
+$button-action-lowlight-border-color:      $brand-1;
+$button-action-lowlight-color:             $neutral-8;
+$button-action-disabled-background-color:  $neutral-5;
+$button-action-disabled-border-color:      $neutral-3;
+$button-action-disabled-color:             $neutral-8;
+$button-stacked-background-color:          $neutral-8;
+$button-stacked-border-color:              $neutral-5;
+$button-stacked-color:                     $neutral-2;
+$button-stacked-hover-background-color:    $neutral-4;
+$button-stacked-hover-color:               $neutral-8;
+$button-outline-color:                     $neutral-2;
+$button-outline-border-color:              $neutral-2;
+$button-outline-background-color:          $neutral-8;
+$button-outline-hover-color:               $neutral-8;
+$button-outline-hover-background-color:    $neutral-2;
+$button-graphic-border-color:              $neutral-5;
+$button-graphic-hover-border-color:        $brand-2;
+$button-graphic-border-radius:             ru(.25);
+$button-graphic-background-color:          $neutral-8;
+$button-graphic-color:                     $brand-2;
+$button-tag-background-color:              $brand-5;
+$button-tag-hover-background-color:        $brand-2;
+$button-tag-color:                         $neutral-2;
+$button-tag-hover-color:                   $neutral-8;
+$button-solid-background-color:            $neutral-8;
+$button-solid-background-hover-color:      $brand-2;
+$button-font:                              $font-family-sans-serif;
+$button-solid-background-primary-color:    $brand-3;
+$button-solid-background-secondary-color:  #3ad1ba;
+$button-solid-background-tertiary-color:   #f08f5c;
+
+// [class^='mod-'] {
+  .button {
+    @include typography-6;
+    @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
+    display: inline-block;
+    cursor: pointer;
+    font-family: $button-font;
+    font-weight: bold;
+    line-height: ru(1);
+    text-align: center;
+    text-decoration: none;
+    color: $button-color;
+    margin: 0;
+    padding: ru(.5);
+    background-color: $button-background-color;
+    border: 1px solid $button-border-color;
+    border-radius: $button-border-radius;
+    transition: background-color 300ms ease-out, border-color 300ms ease-out,
+                top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+  }
+
+  .disabled {
+    composes: button;
+    @include hover($button-background-color, $button-disabled-border-color, $button-disabled-color);
+    border-color: $button-disabled-border-color;
+    background-color: $button-background-color;
+    color: $button-disabled-color;
+    cursor: not-allowed;
+    user-select: none;
+    outline: none;
+  }
+
+  .info {
+    composes: button;
+    @include hover($button-info-color, $button-info-color, $button-info-hover-color);
+    display: block;
+    margin-top: ru(.75);
+    background-color: inherit;
+    border-color: $button-info-color;
+    color: $button-info-color;
+  }
+// }
+
+@keyframes disabled-button-shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-$button-shaking-offset); }
+  40% { transform: translateX($button-shaking-offset); }
+  60% { transform: translateX(-$button-shaking-offset); }
+  80% { transform: translateX($button-shaking-offset); }
+  100% { transform: translateX(0); }
+}

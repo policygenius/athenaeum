@@ -1,2 +1,221 @@
-@value font-family-sans-serif 'adelle-sans', Helvetica, Arial, sans-serif;
+@import 'colors';
 
+$font-family-serif:           'adelle', Georgia, serif;
+$font-family-sans-serif:      'adelle-sans', Helvetica, Arial, sans-serif;
+$main-font-color:             $neutral-2;
+$label-font-color:            $neutral-4;
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+@mixin base-font-family() {
+  font-family: $font-family-sans-serif;
+}
+
+@mixin typography-0($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+
+  @if $margin {
+    margin-bottom: ru(2);
+  }
+}
+
+@mixin typography-1($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-2($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-3($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-4($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-5($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-6($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+
+  @if $margin {
+    margin-top: ru(.5);
+    margin-bottom: ru(.5);
+  }
+}
+
+@mixin typography-7($margin: true) {
+  @include base-font-family;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin like-h1-jumbo() {
+  @include typography-0;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+}
+
+@mixin like-h1-title() {
+  @include typography-1;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  color: $main-font-color;
+}
+
+@mixin like-h1() {
+  @include typography-2;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  color: $main-font-color;
+}
+
+@mixin like-h2() {
+  @include typography-3;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  color: $main-font-color;
+}
+
+@mixin like-h3() {
+  @include typography-4;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  color: $main-font-color;
+}
+
+@mixin like-h4() {
+  @include typography-5;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  color: $main-font-color;
+}
+
+@mixin like-h5() {
+  @include typography-7;
+  font-family: $font-family-sans-serif;
+  color: $label-font-color;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+@mixin like-p() {
+  @include typography-6;
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  color: $main-font-color;
+}
+
+.typography-0 {
+  @include typography-0;
+}
+
+.typography-1 {
+  @include typography-1;
+}
+
+.typography-2 {
+  @include typography-2;
+}
+
+.typography-3 {
+  @include typography-3;
+}
+
+.typography-4 {
+  @include typography-4;
+}
+
+.typography-5 {
+  @include typography-5;
+}
+
+.typography-6 {
+  @include typography-6;
+}
+
+.typography-7 {
+  @include typography-7;
+}
+
+.like-h1-jumbo {
+  @include like-h1-jumbo;
+}
+
+.like-h1-title {
+  @include like-h1-title;
+}
+
+.like-h1 {
+  @include like-h1;
+}
+
+.like-h2 {
+  @include like-h2;
+}
+
+.like-h3 {
+  @include like-h3;
+}
+
+.like-h4 {
+  @include like-h4;
+}
+
+.like-h5 {
+  @include like-h5;
+}
+
+.like-p {
+  @include like-p;
+}
+
+.fineprint {
+  font-size: rem-calc(11px);
+  line-height: rem-calc(15px);
+  margin-bottom: 0;
+}

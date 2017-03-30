@@ -1,37 +1,8 @@
-@value colors: './base_styles/colors.scss';
-@value typography: './base_styles/typography.scss';
-@value action-2, action-3, neutral-2 from colors;
-@value font-family-sans-serif from typography;
+@charset 'UTF-8';
 
-$header-color: action-2;
-$text-color: neutral-2;
-$sans-serif: font-family-sans-serif;
+:global { @import 'base_styles/colors'; }
+:global { @import 'base_styes/typography'; }
+:global { @import 'utilities/mixins'; }
 
-.container {
-  display: block;
-  padding: 0px 15px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: $sans-serif;
-}
-
-.containerCenter {
-  composes: container;
-  text-align: center;
-}
-
-.appHeaderContainer {
-  display: block;
-  margin: 50px;
-}
-
-.appHeader {
-  color: $header-color;
-  font-weight: bold;
-  font-size: 40px;
-}
-
-.appText {
-  color: $text-color;
-  font-size: 20px;
-}
+// CSS Modules
+@import 'components/buttons';

@@ -1,33 +1,33 @@
 /* Black. From dark to light. */
-@value neutral-1 #000;
-@value neutral-2 #4d4d4d;
-@value neutral-3 #999;
-@value neutral-4 #b3b3b3;
-@value neutral-5 #ccc;
-@value neutral-6 #f2f2f2;
-@value neutral-7 #fbfbfb;
-@value neutral-8 #fff;
+$neutral-1: #000;
+$neutral-2: #4d4d4d;
+$neutral-3: #999;
+$neutral-4: #b3b3b3;
+$neutral-5: #ccc;
+$neutral-6: #f2f2f2;
+$neutral-7: #fbfbfb;
+$neutral-8: #fff;
 
 /* Teal. From dark to light. */
-@value brand-1 #007b7b;
-@value brand-2 #00a4a5;
-@value brand-3 #66c8c9;
-@value brand-4 #99dadb;
-@value brand-5 #cceded;
-@value brand-6 #f5ffff;
+$brand-1: #007b7b;
+$brand-2: #00a4a5;
+$brand-3: #66c8c9;
+$brand-4: #99dadb;
+$brand-5: #cceded;
+$brand-6: #f5ffff;
 
 /* Red-Orange. From dark to light. */
-@value accent-1 #b65c27;
-@value accent-2 #ee7832;
-@value accent-3 #f08f5c;
-@value accent-4 #f3ad86;
-@value accent-5 #f9d1ba;
-@value accent-6 #faebde;
+$accent-1: #b65c27;
+$accent-2: #ee7832;
+$accent-3: #f08f5c;
+$accent-4: #f3ad86;
+$accent-5: #f9d1ba;
+$accent-6: #faebde;
 
 /* Yellow-Oranges. From dark to light. */
-@value action-1 #d87600;
-@value action-2 #f9a024;
-@value action-3 #fab350;
-@value action-4 #fbc67c;
-@value action-5: #fdd9a7;
-@value action-6: #feecd3;
+$action-1: #d87600;
+$action-2: #f9a024;
+$action-3: #fab350;
+$action-4: #fbc67c;
+$action-5: #fdd9a7;
+$action-6: #feecd3;
