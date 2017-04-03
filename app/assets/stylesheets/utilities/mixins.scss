@@ -1,0 +1,21 @@
+@mixin hover($background-color, $border-color, $color) {
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $background-color;
+    border-color: $border-color;
+    color: $color;
+    text-decoration: none;
+  }
+}
+
+@mixin hover-action($top, $border-width, $border-color, $background-color, $color) {
+  &:hover,
+  &:active,
+  &:focus {
+    top: $top;
+    box-shadow: 0 $border-width 0 $border-color;
+    background-color: $background-color;
+    color: $color;
+  }
+}

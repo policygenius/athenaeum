@@ -1,0 +1,79 @@
+{
+  'parser': 'babel-eslint',
+  'plugins': [
+    'react'
+  ],
+  'env': {
+    'browser': true,
+     'node': true,
+     'es6': true
+  },
+  'globals': {
+        'React': true
+    },
+  'ecmaFeatures': {
+      'jsx': true
+  },
+  'rules': {
+    # Error rules
+    'no-dupe-args': 2,
+    'no-dupe-keys': 2,
+    'no-empty': 2,
+    'no-extra-parens': 1,
+    'no-extra-semi': 1,
+    'no-irregular-whitespace': 1,
+    # Best Practices rules
+    'array-callback-return': 1,
+    'block-scoped-var': 1,
+    'curly': [ 2, 'all' ],
+    'default-case': 2,
+    'dot-notation': [ 1, {
+      'allowKeywords': false,
+      'allowPattern': '^[a-z]+(_[a-z]+)+$'
+    }],
+    'no-caller': 2,
+    'no-else-return': 1,
+    'no-empty-function': 1,
+    'no-empty-pattern': 1,
+    'no-extra-bind': 1,
+    'no-multi-spaces': [ 1, {
+      'exceptions': {
+        'Property': true
+      }
+    }],
+    'no-useless-return': 1,
+    'vars-on-top': 2,
+    # Stylistic rules
+    'array-bracket-spacing': [ 1, 'always' ],
+    'block-spacing': 1,
+    'brace-style': 2,
+    'camelcase': 2,
+    'comma-style': 1,
+    'computed-property-spacing': 1,
+    'indent': [ 1, 2 ],
+    'jsx-quotes': [ 1, 'prefer-single' ],
+    'key-spacing': 2,
+    'newline-after-var': [ 1, 'always' ],
+    'newline-before-return': 1,
+    'no-mixed-spaces-and-tabs': [ 2, 'smart-tabs' ],
+    'no-multiple-empty-lines': 1,
+    'no-trailing-spaces': 1,
+    'object-curly-spacing': [ 2, 'always' ],
+    'object-property-newline': 1,
+    'padded-blocks': [ 0, 'always' ],
+    'space-before-function-paren': [ 1, 'always' ],
+    'space-in-parens': [ 2, 'always' ],
+    'spaced-comment': [ 1, 'always' ],
+    # ES6 rules
+    'arrow-spacing': [ 1, {
+      'before': true,
+      'after': true
+    }],
+    'no-duplicate-imports': 1,
+    'no-var': 2,
+    'prefer-arrow-callback': 1,
+    'prefer-const': [ 1, {
+      'destructuring': 'any'
+    }]
+  }
+}
