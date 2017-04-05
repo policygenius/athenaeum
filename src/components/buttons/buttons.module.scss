@@ -3,10 +3,10 @@
 // @value accent-1, accent-2, action-2, action-3, brand-1, brand-2, brand-3, brand-5, neutral-2, neutral-3, neutral-4, neutral-5, neutral-8 from colors;
 // @value font-family-sans-serif from typography;
 
-@import '../base_styles/typography';
-@import '../base_styles/colors';
-@import '../utilities/functions';
-@import '../utilities/mixins';
+@import '../../assets/stylesheets/base_styles/typography';
+@import '../../assets/stylesheets/base_styles/colors';
+@import '../../assets/stylesheets/utilities/functions';
+@import '../../assets/stylesheets/utilities/mixins';
 
 $button-background-color:                  $neutral-8;
 $button-border-color:                      $accent-2;

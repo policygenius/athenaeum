@@ -38,3 +38,6 @@ jspm_packages
 
 # Don't include /dist files
 /dist/*
+
+# Ignore styleguideist build
+/styleguide/build/*

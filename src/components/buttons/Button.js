@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../assets/stylesheets/components/buttons.module.scss';
+import styles from './buttons.module.scss';
 
 function Button ( { type, children } ) {
   return (

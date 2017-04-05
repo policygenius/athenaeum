@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/app/public/index.html',
+  template: __dirname + '/src/public/index.html',
   filename: 'index.html',
   inject: 'body'
 });
@@ -13,7 +13,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack/hot/only-dev-server',
-    './app/public/index.js'
+    './src/public/index.js'
   ],
   output: {
     path: path.resolve( __dirname, './dist' ),
