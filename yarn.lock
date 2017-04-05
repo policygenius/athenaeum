@@ -4812,7 +4812,7 @@ react-docgen@^2.13.0:
     node-dir "^0.1.10"
     recast "^0.11.5"
 
-react-dom@^15.4.1:
+react-dom@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
   dependencies:
@@ -4902,7 +4902,7 @@ react-styleguidist@^5.0.6:
     webpack-dev-server "^1.16.3"
     webpack-merge "^4.1.0"
 
-react@^15.4.1:
+react@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
   dependencies:

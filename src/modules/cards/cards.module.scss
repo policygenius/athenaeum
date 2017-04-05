@@ -1,0 +1,68 @@
+@import 'src/assets/stylesheets/base_styles/typography';
+@import 'src/assets/stylesheets/base_styles/colors';
+@import 'src/assets/stylesheets/utilities/functions';
+@import 'src/assets/stylesheets/utilities/mixins';
+
+$background-color:   $neutral-8;
+$border-color:       $neutral-4;
+$color:              $neutral-4;
+$hover-border-color: $neutral-2;
+$hover-color:        $neutral-2;
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: ru(.25);
+  border: 1px solid $color;
+}
+
+.add {
+  composes: card;
+
+
+  @include typography-5;
+  // @include icon(plus);
+
+  font-family: $font-family-sans-serif;
+  border: 1px dashed $border-color;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: $color;
+  display: inline-block;
+  vertical-align: top;
+  background-color: $background-color;
+  margin: 0 0 ru(1);
+  padding: ru(1.25) ru(1.5);
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+
+  &:before {
+    display: block;
+    margin: 0;
+    padding: ru(.25) 0;
+    font-size: rem-calc(32px);
+  }
+
+  &:hover,
+  &:active {
+    border-color: $hover-border-color;
+    color: $hover-color;
+  }
+}
+
+.beneficiary {
+  composes: card;
+}
+
+.col {
+  flex: 1;
+  border: 1px solid $color;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+}
