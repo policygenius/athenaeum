@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from '../../assets/stylesheets/components/buttons.module.scss';
 
-function Button ( { type, children } ) {
+function List ( { type, children } ) {
   return (
     <div className={ styles[type] }>{children}</div>
   )
 }
 
-Button.propTypes = {
+List.propTypes = {
   /**
    * Possible button types are: `info, disabled, or default (button)`
    *
@@ -15,9 +15,10 @@ Button.propTypes = {
   type: React.PropTypes.string.isRequired
 }
 
-Button.defaultProps = {
+List.defaultProps = {
   type: 'button'
 }
 
-export default Button;
+export default List;
+
 

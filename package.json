@@ -7,7 +7,9 @@
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "start": "node ./app.js",
     "dev": "webpack-dev-server --inline --hot",
-    "test": "karma start"
+    "test": "karma start",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -52,13 +54,16 @@
     "node-sass": "^4.5.2",
     "postcss-loader": "^1.3.3",
     "postcss-modules-values": "^1.2.2",
+    "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.1",
+    "react-dom": "^15.4.2",
     "react-hot-loader": "^1.3.1",
     "react-router": "^3.0.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "2.2.1",
     "webpack-combine-loaders": "^2.0.3",
+    "react-styleguidist": "^5.0.6",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^2.4.2",
     "webpack-hot-middleware": "^2.13.2"
