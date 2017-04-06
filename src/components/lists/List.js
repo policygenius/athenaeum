@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../assets/stylesheets/components/buttons.module.scss';
+import styles from './lists.module.scss';
 
 function List ( { type, children } ) {
   return (
@@ -20,5 +20,3 @@ List.defaultProps = {
 }
 
 export default List;
-
-
