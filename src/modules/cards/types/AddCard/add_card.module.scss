@@ -1,0 +1,41 @@
+@import '../../shared/cards.module.scss';
+
+.add {
+  composes: card;
+  $background-color:   $neutral-8;
+  $border-color:       $neutral-4;
+  $color:              $neutral-4;
+  $hover-border-color: $neutral-2;
+  $hover-color:        $neutral-2;
+
+  @include typography-5;
+  // @include icon(plus);
+
+  font-family: $font-family-sans-serif;
+  border: 1px dashed $border-color;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: $color;
+  display: inline-block;
+  vertical-align: top;
+  background-color: $background-color;
+  margin: 0 0 ru(1);
+  padding: ru(1.25) ru(1.5);
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+
+  &:before {
+    display: block;
+    margin: 0;
+    padding: $border-radius 0;
+    font-size: rem-calc(32px);
+  }
+
+  &:hover,
+  &:active {
+    border-color: $hover-border-color;
+    color: $hover-color;
+  }
+}
+

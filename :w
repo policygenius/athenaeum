@@ -1,0 +1,81 @@
+import React from 'react';
+import CardCol from './shared/CardCol';
+import styles from './shared/cards.module.scss';
+import classnames from 'classnames';
+
+function Card ( props ) {
+
+  const { type } = props;
+
+  switch ( type ) {
+    case 'add':
+      return (
+        <div className={ styles[type] }>+ Add Beneficiary</div>
+      )
+    case 'beneficiary':
+      const {
+        header1,
+        subheader1,
+        percent,
+        subheader2,
+        footerText1,
+        footerText2 } = props;
+
+      // You can't call a nested class directly via styles import
+      // But nested classes styles will be respected
+      console.log('Styles', styles);
+
+      return (
+        <div className={ styles[type] }>
+          <div className={ styles.row }>
+            <span className={ styles.close }></span>
+            <CardCol>
+              <TextLockup
+               type='type1'
+               header={ header1 }
+               subheader={ subheader1 }
+              />
+            </CardCol>
+            <div className={ styles.percentage_col }>
+              <div className={ styles.col_wrapper }>
+                <TextLockup
+                 type='type1'
+                 header={ percent }
+                 subheader={ subheader2 }
+                />
+              </div>
+            </div>
+          </div>
+          <footer className={ styles.footer }>
+            <div className={ styles.cols }>
+              <a className={ styles.link }>{ footerText1 }</a>
+            </div>
+            <div className={ styles.percentage_col }>
+              <a className={ styles.link }>{ footerText2 }</a>
+            </div>
+          </footer>
+        </div>
+      )
+
+    default:
+      return (
+        <div className={ styles[type] }>
+          { children }
+        </div>
+      )
+  }
+}
+
+Card.propTypes = {
+  /**
+   * Possible card types are: `add`
+   *
+   */
+  type: React.PropTypes.string.isRequired
+}
+
+Card.defaultProps = {
+  type: 'add'
+}
+
+export default Card;

@@ -254,3 +254,907 @@ body {
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 8, src/assets/stylesheets/base_styles/typography.scss */
+body {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
+
+/* line 153, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-0___1w8Oe {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2); }
+
+/* line 157, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-1___hwUiL {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1); }
+
+/* line 161, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-2___1khQD {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1); }
+
+/* line 165, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-3___3YVeW {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1); }
+
+/* line 169, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-4___HTKz6 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 173, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-5___36dY1 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 177, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-6___3WaI1 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5); }
+
+/* line 181, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__typography-7___s_Nmj {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1); }
+
+/* line 185, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h1-jumbo___2jsOk {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+
+/* line 189, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h1-title___1xI4V {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 193, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h1___3Cqt3 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 197, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h2___2mVhK {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 201, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h3___3S1Z8 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 205, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h4___19A9p {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 209, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-h5___rVnbs {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  color: #b3b3b3;
+  font-weight: 400;
+  margin-bottom: 0; }
+
+/* line 213, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__like-p___2ourb {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #4d4d4d; }
+
+/* line 217, src/assets/stylesheets/base_styles/typography.scss */
+.text-lockups-module__fineprint___2tidj {
+  font-size: rem-calc(11px);
+  line-height: rem-calc(15px);
+  margin-bottom: 0; }
+
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 9, stdin */
+.text-lockups-module__type1___ATk8y .text-lockups-module__header___nsYMW {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
+  margin: 0 0 0.1875rem;
+  font-weight: normal; }
+
+/* line 15, stdin */
+.text-lockups-module__type1___ATk8y .text-lockups-module__subheader___2lcoW {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  color: #b3b3b3;
+  margin: 0 0 0.2505rem; }
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 8, src/assets/stylesheets/base_styles/typography.scss */
+body {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
+
+/* line 153, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-0___3RjaG {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2); }
+
+/* line 157, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-1___36t3M {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1); }
+
+/* line 161, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-2___2jHnj {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1); }
+
+/* line 165, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-3___1Ylr7 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1); }
+
+/* line 169, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-4___qcal_ {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 173, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-5___2s8wn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 177, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-6___2QyBs {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5); }
+
+/* line 181, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-7___2Agcp {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1); }
+
+/* line 185, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h1-jumbo___1s6dN {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+
+/* line 189, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h1-title___3E1bM {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 193, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h1___zMGSj {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 197, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h2___1i6sn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 201, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h3___5bfTn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 205, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h4___1Pj4I {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 209, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h5___3wx_X {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  color: #b3b3b3;
+  font-weight: 400;
+  margin-bottom: 0; }
+
+/* line 213, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-p___3xKjT {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #4d4d4d; }
+
+/* line 217, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__fineprint___2VU6o {
+  font-size: rem-calc(11px);
+  line-height: rem-calc(15px);
+  margin-bottom: 0; }
+
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 6, src/assets/stylesheets/global.scss */
+* {
+  box-sizing: border-box; }
+
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 8, src/assets/stylesheets/base_styles/typography.scss */
+body {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
+
+/* line 153, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-0___3RjaG {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 4.25rem;
+  line-height: 4.5rem;
+  margin-bottom: 3rem; }
+
+/* line 157, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-1___36t3M {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 2.625rem;
+  line-height: 3rem;
+  margin-bottom: 1.5rem; }
+
+/* line 161, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-2___2jHnj {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 2.625rem;
+  margin-bottom: 1.5rem; }
+
+/* line 165, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-3___1Ylr7 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.625rem;
+  line-height: 2.25rem;
+  margin-bottom: 1.5rem; }
+
+/* line 169, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-4___qcal_ {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem; }
+
+/* line 173, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-5___2s8wn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem; }
+
+/* line 177, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-6___2QyBs {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem; }
+
+/* line 181, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__typography-7___2Agcp {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem; }
+
+/* line 185, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h1-jumbo___1s6dN {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 4.25rem;
+  line-height: 4.5rem;
+  margin-bottom: 3rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+
+/* line 189, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h1-title___3E1bM {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 2.625rem;
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 193, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h1___zMGSj {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 2.625rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 197, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h2___1i6sn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.625rem;
+  line-height: 2.25rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 201, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h3___5bfTn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 205, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h4___1Pj4I {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 209, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-h5___3wx_X {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  color: #b3b3b3;
+  font-weight: 400;
+  margin-bottom: 0; }
+
+/* line 213, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__like-p___3xKjT {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #4d4d4d; }
+
+/* line 217, src/assets/stylesheets/base_styles/typography.scss */
+.card_col-module__fineprint___2VU6o {
+  font-size: 0.6875rem;
+  line-height: 0.9375rem;
+  margin-bottom: 0; }
+
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 6, src/assets/stylesheets/global.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 7, src/modules/cards/shared/cards.module.scss */
+.card_col-module__card___RjRzq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 0.375rem;
+  border: 1px solid #b3b3b3;
+  width: 100%; }
+
+/* line 16, src/modules/cards/shared/cards.module.scss */
+.card_col-module__add___ULXJZ {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  border: 1px dashed #b3b3b3;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #b3b3b3;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fff;
+  margin: 0 0 1.5rem;
+  padding: 1.875rem 2.25rem;
+  -webkit-transition: border-color 150ms ease-out, color 150ms ease-out;
+  transition: border-color 150ms ease-out, color 150ms ease-out; }
+  /* line 41, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__add___ULXJZ:before {
+    display: block;
+    margin: 0;
+    padding: 0.375rem 0;
+    font-size: 2rem; }
+  /* line 48, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__add___ULXJZ:hover, .card_col-module__add___ULXJZ:active {
+    border-color: #4d4d4d;
+    color: #4d4d4d; }
+
+/* line 61, src/modules/cards/shared/cards.module.scss */
+.card_col-module__beneficiary___1c4eU {
+  position: relative;
+  min-width: 16.995rem;
+  background-color: #fff;
+  margin-bottom: 1.5rem; }
+  /* line 69, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__beneficiary___1c4eU .card_col-module__mod-percentage-card___RO7L_ {
+    display: none; }
+  /* line 74, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__beneficiary___1c4eU.card_col-module__collapsed___2VUoo .card_col-module__mod-percentage-card___RO7L_ {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  /* line 78, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__beneficiary___1c4eU.card_col-module__collapsed___2VUoo .card_col-module__form___zXd9u {
+    display: none; }
+  /* line 83, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__beneficiary___1c4eU .card_col-module__icon-close___3YuHA {
+    position: absolute;
+    z-index: 1;
+    top: -0.75rem;
+    right: -0.75rem;
+    background-size: 100%;
+    cursor: pointer; }
+    /* line 91, src/modules/cards/shared/cards.module.scss */
+    .card_col-module__beneficiary___1c4eU .card_col-module__icon-close___3YuHA:before {
+      content: '';
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem; }
+  /* line 99, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__beneficiary___1c4eU .card_col-module__form___zXd9u {
+    border: 1px solid #66c8c9;
+    border-top-width: 0.375rem;
+    border-bottom-width: 0.375rem;
+    border-radius: 0.375rem;
+    padding: 1.5rem; }
+
+/* line 108, src/modules/cards/shared/cards.module.scss */
+.card_col-module__row___2_THl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
+/* line 113, src/modules/cards/shared/cards.module.scss */
+.card_col-module__footer___1PJX7 {
+  background-color: #f2f2f2;
+  border-top: 1px solid #b3b3b3;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem; }
+  /* line 120, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__footer___1PJX7 .card_col-module__percentage_col___3Q3Ti {
+    border-left: 0; }
+
+/* line 125, src/modules/cards/shared/cards.module.scss */
+.card_col-module__link___1MwM6 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none; }
+  /* line 132, src/modules/cards/shared/cards.module.scss */
+  .card_col-module__link___1MwM6:hover, .card_col-module__link___1MwM6:active {
+    text-decoration: underline; }
+
+/* line 4, stdin */
+.card_col-module__cols___2Nd-W {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 1.5rem; }
+
+/* line 11, stdin */
+.card_col-module__percentage_col___3Q3Ti {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border-left: 1px solid #b3b3b3; }
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 8, src/assets/stylesheets/base_styles/typography.scss */
+body {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
+
+/* line 153, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-0___378p5 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2); }
+
+/* line 157, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-1___2AmNG {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1); }
+
+/* line 161, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-2___19mwK {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1); }
+
+/* line 165, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-3___2UnvU {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1); }
+
+/* line 169, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-4___1iILr {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 173, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-5___1RbdD {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 177, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-6___1nRA_ {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5); }
+
+/* line 181, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__typography-7___1SB_E {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1); }
+
+/* line 185, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h1-jumbo___1mGJK {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+
+/* line 189, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h1-title___Plmtq {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 193, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h1___30CTd {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 197, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h2___1hfkJ {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 201, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h3___3HO8C {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 205, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h4___1Dgm- {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 209, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-h5___2QUVv {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  color: #b3b3b3;
+  font-weight: 400;
+  margin-bottom: 0; }
+
+/* line 213, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__like-p___1vWLu {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #4d4d4d; }
+
+/* line 217, src/assets/stylesheets/base_styles/typography.scss */
+.cards-module__fineprint___2kP1E {
+  font-size: rem-calc(11px);
+  line-height: rem-calc(15px);
+  margin-bottom: 0; }
+
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 6, src/assets/stylesheets/global.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 7, stdin */
+.cards-module__card___2P1KH {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 0.375rem;
+  border: 1px solid #b3b3b3;
+  width: 100%; }
+
+/* line 16, stdin */
+.cards-module__add___1NP8- {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  border: 1px dashed #b3b3b3;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #b3b3b3;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fff;
+  margin: 0 0 1.5rem;
+  padding: 1.875rem 2.25rem;
+  -webkit-transition: border-color 150ms ease-out, color 150ms ease-out;
+  transition: border-color 150ms ease-out, color 150ms ease-out; }
+  /* line 41, stdin */
+  .cards-module__add___1NP8-:before {
+    display: block;
+    margin: 0;
+    padding: 0.375rem 0;
+    font-size: 2rem; }
+  /* line 48, stdin */
+  .cards-module__add___1NP8-:hover, .cards-module__add___1NP8-:active {
+    border-color: #4d4d4d;
+    color: #4d4d4d; }
+
+/* line 61, stdin */
+.cards-module__beneficiary___1GN0y {
+  position: relative;
+  min-width: 16.995rem;
+  background-color: #fff;
+  margin-bottom: 1.5rem; }
+  /* line 69, stdin */
+  .cards-module__beneficiary___1GN0y .cards-module__mod-percentage-card___GH0PE {
+    display: none; }
+  /* line 74, stdin */
+  .cards-module__beneficiary___1GN0y.cards-module__collapsed___1tvu2 .cards-module__mod-percentage-card___GH0PE {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  /* line 78, stdin */
+  .cards-module__beneficiary___1GN0y.cards-module__collapsed___1tvu2 .cards-module__form___2G8fr {
+    display: none; }
+  /* line 83, stdin */
+  .cards-module__beneficiary___1GN0y .cards-module__icon-close___KlIzf {
+    position: absolute;
+    z-index: 1;
+    top: -0.75rem;
+    right: -0.75rem;
+    background-size: 100%;
+    cursor: pointer; }
+    /* line 91, stdin */
+    .cards-module__beneficiary___1GN0y .cards-module__icon-close___KlIzf:before {
+      content: '';
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem; }
+  /* line 99, stdin */
+  .cards-module__beneficiary___1GN0y .cards-module__form___2G8fr {
+    border: 1px solid #66c8c9;
+    border-top-width: 0.375rem;
+    border-bottom-width: 0.375rem;
+    border-radius: 0.375rem;
+    padding: 1.5rem; }
+
+/* line 108, stdin */
+.cards-module__row___12c07 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
+/* line 113, stdin */
+.cards-module__footer___1M_Jf {
+  background-color: #f2f2f2;
+  border-top: 1px solid #b3b3b3;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem; }
+  /* line 120, stdin */
+  .cards-module__footer___1M_Jf .cards-module__percentage_col___280th {
+    border-left: 0; }
+
+/* line 125, stdin */
+.cards-module__link___3ZRG7 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none; }
+  /* line 132, stdin */
+  .cards-module__link___3ZRG7:hover, .cards-module__link___3ZRG7:active {
+    text-decoration: underline; }

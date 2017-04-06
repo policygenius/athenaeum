@@ -1,0 +1,15 @@
+@import 'src/assets/stylesheets/global';
+
+$border-color:              $neutral-4;
+$border:                    1px solid $border-color;
+$border-radius:             ru(.25);
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: $border-radius;
+  border: $border;
+  width: 100%;
+}
+

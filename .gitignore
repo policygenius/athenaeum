@@ -40,4 +40,4 @@ jspm_packages
 /dist/*
 
 # Ignore styleguideist build
-/styleguide/build/*
+styleguide

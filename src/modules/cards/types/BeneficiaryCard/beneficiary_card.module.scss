@@ -1,0 +1,93 @@
+@import '../../shared/cards.module.scss';
+
+$beneficiary-card-border-color:     $brand-3;
+$beneficiary-card-background-color: $neutral-8;
+$beneficiary-card-border-width:     $border-radius;
+$beneficiary-card-icon-size:        ru(.75);
+$footer-background-color:           $neutral-6;
+$col-padding:                    ru(.75);
+
+.beneficiary {
+  composes: card;
+
+  position: relative;
+  min-width: ru(11.33);
+  background-color: $beneficiary-card-background-color;
+  margin-bottom: ru(1);
+
+  .icon-close {
+    position: absolute;
+    z-index: 1;
+    top: -$beneficiary-card-icon-size / 2;
+    right: -$beneficiary-card-icon-size / 2;
+    background-size: 100%;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: $beneficiary-card-icon-size;
+      height: $beneficiary-card-icon-size;
+    }
+  }
+
+  .form {
+    border: 1px solid $beneficiary-card-border-color;
+    border-top-width: $beneficiary-card-border-width;
+    border-bottom-width: $beneficiary-card-border-width;
+    border-radius: $border-radius;
+    padding: ru(1);
+  }
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40%;
+  padding: ru(.75);
+  border-left: $border;
+
+  &:first-of-type {
+    border-left: 0;
+  }
+}
+
+.percentage_col {
+  composes: col;
+  flex-grow: 0;
+  border-left: $border;
+}
+
+.footer {
+  composes: row;
+  background-color: $footer-background-color;
+  border-top: $border;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  .col {
+    padding: ru(.25) $col-padding;
+  }
+
+  .percentage_col {
+    border-left: 0;
+  }
+}
+
+.link {
+  @include typography-7;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
