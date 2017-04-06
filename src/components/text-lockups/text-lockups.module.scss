@@ -1,0 +1,26 @@
+@import 'src/assets/stylesheets/base_styles/typography';
+@import 'src/assets/stylesheets/base_styles/colors';
+@import 'src/assets/stylesheets/utilities/functions';
+@import 'src/assets/stylesheets/utilities/mixins';
+
+$subheader-color: $neutral-4;
+
+.header {
+  @include typography-4;
+  margin: 0 0 ru(.125);
+  font-weight: normal;
+}
+
+.subheader {
+  @include typography-6;
+  font-weight: 400;
+  line-height: ru(.75);
+  color: $subheader-color;
+  margin: 0 0 ru(.167);
+}
+
+.B {
+  .header {
+    color: $brand-2;
+  }
+}
