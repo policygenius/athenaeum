@@ -1,7 +1,6 @@
 Percentage Card example:
 
     <PercentageCard
-      primary
       header1='Header'
       subheader1='Subheader'
       percent='10%'
