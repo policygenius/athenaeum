@@ -44,10 +44,12 @@ function PercentageCard ( props ) {
 }
 
 PercentageCard.propTypes = {
-  /**
-   * Possible card types are: `add`
-   *
-   */
+  header1: React.PropTypes.string.isRequired,
+  subheader1: React.PropTypes.string.isRequired,
+  percent: React.PropTypes.number.isRequired,
+  subheader2: React.PropTypes.string.isRequired,
+  footerText1: React.PropTypes.string.isRequired,
+  footerText2: React.PropTypes.string.isRequired
 }
 
 PercentageCard.defaultProps = {

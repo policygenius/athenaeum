@@ -410,8 +410,8 @@ body {
 /* Teal. From dark to light. */
 /* Red-Orange. From dark to light. */
 /* Yellow-Oranges. From dark to light. */
-/* line 9, stdin */
-.text-lockups-module__type1___ATk8y .text-lockups-module__header___nsYMW {
+/* line 8, stdin */
+.text-lockups-module__header___nsYMW {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: 1.375rem;
   line-height: 1.875rem;
@@ -419,8 +419,8 @@ body {
   margin: 0 0 0.1875rem;
   font-weight: normal; }
 
-/* line 15, stdin */
-.text-lockups-module__type1___ATk8y .text-lockups-module__subheader___2lcoW {
+/* line 14, stdin */
+.text-lockups-module__subheader___2lcoW {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -430,6 +430,10 @@ body {
   line-height: 1.125rem;
   color: #b3b3b3;
   margin: 0 0 0.2505rem; }
+
+/* line 23, stdin */
+.text-lockups-module__B___1KmNb .text-lockups-module__header___nsYMW {
+  color: #00a4a5; }
 /* Black. From dark to light. */
 /* Teal. From dark to light. */
 /* Red-Orange. From dark to light. */
@@ -439,49 +443,49 @@ body {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
 
 /* line 153, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-0___3RjaG {
+.beneficiary_card-module__typography-0___1Zfy6 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(68px);
   line-height: ru(3);
   margin-bottom: ru(2); }
 
 /* line 157, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-1___36t3M {
+.beneficiary_card-module__typography-1___2M_rf {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(42px);
   line-height: ru(2);
   margin-bottom: ru(1); }
 
 /* line 161, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-2___2jHnj {
+.beneficiary_card-module__typography-2___3HNev {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(32px);
   line-height: ru(1.75);
   margin-bottom: ru(1); }
 
 /* line 165, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-3___1Ylr7 {
+.beneficiary_card-module__typography-3___zzhgD {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(26px);
   line-height: ru(1.5);
   margin-bottom: ru(1); }
 
 /* line 169, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-4___qcal_ {
+.beneficiary_card-module__typography-4___6RStc {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(22px);
   line-height: ru(1.25);
   margin-bottom: ru(1); }
 
 /* line 173, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-5___2s8wn {
+.beneficiary_card-module__typography-5___2Jomf {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(19px);
   line-height: ru(1.25);
   margin-bottom: ru(1); }
 
 /* line 177, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-6___2QyBs {
+.beneficiary_card-module__typography-6___2q7U_ {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(16px);
   line-height: ru(1);
@@ -489,14 +493,14 @@ body {
   margin-bottom: ru(0.5); }
 
 /* line 181, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-7___2Agcp {
+.beneficiary_card-module__typography-7___3c-MP {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   line-height: ru(1);
   font-size: rem-calc(13px);
   margin-bottom: ru(1); }
 
 /* line 185, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h1-jumbo___1s6dN {
+.beneficiary_card-module__like-h1-jumbo___TDfx3 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(68px);
   line-height: ru(3);
@@ -505,7 +509,7 @@ body {
   font-weight: 600; }
 
 /* line 189, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h1-title___3E1bM {
+.beneficiary_card-module__like-h1-title___1a08f {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(42px);
   line-height: ru(2);
@@ -515,7 +519,7 @@ body {
   color: #4d4d4d; }
 
 /* line 193, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h1___zMGSj {
+.beneficiary_card-module__like-h1___RKpI5 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(32px);
   line-height: ru(1.75);
@@ -525,7 +529,7 @@ body {
   color: #4d4d4d; }
 
 /* line 197, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h2___1i6sn {
+.beneficiary_card-module__like-h2___3lxGW {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(26px);
   line-height: ru(1.5);
@@ -535,7 +539,7 @@ body {
   color: #4d4d4d; }
 
 /* line 201, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h3___5bfTn {
+.beneficiary_card-module__like-h3___3igR6 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(22px);
   line-height: ru(1.25);
@@ -545,7 +549,7 @@ body {
   color: #4d4d4d; }
 
 /* line 205, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h4___1Pj4I {
+.beneficiary_card-module__like-h4___XkwA2 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(19px);
   line-height: ru(1.25);
@@ -555,7 +559,7 @@ body {
   color: #4d4d4d; }
 
 /* line 209, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h5___3wx_X {
+.beneficiary_card-module__like-h5___3xLbn {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   line-height: ru(1);
   font-size: rem-calc(13px);
@@ -566,7 +570,7 @@ body {
   margin-bottom: 0; }
 
 /* line 213, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-p___3xKjT {
+.beneficiary_card-module__like-p___25Iz- {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(16px);
   line-height: ru(1);
@@ -577,7 +581,7 @@ body {
   color: #4d4d4d; }
 
 /* line 217, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__fineprint___2VU6o {
+.beneficiary_card-module__fineprint___1OPuf {
   font-size: rem-calc(11px);
   line-height: rem-calc(15px);
   margin-bottom: 0; }
@@ -590,168 +594,8 @@ body {
 * {
   box-sizing: border-box; }
 
-/* Black. From dark to light. */
-/* Teal. From dark to light. */
-/* Red-Orange. From dark to light. */
-/* Yellow-Oranges. From dark to light. */
-/* line 8, src/assets/stylesheets/base_styles/typography.scss */
-body {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
-
-/* line 153, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-0___3RjaG {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 4.25rem;
-  line-height: 4.5rem;
-  margin-bottom: 3rem; }
-
-/* line 157, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-1___36t3M {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 2.625rem;
-  line-height: 3rem;
-  margin-bottom: 1.5rem; }
-
-/* line 161, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-2___2jHnj {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-  line-height: 2.625rem;
-  margin-bottom: 1.5rem; }
-
-/* line 165, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-3___1Ylr7 {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.625rem;
-  line-height: 2.25rem;
-  margin-bottom: 1.5rem; }
-
-/* line 169, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-4___qcal_ {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.375rem;
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem; }
-
-/* line 173, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-5___2s8wn {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.1875rem;
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem; }
-
-/* line 177, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-6___2QyBs {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem; }
-
-/* line 181, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__typography-7___2Agcp {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5rem;
-  font-size: 0.8125rem;
-  margin-bottom: 1.5rem; }
-
-/* line 185, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h1-jumbo___1s6dN {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 4.25rem;
-  line-height: 4.5rem;
-  margin-bottom: 3rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 600; }
-
-/* line 189, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h1-title___3E1bM {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 2.625rem;
-  line-height: 3rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  color: #4d4d4d; }
-
-/* line 193, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h1___zMGSj {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-  line-height: 2.625rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  color: #4d4d4d; }
-
-/* line 197, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h2___1i6sn {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.625rem;
-  line-height: 2.25rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  color: #4d4d4d; }
-
-/* line 201, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h3___5bfTn {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.375rem;
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  color: #4d4d4d; }
-
-/* line 205, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h4___1Pj4I {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.1875rem;
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  color: #4d4d4d; }
-
-/* line 209, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-h5___3wx_X {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5rem;
-  font-size: 0.8125rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  color: #b3b3b3;
-  font-weight: 400;
-  margin-bottom: 0; }
-
-/* line 213, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__like-p___3xKjT {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  color: #4d4d4d; }
-
-/* line 217, src/assets/stylesheets/base_styles/typography.scss */
-.card_col-module__fineprint___2VU6o {
-  font-size: 0.6875rem;
-  line-height: 0.9375rem;
-  margin-bottom: 0; }
-
-/* Black. From dark to light. */
-/* Teal. From dark to light. */
-/* Red-Orange. From dark to light. */
-/* Yellow-Oranges. From dark to light. */
-/* line 6, src/assets/stylesheets/global.scss */
-* {
-  box-sizing: border-box; }
-
-/* line 7, src/modules/cards/shared/cards.module.scss */
-.card_col-module__card___RjRzq {
+/* line 7, src/modules/cards/shared/_cards.module.scss */
+.beneficiary_card-module__card___1vRs7 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -765,109 +609,43 @@ body {
   border: 1px solid #b3b3b3;
   width: 100%; }
 
-/* line 16, src/modules/cards/shared/cards.module.scss */
-.card_col-module__add___ULXJZ {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  font-size: 1.1875rem;
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem;
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  border: 1px dashed #b3b3b3;
-  font-weight: 400;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  color: #b3b3b3;
-  display: inline-block;
-  vertical-align: top;
-  background-color: #fff;
-  margin: 0 0 1.5rem;
-  padding: 1.875rem 2.25rem;
-  -webkit-transition: border-color 150ms ease-out, color 150ms ease-out;
-  transition: border-color 150ms ease-out, color 150ms ease-out; }
-  /* line 41, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__add___ULXJZ:before {
-    display: block;
-    margin: 0;
-    padding: 0.375rem 0;
-    font-size: 2rem; }
-  /* line 48, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__add___ULXJZ:hover, .card_col-module__add___ULXJZ:active {
-    border-color: #4d4d4d;
-    color: #4d4d4d; }
-
-/* line 61, src/modules/cards/shared/cards.module.scss */
-.card_col-module__beneficiary___1c4eU {
+/* line 10, stdin */
+.beneficiary_card-module__beneficiary___1hBIv {
   position: relative;
   min-width: 16.995rem;
   background-color: #fff;
   margin-bottom: 1.5rem; }
-  /* line 69, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__beneficiary___1c4eU .card_col-module__mod-percentage-card___RO7L_ {
-    display: none; }
-  /* line 74, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__beneficiary___1c4eU.card_col-module__collapsed___2VUoo .card_col-module__mod-percentage-card___RO7L_ {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  /* line 78, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__beneficiary___1c4eU.card_col-module__collapsed___2VUoo .card_col-module__form___zXd9u {
-    display: none; }
-  /* line 83, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__beneficiary___1c4eU .card_col-module__icon-close___3YuHA {
+  /* line 18, stdin */
+  .beneficiary_card-module__beneficiary___1hBIv .beneficiary_card-module__icon-close___2cR7r {
     position: absolute;
     z-index: 1;
-    top: -0.75rem;
-    right: -0.75rem;
+    top: -0.5625rem;
+    right: -0.5625rem;
     background-size: 100%;
     cursor: pointer; }
-    /* line 91, src/modules/cards/shared/cards.module.scss */
-    .card_col-module__beneficiary___1c4eU .card_col-module__icon-close___3YuHA:before {
+    /* line 26, stdin */
+    .beneficiary_card-module__beneficiary___1hBIv .beneficiary_card-module__icon-close___2cR7r:before {
       content: '';
       display: inline-block;
-      width: 1.5rem;
-      height: 1.5rem; }
-  /* line 99, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__beneficiary___1c4eU .card_col-module__form___zXd9u {
+      width: 1.125rem;
+      height: 1.125rem; }
+  /* line 34, stdin */
+  .beneficiary_card-module__beneficiary___1hBIv .beneficiary_card-module__form___dH_TQ {
     border: 1px solid #66c8c9;
     border-top-width: 0.375rem;
     border-bottom-width: 0.375rem;
     border-radius: 0.375rem;
     padding: 1.5rem; }
 
-/* line 108, src/modules/cards/shared/cards.module.scss */
-.card_col-module__row___2_THl {
+/* line 43, stdin */
+.beneficiary_card-module__row___1nnVz {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%; }
 
-/* line 113, src/modules/cards/shared/cards.module.scss */
-.card_col-module__footer___1PJX7 {
-  background-color: #f2f2f2;
-  border-top: 1px solid #b3b3b3;
-  border-bottom-left-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem; }
-  /* line 120, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__footer___1PJX7 .card_col-module__percentage_col___3Q3Ti {
-    border-left: 0; }
-
-/* line 125, src/modules/cards/shared/cards.module.scss */
-.card_col-module__link___1MwM6 {
-  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5rem;
-  font-size: 0.8125rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  font-weight: 400;
-  margin: 0;
-  text-decoration: none; }
-  /* line 132, src/modules/cards/shared/cards.module.scss */
-  .card_col-module__link___1MwM6:hover, .card_col-module__link___1MwM6:active {
-    text-decoration: underline; }
-
-/* line 4, stdin */
-.card_col-module__cols___2Nd-W {
+/* line 48, stdin */
+.beneficiary_card-module__col___3qcIB {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -875,14 +653,45 @@ body {
       flex-shrink: 1;
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
-  padding: 1.5rem; }
+  padding: 1.125rem;
+  border-left: 1px solid #b3b3b3; }
+  /* line 55, stdin */
+  .beneficiary_card-module__col___3qcIB:first-of-type {
+    border-left: 0; }
 
-/* line 11, stdin */
-.card_col-module__percentage_col___3Q3Ti {
+/* line 60, stdin */
+.beneficiary_card-module__percentage_col___2JwcF {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
   border-left: 1px solid #b3b3b3; }
+
+/* line 66, stdin */
+.beneficiary_card-module__footer___11ZZg {
+  background-color: #f2f2f2;
+  border-top: 1px solid #b3b3b3;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem; }
+  /* line 73, stdin */
+  .beneficiary_card-module__footer___11ZZg .beneficiary_card-module__col___3qcIB {
+    padding: 0.375rem 1.125rem; }
+  /* line 77, stdin */
+  .beneficiary_card-module__footer___11ZZg .beneficiary_card-module__percentage_col___2JwcF {
+    border-left: 0; }
+
+/* line 82, stdin */
+.beneficiary_card-module__link___1YjAl {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none; }
+  /* line 89, stdin */
+  .beneficiary_card-module__link___1YjAl:hover, .beneficiary_card-module__link___1YjAl:active {
+    text-decoration: underline; }
 /* Black. From dark to light. */
 /* Teal. From dark to light. */
 /* Red-Orange. From dark to light. */
@@ -892,49 +701,49 @@ body {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
 
 /* line 153, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-0___378p5 {
+.add_card-module__typography-0___8q9iB {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(68px);
   line-height: ru(3);
   margin-bottom: ru(2); }
 
 /* line 157, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-1___2AmNG {
+.add_card-module__typography-1___1SKVT {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(42px);
   line-height: ru(2);
   margin-bottom: ru(1); }
 
 /* line 161, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-2___19mwK {
+.add_card-module__typography-2___1ZWLj {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(32px);
   line-height: ru(1.75);
   margin-bottom: ru(1); }
 
 /* line 165, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-3___2UnvU {
+.add_card-module__typography-3___1GCCR {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(26px);
   line-height: ru(1.5);
   margin-bottom: ru(1); }
 
 /* line 169, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-4___1iILr {
+.add_card-module__typography-4___1teF- {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(22px);
   line-height: ru(1.25);
   margin-bottom: ru(1); }
 
 /* line 173, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-5___1RbdD {
+.add_card-module__typography-5___1FKGO {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(19px);
   line-height: ru(1.25);
   margin-bottom: ru(1); }
 
 /* line 177, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-6___1nRA_ {
+.add_card-module__typography-6___15zvZ {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(16px);
   line-height: ru(1);
@@ -942,14 +751,14 @@ body {
   margin-bottom: ru(0.5); }
 
 /* line 181, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__typography-7___1SB_E {
+.add_card-module__typography-7___22xZ1 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   line-height: ru(1);
   font-size: rem-calc(13px);
   margin-bottom: ru(1); }
 
 /* line 185, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h1-jumbo___1mGJK {
+.add_card-module__like-h1-jumbo___2RWCQ {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(68px);
   line-height: ru(3);
@@ -958,7 +767,7 @@ body {
   font-weight: 600; }
 
 /* line 189, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h1-title___Plmtq {
+.add_card-module__like-h1-title___1SpRI {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(42px);
   line-height: ru(2);
@@ -968,7 +777,7 @@ body {
   color: #4d4d4d; }
 
 /* line 193, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h1___30CTd {
+.add_card-module__like-h1___22oJt {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(32px);
   line-height: ru(1.75);
@@ -978,7 +787,7 @@ body {
   color: #4d4d4d; }
 
 /* line 197, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h2___1hfkJ {
+.add_card-module__like-h2___3lbO7 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(26px);
   line-height: ru(1.5);
@@ -988,7 +797,7 @@ body {
   color: #4d4d4d; }
 
 /* line 201, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h3___3HO8C {
+.add_card-module__like-h3___1WXRM {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(22px);
   line-height: ru(1.25);
@@ -998,7 +807,7 @@ body {
   color: #4d4d4d; }
 
 /* line 205, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h4___1Dgm- {
+.add_card-module__like-h4___awFLw {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(19px);
   line-height: ru(1.25);
@@ -1008,7 +817,7 @@ body {
   color: #4d4d4d; }
 
 /* line 209, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-h5___2QUVv {
+.add_card-module__like-h5___1CqGp {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   line-height: ru(1);
   font-size: rem-calc(13px);
@@ -1019,7 +828,7 @@ body {
   margin-bottom: 0; }
 
 /* line 213, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__like-p___1vWLu {
+.add_card-module__like-p___2u0Fu {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: rem-calc(16px);
   line-height: ru(1);
@@ -1030,7 +839,7 @@ body {
   color: #4d4d4d; }
 
 /* line 217, src/assets/stylesheets/base_styles/typography.scss */
-.cards-module__fineprint___2kP1E {
+.add_card-module__fineprint___3uf7v {
   font-size: rem-calc(11px);
   line-height: rem-calc(15px);
   margin-bottom: 0; }
@@ -1043,8 +852,8 @@ body {
 * {
   box-sizing: border-box; }
 
-/* line 7, stdin */
-.cards-module__card___2P1KH {
+/* line 7, src/modules/cards/shared/_cards.module.scss */
+.add_card-module__card___3ghbF {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1058,8 +867,8 @@ body {
   border: 1px solid #b3b3b3;
   width: 100%; }
 
-/* line 16, stdin */
-.cards-module__add___1NP8- {
+/* line 3, stdin */
+.add_card-module__add___1UOQ7 {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   font-size: 1.1875rem;
   line-height: 1.875rem;
@@ -1078,75 +887,263 @@ body {
   padding: 1.875rem 2.25rem;
   -webkit-transition: border-color 150ms ease-out, color 150ms ease-out;
   transition: border-color 150ms ease-out, color 150ms ease-out; }
-  /* line 41, stdin */
-  .cards-module__add___1NP8-:before {
+  /* line 28, stdin */
+  .add_card-module__add___1UOQ7:before {
     display: block;
     margin: 0;
     padding: 0.375rem 0;
     font-size: 2rem; }
-  /* line 48, stdin */
-  .cards-module__add___1NP8-:hover, .cards-module__add___1NP8-:active {
+  /* line 35, stdin */
+  .add_card-module__add___1UOQ7:hover, .add_card-module__add___1UOQ7:active {
     border-color: #4d4d4d;
     color: #4d4d4d; }
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 8, src/assets/stylesheets/base_styles/typography.scss */
+body {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif; }
 
-/* line 61, stdin */
-.cards-module__beneficiary___1GN0y {
+/* line 153, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-0___2nrgV {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2); }
+
+/* line 157, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-1___2FzPv {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1); }
+
+/* line 161, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-2___321KO {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1); }
+
+/* line 165, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-3___VgHsn {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1); }
+
+/* line 169, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-4___2gKAz {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 173, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-5___29d-P {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1); }
+
+/* line 177, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-6___28GRm {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5); }
+
+/* line 181, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__typography-7___3Ypum {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1); }
+
+/* line 185, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h1-jumbo___1_WTv {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+  margin-bottom: ru(2);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+
+/* line 189, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h1-title___E7ARx {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 193, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h1___2y4Av {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 197, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h2___czX0j {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 201, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h3___2yRfe {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 205, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h4___25MKx {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #4d4d4d; }
+
+/* line 209, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-h5___3UJX7 {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  line-height: ru(1);
+  font-size: rem-calc(13px);
+  margin-bottom: ru(1);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  color: #b3b3b3;
+  font-weight: 400;
+  margin-bottom: 0; }
+
+/* line 213, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__like-p___2Gf5h {
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5);
+  font-family: "adelle-sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #4d4d4d; }
+
+/* line 217, src/assets/stylesheets/base_styles/typography.scss */
+.percentage_card-module__fineprint___BxHkj {
+  font-size: rem-calc(11px);
+  line-height: rem-calc(15px);
+  margin-bottom: 0; }
+
+/* Black. From dark to light. */
+/* Teal. From dark to light. */
+/* Red-Orange. From dark to light. */
+/* Yellow-Oranges. From dark to light. */
+/* line 6, src/assets/stylesheets/global.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 7, src/modules/cards/shared/_cards.module.scss */
+.percentage_card-module__card___390kC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 0.375rem;
+  border: 1px solid #b3b3b3;
+  width: 100%; }
+
+/* line 10, stdin */
+.percentage_card-module__percentage_card___15rlZ {
   position: relative;
   min-width: 16.995rem;
   background-color: #fff;
   margin-bottom: 1.5rem; }
-  /* line 69, stdin */
-  .cards-module__beneficiary___1GN0y .cards-module__mod-percentage-card___GH0PE {
-    display: none; }
-  /* line 74, stdin */
-  .cards-module__beneficiary___1GN0y.cards-module__collapsed___1tvu2 .cards-module__mod-percentage-card___GH0PE {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  /* line 78, stdin */
-  .cards-module__beneficiary___1GN0y.cards-module__collapsed___1tvu2 .cards-module__form___2G8fr {
-    display: none; }
-  /* line 83, stdin */
-  .cards-module__beneficiary___1GN0y .cards-module__icon-close___KlIzf {
+  /* line 18, stdin */
+  .percentage_card-module__percentage_card___15rlZ .percentage_card-module__icon-close___34RSz {
     position: absolute;
     z-index: 1;
-    top: -0.75rem;
-    right: -0.75rem;
+    top: -0.5625rem;
+    right: -0.5625rem;
     background-size: 100%;
     cursor: pointer; }
-    /* line 91, stdin */
-    .cards-module__beneficiary___1GN0y .cards-module__icon-close___KlIzf:before {
+    /* line 26, stdin */
+    .percentage_card-module__percentage_card___15rlZ .percentage_card-module__icon-close___34RSz:before {
       content: '';
       display: inline-block;
-      width: 1.5rem;
-      height: 1.5rem; }
-  /* line 99, stdin */
-  .cards-module__beneficiary___1GN0y .cards-module__form___2G8fr {
+      width: 1.125rem;
+      height: 1.125rem; }
+  /* line 34, stdin */
+  .percentage_card-module__percentage_card___15rlZ .percentage_card-module__form___Tw5n4 {
     border: 1px solid #66c8c9;
     border-top-width: 0.375rem;
     border-bottom-width: 0.375rem;
     border-radius: 0.375rem;
     padding: 1.5rem; }
 
-/* line 108, stdin */
-.cards-module__row___12c07 {
+/* line 43, stdin */
+.percentage_card-module__row___3S7cN {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%; }
 
-/* line 113, stdin */
-.cards-module__footer___1M_Jf {
+/* line 48, stdin */
+.percentage_card-module__col___1WkKM {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 1.125rem;
+  border-left: 1px solid #b3b3b3; }
+  /* line 55, stdin */
+  .percentage_card-module__col___1WkKM:first-of-type {
+    border-left: 0; }
+
+/* line 60, stdin */
+.percentage_card-module__percentage_col___1EQ5u {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border-left: 1px solid #b3b3b3; }
+
+/* line 66, stdin */
+.percentage_card-module__footer___1KaXp {
   background-color: #f2f2f2;
   border-top: 1px solid #b3b3b3;
   border-bottom-left-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem; }
-  /* line 120, stdin */
-  .cards-module__footer___1M_Jf .cards-module__percentage_col___280th {
+  /* line 73, stdin */
+  .percentage_card-module__footer___1KaXp .percentage_card-module__col___1WkKM {
+    padding: 0.375rem 1.125rem; }
+  /* line 77, stdin */
+  .percentage_card-module__footer___1KaXp .percentage_card-module__percentage_col___1EQ5u {
     border-left: 0; }
 
-/* line 125, stdin */
-.cards-module__link___3ZRG7 {
+/* line 82, stdin */
+.percentage_card-module__link___1xWBE {
   font-family: "adelle-sans", Helvetica, Arial, sans-serif;
   line-height: 1.5rem;
   font-size: 0.8125rem;
@@ -1155,6 +1152,6 @@ body {
   font-weight: 400;
   margin: 0;
   text-decoration: none; }
-  /* line 132, stdin */
-  .cards-module__link___3ZRG7:hover, .cards-module__link___3ZRG7:active {
+  /* line 89, stdin */
+  .percentage_card-module__link___1xWBE:hover, .percentage_card-module__link___1xWBE:active {
     text-decoration: underline; }
