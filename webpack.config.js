@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const postCSSConfig = require('./postcss.config.js');
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/src/public/index.html',
@@ -54,33 +55,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => {
-                  return [
-                    require('postcss-modules-valus'),
-                    require('autoprefixer')
-                  ]
-                }
-              }
-            },
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-                importLoaders: 1
-              }
-            }
-          ]
-        })
-      },
-      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -94,14 +68,9 @@ module.exports = {
               }
             },
             {
-              loader: 'postcss-loader',
+              loader: 'postcss-loader?parser=postcss-scss',
               options: {
-                plugins: () => {
-                  return [
-                    require('postcss-modules-values'),
-                    require('autoprefixer')
-                  ]
-                }
+                postCSSConfig
               }
             },
             {
