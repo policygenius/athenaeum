@@ -3,7 +3,13 @@ module.exports = {
   sections: [
     {
       name: 'Components',
-      components: 'src/components/**/*.js'
+      components: 'src/components/*/*.js',
+      sections: [
+        {
+          name: 'Lists',
+          components: 'src/components/lists/**/*.js'
+        }
+      ]
     },
     {
       name: 'Modules',
