@@ -1,4 +1,5 @@
 import React from 'react';
+import TextLockup from 'components/text-lockups/TextLockup';
 import styles from './percentage_card.module.scss';
 
 function PercentageCard ( props ) {

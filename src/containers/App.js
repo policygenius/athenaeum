@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../components/buttons/button';
+import BeneficiaryCard from '../modules/cards/types/BeneficiaryCard';
 import styles from '../assets/stylesheets/containers/application_container.module.scss';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           >
             Praesent quis rhoncus
           </Button>
+         <BeneficiaryCard />
       </div>
     )
   }

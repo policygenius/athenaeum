@@ -1,3 +1,5 @@
 Button example:
 
-    <Button>This is button</Button>
+    <Button
+      type='info'
+    >This is button</Button>

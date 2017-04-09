@@ -1,4 +1,5 @@
 import React from 'react';
+import PercentageCard from '../PercentageCard';
 import styles from './beneficiary_card.module.scss';
 
 function BeneficiaryCard ( { PercentageCardProps, children } ) {
