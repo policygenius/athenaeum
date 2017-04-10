@@ -94,6 +94,7 @@ body {
   }
 }
 
+<<<<<<< HEAD
 @mixin like-h1-jumbo() {
   @include typography-0;
   font-family: $font-family-sans-serif;
@@ -204,6 +205,10 @@ body {
 
 .like-h4 {
   @include like-h4;
+=======
+@mixin typography-light() {
+  font-weight: $lightweight;
+>>>>>>> Add selectfield
 }
 
 .like-h5 {

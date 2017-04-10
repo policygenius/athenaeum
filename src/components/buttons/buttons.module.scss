@@ -54,6 +54,7 @@ $button-solid-background-primary-color:    $brand-3;
 $button-solid-background-secondary-color:  #3ad1ba;
 $button-solid-background-tertiary-color:   #f08f5c;
 
+<<<<<<< HEAD
 // [class^='mod-'] {
   .button {
     @include typography-6;
@@ -74,6 +75,27 @@ $button-solid-background-tertiary-color:   #f08f5c;
     transition: background-color 300ms ease-out, border-color 300ms ease-out,
                 top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
   }
+=======
+.button {
+  @include typography-6;
+  @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
+  display: block;
+  cursor: pointer;
+  font-family: $button-font;
+  font-weight: bold;
+  line-height: ru(1);
+  text-align: center;
+  text-decoration: none;
+  color: $button-color;
+  margin: 0;
+  padding: ru(.5);
+  background-color: $button-background-color;
+  border: 1px solid $button-border-color;
+  border-radius: $button-border-radius;
+  transition: background-color 300ms ease-out, border-color 300ms ease-out,
+              top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+}
+>>>>>>> Add selectfield
 
   .disabled {
     composes: button;
@@ -96,6 +118,15 @@ $button-solid-background-tertiary-color:   #f08f5c;
     color: $button-info-color;
   }
 // }
+
+.toggle {
+  composes: button;
+  @include typography-regular;
+  @include hover($neutral-6, $neutral-5, $neutral-1);
+  color: $neutral-4;
+  border: 1px solid $neutral-5;
+  box-shadow: 0 4px 0 $neutral-6;
+}
 
 @keyframes disabled-button-shake {
   0% { transform: translateX(0); }

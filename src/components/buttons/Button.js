@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './buttons.module.scss';
+import classnames from 'classnames';
 
-function Button ( { type, children, onClick } ) {
+function Button ( { type, children, onClick, className } ) {
   return (
     <div
-      className={ styles[type] }
+      className={ classnames(className, styles[type]) }
       onClick={ onClick }
     >{children}</div>
   )
@@ -16,7 +17,11 @@ Button.propTypes = {
    *
    */
   type: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  onClick: React.PropTypes.func.isRequired,
+  /**
+   * Will append new classname to classSet
+   */
+  className: React.PropTypes.string
 }
 
 Button.defaultProps = {
@@ -25,4 +30,3 @@ Button.defaultProps = {
 }
 
 export default Button;
-
