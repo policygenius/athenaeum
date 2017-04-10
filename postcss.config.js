@@ -2,15 +2,15 @@ const postCSSConfig = ( webpack ) => ({
   plugins: [
     /* autoprefix for difference browser vendors */
     require('autoprefixer'),
-    // require('postcss-strip-inline-comments'),
-    /* reset inherited rules */
-    require('postcss-autoreset')({
-      reset: {
-        margin: 0,
-        padding: 0,
-        borderRadius: 0
-      }
-    })
+    /* resolve imports inline */
+    require('postcss-import')({
+      addDependencyTo: webpack
+    }),
+    /* discard duplicate CSS rules */
+    require('postcss-discard-duplicates')
+
+    /* Need to add postcss-autoreset
+     * after more investigation */
   ]
 });
 
