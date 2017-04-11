@@ -9,6 +9,10 @@ module.exports = {
       name: 'Molecules',
       sections: [
         {
+          name: 'Asides',
+          components: 'src/molecules/asides/**/*.js'
+        },
+        {
           name: 'Lists',
           components: 'src/molecules/lists/**/*.js'
         },
