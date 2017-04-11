@@ -1,10 +1,5 @@
 Button example:
 
-<<<<<<< HEAD
-    <Button
-      type='info'
-    >This is button</Button>
-=======
       <Button>Default</Button>
 Info Button Example:
 
@@ -15,4 +10,3 @@ Disabled Button Example:
 Toggle Button Example:
 
       <Button type='toggle'>Toggle</Button>
->>>>>>> Add selectfield

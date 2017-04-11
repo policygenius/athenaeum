@@ -20,7 +20,4 @@ BeneficiaryCard.propTypes = {
   PercentageCardProps: React.PropTypes.object
 }
 
-BeneficiaryCard.defaultProps = {
-}
-
 export default BeneficiaryCard;

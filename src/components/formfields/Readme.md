@@ -1,22 +1,21 @@
 TextField (Default) Example:
 
-    <FormField label='First Name'/>
+    <TextField label='First Name' forProp=''/>
 Select Field Example:
 
-    <FormField
-      type='selectfield'
+    <SelectField
+      forProp=''
       label='Select Field'
-      placeholder='Placeholder Text'
       selectOptions={[
       ['Value 1', 'Option 1'],
       ['Value 2', 'Option 2'],
       ['Value 3', 'Option 3']
       ]}
     />
-ButtonToggle Example:
+ToggleField Example:
 
-    <FormField
-      type='button-toggle'
+    <ToggleField
+      forProp=''
       label='Toggle Choices'
       toggleChoices={["Choice 1", "Choice 2"]}
     />

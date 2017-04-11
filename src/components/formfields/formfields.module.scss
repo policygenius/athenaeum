@@ -85,7 +85,10 @@ $section-padding: ru(.5) ru(.75);
   composes: formfield;
 }
 
-.button-toggle {
+.togglefield {
+  composes: formfield;
+  padding: $section-padding;
+
   .button-wrapper {
     display: flex;
     flex-direction: column;

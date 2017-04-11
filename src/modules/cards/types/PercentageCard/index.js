@@ -27,7 +27,7 @@ function PercentageCard ( props ) {
         <div className={ styles.percentage_col }>
           <TextLockup
             type='B'
-            header={ percent }
+            header={ percent + '%' }
             subheader={ subheader2 }
           />
         </div>
@@ -51,9 +51,6 @@ PercentageCard.propTypes = {
   subheader2: React.PropTypes.string.isRequired,
   footerText1: React.PropTypes.string.isRequired,
   footerText2: React.PropTypes.string.isRequired
-}
-
-PercentageCard.defaultProps = {
 }
 
 export default PercentageCard;

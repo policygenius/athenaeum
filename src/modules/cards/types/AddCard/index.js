@@ -7,13 +7,6 @@ function AddCard ( { children } ) {
   )
 }
 
-AddCard.propTypes = {
-  /**
-   * Possible card types are: `add`
-   *
-   */
-}
-
 AddCard.defaultProps = {
   children: '+ Add New Beneficiary'
 }
