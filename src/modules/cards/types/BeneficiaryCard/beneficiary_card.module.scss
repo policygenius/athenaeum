@@ -4,6 +4,8 @@ $beneficiary-card-icon-size:        ru(.75);
 
 .beneficiary {
   composes: card;
+
+  padding: ru(1);
 }
 
 .icon-close {

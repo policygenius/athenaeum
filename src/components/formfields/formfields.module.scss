@@ -1,0 +1,118 @@
+@import 'src/assets/stylesheets/global';
+
+$border-color:    $neutral-5;
+$border:          1px solid $border-color;
+$border-radius:   ru(.25);
+$label-color:     $neutral-1;
+$section-padding: ru(.5) ru(.75);
+
+// Base Style
+.formfield {
+  border: $border;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  overflow: hidden;
+}
+
+// Children Classes
+.label {
+  @include typography-7(false);
+  @include typography-semibold;
+  color: $label-color;
+  border-bottom: $border;
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.label,
+.select,
+.input {
+  padding: ru(.5) ru(.75);
+}
+
+.input,
+.select {
+  @include typography-6(false);
+  border: 0;
+}
+
+.header {
+  @include typography-6;
+  @include typography-semibold;
+}
+
+.select {
+  -webkit-appearance: none;
+  width: 100%;
+  position: relative;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:invalid {
+    color: $neutral-4;
+  }
+}
+
+.selectbox {
+  position: relative;
+
+  &:after {
+    width: 0;
+    height: 0;
+    border-left: ru(.25) solid transparent;
+    border-right: ru(.25) solid transparent;
+    border-top: ru(.25) solid $neutral-2;
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: ru(.5);
+    z-index: 0;
+    right: ru(.75);
+  }
+}
+
+// Variants
+.textfield {
+  composes: formfield;
+}
+
+.selectfield {
+  composes: formfield;
+}
+
+.togglefield {
+  composes: formfield;
+  padding: $section-padding;
+
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-wrapper {
+    .button {
+      flex-grow: 1;
+      margin-bottom : ru(.5);
+    }
+  }
+
+  @media #{$medium-up} {
+    .button-wrapper {
+      flex-direction: row;
+    }
+
+    .button {
+      margin-left: ru(1);
+      margin-bottom: 0;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}

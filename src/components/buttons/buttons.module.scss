@@ -1,12 +1,4 @@
-// @value colors: '../base_styles/colors.scss';
-// @value typography: '../base_styles/typography.scss';
-// @value accent-1, accent-2, action-2, action-3, brand-1, brand-2, brand-3, brand-5, neutral-2, neutral-3, neutral-4, neutral-5, neutral-8 from colors;
-// @value font-family-sans-serif from typography;
-
-@import '../../assets/stylesheets/base_styles/typography';
-@import '../../assets/stylesheets/base_styles/colors';
-@import '../../assets/stylesheets/utilities/functions';
-@import '../../assets/stylesheets/utilities/mixins';
+@import 'src/assets/stylesheets/global';
 
 $button-background-color:                  $neutral-8;
 $button-border-color:                      $accent-2;
@@ -54,48 +46,55 @@ $button-solid-background-primary-color:    $brand-3;
 $button-solid-background-secondary-color:  #3ad1ba;
 $button-solid-background-tertiary-color:   #f08f5c;
 
-// [class^='mod-'] {
-  .button {
-    @include typography-6;
-    @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
-    display: inline-block;
-    cursor: pointer;
-    font-family: $button-font;
-    font-weight: bold;
-    line-height: ru(1);
-    text-align: center;
-    text-decoration: none;
-    color: $button-color;
-    margin: 0;
-    padding: ru(.5);
-    background-color: $button-background-color;
-    border: 1px solid $button-border-color;
-    border-radius: $button-border-radius;
-    transition: background-color 300ms ease-out, border-color 300ms ease-out,
-                top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
-  }
+.button {
+  @include typography-6;
+  @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
+  display: block;
+  cursor: pointer;
+  font-family: $button-font;
+  font-weight: bold;
+  line-height: ru(1);
+  text-align: center;
+  text-decoration: none;
+  color: $button-color;
+  margin: 0;
+  padding: ru(.5);
+  background-color: $button-background-color;
+  border: 1px solid $button-border-color;
+  border-radius: $button-border-radius;
+  transition: background-color 300ms ease-out, border-color 300ms ease-out,
+  top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+}
 
-  .disabled {
-    composes: button;
-    @include hover($button-background-color, $button-disabled-border-color, $button-disabled-color);
-    border-color: $button-disabled-border-color;
-    background-color: $button-background-color;
-    color: $button-disabled-color;
-    cursor: not-allowed;
-    user-select: none;
-    outline: none;
-  }
+.disabled {
+  composes: button;
+  @include hover($button-background-color, $button-disabled-border-color, $button-disabled-color);
+  border-color: $button-disabled-border-color;
+  background-color: $button-background-color;
+  color: $button-disabled-color;
+  cursor: not-allowed;
+  user-select: none;
+  outline: none;
+}
 
-  .info {
-    composes: button;
-    @include hover($button-info-color, $button-info-color, $button-info-hover-color);
-    display: block;
-    margin-top: ru(.75);
-    background-color: inherit;
-    border-color: $button-info-color;
-    color: $button-info-color;
-  }
-// }
+.info {
+  composes: button;
+  @include hover($button-info-color, $button-info-color, $button-info-hover-color);
+  display: block;
+  margin-top: ru(.75);
+  background-color: inherit;
+  border-color: $button-info-color;
+  color: $button-info-color;
+}
+
+.toggle {
+  composes: button;
+  @include typography-regular;
+  @include hover($neutral-6, $neutral-5, $neutral-1);
+  color: $neutral-4;
+  border: 1px solid $neutral-5;
+  box-shadow: 0 4px 0 $neutral-6;
+}
 
 @keyframes disabled-button-shake {
   0% { transform: translateX(0); }
