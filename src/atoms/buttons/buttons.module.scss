@@ -63,7 +63,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
   border: 1px solid $button-border-color;
   border-radius: $button-border-radius;
   transition: background-color 300ms ease-out, border-color 300ms ease-out,
-  top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+              top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
 }
 
 .disabled {
@@ -96,6 +96,54 @@ $button-solid-background-tertiary-color:   #f08f5c;
   box-shadow: 0 4px 0 $neutral-6;
 }
 
+.action {
+  composes: button;
+  @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-border-color,
+                        $button-action-background-color, $button-action-color);
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: $button-action-background-color;
+  padding-bottom: ru(.375);
+  border: 0;
+  color: $button-action-color;
+  box-shadow: 0 ru(.208) 0 $button-action-border-color;
+}
+
+.actionDisabled {
+  composes: action;
+  @include hover-action(0, rem-calc(5px), $button-action-disabled-border-color,
+                        $button-action-disabled-background-color, $button-action-disabled-color);
+  background-color: $button-action-disabled-background-color;
+  box-shadow: 0 ru(.208) 0 $button-action-disabled-border-color;
+  color: $button-action-disabled-color;
+  transition: none;
+  cursor: not-allowed;
+}
+
+.lowlight {
+  composes: action;
+  @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-lowlight-border-color,
+          $button-action-lowlight-background-color, $button-action-lowlight-color);
+  background-color: $button-action-lowlight-background-color;
+  color: $button-action-lowlight-color;
+  box-shadow: 0 ru(.208) 0 $button-action-lowlight-border-color;
+}
+
+.outline {
+  composes: button;
+  @include hover($button-outline-hover-background-color,
+                 $button-outline-border-color,
+                 $button-outline-hover-color);
+  background-color: $button-outline-background-color;
+  border-color: $button-outline-border-color;
+  color: $button-outline-color;
+}
+
+.shaking {
+  animation: disabled-button-shake .5s ease-out;
+}
+
 @keyframes disabled-button-shake {
   0% { transform: translateX(0); }
   20% { transform: translateX(-$button-shaking-offset); }
@@ -104,3 +152,4 @@ $button-solid-background-tertiary-color:   #f08f5c;
   80% { transform: translateX($button-shaking-offset); }
   100% { transform: translateX(0); }
 }
+
