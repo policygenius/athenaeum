@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const postCSSConfig = require('./postcss.config.js');
 
@@ -28,8 +27,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve( __dirname, 'dist' ),
-    filename: 'bundle.[hash].js',
-    publicPath: 'dist'
+    filename: 'bundle.[hash].js'
   },
   resolve: {
     modules: [
@@ -105,38 +103,39 @@ module.exports = {
           ]
         })
       },
-      {
-        test: /\.(png|jpg|svg)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader?limit=10000'
-          }
-        ]
-      },
-      // set up for file-loader
-      // currently moving appropriate files to build folder
-      // but paths are not resolving correctly in CSS (EX: background URL)
-
+      // using file-loader to load asset files to build folder
+      // keeping this url-loader config if we want to inline assets
+      // into css
+      //
       // {
-      //   test: /\.(png|jpg|svg)$/,
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
       //   exclude: /node_modules/,
       //   use: [
       //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[ext]',
-      //         outputPath: 'assets/images'
-      //       }
+      //       loader: 'url-loader?limit=10000'
       //     }
       //   ]
-      // }
+      // },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/',
+              publicPath: '/'
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: removeEmptyPlugins([
     HTMLWebpackPluginConfig,
     new ExtractTextPlugin({
-      filename: 'assets/stylesheets/styles.css',
+      filename: 'assets/styles.css',
       allChunks: true
     }),
     prodPlugin( process.env.NODE_ENV, new OptimizeCSSAssetsPlugin() ),
@@ -155,11 +154,5 @@ module.exports = {
         }
       })
     ),
-    // may not be necessary if we get file-loader to work
-    new CopyWebpackPlugin([
-      {
-        from: './assets/images/**/*'
-      }
-    ])
   ])
 };
