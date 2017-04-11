@@ -13,6 +13,7 @@ function PercentageCard ( props ) {
 
   return (
     <div className={ styles.percentage_card }>
+      <span className={ styles['icon-close'] }/>
       <div className={ styles.close_wrapper }>
         <span className={ styles.close }></span>
       </div>

@@ -1,4 +1,4 @@
-@import '../../shared/cards.module.scss';
+@import '../shared/cards.module.scss';
 
 .add {
   composes: card;
@@ -21,7 +21,6 @@
   display: inline-block;
   vertical-align: top;
   background-color: $background-color;
-  margin: 0 0 ru(1);
   padding: ru(1.25) ru(1.5);
   transition: border-color 150ms ease-out, color 150ms ease-out;
 

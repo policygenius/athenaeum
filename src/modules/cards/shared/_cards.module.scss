@@ -3,6 +3,7 @@
 $border-color:              $neutral-4;
 $border:                    1px solid $border-color;
 $border-radius:             ru(.25);
+$icon-size:                 ru(1);
 
 .card {
   display: flex;
@@ -13,3 +14,19 @@ $border-radius:             ru(.25);
   width: 100%;
 }
 
+.icon-close {
+  position: absolute;
+  z-index: 1;
+  top: -$icon-size / 2;
+  right: -$icon-size / 2;
+  background-size: 100%;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: $icon-size;
+    height: $icon-size;
+    background-image: url('../../../assets/images/x-icon.svg');
+  }
+}
