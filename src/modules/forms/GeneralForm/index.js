@@ -11,13 +11,16 @@ function GeneralForm ( { children, formName, onSubmit } ) {
   })
 
   return (
-    <form
-      className={ styles.form }
-      onSubmit={ onSubmit }
-      name={ formName }
-    >
-      { kids }
-    </form>
+    <div className={ styles['formWrapper'] }>
+      <span className={ styles['icon-close'] }/>
+      <form
+        className={ styles.form }
+        onSubmit={ onSubmit }
+        name={ formName }
+      >
+        { kids }
+      </form>
+    </div>
   )
 }
 
