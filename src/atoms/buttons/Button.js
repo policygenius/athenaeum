@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './buttons.module.scss';
 import classnames from 'classnames';
 
-function Button ( { type, children, onClick, className } ) {
+function Button ( props ) {
+  const {
+    type,
+    children,
+    onClick,
+    shake,
+    className
+  } = props;
+
   return (
     <div
-      className={ classnames(className, styles[type]) }
+      className={ classnames(className, styles[type], { [styles.shaking]: shake }) }
       onClick={ onClick }
     >{children}</div>
   )
@@ -13,15 +21,16 @@ function Button ( { type, children, onClick, className } ) {
 
 Button.propTypes = {
   /**
-   * Possible button types are: `info, disabled, or default (button)`
+   * Possible button types are: `info, disabled, action, lowlight, actionDisabled, outline, or default (button)`
    *
    */
-  type: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
   /**
    * Will append new classname to classSet
    */
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
+  shake: PropTypes.bool
 }
 
 Button.defaultProps = {
