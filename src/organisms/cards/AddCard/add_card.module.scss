@@ -1,40 +1,51 @@
 @import '../shared/cards.module.scss';
 
+$background-color:   $neutral-8;
+$border-color:       $neutral-4;
+$icon-color:         $neutral-4;
+$color:              $neutral-4;
+$hover-border-color: $neutral-2;
+$hover-color:        $neutral-2;
+$transition:         150ms ease-out, color 150ms ease-out;
+
 .add {
   composes: card;
-  $background-color:   $neutral-8;
-  $border-color:       $neutral-4;
-  $color:              $neutral-4;
-  $hover-border-color: $neutral-2;
-  $hover-color:        $neutral-2;
 
   @include typography-5;
-  // @include icon(plus);
-
-  font-family: $font-family-sans-serif;
-  border: 1px dashed $border-color;
-  font-weight: 400;
+  border-style: dashed;
+  border-color: $border-color;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
   color: $color;
-  display: inline-block;
-  vertical-align: top;
   background-color: $background-color;
   padding: ru(1.25) ru(1.5);
-  transition: border-color 150ms ease-out, color 150ms ease-out;
-
-  &:before {
-    display: block;
-    margin: 0;
-    padding: $border-radius 0;
-    font-size: rem-calc(32px);
-  }
+  transition: border-color $transition;
+  cursor: pointer;
 
   &:hover,
   &:active {
     border-color: $hover-border-color;
     color: $hover-color;
+
+    .icon {
+      margin: auto;
+      max-width: 50px;
+
+      path {
+        fill: $hover-color;
+      }
+    }
+  }
+}
+
+.icon {
+  margin: auto;
+  max-width: 50px;
+
+  path {
+    transition: fill $transition;
+    fill: $icon-color;
   }
 }
 

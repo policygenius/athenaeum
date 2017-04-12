@@ -1,14 +1,19 @@
 import React, { PropTypes } from 'react';
 import SVGInline from 'react-svg-inline';
 import * as icons from 'assets/images';
+import classnames from 'classnames';
 
 function Icon ( props ) {
   const icon = icons[props.icon];
-  const { wrapperClassName, wrapperStyles } = props;
+  const {
+    className,
+    wrapperClassName,
+    wrapperStyles
+  } = props;
 
   return (
     <div
-      className={ wrapperClassName }
+      className={ classnames(className, wrapperClassName) }
       style={ wrapperStyles }
     >
       <SVGInline

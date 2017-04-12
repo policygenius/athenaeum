@@ -4,19 +4,19 @@ AddForm Example:
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
     >
-      <TextComponent>First, a little about you and your humble abode</TextComponent>
-      <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
-      <SelectField
-        forProp=''
-        label='Home type'
-        placeholder='Select your home type'
-        selectOptions={[
-        ['Value 1', 'Option 1'],
-        ['Value 2', 'Option 2'],
-        ['Value 3', 'Option 3']
-        ]}
+      <ImageAside
+        type='simple'
+        icon='jewelry'
+        header='Jewelry item'
       />
-      <TextField label='Street address' placeholder='Enter address' forProp=''/>
-      <Button type='action'>Continue</Button>
+      <TextField
+        label='Describe the item you want to cover'
+        placeholder='e.g. 1 carat engagement ring' forProp=''
+      />
+      <TextField
+        label='How much is it worth?'
+        placeholder='e.g. $2,000'
+      />
+      <Button type='action'>Add This Item</Button>
     </AddForm>
 

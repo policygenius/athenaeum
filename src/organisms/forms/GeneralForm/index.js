@@ -14,14 +14,18 @@ function GeneralForm ( props ) {
 
   const kids = React.Children.map(children, child => {
     return React.cloneElement(child, {
-      className: styles['form-components'],
-      htmlFor: formName
+      htmlFor: formName,
+      className: classnames(
+        // If you'd like to give any special form specific classes
+        // to child components:
+        styles['form-components'],
+        child.type == TextComponent ? styles['textComponent'] : ''
+      ),
     })
   })
 
   return (
-    <div className={ classnames( className, styles['formWrapper'] ) }>
-      <span onClick={ onClose } className={ styles['icon-close'] }/>
+    <div className={ classnames( className, styles[''] ) }>
       <form
         className={ styles.form }
         onSubmit={ onSubmit }

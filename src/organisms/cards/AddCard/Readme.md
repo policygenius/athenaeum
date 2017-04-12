@@ -1,8 +1,6 @@
+Add Card Examples:
 
-Add Card example:
-
-    <AddCard>
-      +
-      Add Beneficiary
-    </AddCard>
-
+    <div>
+      <AddCard beneficiary/>
+      <AddCard jewelry/>
+    </div>

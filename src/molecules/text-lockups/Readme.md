@@ -1,7 +1,14 @@
-Text Lockup example - Type 1:
+TextLockup Example - Type A:
 
     <TextLockup
-      type='type1'
+      type='A'
+      header='Header'
+      subheader='Subheader'
+    />
+TextLockup Example - Type B:
+
+    <TextLockup
+      type='B'
       header='Header'
       subheader='Subheader'
     />

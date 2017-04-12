@@ -6,7 +6,7 @@ _This is a form wrapper that can take components as children._
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
     >
-      <TextComponent>First, a little about you and your humble abode</TextComponent>
+      <TextComponent tag='p' type={ 3 } regular>First, a little about you and your humble abode</TextComponent>
       <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
       <SelectField
         forProp=''
