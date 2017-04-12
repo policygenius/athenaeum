@@ -7,8 +7,4 @@ function AddCard ( { children } ) {
   )
 }
 
-AddCard.defaultProps = {
-  children: '+ Add New Beneficiary'
-}
-
 export default AddCard;

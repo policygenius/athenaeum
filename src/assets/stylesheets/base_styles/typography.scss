@@ -15,6 +15,7 @@ body {
 
 @mixin base-font-family() {
   font-family: $font-family-sans-serif;
+  margin: 0;
 }
 
 @mixin typography-0($margin: true) {
@@ -95,6 +96,33 @@ body {
 
   @if $margin {
     margin-bottom: ru(1);
+  }
+}
+
+@mixin typography($number) {
+  @if $number == 0 {
+    @include typography-0(false);
+  }
+  @if $number == 1 {
+    @include typography-1(false);
+  }
+  @if $number == 2 {
+    @include typography-2(false);
+  }
+  @if $number == 3 {
+    @include typography-3(false);
+  }
+  @if $number == 4 {
+    @include typography-4(false);
+  }
+  @if $number == 5 {
+    @include typography-5(false);
+  }
+  @if $number == 6 {
+    @include typography-6(false);
+  }
+  @if $number == 7 {
+    @include typography-7(false);
   }
 }
 

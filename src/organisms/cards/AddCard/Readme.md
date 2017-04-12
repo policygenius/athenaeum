@@ -1,5 +1,8 @@
 
 Add Card example:
 
-    <AddCard/>
+    <AddCard>
+      +
+      Add Beneficiary
+    </AddCard>
 

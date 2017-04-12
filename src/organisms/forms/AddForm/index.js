@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../shared/forms.module.scss';
 import classnames from 'classnames';
 
-function GeneralForm ( props ) {
+function AddForm ( props ) {
   const {
     type,
     className,
@@ -33,10 +33,10 @@ function GeneralForm ( props ) {
   )
 }
 
-GeneralForm.propTypes = {
+AddForm.propTypes = {
   onClose: React.PropTypes.func.isRequired,
   formName: React.PropTypes.string.isRequired,
   onSubmit: React.PropTypes.func
 }
 
-export default GeneralForm;
+export default AddForm;

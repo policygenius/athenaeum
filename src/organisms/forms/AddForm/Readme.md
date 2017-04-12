@@ -1,8 +1,6 @@
-GeneralForm Example:
+AddForm Example:
 
-_This is a form wrapper that can take components as children._
-
-    <GeneralForm
+    <AddForm
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
     >
@@ -20,4 +18,5 @@ _This is a form wrapper that can take components as children._
       />
       <TextField label='Street address' placeholder='Enter address' forProp=''/>
       <Button type='action'>Continue</Button>
-    </GeneralForm>
+    </AddForm>
+
