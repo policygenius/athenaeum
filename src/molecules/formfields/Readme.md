@@ -1,11 +1,15 @@
-TextField (Default) Example:
+First name Field:
 
-    <TextField label='First Name' forProp=''/>
-Select Field Example:
+    <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
+Stree address Field:
+
+    <TextField label='Street address' placeholder='Enter address' forProp=''/>
+Home type Field:
 
     <SelectField
       forProp=''
-      label='Select Field'
+      label='Home type'
+      placeholder='Select your home type'
       selectOptions={[
       ['Value 1', 'Option 1'],
       ['Value 2', 'Option 2'],

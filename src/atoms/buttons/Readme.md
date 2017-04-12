@@ -9,9 +9,9 @@ Disabled Button Example:
       <Button type='disabled'>Disabled</Button>
 
 Action Button Example:
-      
+
       <Button type='action'>Action</Button>
-        
+
 Action Lowlight Button Example:
 
       <Button type='lowlight'>Lowlight Action</Button>
@@ -27,7 +27,7 @@ Action Disabled Button Example:
 
           this.handleClick = this.handleClick.bind(this);
         }
-        
+
         handleClick() {
           this.setState({shake: true});
         }

@@ -9,11 +9,13 @@ function PercentageCard ( props ) {
     percent,
     subheader2,
     footerText1,
-    footerText2 } = props;
+    onClose,
+    footerText2 
+  } = props;
 
   return (
     <div className={ styles.percentage_card }>
-      <span className={ styles['icon-close'] }/>
+      <span className={ styles['icon-close'] } onClick={ onClose }/>
       <div className={ styles.close_wrapper }>
         <span className={ styles.close }></span>
       </div>
@@ -46,6 +48,7 @@ function PercentageCard ( props ) {
 }
 
 PercentageCard.propTypes = {
+  onClose: React.PropTypes.func.isRequired,
   header1: React.PropTypes.string.isRequired,
   subheader1: React.PropTypes.string.isRequired,
   percent: React.PropTypes.number.isRequired,

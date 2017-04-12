@@ -70,7 +70,7 @@
       'after': true
     }],
     'no-duplicate-imports': 1,
-    'no-var': 2,
+    'no-var': 1,
     'prefer-arrow-callback': 1,
     'prefer-const': [ 1, {
       'destructuring': 'any'

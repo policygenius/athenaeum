@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../shared/forms.module.scss';
 import classnames from 'classnames';
 
-function GeneralForm ( props ) {
+function AddForm ( props ) {
   const {
     type,
     className,
@@ -14,18 +14,14 @@ function GeneralForm ( props ) {
 
   const kids = React.Children.map(children, child => {
     return React.cloneElement(child, {
-      htmlFor: formName,
-      className: classnames(
-        // If you'd like to give any special form specific classes
-        // to child components:
-        styles['form-components'],
-        child.type == TextComponent ? styles['textComponent'] : ''
-      ),
+      className: styles['form-components'],
+      htmlFor: formName
     })
   })
 
   return (
-    <div className={ classnames( className, styles[''] ) }>
+    <div className={ classnames( className, styles['formWrapper'] ) }>
+      <span onClick={ onClose } className={ styles['icon-close'] }/>
       <form
         className={ styles.form }
         onSubmit={ onSubmit }
@@ -37,10 +33,10 @@ function GeneralForm ( props ) {
   )
 }
 
-GeneralForm.propTypes = {
+AddForm.propTypes = {
   onClose: React.PropTypes.func.isRequired,
   formName: React.PropTypes.string.isRequired,
   onSubmit: React.PropTypes.func
 }
 
-export default GeneralForm;
+export default AddForm;

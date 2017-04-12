@@ -1,25 +1,23 @@
-**GeneralForm Example**:
+GeneralForm Example:
 
 _This is a form wrapper that can take components as children._
 
     <GeneralForm
-      formName='SampleForm'
+      formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
     >
-      <TextField
-        label='TextField Label'
-      />
-      <ToggleField
-        label='ToggleField Label'
-        toggleChoices={['Choice A', 'Choice B']}
-      />
+      <TextComponent tag='p' type={ 3 } regular>First, a little about you and your humble abode</TextComponent>
+      <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
       <SelectField
-        label='SelectField Label'
+        forProp=''
+        label='Home type'
+        placeholder='Select your home type'
         selectOptions={[
-        ['value1', 'Choice A'],
-        ['value2', 'Choice B']
+        ['Value 1', 'Option 1'],
+        ['Value 2', 'Option 2'],
+        ['Value 3', 'Option 3']
         ]}
       />
-      <Button>Button</Button>
+      <TextField label='Street address' placeholder='Enter address' forProp=''/>
+      <Button type='action'>Continue</Button>
     </GeneralForm>
-

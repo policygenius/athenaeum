@@ -1,0 +1,19 @@
+@import 'src/assets/stylesheets/global';
+
+@for $i from 0 through 7 {
+  .typography-#{$i} {
+    @include typography($i);
+  }
+}
+
+.semibold {
+  @include typography-semibold;
+}
+
+.light {
+  @include typography-light;
+}
+
+.regular {
+  @include typography-regular;
+}
