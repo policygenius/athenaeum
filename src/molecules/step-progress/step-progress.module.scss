@@ -1,0 +1,216 @@
+@import 'src/assets/stylesheets/global';
+
+$icon-color:                        $neutral-2;
+$inactive-color:                    $neutral-4;
+$icon-size:                         rem-calc(20px);
+$item-size:                         ru(1.667);
+$item-border-width:                 rem-calc(2px);
+$item-border-color:                 $brand-3;
+$item-background-color:             $neutral-8;
+$active-item-border-color:          $action-2;
+$inactive-item-border-color:        $neutral-4;
+
+$mobile-color:                      $neutral-8;
+$mobile-item-background-color:      $brand-1;
+$mobile-item-border-color:          $action-2;
+$mobile-active-item-border-color:   $brand-2;
+$mobile-inactive-color:             $brand-2;
+$mobile-inactive-item-border-color: $brand-2;
+
+.stepProgress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: none;
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  text-align: center;
+  color: $icon-color;
+
+  &:first-child {
+    .wrapper:before {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    position: static;
+    flex: 0 1 auto;
+
+    .icon:before {
+      display: none;
+    }
+
+    .wrapper:before {
+      width: calc(100% - #{ru(3.833)});
+      z-index: -2;
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: $item-size;
+  height: $item-size;
+  border: $item-border-width solid $item-border-color;
+  border-radius: 50%;
+  background-color: $item-background-color;
+  text-align: center;
+  line-height: $item-size - 2 * $item-border-width;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: $icon-size;
+    height: ru(1.5);
+    margin-top: rem-calc(-4px);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: $item-size / 2;
+    transform: translateY(-50%);
+    width: 100%;
+    height: $item-border-width;
+    background-color: $item-border-color;
+    pointer-events: none;
+  }
+}
+
+.wrapper {
+  width: ru(3);
+  text-decoration: none;
+  color: inherit;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: $item-size / 2;
+    transform: translateX(-100%) translateY(-50%);
+    width: calc(100% - #{ru(.75)});
+    height: $item-border-width;
+    background-color: $item-border-color;
+    pointer-events: none;
+  }
+
+  .icon:before {
+    display: none;
+  }
+}
+
+.label {
+  @include typography-7;
+  display: block;
+  margin: ru(.25) 0 ru(.125);
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  white-space: normal;
+  line-height: ru(.75);
+}
+
+.icon-check-dark {
+  position: absolute;
+  top: 0;
+  right: rem-calc(-4px);
+
+  &:before {
+    content: '';
+    display: block;
+    width: rem-calc(14px);
+    height: rem-calc(14px);
+  }
+}
+
+.active {
+  pointer-events: none;
+
+  .icon {
+    border-color: $active-item-border-color;
+    &:before { background-color: $inactive-item-border-color; }
+  }
+}
+
+.inactive {
+  color: $inactive-color;
+  pointer-events: none;
+
+  .icon {
+    border-color: $inactive-item-border-color;
+    &:after { background-position: -$icon-size 50%; }
+    &:before { background-color: $inactive-item-border-color; }
+  }
+
+  .wrapper {
+    &:before {
+      background-color: $inactive-item-border-color;
+    }
+  }
+}
+
+@media #{$small-only} {
+  .stepProgress {
+    background-color: transparent;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .icon {
+    background-color: $mobile-item-background-color;
+    border-color: $mobile-item-border-color;
+    &:after { background-position: -2 * $icon-size 50%; }
+    &:before { background-color: $mobile-item-border-color; }
+  }
+
+  .item {
+    color: $mobile-color;
+  }
+
+  .item.active {
+    .icon:before { background-color: $mobile-active-item-border-color; }
+  }
+
+  .item.inactive {
+    color: $mobile-inactive-color;
+
+    .icon {
+      border-color: $mobile-inactive-item-border-color;
+      &:after { background-position: -3 * $icon-size 50%; }
+      &:before { background-color: $mobile-inactive-item-border-color; }
+    }
+
+    .wrapper {
+      &:before {
+        background-color: $mobile-inactive-item-border-color !important;
+      }
+    }
+  }
+
+  .wrapper {
+    width: auto;
+
+    &:before {
+      background-color: $mobile-item-border-color;
+    }
+  }
+}
+
