@@ -44,7 +44,7 @@ ArticleList.propTypes = {
   /**
    * Default keys are: id, link, imageSrc, header, subHeader
    */
-  mapProps: React.PropTypes.obj
+  mapProps: React.PropTypes.object
 };
 
 ArticleList.defaultProps = {

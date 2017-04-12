@@ -1,0 +1,88 @@
+@import 'src/assets/stylesheets/global';
+
+$icon-aside-default-icon-color:  $brand-3;
+$aside-text-color:               $neutral-2;
+
+/* Types */
+
+.default {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  color: $aside-text-color;
+}
+
+.compact {
+  composes: default;
+
+  .icon {
+    max-width: rem-calc(80);
+    max-height: rem-calc(80);
+  }
+
+  .header {
+    @include typography-6(false);
+    font-size: rem-calc(16px);
+    font-weight: 400;
+  }
+
+  .subheader {
+    @include typography-7(false);
+    font-weight: 300;
+  }
+}
+
+.centered {
+  composes: default;
+
+  align-items: center;
+}
+
+.simple {
+  composes: centered;
+
+  .icon {
+    max-width: rem-calc(45);
+    max-height: rem-calc(45);
+  }
+
+  .header {
+    @include typography-4(false);
+    font-weight: 300;
+  }
+}
+
+/* End Types */
+
+.icon {
+  flex-grow: 0;
+  flex-shrink: 1;
+  max-width: rem-calc(100);
+  max-height: rem-calc(100);
+
+  + .aside { margin-left: ru(.75); }
+}
+
+.aside {
+  flex: 1 0;
+
+  + .icon {
+    margin-left: ru(.75);
+  }
+}
+
+.text {
+  @include typography-5;
+  margin: 0;
+  color: inherit;
+}
+
+.header {
+  composes: text;
+  font-weight: 600;
+}
+
+.subheader {
+  composes: text;
+  font-weight: 400;
+}

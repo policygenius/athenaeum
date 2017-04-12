@@ -27,7 +27,7 @@
     'block-scoped-var': 1,
     'curly': [ 2, 'all' ],
     'default-case': 2,
-    'dot-notation': [ 1, {
+    'dot-notation': [ 0, {
       'allowKeywords': false,
       'allowPattern': '^[a-z]+(_[a-z]+)+$'
     }],
