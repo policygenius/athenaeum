@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
-import Icon from 'atoms/icons/Icon';
-import * as icons from 'assets/images';
 import classnames from 'classnames';
+
+import Icon from 'atoms/icons/Icon';
+import TextComponent from 'atoms/TextComponents'
+import * as icons from 'assets/images';
 import styles from './image-aside.module.scss';
 
 function ImageAside ( props ) {
@@ -21,14 +23,25 @@ function ImageAside ( props ) {
             icon={ icon }
             wrapperClassName={ styles.icon } />
         :
-          <img src={ icon } className={ styles.icon } />
+          <div className={ styles.icon }>
+            <img src={ icon } />
+          </div>
       }
 
       <aside className={ styles.aside }>
-        <h5 className={ styles.header }>{ header }</h5>
+        <TextComponent
+          className={ styles.header }
+        >
+          { header }
+        </TextComponent>
 
-        { subheader && <p className={ styles.subheader }>{ subheader }</p> }
-
+        { subheader &&
+          <TextComponent
+            className={ styles.subheader }
+          >
+            { subheader }
+          </TextComponent>
+        }
       </aside>
     </div>
   )

@@ -23,9 +23,9 @@ function TextComponent ( props ) {
   return React.createElement(
     tag,
     { className: classnames(
-      className,
       styles['typography-' + type],
-      setWeight( props )
+      setWeight( props ),
+      className
     ) },
     [...children]
   )
@@ -37,7 +37,7 @@ TextComponent.propTypes = {
    *
    */
   tag: PropTypes.string,
-  type: PropTypes.number.isRequired,
+  type: PropTypes.number,
   /**
    * Font weight: 300
    *
