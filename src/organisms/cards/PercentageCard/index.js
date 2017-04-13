@@ -10,15 +10,16 @@ function PercentageCard ( props ) {
     subheader2,
     footerText1,
     onClose,
-    footerText2 
+    footerText2
   } = props;
 
   return (
     <div className={ styles.percentage_card }>
-      <span className={ styles['icon-close'] } onClick={ onClose }/>
-      <div className={ styles.close_wrapper }>
-        <span className={ styles.close }></span>
-      </div>
+      <Icon
+        icon='xIcon'
+        className={ styles['icon-close'] }
+        onClick={ onClose }
+      />
       <div className={ styles.row }>
         <div className={ styles.col }>
           <TextLockup

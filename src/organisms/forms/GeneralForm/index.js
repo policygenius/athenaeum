@@ -19,7 +19,8 @@ function GeneralForm ( props ) {
         // If you'd like to give any special form specific classes
         // to child components:
         styles['form-components'],
-        child.type == TextComponent ? styles['textComponent'] : ''
+        child.type == TextComponent ? styles['textComponent'] : '',
+        child.type == LinkWrapper ? styles['textComponent'] : ''
       ),
     })
   })

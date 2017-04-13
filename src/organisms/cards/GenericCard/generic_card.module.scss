@@ -1,0 +1,9 @@
+@import '../shared/cards.module.scss';
+
+.generic_card {
+  composes: card;
+}
+
+.footer {
+  padding: $col-padding;
+}

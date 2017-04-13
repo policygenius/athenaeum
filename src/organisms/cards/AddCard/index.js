@@ -11,7 +11,7 @@ function renderContent( props ) {
   var txt, icon;
 
   if ( beneficiary ) {
-    txt = 'Add Beneficiary';
+    txt = 'Add person to policy';
     icon = 'plus';
   }
 

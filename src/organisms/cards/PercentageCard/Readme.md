@@ -1,4 +1,4 @@
-Percentage Card example:
+Percentage Card Example:
 
     <PercentageCard
       header1='Header'

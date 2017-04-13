@@ -1,0 +1,29 @@
+import React, { PropTypes } from 'react';
+import styles from './link_wrapper.module.scss';
+import classnames from 'classnames';
+import _ from 'lodash';
+
+function LinkWrapper ( props ) {
+  const {
+    className,
+    children,
+  } = props;
+
+  return (
+    <a
+      { ..._.omit(props, ['children', 'className']) }
+      className={ classnames(className, styles.link) }>
+      { children }
+    </a>
+  )
+}
+
+LinkWrapper.propTypes = {
+  /**
+   * This wrapper will take any props that you would use
+   * for an anchor `<a>` tag. `href` is just an example.
+   */
+  href: React.PropTypes.string
+}
+
+export default LinkWrapper;

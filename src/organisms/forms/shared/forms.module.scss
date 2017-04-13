@@ -2,6 +2,10 @@
 
 .form-components {
   margin-bottom: ru(1);
+
+  &:last-child {
+    margin-bottom: ru(.5);
+  }
 }
 
 $border-color:     $brand-3;
