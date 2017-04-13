@@ -1,0 +1,6 @@
+@import 'src/assets/stylesheets/global';
+
+.{{lowerCase name}} {
+  // Place your component specific scss here.
+
+}
