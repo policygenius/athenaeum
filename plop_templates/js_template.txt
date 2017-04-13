@@ -1,0 +1,31 @@
+import React from 'react';
+import styles from './{{snakeCase name}}.module.scss';
+import classnames from 'classnames';
+
+function {{properCase name}} ( props ) {
+  const {
+    children,
+    className
+  } = props;
+
+  return (
+    <div className={ classnames(className, styles['{{lowerCase name}}']) }>
+      { children }
+    </div>
+  );
+}
+
+
+{{properCase name}}.propTypes = {
+  /**
+   * This prop will add a new className to any inherent classNames
+   * provided in the component's index.js file.
+   */
+  className: React.PropTypes.string,
+}
+
+{{properCase name}}.defaultProps = {
+  // Place any default props here.
+}
+
+export default {{properCase name}};
