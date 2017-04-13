@@ -11,6 +11,7 @@
     "start": "node ./app.js",
     "dev": "webpack-dev-server --inline --hot",
     "test": "karma start",
+    "stylin": "yarn run styleguide:build && yarn run styleguide",
     "styleguide": "styleguidist server",
     "styleguide:build": "rm -rf ./styleguide/* && styleguidist build"
   },

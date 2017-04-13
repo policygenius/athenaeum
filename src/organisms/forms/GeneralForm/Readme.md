@@ -9,7 +9,9 @@ _This is a form wrapper that can take components as children._
       <TextComponent tag='p' type={ 3 } regular>First, a little about you and your humble abode</TextComponent>
       <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
       <LinkWrapper href="#">
-        <TextComponent>
+        <TextComponent
+          type={ 7 }
+        >
           Want to add more people to the policy?
         </TextComponent>
       </LinkWrapper>
