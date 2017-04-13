@@ -4,6 +4,13 @@ $border-color:              $neutral-4;
 $border:                    1px solid $border-color;
 $border-radius:             ru(.25);
 $icon-size:                 ru(1);
+$background-color:          $neutral-8;
+$border-width:              1px;
+$footer-background-color:   $neutral-6;
+$col-padding:               ru(.25) ru(.75);
+$icon-offset:               -$icon-size / 2 - rem-calc($border-width);
+$link-color:                $neutral-4;
+
 
 .card {
   display: flex;
@@ -12,21 +19,50 @@ $icon-size:                 ru(1);
   border-radius: $border-radius;
   border: $border;
   width: 100%;
+  position: relative;
+  background-color: $background-color;
 }
 
 .icon-close {
   position: absolute;
   z-index: 1;
-  top: -$icon-size / 2;
-  right: -$icon-size / 2;
-  background-size: 100%;
+  top: $icon-offset;
+  right: $icon-offset;
   cursor: pointer;
+  width: $icon-size;
+}
 
-  &:before {
-    content: '';
-    display: inline-block;
-    width: $icon-size;
-    height: $icon-size;
-    background-image: url('../../../assets/images/x-icon.svg');
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40%;
+  padding: ru(.75);
+
+  &:first-of-type {
+    border-left: 0;
+  }
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  background-color: $footer-background-color;
+  border-top: $border;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+.link {
+  @include typography-7(false);
+  color: $link-color;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
   }
 }

@@ -31,7 +31,6 @@ $transition:         150ms ease-out, color 150ms ease-out;
     .icon {
       margin: auto;
       max-width: 50px;
-
       path {
         fill: $hover-color;
       }
@@ -41,7 +40,7 @@ $transition:         150ms ease-out, color 150ms ease-out;
 
 .icon {
   margin: auto;
-  max-width: 50px;
+  max-width: ru(1.25);
 
   path {
     transition: fill $transition;

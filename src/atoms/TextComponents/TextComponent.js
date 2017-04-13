@@ -58,6 +58,7 @@ TextComponent.propTypes = {
 
 TextComponent.defaultProps = {
   tag: 'p',
+  type: 6
 }
 
 export default TextComponent;

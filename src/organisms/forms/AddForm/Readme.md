@@ -1,4 +1,4 @@
-AddForm Example:
+Add Jewelry item Example:
 
     <AddForm
       formName='ExampleForm'
@@ -19,4 +19,15 @@ AddForm Example:
       />
       <Button type='action'>Add This Item</Button>
     </AddForm>
+Add Person Example:
 
+    <AddForm
+      formName='ExampleForm'
+      onSubmit={ () => alert('FormSubmitted!') }
+    >
+      <TextField
+        label='Full name'
+        placeholder='Janis Ian'
+      />
+      <Button type='action'>Add Person</Button>
+    </AddForm>
