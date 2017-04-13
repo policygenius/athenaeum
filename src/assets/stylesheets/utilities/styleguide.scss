@@ -1,0 +1,10 @@
+@import 'src/assets/stylesheets/global';
+
+@media #{$small-only} {
+  .step-progress-wrapper {
+    padding: 16px;
+    background-color: $brand-1;
+  }
+}
+
+

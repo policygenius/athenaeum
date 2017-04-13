@@ -23,6 +23,10 @@ module.exports = {
         {
           name: 'TextLockups',
           components: 'src/molecules/text-lockups/**/*.js'
+        },
+        {
+          name: 'Other',
+          components: () => (['src/molecules/step-progress/StepProgress.js'])
         }
       ]
     },
