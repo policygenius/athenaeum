@@ -1,12 +1,14 @@
 import React from 'react';
-import styles from './formfields.module.scss';
+import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
 
-function ToggleField ( {
-  label,
-  className,
-  toggleChoices
-}){
+function ToggleField ( props ){
+  const {
+    label,
+    className,
+    toggleChoices
+  } = props;
+
   return (
     <div className={ classnames(className, styles.togglefield) }>
       <div className={ styles.header }>{ label }</div>
@@ -33,10 +35,12 @@ ToggleField.propTypes = {
    * Will append new classname to classSet
    */
   className: React.PropTypes.string,
+
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
   label: React.PropTypes.string,
+
   /**
    * For use with the `button-toggle` type.
    *

@@ -32,7 +32,16 @@ module.exports = {
     },
     {
       name: 'Organisms',
-      components: 'src/organisms/**/*.js'
+      sections: [
+        {
+          name: 'Cards',
+          components: 'src/organisms/cards/**/*.js'
+        },
+        {
+          name: 'Forms',
+          components: 'src/organisms/forms/**/*.js'
+        }
+      ]
     },
     {
       name: 'Templates',
@@ -43,5 +52,5 @@ module.exports = {
   // Themes here: http://codemirror.net/demo/theme.html#
   highlightTheme: 'base16-light',
   verbose: true,
-  template: 'styleguide_assets/index.html'
+  template: 'styleguide_assets/index.html',
 }

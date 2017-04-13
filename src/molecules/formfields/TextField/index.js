@@ -1,18 +1,25 @@
 import React from 'react';
-import styles from './formfields.module.scss';
+import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
 
-function TextField ( {
-  className,
-  placeholder,
-  label
-}) {
+function TextField ( props ) {
+  const {
+    className,
+    placeholder,
+    label
+  } = props;
 
   return (
     <div className={ classnames(className, styles.textfield) }>
-      <label
-        className={ styles.label }
-      >{ label }</label>
+      {
+        label &&
+        <label
+          className={ styles.label }
+        >
+          { label }
+        </label>
+      }
+
       <input
         className={ styles.input }
         type='text'

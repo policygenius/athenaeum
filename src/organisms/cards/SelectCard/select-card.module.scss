@@ -1,0 +1,40 @@
+@import '../shared/cards.module.scss';
+
+$card-shadow-color:        $neutral-5;
+$select-card-border:       1px solid $card-shadow-color;
+$footer-background:        $neutral-6;
+$footer-link-color:        $neutral-3;
+$footer-link-hover-color:  $neutral-2;
+
+
+.select {
+  composes: card;
+  border: $select-card-border;
+  border-bottom-width: ru(.125);
+}
+
+.footer {
+  @include typography-7;
+  margin: 0;
+  border-top: $select-card-border;
+  background-color: $footer-background;
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+.footer-link-wrapper {
+  padding: ru(.25) ru(1);
+}
+
+.link {
+  @include typography-7(false);
+  color: $footer-link-color;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: $footer-link-hover-color;
+  }
+}
+
+
