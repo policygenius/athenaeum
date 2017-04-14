@@ -6,7 +6,7 @@ function Navigator ( props ) {
   const {
     children,
     className,
-    txt
+    leftRailText
   } = props;
 
   return (
@@ -17,13 +17,13 @@ function Navigator ( props ) {
           className={ styles.logo }
         />
         {
-          txt &&
+          leftRailText &&
           <TextComponent
             type={ 3 }
-            className={ styles['page-txt'] }
+            className={ styles['page-leftRailText'] }
             light
           >
-            { txt }
+            { leftRailText }
           </TextComponent>
         }
       </div>
@@ -54,7 +54,7 @@ Navigator.propTypes = {
   /**
    * Text to show up on left rail
    */
-  txt: PropTypes.string
+  leftRailText: PropTypes.string
 }
 
 Navigator.defaultProps = {

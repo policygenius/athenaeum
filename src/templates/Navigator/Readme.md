@@ -2,7 +2,7 @@
 
 Navigator Example:
 
-      <Navigator txt='Home sweet home'>
+      <Navigator leftRailText='Home sweet home'>
         <GeneralForm
           formName='ExampleForm'
           onSubmit={ () => alert('FormSubmitted!') }
