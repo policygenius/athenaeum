@@ -1,7 +1,12 @@
-Default Example:
+Current Variants:
+* basic (default)
+* centered
+* compact
+* simple
+
+Basic Example:
 
     <ImageAside
-      type='default'
       icon='http://placehold.it/100x100'
       header='Vivamus ultricies augue'
       subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.' />
@@ -9,7 +14,7 @@ Default Example:
 Center Example:
 
     <ImageAside
-      type='centered'
+      centered
       icon='http://placehold.it/100x100'
       header='Vivamus ultricies augue'
       subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.' />
@@ -17,7 +22,7 @@ Center Example:
 Compact Example:
 
     <ImageAside
-      type='compact'
+      compact
       icon='http://placehold.it/80x80'
       header='Vivamus ultricies augue'
       subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.' />
@@ -26,6 +31,6 @@ Compact Example:
 Simple Example:
 
     <ImageAside
-      type='simple'
+      simple
       icon='http://placehold.it/45x45'
       header='Vivamus ultricies augue' />

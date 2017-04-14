@@ -12,11 +12,22 @@ function ImageAside ( props ) {
     header,
     icon,
     subheader,
-    type
+    type,
+    basic,
+    compact,
+    centered,
+    simple
   } = props;
 
+  const variant = classnames(
+    { [styles.basic]: basic },
+    { [styles.centered]: centered },
+    { [styles.compact]: compact },
+    { [styles.simple]: simple }
+  );
+
   return (
-    <div className={ classnames(styles[type], className) }>
+    <div className={ classnames( variant, className ) }>
 
       { icons[icon] ?
           <Icon
@@ -24,7 +35,9 @@ function ImageAside ( props ) {
             wrapperClassName={ styles.icon } />
         :
           <div className={ styles.icon }>
-            <img src={ icon } />
+            <img 
+              className={ styles.image }
+              src={ icon } />
           </div>
       }
 
@@ -49,9 +62,24 @@ function ImageAside ( props ) {
 
 ImageAside.propTypes = {
   /**
+   * basic variant
+   */
+  basic: PropTypes.bool,
+
+  /**
    * supply any additional class names
    */
   className: PropTypes.string,
+
+  /**
+   * centered variant
+   */
+  centered: PropTypes.bool,
+
+  /**
+   * compact variant
+   */
+  compact: PropTypes.bool,
 
   /**
    * main header text for aside
@@ -59,20 +87,23 @@ ImageAside.propTypes = {
   header: PropTypes.string.isRequired,
 
   /**
-   * icon to display in aside;
-   * can be a URL or name of icon from our library
-   */
+    * This is the icon name from the [Icon component](/#icon).
+    */
   icon: PropTypes.string.isRequired,
+
+  /**
+   * simple variant
+   */
+  simple: PropTypes.bool,
 
   /**
    * text displayed below the main header
    */
   subheader: PropTypes.string,
+}
 
-  /**
-   * type of image aside
-   */
-  type: PropTypes.string.isRequired,
+ImageAside.defaultProps = {
+  basic: true
 }
 
 export default ImageAside;
