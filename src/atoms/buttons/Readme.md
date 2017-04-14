@@ -50,4 +50,8 @@ Action Disabled Button Example:
 Outline Button Example:
 
       <Button type='outline' >Outline Button</Button>
+Toggle Button Example:
+
+      <Button type='toggle' >Toggle Button</Button>
+
 

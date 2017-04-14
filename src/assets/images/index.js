@@ -8,4 +8,5 @@ export const stepProgressCheckMark = require('!svg-inline-loader!assets/images/s
 export const stepProgressHealth = require('!svg-inline-loader!assets/images/step-progress-health.svg');
 export const stepProgressQuotes = require('!svg-inline-loader!assets/images/step-progress-quotes.svg');
 export const pgLogo = require('!svg-inline-loader!assets/images/pg-logo.svg');
+export const tooltip = require('!svg-inline-loader!assets/images/question-mark.svg');
 

@@ -87,11 +87,13 @@ $button-solid-background-tertiary-color:   #f08f5c;
 
 .toggle {
   composes: button;
+  @include typography-7(false);
   @include typography-regular;
   @include hover($neutral-6, $neutral-5, $neutral-1);
   color: $neutral-4;
   border: 1px solid $neutral-5;
   box-shadow: 0 4px 0 $neutral-6;
+  padding-bottom: ru(.375);
 }
 
 .action {

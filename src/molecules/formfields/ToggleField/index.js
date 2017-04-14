@@ -6,12 +6,21 @@ function ToggleField ( props ){
   const {
     label,
     className,
-    toggleChoices,
-    onClick
+    onClick,
+    tooltipMessage,
+    toggleChoices
   } = props;
 
   return (
     <div className={ classnames(className, styles.togglefield) }>
+      {
+        tooltipMessage &&
+        <div className= { styles['tooltip-wrapper'] }>
+          <Tooltip>
+            { tooltipMessage }
+          </Tooltip>
+        </div>
+      }
       <div className={ styles.header }>{ label }</div>
       <label>
         <div className={ styles['button-wrapper'] }>
@@ -42,13 +51,17 @@ ToggleField.propTypes = {
    * Label is optional. If not provided, component will reorganize accordingly.
    */
   label: PropTypes.string,
-
   /**
    * For use with the `button-toggle` type.
    *
    */
   toggleChoices: PropTypes.array.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * The `tooltopMessage` can be anything that can be rendered:
+   * `numbers`, `strings`, `elements` or an `array` (or fragment) containing these types.
+   */
+  tooltipMessage: PropTypes.node
 }
 
 export default ToggleField;

@@ -21,6 +21,7 @@ body {
 
 @mixin base-font-family() {
   font-family: $font-family-sans-serif;
+  color: $main-font-color;
   margin: 0;
 }
 
