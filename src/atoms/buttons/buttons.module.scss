@@ -48,12 +48,10 @@ $button-solid-background-tertiary-color:   #f08f5c;
 
 .button {
   @include typography-6;
+  @include typography-light;
   @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
   display: block;
   cursor: pointer;
-  font-family: $button-font;
-  font-weight: bold;
-  line-height: ru(1);
   text-align: center;
   text-decoration: none;
   color: $button-color;

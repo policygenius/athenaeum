@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './{{snakeCase name}}.module.scss';
 import classnames from 'classnames';
 
@@ -21,7 +21,7 @@ function {{properCase name}} ( props ) {
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
-  className: React.PropTypes.string,
+  className: PropTypes.string,
 }
 
 {{properCase name}}.defaultProps = {

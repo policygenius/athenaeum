@@ -5,11 +5,12 @@ import classnames from 'classnames';
 
 function StepProgress ( props ) {
   const {
-    data
+    data,
+    className
   } = props;
 
   return (
-    <ul className={styles.stepProgress}>
+    <ul className={ classnames(styles.stepProgress, className) }>
       { data.map(step => {
         return (
           <li className={classnames(styles.item, { [styles.active]: step.active, [styles.inactive]: step.inactive })}>

@@ -2,5 +2,32 @@
 
 .navigator {
   // Place your component specific scss here.
+  background-color: $neutral-7;
+  height: 100%;
+  display: flex;
+}
 
+.left-rail {
+  align-self: flex-stretch;
+  width: ru(11);
+  padding: ru(1.5);
+  background-color: $brand-2;
+  color: $neutral-8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.right-rail {
+  padding: ru(1) ru(2);
+}
+
+.main {
+  padding: ru(2);
+}
+
+.logo {
+  margin-bottom: ru(4);
+}
+
+.step-progress {
+  margin-bottom: ru(3);
 }
