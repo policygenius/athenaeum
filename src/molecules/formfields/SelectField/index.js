@@ -13,9 +13,9 @@ function SelectField ( props ) {
     selectOptions,
     forProp,
     focused,
-    onChange,
     type,
-    value
+    input,
+    meta
   } = props;
 
   return (
@@ -31,11 +31,11 @@ function SelectField ( props ) {
       }
 
       <div className={ styles.selectbox }>
-        <select required
+        <select
+          required
           className={ styles.select }
-          onChange={ onChange }
-          value={ value }
           id={ forProp }
+          { ...input }
         >
           { placeholder && renderPlaceholder( placeholder, styles.option ) }
 
@@ -43,13 +43,14 @@ function SelectField ( props ) {
               if (opt.group) {
                 return renderOptGroup( opt )
               } else {
-                return (<option
-                  key={ 'selectfield-option-' + idx }
-                  value={ opt.value }
-                  className={ styles['option'] }
-                >
-                  { opt.value }
-                </option>
+                return (
+                  <option
+                    key={ 'selectfield-option-' + idx }
+                    value={ opt.value }
+                    className={ styles['option'] }
+                  >
+                    { opt.label }
+                  </option>
                 )
               }
             })
@@ -82,11 +83,6 @@ SelectField.propTypes = {
   label: PropTypes.string,
 
   /**
-   * callback for handling user selection
-   */
-  onChange: PropTypes.func.isRequired,
-
-  /**
    * placeholder text for select box
    */
   placeholder: PropTypes.string,
@@ -94,17 +90,20 @@ SelectField.propTypes = {
   /**
    * array containing objects for select value
    */
-  selectOptions: PropTypes.array.isRequired,
+  selectOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  })).isRequired,
 
   /**
    * defines type of select field
    */
   type: PropTypes.string,
-
   /**
-   * sets the value for the select field based on change; this will override the placeholder
+   * contains anything you want to pass directly to input e.g. value, onChange, onBlur
    */
-  value: PropTypes.string
+  input: PropTypes.object,
+  meta: PropTypes.object
 }
 
 SelectField.defaultProps = {

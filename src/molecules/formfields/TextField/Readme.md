@@ -1,6 +1,33 @@
 First name Field:
 
-    <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
-Stree address Field:
+    class TextFieldExample extends React.Component {
+      constructor() {
+        super();
 
-    <TextField label='Street address' placeholder='Enter address' forProp=''/>
+        this.state = {
+          value: ''
+        };
+
+        this.onChange = this.onChange.bind(this);
+      }
+
+      onChange(event) {
+        this.setState({ value: event.target.value });
+      }
+
+      render() {
+        return (
+          <TextField
+            label='First Name'
+            placeholder='Enter your first name here'
+            input={{
+              value: this.state.value,
+              onChange: this.onChange
+            }}
+          />
+        )
+      }
+    }
+    
+    <TextFieldExample />
+

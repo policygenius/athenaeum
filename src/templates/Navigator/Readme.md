@@ -2,6 +2,7 @@
 
 Navigator Example:
 
+      const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
       <Navigator leftRailText='Home sweet home'>
         <GeneralForm
           formName='ExampleForm'
@@ -16,15 +17,9 @@ Navigator Example:
               Want to add more people to the policy?
             </TextComponent>
           </LinkWrapper>
-          <SelectField
-            forProp=''
+          <SelectFieldExample
             label='Home type'
             placeholder='Select your home type'
-            selectOptions={[
-            ['Value 1', 'Option 1'],
-            ['Value 2', 'Option 2'],
-            ['Value 3', 'Option 3']
-            ]}
           />
           <TextField label='Street address' placeholder='Enter address' forProp=''/>
           <Button type='action'>Continue</Button>

@@ -1,64 +1,50 @@
 Label Example:
 
-    <SelectField
-      label='Select Field Label'
-      placeholder='Placeholder'
-      selectOptions={[
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-        { value: 'Option 3' }
-      ]}
-      onChange={() => alert('Changing...')} />
+    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    <SelectFieldExample
+      label="Select Field Label"
+      placeholder="Placeholder"
+    />
 
 No Label Example:
 
-    <SelectField
-      placeholder='Placeholder'
-      selectOptions={[
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-        { value: 'Option 3' }
-      ]}
-      onChange={() => alert('Changing...')} />
+    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    <SelectFieldExample
+      placeholder="Placeholder"
+    />
 
 Focused Example:
 
-    <SelectField
-      placeholder='Placeholder'
+    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    <SelectFieldExample
+      placeholder='Placholder'
       label='Select Field'
-      selectOptions={[
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-        { value: 'Option 3' }
-      ]}
-      onChange={() => alert('Changing...')} 
-      focused />
+      focused
+    />
 
 Group Options Example:
 
 NOTE: `selectOptions` array must contain objects structured as follows:
 
-`{ group: 'groupName', options: [{value: 'optionName'}]}`.
+`{ group: 'groupName', options: [{label: 'optionName', value: 1}]}`.
 
-    <SelectField
+    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    <SelectFieldExample
       placeholder='Placeholder'
       label='Select Field'
       selectOptions={[
-       { group: 'Group 1', options: [{value: 'Option 1'}] },,
-       { group: 'Group 2', options: [{value: 'Option 2'}] },,
-       { group: 'Group 3', options: [{value: 'Option 3'}] },,
+       { group: 'Group 1', options: [{label: 'Option 1', value: 1}] },,
+       { group: 'Group 2', options: [{label: 'Option 2', value: 2}] },,
+       { group: 'Group 3', options: [{label: 'Option 3', value: 3}] },,
       ]}
-      onChange={() => alert('Changing...')} />
+    />
 
 Select Card Type Example:
 
-    <SelectField
+    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    <SelectFieldExample
       type='select-card'
       label='Select Field Label'
       placeholder='Placeholder'
-      selectOptions={[
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-        { value: 'Option 3' }
-      ]}
-      onChange={() => alert('Changing...')} />
+    />
+
