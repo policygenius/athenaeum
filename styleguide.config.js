@@ -2,6 +2,10 @@ module.exports = {
   title: 'PolicyGenius React Component Library',
   sections: [
     {
+      name: 'Colors',
+      content: 'src/assets/stylesheets/base_styles/Colors.md'
+    },
+    {
       name: 'Atoms',
       components: 'src/atoms/**/*.js'
     },
