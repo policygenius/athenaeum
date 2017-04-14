@@ -1,0 +1,115 @@
+@import 'src/assets/stylesheets/global';
+
+$gutter-width: 1.5rem;
+
+@mixin g-unit($cols: 1, $total-col-count: 12, $gutter-width: 1.5rem) {
+  $gutter-count: $cols - 1;
+  $total-container-gutter-count: $total-col-count - 1;
+  $total-element-gutter-width: $gutter-count * $gutter-width;
+  $total-container-gutter-width: $gutter-width * $total-container-gutter-count;
+  $width: calc(((100% - #{$total-container-gutter-width}) / #{$total-col-count}) * #{$cols} + #{$total-element-gutter-width});
+
+  width: $width;
+  flex-basis: $width;
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: $gutter-width / 2;
+  margin-right: $gutter-width / 2;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+}
+
+.flex-base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+
+  // Generate column classes
+  @for $i from 1 through 12 {
+    .column-#{$i} {
+      width: 100%;
+      margin: ru(.75) 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Breakpoints
+.small {
+  @media #{$small-up} {
+    flex-direction: row;
+
+    @for $i from 1 through 12 {
+      .column-#{$i} {
+        @include g-unit($i);
+      }
+    }
+  }
+}
+
+.medium {
+  @media #{$medium-up} {
+    flex-direction: row;
+
+    @for $i from 1 through 12 {
+      .column-#{$i} {
+        @include g-unit($i);
+      }
+    }
+  }
+}
+
+.large {
+  @media #{$large-up} {
+    flex-direction: row;
+
+    @for $i from 1 through 12 {
+      .column-#{$i} {
+        @include g-unit($i);
+      }
+    }
+  }
+}
+
+.xLarge {
+  @media #{$xlarge-up} {
+    flex-direction: row;
+
+    @for $i from 1 through 12 {
+      .column-#{$i} {
+        @include g-unit($i);
+      }
+    }
+  }
+}
+
+.xxLarge {
+  @media #{$xxlarge-up} {
+    flex-direction: row;
+
+    @for $i from 1 through 12 {
+      .column-#{$i} {
+        @include g-unit($i);
+      }
+    }
+  }
+}
+
