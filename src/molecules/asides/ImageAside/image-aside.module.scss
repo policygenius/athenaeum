@@ -64,7 +64,9 @@ $aside-text-color:               $neutral-2;
 }
 
 .aside {
-  flex: 1 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 50%;
 
   + .icon {
     margin-left: ru(.75);
@@ -80,6 +82,7 @@ $aside-text-color:               $neutral-2;
 .header {
   composes: text;
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 .subheader {
