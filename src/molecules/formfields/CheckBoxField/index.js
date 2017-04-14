@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import styles from './formfields.module.scss';
+import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
 
 function CheckboxList ( props ) {

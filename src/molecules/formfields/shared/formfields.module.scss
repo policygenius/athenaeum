@@ -16,8 +16,6 @@ $checkbox-disabled-color: $neutral-3;
 $checkbox-disabled-sign-color: $neutral-3;
 $checkbox-background-color: $neutral-8;
 $checkbox-border-color: $neutral-5;
-$checkbox-list-focused-border-color: $brand-3;
-$checkbox-list-focused-background-color: $brand-6;
 
 // Base Style
 .formfield {
@@ -27,6 +25,7 @@ $checkbox-list-focused-background-color: $brand-6;
   flex-direction: column;
   align-content: center;
   overflow: hidden;
+  background-color: $neutral-8;
 }
 
 // Children Classes
@@ -72,6 +71,7 @@ $checkbox-list-focused-background-color: $brand-6;
 
 .selectbox {
   position: relative;
+  border-radius: ru(.25);
 
   &:after {
     width: 0;
@@ -89,12 +89,21 @@ $checkbox-list-focused-background-color: $brand-6;
   }
 }
 
-// Variants
-.textfield {
-  composes: formfield;
+.border {
+  border: 1px solid $neutral-4;
 }
 
-.selectfield {
+.focused {
+  border-color: $brand-3;
+  background-color: $brand-6;
+
+  .label {
+    border-bottom-color: $brand-3;
+  }
+}
+
+// Variants
+.textfield {
   composes: formfield;
 }
 
@@ -130,6 +139,42 @@ $checkbox-list-focused-background-color: $brand-6;
   }
 }
 
+// Select Field - types
+
+.selectfield {
+  composes: formfield;
+}
+
+.select-card {
+  composes: formfield;
+  border: 0;
+
+  .label {
+    @include typography-6(false);
+    padding: ru(.5) ru(1) 0;
+    border: 0;
+    color: $neutral-2;
+    letter-spacing: 0.1px;
+    font-weight: 300;
+  }
+
+  .select {
+    @include typography-3(false);
+    padding: ru(.5) ru(1);
+    color: $brand-2;
+    font-weight: 100;
+    letter-spacing: .2px;
+    pointer-events: all;
+
+    &:invalid {
+      @include typography-3(false);
+      color: $brand-2;
+      font-weight: 100;
+    }
+  }
+}
+
+// Checkbox List
 .checkboxList {
   composes: formfield;
 
@@ -235,13 +280,3 @@ $checkbox-list-focused-background-color: $brand-6;
     }
   }
 }
-
-.focused {
-  border-color: $checkbox-list-focused-border-color;
-  background-color: $checkbox-list-focused-background-color;
-
-  .label {
-    border-bottom-color: $checkbox-list-focused-border-color;
-  }
-}
-
