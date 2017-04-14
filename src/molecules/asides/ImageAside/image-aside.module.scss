@@ -1,11 +1,11 @@
 @import 'src/assets/stylesheets/global';
 
-$icon-aside-default-icon-color:  $brand-3;
+$icon-aside-basic-icon-color:  $brand-3;
 $aside-text-color:               $neutral-2;
 
 /* Types */
 
-.default {
+.basic {
   display: flex;
   align-items: flex-start;
   margin: 0;
@@ -13,7 +13,7 @@ $aside-text-color:               $neutral-2;
 }
 
 .compact {
-  composes: default;
+  composes: basic;
 
   .icon {
     max-width: rem-calc(80);
@@ -33,7 +33,7 @@ $aside-text-color:               $neutral-2;
 }
 
 .centered {
-  composes: default;
+  composes: basic;
 
   align-items: center;
 }
@@ -61,6 +61,11 @@ $aside-text-color:               $neutral-2;
   max-height: rem-calc(100);
 
   + .aside { margin-left: ru(.75); }
+}
+
+.image {
+  width: 100%;
+  height: 100%
 }
 
 .aside {
