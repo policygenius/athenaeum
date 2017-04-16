@@ -62,6 +62,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
   border-radius: $button-border-radius;
   transition: background-color 300ms ease-out, border-color 300ms ease-out,
               top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+  width: 100%;
 }
 
 .disabled {
@@ -119,6 +120,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
   color: $button-action-disabled-color;
   transition: none;
   cursor: not-allowed;
+  outline: none;
 }
 
 .lowlight {

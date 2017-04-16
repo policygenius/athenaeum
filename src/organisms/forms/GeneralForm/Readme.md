@@ -26,5 +26,5 @@ GeneralForm Example - Navigator Page 1:
 
       <TextField label='Street address' placeholder='Enter address' forProp=''/>
 
-      <Button type='action'>Continue</Button>
+      <Button style="action">Continue</Button>
     </GeneralForm>
