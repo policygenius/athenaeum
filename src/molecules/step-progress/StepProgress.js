@@ -13,10 +13,10 @@ function StepProgress ( props ) {
     <ul className={ classnames(styles.stepProgress, className) }>
       { data.map(step => {
         return (
-          <li className={classnames(styles.item, { [styles.active]: step.active, [styles.inactive]: step.inactive })}>
+          <li className={classnames(styles.item, { [styles.current]: step.current, [styles.inactive]: step.inactive })}>
             <a className={styles.wrapper} href={step.link}>
               <i className={classnames(styles.icon, icons[step.icon])}>
-                {!step.active && !step.inactive &&
+                {step.complete &&
                   <span className={classnames(icons['icon-check-dark'], styles['icon-check-dark'])}></span>
                 }
               </i>
@@ -32,7 +32,8 @@ function StepProgress ( props ) {
 StepProgress.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      active: PropTypes.bool,
+      current: PropTypes.bool,
+      complete: PropTypes.bool,
       inactive: PropTypes.bool,
       icon: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
