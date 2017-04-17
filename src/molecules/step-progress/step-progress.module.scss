@@ -139,7 +139,7 @@ $mobile-inactive-item-border-color: $brand-2;
   }
 }
 
-.active {
+.current {
   pointer-events: none;
 
   .icon {
@@ -185,7 +185,7 @@ $mobile-inactive-item-border-color: $brand-2;
     color: $mobile-color;
   }
 
-  .item.active {
+  .item.current {
     .icon:before { background-color: $mobile-active-item-border-color; }
   }
 
