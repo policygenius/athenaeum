@@ -27,7 +27,7 @@ function ToggleField ( props ){
           { toggleChoices.map( (choice, idx) => {
             return (
               <Button
-                type='toggle'
+                style="toggle"
                 key={ 'button-toggle-btn-' + idx }
                 className={ styles.button }
                 onClick={ onClick }

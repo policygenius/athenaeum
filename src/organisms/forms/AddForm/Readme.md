@@ -17,7 +17,7 @@ Add Jewelry item Example:
         label='How much is it worth?'
         placeholder='e.g. $2,000'
       />
-      <Button type='action'>Add This Item</Button>
+      <Button style="action">Add This Item</Button>
     </AddForm>
 Add Person Example:
 
@@ -29,5 +29,5 @@ Add Person Example:
         label='Full name'
         placeholder='Janis Ian'
       />
-      <Button type='action'>Add Person</Button>
+      <Button style="action">Add Person</Button>
     </AddForm>

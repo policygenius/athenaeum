@@ -1,20 +1,20 @@
 Default Button Example:
 
-      <Button>Default Button</Button>
+      <Button onClick={() => alert('Button clicked')}>Default Button</Button>
 Info Button Example:
 
-      <Button type='info'>Info</Button>
+      <Button style="info">Info</Button>
 Disabled Button Example:
 
-      <Button type='disabled'>Disabled</Button>
+      <Button style="disabled">Disabled</Button>
 
 Action Button Example:
 
-      <Button type='action'>Action</Button>
+      <Button style="action">Action</Button>
 
 Action Lowlight Button Example:
 
-      <Button type='lowlight'>Lowlight Action</Button>
+      <Button style="lowlight">Lowlight Action</Button>
 
 Action Disabled Button Example:
 
@@ -35,7 +35,7 @@ Action Disabled Button Example:
         render() {
           return (
             <Button
-              type='actionDisabled'
+              style="actionDisabled"
               shake={this.state.shake}
               onClick={this.handleClick}
             >
@@ -49,9 +49,8 @@ Action Disabled Button Example:
 
 Outline Button Example:
 
-      <Button type='outline' >Outline Button</Button>
+      <Button style='outline'>Outline Button</Button>
+
 Toggle Button Example:
 
-      <Button type='toggle' >Toggle Button</Button>
-
-
+      <Button style='toggle'>Toggle Button</Button>
