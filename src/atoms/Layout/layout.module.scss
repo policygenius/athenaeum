@@ -2,114 +2,95 @@
 
 $gutter-width: 1.5rem;
 
-@mixin g-unit($cols: 1, $total-col-count: 12, $gutter-width: 1.5rem) {
-  $gutter-count: $cols - 1;
-  $total-container-gutter-count: $total-col-count - 1;
-  $total-element-gutter-width: $gutter-count * $gutter-width;
-  $total-container-gutter-width: $gutter-width * $total-container-gutter-count;
-  $width: calc(((100% - #{$total-container-gutter-width}) / #{$total-col-count}) * #{$cols} + #{$total-element-gutter-width});
+@mixin g-unit($cols: 1, $total-col-count: 12) {
+  $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
 
   width: $width;
   flex-basis: $width;
   flex-grow: 0;
   flex-shrink: 1;
-
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: $gutter-width / 2;
-  margin-right: $gutter-width / 2;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
 }
 
-.flex-base {
+@mixin gutter( $vertical: false ) {
+  @if $vertical {
+    padding: ($gutter-width / 2);
+  } @else {
+    padding: 0 ($gutter-width / 2) ($gutter-width);
+  }
+}
+
+@mixin row-breakpoint( $breakpoint ) {
+  @media #{$breakpoint} {
+    flex-direction: row;
+
+    @for $i from 1 through 12 {
+      .column-#{$i} {
+        @include g-unit($i);
+        @include gutter();
+      }
+    }
+  }
+}
+
+.layout {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
+  margin-left: -$gutter-width / 2;
+  margin-right: -$gutter-width / 2;
+  margin-bottom: -$gutter-width;
 
-  // Generate column classes
   @for $i from 1 through 12 {
     .column-#{$i} {
-      width: 100%;
-      margin: ru(.75) 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      @include g-unit(12);
+      @include gutter( true );
     }
   }
+}
+
+.h-start {
+  justify-content: flex-start;
+}
+
+.h-center {
+  justify-content: center;
+}
+
+.h-end {
+  justify-content: flex-end;
+}
+
+.v-start {
+  align-items: flex-start;
+}
+
+.v-center {
+  align-items: center;
+}
+
+.v-end {
+  align-items: flex-end;
 }
 
 // Breakpoints
 .small {
-  @media #{$small-up} {
-    flex-direction: row;
-
-    @for $i from 1 through 12 {
-      .column-#{$i} {
-        @include g-unit($i);
-      }
-    }
-  }
+  @include row-breakpoint( $small-up );
 }
 
 .medium {
-  @media #{$medium-up} {
-    flex-direction: row;
-
-    @for $i from 1 through 12 {
-      .column-#{$i} {
-        @include g-unit($i);
-      }
-    }
-  }
+  @include row-breakpoint( $medium-up );
 }
 
 .large {
-  @media #{$large-up} {
-    flex-direction: row;
-
-    @for $i from 1 through 12 {
-      .column-#{$i} {
-        @include g-unit($i);
-      }
-    }
-  }
+  @include row-breakpoint( $large-up );
 }
 
-.xLarge {
-  @media #{$xlarge-up} {
-    flex-direction: row;
-
-    @for $i from 1 through 12 {
-      .column-#{$i} {
-        @include g-unit($i);
-      }
-    }
-  }
+.x-large {
+  @include row-breakpoint( $xlarge-up );
 }
 
-.xxLarge {
-  @media #{$xxlarge-up} {
-    flex-direction: row;
-
-    @for $i from 1 through 12 {
-      .column-#{$i} {
-        @include g-unit($i);
-      }
-    }
-  }
+.xx-large {
+  @include row-breakpoint( $xxlarge-up );
 }
 
