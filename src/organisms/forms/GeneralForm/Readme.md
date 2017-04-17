@@ -2,6 +2,7 @@ GeneralForm Example:
 
 _This is a form wrapper that can take components as children._
 
+    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
     <GeneralForm
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
@@ -18,15 +19,10 @@ _This is a form wrapper that can take components as children._
         </TextComponent>
       </LinkWrapper>
 
-      <SelectField
+      <SelectFieldExample
         label='Select Field Label'
         placeholder='Placeholder'
-        selectOptions={[
-          { value: 'Option 1' },
-          { value: 'Option 2' },
-          { value: 'Option 3' }
-        ]}
-        onChange={() => alert('Changing...')} />
+      />
 
       <TextField label='Street address' placeholder='Enter address' forProp=''/>
 

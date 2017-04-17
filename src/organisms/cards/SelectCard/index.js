@@ -26,8 +26,10 @@ function SelectCard ( props ) {
         label={ label }
         placeholder={ placeholder }
         selectOptions={ selectOptions }
-        onChange={ onChange }
-        value={ value }
+        input={{
+          onChange: onChange,
+          value: value
+        }}
       />
 
       <footer className={ styles.footer }>

@@ -6,9 +6,9 @@ Select Card example:
 
         this.state = {
           selectOptions: [ 
-             { group: 'Group 1', options: [{value: '$300,000 (most common)'}] },
-             { group: 'Group 2', options: [{value: '$400,000'}] },
-             { group: 'Group 3', options: [{value: '$500,000'}] },
+             { group: 'Group 1', options: [{label: '$300,000 (most common)', value: 1}] },
+             { group: 'Group 2', options: [{label: '$400,000', value: 2}] },
+             { group: 'Group 3', options: [{label: '$500,000', value: 3}] },
           ],
           value: ''
         }
@@ -30,6 +30,7 @@ Select Card example:
       render() {
         return (
           <SelectCard
+            placeholder='Placeholder'
             label='Personal liability'
             value={ this.state.value }
             selectOptions={ this.state.selectOptions }
