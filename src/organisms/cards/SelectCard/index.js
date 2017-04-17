@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import LinkWrapper from 'atoms/LinkWrapper/LinkWrapper';
+import LinkWrapper from 'atoms/LinkWrapper';
 import SelectField from 'molecules/formfields/SelectField';
 import styles from './select-card.module.scss';
 

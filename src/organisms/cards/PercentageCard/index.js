@@ -1,5 +1,5 @@
 import React from 'react';
-import TextLockup from 'molecules/text-lockups/TextLockup';
+import TextLockup from 'molecules/TextLockup';
 import styles from './percentage_card.module.scss';
 
 function PercentageCard ( props ) {

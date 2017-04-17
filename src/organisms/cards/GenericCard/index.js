@@ -1,5 +1,5 @@
 import React from 'react';
-import TextLockup from 'molecules/text-lockups/TextLockup';
+import TextLockup from 'molecules/TextLockup';
 import styles from './generic_card.module.scss';
 import classnames from 'classnames';
 

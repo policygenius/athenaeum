@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import Icon from 'atoms/icons/Icon';
-import TextComponent from 'atoms/TextComponents'
+import Icon from 'atoms/Icon';
+import TextComponent from 'atoms/TextComponent'
 import * as icons from 'assets/images';
 import styles from './image-aside.module.scss';
 
