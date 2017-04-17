@@ -1,11 +1,5 @@
 @import 'colors';
 
-@font-face {
-  font-family: 'adelle-sans';
-  src: url('assets/fonts/AdelleSans-SemiBold.woff') format('woff'),
-       url('assets/fonts/AdelleSans-SemiBold.ttf') format('truetype')
-}
-
 $font-family-serif:           'adelle', Georgia, serif;
 $font-family-sans-serif:      'adelle-sans', Helvetica, Arial, sans-serif;
 $main-font-color:             $neutral-2;
