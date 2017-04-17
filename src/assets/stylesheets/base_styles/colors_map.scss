@@ -1,3 +1,5 @@
+@import 'src/assets/stylesheets/base_styles/colors';
+
 $colors-map: (
 /* Black. From dark to light. */
 neutral-1: #000,
@@ -48,11 +50,11 @@ action-6: #feecd3
   margin: auto;
   padding: 4px;
   background-color: rgba(0,0,0,.3);
-  color: white;
+  color: $neutral-8;
 }
 
 @mixin after-props($color) {
-  content: "#{$color}";
+  content: '#{$color}';
   display: block;
   min-width: 75px;
   font-size: .75rem;
@@ -66,19 +68,20 @@ action-6: #feecd3
   flex-wrap: wrap;
 }
 
-$color-type-list: "neutral", "brand", "accent", "action";
+$color-type-list: 'neutral', 'brand', 'accent', 'action';
 
 @each $type in $color-type-list {
   @for $i from 1 through 8 {
     @if map-has-key($colors-map, #{$type}-#{$i}) {
+
       .#{$type}-#{$i} {
         $color: #{map-get($colors-map, #{$type}-#{$i})};
         @include color-props($color);
         transition: all .3s ease-in-out;
-        border-color: white;
+        border-color: #fff;
 
         &:before {
-          @include before-props("#{$type}-#{$i}");
+          @include before-props('#{$type}-#{$i}');
         }
 
         &:after {
@@ -89,7 +92,7 @@ $color-type-list: "neutral", "brand", "accent", "action";
           box-shadow: inset 0 -10px 35px darken(map-get($colors-map, #{$type}-#{$i}), 15%);
           border-bottom-left-radius: 10px 200px;
           border-bottom-right-radius: 10px 200px;
-          border-bottom: 3px solid white;
+          border-bottom: 3px solid #fff;
         }
 
         &:last-child {

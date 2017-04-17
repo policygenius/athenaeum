@@ -60,8 +60,11 @@ $button-solid-background-tertiary-color:   #f08f5c;
   background-color: $button-background-color;
   border: 1px solid $button-border-color;
   border-radius: $button-border-radius;
-  transition: background-color 300ms ease-out, border-color 300ms ease-out,
-              top 150ms ease-out, color 150ms ease-out, box-shadow 150ms ease-out;
+  transition: background-color 300ms ease-out,
+              border-color 300ms ease-out,
+              top 150ms ease-out,
+              color 150ms ease-out,
+              box-shadow 150ms ease-out;
   width: 100%;
 }
 

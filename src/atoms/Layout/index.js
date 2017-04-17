@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import styles from './layout.module.scss';
 
-function Layout ( props ) {
+function Layout( props ) {
   const {
     children,
     childCols,
@@ -16,7 +16,7 @@ function Layout ( props ) {
   // start at -1 so can bump to 0 in the conditional below
   let colsIdx = -1;
 
-  const kids = React.Children.map( children, ( child, idx ) => {
+  const kids = React.Children.map( children, ( child ) => {
     // colsIdx mirrors idx until idx does not exist in childCols
     // this means that there are more children than childCols provided
     // in that case, reset colsIdx to 0 and continue counting up until next reset
@@ -26,19 +26,19 @@ function Layout ( props ) {
 
     return (
       <div
-        className={ classnames(
+        className={classnames(
           // grab childCols value with colsIdx
           // if childCols[idx] is undefined, default to 12 columns
-          styles[`column-${ childCols[colsIdx] || 12 }`]
+          styles[`column-${childCols[colsIdx] || 12}`]
         )}
       >
         { child }
       </div>
-    )
+    );
   });
 
-  const hAlign = 'h-' + horizontalAlign;
-  const vAlign = 'v-' + verticalAlign;
+  const hAlign = `h-${horizontalAlign}`;
+  const vAlign = `v-${verticalAlign}`;
 
   return (
     <div>
@@ -50,7 +50,7 @@ function Layout ( props ) {
         { kids }
       </div>
     </div>
-  )
+  );
 }
 
 Layout.propTypes = {
@@ -80,6 +80,6 @@ Layout.defaultProps = {
   breakpoint: 'small',
   horizontalAlign: 'start',
   verticalAlign: 'center'
-}
+};
 
 export default Layout;

@@ -1,12 +1,16 @@
 {
   'parser': 'babel-eslint',
+  'extends': 'airbnb',
   'plugins': [
-    'react'
+     'redux-saga',
+     'react',
+     'jsx-a11y'
   ],
   'env': {
+    'mocha': true,
     'browser': true,
-     'node': true,
-     'es6': true
+    'node': true,
+    'es6': true
   },
   'globals': {
         'React': true
@@ -14,66 +18,137 @@
   'ecmaFeatures': {
       'jsx': true
   },
+  'parserOptions': {
+    'ecmaVersion': 6,
+    'sourceType': 'module',
+    'ecmaFeatures': {
+      'jsx': true
+    }
+  },
   'rules': {
-    # Error rules
-    'no-dupe-args': 2,
-    'no-dupe-keys': 2,
-    'no-empty': 2,
-    'no-extra-parens': 1,
-    'no-extra-semi': 1,
-    'no-irregular-whitespace': 1,
-    # Best Practices rules
+    'array-bracket-spacing': [ 1, 'always' ],
     'array-callback-return': 1,
+    'arrow-spacing': [ 1, {
+      'before': true,
+      'after': true
+    }],
+    'arrow-body-style': [
+      2,
+      'as-needed'
+    ],
     'block-scoped-var': 1,
+    'block-spacing': 1,
+    'brace-style': 2,
+    'camelcase': 2,
+    'class-methods-use-this': 0,
+    'comma-dangle': [
+      0,
+      'always-multiline'
+    ],
+    'comma-style': 1,
+    'computed-property-spacing': 1,
     'curly': [ 2, 'all' ],
     'default-case': 2,
     'dot-notation': [ 0, {
       'allowKeywords': false,
       'allowPattern': '^[a-z]+(_[a-z]+)+$'
     }],
+    'eqeqeq': [ 2, 'smart' ],
+    'func-names': 0,
+    'global-require': 0,
+    'import/imports-first': 0,
+    'import/newline-after-import': 0,
+    'import/no-absolute-path': 0,
+    'import/no-dynamic-require': 0,
+    'import/no-extraneous-dependencies': 0,
+    'import/no-named-as-default': 0,
+    'import/no-unresolved': 2,
+    'import/no-webpack-loader-syntax': 0,
+    'import/prefer-default-export': 0,
+    'indent': [
+      2,
+      2,
+      {
+        'SwitchCase': 1
+      }
+    ],
+    'jsx-a11y/aria-props': 2,
+    'jsx-a11y/heading-has-content': 0,
+    'jsx-a11y/href-no-hash': 2,
+    'jsx-a11y/label-has-for': 2,
+    'jsx-a11y/mouse-events-have-key-events': 2,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/role-has-required-aria-props': 2,
+    'jsx-a11y/role-supports-aria-props': 2,
+    'jsx-quotes': [ 1, 'prefer-single' ],
+    'key-spacing': 2,
+    'max-len': 0,
+    'newline-after-var': [ 1, 'always' ],
+    'newline-before-return': 1,
+    'newline-per-chained-call': 0,
     'no-caller': 2,
+    'no-confusing-arrow': 0,
+    'no-console': 1,
+    'no-dupe-args': 2,
+    'no-dupe-keys': 2,
+    'no-duplicate-imports': 1,
     'no-else-return': 1,
     'no-empty-function': 1,
     'no-empty-pattern': 1,
+    'no-empty': 2,
     'no-extra-bind': 1,
+    'no-extra-parens': 1,
+    'no-extra-semi': 1,
+    'no-irregular-whitespace': 1,
+    'no-mixed-spaces-and-tabs': [ 2, 'smart-tabs' ],
     'no-multi-spaces': [ 1, {
       'exceptions': {
         'Property': true
       }
     }],
-    'no-useless-return': 1,
-    'vars-on-top': 2,
-    # Stylistic rules
-    'array-bracket-spacing': [ 1, 'always' ],
-    'block-spacing': 1,
-    'brace-style': 2,
-    'camelcase': 2,
-    'comma-style': 1,
-    'computed-property-spacing': 1,
-    'indent': [ 1, 2 ],
-    'jsx-quotes': [ 1, 'prefer-single' ],
-    'key-spacing': 2,
-    'newline-after-var': [ 1, 'always' ],
-    'newline-before-return': 1,
-    'no-mixed-spaces-and-tabs': [ 2, 'smart-tabs' ],
     'no-multiple-empty-lines': 1,
+    'no-plusplus': 0,
     'no-trailing-spaces': 1,
+    'no-unused-expressions': 0,
+    'no-use-before-define': 0,
+    'no-useless-return': 1,
     'object-curly-spacing': [ 2, 'always' ],
     'object-property-newline': 1,
-    'padded-blocks': [ 0, 'always' ],
-    'space-before-function-paren': [ 1, 'always' ],
-    'space-in-parens': [ 0, 'always' ],
-    'spaced-comment': [ 1, 'always' ],
-    # ES6 rules
-    'arrow-spacing': [ 1, {
-      'before': true,
-      'after': true
-    }],
-    'no-duplicate-imports': 1,
-    'no-var': 1,
-    'prefer-arrow-callback': 1,
+    'prefer-template': 2,
+    'prefer-arrow-callback': 0,
     'prefer-const': [ 1, {
       'destructuring': 'any'
-    }]
+    }],
+    'padded-blocks': 0,
+    'react/forbid-prop-types': 0,
+    'react/jsx-first-prop-new-line': [
+      2,
+      'multiline'
+    ],
+    'react/jsx-filename-extension': 0,
+    'react/jsx-no-target-blank': 0,
+    'react/no-unused-prop-types': 0,
+    'react/prop-types': [
+      2,
+      {
+        'ignore': [ 'children' ]
+      }
+    ],
+    'react/require-extension': 0,
+    'react/self-closing-comp': 0,
+    'redux-saga/no-yield-in-race': 2,
+    'redux-saga/yield-effects': 2,
+    'require-yield': 0,
+    'space-before-function-paren': 1,
+    'space-in-parens': [ 0, 'always' ],
+    'spaced-comment': [ 1, 'always' ],
+    'vars-on-top': 2
+  },
+  'settings': {
+    'import/resolver': {
+      'webpack': {
+        'config': './webpack.config.dev.js'
+      }
+    }
   }
 }

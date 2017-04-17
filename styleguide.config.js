@@ -52,7 +52,7 @@ module.exports = {
         },
         {
           name: 'Other',
-          components: () => (['src/molecules/StepProgress/index.js'])
+          components: () => [ 'src/molecules/StepProgress/index.js' ]
         }
       ]
     },
@@ -89,4 +89,4 @@ module.exports = {
   verbose: true,
   template: 'styleguide_assets/index.html',
   webpackConfig: require('./webpack.config.dev.js')
-}
+};

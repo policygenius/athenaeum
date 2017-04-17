@@ -1,38 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TextComponent from 'atoms/TextComponent';
 import styles from './text-lockups.module.scss';
-import classnames from 'classnames';
 
-function TextLockup ( props ) {
-
-  const { type, children } = props;
+function TextLockup( props ) {
   const {
+    type,
+    children,
     header,
-    subheader } = props;
+    subheader
+  } = props;
 
   switch ( type ) {
     case 'A':
       return (
-        <div className={ styles[type] }>
-          <h4 className={ styles['header'] }>{ header }</h4>
-          <h5 className={ styles['subheader'] }>{ subheader }</h5>
+        <div className={styles[type]}>
+          <TextComponent
+            className={styles['header']}
+            tag={'h4'}
+            type={4}
+          >
+            { header }
+          </TextComponent>
+
+          <TextComponent
+            className={styles['subheader']}
+            tag={'h5'}
+            type={4}
+          >
+            { subheader }
+          </TextComponent>
         </div>
-      )
+      );
 
     case 'B':
       return (
-        <div className={ styles[type] }>
-          <h4 className={ styles['header'] }>{ header }</h4>
-          <h5 className={ styles['subheader'] }>{ subheader }</h5>
+        <div className={styles[type]}>
+          <TextComponent
+            className={styles['header']}
+            tag={'h4'}
+            type={4}
+          >
+            { header }
+          </TextComponent>
+
+          <TextComponent
+            className={styles['subheader']}
+            tag={'h5'}
+            type={4}
+          >
+            { subheader }
+          </TextComponent>
         </div>
-      )
+      );
 
     default:
       return (
-        <div className={ styles[type] }>
+        <div className={styles[type]}>
           { children }
         </div>
-      )
+      );
   }
 }
 
@@ -41,10 +68,18 @@ TextLockup.propTypes = {
    * Possible card types are: `1`
    *
    */
-  type: PropTypes.string.isRequired
-  // header: PropTypes.string.isRequired,
-  // subheader: PropTypes.string.isRequired
-}
+  type: PropTypes.string.isRequired,
+
+  /**
+   * header text displayed in lockup
+   */
+  header: PropTypes.string,
+
+  /**
+   * subheader text displayed in lockup
+   */
+  subheader: PropTypes.string
+};
 
 export default TextLockup;
 

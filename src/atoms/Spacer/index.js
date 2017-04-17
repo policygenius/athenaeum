@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import styles from './spacer.module.scss';
 
-function Spacer ( props ) {
+function Spacer( props ) {
   const {
     xSmall,
     small,
@@ -20,14 +20,15 @@ function Spacer ( props ) {
     { [styles.medium]: medium },
     { [styles.large]: large },
     { [styles.xLarge]: xLarge },
-  ).split( " " );
+  ).split( ' ' );
 
   return (
     <div
-      className={ classnames( variants[variants.length - 1], className ) }>
+      className={classnames( variants[variants.length - 1], className )}
+    >
     </div>
-  )
-};
+  );
+}
 
 Spacer.propTypes = {
   /**
@@ -63,6 +64,6 @@ Spacer.propTypes = {
 
 Spacer.defaultProps = {
   xSmall: true
-}
+};
 
 export default Spacer;

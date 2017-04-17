@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
+import Tooltip from 'atoms/Tooltip';
+import Button from 'atoms/Button';
+import styles from '../shared/formfields.module.scss';
 
-function ToggleField ( props ){
+function ToggleField( props ) {
   const {
     label,
     className,
@@ -13,33 +15,36 @@ function ToggleField ( props ){
   } = props;
 
   return (
-    <div className={ classnames(className, styles.togglefield) }>
+    <div className={classnames(className, styles.togglefield)}>
       {
         tooltipMessage &&
-        <div className= { styles['tooltip-wrapper'] }>
+        <div className={styles['tooltip-wrapper']}>
           <Tooltip>
             { tooltipMessage }
           </Tooltip>
         </div>
       }
-      <div className={ styles.header }>{ label }</div>
-      <label>
-        <div className={ styles['button-wrapper'] }>
-          { toggleChoices.map( (choice, idx) => {
-            return (
-              <Button
-                style="toggle"
-                key={ 'button-toggle-btn-' + idx }
-                className={ styles.button }
-                onClick={ onClick }
-              >{ choice }</Button>
-            )
-          })
-          }
+
+      {
+        label &&
+        <div className={styles.header}>
+          { label }
         </div>
-      </label>
+      }
+
+      <div className={styles['button-wrapper']}>
+        { toggleChoices.map( (choice, idx) =>
+          <Button
+            kind='toggle'
+            key={`button-toggle-btn-${idx}`}
+            className={styles.button}
+            onClick={onClick}
+          >{ choice }</Button>
+          )
+        }
+      </div>
     </div>
-  )
+  );
 }
 
 ToggleField.propTypes = {
@@ -63,7 +68,7 @@ ToggleField.propTypes = {
    * `numbers`, `strings`, `elements` or an `array` (or fragment) containing these types.
    */
   tooltipMessage: PropTypes.node
-}
+};
 
 export default ToggleField;
 

@@ -10,8 +10,8 @@ const contexts = [
   require.context('./templates', true, /.*\.js/)
 ];
 
-module.exports = contexts.map((context) => fromPairs(context.keys().map((component) => {
+module.exports = contexts.map(context => fromPairs(context.keys().map((component) => {
   const componentName = component.match(/.*\/(.*)\/index.js/)[1];
 
-  return [componentName, context(component).default];
+  return [ componentName, context(component).default ];
 }))).reduce(mergeAll, {});

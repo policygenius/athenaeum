@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
-import TextComponent from 'atoms/TextComponent'
+import TextComponent from 'atoms/TextComponent';
 import * as icons from 'assets/images';
 import styles from './image-aside.module.scss';
 
-function ImageAside ( props ) {
+function ImageAside( props ) {
   const {
     className,
     header,
     icon,
     subheader,
-    type,
     basic,
     compact,
     centered,
@@ -28,37 +27,40 @@ function ImageAside ( props ) {
   );
 
   return (
-    <div className={ classnames( variant, className ) }>
+    <div className={classnames( variant, className )}>
 
       { icons[icon] ?
-          <Icon
-            icon={ icon }
-            className={ styles.icon } />
+        <Icon
+          icon={icon}
+          className={styles.icon}
+        />
         :
-          <div className={ styles.icon }>
-            <img
-              className={ styles.image }
-              src={ icon } />
-          </div>
+        <div className={styles.icon}>
+          <img
+            className={styles.image}
+            src={icon}
+            role='presentation'
+          />
+        </div>
       }
 
-      <aside className={ styles.aside }>
+      <aside className={styles.aside}>
         <TextComponent
-          className={ styles.header }
+          className={styles.header}
         >
           { header }
         </TextComponent>
 
         { subheader &&
           <TextComponent
-            className={ styles.subheader }
+            className={styles.subheader}
           >
             { subheader }
           </TextComponent>
         }
       </aside>
     </div>
-  )
+  );
 }
 
 ImageAside.propTypes = {
@@ -101,10 +103,10 @@ ImageAside.propTypes = {
    * text displayed below the main header
    */
   subheader: PropTypes.string,
-}
+};
 
 ImageAside.defaultProps = {
   basic: true
-}
+};
 
 export default ImageAside;

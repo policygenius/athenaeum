@@ -7,7 +7,7 @@ import SelectField from 'molecules/formfields/SelectField';
 import styles from './select-card.module.scss';
 
 
-function SelectCard ( props ) {
+function SelectCard( props ) {
   const {
     className,
     label,
@@ -21,31 +21,31 @@ function SelectCard ( props ) {
   } = props;
 
   return (
-    <div className={ classnames( styles.select, className ) }>
+    <div className={classnames( styles.select, className )}>
       <SelectField
         type='select-card'
-        label={ label }
-        placeholder={ placeholder }
-        selectOptions={ selectOptions }
+        label={label}
+        placeholder={placeholder}
+        selectOptions={selectOptions}
         input={{
-          onChange: onChange,
-          value: value
+          onChange,
+          value
         }}
       />
 
-      <footer className={ styles.footer }>
-        <div className={ styles['footer-link-wrapper'] }>
+      <footer className={styles.footer}>
+        <div className={styles['footer-link-wrapper']}>
           <LinkWrapper
-            href={ linkUrl }
-            className={ styles.link }
-            onClick={ onClick }
+            href={linkUrl}
+            className={styles.link}
+            onClick={onClick}
           >
             { footerText }
           </LinkWrapper>
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
 SelectCard.propTypes = {
@@ -93,7 +93,7 @@ SelectCard.propTypes = {
    * value passed to select field
    */
   value: PropTypes.string
-}
+};
 
 export default SelectCard;
 

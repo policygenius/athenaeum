@@ -1,46 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../shared/forms.module.scss';
 import classnames from 'classnames';
+import TextComponent from 'atoms/TextComponent';
+import LinkWrapper from 'atoms/LinkWrapper';
+import styles from '../shared/forms.module.scss';
 
-function GeneralForm ( props ) {
+function GeneralForm( props ) {
   const {
-    type,
     className,
     children,
     formName,
     onSubmit
   } = props;
 
-  const kids = React.Children.map(children, child => {
-    return React.cloneElement(child, {
-      htmlFor: formName,
-      className: classnames(
+  const kids = React.Children.map(children, child => React.cloneElement(child, {
+    htmlFor: formName,
+    className: classnames(
         // If you'd like to give any special form specific classes
         // to child components:
         styles['form-components'],
-        child.type == TextComponent ? styles['textComponent'] : '',
-        child.type == LinkWrapper ? styles['textComponent'] : ''
+        child.type === TextComponent ? styles['textComponent'] : '',
+        child.type === LinkWrapper ? styles['textComponent'] : ''
       ),
-    })
-  })
+  }));
 
   return (
-    <div className={ classnames( className, styles[''] ) }>
+    <div className={classnames( styles[''], className )}>
       <form
-        className={ styles.form }
-        onSubmit={ onSubmit }
-        name={ formName }
+        className={styles.form}
+        onSubmit={onSubmit}
+        name={formName}
       >
         { kids }
       </form>
     </div>
-  )
+  );
 }
 
 GeneralForm.propTypes = {
+  /**
+   * class name added to class set
+   */
+  className: PropTypes.string,
+
+  /**
+   * name give to `name` prop on form
+   */
   formName: PropTypes.string.isRequired,
+
+  /**
+   * callback fired when submitting form
+   */
   onSubmit: PropTypes.func
-}
+};
 
 export default GeneralForm;

@@ -1,11 +1,12 @@
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const baseConfig = require('./webpack.config.base.js');
 
 module.exports = baseConfig({
   entry: [
     'webpack/hot/only-dev-server',
-    './public/index.js'
+    './entry.js'
   ],
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -36,5 +37,11 @@ module.exports = baseConfig({
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      syntax: 'scss'
+    })
+  ]
 });
