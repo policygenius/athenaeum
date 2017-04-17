@@ -46,3 +46,6 @@ styleguide
 # Ignore OSX system files
 .DS_Store
 
+lib/
+
+.sass-cache

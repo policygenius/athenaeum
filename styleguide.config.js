@@ -30,7 +30,7 @@ module.exports = {
         },
         {
           name: 'Other',
-          components: () => (['src/molecules/step-progress/StepProgress.js'])
+          components: () => (['src/molecules/StepProgress/index.js'])
         }
       ]
     },
@@ -66,4 +66,5 @@ module.exports = {
   highlightTheme: 'base16-light',
   verbose: true,
   template: 'styleguide_assets/index.html',
+  webpackConfig: require('./webpack.config.js')
 }
