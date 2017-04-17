@@ -25,7 +25,7 @@ function GenericCard( props ) {
 
       <div className={styles.col}>
         <TextLockup
-          type='A'
+          variant='A'
           header={header}
           subheader={subheader}
         />

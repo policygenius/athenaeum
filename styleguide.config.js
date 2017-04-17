@@ -63,7 +63,7 @@ module.exports = {
         },
         {
           name: 'TextLockups',
-          components: 'src/molecules/text-lockups/**/*.js'
+          components: 'src/molecules/TextLockup/**/*.js'
         },
         {
           name: 'Other',
@@ -81,6 +81,10 @@ module.exports = {
         {
           name: 'Forms',
           components: 'src/organisms/forms/**/*.js'
+        },
+        {
+          name: 'Tables',
+          components: 'src/organisms/tables/**/index.js'
         }
       ]
     },

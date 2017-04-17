@@ -16,6 +16,7 @@ function TextComponent( props ) {
     children,
     type,
     className,
+    variant
   } = props;
 
   const kids = typeof children.type === 'function' ? children.type( children.props ) : [ ...children ];
@@ -25,6 +26,7 @@ function TextComponent( props ) {
     { className: classnames(
       styles[`typography-${type}`],
       setWeight( props ),
+      styles[variant],
       className
     ) },
     kids
@@ -60,7 +62,12 @@ TextComponent.propTypes = {
   /**
    * adds class name to class set
    */
-  className: PropTypes.string
+  className: PropTypes.string,
+
+  /**
+   * Text decoration
+   */
+  variant: PropTypes.string
 };
 
 TextComponent.defaultProps = {

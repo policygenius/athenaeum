@@ -2,7 +2,7 @@ TextLockup Example - Type A:
 
 ```example
     <TextLockup
-      type='A'
+      variant='A'
       header='Header'
       subheader='Subheader'
     />
@@ -12,8 +12,49 @@ TextLockup Example - Type B:
 
 ```example
     <TextLockup
-      type='B'
+      variant='B'
       header='Header'
       subheader='Subheader'
+    />
+```
+
+TextLockup Example - Type C:
+
+```example
+    <TextLockup
+      variant='C'
+      header='Header'
+      subheader='Subheader'
+    />
+```
+
+TextLockup Example - Type D:
+
+```example
+    <TextLockup
+      variant='D'
+      header='Header'
+      primaryIcon='pgLogoOrange'
+    />
+```
+
+TextLockup Example - Type E:
+
+```example
+    <TextLockup
+      variant='E'
+      header='Header'
+      primaryIcon='pgLogoOrange'
+    />
+```
+
+TextLockup Example - Type F:
+
+```example
+    <TextLockup
+      variant='F'
+      header='Header'
+      primaryIcon='pgLogoOrange'
+      secondaryIcon='checkmark'
     />
 ```
