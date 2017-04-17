@@ -1,6 +1,6 @@
-GeneralForm Example:
-
 _This is a form wrapper that can take components as children._
+
+GeneralForm Example - Navigator Page 1:
 
     const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
     <GeneralForm

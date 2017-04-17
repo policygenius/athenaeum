@@ -6,6 +6,7 @@ function Navigator ( props ) {
   const {
     children,
     className,
+    stepprogress,
     leftRailText
   } = props;
 
@@ -20,7 +21,7 @@ function Navigator ( props ) {
           leftRailText &&
           <TextComponent
             type={ 3 }
-            className={ styles['page-leftRailText'] }
+            className={ styles['left-rail-text'] }
             light
           >
             { leftRailText }
@@ -28,15 +29,18 @@ function Navigator ( props ) {
         }
       </div>
       <div className={ styles.main }>
-        <StepProgress
-          className={ styles['step-progress'] }
-          data={[
-            { active: false, inactive: false, icon: 'icon-calculator', label: 'Aenean', link: '#' },
-            { active: true, inactive: false, icon: 'icon-health', label: 'Phasellus', link: '#' },
-            { active: false, inactive: true, icon: 'icon-application', label: 'Curabitur', link: '#' },
-            { active: false, inactive: true, icon: 'icon-quotes', label: 'Etiam', link: '#' }
-          ]}
-        />
+        {
+          stepprogress &&
+          <StepProgress
+            className={ styles['step-progress'] }
+            data={[
+              { active: false, inactive: false, icon: 'icon-calculator', label: 'Aenean', link: '#' },
+              { active: true, inactive: false, icon: 'icon-health', label: 'Phasellus', link: '#' },
+              { active: false, inactive: true, icon: 'icon-application', label: 'Curabitur', link: '#' },
+              { active: false, inactive: true, icon: 'icon-quotes', label: 'Etiam', link: '#' }
+            ]}
+          />
+        }
         { children }
       </div>
       <div className={ styles['right-rail'] } />
@@ -54,11 +58,12 @@ Navigator.propTypes = {
   /**
    * Text to show up on left rail
    */
-  leftRailText: PropTypes.string
+  leftRailText: PropTypes.string,
+  stepprogress: PropTypes.bool
 }
 
 Navigator.defaultProps = {
-  // Place any default props here.
+  stepprogress: true
 }
 
 export default Navigator;
