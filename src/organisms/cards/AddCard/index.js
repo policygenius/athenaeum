@@ -1,42 +1,31 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './add_card.module.scss';
+import classnames from 'classnames';
 
-function renderContent( props ) {
+function AddCard ( props ) {
   const {
-    children,
-    beneficiary,
-    jewelry,
+    className,
+    cardText,
+    icon
   } = props;
 
-  var txt, icon;
-
-  if ( beneficiary ) {
-    txt = 'Add person to policy';
-    icon = 'plus';
-  }
-
-  if ( jewelry ) {
-    txt = 'Add jewelry';
-    icon = 'jewelry';
-  }
-
   return (
-    <div>
+    <div className={ classnames(styles.add, className) }>
       <Icon
         icon={ icon }
         className={ styles.icon }
       />
-      { txt }
+      { cardText }
     </div>
   )
 }
 
-function AddCard ( props ) {
-  return (
-    <div className={ styles.add }>
-      { renderContent(props) }
-    </div>
-  )
+AddCard.propTypes = {
+  cardText: PropTypes.string,
+  /**
+   * This is the icon name from the [Icon component](/#icon).
+   */
+  icon: PropTypes.string
 }
 
 export default AddCard;
