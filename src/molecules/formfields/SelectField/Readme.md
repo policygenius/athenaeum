@@ -4,6 +4,7 @@ Label Example:
     <SelectFieldExample
       label="Select Field Label"
       placeholder="Placeholder"
+      tooltip="Here's a tip: You're awesome ;)"
     />
 
 No Label Example:

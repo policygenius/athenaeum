@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 import renderPlaceholder from 'utils/Fields/renderPlaceholder';
 import renderOptGroup from 'utils/Fields/renderOptGroup';
@@ -15,6 +14,7 @@ function SelectField ( props ) {
     focused,
     type,
     input,
+    tooltip,
     meta
   } = props;
 
@@ -27,6 +27,14 @@ function SelectField ( props ) {
           htmlFor={ forProp }
         >
           { label }
+          {
+            tooltip &&
+            <div className={ styles['tooltip-wrapper'] }>
+              <Tooltip>
+                { tooltip }
+              </Tooltip>
+            </div>
+          }
         </label>
       }
 
@@ -103,7 +111,11 @@ SelectField.propTypes = {
    * contains anything you want to pass directly to input e.g. value, onChange, onBlur
    */
   input: PropTypes.object,
-  meta: PropTypes.object
+  meta: PropTypes.object,
+  /**
+   * Content for tooltip
+   */
+  tooltip: PropTypes.node
 }
 
 SelectField.defaultProps = {

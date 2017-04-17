@@ -16,8 +16,8 @@ $aside-text-color:               $neutral-2;
   composes: basic;
 
   .icon {
-    max-width: rem-calc(80);
-    max-height: rem-calc(80);
+    width: rem-calc(80);
+    height: rem-calc(80);
   }
 
   .header {
@@ -42,8 +42,8 @@ $aside-text-color:               $neutral-2;
   composes: centered;
 
   .icon {
-    max-width: rem-calc(45);
-    max-height: rem-calc(45);
+    width: rem-calc(45);
+    height: rem-calc(45);
   }
 
   .header {
@@ -57,8 +57,8 @@ $aside-text-color:               $neutral-2;
 .icon {
   flex-grow: 0;
   flex-shrink: 1;
-  max-width: rem-calc(100);
-  max-height: rem-calc(100);
+  width: rem-calc(100);
+  height: rem-calc(100);
 
   + .aside { margin-left: ru(.75); }
 }
