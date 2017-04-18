@@ -1,27 +1,46 @@
 X-Icon example:
 
-    <Icon
-      icon='xIcon'
-      wrapperStyles={{
-        maxWidth: '100px'
-        }}
-    />
+    <Icon icon='xIcon' />
+All Icons (WIP):
 
-Head Aside example:
+    const icons = require('assets/images');
 
-    <Icon
-      icon='headAside'
-      wrapperStyles={{
-        maxWidth: '100px'
-        }}
-    />
+    function DisplayAllIcons() {
+      console.log(icons);
+      return (
+        <div style={{
+          display: 'flex',
+          alignContent: 'center',
+          flexWrap: 'wrap'
+          }}
+        >
+          {
+            Object.keys(icons).map( key => {
+              return (
+                <div style={{
+                  border: '1px solid grey',
+                  padding: '5px',
+                  margin: '5px',
+                  textAlign: 'center',
+                  flexGrow: 0,
+                  flexBasis: '45%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'lightgrey',
+                  alignItems: 'center'
 
-Plus example:
+                  }}
+                >
+                  "{ key }"
+                  <div>
+                    <Icon icon={ key } />
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      )
+    }
 
-    <Icon
-      icon='plus'
-      wrapperStyles={{
-        maxWidth: '100px'
-        }}
-    />
-
+    <DisplayAllIcons />

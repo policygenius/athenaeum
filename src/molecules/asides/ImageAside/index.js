@@ -32,10 +32,10 @@ function ImageAside ( props ) {
       { icons[icon] ?
           <Icon
             icon={ icon }
-            wrapperClassName={ styles.icon } />
+            className={ styles.icon } />
         :
           <div className={ styles.icon }>
-            <img 
+            <img
               className={ styles.image }
               src={ icon } />
           </div>

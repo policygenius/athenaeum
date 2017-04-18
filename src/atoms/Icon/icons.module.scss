@@ -2,11 +2,19 @@
 
 .icon-wrapper {
   position: relative;
-  width: ru(1);
-  height: ru(1);
+  width: ru(3);
+  height: ru(3);
+
+  .SVGInline-svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 
   svg {
     position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
   }
