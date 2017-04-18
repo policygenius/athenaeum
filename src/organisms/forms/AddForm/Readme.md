@@ -6,7 +6,7 @@ Add Jewelry item Example:
       onClose={ () => alert('Clicked close button') }
     >
       <ImageAside
-        type='simple'
+        simple
         icon='jewelry'
         header='Jewelry item'
       />
@@ -24,6 +24,7 @@ Add Person Example:
 
     <AddForm
       formName='ExampleForm'
+      onClose={ () => alert("Uhhhggg! You've closed me!") }
       onSubmit={ () => alert('FormSubmitted!') }
       onClose={ () => alert('Clicked close button') }
     >

@@ -17,18 +17,12 @@ $icon-size:        ru(1);
 .icon-close {
   position: absolute;
   z-index: 1;
-  top: -$icon-size / 2;
+  top: -$icon-size / 2 - $border-width / 2;
   right: -$icon-size / 2;
   background-size: 100%;
   cursor: pointer;
-
-  &:before {
-    content: '';
-    display: inline-block;
-    width: $icon-size;
-    height: $icon-size;
-    background-image: url('../../../assets/images/x-icon.svg');
-  }
+  width: $icon-size;
+  height: $icon-size;
 }
 
 .formWrapper {

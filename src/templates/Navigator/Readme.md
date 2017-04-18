@@ -12,7 +12,7 @@ Navigator Example:
           <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
           <LinkWrapper href="#">
             <TextComponent
-              type={ 6 }
+              type={ 7 }
             >
               Want to add more people to the policy?
             </TextComponent>

@@ -1,43 +1,31 @@
 import React, { PropTypes } from 'react';
 import SVGInline from 'react-svg-inline';
 import * as icons from 'assets/images';
+import styles from './icons.module.scss';
 import classnames from 'classnames';
 
 function Icon ( props ) {
   const icon = icons[props.icon];
   const {
     className,
-    wrapperClassName,
-    wrapperStyles
   } = props;
 
   return (
     <div
-      className={ classnames(className, wrapperClassName) }
-      style={ wrapperStyles }
+      className={ classnames(styles['icon-wrapper'], className) }
     >
       <SVGInline
         svg={ icon }
-        width='100%' />
+      />
     </div>
   )
 }
 
 Icon.propTypes = {
   /**
-   * name of icon to render;
-   * see `src/assets/images/index.js` for complete list
+   * Supply any additional class names. Resize the icon via the parent's stylesheet.
    */
-  icon: PropTypes.string.isRequired,
-  /**
-   * styles applied to icon wrapper
-   */
-  wrapperStyles: PropTypes.object,
-  /**
-   * class name applied to icon wrapper
-   */
-  wrapperClassName: PropTypes.string
-
+  className: PropTypes.string,
 }
 
 export default Icon;

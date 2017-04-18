@@ -31,6 +31,7 @@ $checkbox-border-color: $neutral-5;
 .label {
   @include typography-7(false);
   @include typography-semibold;
+  position: relative;
 }
 
 .header {
@@ -40,6 +41,7 @@ $checkbox-border-color: $neutral-5;
 .label,
 .select,
 .input {
+  @include typography-regular();
   padding: ru(.5) ru(.75);
 }
 
@@ -47,6 +49,12 @@ $checkbox-border-color: $neutral-5;
 .select {
   @include typography-6(false);
   border: 0;
+}
+
+.tooltip-wrapper {
+  position: absolute;
+  top: ru(.75);
+  right: ru(.75);
 }
 
 .select {
@@ -106,6 +114,11 @@ $checkbox-border-color: $neutral-5;
     border-bottom: $border;
     border-radius: $border-radius $border-radius 0 0;
   }
+
+  input[type='text'] {
+    border-radius: $border-radius;
+    outline: none;
+  }
 }
 
 .togglefield {
@@ -164,21 +177,18 @@ $checkbox-border-color: $neutral-5;
     border: 0;
     color: $neutral-2;
     letter-spacing: 0.1px;
-    font-weight: 300;
   }
 
   .select {
     @include typography-3(false);
     padding: ru(.5) ru(1);
     color: $brand-2;
-    font-weight: 100;
     letter-spacing: .2px;
     pointer-events: all;
 
     &:invalid {
       @include typography-3(false);
       color: $brand-2;
-      font-weight: 100;
     }
   }
 }
@@ -203,7 +213,6 @@ $checkbox-border-color: $neutral-5;
 
 .checkbox {
   @include typography-6;
-  font-weight: 600;
   margin: 0;
   position: relative;
   min-height: $checkbox-size;
@@ -280,7 +289,6 @@ $checkbox-border-color: $neutral-5;
 
   @media #{$medium-up} {
     @include typography-7;
-    font-weight: 600;
     line-height: ru(.75);
     margin: 0;
 
