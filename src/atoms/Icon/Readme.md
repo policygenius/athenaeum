@@ -6,7 +6,6 @@ All Icons (WIP):
     const icons = require('assets/images');
 
     function DisplayAllIcons() {
-      console.log(icons);
       return (
         <div style={{
           display: 'flex',

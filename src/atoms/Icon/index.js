@@ -26,6 +26,10 @@ Icon.propTypes = {
    * Supply any additional class names. Resize the icon via the parent's stylesheet.
    */
   className: PropTypes.string,
+  /**
+   * The icon you'd like to display.
+   */
+  icon: PropTypes.string
 }
 
 export default Icon;
