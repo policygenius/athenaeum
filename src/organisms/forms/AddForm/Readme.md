@@ -3,6 +3,7 @@ Add Jewelry item Example:
     <AddForm
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
+      onClose={ () => alert('Clicked close button') }
     >
       <ImageAside
         type='simple'
@@ -24,6 +25,7 @@ Add Person Example:
     <AddForm
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
+      onClose={ () => alert('Clicked close button') }
     >
       <TextField
         label='Full name'

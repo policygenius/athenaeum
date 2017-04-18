@@ -19,8 +19,8 @@ module.exports = (options) => ({
   context: path.resolve(__dirname, 'src'),
   resolve: {
     modules: [
-      path.resolve('./src'),
-      path.resolve('./node_modules')
+      path.resolve(__dirname, 'src'),
+      'node_modules'
     ]
   },
   module: {

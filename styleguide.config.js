@@ -66,5 +66,5 @@ module.exports = {
   highlightTheme: 'base16-light',
   verbose: true,
   template: 'styleguide_assets/index.html',
-  webpackConfig: require('./webpack.config.js')
+  webpackConfig: require('./webpack.config.dev.js')
 }

@@ -11,9 +11,9 @@ function StepProgress ( props ) {
 
   return (
     <ul className={ classnames(styles.stepProgress, className) }>
-      { data.map(step => {
+      { data.map((step, index) => {
         return (
-          <li className={classnames(styles.item, { [styles.current]: step.current, [styles.inactive]: step.inactive })}>
+          <li key={ index } className={classnames(styles.item, { [styles.current]: step.current, [styles.inactive]: step.inactive })}>
             <a className={styles.wrapper} href={step.link}>
               <i className={classnames(styles.icon, icons[step.icon])}>
                 {step.complete &&

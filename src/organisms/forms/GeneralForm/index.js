@@ -8,8 +8,7 @@ function GeneralForm ( props ) {
     className,
     children,
     formName,
-    onSubmit,
-    onClose
+    onSubmit
   } = props;
 
   const kids = React.Children.map(children, child => {
@@ -39,7 +38,6 @@ function GeneralForm ( props ) {
 }
 
 GeneralForm.propTypes = {
-  onClose: React.PropTypes.func.isRequired,
   formName: React.PropTypes.string.isRequired,
   onSubmit: React.PropTypes.func
 }
