@@ -30,6 +30,6 @@ Navigator Page 2:
             tooltipMessage="Pick Me?!"
           />
 
-          <Button type='action'>Continue</Button>
+          <Button style='action'>Continue</Button>
         </GeneralForm>
       </Navigator>
