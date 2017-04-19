@@ -1,0 +1,43 @@
+@import '../shared/cards.module.scss';
+
+.contact {
+  composes: card;
+
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.li {
+  border-top: $border;
+
+  &:first-child {
+    border: none;
+  }
+}
+
+.link-row {
+  @include typography-7(false);
+  @include typography-semibold;
+
+  display: flex;
+  align-items: center;
+  padding: ru(.25) ru(.75);
+
+  color: $neutral-2;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $neutral-5;
+    color: $neutral-8;
+
+    .icon path {
+      fill: $neutral-8;
+    }
+  }
+}
+
+.icon {
+  width: ru(.75);
+  height: ru(.75);
+  margin-right: ru(.25);
+}

@@ -43,7 +43,12 @@ function Navigator ( props ) {
         }
         { children }
       </div>
-      <div className={ styles['right-rail'] } />
+      <div className={ styles['right-rail'] }>
+        <ContactCard
+          phoneNumber='1(800) 555-5309'
+          chatText='Chat with an Expert'
+        />
+      </div>
     </div>
   );
 }
