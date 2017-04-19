@@ -20,12 +20,12 @@ function AddForm ( props ) {
   })
 
   return (
-    <div className={ classnames( className, styles['formWrapper'] ) }>
-      <span onClick={ onClose } className={ styles['icon-close'] }>
-        <Icon
-          icon='xIcon'
-        />
-      </span>
+    <div className={ classnames( styles['formWrapper'], className ) }>
+      <Icon
+        icon='xIcon'
+        onClick={ onClose }
+        className={ styles['icon-close'] }
+      />
       <form
         className={ styles.form }
         onSubmit={ onSubmit }
