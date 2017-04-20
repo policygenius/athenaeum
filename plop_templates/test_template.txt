@@ -1,0 +1,20 @@
+import React from 'react';
+import sinon from 'sinon';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
+
+import {{properCase name}} from '../index';
+
+describe('{{properCase name}}', () => {
+  let defaultProps;
+
+  beforeEach() {
+    defaultProps = {
+      // Add default props here
+    };
+  }
+  
+  it('write your tests here', () => {
+  
+  });
+});

@@ -5,21 +5,21 @@ import styles from './buttons.module.scss';
 
 function Button( props ) {
   const {
-    kind,
-    type,
+    className,
     children,
+    type,
+    variant,
+    disabled,
     onClick,
     shake,
-    className,
-    disabled
   } = props;
 
   return (
     <button
-      className={classnames({ [styles.shaking]: shake }, styles[kind], className)}
-      onClick={onClick}
+      className={classnames({ [styles.shaking]: shake }, styles[variant], className)}
       type={type}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </button>
@@ -28,31 +28,31 @@ function Button( props ) {
 
 Button.propTypes = {
   /**
-   * Possible button kinds are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
-   */
-  kind: PropTypes.string,
-  onClick: PropTypes.func,
-  /**
    * Will append new classname to classSet
    */
   className: PropTypes.string,
-  /**
-   * Triggers shake animation if true
-   */
-  shake: PropTypes.bool,
   /**
    * Possible `type` attributes are: `submit`, `reset`, `button`, or `menu`
    */
   type: PropTypes.string,
   /**
+   * Possible button variants are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
+   */
+  variant: PropTypes.string,
+  /**
    * Adds `disabled` attribute to button element if true
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /**
+   * Triggers shake animation if true
+   */
+  shake: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  kind: 'button',
-  type: 'button'
+  type: 'button',
+  variant: 'button',
 };
 
 export default Button;

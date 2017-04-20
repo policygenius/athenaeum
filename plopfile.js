@@ -43,6 +43,11 @@ module.exports = function (plop) {
         path: 'src/{{type}}s/{{properCase name}}/{{snakeCase name}}.module.scss',
         templateFile: 'plop_templates/scss_template.txt'
       },
+      {
+        type: 'add',
+        path: 'src/{{type}}s/{{properCase name}}/__tests__/{{snakeCase name}}.spec.js',
+        templateFile: 'plop_templates/test_template.txt'
+      }
     ]
   });
 };
