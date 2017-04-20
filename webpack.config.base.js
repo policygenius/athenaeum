@@ -14,7 +14,6 @@ module.exports = options => ({
   entry: options.entry,
   output: options.output,
   externals: options.externals,
-  devtool: 'source-map',
   context: path.resolve(__dirname, 'src'),
   resolve: {
     modules: [

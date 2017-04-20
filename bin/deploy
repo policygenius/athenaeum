@@ -1,0 +1,15 @@
+#!/bin/bash
+set -eo pipefail
+
+VERSION=$(npm view athenaeum version)
+
+NODE_ENV=development yarn
+NODE_ENV=production yarn run styleguide:build
+
+echo '+++ Sending the goods up to AWS..'
+
+aws s3 sync \
+  ./styleguide s3://rcl-pg/$VERSION/ \
+  --acl=public-read \
+  --cache-control max-age=31536000 \
+  --exclude '.DS_Store'

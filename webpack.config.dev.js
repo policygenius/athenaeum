@@ -4,14 +4,6 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const baseConfig = require('./webpack.config.base.js');
 
 module.exports = baseConfig({
-  entry: [
-    'webpack/hot/only-dev-server',
-    './entry.js'
-  ],
-  output: {
-    path: path.resolve(__dirname, 'lib'),
-    filename: 'bundle.[hash].js'
-  },
   module: {
     rules: [
       {
