@@ -12,7 +12,7 @@ export const createNamedCompoenent = (overrideProps = {}) => {
   }
 
   component.propTypes = {
-    type: React.PropTypes.string.isRequired
+    type: PropTypes.string.isRequired
   }
 
   component.defaultProps = {

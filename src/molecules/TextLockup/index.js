@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './text-lockups.module.scss';
 import classnames from 'classnames';
 
@@ -40,9 +41,9 @@ TextLockup.propTypes = {
    * Possible card types are: `1`
    *
    */
-  type: React.PropTypes.string.isRequired
-  // header: React.PropTypes.string.isRequired,
-  // subheader: React.PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
+  // header: PropTypes.string.isRequired,
+  // subheader: PropTypes.string.isRequired
 }
 
 export default TextLockup;

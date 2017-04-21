@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './step-progress.module.scss';
 import icons from 'assets/stylesheets/utilities/_icons.scss';
 import classnames from 'classnames';

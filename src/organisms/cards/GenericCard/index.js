@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TextLockup from 'molecules/TextLockup';
 import styles from './generic_card.module.scss';
 import classnames from 'classnames';
@@ -37,11 +38,11 @@ function GenericCard ( props ) {
 }
 
 GenericCard.propTypes = {
-  onClose: React.PropTypes.func.isRequired,
-  header: React.PropTypes.string.isRequired,
-  subheader: React.PropTypes.string,
-  footerText: React.PropTypes.string.isRequired,
-  onFooterLinkClick: React.PropTypes.func
+  onClose: PropTypes.func.isRequired,
+  header: PropTypes.string.isRequired,
+  subheader: PropTypes.string,
+  footerText: PropTypes.string.isRequired,
+  onFooterLinkClick: PropTypes.func
 }
 
 export default GenericCard;

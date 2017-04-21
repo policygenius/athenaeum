@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../lists.module.scss';
 import reduce from 'lodash/reduce';
 
@@ -39,12 +40,12 @@ function ArticleList ( props ) {
 }
 
 ArticleList.propTypes = {
-  data: React.PropTypes.array.isRequired,
-  type: React.PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
+  type: PropTypes.string.isRequired,
   /**
    * Default keys are: id, link, imageSrc, header, subHeader
    */
-  mapProps: React.PropTypes.object
+  mapProps: PropTypes.object
 };
 
 ArticleList.defaultProps = {
