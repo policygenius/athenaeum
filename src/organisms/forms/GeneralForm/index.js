@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../shared/forms.module.scss';
 import classnames from 'classnames';
 
@@ -38,8 +39,8 @@ function GeneralForm ( props ) {
 }
 
 GeneralForm.propTypes = {
-  formName: React.PropTypes.string.isRequired,
-  onSubmit: React.PropTypes.func
+  formName: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func
 }
 
 export default GeneralForm;

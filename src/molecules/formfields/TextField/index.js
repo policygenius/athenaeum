@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
 
@@ -36,7 +37,7 @@ TextField.propTypes = {
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
-  label: React.PropTypes.string,
+  label: PropTypes.string,
   /**
    * Will append new classname to classSet
    */
@@ -51,4 +52,3 @@ TextField.defaultProps = {
 }
 
 export default TextField;
-

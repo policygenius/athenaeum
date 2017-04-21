@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../shared/forms.module.scss';
 import classnames from 'classnames';
 
@@ -38,9 +39,9 @@ function AddForm ( props ) {
 }
 
 AddForm.propTypes = {
-  onClose: React.PropTypes.func.isRequired,
-  formName: React.PropTypes.string.isRequired,
-  onSubmit: React.PropTypes.func
+  onClose: PropTypes.func.isRequired,
+  formName: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func
 }
 
 export default AddForm;

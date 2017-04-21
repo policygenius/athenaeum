@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TextLockup from 'molecules/TextLockup';
 import styles from './percentage_card.module.scss';
 
@@ -49,13 +50,13 @@ function PercentageCard ( props ) {
 }
 
 PercentageCard.propTypes = {
-  onClose: React.PropTypes.func.isRequired,
-  header1: React.PropTypes.string.isRequired,
-  subheader1: React.PropTypes.string.isRequired,
-  percent: React.PropTypes.number.isRequired,
-  subheader2: React.PropTypes.string.isRequired,
-  footerText1: React.PropTypes.string.isRequired,
-  footerText2: React.PropTypes.string.isRequired
+  onClose: PropTypes.func.isRequired,
+  header1: PropTypes.string.isRequired,
+  subheader1: PropTypes.string.isRequired,
+  percent: PropTypes.number.isRequired,
+  subheader2: PropTypes.string.isRequired,
+  footerText1: PropTypes.string.isRequired,
+  footerText2: PropTypes.string.isRequired
 }
 
 export default PercentageCard;
