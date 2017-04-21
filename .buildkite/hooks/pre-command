@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
