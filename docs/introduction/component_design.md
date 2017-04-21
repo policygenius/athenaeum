@@ -84,5 +84,3 @@ export default function simpleButton({ children }) {
   )
 }
 ```
-
-<!-- ## Things to know -->
