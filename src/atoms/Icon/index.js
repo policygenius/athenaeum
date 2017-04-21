@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import SVGInline from 'react-svg-inline';
 import * as icons from 'assets/images';
 import styles from './icons.module.scss';

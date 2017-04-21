@@ -22,7 +22,8 @@ Starts a cli prompt which will create the following component directory and file
 
 ### Basic component libraries
 ```js
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './component_name.module.scss';
 import classnames from 'classnames';
 ```
