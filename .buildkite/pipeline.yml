@@ -18,6 +18,22 @@ steps:
       docker-compose:
         run: athenaeum
 
+  - block: 'Bump the version'
+    prompt: 'How big do you want it?'
+    # branches: 'master'
+    fields:
+    - select: 'Increment'
+      key: 'bump-size'
+      hint: "MAJOR: incompatible API changes // MINOR: add backwards-compatible functionality // PATCH: backwards-compatible bug fixes"
+      required: true
+      options:
+        - label: 'Major'
+          value: 'major'
+        - label: 'Minor'
+          value: 'minor'
+        - label: 'Patch'
+          value: 'patch'
+
   - name: ':rocket:'
     command: bin/deploy
     # branches: master
@@ -26,3 +42,11 @@ steps:
     plugins:
       docker-compose:
         run: athenaeum
+
+  - wait
+
+  - name: ':rocket: Commit tag'
+    command: bin/commit-tag
+    # branches: master
+    agents:
+      queue: builder
