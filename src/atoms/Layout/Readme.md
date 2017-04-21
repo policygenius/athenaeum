@@ -12,10 +12,11 @@ Alignment (vertical and horizontal):
 
 Layout Examples:
 
+```example
     <div>
       <TextComponent type={3}>Same Width Columns</TextComponent>
-      <Layout 
-        childCols={ [6] }
+      <Layout
+        childCols={[ 6 ]}
       >
         <Button>Hello</Button>
         <Button>World</Button>
@@ -24,11 +25,12 @@ Layout Examples:
       </Layout>
 
       <Spacer
-        medium />
+        medium
+      />
 
       <TextComponent type={3}>Repeating Different Width Columns</TextComponent>
       <Layout
-        childCols={ [9, 3] }
+        childCols={[ 9, 3 ]}
         breakpoint='large'
       >
         <Button>Hello</Button>
@@ -38,11 +40,12 @@ Layout Examples:
       </Layout>
 
       <Spacer
-        medium />
+        medium
+      />
 
       <TextComponent type={3}>Specifc Width Pattern</TextComponent>
-      <Layout 
-        childCols={ [8, 4, 4, 8] }
+      <Layout
+        childCols={[ 8, 4, 4, 8 ]}
       >
         <Button>Hello</Button>
         <Button>World</Button>
@@ -50,3 +53,4 @@ Layout Examples:
         <Button>World</Button>
       </Layout>
     </div>
+```

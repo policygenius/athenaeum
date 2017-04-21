@@ -136,12 +136,10 @@ $checkbox-border-color: $neutral-5;
   .button-wrapper {
     display: flex;
     flex-direction: column;
-  }
 
-  .button-wrapper {
     .button {
       flex-grow: 1;
-      margin-bottom : ru(.5);
+      margin-bottom: ru(.5);
     }
   }
 

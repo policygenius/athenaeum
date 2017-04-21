@@ -9,7 +9,7 @@ $rem-ratio:  24px; // Line height
 }
 
 // CONVERT TO REM
-@function convert-to-rem($value, $base-value: $rem-base)  {
+@function convert-to-rem($value, $base-value: $rem-base) {
   $value: strip-unit($value) / strip-unit($base-value) * 1rem;
   @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
   @return $value;
@@ -33,7 +33,7 @@ $rem-ratio:  24px; // Line height
   @return $units * $rhythm-base;
 }
 
-@function lower-bound($range){
+@function lower-bound($range) {
   @if length($range) <= 0 {
     @return 0;
   }

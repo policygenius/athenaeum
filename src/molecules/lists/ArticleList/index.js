@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../lists.module.scss';
 import reduce from 'lodash/reduce';
+import styles from '../lists.module.scss';
 
-function ArticleList ( props ) {
+function ArticleList( props ) {
   const {
     data,
     type,
@@ -11,30 +11,30 @@ function ArticleList ( props ) {
   } = props;
 
   const defaultItemProps = [ 'id', 'link', 'imageSrc', 'header', 'subHeader' ];
-  const itemProps = reduce(defaultItemProps, (res, val) => {
-    res[val] = mapProps[val] || val;
-
-    return res;
-  }, {});
+  const itemProps = reduce(defaultItemProps, (res, val) => Object.assign( {}, res, {
+    [val]: mapProps[val] || val
+  }), {});
 
   return (
-    <ul className={ styles[type] } >
-      {data.map(item => {
-        return (
-          <li className={ styles.listItem } key={ item[itemProps.id] }>
-            <a className={styles.link} href={ item[itemProps.link] }>
-              <figure className={ styles.articleWrapper }>
-                <img className={ [ styles.articleImg ] } src={ item[itemProps.imageSrc] } />
+    <ul className={styles[type]} >
+      {data.map(item =>
+        <li className={styles.listItem} key={item[itemProps.id]}>
+          <a className={styles.link} href={item[itemProps.link]}>
+            <figure className={styles.articleWrapper}>
+              <img
+                className={[ styles.articleImg ]}
+                src={item[itemProps.imageSrc]}
+                role='presentation'
+              />
 
-                <figcaption className={ styles.articleInfoWrapper }>
-                  <h3 className={ styles.header }>{ item[itemProps.header] }</h3>
-                  <p className={ styles.subHeader }>{ item[itemProps.subHeader] }</p>
-                </figcaption>
-              </figure>
-            </a>
-          </li>
-        );
-      })}
+              <figcaption className={styles.articleInfoWrapper}>
+                <h3 className={styles.header}>{ item[itemProps.header] }</h3>
+                <p className={styles.subHeader}>{ item[itemProps.subHeader] }</p>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        )}
     </ul>
   );
 }

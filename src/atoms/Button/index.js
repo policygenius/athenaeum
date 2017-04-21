@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './buttons.module.scss';
 import classnames from 'classnames';
+import styles from './buttons.module.scss';
 
-function Button ( props ) {
+function Button( props ) {
   const {
-    style,
+    kind,
     type,
     children,
     onClick,
@@ -16,21 +16,21 @@ function Button ( props ) {
 
   return (
     <button
-      className={ classnames({ [styles.shaking]: shake }, styles[style], className) }
-      onClick={ onClick }
-      type={ type }
-      disabled={ disabled }
+      className={classnames({ [styles.shaking]: shake }, styles[kind], className)}
+      onClick={onClick}
+      type={type}
+      disabled={disabled}
     >
       {children}
     </button>
-  )
+  );
 }
 
 Button.propTypes = {
   /**
-   * Possible button styles are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
+   * Possible button kinds are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
    */
-  style: PropTypes.string,
+  kind: PropTypes.string,
   onClick: PropTypes.func,
   /**
    * Will append new classname to classSet
@@ -48,11 +48,11 @@ Button.propTypes = {
    * Adds `disabled` attribute to button element if true
    */
   disabled: PropTypes.bool
-}
+};
 
 Button.defaultProps = {
-  style: 'button',
+  kind: 'button',
   type: 'button'
-}
+};
 
 export default Button;

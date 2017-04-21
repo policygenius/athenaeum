@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
+import styles from '../shared/formfields.module.scss';
 
-function CheckboxList ( props ) {
+function CheckboxList( props ) {
   const {
     label,
     focused,
@@ -12,17 +12,36 @@ function CheckboxList ( props ) {
   } = props;
 
   return (
-    <div className={ classnames(styles.checkboxList, { [styles.focused]: focused })}>
-      <label className={ styles.label }>{ label }</label>
-      <div className={ styles.content }>
-        {data.map((item, idx) => {
-          return (
-            <label className={ styles.checkbox } key={ idx } onClick={ () => handleClick( item ) }>
-              <input type='checkbox' defaultChecked={ item.checked } disabled={ item.disabled } />
-              <span className={ styles.checkboxLabel }>{ item.checkboxLabel }</span>
+    <div className={classnames(styles.checkboxList, { [styles.focused]: focused })}>
+      {
+        label &&
+        <label
+          htmlFor='checkbox'
+          className={styles.label}
+        >
+          { label }
+        </label>
+      }
+
+      <div className={styles.content}>
+        {
+          data.map( (item, idx) =>
+            <label
+              className={styles.checkbox}
+              key={idx}
+              onClick={() => handleClick( item )}
+              htmlFor={`checkbox-${idx}`}
+            >
+              <input
+                type='checkbox'
+                defaultChecked={item.checked}
+                disabled={item.disabled}
+                id={`checkbox-${idx}`}
+              />
+              <span className={styles.checkboxLabel}>{ item.checkboxLabel }</span>
             </label>
-          );
-        })}
+          )
+        }
       </div>
     </div>
   );
@@ -42,5 +61,4 @@ CheckboxList.propTypes = {
 };
 
 export default CheckboxList;
-
 

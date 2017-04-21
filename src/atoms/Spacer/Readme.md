@@ -1,33 +1,36 @@
-    const spacers = {
-      xSmall: 'Extra Small',
-      small: 'Small',
-      medium: 'Medium',
-      large: 'Large',
-      xLarge: 'Extra Large'
-    }
+```example
+  const spacers = {
+    xSmall: 'Extra Small',
+    small: 'Small',
+    medium: 'Medium',
+    large: 'Large',
+    xLarge: 'Extra Large'
+  };
 
-    function DisplaySpacers () {
-      return (
-        <div>
-          {
-            Object.keys(spacers).map( key => {
-              let size = {};
-              size[key] = true;
+  function DisplaySpacers() {
+    return (
+      <div>
+        {
+          Object.keys(spacers).map( (key) => {
+            const size = {};
 
-              return (
-                <div style={{ margin: '50px 0' }}>
-                  <TextComponent type={3}>{ spacers[key] }</TextComponent>
-                  <div style={{ backgroundColor: '#b3b3b3', width: '100%', height: '100px'}}></div>
+            size[key] = true;
 
-                  <Spacer {...size} />
+            return (
+              <div style={{ margin: '50px 0' }}>
+                <TextComponent type={3}>{ spacers[key] }</TextComponent>
+                <div style={{ backgroundColor: '#b3b3b3', width: '100%', height: '100px' }}></div>
 
-                  <div style={{ backgroundColor: '#b3b3b3', width: '100%', height: '100px'}}></div>
-                </div>
-              )
-            })
-          }
-        </div>
-      )
-    }
+                <Spacer {...size} />
 
-    <DisplaySpacers />
+                <div style={{ backgroundColor: '#b3b3b3', width: '100%', height: '100px' }}></div>
+              </div>
+            );
+          })
+        }
+      </div>
+    );
+  }
+
+  <DisplaySpacers />;
+```

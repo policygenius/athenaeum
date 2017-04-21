@@ -6,13 +6,11 @@
 $subheader-color: $neutral-4;
 
 .header {
-  @include typography-4;
   margin: 0 0 ru(.125);
   font-weight: normal;
 }
 
 .subheader {
-  @include typography-6;
   font-weight: 400;
   line-height: ru(.75);
   color: $subheader-color;

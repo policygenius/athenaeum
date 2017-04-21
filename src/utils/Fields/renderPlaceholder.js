@@ -6,7 +6,7 @@ export default function renderPlaceholder( placeholder, className) {
       disabled
       hidden
       value=''
-      className={ className }
+      className={className}
     >{ placeholder }</option>
-  )
+  );
 }

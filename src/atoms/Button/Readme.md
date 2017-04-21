@@ -1,23 +1,36 @@
 Default Button Example:
 
-      <Button onClick={() => alert('Button clicked')}>Default Button</Button>
+```example
+  <Button onClick={() => alert('Button clicked')}>Default Button</Button>
+```
+
 Info Button Example:
 
-      <Button style="info">Info</Button>
+```example
+      <Button kind='info'>Info</Button>
+```
+
 Disabled Button Example:
 
-      <Button style="disabled">Disabled</Button>
+```example
+      <Button kind='disabled'>Disabled</Button>
+```
 
 Action Button Example:
 
-      <Button style="action">Action</Button>
+```example
+      <Button kind='action'>Action</Button>
+```
 
 Action Lowlight Button Example:
 
-      <Button style="lowlight">Lowlight Action</Button>
+```example
+      <Button kind='lowlight'>Lowlight Action</Button>
+```
 
 Action Disabled Button Example:
 
+```example
       class ButtonExample extends React.Component {
         constructor() {
           super();
@@ -29,13 +42,13 @@ Action Disabled Button Example:
         }
 
         handleClick() {
-          this.setState({shake: true});
+          this.setState({ shake: true });
         }
 
         render() {
           return (
             <Button
-              style="actionDisabled"
+              kind='actionDisabled'
               shake={this.state.shake}
               onClick={this.handleClick}
             >
@@ -46,11 +59,16 @@ Action Disabled Button Example:
       }
 
       <ButtonExample />
+```
 
 Outline Button Example:
 
-      <Button style='outline'>Outline Button</Button>
+```example
+      <Button kind='outline'>Outline Button</Button>
+```
 
 Toggle Button Example:
 
-      <Button style='toggle'>Toggle Button</Button>
+```example
+      <Button kind='toggle'>Toggle Button</Button>
+```

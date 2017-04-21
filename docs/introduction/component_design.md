@@ -24,8 +24,8 @@ Starts a cli prompt which will create the following component directory and file
 ```js
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './component_name.module.scss';
 import classnames from 'classnames';
+import styles from './component_name.module.scss';
 ```
 
 ### Standard Props
@@ -47,7 +47,9 @@ import styles from './component_name.module.scss';
 
 **Using Component Styles:**  
 ```js
-<button className={ styles['action-button'] }>
+ <button className={styles['action-button']}>
+  ...
+ </button>
 ```
 You can styles class names to your JSX markup!
 **Note:** you have the option to use `styles.class` vs. `styles['action-button']` depending on your situation. Use your best judgement.
@@ -81,7 +83,7 @@ import styles from '../path/simple_button.scss';
 
 export default function simpleButton({ children }) {
   return (
-    <button className={ styles.button }>{ children }</button>
+    <button className={styles.button}>{ children }</button>
   )
 }
 ```

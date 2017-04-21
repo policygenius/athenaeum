@@ -1,8 +1,0 @@
-@charset 'UTF-8';
-
-:global { @import 'base_styles/colors'; }
-:global { @import 'base_styes/typography'; }
-:global { @import 'utilities/mixins'; }
-
-// CSS Modules
-@import 'molecules/buttons';

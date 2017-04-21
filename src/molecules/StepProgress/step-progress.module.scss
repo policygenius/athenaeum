@@ -200,7 +200,9 @@ $mobile-inactive-item-border-color: $brand-2;
 
     .wrapper {
       &:before {
+        /* stylelint-disable declaration-no-important */
         background-color: $mobile-inactive-item-border-color !important;
+        /* stylelint-enable */
       }
     }
   }

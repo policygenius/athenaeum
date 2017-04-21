@@ -1,7 +1,4 @@
-@import 'src/assets/stylesheets/base_styles/colors';
-@import 'src/assets/stylesheets/utilities/functions';
-@import 'src/assets/stylesheets/base_styles/typography';
-@import 'src/assets/stylesheets/base_styles/break_points';
+@import 'src/assets/stylesheets/global';
 
 $article-list-color:                 $neutral-2;
 $article-list-heading-color:         $neutral-4;
@@ -13,7 +10,7 @@ $articles-list-tag-color:            $neutral-3;
 .articleList {
   list-style: none;
   color: $article-list-color;
-  padding: 0
+  padding: 0;
 }
 
 .listItem {
@@ -68,7 +65,7 @@ $articles-list-tag-color:            $neutral-3;
   .articleImg {
     align-self: flex-start;
 
-    &:not([width]) {
+    &:not( [width] ) {
       width: 33%;
     }
   }

@@ -1,14 +1,15 @@
 Select Card example: 
 
+```example
     class SelectCardExample extends React.Component {
       constructor() {
         super();
 
         this.state = {
-          selectOptions: [ 
-             { group: 'Group 1', options: [{label: '$300,000 (most common)', value: 1}] },
-             { group: 'Group 2', options: [{label: '$400,000', value: 2}] },
-             { group: 'Group 3', options: [{label: '$500,000', value: 3}] },
+          selectOptions: [
+             { group: 'Group 1', options: [ { label: '$300,000 (most common)', value: 1 } ] },
+             { group: 'Group 2', options: [ { label: '$400,000', value: 2 } ] },
+             { group: 'Group 3', options: [ { label: '$500,000', value: 3 } ] },
           ],
           value: ''
         }
@@ -32,15 +33,15 @@ Select Card example:
           <SelectCard
             placeholder='Placeholder'
             label='Personal liability'
-            value={ this.state.value }
-            selectOptions={ this.state.selectOptions }
+            value={this.state.value}
+            selectOptions={this.state.selectOptions}
             footerText='What does this cover?'
-            onClick={ this.handleClick }
-            onChange={ this.handleChange }
+            onClick={this.handleClick}
+            onChange={this.handleChange}
           />
        )
       }
     }
-    
-    <SelectCardExample />
 
+    <SelectCardExample />
+```

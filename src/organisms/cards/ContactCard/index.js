@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './contact_card.module.scss';
 import classnames from 'classnames';
+import Icon from 'atoms/Icon';
+import styles from './contact_card.module.scss';
 
-function cleanPhoneString ( phoneString ) {
+function cleanPhoneString( phoneString ) {
   return phoneString.replace(/[^0-9]+/g, '');
 }
 
-function ContactCard ( props ) {
+function ContactCard( props ) {
   const {
     phoneNumber,
     chatClick,
@@ -16,24 +17,26 @@ function ContactCard ( props ) {
   } = props;
 
   return (
-    <ul className={ classnames(styles.contact, className) }>
-      <li className={ styles.li }>
+    <ul className={classnames(styles.contact, className)}>
+      <li className={styles.li}>
         <a
-          className={ styles['link-row'] }
-          href={ `tel:${ cleanPhoneString(phoneNumber) }`}>
+          className={styles['link-row']}
+          href={`tel:${cleanPhoneString(phoneNumber)}`}
+        >
           <Icon
             icon='phone'
-            className={ styles.icon }
+            className={styles.icon}
           />{ phoneNumber }
         </a>
       </li>
-      <li className={ styles.li }>
+      <li className={styles.li}>
         <a
-          className={ styles['link-row'] }
-          onClick={ chatClick }>
+          className={styles['link-row']}
+          onClick={chatClick}
+        >
           <Icon
             icon='chat'
-            className={ styles.icon }
+            className={styles.icon}
           />{ chatText }
         </a>
       </li>
@@ -59,12 +62,11 @@ ContactCard.propTypes = {
    * Text for the bottom of the contact card.
   */
   chatText: PropTypes.string.isRequired,
-}
+};
 
 ContactCard.defaultProps = {
   phoneNumber: '1 (855) 695-2255',
-  chatClick: () => alert('hi'),
-  chatText: 'Chat with an Expert',
-}
+  chatText: 'Chat with an Expert'
+};
 
 export default ContactCard;

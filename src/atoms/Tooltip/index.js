@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from 'atoms/Icon';
 import styles from './tooltip.module.scss';
-import classnames from 'classnames';
 
-function Tooltip ( props ) {
+function Tooltip( props ) {
   const {
     children,
     className
   } = props;
 
   return (
-    <div className={ className }>
-      <Icon icon='tooltip' className={ styles['tooltip'] } />
-      <div className={ styles['hover-message'] }>
+    <div className={className}>
+      <Icon icon='tooltip' className={styles['tooltip']} />
+      <div className={styles['hover-message']}>
         { children }
       </div>
     </div>
@@ -26,6 +26,6 @@ Tooltip.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
-}
+};
 
 export default Tooltip;

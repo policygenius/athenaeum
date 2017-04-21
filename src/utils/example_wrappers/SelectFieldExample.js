@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import SelectField from 'molecules/formfields/SelectField';
 
 const defaultSelectOptions = [
-  { label: 'Option 1', value: 1 },
-  { label: 'Option 2', value: 2 },
-  { label: 'Option 3', value: 3 }
+  { label: 'Option 1',
+    value: 1 },
+  { label: 'Option 2',
+    value: 2 },
+  { label: 'Option 3',
+    value: 3 }
 ];
 
+/* eslint-disable */
+
 export default class SelectFieldExample extends Component {
-  constructor () {
+  constructor() {
     super();
 
     this.state = {
@@ -18,19 +23,19 @@ export default class SelectFieldExample extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange ( event ) {
+  onChange( event ) {
     this.setState({ value: event.target.value });
   }
 
-  render () {
+  render() {
     return (
       <SelectField
-        selectOptions={this.props.selectOptions || defaultSelectOptions}
+        selectOptions={ this.props.selectOptions || defaultSelectOptions }
         input={{
           onChange: this.onChange,
           value: this.state.value
         }}
-        { ...this.props }
+        {...this.props}
       />
     );
   }

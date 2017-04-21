@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Tooltip from 'atoms/Tooltip';
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 import renderPlaceholder from 'utils/Fields/renderPlaceholder';
 import renderOptGroup from 'utils/Fields/renderOptGroup';
 
-function SelectField ( props ) {
+function SelectField( props ) {
   const {
     className,
     placeholder,
@@ -15,22 +16,21 @@ function SelectField ( props ) {
     focused,
     type,
     input,
-    tooltip,
-    meta
+    tooltip
   } = props;
 
   return (
-    <div className={ classnames( styles[type], { [styles.focused]: focused }, className ) }>
+    <div className={classnames( styles[type], { [styles.focused]: focused }, className )}>
       {
         label &&
         <label
-          className={ classnames( styles.label, { [styles.focused]: focused } ) }
-          htmlFor={ forProp }
+          className={classnames( styles.label, { [styles.focused]: focused } )}
+          htmlFor={forProp}
         >
           { label }
           {
             tooltip &&
-            <div className={ styles['tooltip-wrapper'] }>
+            <div className={styles['tooltip-wrapper']}>
               <Tooltip>
                 { tooltip }
               </Tooltip>
@@ -39,35 +39,36 @@ function SelectField ( props ) {
         </label>
       }
 
-      <div className={ styles.selectbox }>
+      <div className={styles.selectbox}>
         <select
           required
-          className={ styles.select }
-          id={ forProp }
-          { ...input }
+          className={styles.select}
+          id={forProp}
+          {...input}
         >
           { placeholder && renderPlaceholder( placeholder, styles.option ) }
 
           { selectOptions.map( (opt, idx) => {
-              if (opt.group) {
-                return renderOptGroup( opt )
-              } else {
-                return (
-                  <option
-                    key={ 'selectfield-option-' + idx }
-                    value={ opt.value }
-                    className={ styles['option'] }
-                  >
-                    { opt.label }
-                  </option>
-                )
-              }
-            })
+            if (opt.group) {
+              return renderOptGroup( opt );
+            }
+
+            return (
+              <option
+                key={`selectfield-option-${idx}`}
+                value={opt.value}
+                className={styles['option']}
+              >
+                { opt.label }
+              </option>
+            );
+
+          })
           }
         </select>
       </div>
     </div>
-  )
+  );
 }
 
 SelectField.propTypes = {
@@ -101,7 +102,7 @@ SelectField.propTypes = {
    */
   selectOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
   })).isRequired,
 
   /**
@@ -112,16 +113,15 @@ SelectField.propTypes = {
    * contains anything you want to pass directly to input e.g. value, onChange, onBlur
    */
   input: PropTypes.object,
-  meta: PropTypes.object,
   /**
    * Content for tooltip
    */
   tooltip: PropTypes.node
-}
+};
 
 SelectField.defaultProps = {
   type: 'selectfield'
-}
+};
 
 export default SelectField;
 

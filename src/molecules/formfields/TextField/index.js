@@ -1,36 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../shared/formfields.module.scss';
 import classnames from 'classnames';
+import styles from '../shared/formfields.module.scss';
 
-function TextField ( props ) {
+function TextField( props ) {
   const {
     className,
     placeholder,
     label,
     input,
-    meta
+    htmlFor
   } = props;
 
   return (
-    <div className={ classnames(styles.textfield, className) }>
+    <div className={classnames(styles.textfield, className)}>
       {
         label &&
         <label
-          className={ styles.label }
+          className={styles.label}
+          htmlFor={htmlFor}
         >
           { label }
         </label>
       }
 
       <input
-        className={ styles.input }
+        className={styles.input}
         type='text'
-        placeholder={ placeholder }
+        placeholder={placeholder}
         {...input}
       />
     </div>
-  )
+  );
 }
 
 TextField.propTypes = {
@@ -39,16 +40,28 @@ TextField.propTypes = {
    */
   label: PropTypes.string,
   /**
+   * `for` prop on label
+   */
+  htmlFor: PropTypes.string,
+
+  /**
    * Will append new classname to classSet
    */
   className: PropTypes.string,
+
+  /**
+   * placeholder text for text field
+   */
   placeholder: PropTypes.string,
-  input: PropTypes.object,
-  meta: PropTypes.object
-}
+
+  /**
+   * object with all necessary props for input
+   */
+  input: PropTypes.object
+};
 
 TextField.defaultProps = {
   placeholder: 'Placeholder'
-}
+};
 
 export default TextField;
