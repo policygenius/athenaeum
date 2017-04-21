@@ -10,19 +10,47 @@ steps:
 
   - wait
 
-  - name: ':rubocop: :scsslint:'
-    command: bin/pre_test
+  - name: ':jest: :scsslint:'
+    command: bin/test
     agents:
       queue: runner
     plugins:
       docker-compose:
         run: athenaeum
 
-  - name: ':rocket:'
+  - block: 'Trigger deploy/publish'
+    prompt: 'Choose a version bump'
+    branches: 'master'
+    fields:
+    - select: 'Increment'
+      key: 'bump-size'
+      hint: "MAJOR: incompatible API changes // MINOR: add backwards-compatible functionality // PATCH: backwards-compatible bug fixes"
+      required: true
+      options:
+        - label: 'Major'
+          value: 'major'
+        - label: 'Minor'
+          value: 'minor'
+        - label: 'Patch'
+          value: 'patch'
+
+  - block: 'Trigger deploy'
+    branches: '!master'
+
+  - wait
+
+  - name: ':rocket: :s3: :npm:'
     command: bin/deploy
-    # branches: master
     agents:
       queue: builder
     plugins:
       docker-compose:
         run: athenaeum
+
+  - wait
+
+  - name: ':rocket: :octocat:'
+    command: bin/commit-tag
+    branches: master
+    agents:
+      queue: builder

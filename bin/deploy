@@ -1,15 +1,40 @@
 #!/bin/bash
 set -eo pipefail
 
-VERSION=$(npm view athenaeum version)
+git config --global user.name "Randy the PolicyGenius Robot"
+git config --global user.email "robot@policygenius.com"
 
 NODE_ENV=development yarn
 NODE_ENV=production yarn run styleguide:build
 
-echo '+++ Sending the goods up to AWS..'
+if [ "$BUILDKITE_BRANCH" == "master" ]; then
+  echo '+++ Publishing the package'
 
+  BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
+  VERSION=$(npm version $BUMP_SIZE)
+
+  npm adduser <<!
+$NPM_USERNAME
+$NPM_PASSWORD
+$NPM_EMAIL
+!
+
+  yarn run build:publish
+  npm publish
+else
+  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
+
+  VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
+fi
+
+echo '+++ Deploying styleguide to S3'
 aws s3 sync \
   ./styleguide s3://rcl-pg/$VERSION/ \
   --acl=public-read \
   --cache-control max-age=31536000 \
   --exclude '.DS_Store'
+
+echo "Deployed styleguide to http://rcl.policygenius.com/$VERSION/index.html"
+
+buildkite-agent artifact upload package.json
+buildkite-agent meta-data set 'new-version' $VERSION

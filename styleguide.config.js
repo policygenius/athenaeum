@@ -1,6 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production';
 const webpackConfig = isProd ?
-  require('./webpack.config.prod.js') :
+  require('./webpack.config.base.js') :
   require('./webpack.config.dev.js');
 
 module.exports = {
