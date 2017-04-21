@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './navigator.module.scss';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
 import TextComponent from 'atoms/TextComponent';

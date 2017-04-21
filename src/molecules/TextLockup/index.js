@@ -12,54 +12,54 @@ function TextLockup( props ) {
   } = props;
 
   switch ( type ) {
-    case 'A':
-      return (
-        <div className={styles[type]}>
-          <TextComponent
-            className={styles['header']}
-            tag={'h4'}
-            type={4}
-          >
-            { header }
-          </TextComponent>
+      case 'A':
+        return (
+          <div className={styles[type]}>
+            <TextComponent
+              className={styles['header']}
+              tag={'h4'}
+              type={4}
+            >
+              { header }
+            </TextComponent>
 
-          <TextComponent
-            className={styles['subheader']}
-            tag={'h5'}
-            type={4}
-          >
-            { subheader }
-          </TextComponent>
-        </div>
-      );
+            <TextComponent
+              className={styles['subheader']}
+              tag={'h5'}
+              type={4}
+            >
+              { subheader }
+            </TextComponent>
+          </div>
+        );
 
-    case 'B':
-      return (
-        <div className={styles[type]}>
-          <TextComponent
-            className={styles['header']}
-            tag={'h4'}
-            type={4}
-          >
-            { header }
-          </TextComponent>
+      case 'B':
+        return (
+          <div className={styles[type]}>
+            <TextComponent
+              className={styles['header']}
+              tag={'h4'}
+              type={4}
+            >
+              { header }
+            </TextComponent>
 
-          <TextComponent
-            className={styles['subheader']}
-            tag={'h5'}
-            type={4}
-          >
-            { subheader }
-          </TextComponent>
-        </div>
-      );
+            <TextComponent
+              className={styles['subheader']}
+              tag={'h5'}
+              type={4}
+            >
+              { subheader }
+            </TextComponent>
+          </div>
+        );
 
-    default:
-      return (
-        <div className={styles[type]}>
-          { children }
-        </div>
-      );
+      default:
+        return (
+          <div className={styles[type]}>
+            { children }
+          </div>
+        );
   }
 }
 

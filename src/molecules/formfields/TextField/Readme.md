@@ -1,5 +1,6 @@
 First name Field:
 
+```example
     class TextFieldExample extends React.Component {
       constructor() {
         super();
@@ -28,6 +29,6 @@ First name Field:
         )
       }
     }
-    
-    <TextFieldExample />
 
+    <TextFieldExample />
+```

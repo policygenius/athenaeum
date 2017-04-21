@@ -1,9 +1,11 @@
 Generic Card Example:
 
+```example
     <GenericCard
       header='Janis Ian'
       subheader='Added to policy'
-      onClose={ () => alert("I feel so closed rn") }
+      onClose={() => alert('I feel so closed rn')}
       footerText='Edit'
-      onFooterLinkClick={ () => alert("Ughhh~! You've clicked me") }
+      onFooterLinkClick={() => alert("Ughhh~! You've clicked me")}
     />
+```

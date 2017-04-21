@@ -2601,9 +2601,9 @@ eslint-plugin-jsx-a11y@2.2.3:
     jsx-ast-utils "^1.0.0"
     object-assign "^4.0.1"
 
-eslint-plugin-markdown@^1.0.0-beta.4:
-  version "1.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-markdown/-/eslint-plugin-markdown-1.0.0-beta.4.tgz#82a19971399e4b1b62f7d4ac6424687c2c07ee7a"
+"eslint-plugin-markdown@https://github.com/jmcolella/eslint-plugin-markdown/tarball/master":
+  version "1.0.0-beta.3"
+  resolved "https://github.com/jmcolella/eslint-plugin-markdown/tarball/master#fc47cf910054bcc89cf6921a8d1d87b798918f43"
   dependencies:
     object-assign "^4.0.1"
     parse5 "^2.2.2"
@@ -2618,10 +2618,6 @@ eslint-plugin-react@^6.8.0:
     has "^1.0.1"
     jsx-ast-utils "^1.3.4"
     object.assign "^4.0.4"
-
-eslint-plugin-redux-saga@0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-redux-saga/-/eslint-plugin-redux-saga-0.1.5.tgz#39c11811530230ca88171fe89adfc6de6953119a"
 
 eslint@^3.12.0, eslint@^3.16.1:
   version "3.19.0"
@@ -6726,10 +6722,6 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
-
-redux-saga@^0.14.6:
-  version "0.14.6"
-  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.14.6.tgz#bc409aa0edaa4a7234759041cc70da62f37c6f13"
 
 regenerate@^1.2.1:
   version "1.3.2"

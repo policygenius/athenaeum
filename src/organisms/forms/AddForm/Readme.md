@@ -1,36 +1,45 @@
 Add Jewelry item Example:
 
+```example
     <AddForm
       formName='ExampleForm'
-      onSubmit={ () => alert('FormSubmitted!') }
-      onClose={ () => alert('Clicked close button') }
+      onSubmit={() => alert('FormSubmitted!')}
+      onClose={() => alert('Clicked close button')}
     >
       <ImageAside
         simple
         icon='jewelry'
         header='Jewelry item'
       />
+
       <TextField
         label='Describe the item you want to cover'
-        placeholder='e.g. 1 carat engagement ring' forProp=''
+        placeholder='e.g. 1 carat engagement ring'
+        forProp=''
       />
+
       <TextField
         label='How much is it worth?'
         placeholder='e.g. $2,000'
       />
-      <Button style="action">Add This Item</Button>
+
+      <Button kind='action'>Add This Item</Button>
     </AddForm>
+```
+
 Add Person Example:
 
+```example
     <AddForm
       formName='ExampleForm'
-      onClose={ () => alert("Uhhhggg! You've closed me!") }
-      onSubmit={ () => alert('FormSubmitted!') }
-      onClose={ () => alert('Clicked close button') }
+      onSubmit={() => alert('FormSubmitted!')}
+      onClose={() => alert('Clicked close button')}
     >
       <TextField
         label='Full name'
         placeholder='Janis Ian'
       />
-      <Button style="action">Add Person</Button>
+
+      <Button kind='action'>Add Person</Button>
     </AddForm>
+```

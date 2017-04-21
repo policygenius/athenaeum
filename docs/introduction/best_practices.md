@@ -11,11 +11,11 @@ The unique name is typically created in the following format: `fileName__classNa
 
 ```js
 import React from 'react';
-import simpleButton from '../path/simple_button.scss';
+import styles from '../path/simple_button.scss';
 
-export default function simpleButton({children}) {
+export default function simpleButton({ children }) {
   return (
-    <button className={simpleButton.button}>{children}</button>
+    <button className={styles.button}>{children}</button>
   )
 }
 ```
@@ -24,7 +24,7 @@ export default function simpleButton({children}) {
 `propTypes` and `defaultProps` are static properties, declared as high as possible within the component code. They should be immediately visible when reading the file, since they serve as documentation. All components should have propTypes.
 
 ```js
-function Layout ( props ) {
+function Layout( props ) {
   const {
     children,
     childCols,

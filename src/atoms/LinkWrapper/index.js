@@ -12,8 +12,9 @@ function LinkWrapper( props ) {
 
   return (
     <a
-      { ..._.omit(props, [ 'children', 'className' ]) }
-      className={ classnames(styles.link, className) }>
+      {..._.omit(props, [ 'children', 'className' ])}
+      className={classnames(styles.link, className)}
+    >
       { children }
     </a>
   );
@@ -31,6 +32,5 @@ LinkWrapper.propTypes = {
    */
   className: PropTypes.string
 };
->>>>>>> Update css/js linters
 
 export default LinkWrapper;

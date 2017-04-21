@@ -8,8 +8,8 @@
     "prepush": "yarn run lint",
     "open": "open http://localhost:6060",
     "c": "yarn run plop create-component",
-    "build": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.dev.js --progress --colors",
-    "build:prod": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.prod.js --progress --colors",
+    "build": "yarn run lint && ./node_modules/webpack/bin/webpack.js --config ./webpack.config.dev.js --progress --colors",
+    "build:prod": "yarn run lint && ./node_modules/webpack/bin/webpack.js --config ./webpack.config.prod.js --progress --colors",
     "publish": "yarn run publish",
     "start": "yarn run styleguide:build && yarn run styleguide",
     "test": "karma start",
@@ -20,7 +20,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:css": "stylelint 'src/**/*.scss'",
-    "lint:md": "remark ."
+    "lint:md": "eslint --ext md ."
   },
   "repository": {
     "type": "git",
@@ -51,9 +51,8 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-markdown": "^1.0.0-beta.4",
+    "eslint-plugin-markdown": "https://github.com/jmcolella/eslint-plugin-markdown/tarball/master",
     "eslint-plugin-react": "^6.8.0",
-    "eslint-plugin-redux-saga": "0.1.5",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.24.1",
@@ -83,7 +82,6 @@
     "react-dom": "^15.5.4",
     "react-hot-loader": "^1.3.1",
     "react-styleguidist": "^5.0.6",
-    "redux-saga": "^0.14.6",
     "remark-cli": "^3.0.0",
     "remark-lint": "^6.0.0",
     "remark-lint-code": "^2.0.0",
