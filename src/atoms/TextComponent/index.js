@@ -4,14 +4,10 @@ import classnames from 'classnames';
 import styles from './text_component.module.scss';
 
 function setWeight( { semibold, light } ) {
-  if ( semibold ) {
-    return styles.semibold;
-  } else if ( light ) {
-    return styles.light;
-  }
+  if ( semibold ) return styles.semibold;
+  if ( light ) return styles.light;
 
   return styles.regular;
-
 }
 
 function TextComponent( props ) {

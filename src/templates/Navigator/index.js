@@ -68,6 +68,7 @@ function Navigator( props ) {
         <ContactCard
           phoneNumber='1(800) 555-5309'
           chatText='Chat with an Expert'
+          chatClick={() => alert('Chat clicked!')}
         />
       </div>
     </div>

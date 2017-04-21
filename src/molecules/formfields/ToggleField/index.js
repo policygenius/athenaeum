@@ -35,7 +35,7 @@ function ToggleField( props ) {
       <div className={styles['button-wrapper']}>
         { toggleChoices.map( (choice, idx) =>
           <Button
-            kind='toggle'
+            variant='toggle'
             key={`button-toggle-btn-${idx}`}
             className={styles.button}
             onClick={onClick}
@@ -71,4 +71,3 @@ ToggleField.propTypes = {
 };
 
 export default ToggleField;
-
