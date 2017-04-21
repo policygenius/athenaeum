@@ -30,7 +30,7 @@ module.exports = {
     },
     {
       name: 'Colors',
-      content: 'src/assets/stylesheets/base_styles/Colors.md'
+      content: 'src/atoms/Color/Colors.md'
     },
     {
       name: 'Atoms',
@@ -94,5 +94,8 @@ module.exports = {
   verbose: true,
   template: 'styleguide_assets/index.html',
   webpackConfig,
-  serverPort: parseInt(process.env.PORT, 10) || 6060
+  serverPort: parseInt(process.env.PORT, 10) || 6060,
+  require: [
+    'assets/stylesheets/base.scss'
+  ]
 };
