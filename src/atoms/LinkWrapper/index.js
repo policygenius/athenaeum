@@ -11,7 +11,7 @@ function LinkWrapper ( props ) {
 
   return (
     <a
-      { ..._.omit(props, ['children', 'className']) }
+      { ..._.omit(props, [ 'children', 'className' ]) }
       className={ classnames(styles.link, className) }>
       { children }
     </a>
