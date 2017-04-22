@@ -1,3 +1,5 @@
+const path = require('path');
+
 const isProd = process.env.NODE_ENV === 'production';
 const webpackConfig = isProd ?
   require('./webpack.config.base.js') :
@@ -96,6 +98,7 @@ module.exports = {
   webpackConfig,
   serverPort: parseInt(process.env.PORT, 10) || 6060,
   require: [
-    'assets/stylesheets/base.scss'
+    'assets/stylesheets/base.scss',
+    path.join(__dirname, 'styleguide_assets/rcl_styles.module.scss')
   ]
 };

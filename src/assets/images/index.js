@@ -11,3 +11,4 @@ export const stepProgressHealth = require('!svg-inline-loader!assets/images/step
 export const stepProgressQuotes = require('!svg-inline-loader!assets/images/step-progress-quotes.svg');
 export const tooltip = require('!svg-inline-loader!assets/images/question-mark.svg');
 export const xIcon = require('!svg-inline-loader!assets/images/x-icon.svg');
+export const rclLogo = require('!svg-inline-loader!assets/images/rcl-logo.svg');

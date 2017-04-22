@@ -13,7 +13,11 @@ module.exports = options => ({
     modules: [
       path.resolve(__dirname, 'src'),
       'node_modules'
-    ]
+    ],
+    alias: {
+      'rsg-components/ComponentsList/ComponentsListRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ComponentsListRenderer'),
+      'rsg-components/StyleGuide/StyleGuideRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/StyleGuideRenderer')
+    }
   },
   module: {
     rules: get(options, 'module.rules', []).concat([
