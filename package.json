@@ -12,7 +12,7 @@
     "build:prod": "yarn run lint && ./node_modules/webpack/bin/webpack.js --config ./webpack.config.prod.js --progress --colors",
     "publish": "yarn run publish",
     "start": "yarn run styleguide:build && yarn run styleguide",
-    "test": "karma start",
+    "test": "jest",
     "stylin": "yarn run start",
     "styleguide": "styleguidist server",
     "styleguide:build": "rm -rf ./styleguide/* && styleguidist build",
@@ -31,8 +31,11 @@
   "homepage": "https://github.com/policygenius/athenaeum#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^19.0.2",
     "lodash": "^4.17.4",
-    "react-svg-inline": "^1.2.0"
+    "react-svg-inline": "^1.2.0",
+    "sinon": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -43,7 +46,7 @@
     "babel-preset-react": "^6.16.0",
     "chai": "^3.5.0",
     "css-loader": "^0.28.0",
-    "enzyme": "^2.6.0",
+    "enzyme": "^2.8.2",
     "eslint": "^3.12.0",
     "eslint-config-airbnb": "13.0.0",
     "eslint-config-airbnb-base": "10.0.1",
@@ -112,5 +115,16 @@
         "space"
       ]
     ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
   }
 }
