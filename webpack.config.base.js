@@ -1,19 +1,13 @@
 const path = require('path');
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
-
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: path.resolve(__dirname, './src/public/index.html'),
-  filename: 'index.html',
-  inject: 'body'
-});
 
 module.exports = options => ({
   entry: options.entry,
   output: options.output,
   externals: options.externals,
+  devtool: 'source-map',
   context: path.resolve(__dirname, 'src'),
   resolve: {
     modules: [
@@ -25,7 +19,10 @@ module.exports = options => ({
     rules: get(options, 'module.rules', []).concat([
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve(__dirname, 'node_modules'),
+          /__tests__/
+        ],
         use: [
           {
             // babel-loader will throw a deprecation warning
@@ -97,7 +94,6 @@ module.exports = options => ({
     ])
   },
   plugins: get(options, 'plugins', []).concat([
-    HTMLWebpackPluginConfig,
     new ExtractTextPlugin({
       filename: 'assets/styles.css',
       allChunks: true
