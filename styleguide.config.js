@@ -93,6 +93,6 @@ module.exports = {
   highlightTheme: 'base16-light',
   verbose: true,
   template: 'styleguide_assets/index.html',
-  webpackConfig: webpackConfig,
-  serverPort: parseInt(process.env.PORT) || 6060
-}
+  webpackConfig,
+  serverPort: parseInt(process.env.PORT, 10) || 6060
+};
