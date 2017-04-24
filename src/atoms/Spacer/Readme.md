@@ -11,13 +11,13 @@
     return (
       <div>
         {
-          Object.keys(spacers).map( (key) => {
+          Object.keys(spacers).map( (key, idx) => {
             const size = {};
 
             size[key] = true;
 
             return (
-              <div style={{ margin: '50px 0' }}>
+              <div style={{ margin: '50px 0' }} key={`spacer-${idx}`}>
                 <TextComponent type={3}>{ spacers[key] }</TextComponent>
                 <div style={{ backgroundColor: '#b3b3b3', width: '100%', height: '100px' }}></div>
 

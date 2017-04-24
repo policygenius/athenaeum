@@ -18,9 +18,10 @@ All Icons (WIP):
           }}
         >
           {
-            Object.keys(icons).map( key => {
+            Object.keys(icons).map( (key, idx) => {
               return (
                 <div
+                  key={`icon-${idx}`}
                   style={{
                     border: '1px solid grey',
                     padding: '5px',

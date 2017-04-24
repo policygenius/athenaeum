@@ -8,13 +8,13 @@ import {{properCase name}} from '../index';
 describe('{{properCase name}}', () => {
   let defaultProps;
 
-  beforeEach() {
+  beforeEach(() => {
     defaultProps = {
       // Add default props here
     };
-  }
-  
+  });
+
   it('write your tests here', () => {
-  
+
   });
 });

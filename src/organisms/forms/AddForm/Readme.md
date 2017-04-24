@@ -23,7 +23,7 @@ Add Jewelry item Example:
         placeholder='e.g. $2,000'
       />
 
-      <Button kind='action'>Add This Item</Button>
+      <Button variant='action'>Add This Item</Button>
     </AddForm>
 ```
 
@@ -40,6 +40,6 @@ Add Person Example:
         placeholder='Janis Ian'
       />
 
-      <Button kind='action'>Add Person</Button>
+      <Button variant='action'>Add Person</Button>
     </AddForm>
 ```

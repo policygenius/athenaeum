@@ -6,6 +6,21 @@ import styles from 'molecules/formfields/shared/formfields.module.scss';
 import renderPlaceholder from 'utils/Fields/renderPlaceholder';
 import renderOptGroup from 'utils/Fields/renderOptGroup';
 
+
+function renderOptions(opt, idx) {
+  if (opt.group) return renderOptGroup(opt, idx);
+
+  return (
+    <option
+      key={`selectfield-option-${idx}`}
+      value={opt.value}
+      className={styles['option']}
+    >
+      { opt.label }
+    </option>
+  );
+}
+
 function SelectField( props ) {
   const {
     className,
@@ -47,24 +62,7 @@ function SelectField( props ) {
           {...input}
         >
           { placeholder && renderPlaceholder( placeholder, styles.option ) }
-
-          { selectOptions.map( (opt, idx) => {
-            if (opt.group) {
-              return renderOptGroup( opt );
-            }
-
-            return (
-              <option
-                key={`selectfield-option-${idx}`}
-                value={opt.value}
-                className={styles['option']}
-              >
-                { opt.label }
-              </option>
-            );
-
-          })
-          }
+          { selectOptions.map(renderOptions) }
         </select>
       </div>
     </div>
@@ -124,4 +122,3 @@ SelectField.defaultProps = {
 };
 
 export default SelectField;
-

@@ -29,7 +29,7 @@ Navigator Example:
 
       <TextField label='Street address' placeholder='Enter address' forProp='' />
 
-      <Button kind='action'>Continue</Button>
+      <Button variant='action'>Continue</Button>
     </GeneralForm>
   </Navigator>
 ```
