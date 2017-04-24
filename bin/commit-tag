@@ -1,0 +1,17 @@
+#!/bin/bash
+
+git config --global user.name "Randy the PolicyGenius Robot"
+git config --global user.email "robot@policygenius.com"
+git config --global push.default simple
+
+git fetch
+git checkout $BUILDKITE_BRANCH
+git reset --hard origin/$BUILDKITE_BRANCH
+
+buildkite-agent artifact download "package.json" .
+VERSION=$(buildkite-agent meta-data get 'new-version')
+
+git add package.json
+git commit -m "Bump to $VERSION [ci skip]" 
+git tag -a "v$VERSION" -m "Publish version v$VERSION"
+git push --follow-tags origin $BUILDKITE_BRANCH
