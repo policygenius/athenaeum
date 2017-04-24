@@ -1,7 +1,9 @@
-const path = require('path');
+const DotEnv = require('dotenv-webpack');
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
+const path = require('path');
+
+const postCSSConfig = require('./postcss.config.js');
 
 module.exports = options => ({
   entry: options.entry,
@@ -101,6 +103,10 @@ module.exports = options => ({
     new ExtractTextPlugin({
       filename: 'assets/styles.css',
       allChunks: true
-    })
+    }),
+    new DotEnv({
+      path: './.env',
+      safe: true
+    }),
   ])
 });
