@@ -49,3 +49,4 @@ styleguide
 lib/
 
 .sass-cache
+NERD_tree_*

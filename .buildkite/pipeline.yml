@@ -1,0 +1,28 @@
+---
+steps:
+  - name: ':docker: Build'
+    agents:
+      queue: builder
+    plugins:
+      docker-compose:
+        build: athenaeum
+        image-repository: quay.io/policygenius/athenaeum
+
+  - wait
+
+  - name: ':rubocop: :scsslint:'
+    command: bin/pre_test
+    agents:
+      queue: runner
+    plugins:
+      docker-compose:
+        run: athenaeum
+
+  - name: ':rocket:'
+    command: bin/deploy
+    # branches: master
+    agents:
+      queue: builder
+    plugins:
+      docker-compose:
+        run: athenaeum

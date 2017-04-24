@@ -1,3 +1,8 @@
+const isProd = process.env.NODE_ENV === 'production';
+const webpackConfig = isProd ?
+  require('./webpack.config.prod.js') :
+  require('./webpack.config.dev.js');
+
 module.exports = {
   title: 'PolicyGenius React Component Library',
   sections: [
@@ -88,5 +93,6 @@ module.exports = {
   highlightTheme: 'base16-light',
   verbose: true,
   template: 'styleguide_assets/index.html',
-  webpackConfig: require('./webpack.config.dev.js')
-};
+  webpackConfig: webpackConfig,
+  serverPort: parseInt(process.env.PORT) || 6060
+}
