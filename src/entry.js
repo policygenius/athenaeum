@@ -1,3 +1,5 @@
+require('./assets/stylesheets/base.scss');
+
 const fromPairs = require('lodash/fromPairs');
 const assign = require('lodash/assign');
 

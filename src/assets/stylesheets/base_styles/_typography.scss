@@ -9,12 +9,6 @@ $lightweight:                 300;
 $regularweight:               400;
 $semiboldweight:              600;
 
-/* stylelint-disable selector-no-type */
-body {
-  font-family: $font-family-sans-serif;
-}
-/* stylelint-enable */
-
 @mixin base-font-family() {
   font-family: $font-family-sans-serif;
   color: $main-font-color;

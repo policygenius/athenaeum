@@ -1,12 +1,6 @@
-@import 'src/assets/stylesheets/base_styles/normalize';
-@import 'src/assets/stylesheets/base_styles/pg_normalize';
 @import 'src/assets/stylesheets/base_styles/typography';
 @import 'src/assets/stylesheets/base_styles/colors';
 @import 'src/assets/stylesheets/utilities/functions';
 @import 'src/assets/stylesheets/utilities/mixins';
 @import 'src/assets/stylesheets/utilities/break_points';
 @import 'src/assets/stylesheets/utilities/placeholders';
-
-* {
-  box-sizing: border-box;
-}

@@ -1,7 +1,7 @@
 Our brand colors:
 
 
-    const styles = require('assets/stylesheets/base_styles/colors_map.scss');
+    const styles = require('atoms/Color/colors_map.module.scss');
 
     function getColorArray() {
       let all_colors = [[],[],[],[]];
