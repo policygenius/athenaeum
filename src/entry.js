@@ -6,10 +6,10 @@ const assign = require('lodash/assign');
 const mergeAll = (accum, current) => assign(accum, current);
 
 const contexts = [
-  require.context('./atoms', true, /.*\.js/),
-  require.context('./molecules', true, /.*\.js/),
-  require.context('./organisms', true, /.*\.js/),
-  require.context('./templates', true, /.*\.js/)
+  require.context('./atoms', true, /.*index\.js/),
+  require.context('./molecules', true, /.*index\.js/),
+  require.context('./organisms', true, /.*index\.js/),
+  require.context('./templates', true, /.*index\.js/)
 ];
 
 module.exports = contexts.map(context => fromPairs(context.keys().map((component) => {
