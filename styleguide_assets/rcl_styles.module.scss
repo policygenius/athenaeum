@@ -1,0 +1,19 @@
+body {
+  // If you need to override a style from an RCL component
+  // make it more specifc by nesting so as to avoid using !important
+  .RCL-Logo {
+    width: 100%;
+
+    path {
+      fill: #aa001b;
+    }
+  }
+
+  .fullwidth {
+    max-width: 100%;
+  }
+
+  .sidebar {
+    background-color: black;
+  }
+}
