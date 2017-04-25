@@ -1,25 +1,39 @@
-Layout is broken out into a 12 column grid of `Col`s:
-- Except for `Col` components, all children of `Layout` get wrapped in `Col` automatically
-- Any child props that match a `Col` prop will be passed to the `Col` wrapper accordingly.
-- These props will override any props the `Col` might have inherited from `Layout`.
+Layout is broken out into a 12 column grid of `Col`s.
 
-## Mixed Layout Examples with Overrides:
+Shorthand option:
+You don't have to explicitly wrap each child in a `Col`. All children of `Layout` will get wrapped in `Col` automatically.
+Any layout specific props that are meant for the `Col` will be passed to the `Col` wrapper accordingly and will override any props that may have been given it by the `Layout` component. All child component props will stay with the component itself.
+
+Please see the example below:
+
+## Mixed Layout Examples with Shorthand, Cols, children, and Overrides:
 
 ```example
     const exampleStyles = require('./example.module.scss');
 
     <div className={exampleStyles.example}>
-     <Layout
-       smallCols={[ 6 ]}
-       style={{ justifyContent: 'space-between', alignItems: 'center' }}
-     >
-       <div />
-       <Col>Naked Col</Col>
-       <div smallCols={2} colStyle={{ alignSelf: 'flex-end' }} />
-       <Button variant='info' smallCols={3} colStyle={{ backgroundColor: 'green', padding: '1rem' }}>I am button</Button>
-     </Layout>
+      <Layout
+        smallCols={[ 6 ]}
+        style={{ justifyContent: 'space-between', alignItems: 'center' }}
+      >
+        <div />
+
+        <Col smallCols={[ 3 ]}>
+          <div style={{ background: 'red', margin: '10px' }} smallCols={[ 1 ]}> Some child</div>
+        </Col>
+
+        <Col smallCols={2} style={{ alignSelf: 'flex-end' }} />
+
+        <Button variant='info' smallCols={3}>I am button</Button>
+
+        <Col style={{ padding: '30px' }}>
+          <Button variant='info' smallCols={3}>I am also button</Button>
+        </Col>
+
+      </Layout>
     </div>
 ```
+
 
 ## Small 2 Col, Medium 3 Col Grid Example:
 

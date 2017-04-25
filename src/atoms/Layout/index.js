@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import _ from 'lodash';
 import styles from './layout.module.scss';
 import Col from './Col';
 
@@ -26,6 +26,8 @@ function Layout( props ) {
   let xxlgIdx = -1;
 
   const kids = React.Children.map( children, ( child ) => {
+    if (!child) return child; // Sanity check if child is null -> early return
+
     // colsIdx mirrors idx until idx does not exist in col array (ex. smallCols)
     // If col array at colsIdx is undifined, it is reset to 0, thus allowing
     // for column sizes to be set in a loop.
@@ -52,20 +54,23 @@ function Layout( props ) {
 
     const layoutProps = {
       smallCols: smallCols[smIdx],
-      mediumCols: mediumCols[smIdx],
-      largeCols: largeCols[smIdx],
-      xLargeCols: xLargeCols[smIdx],
-      xxLargeCols: xxLargeCols[smIdx],
+      mediumCols: mediumCols[mdIdx],
+      largeCols: largeCols[lgIdx],
+      xLargeCols: xLargeCols[xlgIdx],
+      xxLargeCols: xxLargeCols[xxlgIdx],
     };
 
-    const childProps = Object.assign(layoutProps, child.props);
+    const colProps = Object.assign(
+      layoutProps,
+      _.omit(child.props, [ 'className', 'style' ])
+    );
 
     if (child.type.name === 'Col') {
-      return React.cloneElement(child, childProps);
+      return React.cloneElement(child, colProps);
     }
 
     return (
-      <Col {...childProps} >
+      <Col {...colProps} >
         { child }
       </Col>
     );

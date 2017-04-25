@@ -7,7 +7,9 @@ $tooltip-width: ru(.5);
   width: $tooltip-width;
   height: $tooltip-width;
   cursor: help;
+}
 
+.tooltip-wrapper {
   &:hover {
     .hover-message {
       display: block;

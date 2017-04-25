@@ -49,6 +49,10 @@ $checkbox-border-color: $neutral-5;
 .select {
   @include typography-6(false);
   border: 0;
+
+  &::placeholder {
+    color: $neutral-4;
+  }
 }
 
 .tooltip-wrapper {
@@ -173,14 +177,12 @@ $checkbox-border-color: $neutral-5;
     @include typography-6(false);
     padding: ru(.5) ru(1) 0;
     border: 0;
-    color: $neutral-2;
     letter-spacing: 0.1px;
   }
 
   .select {
     @include typography-3(false);
     padding: ru(.5) ru(1);
-    color: $brand-2;
     letter-spacing: .2px;
     pointer-events: all;
 

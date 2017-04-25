@@ -15,12 +15,12 @@ function Col(props) {
     xxLargeCols,
     fullwidth,
     flex,
-    colStyle,
+    style,
   } = props;
 
   return (
     <div
-      style={colStyle}
+      style={style}
       className={classnames(
         { [styles[`col-sm-${smallCols}`]]: smallCols },
         { [styles[`col-md-${mediumCols}`]]: mediumCols },
@@ -74,7 +74,7 @@ Col.propTypes = {
    * adds additional styles to the column as a React styles object  ``
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    */
-  colStyle: PropTypes.object
+  style: PropTypes.object
 };
 
 

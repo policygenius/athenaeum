@@ -17,14 +17,6 @@ $gutter-width: .75rem;
       @include g-unit($i);
       padding-left: $gutter-width;
       padding-right: $gutter-width;
-
-      &.fullwidth {
-        padding: 0;
-      }
-
-      &.flex {
-        flex-grow: 1;
-      }
     }
   }
 }
@@ -32,30 +24,40 @@ $gutter-width: .75rem;
 .layout {
   display: flex;
   flex-wrap: wrap;
-  padding-left: $gutter-width * 2;
-  padding-right: $gutter-width * 2;
+}
 
-  @media #{$small-up} {
-    @include createCols( 'sm' );
-  }
+@media #{$small-up} {
+  @include createCols( 'sm' );
+}
 
-  @media #{$medium-up} {
-    @include createCols( 'md' );
-  }
+@media #{$medium-up} {
+  @include createCols( 'md' );
 
-  @media #{$large-up} {
-    @include createCols( 'lg' );
+  .layout {
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
   }
+}
 
-  @media #{$xlarge-up} {
-    @include createCols( 'xlg' );
-  }
+@media #{$large-up} {
+  @include createCols( 'lg' );
+}
 
-  @media #{$xxlarge-up} {
-    @include createCols( 'xxlg' );
-  }
+@media #{$xlarge-up} {
+  @include createCols( 'xlg' );
+}
 
-  &.fullwidth {
-    padding: 0;
-  }
+@media #{$xxlarge-up} {
+  @include createCols( 'xxlg' );
+}
+
+// Utility classes must come after base styles
+// so that they can override the base in the cascade
+
+.fullwidth {
+  padding: 0;
+}
+
+.flex {
+  flex-grow: 1;
 }

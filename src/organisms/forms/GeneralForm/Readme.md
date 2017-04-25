@@ -2,32 +2,52 @@ _This is a form wrapper that can take components as children._
 
 GeneralForm Example - Navigator Page 1:
 
-```example
     const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
-
     <GeneralForm
       formName='ExampleForm'
-      onSubmit={() => alert('FormSubmitted!')}
+      onSubmit={ () => alert('FormSubmitted!') }
     >
-      <TextComponent tag='p' type={3} regular>First, a little about you and your humble abode</TextComponent>
+      <Layout>
+        <TextComponent tag='p' type={ 3 } regular>First, a little about you and your humble abode</TextComponent>
 
-      <TextField label='First name' placeholder='Enter your first name here' forProp='' />
+        <Spacer small />
 
-      <LinkWrapper href='#'>
-        <TextComponent
-          type={7}
-        >
-          Want to add more people to the policy?
-        </TextComponent>
-      </LinkWrapper>
+        <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
 
-      <SelectFieldExample
-        label='Select Field Label'
-        placeholder='Placeholder'
-      />
+        <Spacer xSmall />
 
-      <TextField label='Street address' placeholder='Enter address' forProp='' />
+        <LinkWrapper href="#">
+          <TextComponent
+            type={ 7 }
+          >
+            Want to add more people to the policy?
+          </TextComponent>
+        </LinkWrapper>
 
-      <Button variant='action'>Continue</Button>
+        <Spacer small />
+
+        <SelectFieldExample
+          label='Select Field Label'
+          placeholder='Placeholder'
+          tooltip='This is a tooltip'
+        />
+
+        <Spacer small />
+
+        <TextField
+          mediumCols={ 9 }
+          label='Street address'
+          placeholder='Enter address'
+        />
+
+        <TextField
+          mediumCols={ 3 }
+          label='Apt. #'
+          placeholder='Apt. #'
+        />
+
+        <Spacer medium />
+
+        <Button variant="action">Continue</Button>
+      </Layout>
     </GeneralForm>
-```
