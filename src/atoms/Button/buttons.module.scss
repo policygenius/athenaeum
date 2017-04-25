@@ -83,7 +83,6 @@ $button-solid-background-tertiary-color:   #f08f5c;
   composes: button;
   @include hover($button-info-color, $button-info-color, $button-info-hover-color);
   display: block;
-  margin-top: ru(.75);
   background-color: inherit;
   border-color: $button-info-color;
   color: $button-info-color;

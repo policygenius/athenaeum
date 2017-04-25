@@ -1,56 +1,84 @@
-List of Breakpoints:
-* small: 0px
-* medium: 768px
-* large: 1024px
-* x-large: 12800px
-* xx-large: 1440px
+Layout is broken out into a 12 column grid of `Col`s:
+- Except for `Col` components, all children of `Layout` get wrapped in `Col` automatically
+- Any child props that match a `Col` prop will be passed to the `Col` wrapper accordingly.
+- These props will override any props the `Col` might have inherited from `Layout`.
 
-Alignment (vertical and horizontal):
-* center
-* start
-* end
-
-Layout Examples:
+## Mixed Layout Examples with Overrides:
 
 ```example
-    <div>
-      <TextComponent type={3}>Same Width Columns</TextComponent>
+    const exampleStyles = require('./example.module.scss');
+
+    <div className={exampleStyles.example}>
+     <Layout
+       smallCols={[ 6 ]}
+       style={{ justifyContent: 'space-between', alignItems: 'center' }}
+     >
+       <div />
+       <Col>Naked Col</Col>
+       <div smallCols={2} colStyle={{ alignSelf: 'flex-end' }} />
+       <Button variant='info' smallCols={3} colStyle={{ backgroundColor: 'green', padding: '1rem' }}>I am button</Button>
+     </Layout>
+    </div>
+```
+
+## Small 2 Col, Medium 3 Col Grid Example:
+
+
+```example
+    const exampleStyles = require('./example.module.scss');
+
+    <div className={exampleStyles.example}>
       <Layout
-        childCols={[ 6 ]}
+        smallCols={[ 6 ]}
+        mediumCols={[ 4 ]}
       >
-        <Button>Hello</Button>
-        <Button>World</Button>
-        <Button>Hello</Button>
-        <Button>World</Button>
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
       </Layout>
+    </div>
+```
 
-      <Spacer
-        medium
-      />
+## Nested Grid Example:
 
-      <TextComponent type={3}>Repeating Different Width Columns</TextComponent>
+```example
+    const exampleStyles = require('./example.module.scss');
+
+    <div className={exampleStyles.example}>
       <Layout
-        childCols={[ 9, 3 ]}
-        breakpoint='large'
+        smallCols={[ 3 ]}
       >
-        <Button>Hello</Button>
-        <Button>World</Button>
-        <Button>Hello</Button>
-        <Button>World</Button>
-      </Layout>
 
-      <Spacer
-        medium
-      />
+        <div smallCols={7}>
+          <Layout smallCols={[ 4 ]}>
+            <div> col 2 </div>
+            <div> col 2 </div>
+            <div> col 2 </div>
+          </Layout>
+        </div>
+        <div smallCols={5}> col 1 </div>
 
-      <TextComponent type={3}>Specifc Width Pattern</TextComponent>
-      <Layout
-        childCols={[ 8, 4, 4, 8 ]}
-      >
-        <Button>Hello</Button>
-        <Button>World</Button>
-        <Button>Hello</Button>
-        <Button>World</Button>
+        <div smallCols={5}> col 1 </div>
+        <div smallCols={7} fullwidth>
+          <Layout smallCols={[ 4 ]} fullwidth>
+            <div> col 2 </div>
+            <div> col 2 </div>
+            <div> col 2 </div>
+          </Layout>
+        </div>
+
+        <div> col 1 </div>
+        <div> col 1 </div>
+        <div> col 1 </div>
+        <div> col 1 </div>
+        <div> col 1 </div>
+
       </Layout>
     </div>
 ```

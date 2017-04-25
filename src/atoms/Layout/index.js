@@ -3,57 +3,94 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import styles from './layout.module.scss';
+import Col from './Col';
 
 function Layout( props ) {
   const {
     children,
-    childCols,
-    breakpoint,
-    horizontalAlign,
-    verticalAlign
+    className,
+    smallCols,
+    mediumCols,
+    largeCols,
+    xLargeCols,
+    xxLargeCols,
+    fullwidth,
+    style,
   } = props;
 
   // start at -1 so can bump to 0 in the conditional below
-  let colsIdx = -1;
+  let smIdx = -1;
+  let mdIdx = -1;
+  let lgIdx = -1;
+  let xlgIdx = -1;
+  let xxlgIdx = -1;
 
   const kids = React.Children.map( children, ( child ) => {
-    // colsIdx mirrors idx until idx does not exist in childCols
-    // this means that there are more children than childCols provided
-    // in that case, reset colsIdx to 0 and continue counting up until next reset
-    if ( !childCols[++colsIdx] ) {
-      colsIdx = 0;
+    // colsIdx mirrors idx until idx does not exist in col array (ex. smallCols)
+    // If col array at colsIdx is undifined, it is reset to 0, thus allowing
+    // for column sizes to be set in a loop.
+
+    if ( !smallCols[++smIdx] ) {
+      smIdx = 0;
+    }
+
+    if ( !mediumCols[++mdIdx] ) {
+      mdIdx = 0;
+    }
+
+    if ( !largeCols[++lgIdx] ) {
+      lgIdx = 0;
+    }
+
+    if ( !xLargeCols[++xlgIdx] ) {
+      xlgIdx = 0;
+    }
+
+    if ( !xxLargeCols[++xxlgIdx] ) {
+      xxlgIdx = 0;
+    }
+
+    const layoutProps = {
+      smallCols: smallCols[smIdx],
+      mediumCols: mediumCols[smIdx],
+      largeCols: largeCols[smIdx],
+      xLargeCols: xLargeCols[smIdx],
+      xxLargeCols: xxLargeCols[smIdx],
+    };
+
+    const childProps = Object.assign(layoutProps, child.props);
+
+    if (child.type.name === 'Col') {
+      return React.cloneElement(child, childProps);
     }
 
     return (
-      <div
-        className={classnames(
-          // grab childCols value with colsIdx
-          // if childCols[idx] is undefined, default to 12 columns
-          styles[`column-${childCols[colsIdx] || 12}`]
-        )}
-      >
+      <Col {...childProps} >
         { child }
-      </div>
+      </Col>
     );
   });
 
-  const hAlign = `h-${horizontalAlign}`;
-  const vAlign = `v-${verticalAlign}`;
-
   return (
-    <div>
-      <div
-        className={
-          classnames( styles.layout, styles[breakpoint], styles[hAlign], styles[vAlign] )
-        }
-      >
-        { kids }
-      </div>
+    <div
+      className={classnames(
+        styles.layout,
+        fullwidth && styles.fullwidth,
+        className
+      )}
+      style={style}
+    >
+      { kids }
     </div>
   );
 }
 
 Layout.propTypes = {
+  /**
+   * Supply any additional class names.
+   */
+  className: PropTypes.string,
+
   /**
    * determines pixel breakpoint for columns and rows
    */
@@ -72,14 +109,45 @@ Layout.propTypes = {
   /**
    * determines alignment of columns vertically
    */
-  verticalAlign: PropTypes.string
+  verticalAlign: PropTypes.string,
+
+  /**
+   * Sets columns grid width in the Layout within a viewport from `0px` up
+   */
+  smallCols: PropTypes.arrayOf( PropTypes.number ),
+  /**
+   * Sets col grid width in viewport from `768px` up
+   */
+  mediumCols: PropTypes.arrayOf( PropTypes.number ),
+  /**
+   * Sets col grid width in viewport from `1024px` up
+   */
+  largeCols: PropTypes.arrayOf( PropTypes.number ),
+  /**
+   * Sets col grid width in viewport from `1280px` up
+   */
+  xLargeCols: PropTypes.arrayOf( PropTypes.number ),
+  /**
+   * Sets col grid width in viewport from `1440px` up
+   */
+  xxLargeCols: PropTypes.arrayOf( PropTypes.number ),
+  /**
+   * removes left and right padding from Layout.
+   */
+  fullwidth: PropTypes.bool,
+  /**
+   * adds additional styles to the column as a React styles object.
+   * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+   */
+  style: PropTypes.object
 };
 
 Layout.defaultProps = {
-  childCols: [ 12 ],
-  breakpoint: 'small',
-  horizontalAlign: 'start',
-  verticalAlign: 'center'
+  smallCols: [ 12 ],
+  mediumCols: [],
+  largeCols: [],
+  xLargeCols: [],
+  xxLargeCols: [],
 };
 
 export default Layout;

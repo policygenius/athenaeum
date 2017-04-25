@@ -1,6 +1,6 @@
 @import 'src/assets/stylesheets/global';
 
-$gutter-width: 1.5rem;
+$gutter-width: .75rem;
 
 @mixin g-unit($cols: 1, $total-col-count: 12) {
   $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
@@ -11,22 +11,19 @@ $gutter-width: 1.5rem;
   flex-shrink: 1;
 }
 
-@mixin gutter( $vertical: false ) {
-  @if $vertical {
-    padding: ($gutter-width / 2);
-  } @else {
-    padding: 0 ($gutter-width / 2) ($gutter-width);
-  }
-}
+@mixin createCols( $size ) {
+  @for $i from 1 through 12 {
+    .col-#{$size}-#{$i} {
+      @include g-unit($i);
+      padding-left: $gutter-width;
+      padding-right: $gutter-width;
 
-@mixin row-breakpoint( $breakpoint ) {
-  @media #{$breakpoint} {
-    flex-direction: row;
+      &.fullwidth {
+        padding: 0;
+      }
 
-    @for $i from 1 through 12 {
-      .column-#{$i} {
-        @include g-unit($i);
-        @include gutter();
+      &.flex {
+        flex-grow: 1;
       }
     }
   }
@@ -35,62 +32,30 @@ $gutter-width: 1.5rem;
 .layout {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  flex-direction: column;
-  margin-left: -$gutter-width / 2;
-  margin-right: -$gutter-width / 2;
-  margin-bottom: -$gutter-width;
+  padding-left: $gutter-width * 2;
+  padding-right: $gutter-width * 2;
 
-  @for $i from 1 through 12 {
-    .column-#{$i} {
-      @include g-unit(12);
-      @include gutter( true );
-    }
+  @media #{$small-up} {
+    @include createCols( 'sm' );
+  }
+
+  @media #{$medium-up} {
+    @include createCols( 'md' );
+  }
+
+  @media #{$large-up} {
+    @include createCols( 'lg' );
+  }
+
+  @media #{$xlarge-up} {
+    @include createCols( 'xlg' );
+  }
+
+  @media #{$xxlarge-up} {
+    @include createCols( 'xxlg' );
+  }
+
+  &.fullwidth {
+    padding: 0;
   }
 }
-
-.h-start {
-  justify-content: flex-start;
-}
-
-.h-center {
-  justify-content: center;
-}
-
-.h-end {
-  justify-content: flex-end;
-}
-
-.v-start {
-  align-items: flex-start;
-}
-
-.v-center {
-  align-items: center;
-}
-
-.v-end {
-  align-items: flex-end;
-}
-
-// Breakpoints
-.small {
-  @include row-breakpoint( $small-up );
-}
-
-.medium {
-  @include row-breakpoint( $medium-up );
-}
-
-.large {
-  @include row-breakpoint( $large-up );
-}
-
-.x-large {
-  @include row-breakpoint( $xlarge-up );
-}
-
-.xx-large {
-  @include row-breakpoint( $xxlarge-up );
-}
-
