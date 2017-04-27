@@ -1,0 +1,16 @@
+@import '../shared/cards.module.scss';
+
+.stacked {
+  composes: card;
+
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.stacked-li {
+  border-top: $border;
+
+  &:first-child {
+    border: none;
+  }
+}
