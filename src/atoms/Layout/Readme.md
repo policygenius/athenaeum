@@ -4,7 +4,30 @@ Shorthand option:
 You don't have to explicitly wrap each child in a `Col`. All children of `Layout` will get wrapped in `Col` automatically.
 Any layout specific props that are meant for the `Col` will be passed to the `Col` wrapper accordingly and will override any props that may have been given it by the `Layout` component. All child component props will stay with the component itself.
 
-Please see the example below:
+
+## How to use Layout
+```html
+  // Bad (don't pass props that don't exist.)
+  <Layout smallCols={[ 6 ]}>
+    <Button variant='info'>I am button</Button>
+    <Button variant='outline' smallCols={3}>some button</Button>
+  </Layout>
+
+  // Good
+  <Layout smallCols={[ 6 ]}>
+    <Button variant='info'>I am button</Button>
+    <Button variant='outline'>some button</Button>
+  </Layout>
+
+  // Good
+  <Layout smallCols={[ 6 ]}>
+    <Button variant='info'>I am button</Button>
+    <Col smallCols={3}>
+      <Button variant='outline'>some button</Button>
+    </Col>
+  </Layout>
+```
+
 
 ## Mixed Layout Examples with Shorthand, Cols, children, and Overrides:
 
@@ -18,22 +41,26 @@ Please see the example below:
       >
         <div />
 
-        <Col smallCols={[ 3 ]}>
-          <div style={{ background: 'red', margin: '10px' }} smallCols={[ 1 ]}> Some child</div>
+        <Col smallCols={3}>
+          <div style={{ background: 'red', margin: '10px' }}> Some child</div>
         </Col>
 
         <Col smallCols={2} style={{ alignSelf: 'flex-end' }} />
 
-        <Button variant='info' smallCols={3}>I am button</Button>
+        <Col smallCols={3}>
+          <Button variant='info'>I am button</Button>
+        </Col>
+
+        <Button variant='outline'>some button</Button>
+
 
         <Col style={{ padding: '30px' }}>
-          <Button variant='info' smallCols={3}>I am also button</Button>
+          <Button variant='info'>I am also button</Button>
         </Col>
 
       </Layout>
     </div>
 ```
-
 
 ## Small 2 Col, Medium 3 Col Grid Example:
 
@@ -69,23 +96,25 @@ Please see the example below:
         smallCols={[ 3 ]}
       >
 
-        <div smallCols={7}>
+        <Col smallCols={7}>
           <Layout smallCols={[ 4 ]}>
             <div> col 2 </div>
             <div> col 2 </div>
             <div> col 2 </div>
           </Layout>
-        </div>
-        <div smallCols={5}> col 1 </div>
+        </Col>
 
-        <div smallCols={5}> col 1 </div>
-        <div smallCols={7} fullwidth>
+        <Col smallCols={5}> col 1 </Col>
+
+        <Col smallCols={5}> col 1 </Col>
+
+        <Col smallCols={7} fullwidth>
           <Layout smallCols={[ 4 ]} fullwidth>
             <div> col 2 </div>
             <div> col 2 </div>
             <div> col 2 </div>
           </Layout>
-        </div>
+        </Col>
 
         <div> col 1 </div>
         <div> col 1 </div>
