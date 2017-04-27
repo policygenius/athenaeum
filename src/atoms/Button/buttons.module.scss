@@ -97,6 +97,17 @@ $button-solid-background-tertiary-color:   #f08f5c;
   border: 1px solid $neutral-5;
   box-shadow: 0 4px 0 $neutral-6;
   padding-bottom: ru(.375);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.toggle-active {
+  composes: toggle;
+  background-color: $neutral-6;
+  color: $neutral-1;
+  box-shadow: 0 4px 0 $neutral-4;
 }
 
 .action {

@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
+import omit from 'lodash/omit';
+
 import styles from '../shared/formfields.module.scss';
 
 function ToggleField( props ) {
   const {
     label,
     className,
-    onClick,
     tooltipMessage,
-    toggleChoices
+    toggleChoices,
+    input
   } = props;
 
   return (
@@ -35,13 +37,16 @@ function ToggleField( props ) {
       <div className={styles['button-wrapper']}>
         { toggleChoices.map( (choice, idx) =>
           <Button
-            variant='toggle'
+            variant={input.value === choice.value.toString() ? 'toggle-active' : 'toggle'}
             key={`button-toggle-btn-${idx}`}
             className={styles.button}
-            onClick={onClick}
-          >{ choice }</Button>
-          )
-        }
+            onClick={e => input.onChange(e.target.value)}
+            value={choice.value}
+            {...omit(input, 'value')}
+          >
+            { choice.label }
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -57,17 +62,25 @@ ToggleField.propTypes = {
    * Label is optional. If not provided, component will reorganize accordingly.
    */
   label: PropTypes.string,
-  /**
-   * For use with the `button-toggle` type.
-   *
-   */
-  toggleChoices: PropTypes.array.isRequired,
-  onClick: PropTypes.func,
+  toggleChoices: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.oneOfType([
+        PropTypes.String,
+        PropTypes.Int,
+        PropTypes.Bool
+      ])
+    })
+  ),
   /**
    * The `tooltopMessage` can be anything that can be rendered:
    * `numbers`, `strings`, `elements` or an `array` (or fragment) containing these types.
    */
-  tooltipMessage: PropTypes.node
+  tooltipMessage: PropTypes.node,
+  /**
+   * input object contains any props to be passed directly to the button: value, onChange, onBlur etc.
+   */
+  input: PropTypes.object.isRequired
 };
 
 export default ToggleField;
