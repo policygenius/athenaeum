@@ -66,9 +66,9 @@ ToggleField.propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.oneOfType([
-        PropTypes.String,
-        PropTypes.Int,
-        PropTypes.Bool
+        PropTypes.string,
+        PropTypes.number,
+        PropTypes.bool
       ])
     })
   ),

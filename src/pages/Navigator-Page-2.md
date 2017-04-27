@@ -16,7 +16,14 @@ Navigator Page 2:
 
         <ToggleField
           label='Toggle Choices'
-          toggleChoices={[ 'Yes', 'No' ]}
+          toggleChoices={[
+            { label: 'Choice 1', value: 1 },
+            { label: 'Choice 2', value: 2 }
+          ]}
+          input={{
+            value: state.val1,
+            onChange: (val1) => setState({ val1 })
+          }}
           tooltipMessage='Pick Me?!'
         />
 
@@ -24,7 +31,14 @@ Navigator Page 2:
 
         <ToggleField
           label='Toggle Choices'
-          toggleChoices={[ 'Yes', 'No' ]}
+          toggleChoices={[
+            { label: 'Choice 1', value: 1 },
+            { label: 'Choice 2', value: 2 }
+          ]}
+          input={{
+            value: state.val2,
+            onChange: (val2) => setState({ val2 })
+          }}
           tooltipMessage='No! pick me'
         />
 
@@ -32,7 +46,14 @@ Navigator Page 2:
 
         <ToggleField
           label='Toggle Choices'
-          toggleChoices={[ 'Yes', 'No' ]}
+          toggleChoices={[
+            { label: 'Choice 1', value: 1 },
+            { label: 'Choice 2', value: 2 }
+          ]}
+          input={{
+            value: state.val3,
+            onChange: (val3) => setState({ val3 })
+          }}
           tooltipMessage='Pick Me?!'
         />
 
@@ -40,7 +61,14 @@ Navigator Page 2:
 
         <ToggleField
           label='Toggle Choices'
-          toggleChoices={[ 'Yes', 'No' ]}
+          toggleChoices={[
+            { label: 'Choice 1', value: 1 },
+            { label: 'Choice 2', value: 2 }
+          ]}
+          input={{
+            value: state.val4,
+            onChange: (val4) => setState({ val4 })
+          }}
           tooltipMessage='Pick Me?!'
         />
 
