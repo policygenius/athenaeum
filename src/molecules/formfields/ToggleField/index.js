@@ -37,7 +37,7 @@ function ToggleField( props ) {
       <div className={styles['button-wrapper']}>
         { toggleChoices.map( (choice, idx) =>
           <Button
-            variant={input.value === choice.value.toString() ? 'toggle-active' : 'toggle'}
+            variant={input.value.toString() === choice.value.toString() ? 'toggle-active' : 'toggle'}
             key={`button-toggle-btn-${idx}`}
             className={styles.button}
             onClick={e => input.onChange(e.target.value)}
