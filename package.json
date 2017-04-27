@@ -4,7 +4,6 @@
   "description": "PolicyGenius React Component Library",
   "main": "lib/index.js",
   "scripts": {
-    "precommit": "yarn run lint",
     "prepush": "yarn run lint",
     "open": "open http://localhost:6060",
     "c": "yarn run plop create-component",
