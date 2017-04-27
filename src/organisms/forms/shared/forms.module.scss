@@ -1,13 +1,5 @@
 @import 'src/assets/stylesheets/global';
 
-.form-components {
-  margin-bottom: ru(1);
-
-  &:last-child {
-    margin-bottom: ru(.5);
-  }
-}
-
 $border-color:     $brand-3;
 $background-color: $neutral-8;
 $border-width:     ru(.25);
@@ -28,13 +20,9 @@ $icon-size:        ru(1);
 .formWrapper {
   border-radius: ru(.25);
   position: relative;
-  padding: ru(1);
   border: 1px solid $border-color;
   border-top-width: $border-width;
   border-bottom-width: $border-width;
+  padding-top: ru(1);
+  padding-bottom: ru(1.75);
 }
-
-.textComponent {
-  padding: 0 ru(.75);
-}
-

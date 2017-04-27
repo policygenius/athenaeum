@@ -3,37 +3,140 @@
 .navigator {
   // Place your component specific scss here.
   background-color: $neutral-7;
-  height: 100%;
+  min-height: 100%;
+  width: 100%;
   display: flex;
 }
 
-.left-rail {
-  align-self: flex-stretch;
-  width: ru(11);
-  padding: ru(1.5);
+.layout {
+  align-items: stretch;
+  max-width: $page-max-width;
+}
+
+.main,
+.right-rail {
+  padding-top: ru(1.5);
+  margin-bottom: ru(2);
+}
+
+.logo-panel {
   background-color: $brand-2;
+  background-image: linear-gradient(
+  to top,
+  $brand-1 0,
+  $brand-2 100%
+  );
+
   color: $neutral-8;
   -webkit-font-smoothing: antialiased;
 }
 
-.left-rail-text {
+.logo-panel-text {
   color: $neutral-8;
 }
 
-.right-rail {
-  padding: ru(1) ru(2);
-}
-
-.main {
-  padding: ru(2);
-}
-
 .logo {
-  margin-bottom: ru(4);
-  width: 100%;
-  height: ru(1.5);
+  width: calc(100% - 2px);
+  height: 100%;
+  max-width: ru(8.25);
+  margin-left: 2px;
 }
 
-.step-progress {
-  margin-bottom: ru(3);
+
+@media #{$small-only} {
+  .logo-panel {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .logo {
+    width: ru(5);
+  }
+
+  .logo-wrapper {
+    position: relative;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    height: ru(2);
+    background-color: $brand-2;
+    padding: ru(.5) ru(1);
+    margin-bottom: ru(1);
+  }
+
+  .step-progress,
+  .logo-panel-text {
+    margin-bottom: ru(.75);
+  }
+
+  .main {
+    .step-progress {
+      display: none;
+    }
+  }
+
+  .contact-card {
+    display: none;
+  }
+
+  .mobile-header-wrapper {
+    padding-left: ru(1);
+    padding-right: ru(1);
+  }
+}
+
+@media #{$small-and-medium-only} {
+  .right-rail {
+    .contact-card {
+      display: none;
+    }
+  }
+}
+
+@media #{$medium-only} {
+  .main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media #{$medium-up} {
+  .logo {
+    height: ru(1.5);
+    margin-bottom: ru(2);
+  }
+
+  .logo-panel {
+    background-image: linear-gradient(
+    to bottom,
+    $brand-1 0,
+    $brand-2 100%
+    );
+
+    padding: ru(1.5);
+
+    .step-progress {
+      display: none;
+    }
+  }
+
+  .step-progress {
+    margin-bottom: ru(3);
+  }
+}
+
+@media #{$large-up} {
+  .logo-panel {
+    max-width: ru(11);
+    padding: ru(1.5);
+
+    .contact-card {
+      display: none;
+    }
+  }
+
+  .main {
+    padding-left: ru(1);
+  }
 }

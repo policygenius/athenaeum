@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import TextComponent from 'atoms/TextComponent';
-import LinkWrapper from 'atoms/LinkWrapper';
 import styles from '../shared/forms.module.scss';
 
 function GeneralForm( props ) {
@@ -18,9 +16,7 @@ function GeneralForm( props ) {
     className: classnames(
         // If you'd like to give any special form specific classes
         // to child components:
-        styles['form-components'],
-        child.type === TextComponent ? styles['textComponent'] : '',
-        child.type === LinkWrapper ? styles['textComponent'] : ''
+        styles['form-components']
       ),
   }));
 

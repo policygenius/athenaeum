@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Icon from 'atoms/Icon';
 import styles from './tooltip.module.scss';
 
@@ -10,7 +11,7 @@ function Tooltip( props ) {
   } = props;
 
   return (
-    <div className={className}>
+    <div className={classnames(styles['tooltip-wrapper'], className)}>
       <Icon icon='tooltip' className={styles['tooltip']} />
       <div className={styles['hover-message']}>
         { children }
