@@ -82,12 +82,6 @@ module.exports = {
     },
     {
       name: 'Pages',
-      sections: [
-        {
-          name: 'Navigator Page 2',
-          content: 'src/pages/Navigator-Page-2.md'
-        }
-      ]
     }
   ],
   // Use this to change the theme for the live code editor

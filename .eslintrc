@@ -140,7 +140,7 @@
     'space-before-function-paren': 2,
     'space-in-parens': [ 0, 'always' ],
     'spaced-comment': [ 2, 'always' ],
-    'vars-on-top': 2
+    'vars-on-top': 2,
   },
   'settings': {
     'import/resolver': {

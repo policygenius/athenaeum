@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import styles from './{{snakeCase name}}.module.scss';
 
-function {{properCase name}} ( props ) {
+function {{properCase name}}( props ) {
   const {
     children,
     className
   } = props;
 
   return (
-    <div className={ classnames(className, styles['{{lowerCase name}}']) }>
+    <div className={classnames(styles['{{kebabCase name}}'], className)}>
       { children }
     </div>
   );
@@ -24,10 +23,10 @@ function {{properCase name}} ( props ) {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
-}
+};
 
 {{properCase name}}.defaultProps = {
   // Place any default props here.
-}
+};
 
 export default {{properCase name}};
