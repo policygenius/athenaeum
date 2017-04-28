@@ -19,7 +19,7 @@ $NPM_PASSWORD
 $NPM_EMAIL
 !
 
-  yarn run build:publish
+  bin/build_assets
   npm publish
 else
   echo "Not publishing to npm for branch $BUILDKITE_BRANCH"

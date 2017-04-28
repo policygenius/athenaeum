@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+const fs = require('fs-extra');
+const walk = require('klaw-sync');
+const exec = require('shelljs').exec;
+
+const variants = fs.readdirSync('variants');
+
+fs.removeSync('tmp')
+
+const overridesFor = (variant) => {
+  return walk(`variants/${variant}`)
+    .map(({ path }) => path)
+    .filter((path) => fs.statSync(path).isFile())
+    .map((path) => path.split(`variants/${variant}/`)[1]);
+};
+
+variants.forEach((variant) => {
+  fs.ensureDirSync(`tmp/${variant}/`);
+  fs.copySync('src/', `tmp/${variant}/`);
+
+  overridesFor(variant).forEach((overridePath) => {
+    if (!fs.existsSync(`tmp/${variant}/${overridePath}`)) {
+      throw `Invalid override: ${overridePath}. No base file present.`;
+    }
+
+    fs.appendFileSync(
+      `tmp/${variant}/${overridePath}`,
+      fs.readFileSync(`variants/${variant}/${overridePath}`)
+    );
+  });
+
+  exec(`CSS_VARIANT=${variant} yarn run build:publish`)
+});
+
+fs.removeSync('tmp')
+
+exec('yarn run build:publish');
