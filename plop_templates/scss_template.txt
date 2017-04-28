@@ -1,4 +1,4 @@
-@import 'src/assets/stylesheets/global';
+@import 'assets/stylesheets/global';
 
 .{{kebabCase name}} {
   // Place your component specific scss here.

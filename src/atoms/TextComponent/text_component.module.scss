@@ -1,4 +1,4 @@
-@import 'src/assets/stylesheets/global';
+@import 'assets/stylesheets/global';
 
 @for $i from 0 through 7 {
   .typography-#{$i} {

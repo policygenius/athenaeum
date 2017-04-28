@@ -3,15 +3,19 @@ const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
 
+const variant = process.env.CSS_VARIANT;
+
+const baseDir = variant ? `tmp/${variant}` : 'src';
+
 module.exports = options => ({
   entry: options.entry,
   output: options.output,
   externals: options.externals,
   devtool: 'source-map',
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, baseDir),
   resolve: {
     modules: [
-      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, baseDir),
       'node_modules'
     ],
     alias: {
@@ -62,7 +66,8 @@ module.exports = options => ({
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
-                sourceComments: true
+                sourceComments: true,
+                includePaths: [ baseDir ]
               }
             }
           ]
@@ -99,7 +104,7 @@ module.exports = options => ({
   },
   plugins: get(options, 'plugins', []).concat([
     new ExtractTextPlugin({
-      filename: 'assets/styles.css',
+      filename: variant ? `assets/${variant}_styles.css` : 'assets/styles.css',
       allChunks: true
     })
   ])
