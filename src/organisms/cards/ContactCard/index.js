@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
+import StackedCard from 'organisms/cards/StackedCard';
 import styles from './contact_card.module.scss';
 
 function cleanPhoneString( phoneString ) {
@@ -17,30 +18,27 @@ function ContactCard( props ) {
   } = props;
 
   return (
-    <ul className={classnames(styles.contact, className)}>
-      <li className={styles.li}>
-        <a
-          className={styles['link-row']}
-          href={`tel:${cleanPhoneString(phoneNumber)}`}
-        >
-          <Icon
-            icon='phone'
-            className={styles.icon}
-          />{ phoneNumber }
-        </a>
-      </li>
-      <li className={styles.li}>
-        <a
-          className={styles['link-row']}
-          onClick={chatClick}
-        >
-          <Icon
-            icon='chat'
-            className={styles.icon}
-          />{ chatText }
-        </a>
-      </li>
-    </ul>
+    <StackedCard className={classnames(styles.contact, className)}>
+      <a
+        className={styles['link-row']}
+        href={`tel:${cleanPhoneString(phoneNumber)}`}
+      >
+        <Icon
+          icon='phone'
+          className={styles.icon}
+        />{ phoneNumber }
+      </a>
+
+      <a
+        className={styles['link-row']}
+        onClick={chatClick}
+      >
+        <Icon
+          icon='chat'
+          className={styles.icon}
+        />{ chatText }
+      </a>
+    </StackedCard>
   );
 }
 

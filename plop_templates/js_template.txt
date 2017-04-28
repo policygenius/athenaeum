@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './{{snakeCase name}}.module.scss';
 import classnames from 'classnames';
+
+import styles from './{{snakeCase name}}.module.scss';
 
 function {{properCase name}} ( props ) {
   const {

@@ -1,20 +1,5 @@
 @import '../shared/cards.module.scss';
 
-.contact {
-  composes: card;
-
-  padding-left: 0;
-  list-style-type: none;
-}
-
-.li {
-  border-top: $border;
-
-  &:first-child {
-    border: none;
-  }
-}
-
 .link-row {
   @include typography-7(false);
   @include typography-semibold;
