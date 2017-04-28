@@ -7,6 +7,7 @@ exports.StyleGuideRenderer = StyleGuideRenderer;
 
 const _react = require('react');
 const React = require('react');
+const PropTypes = require('prop-types');
 
 const _react2 = _interopRequireDefault(_react);
 
@@ -133,12 +134,12 @@ function StyleGuideRenderer(_ref2) {
 }
 
 StyleGuideRenderer.propTypes = {
-  classes: _react.PropTypes.object.isRequired,
-  title: _react.PropTypes.string.isRequired,
-  homepageUrl: _react.PropTypes.string.isRequired,
-  children: _react.PropTypes.node.isRequired,
-  toc: _react.PropTypes.node.isRequired,
-  hasSidebar: _react.PropTypes.bool
+  classes: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  homepageUrl: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  toc: PropTypes.node.isRequired,
+  hasSidebar: PropTypes.bool
 };
 
 exports.default = (0, _Styled2.default)(styles)(StyleGuideRenderer);
