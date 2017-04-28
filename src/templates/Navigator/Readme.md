@@ -3,10 +3,18 @@
 Navigator Example:
 
 ```example
-  const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
 
   <div>
-    <Navigator leftRailText='Home sweet home'>
+    <Navigator
+      leftRailText='Home sweet home'
+      stepProgressData={[
+        { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },
+        { complete: true, icon: 'health', label: 'Phasellus', link: '#' },
+        { current: true, icon: 'application', label: 'Curabitur', link: '#' },
+        { inactive: true, icon: 'quotes', label: 'Etiam', link: '#' }
+      ]}
+    >
       <GeneralForm
         formName='ExampleForm'
         onSubmit={() => alert('FormSubmitted!')}
@@ -35,6 +43,8 @@ Navigator Example:
             placeholder='Select your home type'
           />
 
+          <div></div>
+
           <Spacer small />
 
           <TextField label='Street address' placeholder='Enter address' forProp='' />
@@ -44,6 +54,9 @@ Navigator Example:
           <Button variant='action'>Continue</Button>
         </Layout>
       </GeneralForm>
+      <Navigator.Sidebar>
+        Sidebar!
+      </Navigator.Sidebar>
     </Navigator>
   </div>
 ```

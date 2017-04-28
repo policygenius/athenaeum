@@ -10,32 +10,11 @@ import ContactCard from 'organisms/cards/ContactCard';
 import styles from './navigator.module.scss';
 
 
-function renderStepProgress() {
+function renderStepProgress(data) {
   return (
     <StepProgress
       className={styles['step-progress']}
-      steps={[
-        { active: false,
-          inactive: false,
-          icon: 'calculator',
-          label: 'Aenean',
-          link: '#' },
-        { active: true,
-          inactive: false,
-          icon: 'health',
-          label: 'Phasellus',
-          link: '#' },
-        { active: false,
-          inactive: true,
-          icon: 'application',
-          label: 'Curabitur',
-          link: '#' },
-        { active: false,
-          inactive: true,
-          icon: 'quotes',
-          label: 'Etiam',
-          link: '#' }
-      ]}
+      steps={data}
     />
   );
 }
@@ -54,80 +33,125 @@ function renderContactCard() {
   );
 }
 
+function renderLogoPanel(stepProgressData, leftRailText) {
+  return (
+
+    <Col
+      className={styles['logo-panel']}
+    >
+      <Layout
+        mediumCols={[ 8, 4 ]}
+        largeCols={[ 12 ]}
+        style={{ justifyContent: 'space-between' }}
+        fullwidth
+      >
+        <Col fullwidth>
+          <div className={styles['logo-wrapper']}>
+            <Icon
+              icon='pgLogo'
+              className={styles.logo}
+            />
+          </div>
+          <div className={styles['mobile-header-wrapper']}>
+            { stepProgressData && renderStepProgress(stepProgressData) }
+            {
+              leftRailText &&
+                <TextComponent
+                  type={3}
+                  className={styles['logo-panel-text']}
+                  light
+                >
+                  { leftRailText }
+                </TextComponent>
+            }
+          </div>
+        </Col>
+
+        { renderContactCard() }
+
+      </Layout>
+    </Col>
+
+  );
+}
+
+function isPartial(child) {
+  return child.type.prototype instanceof Partial;
+}
+
+function separateParts(children) {
+  const parts = {};
+
+  parts.main = React.Children.map(children, (child) => {
+    if (isPartial(child)) {
+      parts[child.type.name] = child;
+
+      return undefined;
+    }
+
+    return child;
+  });
+
+  return parts;
+}
+
 function Navigator( props ) {
   const {
     children,
     className,
-    stepprogress,
+    stepProgressData,
     leftRailText
   } = props;
 
+  const parts = separateParts(children);
+
   return (
-    <div className={classnames(className, styles['navigator'])}>
+    <div className={classnames(styles['navigator'], className)}>
       <Layout
         largeCols={[ 3, 9 ]}
         className={styles.layout}
         fullwidth
       >
-        <Col
-          className={styles['logo-panel']}
-        >
-          <Layout
-            mediumCols={[ 8, 4 ]}
-            largeCols={[ 12 ]}
-            style={{ justifyContent: 'space-between' }}
-            fullwidth
-          >
-            <Col fullwidth>
-              <div className={styles['logo-wrapper']}>
-                <Icon
-                  icon='pgLogo'
-                  className={styles.logo}
-                />
-              </div>
-              <div className={styles['mobile-header-wrapper']}>
-                { stepprogress && renderStepProgress() }
-                {
-                  leftRailText &&
-                    <TextComponent
-                      type={3}
-                      className={styles['logo-panel-text']}
-                      light
-                    >
-                      { leftRailText }
-                    </TextComponent>
-                }
-              </div>
-            </Col>
-            { renderContactCard() }
-          </Layout>
-        </Col>
+
+        { renderLogoPanel(stepProgressData, leftRailText) }
+
         <Col fullwidth>
           <Layout mediumCols={[ 7, 4 ]} fullwidth>
+
             <Col
               className={styles.main}
             >
               <Layout fullwidth>
-                { stepprogress && renderStepProgress() }
+                { stepProgressData && renderStepProgress(stepProgressData) }
               </Layout>
-              { children }
+              { parts.main }
             </Col>
+
             <Col
               className={styles['right-rail']}
               style={{ marginLeft: 'auto' }}
             >
-              { renderContactCard() }
+              <div className={styles['contact-card']}>
+
+                { renderContactCard() }
+
+              </div>
+
+              { parts.Sidebar }
+
             </Col>
           </Layout>
+
           <div>
             Footer Placeholder
           </div>
+
         </Col>
+
       </Layout>
     </div>
   );
 }
-
 
 Navigator.propTypes = {
   /**
@@ -139,11 +163,16 @@ Navigator.propTypes = {
    * Text to show up on left rail
    */
   leftRailText: PropTypes.string,
-  stepprogress: PropTypes.bool
+  stepProgressData: StepProgress.propTypes.data
 };
 
-Navigator.defaultProps = {
-  stepprogress: true
-};
+// eslint-disable-next-line
+class Partial extends React.PureComponent {
+  render() {
+    return <div>{this.props.children}</div>;
+  }
+}
+
+Navigator.Sidebar = class Sidebar extends Partial {};
 
 export default Navigator;

@@ -1,6 +1,5 @@
 @import 'src/assets/stylesheets/global';
 
-.{{lowerCase name}} {
+.{{kebabCase name}} {
   // Place your component specific scss here.
-
 }
