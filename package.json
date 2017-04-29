@@ -33,7 +33,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
-    "react-svg-inline": "^1.2.0",
+    "react-svg-inline": "^2.0.0",
     "sinon": "^2.1.0"
   },
   "devDependencies": {
@@ -85,7 +85,8 @@
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^1.3.1",
-    "react-styleguidist": "^5.0.6",
+    "react-styleguidist": "^5.1.8",
+    "react-test-renderer": "^15.5.4",
     "remark-cli": "^3.0.0",
     "remark-lint": "^6.0.0",
     "remark-lint-code": "^2.0.0",

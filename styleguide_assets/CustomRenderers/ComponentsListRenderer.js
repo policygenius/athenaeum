@@ -6,6 +6,7 @@ Object.defineProperty(exports, '__esModule', {
 exports.ComponentsListRenderer = ComponentsListRenderer;
 
 const _react = require('react');
+const PropTypes = require('prop-types');
 
 const _react2 = _interopRequireDefault(_react);
 
@@ -97,8 +98,8 @@ function ComponentsListRenderer(_ref2) {
 }
 
 ComponentsListRenderer.propTypes = {
-  items: _react.PropTypes.array.isRequired,
-  classes: _react.PropTypes.object.isRequired
+  items: PropTypes.array.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 exports.default = (0, _Styled2.default)(styles)(ComponentsListRenderer);
