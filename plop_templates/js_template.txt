@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './{{snakeCase name}}.module.scss';
 
-function {{properCase name}}( props ) {
+function {{properCase name}}(props) {
   const {
     children,
     className
   } = props;
 
   return (
-    <div className={classnames(styles['{{kebabCase name}}'], className)}>
+    <div className={classnames(styles['{{dashCase name}}'], className)}>
       { children }
     </div>
   );

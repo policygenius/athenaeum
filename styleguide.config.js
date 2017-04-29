@@ -46,6 +46,10 @@ module.exports = {
           components: 'src/molecules/asides/**/*.js'
         },
         {
+          name: 'Headers',
+          components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
+        },
+        {
           name: 'Lists',
           components: 'src/molecules/lists/**/*.js'
         },
