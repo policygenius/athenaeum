@@ -7326,7 +7326,7 @@ react-hot-loader@^1.3.1:
     react-hot-api "^0.4.5"
     source-map "^0.4.4"
 
-react-styleguidist@^5.0.6:
+react-styleguidist@^5.1.8:
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-5.1.8.tgz#5f845dcf88d64fc3d974ec0f779266edc3f163cf"
   dependencies:
@@ -7377,11 +7377,19 @@ react-styleguidist@^5.0.6:
     webpack-dev-server "^1.16.3"
     webpack-merge "^4.1.0"
 
-react-svg-inline@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-1.2.0.tgz#a02bf81a0ed7615e3194a014b58d98aea5521fd5"
+react-svg-inline@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-2.0.0.tgz#0a4f60895588eecc7616af3a511d087801163600"
   dependencies:
     classnames "^2.2.1"
+    prop-types "^15.5.8"
+
+react-test-renderer@^15.5.4:
+  version "15.5.4"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.5.4.tgz#d4ebb23f613d685ea8f5390109c2d20fbf7c83bc"
+  dependencies:
+    fbjs "^0.8.9"
+    object-assign "^4.1.0"
 
 react@^15.5.4:
   version "15.5.4"
