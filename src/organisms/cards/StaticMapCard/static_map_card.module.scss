@@ -1,0 +1,33 @@
+@import '../shared/cards.module.scss';
+
+.static-map-card {
+  composes: card;
+}
+
+.map {
+  width: 100%;
+  height: 200px;
+
+  background-color: $neutral-5;
+  background-size: cover;
+  background-position: center center;
+}
+
+.head {
+  padding: ru(.5) ru(.75);
+}
+
+.title {
+  @include typography(5);
+
+  line-height: 1.37em;
+  color: $neutral-2;
+}
+
+.label {
+  @include typography(7);
+
+  display: block;
+  color: $neutral-3;
+  font-weight: normal;
+}
