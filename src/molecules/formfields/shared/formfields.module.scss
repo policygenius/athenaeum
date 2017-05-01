@@ -172,12 +172,14 @@ $checkbox-border-color: $neutral-5;
 .select-card {
   composes: formfield;
   border: 0;
+  color: $brand-2;
 
   .label {
     @include typography-6(false);
     padding: ru(.5) ru(1) 0;
     border: 0;
     letter-spacing: 0.1px;
+    color: $neutral-2;
   }
 
   .select {
