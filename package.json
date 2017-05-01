@@ -1,6 +1,6 @@
 {
   "name": "athenaeum",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "PolicyGenius React Component Library",
   "main": "lib/index.js",
   "scripts": {
@@ -127,8 +127,12 @@
     ]
   },
   "jest": {
-    "modulePaths": ["src"],
-    "moduleDirectories": ["node_modules"],
+    "modulePaths": [
+      "src"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "moduleNameMapper": {
       "\\.(svg)$": "<rootDir>/src/utils/fileMock.js",
       "\\.(css|less|scss)$": "identity-obj-proxy"
