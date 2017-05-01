@@ -8,11 +8,15 @@ function AddCard( props ) {
   const {
     className,
     cardText,
-    icon
+    icon,
+    onClick
   } = props;
 
   return (
-    <div className={classnames( styles.add, className )}>
+    <div
+      className={classnames( styles.add, className )}
+      onClick={onClick}
+    >
       <Icon
         icon={icon}
         className={styles.icon}
@@ -36,7 +40,12 @@ AddCard.propTypes = {
   /**
    * This is the icon name from the [Icon component](/#icon).
    */
-  icon: PropTypes.string
+  icon: PropTypes.string,
+
+  /**
+   * onClick handler for top level div
+   */
+  onClick: PropTypes.func
 };
 
 export default AddCard;
