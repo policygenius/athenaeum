@@ -5,6 +5,7 @@ Navigator Example:
 ```example
 const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
 
+
   <div>
     <Navigator
       leftRailText='Home sweet home'
