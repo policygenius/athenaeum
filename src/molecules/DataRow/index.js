@@ -44,7 +44,7 @@ DataRow.propTypes = {
    */
   label: PropTypes.string.isRequired,
   /**
-   * value/name for data could be a string or a number.
+   * value for data could be a string or a number.
    */
   value: PropTypes.oneOfType([
     PropTypes.string,
