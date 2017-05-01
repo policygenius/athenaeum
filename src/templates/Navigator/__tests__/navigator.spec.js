@@ -86,44 +86,6 @@ describe('Navigator', () => {
       };
     });
 
-    xit('should render an Icon component', () => {
-      // jest.dontMock('templates/Navigator/NavigatorPartials');
-
-      const renderStub = sinon.stub(NavigatorPartials, 'icon');
-      // const wrapper = shallow(<Navigator {...props} />);
-      // const spy = jest.spyOn(NavigatorPartials, 'icon');
-
-      shallow(<Navigator {...props} />);
-
-      // NavigatorPartials.icon();
-      expect(renderStub.called).to.be.true;
-      renderStub.restore();
-    });
-
-    xit('should render a StepProgress component', () => {
-      const renderStub = sinon.stub(NavigatorPartials, 'stepProgress');
-
-      props.data = [
-        { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },
-        { complete: true, icon: 'health', label: 'Phasellus', link: '#' }
-      ];
-
-      // const wrapper = shallow(<Navigator {...props} />);
-      NavigatorPartials.stepProgress();
-      expect(renderStub.called).to.be.true;
-      renderStub.restore();
-    });
-
-    xit('should render a ContactCard component', () => {
-      const renderSpy = sinon.spy(NavigatorPartials, 'contactCard');
-      const wrapper = shallow(<Navigator {...props} />);
-
-      NavigatorPartials.contactCard();
-      expect(wrapper.contains('.contact-card')).to.be.true;
-      expect(renderSpy.called).to.be.true;
-      renderSpy.restore();
-    });
-
     it('should render railText', () => {
       const wrapper = shallow(<Navigator {...props} />);
 

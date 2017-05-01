@@ -43,7 +43,7 @@ const NavigatorPartials = {
     return (
       <ContactCard
         className={styles['contact-card']}
-        phoneNumber='1(800) 555-5309'
+        phoneNumber='1 (800) 555-5309'
         chatText='Chat with an Expert'
         chatClick={clickExample}
       />
