@@ -15,6 +15,12 @@ DataRow Example:
       />
 
       <DataRow
+        label='Sub Data'
+        value={9.73}
+        variant='sub'
+      />
+
+      <DataRow
         label='More Data'
         value={19.73}
         variant='final'

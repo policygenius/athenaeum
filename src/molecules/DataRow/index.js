@@ -15,7 +15,7 @@ function DataRow(props) {
   } = props;
 
   return (
-    <div className={classnames(styles['data-row'], styles[variant], className)}>
+    <div className={classnames(styles['data-row'], styles[`data-row-${variant}`], className)}>
       <span className={classnames(styles['label'])}>
         { label }
         { description && <Tooltip className={styles['tip']}>{ description }</Tooltip> }
