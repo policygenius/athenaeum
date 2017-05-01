@@ -56,8 +56,4 @@ DataRow.propTypes = {
   description: PropTypes.string,
 };
 
-DataRow.defaultProps = {
-  // Place any default props here.
-};
-
 export default DataRow;
