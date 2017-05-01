@@ -51,7 +51,7 @@ DataRow.propTypes = {
     PropTypes.number,
   ]).isRequired,
   /**
-   * optional helper text describing this data.
+   * optional helper text describing this data, adds a hover-able tooltip.
    */
   description: PropTypes.string,
 };
