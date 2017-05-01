@@ -3,7 +3,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import {{properCase name}} from '{{type}}/{{properCase name}}';
+import {{properCase name}} from '{{type}}s/{{properCase name}}';
 
 describe('{{properCase name}}', () => {
   // let defaultProps;
