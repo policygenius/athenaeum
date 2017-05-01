@@ -16,8 +16,7 @@ function SelectCard( props ) {
     footerText,
     linkUrl,
     onClick,
-    onChange,
-    value
+    input
   } = props;
 
   return (
@@ -27,10 +26,7 @@ function SelectCard( props ) {
         label={label}
         placeholder={placeholder}
         selectOptions={selectOptions}
-        input={{
-          onChange,
-          value
-        }}
+        input={input}
       />
 
       <footer className={styles.footer}>
@@ -70,11 +66,6 @@ SelectCard.propTypes = {
   linkUrl: PropTypes.string,
 
   /**
-   * onChange callback for select field
-   */
-  onChange: PropTypes.func.isRequired,
-
-  /**
    * onClick callback for footer link
    */
   onClick: PropTypes.func,
@@ -90,9 +81,9 @@ SelectCard.propTypes = {
   selectOptions: PropTypes.array.isRequired,
 
   /**
-   * value passed to select field
+   * Redux Form input object; pass any variables necessary for input change here
    */
-  value: PropTypes.string
+  input: PropTypes.object
 };
 
 export default SelectCard;
