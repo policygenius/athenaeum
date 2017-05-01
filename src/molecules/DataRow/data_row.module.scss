@@ -1,0 +1,39 @@
+@import 'assets/stylesheets/global';
+
+
+.data-row {
+  // Place your component specific scss here.
+  display: flex;
+}
+
+.label {
+  flex-grow: 2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.value {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.tip {
+  margin: 0 0 0 ru(.25);
+  position: relative;
+}
+
+
+.final {
+  margin-top: ru(.2);
+  border-top: 1px solid $neutral-5;
+
+  .label {
+    @include typography(4);
+  }
+
+  .value {
+    @include typography(3);
+    color: $brand-2;
+  }
+}
