@@ -1,0 +1,46 @@
+@import 'assets/stylesheets/global';
+
+.data-row {
+  display: flex;
+
+  &-final {
+    margin-top: ru(.2);
+    border-top: 1px solid $neutral-5;
+
+    .label {
+      @include typography(4);
+    }
+
+    .value {
+      @include typography(3);
+    }
+  }
+
+  &-sub {
+    .label {
+      font-weight: normal;
+      color: $neutral-3;
+    }
+  }
+}
+
+.label {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
+
+  font-weight: bold;
+}
+
+.value {
+  flex-grow: 1;
+  font-weight: bold;
+  text-align: right;
+
+  color: $brand-2;
+}
+
+.tip {
+  margin: 0 0 0 ru(.25);
+  position: relative;
+}

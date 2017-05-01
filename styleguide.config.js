@@ -50,6 +50,10 @@ module.exports = {
           components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
         },
         {
+          name: 'DataRow',
+          components: 'src/molecules/DataRow/**/*.js'
+        },
+        {
           name: 'Lists',
           components: 'src/molecules/lists/**/*.js'
         },

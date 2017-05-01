@@ -127,7 +127,10 @@
     ]
   },
   "jest": {
+    "modulePaths": ["src"],
+    "moduleDirectories": ["node_modules"],
     "moduleNameMapper": {
+      "\\.(svg)$": "<rootDir>/src/utils/fileMock.js",
       "\\.(css|less|scss)$": "identity-obj-proxy"
     }
   }
