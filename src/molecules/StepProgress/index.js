@@ -26,6 +26,12 @@ function renderStep(step, idx) {
   );
 }
 
+function renderSteps(steps) {
+  if (!steps) return null;
+
+  return steps.map(renderStep);
+}
+
 function StepProgress( props ) {
   const {
     steps,
@@ -34,7 +40,7 @@ function StepProgress( props ) {
 
   return (
     <ul className={classnames(styles.stepProgress, className)}>
-      { steps.map(renderStep) }
+      { renderSteps(steps) }
     </ul>
   );
 }
