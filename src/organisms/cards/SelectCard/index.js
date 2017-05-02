@@ -58,7 +58,10 @@ SelectCard.propTypes = {
   /**
    * label for select field
    */
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
 
   /**
    * url for footer link

@@ -18,7 +18,7 @@ function TextComponent( props ) {
     className,
   } = props;
 
-  const kids = typeof(children.type) === "function" ? children.type( children.props ) : [ ...children ];
+  const kids = typeof children.type === 'function' ? children.type( children.props ) : [ ...children ];
 
   return React.createElement(
     tag,
