@@ -23,11 +23,7 @@ const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').
         <Layout>
           <TextComponent tag='p' type={4} semibold>First, a little about you and your humble abode</TextComponent>
 
-          <Spacer small />
-
           <TextField label='First name' placeholder='Enter your first name here' forProp='' />
-
-          <Spacer small />
 
           <LinkWrapper href='#'>
             <TextComponent
@@ -37,20 +33,12 @@ const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').
             </TextComponent>
           </LinkWrapper>
 
-          <Spacer small />
-
           <SelectFieldExample
             label='Home type'
             placeholder='Select your home type'
           />
 
-          <div></div>
-
-          <Spacer small />
-
           <TextField label='Street address' placeholder='Enter address' forProp='' />
-
-          <Spacer medium />
 
           <Button variant='action'>Continue</Button>
         </Layout>

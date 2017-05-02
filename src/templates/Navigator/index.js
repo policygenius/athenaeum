@@ -77,10 +77,16 @@ function Navigator(props) {
           </Layout>
         </Col>
 
-        <Col fullwidth>
-          <Layout mediumCols={[ 7, 4 ]} fullwidth>
+        <Col
+          className={styles.main}
+          fullwidth
+        >
+          <Layout
+            mediumCols={[ 7, 4 ]}
+            fullwidth
+          >
 
-            <Col className={styles.main}>
+            <Col className={styles['main-col']}>
               <Layout fullwidth>
                 { renderPartial('stepProgress', stepProgressData) }
               </Layout>
