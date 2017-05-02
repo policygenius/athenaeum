@@ -10,29 +10,23 @@ GeneralForm Example - Navigator Page 1:
       <Layout>
         <TextComponent tag='p' type={ 3 } regular>First, a little about you and your humble abode</TextComponent>
 
-        <Spacer small />
+        <Col>
+          <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
 
-        <TextField label='First name' placeholder='Enter your first name here' forProp=''/>
-
-        <Spacer xSmall />
-
-        <LinkWrapper href="#">
-          <TextComponent
-            type={ 7 }
-          >
-            Want to add more people to the policy?
-          </TextComponent>
-        </LinkWrapper>
-
-        <Spacer small />
+          <LinkWrapper href="#">
+            <TextComponent
+              type={ 7 }
+            >
+              Want to add more people to the policy?
+            </TextComponent>
+          </LinkWrapper>
+        </Col>
 
         <SelectFieldExample
           label='Select Field Label'
           placeholder='Placeholder'
           tooltip='This is a tooltip'
         />
-
-        <Spacer small />
 
         <TextField
           mediumCols={ 9 }
@@ -45,8 +39,6 @@ GeneralForm Example - Navigator Page 1:
           label='Apt. #'
           placeholder='Apt. #'
         />
-
-        <Spacer medium />
 
         <Button variant="action">Continue</Button>
       </Layout>
