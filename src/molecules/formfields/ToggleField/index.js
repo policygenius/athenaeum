@@ -61,7 +61,10 @@ ToggleField.propTypes = {
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
   toggleChoices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
