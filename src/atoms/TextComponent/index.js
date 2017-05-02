@@ -18,6 +18,8 @@ function TextComponent( props ) {
     className,
   } = props;
 
+  const kids = typeof(children.type) === "function" ? children.type( children.props ) : [ ...children ];
+
   return React.createElement(
     tag,
     { className: classnames(
@@ -25,7 +27,7 @@ function TextComponent( props ) {
       setWeight( props ),
       className
     ) },
-    [ ...children ]
+    kids
   );
 }
 
