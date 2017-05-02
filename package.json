@@ -9,7 +9,7 @@
     "cc": "yarn run plop create-component",
     "build:publish": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors",
     "build:publish:watch": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors --watch",
-    "publish": "yarn run build:publish && npm publish",
+    "publish": "rm -rf ./lib/* && yarn run build:publish && npm publish",
     "start": "yarn run styleguide:build && yarn run styleguide",
     "test": "jest",
     "stylin": "yarn run start  && yarn run open",
