@@ -110,9 +110,9 @@ $checkbox-border-color: $neutral-5;
 }
 
 // Variants
+.datefield,
 .textfield,
 .selectfield {
-  composes: formfield;
 
   .label {
     border-bottom: $border;
@@ -123,6 +123,10 @@ $checkbox-border-color: $neutral-5;
     border-radius: $border-radius;
     outline: none;
   }
+}
+
+.textfield {
+  composes: formfield;
 }
 
 .togglefield {
@@ -163,8 +167,31 @@ $checkbox-border-color: $neutral-5;
   }
 }
 
-// Select Field - types
 
+//
+.datefield {
+  composes: formfield;
+
+  &-wrapper {
+    display: flex;
+  }
+
+  &-day,
+  &-mon {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    border-right: 1px solid $neutral-4;
+  }
+
+  &-mon,
+  &-day,
+  &-year {
+    width: 33%;
+  }
+}
+
+// Select Field - types
 .selectfield {
   composes: formfield;
 }

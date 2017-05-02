@@ -124,7 +124,7 @@ Navigator.propTypes = {
    * Text to show up on left rail
    */
   leftRailText: PropTypes.string,
-  stepProgressData: StepProgress.propTypes.data
+  stepProgressData: StepProgress.propTypes.steps
 };
 
 // eslint-disable-next-line
