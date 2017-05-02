@@ -13,7 +13,13 @@
   max-width: $page-max-width;
 }
 
-.main,
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-col,
 .right-rail {
   padding-top: ru(1.5);
   margin-bottom: ru(2);
@@ -70,7 +76,7 @@
     margin-bottom: ru(.75);
   }
 
-  .main {
+  .main-col {
     .step-progress {
       display: none;
     }
@@ -95,7 +101,7 @@
 }
 
 @media #{$medium-only} {
-  .main {
+  .main-col {
     padding-left: 0;
     padding-right: 0;
   }
@@ -137,7 +143,7 @@
     }
   }
 
-  .main {
+  .main-col {
     padding-left: ru(1);
   }
 }

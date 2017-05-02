@@ -5,17 +5,39 @@ import _ from 'lodash';
 import styles from './layout.module.scss';
 import Col from './Col';
 
-function Layout( props ) {
+function processChild(child, layoutProps) {
+
+  if (child.type === Col) {
+    const colProps = Object.assign(
+      {},
+      layoutProps,
+      child.props
+    );
+
+    return React.cloneElement(child, colProps);
+  }
+
+  const colProps = Object.assign(
+    {},
+    layoutProps,
+    _.omit(child.props, [ 'className', 'style' ])
+  );
+
+  return (
+    <Col {...colProps} >
+      { child }
+    </Col>
+  );
+}
+
+function processChildren(props) {
   const {
     children,
-    className,
     smallCols,
     mediumCols,
     largeCols,
     xLargeCols,
     xxLargeCols,
-    fullwidth,
-    style,
   } = props;
 
   // start at -1 so can bump to 0 in the conditional below
@@ -25,7 +47,7 @@ function Layout( props ) {
   let xlgIdx = -1;
   let xxlgIdx = -1;
 
-  const kids = React.Children.map( children, ( child ) => {
+  return React.Children.map( children, ( child ) => {
     if (!child) return child; // Sanity check if child is null -> early return
 
     // colsIdx mirrors idx until idx does not exist in col array (ex. smallCols)
@@ -60,21 +82,18 @@ function Layout( props ) {
       xxLargeCols: xxLargeCols[xxlgIdx],
     };
 
-    const colProps = Object.assign(
-      layoutProps,
-      _.omit(child.props, [ 'className', 'style' ])
-    );
-
-    if (child.type.name === 'Col') {
-      return React.cloneElement(child, colProps);
-    }
-
-    return (
-      <Col {...colProps} >
-        { child }
-      </Col>
-    );
+    return processChild(child, layoutProps);
   });
+}
+
+function Layout( props ) {
+  const {
+    className,
+    fullwidth,
+    style,
+  } = props;
+
+  const kids = processChildren(props);
 
   return (
     <div
