@@ -31,7 +31,8 @@ function SelectField( props ) {
     focused,
     type,
     input,
-    tooltip
+    tooltip,
+    defaultValue
   } = props;
 
   return (
@@ -54,17 +55,21 @@ function SelectField( props ) {
         </label>
       }
 
-      <div className={styles.selectbox}>
-        <select
-          required
-          className={styles.select}
-          id={forProp}
-          {...input}
-        >
-          { placeholder && renderPlaceholder( placeholder, styles.option ) }
-          { selectOptions.map(renderOptions) }
-        </select>
-      </div>
+      { defaultValue ?
+        <div className={styles.select}>{defaultValue}</div>
+        :
+        <div className={styles.selectbox}>
+          <select
+            required
+            className={styles.select}
+            id={forProp}
+            {...input}
+          >
+            { placeholder && renderPlaceholder( placeholder, styles.option ) }
+            { selectOptions.map(renderOptions) }
+          </select>
+        </div>
+      }
     </div>
   );
 }
@@ -104,7 +109,7 @@ SelectField.propTypes = {
   selectOptions: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
-  })).isRequired,
+  })),
 
   /**
    * defines type of select field
@@ -117,7 +122,11 @@ SelectField.propTypes = {
   /**
    * Content for tooltip
    */
-  tooltip: PropTypes.node
+  tooltip: PropTypes.node,
+  /**
+   * Default / non-changeable value
+   */
+  defaultValue: PropTypes.string
 };
 
 SelectField.defaultProps = {

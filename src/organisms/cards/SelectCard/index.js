@@ -16,17 +16,20 @@ function SelectCard( props ) {
     footerText,
     linkUrl,
     onClick,
-    input
+    input,
+    defaultValue
   } = props;
 
   return (
     <div className={classnames( styles.select, className )}>
+
       <SelectField
         type='select-card'
         label={label}
         placeholder={placeholder}
         selectOptions={selectOptions}
         input={input}
+        defaultValue={defaultValue}
       />
 
       <footer className={styles.footer}>
@@ -81,12 +84,16 @@ SelectCard.propTypes = {
   /**
    * array of select options for select field
    */
-  selectOptions: PropTypes.array.isRequired,
+  selectOptions: PropTypes.array,
 
   /**
    * Redux Form input object; pass any variables necessary for input change here
    */
-  input: PropTypes.object
+  input: PropTypes.object,
+  /**
+   * Default / non-changeable value for the select field
+   */
+  defaultValue: PropTypes.string
 };
 
 export default SelectCard;
