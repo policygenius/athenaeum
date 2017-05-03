@@ -127,10 +127,11 @@ $checkbox-border-color: $neutral-5;
 .togglefield {
   @include formfield;
 
-  padding: $section-padding;
   position: relative;
+  padding: $section-padding;
 
   .tooltip-wrapper {
+    z-index: 2;
     position: absolute;
     right: ru(.75);
     width: ru(.5);
