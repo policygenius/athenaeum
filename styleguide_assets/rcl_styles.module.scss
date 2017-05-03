@@ -16,4 +16,15 @@ body {
   .sidebar {
     background-color: black;
   }
+
+}
+
+// These styles won't be processed by css-modules
+// so you can use the styleguidist classnames here.
+:global{
+  body {
+    .isolatedLink-0-49 {
+      top: -1.8rem;
+    }
+  }
 }

@@ -7,7 +7,7 @@ GeneralForm Example - Navigator Page 1:
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
     >
-      <Layout>
+      <Layout variant='form'>
         <TextComponent tag='p' type={ 3 } regular>First, a little about you and your humble abode</TextComponent>
 
         <Col>
@@ -39,6 +39,8 @@ GeneralForm Example - Navigator Page 1:
           label='Apt. #'
           placeholder='Apt. #'
         />
+
+        <Spacer xSmall />
 
         <Button variant="action">Continue</Button>
       </Layout>

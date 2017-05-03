@@ -139,6 +139,7 @@ $checkbox-border-color: $neutral-5;
     right: ru(.75);
     width: ru(.5);
     height: ru(.5);
+    z-index: 1;
   }
 
   .button-wrapper {

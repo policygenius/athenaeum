@@ -9,11 +9,20 @@ const stackChildren = children => React.Children.map(children, stackChild);
 function StackedCard(props) {
   const {
     children,
-    className
+    className,
+    inverted
   } = props;
 
   return (
-    <ul className={classnames(styles['stacked'], className)}>
+    <ul
+      className={
+        classnames(
+          styles['stacked'],
+          { [styles.inverted]: inverted },
+          className
+        )
+      }
+    >
       { stackChildren(children) }
     </ul>
   );
@@ -25,6 +34,14 @@ StackedCard.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+  /**
+   * Inverted color scheme.
+   */
+  inverted: PropTypes.bool
+};
+
+StackedCard.defaultProps = {
+  inverted: false
 };
 
 export default StackedCard;

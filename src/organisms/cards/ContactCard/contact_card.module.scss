@@ -12,7 +12,6 @@
   text-decoration: none;
 
   &:hover {
-    background-color: $neutral-5;
     color: $neutral-8;
 
     .icon path {
@@ -25,4 +24,22 @@
   width: ru(.75);
   height: ru(.75);
   margin-right: ru(.25);
+}
+
+.inverted {
+  .icon path {
+    fill: $neutral-8;
+  }
+
+  .link-row {
+    color: $neutral-8;
+
+    &:hover {
+      color: $brand-2;
+
+      .icon path {
+        fill: $brand-2;
+      }
+    }
+  }
 }

@@ -34,7 +34,7 @@ function separateParts(children) {
 function renderPartial(part, data) {
   // Will not render if data is undefined
   // To render without data, pass in true
-  if (!data) return undefined;
+  if (data === undefined) return undefined;
   if (!NavigatorPartials[part]) return <div>{part}</div>;
 
   return NavigatorPartials[part](data);
@@ -87,6 +87,7 @@ function Navigator(props) {
           <Layout
             mediumCols={[ 7, 4 ]}
             fullwidth
+            className={styles['main-layout']}
           >
 
             <Col className={styles['main-col']}>
@@ -102,7 +103,7 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               <div className={styles['contact-card']}>
-                { renderPartial('contactCard', true) }
+                { renderPartial('contactCard', false) }
               </div>
 
               { renderPartial('sidebar', parts.Sidebar) }
