@@ -20,25 +20,30 @@ const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').
         formName='ExampleForm'
         onSubmit={() => alert('FormSubmitted!')}
       >
-        <Layout>
+        <Layout variant='form'>
           <TextComponent tag='p' type={4} semibold>First, a little about you and your humble abode</TextComponent>
 
-          <TextField label='First name' placeholder='Enter your first name here' forProp='' />
+          <Col>
+            <TextField label='First name' placeholder='Enter your first name here' forProp='' />
 
-          <LinkWrapper href='#'>
-            <TextComponent
-              type={7}
-            >
-              Want to add more people to the policy?
-            </TextComponent>
-          </LinkWrapper>
+            <LinkWrapper href='#'>
+              <TextComponent
+                type={7}
+              >
+                Want to add more people to the policy?
+              </TextComponent>
+            </LinkWrapper>
+          </Col>
 
           <SelectFieldExample
             label='Home type'
             placeholder='Select your home type'
+            tooltipMessage='Tooltips!'
           />
 
           <TextField label='Street address' placeholder='Enter address' forProp='' />
+
+          <Spacer xSmall />
 
           <Button variant='action'>Continue</Button>
         </Layout>

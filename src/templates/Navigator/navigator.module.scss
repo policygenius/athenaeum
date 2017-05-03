@@ -1,9 +1,8 @@
 @import 'assets/stylesheets/global';
 
 .navigator {
-  // Place your component specific scss here.
   background-color: $neutral-7;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   display: flex;
 }
@@ -113,10 +112,23 @@
   }
 }
 
+@media #{$medium-only} {
+  .main-layout {
+    padding-left: ru(1.5);
+    padding-right: ru(1.5);
+  }
+
+  .main-col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media #{$medium-up} {
   .logo {
     height: ru(1.5);
     margin-bottom: ru(2);
+    max-width: ru(6.5);
   }
 
   .logo-panel {

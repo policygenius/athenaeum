@@ -14,3 +14,31 @@
     border: none;
   }
 }
+
+.inverted {
+  background-color: transparent;
+  color: $neutral-8;
+  border-color: $neutral-8;
+
+  .icon path {
+    fill: $neutral-8;
+  }
+
+  .stacked-li {
+    border-top: 1px solid $neutral-8;
+
+    &:first-child {
+      border: none;
+    }
+
+    &:hover {
+      background-color: $neutral-8;
+      color: $brand-2;
+
+      .icon path {
+        fill: $brand-2;
+      }
+    }
+  }
+}
+

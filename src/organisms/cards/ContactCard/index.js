@@ -15,10 +15,20 @@ function ContactCard( props ) {
     chatClick,
     chatText,
     className,
+    inverted
   } = props;
 
   return (
-    <StackedCard className={classnames(styles.contact, className)}>
+    <StackedCard
+      inverted={inverted}
+      className={
+        classnames(
+          styles.contact,
+          { [styles.inverted]: inverted },
+          className
+        )
+      }
+    >
       <a
         className={styles['link-row']}
         href={`tel:${cleanPhoneString(phoneNumber)}`}
@@ -60,11 +70,16 @@ ContactCard.propTypes = {
    * Text for the bottom of the contact card.
   */
   chatText: PropTypes.string.isRequired,
+  /**
+   * Inverted color scheme.
+   */
+  inverted: PropTypes.bool
 };
 
 ContactCard.defaultProps = {
   phoneNumber: '1 (855) 695-2255',
-  chatText: 'Chat with an Expert'
+  chatText: 'Chat with an Expert',
+  inverted: false
 };
 
 export default ContactCard;

@@ -36,7 +36,7 @@ const NavigatorPartials = {
     );
   },
 
-  contactCard: () => {
+  contactCard: (inverted) => {
     // eslint-disable-next-line
     const clickExample = () => alert('Chat clicked!')
 
@@ -46,6 +46,7 @@ const NavigatorPartials = {
         phoneNumber='1 (800) 555-5309'
         chatText='Chat with an Expert'
         chatClick={clickExample}
+        inverted={inverted}
       />
     );
   },
