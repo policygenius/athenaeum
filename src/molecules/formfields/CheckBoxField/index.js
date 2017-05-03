@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import toggleClass from 'utils/ReactUtils/toggleClass';
+
 import styles from '../shared/formfields.module.scss';
 
 function CheckboxList( props ) {
@@ -8,11 +11,14 @@ function CheckboxList( props ) {
     label,
     focused,
     data,
-    handleClick
+    handleClick,
+    meta,
   } = props;
 
+  const focusedClass = toggleClass(focused || (meta && meta.active), styles['focused']);
+
   return (
-    <div className={classnames(styles.checkboxList, { [styles.focused]: focused })}>
+    <div className={classnames(styles.checkboxList, focusedClass)}>
       {
         label &&
         <label
@@ -61,6 +67,10 @@ CheckboxList.propTypes = {
     })
   ),
   handleClick: PropTypes.func.isRequired,
+  /**
+   * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
+   */
+  meta: PropTypes.object,
 };
 
 export default CheckboxList;
