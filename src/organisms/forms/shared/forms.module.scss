@@ -1,7 +1,7 @@
 @import 'assets/stylesheets/global';
 
-$border-color:     $brand-3;
-$background-color: $neutral-8;
+$border-color:     color('brand-3');
+$background-color: color('neutral-8');
 $border-width:     ru(.25);
 $icon-size:        ru(.75);
 $icon-size:        ru(1);

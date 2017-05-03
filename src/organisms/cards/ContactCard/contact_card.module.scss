@@ -8,14 +8,14 @@
   align-items: center;
   padding: ru(.25) ru(.75);
 
-  color: $neutral-2;
+  color: color('neutral-2');
   text-decoration: none;
 
   &:hover {
-    color: $neutral-8;
+    color: color('neutral-8');
 
     .icon path {
-      fill: $neutral-8;
+      fill: color('neutral-8');
     }
   }
 }
@@ -28,17 +28,17 @@
 
 .inverted {
   .icon path {
-    fill: $neutral-8;
+    fill: color('neutral-8');
   }
 
   .link-row {
-    color: $neutral-8;
+    color: color('neutral-8');
 
     &:hover {
-      color: $brand-2;
+      color: color('brand-2');
 
       .icon path {
-        fill: $brand-2;
+        fill: color('brand-2');
       }
     }
   }

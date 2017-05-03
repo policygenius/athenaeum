@@ -1,11 +1,11 @@
 @import 'assets/stylesheets/global';
 
-$article-list-color:                 $neutral-2;
-$article-list-heading-color:         $neutral-4;
-$article-list-heading-hover-color:   $neutral-1;
-$articles-list-heading-border-color: $action-2;
+$article-list-color:                 color('neutral-2');
+$article-list-heading-color:         color('neutral-4');
+$article-list-heading-hover-color:   color('neutral-1');
+$articles-list-heading-border-color: color('action-2');
 $article-list-image-max-width:       ru(10);
-$articles-list-tag-color:            $neutral-3;
+$articles-list-tag-color:            color('neutral-3');
 
 .articleList {
   list-style: none;

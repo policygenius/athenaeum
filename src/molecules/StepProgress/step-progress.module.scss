@@ -1,21 +1,21 @@
 @import 'assets/stylesheets/global';
 
-$icon-color:                        $neutral-2;
-$inactive-color:                    $neutral-4;
+$icon-color:                        color('neutral-2');
+$inactive-color:                    color('neutral-4');
 $icon-size:                         rem-calc(20px);
 $item-size:                         ru(1.667);
 $item-border-width:                 rem-calc(2px);
-$item-border-color:                 $brand-3;
-$item-background-color:             $neutral-8;
-$active-item-border-color:          $action-2;
-$inactive-item-border-color:        $neutral-4;
+$item-border-color:                 color('brand-3');
+$item-background-color:             color('neutral-8');
+$active-item-border-color:          color('action-2');
+$inactive-item-border-color:        color('neutral-4');
 
-$mobile-color:                      $neutral-8;
-$mobile-item-background-color:      $brand-1;
-$mobile-item-border-color:          $action-2;
-$mobile-active-item-border-color:   $brand-2;
-$mobile-inactive-color:             $brand-2;
-$mobile-inactive-item-border-color: $brand-2;
+$mobile-color:                      color('neutral-8');
+$mobile-item-background-color:      color('brand-1');
+$mobile-item-border-color:          color('action-2');
+$mobile-active-item-border-color:   color('brand-2');
+$mobile-inactive-color:             color('brand-2');
+$mobile-inactive-item-border-color: color('brand-2');
 
 .stepProgress {
   display: flex;
@@ -73,7 +73,7 @@ $mobile-inactive-item-border-color: $brand-2;
     }
 
     /* stylelint-disable declaration-no-important */
-    path { fill: $neutral-4 !important; }
+    path { fill: color('neutral-4') !important; }
     /* stylelint-enable */
   }
 }
@@ -97,7 +97,7 @@ $mobile-inactive-item-border-color: $brand-2;
   }
 
   &:hover {
-    .icon path { fill: $brand-2; }
+    .icon path { fill: color('brand-2'); }
   }
 
   &:active {
@@ -183,7 +183,7 @@ $mobile-inactive-item-border-color: $brand-2;
     border-color: $mobile-item-border-color;
   }
 
-  .icon path { fill: $neutral-8; }
+  .icon path { fill: color('neutral-8'); }
 
   .label { display: none; }
 }

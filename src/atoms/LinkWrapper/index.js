@@ -7,13 +7,14 @@ import styles from './link_wrapper.module.scss';
 function LinkWrapper( props ) {
   const {
     className,
-    children
+    children,
+    color
   } = props;
 
   return (
     <a
-      {..._.omit(props, [ 'children', 'className' ])}
-      className={classnames(styles.link, className)}
+      {..._.omit(props, [ 'children', 'className', 'color' ])}
+      className={classnames(styles.link, styles[color], className)}
     >
       { children }
     </a>
@@ -30,7 +31,12 @@ LinkWrapper.propTypes = {
   /**
    * class name to be added to class Set
    */
-  className: PropTypes.string
+  className: PropTypes.string,
+
+  /**
+   * color of link; follows PG color naming. Neutral colors not available
+   */
+  color: PropTypes.string
 };
 
 export default LinkWrapper;

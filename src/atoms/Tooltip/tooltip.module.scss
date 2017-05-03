@@ -18,25 +18,25 @@ $tooltip-width: ru(.5);
     }
 
     circle {
-      fill: $neutral-2;
+      fill: color('neutral-2');
     }
   }
 }
 
 .hover-message {
   @include typography-7;
-  color: $neutral-2;
+  color: color('neutral-2');
   position: absolute;
   transform: translateX(calc(-50% + #{$tooltip-width / 2}));
   width: ru(10);
   top: $tooltip-width * 2;
   padding: $tooltip-width;
-  background: $neutral-8;
+  background: color('neutral-8');
   z-index: 10;
   opacity: 0;
   visibility: hidden;
   transition: opacity .15s ease-out;
-  border: 1px solid $neutral-5;
+  border: 1px solid color('neutral-5');
   border-radius: ru(.25);
 
   &:before,
@@ -54,12 +54,12 @@ $tooltip-width: ru(.5);
   }
 
   &:before {
-    border-bottom-color: $neutral-5;
+    border-bottom-color: color('neutral-5');
     border-width: 10px;
   }
 
   &:after {
-    border-bottom-color: $neutral-8;
+    border-bottom-color: color('neutral-8');
     border-width: 8px;
   }
 }

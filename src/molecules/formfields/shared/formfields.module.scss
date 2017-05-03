@@ -1,6 +1,6 @@
 @import 'assets/stylesheets/global';
 
-$border-color:    $neutral-5;
+$border-color:    color('neutral-5');
 $border:          1px solid $border-color;
 $border-radius:   ru(.25);
 $section-padding: ru(.5) ru(.75);
@@ -8,13 +8,13 @@ $checkbox-size: ru(1);
 $checkbox-gap: ru(.5);
 $checkbox-sign-width: $checkbox-size / 3;
 $checkbox-sign-height: $checkbox-size / 2;
-$checkbox-sign-color: $neutral-2;
-$checkbox-label-color: $neutral-3;
-$checkbox-label-selected-color: $neutral-2;
-$checkbox-disabled-color: $neutral-3;
-$checkbox-disabled-sign-color: $neutral-3;
-$checkbox-background-color: $neutral-8;
-$checkbox-border-color: $neutral-5;
+$checkbox-sign-color: color('neutral-2');
+$checkbox-label-color: color('neutral-3');
+$checkbox-label-selected-color: color('neutral-2');
+$checkbox-disabled-color: color('neutral-3');
+$checkbox-disabled-sign-color: color('neutral-3');
+$checkbox-background-color: color('neutral-8');
+$checkbox-border-color: color('neutral-5');
 
 @mixin formfield {
   border: $border;
@@ -22,7 +22,7 @@ $checkbox-border-color: $neutral-5;
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: $neutral-8;
+  background-color: color('neutral-8');
 }
 
 // Base Style
@@ -55,7 +55,7 @@ $checkbox-border-color: $neutral-5;
   border: 0;
 
   &::placeholder {
-    color: $neutral-4;
+    color: color('neutral-4');
   }
 }
 
@@ -76,7 +76,7 @@ $checkbox-border-color: $neutral-5;
   }
 
   &:invalid {
-    color: $neutral-4;
+    color: color('neutral-4');
   }
 }
 
@@ -89,7 +89,7 @@ $checkbox-border-color: $neutral-5;
     height: 0;
     border-left: ru(.25) solid transparent;
     border-right: ru(.25) solid transparent;
-    border-top: ru(.25) solid $neutral-2;
+    border-top: ru(.25) solid color('neutral-2');
     content: '';
     position: absolute;
     top: 50%;
@@ -101,7 +101,7 @@ $checkbox-border-color: $neutral-5;
 }
 
 .border {
-  border: 1px solid $neutral-4;
+  border: 1px solid color('neutral-4');
 }
 
 // Variants
@@ -177,7 +177,7 @@ $checkbox-border-color: $neutral-5;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
-    border-right: 1px solid $neutral-4;
+    border-right: 1px solid color('neutral-4');
   }
 
   &-mon,
@@ -195,14 +195,14 @@ $checkbox-border-color: $neutral-5;
 .select-card {
   composes: formfield;
   border: 0;
-  color: $brand-2;
+  color: color('brand-2');
 
   .label {
     @include typography-6(false);
     padding: ru(.5) ru(1) 0;
     border: 0;
     letter-spacing: 0.1px;
-    color: $neutral-2;
+    color: color('neutral-2');
   }
 
   .select {
@@ -213,21 +213,11 @@ $checkbox-border-color: $neutral-5;
 
     &:invalid {
       @include typography-3(false);
-      color: $brand-2;
+      color: color('brand-2');
     }
   }
 }
 
-
-// Field State
-.focused {
-  border-color: $brand-3;
-  background-color: $brand-6;
-
-  .label {
-    border-bottom-color: $brand-3;
-  }
-}
 
 
 // Checkbox List
@@ -331,5 +321,15 @@ $checkbox-border-color: $neutral-5;
     span {
       margin-top: ru(.125);
     }
+  }
+}
+
+// Focused state
+.focused {
+  border-color: color('brand-3');
+  background-color: color('brand-6');
+
+  .label {
+    border-bottom-color: color('brand-3');
   }
 }

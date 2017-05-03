@@ -1,15 +1,15 @@
 @import 'assets/stylesheets/global';
 
-$border-color:              $neutral-4;
+$border-color:              color('neutral-4');
 $border:                    1px solid $border-color;
 $border-radius:             ru(.25);
 $icon-size:                 ru(1);
-$background-color:          $neutral-8;
+$background-color:          color('neutral-8');
 $border-width:              1px;
-$footer-background-color:   $neutral-6;
+$footer-background-color:   color('neutral-6');
 $col-padding:               ru(.25) ru(.75);
 $icon-offset:               -$icon-size / 2 - rem-calc($border-width);
-$link-color:                $neutral-4;
+$link-color:                color('neutral-4');
 
 
 .card {
