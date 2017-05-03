@@ -10,9 +10,9 @@ export default function renderOptGroup( opt, idx, optStyles ) {
       {
         opt.options.map((option, i) =>
           renderOption({
-            key: option.label,
+            label: option.label,
             value: option.value,
-            reactKey: `optgroup-${idx}-option-${i}`,
+            key: `optgroup-${idx}-option-${i}`,
             className: optStyles,
           })
         )
