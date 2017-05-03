@@ -1,7 +1,7 @@
 Label Example:
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+    const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
 
     const selection = [
       { label: 'Option 1',
@@ -21,7 +21,7 @@ Label Example:
 No Label Example:
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+    const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
 
     const selection = [
       { label: 'Option 1',
@@ -40,7 +40,7 @@ No Label Example:
 
 Focused Example:
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+    const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
 
     const selection = [
       { label: 'Option 1',
@@ -66,7 +66,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 `{ group: 'groupName', options: [{label: 'optionName', value: 1}]}`.
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+    const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
 
     <SelectFieldExample
       placeholder='Placeholder'
@@ -82,7 +82,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 Select Card Type Example:
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+    const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
 
     const selection = [
       { label: 'Option 1',
@@ -98,6 +98,5 @@ Select Card Type Example:
       label='Select Field Label'
       selectOptions={selection}
       placeholder='Placeholder'
-      selectOptions={selection}
     />
 ```

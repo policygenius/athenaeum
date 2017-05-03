@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tooltip from 'atoms/Tooltip';
 
-import renderPlaceholder from 'utils/Fields/renderPlaceholder';
-import renderOptions from 'utils/Fields/renderOptions';
+import { renderOption, renderPlaceholder } from 'utils/fieldUtils';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 
 function renderSelectOptions(options) {
   if (!options) return null;
 
-  return options.map(renderOptions);
+  return options.map(renderOption);
 }
 
 function SelectField( props ) {
