@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import dateUtils from 'utils/dateUtils';
 import renderOption from 'utils/Fields/renderOption';
+import toggleClass from 'utils/ReactUtils/toggleClass';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 
@@ -32,12 +33,13 @@ function DateField(props) {
     className,
     label,
     input,
+    meta,
   } = props;
 
   const dateParts = dateUtils.dateStrObj(input.value);
 
   return (
-    <div className={classnames(styles['datefield'], className)}>
+    <div className={classnames(styles['datefield'], toggleClass(meta && meta.active, styles['focused']), className)}>
       <input id='date' type='hidden' value={input.value} />
 
       <label htmlFor='date' className={styles.label}>{label}</label>
@@ -82,7 +84,11 @@ DateField.propTypes = {
   /**
    * input object contains any props to be passed directly: value.
    */
-  input: PropTypes.object.isRequired
+  input: PropTypes.object.isRequired,
+  /**
+   * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
+   */
+  meta: PropTypes.object,
 };
 
 DateField.defaultProps = {
