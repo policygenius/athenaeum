@@ -1,49 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import classnames from 'classnames';
-import Layout from 'atoms/Layout';
 import styles from '../shared/forms.module.scss';
 
-
-export function isButton(child) {
-  if (child.type.name === 'Button') return true;
-
-  return false;
-}
-
-export function processFormChildren(children, formName) {
-  return React.Children.map(children, child =>
-    React.cloneElement(child, {
-      htmlFor: formName,
-      className: classnames(
-          // If you'd like to give any special form specific classes
-          // to child components:
-          styles['form-item'],
-          { [styles['form-button']]: isButton(child) },
-
-          child.props.className
-        ),
-    })
-  );
-}
-
-export function renderChildren(children, formName) {
-
-  return React.Children.map(children, (child) => {
-
-    if (child.type === Layout) {
-      return (
-        <Layout {..._.omit(child.props, 'children')}>
-          { processFormChildren(child.props.children, formName ) }
-        </Layout>
-      );
-    }
-
-    return processFormChildren(children, formName);
-
-  });
-}
 
 function GeneralForm( props ) {
   const {
@@ -60,7 +19,7 @@ function GeneralForm( props ) {
         onSubmit={onSubmit}
         name={formName}
       >
-        { renderChildren(children, formName) }
+        { children }
       </form>
     </div>
   );

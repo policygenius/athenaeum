@@ -3,26 +3,34 @@
 .navigator {
   // Place your component specific scss here.
   background-color: $neutral-7;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   display: flex;
 }
 
 .layout {
-  align-items: stretch;
   max-width: $page-max-width;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .main-col,
 .right-rail {
   padding-top: ru(1.5);
   margin-bottom: ru(2);
+}
+
+.main-col {
+  padding-left: ru(.75);
+  padding-right: ru(.75);
 }
 
 .logo-panel {
@@ -32,6 +40,7 @@
   $brand-1 0,
   $brand-2 100%
   );
+  flex-basis: auto;
 
   color: $neutral-8;
   -webkit-font-smoothing: antialiased;
@@ -90,6 +99,10 @@
     padding-left: ru(1);
     padding-right: ru(1);
   }
+
+  .main {
+    display: block;
+  }
 }
 
 @media #{$small-and-medium-only} {
@@ -97,13 +110,6 @@
     .contact-card {
       display: none;
     }
-  }
-}
-
-@media #{$medium-only} {
-  .main-col {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -134,6 +140,11 @@
 }
 
 @media #{$large-up} {
+  .layout {
+    align-items: stretch;
+    flex-direction: row;
+  }
+
   .logo-panel {
     max-width: ru(11);
     padding: ru(1.5);
@@ -141,9 +152,5 @@
     .contact-card {
       display: none;
     }
-  }
-
-  .main-col {
-    padding-left: ru(1);
   }
 }

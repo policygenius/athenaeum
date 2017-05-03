@@ -1,6 +1,6 @@
 @import 'assets/stylesheets/global';
 
-$gutter-width: .75rem;
+$gutter-width: ru(.25);
 
 @mixin g-unit($cols: 1, $total-col-count: 12) {
   $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
@@ -24,6 +24,12 @@ $gutter-width: .75rem;
 .layout {
   display: flex;
   flex-wrap: wrap;
+}
+
+.form {
+  > div {
+    margin-bottom: ru(.5);
+  }
 }
 
 @media #{$small-up} {

@@ -91,18 +91,20 @@ function Layout( props ) {
     className,
     fullwidth,
     style,
+    variant
   } = props;
 
   const kids = processChildren(props);
 
   return (
     <div
+      style={style}
       className={classnames(
         styles.layout,
+        styles[variant],
         fullwidth && styles.fullwidth,
         className
       )}
-      style={style}
     >
       { kids }
     </div>
@@ -163,7 +165,8 @@ Layout.propTypes = {
    * adds additional styles to the column as a React styles object.
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    */
-  style: PropTypes.object
+  style: PropTypes.object,
+  variant: PropTypes.string
 };
 
 Layout.defaultProps = {

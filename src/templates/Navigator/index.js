@@ -32,6 +32,9 @@ function separateParts(children) {
 }
 
 function renderPartial(part, data) {
+  // Will not render if data is undefined
+  // To render without data, pass in true
+  if (!data) return undefined;
   if (!NavigatorPartials[part]) return <div>{part}</div>;
 
   return NavigatorPartials[part](data);
@@ -64,7 +67,7 @@ function Navigator(props) {
           >
             <Col fullwidth>
               <div className={styles['logo-wrapper']}>
-                { renderPartial('icon')}
+                { renderPartial('icon', true)}
               </div>
 
               <div className={styles['mobile-header-wrapper']}>
@@ -73,7 +76,7 @@ function Navigator(props) {
               </div>
             </Col>
 
-            { renderPartial('contactCard') }
+            { renderPartial('contactCard', true) }
           </Layout>
         </Col>
 
@@ -99,7 +102,7 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               <div className={styles['contact-card']}>
-                { renderPartial('contactCard') }
+                { renderPartial('contactCard', true) }
               </div>
 
               { renderPartial('sidebar', parts.Sidebar) }

@@ -19,10 +19,12 @@ module.exports = baseConfig({
   plugins: [
     new OptimizeCSSAssetsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
+      minimize: false,
+      mangle: false,
       compress: {
         warnings: false
-      }
+      },
+      sourceMap: true
     })
   ]
 });
