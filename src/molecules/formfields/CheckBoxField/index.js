@@ -60,8 +60,7 @@ CheckboxList.propTypes = {
       checked: PropTypes.bool
     })
   ),
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default CheckboxList;
-
