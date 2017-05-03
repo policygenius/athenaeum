@@ -1,4 +1,5 @@
 import React from 'react';
+import renderOption from 'utils/Fields/renderOption';
 
 export default function renderOptGroup( opt, idx, optStyles ) {
   return (
@@ -7,15 +8,14 @@ export default function renderOptGroup( opt, idx, optStyles ) {
       label={opt.group}
     >
       {
-        opt.options.map( (sub, i) =>
-          <option
-            key={`optgroup-${idx}-option-${i}`}
-            value={sub.value}
-            className={optStyles}
-          >
-            { sub.value }
-          </option>
-          )
+        opt.options.map((option, i) =>
+          renderOption({
+            key: option.label,
+            value: option.value,
+            reactKey: `optgroup-${idx}-option-${i}`,
+            className: optStyles,
+          })
+        )
       }
     </optgroup>
   );

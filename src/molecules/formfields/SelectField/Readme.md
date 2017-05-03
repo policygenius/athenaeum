@@ -1,33 +1,60 @@
 Label Example:
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+
+    const selection = [
+      { label: 'Option 1',
+        value: 1 },
+      { label: 'Option 2',
+        value: 2 },
+      { label: 'Option 3',
+        value: 3 }
+    ];
 
     <SelectFieldExample
-      label='Select Field Label'
-      placeholder='Placeholder'
-      tooltip="Here's a tip: You're awesome ;)"
+      label='Hi Friend'
+      selectOptions={selection}
     />
 ```
 
 No Label Example:
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
+
+    const selection = [
+      { label: 'Option 1',
+        value: 1 },
+      { label: 'Option 2',
+        value: 2 },
+      { label: 'Option 3',
+        value: 3 }
+    ];
 
     <SelectFieldExample
       placeholder='Placeholder'
+      selectOptions={selection}
     />
 ```
 
 Focused Example:
 ```example
+    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
 
-    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    const selection = [
+      { label: 'Option 1',
+        value: 1 },
+      { label: 'Option 2',
+        value: 2 },
+      { label: 'Option 3',
+        value: 3 }
+    ];
 
     <SelectFieldExample
-      placeholder='Placholder'
+      placeholder='Placeholder'
       label='Select Field'
+      selectOptions={selection}
       focused
     />
 ```
@@ -39,7 +66,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 `{ group: 'groupName', options: [{label: 'optionName', value: 1}]}`.
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
 
     <SelectFieldExample
       placeholder='Placeholder'
@@ -55,7 +82,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 Select Card Type Example:
 
 ```example
-    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
 
     <SelectFieldExample
       type='select-card'

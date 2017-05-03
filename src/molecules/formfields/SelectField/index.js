@@ -2,23 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Tooltip from 'atoms/Tooltip';
-import styles from 'molecules/formfields/shared/formfields.module.scss';
+
 import renderPlaceholder from 'utils/Fields/renderPlaceholder';
-import renderOptGroup from 'utils/Fields/renderOptGroup';
+import renderOptions from 'utils/Fields/renderOptions';
 
+import styles from 'molecules/formfields/shared/formfields.module.scss';
 
-function renderOptions(opt, idx) {
-  if (opt.group) return renderOptGroup(opt, idx);
+function renderSelectOptions(options) {
+  if (!options) return null;
 
-  return (
-    <option
-      key={`selectfield-option-${idx}`}
-      value={opt.value}
-      className={styles['option']}
-    >
-      { opt.label }
-    </option>
-  );
+  return options.map(renderOptions);
 }
 
 function SelectField( props ) {
@@ -66,7 +59,7 @@ function SelectField( props ) {
             {...input}
           >
             { placeholder && renderPlaceholder( placeholder, styles.option ) }
-            { selectOptions.map(renderOptions) }
+            { renderSelectOptions(selectOptions) }
           </select>
         </div>
       }
