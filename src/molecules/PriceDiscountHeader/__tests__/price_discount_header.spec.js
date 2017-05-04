@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 
 import PriceDiscountHeader from '../index';
 
-describe('PriceDiscountHeader', () => {
+describe('<PriceDiscountHeader />', () => {
 
-  it('is a <PriceDiscountHeader>', () => {
+  it('renders', () => {
     const wrapper = shallow(<PriceDiscountHeader amount={100} />);
 
     expect(wrapper.length).to.equal(1);

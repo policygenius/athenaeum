@@ -4,9 +4,9 @@ import { expect } from 'chai';
 
 import Col from 'atoms/Layout/Col';
 
-describe('Col', () => {
+describe('<Col />', () => {
 
-  it('is a <Col> tag', () => {
+  it('renders', () => {
     const wrapper = shallow(<Col />);
 
     expect(wrapper.length).to.equal(1);

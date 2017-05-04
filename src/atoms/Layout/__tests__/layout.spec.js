@@ -5,9 +5,9 @@ import { expect } from 'chai';
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 
-describe('Layout', () => {
+describe('<Layout />', () => {
 
-  it('is a <Layout> tag', () => {
+  it('renders', () => {
     const wrapper = shallow(<Layout />);
 
     expect(wrapper.length).to.equal(1);

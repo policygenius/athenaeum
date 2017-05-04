@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 
 import StackedCard from '../index';
 
-describe('StackedCard', () => {
+describe('<StackedCard />', () => {
 
-  it('is a <StackedCard>', () => {
+  it('renders', () => {
     const wrapper = shallow(<StackedCard />);
 
     expect(wrapper.length).to.equal(1);
