@@ -2,23 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import toggleClass from 'utils/ReactUtils/toggleClass';
-
 import styles from '../shared/formfields.module.scss';
 
 function CheckboxList( props ) {
   const {
     label,
-    focused,
     data,
     handleClick,
     meta,
   } = props;
 
-  const focusedClass = toggleClass(focused || (meta && meta.active), styles['focused']);
-
   return (
-    <div className={classnames(styles.checkboxList, focusedClass)}>
+    <div className={classnames(styles.checkboxList, { [styles.focused]: meta && meta.active })}>
       {
         label &&
         <label

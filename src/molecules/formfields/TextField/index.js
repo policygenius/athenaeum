@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import toggleClass from 'utils/ReactUtils/toggleClass';
 
 import styles from '../shared/formfields.module.scss';
 
@@ -16,7 +15,7 @@ function TextField( props ) {
   } = props;
 
   return (
-    <div className={classnames(styles.textfield, toggleClass(meta && meta.active, styles['focused']), className)}>
+    <div className={classnames(styles.textfield, { [styles.focused]: meta && meta.active }, className)}>
       {
         label &&
         <label

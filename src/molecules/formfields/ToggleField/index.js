@@ -6,8 +6,6 @@ import omit from 'lodash/omit';
 import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
 
-import toggleClass from 'utils/ReactUtils/toggleClass';
-
 import styles from '../shared/formfields.module.scss';
 
 function renderChoices(choices, input) {
@@ -43,7 +41,7 @@ function ToggleField( props ) {
   } = props;
 
   return (
-    <div className={classnames(className, toggleClass(meta && meta.active, styles['focused']), styles.togglefield)}>
+    <div className={classnames(className, { [styles.focused]: meta && meta.active }, styles.togglefield)}>
       {
         tooltipMessage &&
         <div className={styles['tooltip-wrapper']}>

@@ -5,7 +5,6 @@ import Tooltip from 'atoms/Tooltip';
 
 import renderPlaceholder from 'utils/Fields/renderPlaceholder';
 import renderOptions from 'utils/Fields/renderOptions';
-import toggleClass from 'utils/ReactUtils/toggleClass';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 
@@ -25,12 +24,11 @@ function SelectField( props ) {
     type,
     input,
     tooltip,
-    focused,
     defaultValue,
     meta,
   } = props;
 
-  const focusedClass = toggleClass(focused || (meta && meta.active), styles['focused']);
+  const focusedClass = { [styles.focused]: meta && meta.active };
 
   return (
     <div className={classnames(styles[type], focusedClass, className)}>

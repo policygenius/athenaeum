@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 import dateUtils from 'utils/dateUtils';
 import renderOption from 'utils/Fields/renderOption';
-import toggleClass from 'utils/ReactUtils/toggleClass';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 
@@ -39,7 +38,7 @@ function DateField(props) {
   const dateParts = dateUtils.dateStrObj(input.value);
 
   return (
-    <div className={classnames(styles['datefield'], toggleClass(meta && meta.active, styles['focused']), className)}>
+    <div className={classnames(styles['datefield'], { [styles.focused]: meta && meta.active }, className)}>
       <input id='date' type='hidden' value={input.value} />
 
       <label htmlFor='date' className={styles.label}>{label}</label>
