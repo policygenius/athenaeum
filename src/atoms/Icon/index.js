@@ -10,11 +10,13 @@ function Icon( props ) {
   const icon = icons[props.icon];
   const {
     className,
+    onClick
   } = props;
 
   return (
     <div
-      className={classnames(styles['icon-wrapper'], className)}
+      className={classnames(styles['icon-wrapper'], { [styles.clickable]: onClick }, className)}
+      onClick={onClick}
     >
       <SVGInline
         svg={icon}
@@ -31,7 +33,11 @@ Icon.propTypes = {
   /**
    * The icon you'd like to display.
    */
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  /**
+   * Click handler for the wrapper div around the svg
+   */
+  onClick: PropTypes.func
 };
 
 export default Icon;

@@ -30,7 +30,7 @@ Add Jewelry item Example:
 
         <Spacer medium />
 
-        <Button variant='action'>Add This Item</Button>
+        <Button type='submit' variant='action'>Add This Item</Button>
       </Layout>
     </AddForm>
 ```
@@ -51,7 +51,7 @@ Add Person Example:
 
         <Spacer small />
 
-        <Button variant='action'>Add Person</Button>
+        <Button type='submit' variant='action'>Add Person</Button>
       </Layout>
     </AddForm>
 ```
