@@ -3,7 +3,7 @@
 Navigator Example:
 
 ```example
-const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
+const SelectFieldExample = require('utils/exampleWrapper')(SelectField);
 
 
   <div>
