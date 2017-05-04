@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import styles from '../shared/formfields.module.scss';
 
 function CheckboxList( props ) {
   const {
     label,
-    focused,
     data,
-    handleClick
+    handleClick,
+    meta,
   } = props;
 
   return (
-    <div className={classnames(styles.checkboxList, { [styles.focused]: focused })}>
+    <div className={classnames(styles.checkboxList, { [styles.focused]: meta && meta.active })}>
       {
         label &&
         <label
@@ -60,8 +61,11 @@ CheckboxList.propTypes = {
       checked: PropTypes.bool
     })
   ),
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
+  /**
+   * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
+   */
+  meta: PropTypes.object,
 };
 
 export default CheckboxList;
-

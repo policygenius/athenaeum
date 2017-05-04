@@ -16,14 +16,18 @@ $checkbox-disabled-sign-color: $neutral-3;
 $checkbox-background-color: $neutral-8;
 $checkbox-border-color: $neutral-5;
 
-// Base Style
-.formfield {
+@mixin formfield {
   border: $border;
   border-radius: $border-radius;
   display: flex;
   flex-direction: column;
   align-content: center;
   background-color: $neutral-8;
+}
+
+// Base Style
+.formfield {
+  @include formfield;
 }
 
 // Children Classes
@@ -100,15 +104,6 @@ $checkbox-border-color: $neutral-5;
   border: 1px solid $neutral-4;
 }
 
-.focused {
-  border-color: $brand-3;
-  background-color: $brand-6;
-
-  .label {
-    border-bottom-color: $brand-3;
-  }
-}
-
 // Variants
 .datefield,
 .textfield,
@@ -126,15 +121,17 @@ $checkbox-border-color: $neutral-5;
 }
 
 .textfield {
-  composes: formfield;
+  @include formfield;
 }
 
 .togglefield {
-  composes: formfield;
-  padding: $section-padding;
+  @include formfield;
+
   position: relative;
+  padding: $section-padding;
 
   .tooltip-wrapper {
+    z-index: 2;
     position: absolute;
     right: ru(.75);
     width: ru(.5);
@@ -168,10 +165,8 @@ $checkbox-border-color: $neutral-5;
   }
 }
 
-
-//
 .datefield {
-  composes: formfield;
+  @include formfield;
 
   &-wrapper {
     display: flex;
@@ -194,7 +189,7 @@ $checkbox-border-color: $neutral-5;
 
 // Select Field - types
 .selectfield {
-  composes: formfield;
+  @include formfield;
 }
 
 .select-card {
@@ -223,6 +218,18 @@ $checkbox-border-color: $neutral-5;
   }
 }
 
+
+// Field State
+.focused {
+  border-color: $brand-3;
+  background-color: $brand-6;
+
+  .label {
+    border-bottom-color: $brand-3;
+  }
+}
+
+
 // Checkbox List
 .checkboxList {
   composes: formfield;
@@ -239,7 +246,6 @@ $checkbox-border-color: $neutral-5;
     }
   }
 }
-
 
 .checkbox {
   @include typography-6;

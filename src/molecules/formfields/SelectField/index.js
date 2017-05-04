@@ -21,19 +21,21 @@ function SelectField( props ) {
     label,
     selectOptions,
     forProp,
-    focused,
     type,
     input,
     tooltip,
-    defaultValue
+    defaultValue,
+    meta,
   } = props;
 
+  const focusedClass = { [styles.focused]: meta && meta.active };
+
   return (
-    <div className={classnames( styles[type], { [styles.focused]: focused }, className )}>
+    <div className={classnames(styles[type], focusedClass, className)}>
       {
         label &&
         <label
-          className={classnames( styles.label, { [styles.focused]: focused } )}
+          className={classnames( styles.label, focusedClass)}
           htmlFor={forProp}
         >
           { label }
@@ -119,7 +121,11 @@ SelectField.propTypes = {
   /**
    * Default / non-changeable value
    */
-  defaultValue: PropTypes.string
+  defaultValue: PropTypes.string,
+  /**
+   * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
+   */
+  meta: PropTypes.object,
 };
 
 SelectField.defaultProps = {

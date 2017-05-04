@@ -1,11 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Tooltip from 'atoms/Tooltip';
-import Button from 'atoms/Button';
 import omit from 'lodash/omit';
 
+import Tooltip from 'atoms/Tooltip';
+import Button from 'atoms/Button';
+
 import styles from '../shared/formfields.module.scss';
+
+function renderChoices(choices, input) {
+  if (!choices) return null;
+
+  return choices.map((choice, idx) => {
+    // eslint-disable-next-line
+    const variantName = input.value == choice.value ? 'toggle-active' : 'toggle';
+
+    return (
+      <Button
+        variant={variantName}
+        key={`button-toggle-btn-${idx}`}
+        className={styles.button}
+        onClick={e => input.onChange(e.target.value)}
+        value={choice.value}
+        {...omit(input, 'value')}
+      >
+        { choice.label }
+      </Button>
+    );
+  });
+}
 
 function ToggleField( props ) {
   const {
@@ -13,40 +36,23 @@ function ToggleField( props ) {
     className,
     tooltipMessage,
     toggleChoices,
-    input
+    input,
+    meta,
   } = props;
 
   return (
-    <div className={classnames(className, styles.togglefield)}>
+    <div className={classnames(className, { [styles.focused]: meta && meta.active }, styles.togglefield)}>
       {
         tooltipMessage &&
         <div className={styles['tooltip-wrapper']}>
-          <Tooltip>
-            { tooltipMessage }
-          </Tooltip>
+          <Tooltip>{ tooltipMessage }</Tooltip>
         </div>
       }
 
-      {
-        label &&
-        <div className={styles.header}>
-          { label }
-        </div>
-      }
+      { label && <div className={styles.header}>{label}</div> }
 
       <div className={styles['button-wrapper']}>
-        { toggleChoices.map( (choice, idx) =>
-          <Button
-            variant={input.value.toString() === choice.value.toString() ? 'toggle-active' : 'toggle'}
-            key={`button-toggle-btn-${idx}`}
-            className={styles.button}
-            onClick={e => input.onChange(e.target.value)}
-            value={choice.value}
-            {...omit(input, 'value')}
-          >
-            { choice.label }
-          </Button>
-        )}
+        { renderChoices(toggleChoices, input) }
       </div>
     </div>
   );
@@ -83,7 +89,11 @@ ToggleField.propTypes = {
   /**
    * input object contains any props to be passed directly to the button: value, onChange, onBlur etc.
    */
-  input: PropTypes.object.isRequired
+  input: PropTypes.object.isRequired,
+  /**
+   * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
+   */
+  meta: PropTypes.object,
 };
 
 export default ToggleField;
