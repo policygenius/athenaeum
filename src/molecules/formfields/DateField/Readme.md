@@ -1,7 +1,7 @@
 DateField Example:
 
 ```example
-  const DateExample = require('utils/ComponentWrapper')(DateField);
+  const DateExample = require('utils/exampleWrapper')(DateField);
 
     <DateExample
       label='Date of birth'
