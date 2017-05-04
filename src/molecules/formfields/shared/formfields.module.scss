@@ -105,7 +105,6 @@ $checkbox-border-color: color('neutral-5');
 }
 
 // Variants
-.datefield,
 .textfield,
 .selectfield {
 
@@ -167,6 +166,11 @@ $checkbox-border-color: color('neutral-5');
 
 .datefield {
   @include formfield;
+
+  .label {
+    border-bottom: $border;
+    border-radius: $border-radius $border-radius 0 0;
+  }
 
   &-wrapper {
     display: flex;
