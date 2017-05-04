@@ -98,6 +98,5 @@ Select Card Type Example:
       label='Select Field Label'
       selectOptions={selection}
       placeholder='Placeholder'
-      selectOptions={selection}
     />
 ```
