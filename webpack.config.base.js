@@ -20,7 +20,8 @@ module.exports = options => ({
     ],
     alias: {
       'rsg-components/ComponentsList/ComponentsListRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ComponentsListRenderer'),
-      'rsg-components/StyleGuide/StyleGuideRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/StyleGuideRenderer')
+      'rsg-components/StyleGuide/StyleGuideRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/StyleGuideRenderer'),
+      'rsg-components/ReactComponent/ReactComponentRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ReactComponentRenderer'),
     }
   },
   module: {

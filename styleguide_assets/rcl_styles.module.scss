@@ -17,6 +17,17 @@ body {
     background-color: black;
   }
 
+
+  .component-section {
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+  }
+
+  .component-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 30px;
+  }
 }
 
 // These styles won't be processed by css-modules
@@ -25,6 +36,24 @@ body {
   body {
     .isolatedLink-0-49 {
       top: -1.8rem;
+    }
+
+    .h2-0-20 {
+      font-size: 1.5rem;
+    }
+
+    .logo-0-5 {
+      border-bottom: 0;
+    }
+
+    p,
+    li {
+      .code-0-34 {
+        background: #f1f1f1;
+        border-radius: 2px;
+        padding: 2px 4px;
+        font-size: 0.8rem;
+      }
     }
   }
 }
