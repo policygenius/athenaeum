@@ -8,9 +8,9 @@ import renderOption from 'utils/Fields/renderOption';
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 
 const renderMonthOption = (month, idx) => renderOption({
-  key: month,
+  label: month,
   value: idx + 1,
-  reactKey: `${month}-${idx}`,
+  key: `${month}-${idx}`,
 });
 
 function renderMonthOptions() {
@@ -18,9 +18,9 @@ function renderMonthOptions() {
 }
 
 const renderDayOption = (_, day) => renderOption({
-  key: day + 1,
+  label: day + 1,
   value: day + 1,
-  reactKey: `day-${day}`,
+  key: `day-${day}`,
 });
 
 function renderDayOptions() {

@@ -84,9 +84,19 @@ Select Card Type Example:
 ```example
     const SelectFieldExample = require('utils/example_wrappers/ComponentWrapper')(SelectField);
 
+    const selection = [
+      { label: 'Option 1',
+        value: 1 },
+      { label: 'Option 2',
+        value: 2 },
+      { label: 'Option 3',
+        value: 3 }
+    ];
+
     <SelectFieldExample
       type='select-card'
       label='Select Field Label'
+      selectOptions={selection}
       placeholder='Placeholder'
     />
 ```

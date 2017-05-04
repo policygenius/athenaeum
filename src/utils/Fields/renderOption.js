@@ -4,18 +4,18 @@ import styles from 'molecules/formfields/shared/formfields.module.scss';
 export default function renderOption(options = {}) {
   const {
     index,
-    key,
     value,
-    reactKey,
+    label,
+    key
   } = options;
 
   return (
     <option
-      key={reactKey || `${key}-${value}-${index}`}
+      key={key || `${value}-${label}-${index}`}
       value={value}
       className={styles['option']}
     >
-      { key }
+      { label }
     </option>
   );
 }
