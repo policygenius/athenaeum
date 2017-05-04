@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 
 import DataRow from 'molecules/DataRow';
 
-describe('DataRow', () => {
+describe('<DataRow />', () => {
 
-  it('is a <DataRow>', () => {
+  it('renders', () => {
     const wrapper = shallow(<DataRow label='Some data' value={100} />);
 
     expect(wrapper.length).to.equal(1);

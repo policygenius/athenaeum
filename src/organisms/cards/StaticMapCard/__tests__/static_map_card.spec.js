@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 
 import StaticMapCard from 'organisms/cards/StaticMapCard';
 
-describe('StaticMapCard', () => {
+describe('<StaticMapCard />', () => {
 
-  it('is a <StaticMapCard>', () => {
+  it('renders', () => {
     const wrapper = shallow(<StaticMapCard apiKey='samplekey' />);
 
     expect(wrapper.length).to.equal(1);

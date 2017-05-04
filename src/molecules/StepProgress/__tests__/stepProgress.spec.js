@@ -4,9 +4,9 @@ import { expect } from 'chai';
 
 import StepProgress from 'molecules/StepProgress';
 
-describe('StepProgress', () => {
+describe('<StepProgress />', () => {
 
-  it('is a <StepProgress>', () => {
+  it('renders', () => {
     const wrapper = shallow(<StepProgress />);
 
     expect(wrapper.length).to.equal(1);
