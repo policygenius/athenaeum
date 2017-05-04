@@ -2,7 +2,7 @@ _This is a form wrapper that can take components as children._
 
 GeneralForm Example - Navigator Page 1:
 
-    const SelectFieldExample = require('utils/example_wrappers/SelectFieldExample').default;
+    const SelectFieldExample = require('utils/ComponentWrapper')(SelectField);
     <GeneralForm
       formName='ExampleForm'
       onSubmit={ () => alert('FormSubmitted!') }
