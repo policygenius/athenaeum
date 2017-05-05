@@ -3,7 +3,7 @@
 @import 'assets/stylesheets/utilities/functions';
 @import 'assets/stylesheets/utilities/mixins';
 
-$subheader-color: $neutral-4;
+$subheader-color: color('neutral-4');
 
 .header {
   margin: 0 0 ru(.125);
@@ -19,6 +19,6 @@ $subheader-color: $neutral-4;
 
 .B {
   .header {
-    color: $brand-2;
+    color: color('brand-2');
   }
 }

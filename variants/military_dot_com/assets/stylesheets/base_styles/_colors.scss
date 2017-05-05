@@ -1,29 +1,35 @@
-$neutral-1: #000;
-$neutral-2: #4d4d4d;
-$neutral-3: #999;
-$neutral-4: #b3b3b3;
-$neutral-5: #ccc;
-$neutral-6: #f2f2f2;
-$neutral-7: #fbfbfb;
-$neutral-8: #fff;
+$brand: #1f3781;
+$accent: #65ac00;
+$action: #dc1c24;
 
-$brand-1: #1f3781;
-$brand-2: lighten($brand-1, 15%);
-$brand-3: lighten($brand-1, 30%);
-$brand-4: lighten($brand-1, 45%);
-$brand-5: lighten($brand-1, 60%);
-$brand-6: lighten($brand-1, 75%);
+$colors-map: (
+  neutral-1: #000,
+  neutral-2: #4d4d4d,
+  neutral-3: #999,
+  neutral-4: #b3b3b3,
+  neutral-5: #ccc,
+  neutral-6: #f2f2f2,
+  neutral-7: #fbfbfb,
+  neutral-8: #fff,
 
-$accent-1: #65ac00;
-$accent-2: lighten($accent-1, 15%);
-$accent-3: lighten($accent-1, 30%);
-$accent-4: lighten($accent-1, 45%);
-$accent-5: lighten($accent-1, 60%);
-$accent-6: lighten($accent-1, 75%);
+  brand-1: $brand,
+  brand-2: lighten($brand, 15%),
+  brand-3: lighten($brand, 30%),
+  brand-4: lighten($brand, 45%),
+  brand-5: lighten($brand, 60%),
+  brand-6: lighten($brand, 75%),
 
-$action-1: #dc1c24;
-$action-2: lighten($action-1, 15%);
-$action-3: lighten($action-1, 30%);
-$action-4: lighten($action-1, 45%);
-$action-5: lighten($action-1, 60%);
-$action-6: lighten($action-1, 75%);
+  accent-1: $accent,
+  accent-2: lighten($accent, 15%),
+  accent-3: lighten($accent, 30%),
+  accent-4: lighten($accent, 45%),
+  accent-5: lighten($accent, 60%),
+  accent-6: lighten($accent, 75%),
+
+  action-1: $action,
+  action-2: lighten($action, 15%),
+  action-3: lighten($action, 30%),
+  action-4: lighten($action, 45%),
+  action-5: lighten($action, 60%),
+  action-6: lighten($action, 75%)
+);

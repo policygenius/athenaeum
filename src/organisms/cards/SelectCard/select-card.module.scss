@@ -1,10 +1,10 @@
 @import '../shared/cards.module.scss';
 
-$card-shadow-color:        $neutral-5;
+$card-shadow-color:        color('neutral-5');
 $select-card-border:       1px solid $card-shadow-color;
-$footer-background:        $neutral-6;
-$footer-link-color:        $neutral-3;
-$footer-link-hover-color:  $neutral-2;
+$footer-background:        color('neutral-6');
+$footer-link-color:        color('neutral-3');
+$footer-link-hover-color:  color('neutral-2');
 
 
 .select {

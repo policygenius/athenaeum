@@ -3,8 +3,8 @@
 .header {
   padding: ru(.5) ru(1);
 
-  background: $brand-3;
-  color: $neutral-8;
+  background: color('brand-3');
+  color: color('neutral-8');
 
   line-height: 1;
   text-align: center;

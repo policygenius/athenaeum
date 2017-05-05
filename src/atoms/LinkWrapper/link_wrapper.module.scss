@@ -1,6 +1,10 @@
 @import 'assets/stylesheets/global';
 
 .link {
-  color: $neutral-4;
+  color: color('neutral-4');
   display: inline-block;
+}
+
+@each $key, $value in $colors-map {
+  .#{$key} { color: $value; }
 }

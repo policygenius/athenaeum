@@ -1,48 +1,48 @@
 @import 'assets/stylesheets/global';
 
-$button-background-color:                  $neutral-8;
-$button-border-color:                      $accent-2;
+$button-background-color:                  color('neutral-8');
+$button-border-color:                      color('accent-2');
 $button-border-radius:                     ru(.25);
-$button-color:                             $accent-2;
-$button-hover-background-color:            $accent-2;
-$button-hover-color:                       $neutral-8;
-$button-disabled-border-color:             $neutral-5;
-$button-disabled-color:                    $neutral-4;
-$button-info-color:                        $brand-2;
-$button-info-hover-color:                  $neutral-8;
+$button-color:                             color('accent-2');
+$button-hover-background-color:            color('accent-2');
+$button-hover-color:                       color('neutral-8');
+$button-disabled-border-color:             color('neutral-5');
+$button-disabled-color:                    color('neutral-4');
+$button-info-color:                        color('brand-2');
+$button-info-hover-color:                  color('neutral-8');
 $button-shaking-offset:                    ru(.25);
-$button-action-background-color:           $accent-2;
-$button-action-border-color:               $accent-1;
-$button-action-color:                      $neutral-8;
-$button-action-lowlight-background-color:  $brand-2;
-$button-action-lowlight-border-color:      $brand-1;
-$button-action-lowlight-color:             $neutral-8;
-$button-action-disabled-background-color:  $neutral-5;
-$button-action-disabled-border-color:      $neutral-3;
-$button-action-disabled-color:             $neutral-8;
-$button-stacked-background-color:          $neutral-8;
-$button-stacked-border-color:              $neutral-5;
-$button-stacked-color:                     $neutral-2;
-$button-stacked-hover-background-color:    $neutral-4;
-$button-stacked-hover-color:               $neutral-8;
-$button-outline-color:                     $neutral-2;
-$button-outline-border-color:              $neutral-2;
-$button-outline-background-color:          $neutral-8;
-$button-outline-hover-color:               $neutral-8;
-$button-outline-hover-background-color:    $neutral-2;
-$button-graphic-border-color:              $neutral-5;
-$button-graphic-hover-border-color:        $brand-2;
+$button-action-background-color:           color('accent-2');
+$button-action-border-color:               color('accent-1');
+$button-action-color:                      color('neutral-8');
+$button-action-lowlight-background-color:  color('brand-2');
+$button-action-lowlight-border-color:      color('brand-1');
+$button-action-lowlight-color:             color('neutral-8');
+$button-action-disabled-background-color:  color('neutral-5');
+$button-action-disabled-border-color:      color('neutral-3');
+$button-action-disabled-color:             color('neutral-8');
+$button-stacked-background-color:          color('neutral-8');
+$button-stacked-border-color:              color('neutral-5');
+$button-stacked-color:                     color('neutral-2');
+$button-stacked-hover-background-color:    color('neutral-4');
+$button-stacked-hover-color:               color('neutral-8');
+$button-outline-color:                     color('neutral-2');
+$button-outline-border-color:              color('neutral-2');
+$button-outline-background-color:          color('neutral-8');
+$button-outline-hover-color:               color('neutral-8');
+$button-outline-hover-background-color:    color('neutral-2');
+$button-graphic-border-color:              color('neutral-5');
+$button-graphic-hover-border-color:        color('brand-2');
 $button-graphic-border-radius:             ru(.25);
-$button-graphic-background-color:          $neutral-8;
-$button-graphic-color:                     $brand-2;
-$button-tag-background-color:              $brand-5;
-$button-tag-hover-background-color:        $brand-2;
-$button-tag-color:                         $neutral-2;
-$button-tag-hover-color:                   $neutral-8;
-$button-solid-background-color:            $neutral-8;
-$button-solid-background-hover-color:      $brand-2;
+$button-graphic-background-color:          color('neutral-8');
+$button-graphic-color:                     color('brand-2');
+$button-tag-background-color:              color('brand-5');
+$button-tag-hover-background-color:        color('brand-2');
+$button-tag-color:                         color('neutral-2');
+$button-tag-hover-color:                   color('neutral-8');
+$button-solid-background-color:            color('neutral-8');
+$button-solid-background-hover-color:      color('brand-2');
 $button-font:                              $font-family-sans-serif;
-$button-solid-background-primary-color:    $brand-3;
+$button-solid-background-primary-color:    color('brand-3');
 $button-solid-background-secondary-color:  #3ad1ba;
 $button-solid-background-tertiary-color:   #f08f5c;
 
@@ -92,10 +92,10 @@ $button-solid-background-tertiary-color:   #f08f5c;
   composes: button;
   @include typography-7(false);
   @include typography-regular;
-  @include hover($neutral-6, $neutral-5, $neutral-1);
-  color: $neutral-4;
-  border: 1px solid $neutral-5;
-  box-shadow: 0 4px 0 $neutral-6;
+  @include hover(color('neutral-6'), color('neutral-5'), color('neutral-1'));
+  color: color('neutral-4');
+  border: 1px solid color('neutral-5');
+  box-shadow: 0 4px 0 color('neutral-6');
   padding-bottom: ru(.375);
 
   &:focus {
@@ -105,9 +105,9 @@ $button-solid-background-tertiary-color:   #f08f5c;
 
 .toggle-active {
   composes: toggle;
-  background-color: $neutral-6;
-  color: $neutral-1;
-  box-shadow: 0 4px 0 $neutral-4;
+  background-color: color('neutral-6');
+  color: color('neutral-1');
+  box-shadow: 0 4px 0 color('neutral-4');
 }
 
 .action {
@@ -167,4 +167,3 @@ $button-solid-background-tertiary-color:   #f08f5c;
   80% { transform: translateX($button-shaking-offset); }
   100% { transform: translateX(0); }
 }
-

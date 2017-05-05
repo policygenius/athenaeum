@@ -1,41 +1,5 @@
 @import 'assets/stylesheets/base_styles/colors';
 
-$colors-map: (
-/* Black. From dark to light. */
-neutral-1: #000,
-neutral-2: #4d4d4d,
-neutral-3: #999,
-neutral-4: #b3b3b3,
-neutral-5: #ccc,
-neutral-6: #f2f2f2,
-neutral-7: #fbfbfb,
-neutral-8: #fff,
-
-/* Teal. From dark to light. */
-brand-1: #007b7b,
-brand-2: #00a4a5,
-brand-3: #66c8c9,
-brand-4: #99dadb,
-brand-5: #cceded,
-brand-6: #f5ffff,
-
-/* Red-Orange. From dark to light. */
-accent-1: #b65c27,
-accent-2: #ee7832,
-accent-3: #f08f5c,
-accent-4: #f3ad86,
-accent-5: #f9d1ba,
-accent-6: #faebde,
-
-/* Yellow-Oranges. From dark to light. */
-action-1: #d87600,
-action-2: #f9a024,
-action-3: #fab350,
-action-4: #fbc67c,
-action-5: #fdd9a7,
-action-6: #feecd3
-);
-
 @mixin color-props($color) {
   background-color: $color;
   width: 100px;
@@ -50,7 +14,7 @@ action-6: #feecd3
   margin: auto;
   padding: 4px;
   background-color: rgba(0,0,0,.3);
-  color: $neutral-8;
+  color: color('neutral-8');
 }
 
 @mixin after-props($color) {
@@ -70,6 +34,21 @@ action-6: #feecd3
 
 $color-type-list: 'neutral', 'brand', 'accent', 'action';
 
+
+@keyframes swing {
+  0% {
+    transform: perspective(0) rotateX(0deg);
+  }
+
+  50% {
+    transform: perspective(500px) rotateX(-15deg);
+  }
+
+  100% {
+    transform: perspective(500px) rotateX(30deg);
+  }
+}
+
 @each $type in $color-type-list {
   @for $i from 1 through 8 {
     @if map-has-key($colors-map, #{$type}-#{$i}) {
@@ -77,8 +56,8 @@ $color-type-list: 'neutral', 'brand', 'accent', 'action';
       .#{$type}-#{$i} {
         $color: #{map-get($colors-map, #{$type}-#{$i})};
         @include color-props($color);
-        transition: all .3s ease-in-out;
         border-color: #fff;
+        transform-origin: center top;
 
         &:before {
           @include before-props('#{$type}-#{$i}');
@@ -89,14 +68,8 @@ $color-type-list: 'neutral', 'brand', 'accent', 'action';
         }
 
         &:hover {
-          box-shadow: inset 0 -10px 35px darken(map-get($colors-map, #{$type}-#{$i}), 15%);
-          border-bottom-left-radius: 10px 200px;
-          border-bottom-right-radius: 10px 200px;
-          border-bottom: 3px solid #fff;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 900px 550px;
+          box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+          animation: swing 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
         }
       }
     }
