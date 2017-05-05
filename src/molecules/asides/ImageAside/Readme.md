@@ -4,11 +4,25 @@ Current Variants:
 * compact
 * simple
 
+In the examples below, we utilized the exposed `data-src` via the `dataSrc` prop to pass in a string that allows
+[holder.js](https://www.npmjs.com/package/holderjs) to render our placeholder images.
+
 Basic Example:
 
 ```example
     <ImageAside
-      icon='http://placehold.it/100x100'
+      dataSrc='holder.js/300x300?auto=yes'
+      header='Vivamus ultricies augue'
+      subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.'
+    />
+```
+
+Max Width Example:
+
+```example
+    <ImageAside
+      dataSrc='holder.js/300x300?auto=yes'
+      maxWidth='200px'
       header='Vivamus ultricies augue'
       subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.'
     />
@@ -19,7 +33,7 @@ Center Example:
 ```example
     <ImageAside
       centered
-      icon='http://placehold.it/100x100'
+      dataSrc='holder.js/100x100'
       header='Vivamus ultricies augue'
       subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.'
     />
@@ -30,7 +44,7 @@ Compact Example:
 ```example
     <ImageAside
       compact
-      icon='http://placehold.it/80x80'
+      dataSrc='holder.js/80x80'
       header='Vivamus ultricies augue'
       subheader='Maecenas gravida ex a sed vulputate, sodales cursus risus blandit.'
     />
@@ -42,7 +56,7 @@ Simple Example:
 ```example
     <ImageAside
       simple
-      icon='http://placehold.it/45x45'
+      dataSrc='holder.js/45x45'
       header='Vivamus ultricies augue'
     />
 ```

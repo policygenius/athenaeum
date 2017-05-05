@@ -63,9 +63,12 @@ $aside-text-color:               color('neutral-2');
   + .aside { margin-left: ru(.75); }
 }
 
+.image-wrapper {
+  + .aside { margin-left: ru(.75); }
+}
+
 .image {
   width: 100%;
-  height: 100%;
 }
 
 .aside {

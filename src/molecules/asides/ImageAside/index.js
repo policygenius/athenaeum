@@ -11,11 +11,14 @@ function ImageAside( props ) {
   const {
     className,
     header,
-    icon,
+    image,
     subheader,
     basic,
     compact,
     centered,
+    dataSrc,
+    maxWidth,
+    icon,
     simple
   } = props;
 
@@ -35,10 +38,14 @@ function ImageAside( props ) {
           className={styles.icon}
         />
         :
-        <div className={styles.icon}>
+        <div
+          className={styles['image-wrapper']}
+          style={{ maxWidth }}
+        >
           <img
             className={styles.image}
-            src={icon}
+            src={image}
+            data-src={dataSrc}
             role='presentation'
           />
         </div>
@@ -92,7 +99,7 @@ ImageAside.propTypes = {
   /**
     * This is the icon name from the [Icon component](/#icon).
     */
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.string,
 
   /**
    * simple variant
@@ -103,6 +110,22 @@ ImageAside.propTypes = {
    * text displayed below the main header
    */
   subheader: PropTypes.string,
+
+  /**
+   * image to be displayed via `src` tag
+   */
+  image: PropTypes.string,
+
+  /**
+   * dataSrc that is passed to the `<img>`
+   */
+  dataSrc: PropTypes.string,
+
+  /**
+   * use to set a max-width on the image.
+   * Will be inlined via styles object
+   */
+  maxWidth: PropTypes.string,
 };
 
 ImageAside.defaultProps = {
