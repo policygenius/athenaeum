@@ -35,14 +35,14 @@ $subheader-color: color('neutral-4');
 
 .C {
   .subheader {
-    color: $neutral-2;
+    color: color('neutral-2');
     font-weight: 300;
   }
 }
 
 .D, .E, .F {
   .header {
-    color: $neutral-4;
+    color: color('neutral-4');
   }
 }
 
