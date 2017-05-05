@@ -1,0 +1,63 @@
+@import 'src/assets/stylesheets/global';
+
+.comparison-table {
+  border: 1px solid $neutral-5;
+  border-radius: 6px;
+  padding: 0;
+
+  .child-wrapper:last-child {
+    .row {
+      border-bottom: none;
+    }
+  }
+}
+
+.header {
+  padding: 24px 30px;
+  border-right: 1px solid $neutral-5;
+  border-bottom: 1px solid $neutral-5;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.row {
+  padding: 18px 30px;
+  position: relative;
+  border-right: 1px solid $neutral-5;
+  border-bottom: 1px solid $neutral-5;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.layout {
+  padding: 0;
+}
+
+@media #{$small-only} {
+  .comparison-table {
+    border: none;
+  }
+
+  .header {
+    border: none;
+
+    &:not( :first-child ) {
+      display: none;
+    }
+  }
+
+  .row {
+    border: none;
+    padding: 0 30px 18px;
+
+    &:last-child {
+      padding: 0 0 30px;
+      margin: 0 30px 30px;
+      border-bottom: 1px solid $neutral-5;
+    }
+  }
+}

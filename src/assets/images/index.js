@@ -12,3 +12,7 @@ export const quotes = require('!svg-inline-loader!assets/images/quotes.svg');
 export const tooltip = require('!svg-inline-loader!assets/images/question-mark.svg');
 export const xIcon = require('!svg-inline-loader!assets/images/x-icon.svg');
 export const rclLogo = require('!svg-inline-loader!assets/images/rcl-logo.svg');
+export const closeAccent = require('!svg-inline-loader!assets/images/close-accent.svg');
+export const checkmark = require('!svg-inline-loader!assets/images/checkmark.svg');
+export const pgLogoOrange = require('!svg-inline-loader!assets/images/pg-logo-orange.svg');
+export const metlife = require('!svg-inline-loader!assets/images/metlife.svg');

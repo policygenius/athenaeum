@@ -28,14 +28,14 @@ function PercentageCard( props ) {
       <div className={styles.row}>
         <div className={styles.col}>
           <TextLockup
-            type='A'
+            variant='A'
             header={header1}
             subheader={subheader1}
           />
         </div>
         <div className={styles.percentage_col}>
           <TextLockup
-            type='B'
+            variant='B'
             header={`${percent}%`}
             subheader={subheader2}
           />

@@ -1,20 +1,47 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import Layout from 'atoms/Layout';
+import Col from 'atoms/Layout/Col';
+import Icon from 'atoms/Icon';
 import TextComponent from 'atoms/TextComponent';
 import styles from './text-lockups.module.scss';
 
+function LogoTextLockup( props ) {
+  return (
+    <div>
+      <TextComponent
+        className={styles.header}
+        type={6}
+        light
+      >
+        { props.header }
+      </TextComponent>
+
+      <Icon
+        className={classnames(styles['primary-icon'], styles.subheader)}
+        icon={props.primaryIcon}
+      />
+    </div>
+  );
+}
+
 function TextLockup( props ) {
   const {
-    type,
+    variant,
     children,
     header,
-    subheader
+    subheader,
+    primaryIcon,
+    secondaryIcon,
+    className
   } = props;
 
-  switch ( type ) {
+  switch ( variant ) {
       case 'A':
+      case 'B':
         return (
-          <div className={styles[type]}>
+          <div className={styles[variant]}>
             <TextComponent
               className={styles['header']}
               tag={'h4'}
@@ -33,30 +60,63 @@ function TextLockup( props ) {
           </div>
         );
 
-      case 'B':
+      case 'C':
         return (
-          <div className={styles[type]}>
+          <div className={styles[variant]}>
             <TextComponent
-              className={styles['header']}
-              tag={'h4'}
-              type={4}
+              type={5}
             >
               { header }
             </TextComponent>
 
             <TextComponent
-              className={styles['subheader']}
-              tag={'h5'}
-              type={4}
+              className={styles.subheader}
+              type={6}
+              light
             >
               { subheader }
             </TextComponent>
+          </div>
+        );
+
+      case 'D':
+      case 'E':
+        return (
+          <div className={styles[variant]}>
+            <LogoTextLockup
+              primaryIcon={primaryIcon}
+              header={header}
+            />
+          </div>
+        );
+
+      case 'F':
+        return (
+          <div className={classnames(styles[variant], className)}>
+            <Icon
+              icon={secondaryIcon}
+              className={styles['secondary-icon']}
+            />
+            <Layout className={styles['lockup-layout']}>
+              <Col smallCols={10} className={styles['lockup-layout-col']}>
+                <LogoTextLockup
+                  primaryIcon={primaryIcon}
+                  header={header}
+                />
+              </Col>
+              <Col smallCols={2}>
+                <Icon
+                  className={styles['small-screen-icon']}
+                  icon={secondaryIcon}
+                />
+              </Col>
+            </Layout>
           </div>
         );
 
       default:
         return (
-          <div className={styles[type]}>
+          <div className={styles[variant]}>
             { children }
           </div>
         );
@@ -65,10 +125,10 @@ function TextLockup( props ) {
 
 TextLockup.propTypes = {
   /**
-   * Possible card types are: `1`
+   * Possible card variants are: `A`, `B`, `C`, `D`, `E`, `F`, `G`
    *
    */
-  type: PropTypes.string.isRequired,
+  variant: PropTypes.string.isRequired,
 
   /**
    * header text displayed in lockup
@@ -78,8 +138,25 @@ TextLockup.propTypes = {
   /**
    * subheader text displayed in lockup
    */
-  subheader: PropTypes.string
+  subheader: PropTypes.string,
+
+  /**
+   * primary icon for text lockup
+   */
+  primaryIcon: PropTypes.string,
+  /**
+   * secondary icon for text lockup
+   */
+  secondaryIcon: PropTypes.string,
+  /**
+   * supply an additional class name
+   */
+  className: PropTypes.string
+};
+
+LogoTextLockup.propTypes = {
+  header: PropTypes.string,
+  primaryIcon: PropTypes.string
 };
 
 export default TextLockup;
-
