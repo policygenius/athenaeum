@@ -30,6 +30,7 @@
   "homepage": "https://github.com/policygenius/athenaeum#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "holderjs": "^2.9.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
