@@ -62,10 +62,13 @@ function Navigator(props) {
           <Layout
             mediumCols={[ 8, 4 ]}
             largeCols={[ 12 ]}
-            style={{ justifyContent: 'space-between' }}
+            className={styles['logo-panel-layout']}
             fullwidth
           >
-            <Col fullwidth>
+            <Col
+              className={styles['logo-panel-col']}
+              fullwidth
+            >
               <div className={styles['logo-wrapper']}>
                 { renderPartial('icon', true)}
               </div>

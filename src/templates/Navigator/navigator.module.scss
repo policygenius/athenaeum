@@ -45,6 +45,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.logo-panel-layout {
+  justify-content: space-between;
+}
+
 .logo-panel-text {
   color: color('neutral-8');
 }
@@ -145,6 +149,11 @@
     }
   }
 
+  .logo-panel-col {
+    padding-left: ru(.25);
+    padding-right: ru(.25);
+  }
+
   .contact-card,
   .step-progress {
     margin-bottom: ru(3);
@@ -159,7 +168,7 @@
 
   .logo-panel {
     max-width: ru(11);
-    padding: ru(1.5);
+    padding: ru(1.5) ru(1);
 
     .contact-card {
       display: none;
