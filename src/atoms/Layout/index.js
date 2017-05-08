@@ -185,4 +185,4 @@ Layout.defaultProps = {
   xxLargeCols: [],
 };
 
-export default Layout;
+export { Layout as default, Layout, Col };

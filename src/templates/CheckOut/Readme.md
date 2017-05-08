@@ -1,20 +1,10 @@
-**[Open this in isolation mode to see it without the Styleguide sidebar.](/#!/Navigator)**
-
-Navigator Example:
+Checkout Example:
 
 ```example
+    const sampleOptions = [ { label: 'Select your home type', value: -1 } ];
 
-  const sampleOptions = [ { label: 'Select your home type', value: -1 } ];
-
-  <div>
-    <Navigator
-      leftRailText='Home sweet home'
-      stepProgressData={[
-        { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },
-        { complete: true, icon: 'health', label: 'Phasellus', link: '#' },
-        { current: true, icon: 'application', label: 'Curabitur', link: '#' },
-        { inactive: true, icon: 'quotes', label: 'Etiam', link: '#' }
-      ]}
+    <CheckOut
+      totalCost={{ curr: '$', value: 100, unit: 'mo' }}
     >
       <GeneralForm
         formName='ExampleForm'
@@ -50,9 +40,8 @@ Navigator Example:
           <Button variant='action'>Continue</Button>
         </Layout>
       </GeneralForm>
-      <Navigator.Sidebar>
-        Sidebar!
-      </Navigator.Sidebar>
-    </Navigator>
-  </div>
+      <CheckOut.Sidebar>
+        This is sidebar
+      </CheckOut.Sidebar>
+    </CheckOut>
 ```

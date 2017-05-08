@@ -1,0 +1,138 @@
+@import 'assets/stylesheets/global';
+
+.checkout {
+  width: 100%;
+  min-height: 100vh;
+  background-color: color('neutral-7');
+
+  &-layout {
+    max-width: $page-max-width;
+  }
+}
+
+.head {
+  background-color: color('brand-2');
+  background-image: linear-gradient(
+    to top,
+    color('brand-1') 0,
+    color('brand-2') 100%
+  );
+
+  color: color('neutral-8');
+
+  &-main,
+  &-body,
+  &-foot {
+    display: flex;
+    align-items: center;
+  }
+
+  &-body {
+    justify-content: center;
+  }
+
+  &-foot {
+    justify-content: flex-end;
+    padding: 0 ru(1);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0;
+
+  &-content,
+  &-sidebar {
+    padding-top: ru(1.5);
+    margin-bottom: ru(2);
+  }
+
+  &-content {
+    padding-left: ru(.75);
+    padding-right: ru(.75);
+  }
+}
+
+
+// Layout Partials
+.logo {
+  width: 100%;
+  padding: 0 ru(1);
+
+  &-wrapper {
+    padding: 0;
+  }
+
+  &-pg {
+    width: calc(100% - 2px);
+    max-width: ru(6.5);
+  }
+
+  &-chat { display: none; }
+}
+
+.cost {
+  @include typography-4(false);
+  line-height: ru(1);
+
+  &-title {
+    display: flex;
+    align-items: center;
+  }
+
+  &-price {
+    display: none;
+  }
+}
+
+.secure-logo {
+  width: calc(100% - 2px);
+  max-width: ru(3.75);
+  height: ru(1.5);
+}
+
+.icon {
+  width: ru(.75);
+  height: ru(.75);
+  margin-right: ru(.25);
+
+  path {
+    fill: color('neutral-8');
+  }
+}
+
+@media #{$small-only} {
+
+  .logo {
+    padding: ru(.5) ru(1);
+    justify-content: left;
+
+    &-pg {
+      max-width: ru(5);
+      max-height: ru(1);
+    }
+
+    &-chat {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-weight: bold;
+    }
+  }
+
+  .cost {
+    background: color('brand-1');
+    width: 100%;
+    padding: ru(.75) ru(1);
+
+    &-price {
+      display: block;
+      text-align: right;
+    }
+  }
+
+  .secure-logo { display: none; }
+}
