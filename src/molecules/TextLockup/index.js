@@ -53,7 +53,7 @@ function TextLockup( props ) {
             <TextComponent
               className={styles['subheader']}
               tag={'h5'}
-              type={4}
+              type={6}
             >
               { subheader }
             </TextComponent>

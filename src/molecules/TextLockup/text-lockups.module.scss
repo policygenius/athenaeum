@@ -33,6 +33,17 @@ $subheader-color: color('neutral-4');
   }
 }
 
+.B1 {
+  .header {
+    color: color('brand-2');
+  }
+
+  .subheader {
+    color: color('neutral-2');
+    font-weight: 300;
+  }
+}
+
 .C {
   .subheader {
     color: color('neutral-2');
