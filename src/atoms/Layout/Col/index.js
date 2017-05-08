@@ -16,6 +16,7 @@ function Col(props) {
     fullwidth,
     flex,
     style,
+    bottomSpacing
   } = props;
 
   return (
@@ -29,6 +30,7 @@ function Col(props) {
         { [styles[`col-xxlg-${xxLargeCols}`]]: xxLargeCols },
         { [styles.fullwidth]: fullwidth },
         { [styles.flex]: flex },
+        styles[`bottom-spacing-${bottomSpacing}`],
         className,
       )}
     >
@@ -42,34 +44,48 @@ Col.propTypes = {
    * Supply any additional class names.
    */
   className: PropTypes.string,
+
+  /**
+   * sets bottom spacing between children in Layout
+   * - see [Spacer](#spacer) for appropriate values
+   */
+  bottomSpacing: PropTypes.string,
+
   /**
     * Overides column grid width within a viewport from `0px` up
     */
   smallCols: PropTypes.number,
+
   /**
    * Sets col grid width in viewport from `768px` up
    */
   mediumCols: PropTypes.number,
+
   /**
    * Sets col grid width in viewport from `1024px` up
    */
   largeCols: PropTypes.number,
+
   /**
    * Sets col grid width in viewport from `1280px` up
    */
   xLargeCols: PropTypes.number,
+
   /**
    * Sets col grid width in viewport from `1440px` up
    */
   xxLargeCols: PropTypes.number,
+
   /**
    * Overides flex, changes Col to grow to fill empty space in the row (`flex-grow: 1`)
    */
   flex: PropTypes.bool,
+
   /**
    * Overides and removes padding set from Layout
    */
   fullwidth: PropTypes.bool,
+
   /**
    * adds additional styles to the column as a React styles object  ``
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)

@@ -58,6 +58,10 @@ module.exports = {
           components: 'src/molecules/lists/**/*.js'
         },
         {
+          name: 'Modal',
+          components: 'src/molecules/Modal/**/*.js'
+        },
+        {
           name: 'FormFields',
           components: 'src/molecules/formfields/**/*.js'
         },

@@ -16,3 +16,4 @@ export const closeAccent = require('!svg-inline-loader!assets/images/close-accen
 export const checkmark = require('!svg-inline-loader!assets/images/checkmark.svg');
 export const pgLogoOrange = require('!svg-inline-loader!assets/images/pg-logo-orange.svg');
 export const metlife = require('!svg-inline-loader!assets/images/metlife.svg');
+export const close = require('!svg-inline-loader!assets/images/close.svg');
