@@ -11,14 +11,18 @@ function PercentageCard( props ) {
     subheader1,
     percent,
     subheader2,
-    footerText1,
+    onClick,
+    onClick2,
     onClose,
+    footerText1,
     footerText2,
     className
   } = props;
 
+  const hasFooter = () => footerText1 || footerText2;
+
   return (
-    <div className={classnames( styles.percentage_card, className )}>
+    <div className={classnames( styles['percentage-card'], className )}>
       <Icon
         icon='xIcon'
         className={styles['icon-close']}
@@ -33,23 +37,27 @@ function PercentageCard( props ) {
             subheader={subheader1}
           />
         </div>
-        <div className={styles.percentage_col}>
+        <div className={styles['percentage-col']}>
           <TextLockup
             variant='B'
-            header={`${percent}%`}
+            header={`${percent}`}
             subheader={subheader2}
           />
         </div>
       </div>
 
-      <footer className={styles.footer}>
-        <div className={styles.col}>
-          <a className={styles.link}>{ footerText1 }</a>
-        </div>
-        <div className={styles.percentage_col}>
-          <a className={styles.link}>{ footerText2 }</a>
-        </div>
-      </footer>
+      { hasFooter() &&
+        <footer className={styles.footer}>
+          <div className={styles.col}>
+            <a className={styles.link} onClick={onClick}>{ footerText1 }</a>
+          </div>
+
+          <div className={styles['percentage-col']}>
+            <a className={styles.link} onClick={onClick2}>{ footerText2 }</a>
+          </div>
+        </footer>
+      }
+
     </div>
   );
 }
@@ -93,7 +101,15 @@ PercentageCard.propTypes = {
   /**
    * footer text displayed below second TextLockup
    */
-  footerText2: PropTypes.string.isRequired
+  footerText2: PropTypes.string,
+  /**
+   * callback passed to the onclick of footerText1
+   */
+  onClick: PropTypes.func,
+  /**
+   * callback passed to the onclick of footerText2
+   */
+  onClick2: PropTypes.func,
 };
 
 export default PercentageCard;
