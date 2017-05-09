@@ -38,6 +38,7 @@ function processChildren(props) {
     largeCols,
     xLargeCols,
     xxLargeCols,
+    bottomSpacing
   } = props;
 
   // start at -1 so can bump to 0 in the conditional below
@@ -80,6 +81,7 @@ function processChildren(props) {
       largeCols: largeCols[lgIdx],
       xLargeCols: xLargeCols[xlgIdx],
       xxLargeCols: xxLargeCols[xxlgIdx],
+      bottomSpacing
     };
 
     return processChild(child, layoutProps);
@@ -116,6 +118,12 @@ Layout.propTypes = {
    * Supply any additional class names.
    */
   className: PropTypes.string,
+
+  /**
+   * sets bottom spacing between children in Layout
+   * - see [Spacer](#spacer) for appropriate values
+   */
+  bottomSpacing: PropTypes.string,
 
   /**
    * determines pixel breakpoint for columns and rows

@@ -61,9 +61,9 @@ function MyReactComponent( props ) {
 return (
   <div>
     <Layout>
-      <TextComponent type={6}>I'm a header!</TextComponent>
+      <TextComponent type={6}>I am a header!</TextComponent>
       <Col>
-        I'm a column!
+        I am a column!
       </Col>
       <Button>Submit!</Button>
     </Layout>
@@ -124,7 +124,6 @@ For anything not specifically addressed in the linters, use Airbnb's styleguides
 - [JS](https://github.com/airbnb/javascript)
 - [React/JSX](https://github.com/airbnb/javascript/tree/master/react)
 - [CSS](https://github.com/airbnb/css)
-
 
 ### Continuous Integration and Deployment
 

@@ -32,6 +32,28 @@ $gutter-width: ru(.25);
   }
 }
 
+.bottom-spacing {
+  &-xSmall {
+    margin-bottom: ru(.5);
+  }
+
+  &-small {
+    margin-bottom: ru(1);
+  }
+
+  &-medium {
+    margin-bottom: ru(1.5);
+  }
+
+  &-large {
+    margin-bottom: ru(3);
+  }
+
+  &-xLarge {
+    margin-bottom: ru(6);
+  }
+}
+
 @media #{$small-up} {
   @include createCols( 'sm' );
 }

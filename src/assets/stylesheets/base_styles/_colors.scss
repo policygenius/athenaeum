@@ -31,7 +31,10 @@ $colors-map: (
   action-3: #fab350,
   action-4: #fbc67c,
   action-5: #fdd9a7,
-  action-6: #feecd3
+  action-6: #feecd3,
+
+  /* Modal overlay background */
+  transparent-neutral-2: rgba(77,77,77,0.8)
 );
 
 @function color($type) {

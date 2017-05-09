@@ -1,0 +1,70 @@
+@import 'assets/stylesheets/global';
+
+.modal {
+  margin: ru(4.25) auto ru(4.25);
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &.simple {
+    max-width: rem-calc(800);
+  }
+}
+
+.dialog {
+  @include base-font-family;
+  position: relative;
+  z-index: 9999;
+  max-width: 100%;
+  margin: auto;
+  border-radius: ru(.25);
+  border: 1px solid color('neutral-5');
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: ru(1.25) ru(2);
+  background-color: color('neutral-6');
+  border-bottom: 1px solid color('neutral-5');
+  color: color('neutral-2');
+}
+
+.close {
+  width: rem-calc(30px);
+  height: rem-calc(30px);
+}
+
+.body {
+  font-family: $font-family-sans-serif;
+  padding: ru(2);
+  background-color: color('neutral-8');
+}
+
+.overlay {
+  background-color: color('transparent-neutral-2');
+  z-index: 1;
+  transition: opacity 0.25s ease-in-out, background 0.25s ease-out;
+  background: color('transparent-neutral-2');
+  bottom: 0;
+  display: block;
+  left: 0;
+  opacity: 1;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+@media #{$small-only} {
+  .header {
+    p {
+      @include typography-4(false);
+    }
+  }
+}
+
