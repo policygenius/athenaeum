@@ -92,9 +92,6 @@ module.exports = {
       name: 'Templates',
       components: 'src/templates/**/*.js'
     },
-    {
-      name: 'Pages',
-    }
   ],
   // Use this to change the theme for the live code editor
   // Themes here: http://codemirror.net/demo/theme.html#
