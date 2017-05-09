@@ -2,43 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Layout from 'atoms/Layout';
-import Col from 'atoms/Layout/Col';
+import { Layout, Col } from 'atoms/Layout';
 import StepProgress from 'molecules/StepProgress';
+import { Partial, separatePartials, partialRenderer } from 'helpers/Partial';
 import NavigatorPartials from './NavigatorPartials';
 
 import styles from './navigator.module.scss';
-
-function isNamedPartial(child) {
-  return child.type.prototype instanceof Partial;
-}
-
-function separateParts(children) {
-  const parts = {
-    Main: [],
-  };
-
-  if (!children) return parts;
-
-  React.Children.map(children, (child) => {
-    if (isNamedPartial(child)) {
-      parts[child.type.name] = child;
-    } else {
-      parts.Main.push(child);
-    }
-  });
-
-  return parts;
-}
-
-function renderPartial(part, data) {
-  // Will not render if data is undefined
-  // To render without data, pass in true
-  if (data === undefined) return undefined;
-  if (!NavigatorPartials[part]) return <div>{part}</div>;
-
-  return NavigatorPartials[part](data);
-}
 
 function Navigator(props) {
   const {
@@ -48,7 +17,8 @@ function Navigator(props) {
     leftRailText,
   } = props;
 
-  const parts = separateParts(children);
+  const parts = separatePartials(children);
+  const renderPartial = partialRenderer(NavigatorPartials);
 
   return (
     <div className={classnames(styles['navigator'], className)}>
@@ -70,7 +40,7 @@ function Navigator(props) {
               fullwidth
             >
               <div className={styles['logo-wrapper']}>
-                { renderPartial('icon', true)}
+                { renderPartial('icon', {}) }
               </div>
 
               <div className={styles['mobile-header-wrapper']}>
@@ -79,7 +49,7 @@ function Navigator(props) {
               </div>
             </Col>
 
-            { renderPartial('contactCard', true) }
+            { renderPartial('contactCard', { inverted: true }) }
           </Layout>
         </Col>
 
@@ -106,7 +76,7 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               <div className={styles['contact-card']}>
-                { renderPartial('contactCard', false) }
+                { renderPartial('contactCard', {}) }
               </div>
 
               { renderPartial('sidebar', parts.Sidebar) }
@@ -133,13 +103,6 @@ Navigator.propTypes = {
   leftRailText: PropTypes.string,
   stepProgressData: StepProgress.propTypes.steps
 };
-
-// eslint-disable-next-line
-class Partial extends React.PureComponent {
-  render() {
-    return <div>{this.props.children}</div>;
-  }
-}
 
 Navigator.Sidebar = class Sidebar extends Partial {};
 

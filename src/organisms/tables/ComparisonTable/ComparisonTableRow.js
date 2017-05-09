@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Col from 'atoms/Layout/Col';
 import Layout from 'atoms/Layout';
 import classnames from 'classnames';

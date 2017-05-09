@@ -1,8 +1,6 @@
 Label Example:
 
 ```example
-    const SelectFieldExample = require('utils/exampleWrapper')(SelectField);
-
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -12,7 +10,7 @@ Label Example:
         value: 3 }
     ];
 
-    <SelectFieldExample
+    <SelectField
       label='Hi Friend'
       selectOptions={selection}
     />
@@ -21,8 +19,6 @@ Label Example:
 No Label Example:
 
 ```example
-    const SelectFieldExample = require('utils/exampleWrapper')(SelectField);
-
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -32,7 +28,7 @@ No Label Example:
         value: 3 }
     ];
 
-    <SelectFieldExample
+    <SelectField
       placeholder='Placeholder'
       selectOptions={selection}
     />
@@ -40,8 +36,6 @@ No Label Example:
 
 Focused Example:
 ```example
-    const SelectFieldExample = require('utils/exampleWrapper')(SelectField);
-
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -51,7 +45,7 @@ Focused Example:
         value: 3 }
     ];
 
-    <SelectFieldExample
+    <SelectField
       placeholder='Placeholder'
       label='Select Field'
       selectOptions={selection}
@@ -66,9 +60,8 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 `{ group: 'groupName', options: [{label: 'optionName', value: 1}]}`.
 
 ```example
-    const SelectFieldExample = require('utils/exampleWrapper')(SelectField);
 
-    <SelectFieldExample
+    <SelectField
       placeholder='Placeholder'
       label='Select Field'
       selectOptions={[
@@ -82,8 +75,6 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 Select Card Type Example:
 
 ```example
-    const SelectFieldExample = require('utils/exampleWrapper')(SelectField);
-
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -93,7 +84,7 @@ Select Card Type Example:
         value: 3 }
     ];
 
-    <SelectFieldExample
+    <SelectField
       type='select-card'
       label='Select Field Label'
       selectOptions={selection}

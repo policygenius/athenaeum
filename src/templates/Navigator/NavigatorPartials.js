@@ -6,7 +6,7 @@ import TextComponent from 'atoms/TextComponent';
 
 import styles from './navigator.module.scss';
 
-const NavigatorPartials = {
+export default {
   /* eslint-disable arrow-body-style */
 
   icon: () => {
@@ -36,7 +36,7 @@ const NavigatorPartials = {
     );
   },
 
-  contactCard: (inverted) => {
+  contactCard: (data) => {
     // eslint-disable-next-line
     const clickExample = () => alert('Chat clicked!')
 
@@ -46,7 +46,7 @@ const NavigatorPartials = {
         phoneNumber='1 (800) 555-5309'
         chatText='Chat with an Expert'
         chatClick={clickExample}
-        inverted={inverted}
+        inverted={data && data.inverted}
       />
     );
   },
@@ -65,5 +65,3 @@ const NavigatorPartials = {
 
   /* eslint-enable arrow-body-style */
 };
-
-export default NavigatorPartials;
