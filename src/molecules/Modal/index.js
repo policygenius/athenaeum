@@ -6,24 +6,17 @@ import TextComponent from 'atoms/TextComponent';
 import Icon from 'atoms/Icon';
 import styles from './modal.module.scss';
 
-const setWeight = weight => ({
-  [weight]: true
-});
-
 function Modal(props) {
   const {
     children,
     className,
     header,
-    headerWeight,
     isOpen,
     contentLabel,
     onAfterOpen,
     onRequestClose,
     variant
   } = props;
-
-  const weight = setWeight(headerWeight);
 
   return (
     <ReactModal
@@ -38,7 +31,7 @@ function Modal(props) {
         <div className={styles.header}>
           <TextComponent
             type={2}
-            {...weight}
+            light
           >
             {header}
           </TextComponent>
@@ -72,11 +65,6 @@ Modal.propTypes = {
   header: PropTypes.string,
 
   /**
-   * Sets header font weight for modal header text
-   */
-  headerWeight: PropTypes.string,
-
-  /**
    * label passed to ReactModal `contentLabel`
    */
   contentLabel: PropTypes.string,
@@ -103,8 +91,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  variant: 'simple',
-  headerWeight: 'semibold'
+  variant: 'simple'
 };
 
 export default Modal;
