@@ -16,7 +16,7 @@ $checkbox-disabled-sign-color: color('neutral-3');
 $checkbox-background-color: color('neutral-8');
 $checkbox-border-color: color('neutral-5');
 
-@mixin formfield {
+%formfield {
   border: $border;
   border-radius: $border-radius;
   display: flex;
@@ -27,7 +27,12 @@ $checkbox-border-color: color('neutral-5');
 
 // Base Style
 .formfield {
-  @include formfield;
+  @extend %formfield;
+
+  &-header,
+  &-label {
+    border-bottom: 1px solid color('neutral-5');
+  }
 }
 
 // Children Classes
@@ -120,11 +125,11 @@ $checkbox-border-color: color('neutral-5');
 }
 
 .textfield {
-  @include formfield;
+  @extend %formfield;
 }
 
 .togglefield {
-  @include formfield;
+  @extend %formfield;
 
   position: relative;
   padding: $section-padding;
@@ -165,7 +170,7 @@ $checkbox-border-color: color('neutral-5');
 }
 
 .datefield {
-  @include formfield;
+  @extend %formfield;
 
   .label {
     border-bottom: $border;
@@ -193,11 +198,12 @@ $checkbox-border-color: color('neutral-5');
 
 // Select Field - types
 .selectfield {
-  @include formfield;
+  @extend %formfield;
 }
 
 .select-card {
-  composes: formfield;
+  @extend %formfield;
+
   border: 0;
   color: color('brand-2');
 
@@ -226,7 +232,7 @@ $checkbox-border-color: color('neutral-5');
 
 // Checkbox List
 .checkboxList {
-  composes: formfield;
+  @extend %formfield;
 
   .label {
     border-bottom: 1px solid $checkbox-border-color;
