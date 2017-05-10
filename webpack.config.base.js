@@ -75,7 +75,7 @@ module.exports = options => ({
         })
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         exclude: /node_modules/,
         use: [
           {
@@ -87,6 +87,18 @@ module.exports = options => ({
             }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+        options: {
+          classPrefix: 'svg-class-[hash:8]-',
+          idPrefix: 'svg-id-[hash:8]-',
+          removeTags: true,
+          removingTags: [ 'desc', 'defs', 'style' ],
+          removeSVGTagAttrs: true,
+          removingTagAttrs: [ 'xmlns', 'id', 'data-name', 'version', 'xlink', 'class' ]
+        }
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,

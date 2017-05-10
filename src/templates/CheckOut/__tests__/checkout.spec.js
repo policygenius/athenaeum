@@ -3,7 +3,20 @@ import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
 
 import CheckOut from 'templates/CheckOut';
-// import styles from 'templates/CheckOut/checkout.scss';
+
+/* eslint-disable */
+jest.mock('atoms/Icon', () => {
+  const React = require('react');
+
+  class Icon extends React.Component {
+    render() {
+      return <div />;
+    }
+  }
+
+  return Icon;
+});
+/* eslint-enable */
 
 describe('<CheckOut />', () => {
 

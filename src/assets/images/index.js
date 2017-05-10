@@ -1,22 +1,9 @@
-export const application = require('!svg-inline-loader!assets/images/application.svg');
-export const calculator = require('!svg-inline-loader!assets/images/calculator.svg');
-export const cart = require('!svg-inline-loader!assets/images/cart.svg');
-export const chat = require('!svg-inline-loader!assets/images/chat.svg');
-export const checkMark = require('!svg-inline-loader!assets/images/check-mark.svg');
-export const checkmark = require('!svg-inline-loader!assets/images/checkmark.svg');
-export const close = require('!svg-inline-loader!assets/images/close.svg');
-export const closeAccent = require('!svg-inline-loader!assets/images/close-accent.svg');
-export const headAside = require('!svg-inline-loader!assets/images/head-aside.svg');
-export const health = require('!svg-inline-loader!assets/images/health.svg');
-export const jewelry = require('!svg-inline-loader!assets/images/jewelry.svg');
-export const metlife = require('!svg-inline-loader!assets/images/metlife.svg');
-export const nortonLogo = require('!svg-inline-loader!assets/images/norton.svg');
-export const nortonLogoW = require('!svg-inline-loader!assets/images/norton-w.svg');
-export const pgLogo = require('!svg-inline-loader!assets/images/pg-logo.svg');
-export const pgLogoOrange = require('!svg-inline-loader!assets/images/pg-logo-orange.svg');
-export const phone = require('!svg-inline-loader!assets/images/phone.svg');
-export const plus = require('!svg-inline-loader!assets/images/plus.svg');
-export const quotes = require('!svg-inline-loader!assets/images/quotes.svg');
-export const rclLogo = require('!svg-inline-loader!assets/images/rcl-logo.svg');
-export const tooltip = require('!svg-inline-loader!assets/images/question-mark.svg');
-export const xIcon = require('!svg-inline-loader!assets/images/x-icon.svg');
+const fromPairs = require('lodash/fromPairs');
+const camelCase = require('lodash/camelCase');
+const svgContext = require.context('.', true, /\.svg/);
+
+module.exports = fromPairs(svgContext.keys().map((svg) => {
+  const svgName = svg.match(/\b(.*?)\./)[1];
+
+  return [ camelCase(svgName), svgContext(svg) ];
+}));
