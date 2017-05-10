@@ -10,6 +10,10 @@ import TextComponent from 'atoms/TextComponent';
 import Navigator from 'templates/Navigator';
 import NavigatorPartials from 'templates/Navigator/NavigatorPartials';
 
+/* eslint-disable no-undef, no-shadow */
+jest.mock('atoms/Icon', () => function Icon() {});
+/* eslint-enable no-undef, no-shadow */
+
 describe('Navigator', () => {
 
   describe('Partials', () => {

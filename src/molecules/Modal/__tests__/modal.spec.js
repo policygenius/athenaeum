@@ -5,6 +5,10 @@ import { shallow } from 'enzyme';
 
 import Modal from 'molecules/Modal';
 
+/* eslint-disable no-undef*/
+jest.mock('atoms/Icon', () => function Icon() {});
+/* eslint-enable no-undef*/
+
 describe('<Modal />', () => {
   let wrapper;
   const callback = sinon.spy();

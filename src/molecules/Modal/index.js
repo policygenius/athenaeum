@@ -33,7 +33,7 @@ function Modal(props) {
         <div className={styles.header}>
           <Layout
             fullwidth
-            smallCols={[11,1]}
+            smallCols={[ 11, 1 ]}
           >
             <TextComponent
               type={2}
@@ -45,7 +45,7 @@ function Modal(props) {
             <Col
               fullwidth
               style={{
-                alignSelf:'center'
+                alignSelf: 'center'
               }}
             >
               <Icon
