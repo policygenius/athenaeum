@@ -86,7 +86,10 @@ PercentageCard.propTypes = {
   /**
    * percent header passed to second TextLockup
    */
-  percent: PropTypes.number.isRequired,
+  percent: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]).isRequired,
 
   /**
    * subheader to percent in second TextLockup
@@ -96,7 +99,7 @@ PercentageCard.propTypes = {
   /**
    * footer text displayed below first TextLockup
    */
-  footerText1: PropTypes.string.isRequired,
+  footerText1: PropTypes.string,
 
   /**
    * footer text displayed below second TextLockup
