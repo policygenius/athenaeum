@@ -1,7 +1,7 @@
 Checkbox List Example:
 
 ```example    
-  const CheckboxField = require('../CheckboxField').default;
+  const CheckboxField = require('../CheckboxField/index').default;
 
   <CheckboxWrapper label='Pellentesque habitant'>
     <CheckboxField
