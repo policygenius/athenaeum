@@ -1,6 +1,7 @@
 @import 'assets/stylesheets/global';
 
 $icon-aside-basic-icon-color:  color('brand-3');
+$small-aside-text-color: color('brand-2');
 $aside-text-color:               color('neutral-2');
 
 /* Types */
@@ -97,3 +98,22 @@ $aside-text-color:               color('neutral-2');
   composes: text;
   font-weight: 400;
 }
+
+.small {
+  align-items: center;
+
+  .icon {
+    width: rem-calc(20);
+    height: rem-calc(20);
+
+    + .aside {
+      margin-left: ru(.5);
+    }
+  }
+
+  .header {
+    @include typography-7(false);
+    color: $small-aside-text-color;
+  }
+}
+

@@ -60,3 +60,13 @@ Simple Example:
       header='Vivamus ultricies augue'
     />
 ```
+
+Small Example:
+
+```example
+    <ImageAside
+      small
+      dataSrc='holder.js/20x20'
+      header='Vivamus ultricies augue'
+    />
+```

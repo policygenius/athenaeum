@@ -19,14 +19,16 @@ function ImageAside( props ) {
     dataSrc,
     maxWidth,
     icon,
-    simple
+    simple,
+    small
   } = props;
 
   const variant = classnames(
     { [styles.basic]: basic },
     { [styles.centered]: centered },
     { [styles.compact]: compact },
-    { [styles.simple]: simple }
+    { [styles.simple]: simple },
+    { [styles.small]: small }
   );
 
   return (
@@ -105,6 +107,11 @@ ImageAside.propTypes = {
    * simple variant
    */
   simple: PropTypes.bool,
+
+  /**
+   * small variant
+   */
+  small: PropTypes.bool,
 
   /**
    * text displayed below the main header

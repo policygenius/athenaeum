@@ -36,6 +36,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
               header={'Hmmm, we couldn\'t find your address'}
               onRequestClose={this.closeModal}
               isOpen={this.state.modalIsOpen}
+              contentLabel='Modal'
             >
               <Layout
                 fullwidth
