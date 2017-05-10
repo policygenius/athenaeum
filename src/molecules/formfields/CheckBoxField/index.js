@@ -17,6 +17,7 @@ function CheckboxField( props ) {
       <input
         type='checkbox'
         id={`checkbox-${input.name}`}
+        checked={input.value}
         {...input}
       />
       <span className={styles.checkboxLabel}>{ label }</span>
