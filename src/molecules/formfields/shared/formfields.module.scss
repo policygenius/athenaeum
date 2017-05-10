@@ -224,6 +224,10 @@ $checkbox-border-color: color('neutral-5');
 .checkboxList {
   composes: formfield;
 
+  .label {
+    border-bottom: 1px solid $checkbox-border-color;
+  }
+
   .content {
     padding: ru(.75);
 
