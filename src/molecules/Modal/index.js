@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import ReactModal from 'react-modal';
 import TextComponent from 'atoms/TextComponent';
 import Icon from 'atoms/Icon';
+import Layout from 'atoms/Layout';
+import Col from 'atoms/Layout/Col';
 import styles from './modal.module.scss';
 
 function Modal(props) {
@@ -29,18 +31,30 @@ function Modal(props) {
     >
       <div className={styles.dialog}>
         <div className={styles.header}>
-          <TextComponent
-            type={2}
-            light
+          <Layout
+            fullwidth
+            smallCols={[11,1]}
           >
-            {header}
-          </TextComponent>
+            <TextComponent
+              type={2}
+              light
+            >
+              {header}
+            </TextComponent>
 
-          <Icon
-            icon='close'
-            className={styles.close}
-            onClick={onRequestClose}
-          />
+            <Col
+              fullwidth
+              style={{
+                alignSelf:'center'
+              }}
+            >
+              <Icon
+                icon='close'
+                className={styles.close}
+                onClick={onRequestClose}
+              />
+            </Col>
+          </Layout>
         </div>
 
         <div className={styles.body}>
