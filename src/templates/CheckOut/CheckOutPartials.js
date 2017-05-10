@@ -60,7 +60,7 @@ export default {
   'head-foot': () => {
     return (
       <Col className={styles['head-foot']} fullwidth>
-        <Icon icon='nortonLogoW' className={styles['secure-logo']} />
+        <Icon icon='nortonW' className={styles['secure-logo']} />
       </Col>
     );
   },
