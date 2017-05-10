@@ -3,29 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import dateUtils from 'utils/dateUtils';
-import { renderOption } from 'utils/fieldUtils';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
-
-const renderMonthOption = (month, idx) => renderOption({
-  label: month,
-  value: idx + 1,
-  key: `${month}-${idx}`,
-});
-
-function renderMonthOptions() {
-  return dateUtils.months().map(renderMonthOption);
-}
-
-const renderDayOption = (_, day) => renderOption({
-  label: day + 1,
-  value: day + 1,
-  key: `day-${day}`,
-});
-
-function renderDayOptions() {
-  return [ ...Array(31) ].map(renderDayOption);
-}
 
 function DateField(props) {
   const {
@@ -43,19 +22,20 @@ function DateField(props) {
 
       <label htmlFor='date' className={styles.label}>{label}</label>
       <div className={styles['datefield-wrapper']}>
-        <select
-          className={classnames(styles.select, styles['datefield-mon'])}
-          defaultValue={parseInt(dateParts.month, 10)}
-        >
-          { renderMonthOptions() }
-        </select>
 
-        <select
-          className={classnames(styles.select, styles['datefield-day'])}
+        <input
+          className={classnames(styles.input, styles['datefield-mon'])}
+          type='text'
+          placeholder='Mon (MM)'
+          defaultValue={parseInt(dateParts.month, 10)}
+        />
+
+        <input
+          className={classnames(styles.input, styles['datefield-day'])}
+          type='text'
+          placeholder='Day (DD)'
           defaultValue={dateParts.day}
-        >
-          { renderDayOptions() }
-        </select>
+        />
 
         <input
           className={classnames(styles.input, styles['datefield-year'])}
