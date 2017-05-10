@@ -23,16 +23,20 @@ All Icons (WIP):
                 <div
                   key={`icon-${idx}`}
                   style={{
-                    border: '1px solid grey',
-                    padding: '5px',
-                    margin: '5px',
+                    padding: '10px 10px 20px',
+                    margin: '2px',
                     textAlign: 'center',
-                    flexGrow: 0,
-                    flexBasis: '45%',
+                    flexGrow: 1,
+                    flexBasis: '25%',
                     display: 'flex',
                     flexDirection: 'column',
                     background: 'lightgrey',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    lineHeight: '2rem',
+                    color: '#4e4e4e',
+                    fontFamily: 'Courier New',
+                    fontWeight: '600',
+                    fontSize: '.8rem'
                   }}
                 >
                   "{ key }"

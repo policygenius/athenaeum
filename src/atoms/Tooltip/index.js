@@ -12,7 +12,7 @@ function Tooltip( props ) {
 
   return (
     <div className={classnames(styles['tooltip-wrapper'], className)}>
-      <Icon icon='tooltip' className={styles['tooltip']} />
+      <Icon icon='questionMark' className={styles['tooltip']} />
       <div className={styles['hover-message']}>
         { children }
       </div>
