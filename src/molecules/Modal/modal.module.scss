@@ -25,9 +25,6 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: ru(1.25) ru(2);
   background-color: color('neutral-6');
   border-bottom: 1px solid color('neutral-5');
@@ -35,6 +32,7 @@
 }
 
 .close {
+  margin: 0 auto;
   width: rem-calc(30px);
   height: rem-calc(30px);
 }
