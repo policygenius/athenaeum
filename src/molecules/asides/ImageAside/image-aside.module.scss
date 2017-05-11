@@ -7,7 +7,6 @@ $aside-text-color:               color('neutral-2');
 .basic {
   display: flex;
   align-items: flex-start;
-  margin: 0;
   color: $aside-text-color;
 }
 
@@ -98,7 +97,9 @@ $aside-text-color:               color('neutral-2');
 }
 
 .small {
+  display: flex;
   align-items: center;
+  margin-left: 0;
 
   .icon {
     width: rem-calc(20);

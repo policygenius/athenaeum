@@ -46,12 +46,20 @@ module.exports = {
           components: 'src/molecules/asides/**/*.js'
         },
         {
-          name: 'Headers',
-          components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
-        },
-        {
           name: 'DataRow',
           components: 'src/molecules/DataRow/**/*.js'
+        },
+        {
+          name: 'FlashMessage',
+          components: 'src/molecules/FlashMessage/**/*.js'
+        },
+        {
+          name: 'FormFields',
+          components: 'src/molecules/formfields/**/*.js'
+        },
+        {
+          name: 'Headers',
+          components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
         },
         {
           name: 'Lists',
@@ -60,10 +68,6 @@ module.exports = {
         {
           name: 'Modal',
           components: 'src/molecules/Modal/**/*.js'
-        },
-        {
-          name: 'FormFields',
-          components: 'src/molecules/formfields/**/*.js'
         },
         {
           name: 'TextLockups',
