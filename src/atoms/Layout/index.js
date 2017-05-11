@@ -10,8 +10,8 @@ function processChild(child, layoutProps) {
   if (child.type === Col) {
     const colProps = Object.assign(
       {},
-      layoutProps,
-      child.props
+      _.omit(layoutProps, [ 'fullwidth' ]),
+      child.props,
     );
 
     return React.cloneElement(child, colProps);
@@ -38,7 +38,8 @@ function processChildren(props) {
     largeCols,
     xLargeCols,
     xxLargeCols,
-    bottomSpacing
+    bottomSpacing,
+    fullwidthAll,
   } = props;
 
   // start at -1 so can bump to 0 in the conditional below
@@ -81,7 +82,8 @@ function processChildren(props) {
       largeCols: largeCols[lgIdx],
       xLargeCols: xLargeCols[xlgIdx],
       xxLargeCols: xxLargeCols[xxlgIdx],
-      bottomSpacing
+      bottomSpacing,
+      fullwidth: fullwidthAll,
     };
 
     return processChild(child, layoutProps);
@@ -169,6 +171,11 @@ Layout.propTypes = {
    * removes left and right padding from Layout.
    */
   fullwidth: PropTypes.bool,
+  /**
+   * prevents Layout from passing left and right padding to all of its direct children (`<Cols />`).
+   * Will not remove padding that is explicitly added to a `<Col />`
+   */
+  fullwidthAll: PropTypes.bool,
   /**
    * adds additional styles to the column as a React styles object.
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
