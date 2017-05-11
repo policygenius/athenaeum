@@ -14,6 +14,7 @@ $checkbox-disabled-sign-color: color('neutral-3');
 $checkbox-background-color: color('neutral-8');
 $checkbox-border-color: color('neutral-5');
 $field-error-color: color('accent-2');
+$focused-border-color: color('brand-3');
 
 %formfield {
   border: $border;
@@ -125,6 +126,57 @@ $field-error-color: color('accent-2');
 
 .textfield {
   @extend %formfield;
+}
+
+.credit-card {
+  input {
+    width: 100%;
+  }
+  &-input {
+    width: 50%;
+
+    &:first-child {
+      border-right: $border;
+
+      .focused & {
+        border-right-color: $focused-border-color;
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    padding-right: ru(.5);
+  }
+
+  &-lock {
+    width: ru(.75);
+    height: ru(.75);
+    margin-left: auto;
+  }
+
+  &-line1 {
+    position: relative;
+    border-bottom: $border;
+
+    .focused & {
+      border-bottom-color: $focused-border-color;
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    top: 0;
+    right: ru(.5);
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &-line2 {
+    width: 100%;
+    display: flex;
+  }
 }
 
 .togglefield {
@@ -350,7 +402,7 @@ $field-error-color: color('accent-2');
   border-color: color('brand-3');
   background-color: color('brand-6');
 
-  .label {
+  .label, .formfield-header {
     border-bottom-color: color('brand-3');
   }
 }
