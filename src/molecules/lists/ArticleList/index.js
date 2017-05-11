@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import reduce from 'lodash/reduce';
-import styles from '../lists.module.scss';
+import styles from './article_list.module.scss';
 
 function ArticleList( props ) {
   const {
