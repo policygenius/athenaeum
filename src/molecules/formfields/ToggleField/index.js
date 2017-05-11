@@ -45,7 +45,7 @@ function ToggleField( props ) {
       {
         tooltipMessage &&
         <div className={styles['tooltip-wrapper']}>
-          <Tooltip>{ tooltipMessage }</Tooltip>
+          <Tooltip right>{ tooltipMessage }</Tooltip>
         </div>
       }
 
