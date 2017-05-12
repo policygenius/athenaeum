@@ -1,6 +1,3 @@
-@import 'assets/stylesheets/global';
-
-
 .{{dashCase name}} {
   // Place your component specific scss here.
 }
