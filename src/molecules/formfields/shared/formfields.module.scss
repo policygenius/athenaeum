@@ -216,7 +216,7 @@ $checkbox-border-color: color('neutral-5');
   }
 
   .select {
-    @include typography-3(false);
+    @include typography-5(false);
     padding: ru(.5) ru(1);
     letter-spacing: .2px;
     pointer-events: all;
@@ -224,6 +224,10 @@ $checkbox-border-color: color('neutral-5');
     &:invalid {
       @include typography-3(false);
       color: color('brand-2');
+    }
+
+    @media #{$medium-up} {
+      @include typography-3(false);
     }
   }
 }
