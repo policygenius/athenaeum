@@ -68,7 +68,8 @@ module.exports = options => ({
               options: {
                 sourceMap: true,
                 sourceComments: true,
-                includePaths: [ baseDir ]
+                includePaths: [ baseDir ],
+                data: "@import 'assets/stylesheets/global';"
               }
             }
           ]
