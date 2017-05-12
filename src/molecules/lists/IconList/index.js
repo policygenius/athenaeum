@@ -15,27 +15,25 @@ function IconList(props) {
   return (
     <ul className={classnames(styles['icon-list'], className)}>
       {
-        data.map( (item, idx) => {
-          return (
-            <li
-              className={styles.item}
-              key={`iconlist-item-${idx}`}
-            >
-              <Icon
-                className={styles.icon}
-                icon={item.icon}
-              />
+        data.map( (item, idx) =>
+          <li
+            className={styles.item}
+            key={`iconlist-item-${idx}`}
+          >
+            <Icon
+              className={styles.icon}
+              icon={item.icon}
+            />
 
-              <TextComponent
-                className={styles.text}
-                type={6}
-                semibold
-              >
-                {item.text}
-              </TextComponent>
-            </li>
-          );
-        })
+            <TextComponent
+              className={styles.text}
+              type={6}
+              semibold
+            >
+              {item.text}
+            </TextComponent>
+          </li>
+          )
       }
     </ul>
   );
