@@ -4,8 +4,19 @@ DateField Example:
   const DateExample = require('utils/exampleWrapper')(DateField);
 
     <DateExample
-      label='Date of birth'
-      input={{ value: '01-17-1983' }}
+      label='Date of Birth'
     >
+      <TextField
+        placeholder='MM'
+        noBaseStyle
+      />
+      <TextField
+        placeholder='DD'
+        noBaseStyle
+      />
+      <TextField
+        placeholder='YYYY'
+        noBaseStyle
+      />
     </DateExample>
 ```

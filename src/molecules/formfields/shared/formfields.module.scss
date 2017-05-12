@@ -13,6 +13,7 @@ $checkbox-disabled-color: color('neutral-3');
 $checkbox-disabled-sign-color: color('neutral-3');
 $checkbox-background-color: color('neutral-8');
 $checkbox-border-color: color('neutral-5');
+$field-error-color: color('accent-2');
 
 %formfield {
   border: $border;
@@ -179,18 +180,22 @@ $checkbox-border-color: color('neutral-5');
     display: flex;
   }
 
-  &-day,
-  &-mon {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  &-input {
+    width: calc(100% / 3);
+
+    input {
+      width: 100%;
+    }
 
     border-right: 1px solid color('neutral-4');
-  }
 
-  &-mon,
-  &-day,
-  &-year {
-    width: 33%;
+    &.datefield-input-focused {
+      border-right: 1px solid color('brand-3');
+    }
+
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 
@@ -348,4 +353,15 @@ $checkbox-border-color: color('neutral-5');
   .label {
     border-bottom-color: color('brand-3');
   }
+}
+
+.hasError {
+  border: 1px solid $field-error-color;
+}
+
+.error {
+  @include typography-7;
+  color: $field-error-color;
+  margin-left: ru(0.5);
+  margin-top: ru(0.5);
 }

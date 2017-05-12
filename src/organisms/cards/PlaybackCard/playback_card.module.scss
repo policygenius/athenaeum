@@ -1,0 +1,20 @@
+@import 'assets/stylesheets/global';
+
+.playbackCard {
+  border-radius: ru(.25);
+  border: 1px solid color('neutral-5');
+  padding: ru(.75) ru(.75) ru(.25);
+
+  p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.edit-column {
+  text-align: right;
+}
+
+.edit {
+  @include typography-7(false);
+}

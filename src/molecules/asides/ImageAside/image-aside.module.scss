@@ -114,3 +114,20 @@ $aside-text-color:               color('neutral-2');
     color: $small-aside-text-color;
   }
 }
+
+.bold {
+  align-items: center;
+
+  .icon {
+    width: ru(1);
+    height: ru(1);
+
+    + .aside {
+      margin-left: ru(.5);
+    }
+  }
+
+  .header {
+    font-weight: 600;
+  }
+}

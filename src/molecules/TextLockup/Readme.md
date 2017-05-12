@@ -58,3 +58,13 @@ TextLockup Example - Type F:
       secondaryIcon='checkmark'
     />
 ```
+
+TextLockup Example - Type G:
+
+```example
+    <TextLockup
+      variant='G'
+      header='Header'
+      subheader='Subheader'
+    />
+```
