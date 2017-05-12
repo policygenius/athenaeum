@@ -1,6 +1,7 @@
 @import 'assets/stylesheets/global';
 
 $tooltip-width: ru(.5);
+$tooltip-shift-amount: 60%;
 
 .tooltip {
   position: relative;
@@ -9,48 +10,34 @@ $tooltip-width: ru(.5);
   cursor: help;
 }
 
-.tooltip-wrapper {
-  &:hover {
-    .hover-message {
-      display: block;
-      visibility: visible;
-      opacity: 1;
-    }
-
-    circle {
-      fill: color('neutral-2');
-    }
-  }
-}
-
 .hover-message {
   @include typography-7;
-  color: color('neutral-2');
-  position: absolute;
-  transform: translateX(calc(-50% + #{$tooltip-width / 2}));
-  width: ru(10);
-  top: $tooltip-width * 2;
-  padding: $tooltip-width;
   background: color('neutral-8');
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .15s ease-out;
-  border: 1px solid color('neutral-5');
   border-radius: ru(.25);
+  border: 1px solid color('neutral-5');
+  color: color('neutral-2');
+  opacity: 0;
+  padding: $tooltip-width;
+  position: absolute;
+  top: $tooltip-width * 2;
+  transform: translateX(calc(-50% + #{$tooltip-width / 2}));
+  transition: opacity .15s ease-out;
+  visibility: hidden;
+  width: ru(10);
+  z-index: 10;
 
   &:before,
   &:after {
-    display: inline-block;
-    left: 0;
-    right: 0;
-    bottom: 100%;
     content: '';
-    height: 0;
-    width: 0;
     border: solid transparent;
+    bottom: 100%;
+    display: inline-block;
+    height: 0;
     margin: 0 auto;
     position: absolute;
+    left: 0;
+    right: 0;
+    width: 0;
   }
 
   &:before {
@@ -61,5 +48,39 @@ $tooltip-width: ru(.5);
   &:after {
     border-bottom-color: color('neutral-8');
     border-width: 8px;
+  }
+}
+
+.right {
+  transform: translateX(calc(#{-50% - $tooltip-shift-amount / 2} + #{$tooltip-width / 2}));
+  &:before,
+  &:after {
+    right: -$tooltip-shift-amount;
+  }
+}
+
+.left {
+  transform: translateX(calc(#{-50% + $tooltip-shift-amount / 2} + #{$tooltip-width / 2}));
+  &:before,
+  &:after {
+    right: $tooltip-shift-amount;
+  }
+}
+
+@media #{$medium-up} {
+  .tooltip-wrapper {
+    position: relative;
+
+    &:hover {
+      .hover-message {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      circle {
+        fill: color('neutral-2');
+      }
+    }
   }
 }

@@ -41,7 +41,7 @@ function SelectField( props ) {
           {
             tooltip &&
             <div className={styles['tooltip-wrapper']}>
-              <Tooltip>
+              <Tooltip right>
                 { tooltip }
               </Tooltip>
             </div>

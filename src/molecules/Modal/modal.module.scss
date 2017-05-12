@@ -9,7 +9,7 @@
   }
 
   &.simple {
-    max-width: rem-calc(800);
+    max-width: rem-calc(728);
   }
 }
 
@@ -17,7 +17,7 @@
   @include base-font-family;
   position: relative;
   z-index: 9999;
-  max-width: 100%;
+  max-width: 100vw;
   margin: auto;
   border-radius: ru(.25);
   border: 1px solid color('neutral-5');
@@ -56,9 +56,15 @@
   position: fixed;
   right: 0;
   top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media #{$small-only} {
+  .modal {
+    padding: 1rem;
+  }
+
   .header {
     p {
       @include typography-4(false);

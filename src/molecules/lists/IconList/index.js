@@ -33,7 +33,7 @@ function IconList(props) {
               {item.text}
             </TextComponent>
           </li>
-          )
+        )
       }
     </ul>
   );
