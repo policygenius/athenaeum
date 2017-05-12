@@ -48,7 +48,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
 
 .button {
   @include typography-6;
-  @include typography-light;
+  @include typography-semibold;
   @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
   display: block;
   cursor: pointer;
