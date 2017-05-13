@@ -114,6 +114,26 @@ function TextLockup( props ) {
           </div>
         );
 
+      case 'G':
+        return (
+          <div className={styles[variant]}>
+            <TextComponent
+              className={styles['header']}
+              type={7}
+              light
+            >
+              { header }
+            </TextComponent>
+
+            <TextComponent
+              className={styles['subheader']}
+              type={6}
+            >
+              { subheader }
+            </TextComponent>
+          </div>
+        );
+
       default:
         return (
           <div className={styles[variant]}>

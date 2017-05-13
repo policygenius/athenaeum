@@ -68,6 +68,16 @@ $subheader-color: color('neutral-4');
   }
 }
 
+.G {
+  .header {
+    color: color('neutral-3');
+  }
+
+  .subheader {
+    color: color('neutral-2');
+  }
+}
+
 @media #{$small-only} {
   .F {
     .small-screen-icon {

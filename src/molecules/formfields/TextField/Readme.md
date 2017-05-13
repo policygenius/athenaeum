@@ -32,3 +32,20 @@ First name Field:
 
     <TextFieldExample />
 ```
+
+Text field with error:
+
+```example
+  <TextField
+    label='First Name'
+    placeholder='Enter your first name'
+    input={{
+      value: state.value,
+      onChange: (value) => setState({ value })
+    }}
+    meta={{
+      error: 'Maecenas ullamcorper turpis quis elit volutpat',
+      touched: true
+    }}
+  />
+```

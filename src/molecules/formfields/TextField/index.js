@@ -12,26 +12,39 @@ function TextField( props ) {
     input,
     htmlFor,
     meta,
+    noBaseStyle
   } = props;
 
-  return (
-    <div className={classnames(styles.textfield, { [styles.focused]: meta && meta.active }, className)}>
-      {
-        label &&
-        <label
-          className={styles.label}
-          htmlFor={htmlFor}
-        >
-          { label }
-        </label>
-      }
+  const baseClassName = classnames(
+    { [styles.textfield]: !noBaseStyle },
+    { [styles.focused]: meta && meta.active && !noBaseStyle },
+    { [styles.hasError]: meta && meta.touched && meta.error },
+    className
+  );
 
-      <input
-        className={styles.input}
-        type='text'
-        placeholder={placeholder}
-        {...input}
-      />
+  return (
+    <div>
+      <div className={baseClassName}>
+        {
+          label &&
+          <label
+            className={styles.label}
+            htmlFor={htmlFor}
+          >
+            { label }
+          </label>
+        }
+
+        <input
+          className={styles.input}
+          type='text'
+          placeholder={placeholder}
+          {...input}
+        />
+      </div>
+      {meta && meta.touched && meta.error &&
+        <div className={styles.error}>{ meta.error }</div>
+      }
     </div>
   );
 }
@@ -67,6 +80,10 @@ TextField.propTypes = {
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+  /**
+   * Passing `noBaseStyle=true` will omit the base class style
+   */
+  noBaseStyle: PropTypes.bool
 };
 
 TextField.defaultProps = {
