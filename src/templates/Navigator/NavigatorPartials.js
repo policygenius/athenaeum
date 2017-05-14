@@ -51,7 +51,7 @@ export default {
     );
   },
 
-  main: (children) => {
+  default: (children) => {
     if (!children) return null;
 
     return children;
@@ -61,7 +61,7 @@ export default {
     if (!children) return null;
 
     return <div className='sidebar'>{children}</div>;
-  }
+  },
 
   /* eslint-enable arrow-body-style */
 };
