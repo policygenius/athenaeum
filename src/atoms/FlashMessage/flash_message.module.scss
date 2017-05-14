@@ -1,0 +1,28 @@
+@import 'assets/stylesheets/global';
+
+/* stylelint-disable */
+@keyframes fadeIn {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translate3d(0,-100%,0) }
+  100% { opacity: 1; transform: translate3d(0,0,0) }
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+.fadeIn { animation: fadeIn 600ms ease-in both; }
+.fadeInDown { animation: fadeInDown 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+.slideDown { animation: slideDown 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+/* stylelint-enable */
