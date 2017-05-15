@@ -9,7 +9,7 @@ $col-padding:               ru(.25) ru(.75);
 $icon-offset:               -$icon-size / 2 - rem-calc($border-width);
 $link-color:                color('neutral-4');
 
-
+%card,
 .card {
   display: flex;
   flex-direction: column;

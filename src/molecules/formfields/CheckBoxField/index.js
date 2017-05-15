@@ -6,7 +6,7 @@ import styles from '../shared/formfields.module.scss';
 function CheckboxField( props ) {
   const {
     label,
-    input
+    input,
   } = props;
 
   return (
