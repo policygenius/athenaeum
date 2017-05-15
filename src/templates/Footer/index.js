@@ -9,12 +9,33 @@ import LinkWrapper from 'atoms/LinkWrapper';
 
 import styles from './footer.module.scss';
 
+function renderLinks(linksArr) {
+  if (!linksArr || linksArr.length === 0) return null;
+
+  function renderLink(link) {
+    return (
+      <li className={styles['trust-link']}>
+        <LinkWrapper href={link.href}>{link.text}</LinkWrapper>
+      </li>
+    );
+  }
+
+  return (
+    <ul className={styles['trust-links']}>
+      { linksArr.map(renderLink) }
+    </ul>
+  );
+}
+
 function Footer(props) {
   const {
     className,
     phoneNumber,
+    text,
+    links,
     onClickChat,
   } = props;
+
 
   return (
     <div className={classnames(styles['footer'], className)}>
@@ -36,16 +57,18 @@ function Footer(props) {
               {phoneNumber}
             </h4>
 
-            <Button
-              className={styles['help-button']}
-              variant='outline'
-              onClick={onClickChat}
-            >
-              Expert Chat
-            </Button>
+            { onClickChat &&
+              <Button
+                className={styles['help-button']}
+                variant='outline'
+                onClick={onClickChat}
+              >
+                Expert Chat
+              </Button>
+            }
           </Layout>
 
-          <p className={styles['help-text']}>Experts available weekdays 9am-7pm ET - 24/7 by email.</p>
+          { text && <p className={styles['help-text']}>{text}</p> }
         </Col>
 
         <Col className={classnames(styles['footer-trust'], styles['trust'])}>
@@ -54,11 +77,7 @@ function Footer(props) {
             <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
           </div>
 
-          <ul className={styles['trust-links']}>
-            <li className={styles['trust-link']}><LinkWrapper href='#'>Security & Trust</LinkWrapper></li>
-            <li className={styles['trust-link']}><LinkWrapper href='#'>Privacy</LinkWrapper></li>
-            <li className={styles['trust-link']}><LinkWrapper href='#'>Terms of Service</LinkWrapper></li>
-          </ul>
+          { renderLinks(links) }
         </Col>
       </Layout>
     </div>
@@ -80,10 +99,23 @@ Footer.propTypes = {
    * Function to trigger chat.
    */
   onClickChat: PropTypes.func,
+  /**
+   * Array of Links `[ { text: 'link text', href: 'http://link.com' } ]`
+   */
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      href: PropTypes.string.isRequired,
+    })
+  ),
+  /**
+   * Small Footer text.
+   */
+  text: PropTypes.string,
 };
 
 Footer.defaultProps = {
-  // Place any default props here.
+  text: 'Experts available weekdays 9-7pm EST - 24/7 by email.',
 };
 
 export default Footer;

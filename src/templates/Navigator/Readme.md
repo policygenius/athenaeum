@@ -53,6 +53,18 @@ Navigator Example:
       <Navigator.Sidebar>
         Sidebar!
       </Navigator.Sidebar>
+
+      <Navigator.Footer>
+        <Footer
+          phoneNumber='1 (808) 867-5309'
+          links={[
+            { text: 'Footer here', href: '#trust' },
+          ]}
+          onClickChat={() => alert('yo')}
+        >
+        </Footer>
+      </Navigator.Footer>
+
     </Navigator>
   </div>
 ```

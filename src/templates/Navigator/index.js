@@ -68,7 +68,7 @@ function Navigator(props) {
                 { renderPartial('stepProgress', stepProgressData) }
               </Layout>
 
-              { renderPartial('main', parts.Main) }
+              { renderPartial('default', parts.Main) }
             </Col>
 
             <Col
@@ -83,7 +83,7 @@ function Navigator(props) {
             </Col>
           </Layout>
 
-          <div>Footer Placeholder</div>
+          { renderPartial('default', parts.Footer) }
 
         </Col>
       </Layout>
@@ -105,5 +105,6 @@ Navigator.propTypes = {
 };
 
 Navigator.Sidebar = class Sidebar extends Partial {};
+Navigator.Footer = class Footer extends Partial {};
 
 export default Navigator;
