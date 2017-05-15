@@ -40,12 +40,15 @@ describe('<Layout />', () => {
     expect(wrapper.find('Col')).to.have.length(3);
   });
 
-  it('passes its `col` props down to its `<Col>`', () => {
+  it('passes its `col` props down to its `<Col>` correctly', () => {
     const wrapper = shallow(
       <Layout
         smallCols={[ 1 ]}
         mediumCols={[ 6 ]}
         largeCols={[ 7, 5 ]}
+        bottomSpacing='xLarge'
+        fullwidth
+        padding
       >
         <div className='child' />
         <div className='child' />
@@ -57,6 +60,10 @@ describe('<Layout />', () => {
 
     expect(wrapper.find('Col').first().props().mediumCols).to.be.ok;
     expect(wrapper.find('Col').first().props().mediumCols).to.equal(6);
+
+    expect(wrapper.find('Col').first().props().fullwidth).to.be.true;
+    expect(wrapper.find('Col').first().props().padding).not.to.be.true;
+    expect(wrapper.find('Col').first().props().bottomSpacing).to.equal('xLarge');
   });
 
   it('wraps its child `<Col>` with column sizes', () => {

@@ -13,6 +13,7 @@ function Col(props) {
     largeCols,
     xLargeCols,
     xxLargeCols,
+    padding,
     fullwidth,
     flex,
     style,
@@ -31,6 +32,7 @@ function Col(props) {
         { [styles.fullwidth]: fullwidth },
         { [styles.flex]: flex },
         styles[`bottom-spacing-${bottomSpacing}`],
+        padding && styles.padding,
         className,
       )}
     >
@@ -85,6 +87,11 @@ Col.propTypes = {
    * Overides and removes padding set from Layout
    */
   fullwidth: PropTypes.bool,
+
+  /**
+   * Adds standard (~6px) left/right padding to the `Layout`
+   */
+  padding: PropTypes.bool,
 
   /**
    * adds additional styles to the column as a React styles object  ``
