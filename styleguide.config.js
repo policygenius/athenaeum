@@ -36,7 +36,7 @@ module.exports = {
     },
     {
       name: 'Atoms',
-      components: 'src/atoms/**/*.js'
+      components: 'src/atoms/**/index.js'
     },
     {
       name: 'Molecules',
