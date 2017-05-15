@@ -24,11 +24,28 @@ $gutter-width: ru(.25);
   flex-wrap: wrap;
 }
 
-.form {
-  > div {
-    margin-bottom: ru(.75);
-  }
+@media #{$small-up} {
+  @include createCols( 'sm' );
 }
+
+@media #{$medium-up} {
+  @include createCols( 'md' );
+}
+
+@media #{$large-up} {
+  @include createCols( 'lg' );
+}
+
+@media #{$xlarge-up} {
+  @include createCols( 'xlg' );
+}
+
+@media #{$xxlarge-up} {
+  @include createCols( 'xxlg' );
+}
+
+// Utility classes must come after base styles
+// so that they can override the base in the cascade
 
 .bottom-spacing {
   &-xSmall {
@@ -52,36 +69,13 @@ $gutter-width: ru(.25);
   }
 }
 
-@media #{$small-up} {
-  @include createCols( 'sm' );
-}
-
-@media #{$medium-up} {
-  @include createCols( 'md' );
-
-  .layout {
-    padding-left: $gutter-width;
-    padding-right: $gutter-width;
-  }
-}
-
-@media #{$large-up} {
-  @include createCols( 'lg' );
-}
-
-@media #{$xlarge-up} {
-  @include createCols( 'xlg' );
-}
-
-@media #{$xxlarge-up} {
-  @include createCols( 'xxlg' );
-}
-
-// Utility classes must come after base styles
-// so that they can override the base in the cascade
-
 .fullwidth {
   padding: 0;
+}
+
+.padding {
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
 }
 
 .flex {

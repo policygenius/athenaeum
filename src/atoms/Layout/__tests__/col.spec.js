@@ -24,6 +24,11 @@ describe('<Col />', () => {
     expect(wrapper.hasClass('fullwidth')).to.be.true;
   });
 
+  it('applies the `padding` class', () => {
+    const wrapper = shallow(<Col padding />);
+
+    expect(wrapper.hasClass('padding')).to.be.true;
+  });
 
   it('applies size based col classes', () => {
     const colProps = {

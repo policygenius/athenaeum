@@ -2,29 +2,32 @@ Layout is broken out into a 12 column grid of `Col`s.
 
 Shorthand option:
 You don't have to explicitly wrap each child in a `Col`. All children of `Layout` will get wrapped in `Col` automatically.
-Any layout specific props that are meant for the `Col` will be passed to the `Col` wrapper accordingly and will override any props that may have been given it by the `Layout` component. All child component props will stay with the component itself.
+Any layout specific props that are meant for the `Col` will be passed to the `Col` wrapper accordingly.
+Any props that you explicitly give to a `<Col>` will override any props that it may have inherited by the `Layout` component.
+All child component props will be passed directly to the component itself.
 
 
 ## How to use Layout
 ```html
-  // Bad (don't pass props that don't exist.)
+  // Bad (don't pass `<Col>` props directly to children.)
+  // This will work, but it's considered bad practice.
   <Layout smallCols={[ 6 ]}>
     <Button variant='info'>I am button</Button>
-    <Button variant='outline' smallCols={3}>some button</Button>
+    <Button variant='outline' mediumCols={3}>some button</Button>
+  </Layout>
+
+  // Good
+  <Layout>
+    <Button variant='info'>I am button</Button>
+    <Col smallCols={3}>
+      <Button variant='outline'>some button</Button>
+    </Col>
   </Layout>
 
   // Good
   <Layout smallCols={[ 6 ]}>
     <Button variant='info'>I am button</Button>
     <Button variant='outline'>some button</Button>
-  </Layout>
-
-  // Good
-  <Layout smallCols={[ 6 ]}>
-    <Button variant='info'>I am button</Button>
-    <Col smallCols={3}>
-      <Button variant='outline'>some button</Button>
-    </Col>
   </Layout>
 ```
 
@@ -36,23 +39,24 @@ Any layout specific props that are meant for the `Col` will be passed to the `Co
 
     <div className={exampleStyles.example}>
       <Layout
+        padding
+        fullwidth
         smallCols={[ 6 ]}
         style={{ justifyContent: 'space-between', alignItems: 'center' }}
       >
         <div />
 
-        <Col smallCols={3}>
+        <Col smallCols={3} padding>
           <div style={{ background: 'red', margin: '10px' }}> Some child</div>
         </Col>
 
         <Col smallCols={2} style={{ alignSelf: 'flex-end' }} />
 
-        <Col smallCols={3}>
+        <Col smallCols={3} padding>
           <Button variant='info'>I am button</Button>
         </Col>
 
         <Button variant='outline'>some button</Button>
-
 
         <Col style={{ padding: '30px' }}>
           <Button variant='info'>I am also button</Button>
