@@ -10,18 +10,14 @@ export default {
     return (
       <Col
         className={styles['head-main']}
-        fullwidth
       >
         <Layout
-          className={styles['logo']}
-          mediumCols={[ 12 ]}
+          className={styles['logo-wrapper']}
           smallCols={[ 7, 5 ]}
-          fullwidth
+          mediumCols={[ 12 ]}
         >
-          <Col className={styles['logo-wrapper']} fullwidth>
-            <Icon icon='pgLogo' className={styles['logo-pg']} />
-          </Col>
-          <Col className={styles['logo-chat']} fullwidth>
+          <Icon icon='pgLogo' className={styles['logo-pg']} />
+          <Col className={styles['logo-chat']}>
             <Icon className={styles.icon} icon='chat' />
             <span>Live Chat</span>
           </Col>
@@ -36,18 +32,16 @@ export default {
     return (
       <Col
         className={styles['head-body']}
-        fullwidth
       >
         <Layout
           className={styles['cost']}
           mediumCols={[ 12 ]}
           smallCols={[ 7, 5 ]}
-          fullwidth
         >
-          <Col className={styles['cost-title']} fullwidth>
+          <Col className={styles['cost-title']}>
             <Icon className={styles.icon} icon='cart' /> Checkout
           </Col>
-          <Col className={styles['cost-price']} fullwidth>
+          <Col className={styles['cost-price']}>
             { curr && <sup>{curr}</sup> }
             { value }
             { unit && <small>/{unit}</small> }
@@ -59,7 +53,7 @@ export default {
 
   'head-foot': () => {
     return (
-      <Col className={styles['head-foot']} fullwidth>
+      <Col className={styles['head-foot']}>
         <Icon icon='nortonW' className={styles['secure-logo']} />
       </Col>
     );
@@ -69,7 +63,7 @@ export default {
     if (!children) return null;
 
     return (
-      <Col className={styles['main-content']}>
+      <Col className={styles['main-content']} fullwidth>
         {children}
       </Col>
     );
@@ -80,10 +74,16 @@ export default {
 
     return (
       <Col className={styles['main-sidebar']}>
-        <div className='sidebar'>{children}</div>
+        {children}
       </Col>
     );
-  }
+  },
+
+  default: (children) => {
+    if (!children) return null;
+
+    return children;
+  },
 
   /* eslint-enable arrow-body-style */
 };
