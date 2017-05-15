@@ -12,10 +12,10 @@
   text-decoration: none;
 
   &:hover {
-    color: color('neutral-8');
+    color: color('brand-2');
 
     .icon path {
-      fill: color('neutral-8');
+      fill: color('brand-2');
     }
   }
 }
@@ -36,10 +36,6 @@
 
     &:hover {
       color: color('brand-2');
-
-      .icon path {
-        fill: color('brand-2');
-      }
     }
   }
 }
