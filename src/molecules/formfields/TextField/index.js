@@ -18,7 +18,7 @@ function TextField( props ) {
   const baseClassName = classnames(
     { [styles.textfield]: !noBaseStyle },
     { [styles.focused]: meta && meta.active && !noBaseStyle },
-    { [styles.hasError]: meta && meta.touched && meta.error },
+    { [styles.hasError]: meta && meta.touched && meta.error && !meta.active },
     className
   );
 

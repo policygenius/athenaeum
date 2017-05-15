@@ -12,9 +12,9 @@ import styles from './footer.module.scss';
 function renderLinks(linksArr) {
   if (!linksArr || linksArr.length === 0) return null;
 
-  function renderLink(link) {
+  function renderLink(link, index) {
     return (
-      <li className={styles['trust-link']}>
+      <li key={`link-${index}`} className={styles['trust-link']}>
         <LinkWrapper href={link.href}>{link.text}</LinkWrapper>
       </li>
     );

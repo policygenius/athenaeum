@@ -20,7 +20,7 @@ function PlaybackCard(props) {
   const renderPartial = partialRenderer(PlaybackCardPartials);
 
   return (
-    <div className={styles.playbackCard}>
+    <div className={styles['playback-card']}>
       <Layout
         smallCols={[ 11, 1 ]}
         bottomSpacing='xSmall'
