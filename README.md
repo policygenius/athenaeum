@@ -76,11 +76,11 @@ export default MyReactComponent;
 
 The RCL gets exported with a bundled JS file and a CSS file. To use the RCL stylesheet, you can either import them directly into your project:
 
-`import { TextComponent, Button, Layout, Col } from 'athenaeum';`
+`import 'athenaeum/lib/assets/styles.css';`
 
 **OR** simply link to the latest version of the styles in your HTML:
 
-`<link href="http://rcl.policygenius.com/v4.2.0/assets/styles.css" rel="stylesheet">`
+`<link href="http://rcl.policygenius.com/{{v5.5.2 or latest version}}/assets/styles.css" rel="stylesheet">`
 
 
 ## Running tests
