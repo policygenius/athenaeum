@@ -74,7 +74,6 @@ describe('<CheckOut />', () => {
         </CheckOut>
       );
 
-      expect(wrapper.find('.sidebar')).to.have.length(1);
       expect(wrapper.contains(<div className='unique' />)).to.be.true;
     });
 

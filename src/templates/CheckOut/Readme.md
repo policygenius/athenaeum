@@ -10,7 +10,7 @@ Checkout Example:
         formName='ExampleForm'
         onSubmit={() => alert('FormSubmitted!')}
       >
-        <Layout variant='form'>
+        <Layout bottomSpacing='small'>
           <TextComponent tag='p' type={4} semibold>First, a little about you and your humble abode</TextComponent>
 
           <Col>
@@ -43,5 +43,8 @@ Checkout Example:
       <CheckOut.Sidebar>
         This is sidebar
       </CheckOut.Sidebar>
+      <CheckOut.Footer>
+        <Footer />
+      </ CheckOut.Footer>
     </CheckOut>
 ```

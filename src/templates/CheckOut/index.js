@@ -26,10 +26,8 @@ function CheckOut(props) {
       >
         <Col
           className={styles['head']}
-          fullwidth
         >
           <Layout
-            data-suckk={1992}
             className={styles['head-layout']}
             smallCols={[ 12 ]}
             mediumCols={[ 3, 6, 3 ]}
@@ -43,20 +41,18 @@ function CheckOut(props) {
 
         <Col
           className={styles['main']}
-          fullwidth
         >
           <Layout
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
-            fullwidth
           >
             { renderPartial('main-content', childPartials.Main) }
             { renderPartial('main-sidebar', childPartials.Sidebar) }
           </Layout>
 
-          <div>Footer Placeholder</div>
-        </Col>
+          { renderPartial('default', childPartials.Footer) }
 
+        </Col>
       </Layout>
     </div>
   );
@@ -83,5 +79,6 @@ CheckOut.propTypes = {
 };
 
 CheckOut.Sidebar = class Sidebar extends Partial {};
+CheckOut.Footer = class Footer extends Partial {};
 
 export default CheckOut;

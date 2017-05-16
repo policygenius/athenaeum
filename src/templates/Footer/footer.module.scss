@@ -2,13 +2,12 @@
   color: color('neutral-3');
   background-color: color('neutral-6');
   border-top: 1px solid color('neutral-5');
-
-  padding: ru(1) ru(2);
+  padding: ru(1) ru(.75);
 
   &-layout {
     display: flex;
     flex-direction: row-reverse;
-    max-width: '1000px';
+    max-width: $page-max-width;
   }
 
   &-trust {

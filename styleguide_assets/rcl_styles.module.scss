@@ -11,6 +11,10 @@ body {
 
   .fullwidth {
     max-width: 100%;
+
+    .component-wrapper {
+      max-width: 100%;
+    }
   }
 
   .sidebar {
