@@ -1,0 +1,31 @@
+@import 'src/assets/stylesheets/global';
+
+// .agent-callout {}
+
+.contact-item {
+  @include typography-semibold;
+
+  margin-bottom: ru(1);
+}
+
+.label {
+  @include typography-7(false);
+
+  color: color('neutral-4');
+}
+
+.value {
+  @include typography-3(false);
+
+  color: color('brand-2');
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 50%;
+  border: 1px solid color('brand-2');
+}
+
+// @media #{$small-only} {}
