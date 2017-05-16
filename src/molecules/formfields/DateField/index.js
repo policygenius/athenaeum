@@ -9,12 +9,14 @@ function DateField(props) {
     className,
     children,
     label,
-    focused
+    focused,
+    error
   } = props;
 
   const baseClassName = classnames(
     styles['datefield'],
     { [styles.focused]: focused },
+    { [styles.hasError]: !!error },
     className
   );
 
@@ -24,16 +26,21 @@ function DateField(props) {
   );
 
   return (
-    <div className={baseClassName}>
-      <label htmlFor='date' className={styles.label}>{label}</label>
-      <div className={styles['datefield-wrapper']}>
-        { React.Children.map(children,
-          child =>
-            <div className={childClassName}>
-              { child }
-            </div>
-        )}
+    <div>
+      <div className={baseClassName}>
+        <label htmlFor='date' className={styles.label}>{label}</label>
+        <div className={styles['datefield-wrapper']}>
+          { React.Children.map(children,
+            child =>
+              <div className={childClassName}>
+                { child }
+              </div>
+          )}
+        </div>
       </div>
+      {error &&
+        <div className={styles.error}>{ error }</div>
+      }
     </div>
   );
 }
@@ -51,7 +58,11 @@ DateField.propTypes = {
   /**
    * Whether or not the date field is focused
    */
-  focused: PropTypes.bool
+  focused: PropTypes.bool,
+  /**
+   * Any errors for the date form
+   */
+  error: PropTypes.string
 };
 
 export default DateField;
