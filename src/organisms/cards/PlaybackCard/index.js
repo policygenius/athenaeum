@@ -40,7 +40,7 @@ function PlaybackCard(props) {
           </LinkWrapper>
         </Col>
       </Layout>
-      <Layout mediumCols={[ 8, 4 ]} fullwidth fullwidthAll>
+      <Layout mediumCols={[ 8, 4 ]} fullwidth>
         { renderPartial('leftPanel', parts.LeftPanel) }
         { renderPartial('rightPanel', parts.RightPanel) }
       </Layout>
