@@ -230,16 +230,16 @@ $focused-border-color: color('brand-3');
 
   &-wrapper {
     display: flex;
+    justify-content: space-between;
   }
 
   &-input {
-    width: calc(100% / 3);
+    flex: 1;
+    border-right: 1px solid color('neutral-4');
 
     input {
       width: 100%;
     }
-
-    border-right: 1px solid color('neutral-4');
 
     &.datefield-input-focused {
       border-right: 1px solid color('brand-3');
