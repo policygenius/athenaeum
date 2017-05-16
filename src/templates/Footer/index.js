@@ -42,7 +42,7 @@ function Footer(props) {
         className={styles['footer-layout']}
         mediumCols={[ 6 ]}
         smallCols={[ 12 ]}
-        fullwidthAll
+        fullwidth
       >
         <Col
           className={classnames(styles['footer-help'], styles['help'])}
@@ -51,7 +51,6 @@ function Footer(props) {
             className={styles['help-layout']}
             mediumCols={[ 6 ]}
             smallCols={[ 6 ]}
-            fullwidthAll
           >
             <h4 className={styles['help-phone']}>
               Questions?<br />
@@ -76,12 +75,14 @@ function Footer(props) {
         </Col>
 
         <Col className={classnames(styles['footer-trust'], styles['trust'])}>
-          <div className={styles['trust-logos']}>
-            <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
-            <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
-          </div>
+          <Layout>
+            <Col fullwidth className={styles['trust-logos']}>
+              <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
+              <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
+            </Col>
 
-          { renderLinks(links) }
+            { renderLinks(links) }
+          </Layout>
         </Col>
       </Layout>
     </div>

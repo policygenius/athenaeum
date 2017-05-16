@@ -1,3 +1,9 @@
+// Approx 3 columns of a 12 column grid
+// that has a width of our standard "page-max-width"
+$logo-panel-width: $page-max-width / 12 * 3;
+$main-section-width: $page-max-width - $logo-panel-width;
+$main-section-padding: ru(1.5);
+
 .navigator {
   background-color: color('neutral-7');
   min-height: 100vh;
@@ -6,7 +12,6 @@
 }
 
 .layout {
-  max-width: $page-max-width;
   flex-direction: column;
   flex-wrap: nowrap;
 }
@@ -17,17 +22,6 @@
   justify-content: space-between;
   padding-left: 0;
   padding-right: 0;
-}
-
-.main-col,
-.right-rail {
-  padding-top: ru(1.5);
-  margin-bottom: ru(2);
-}
-
-.main-col {
-  padding-left: ru(.75);
-  padding-right: ru(.75);
 }
 
 .logo-panel {
@@ -58,12 +52,25 @@
   margin-left: 2px;
 }
 
+.footer-container {
+  background-color: color('neutral-6');
+  border-top: 1px solid color('neutral-5');
+}
+
+.footer-wrapper {
+  max-width: $main-section-width;
+  padding: $main-section-padding;
+}
 
 @media #{$small-only} {
   .logo-panel {
     position: relative;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .logo-panel-col {
+    padding: 0;
   }
 
   .logo {
@@ -104,6 +111,12 @@
   .main {
     display: block;
   }
+
+  .main-layout,
+  .footer-container {
+    padding-left: ru(.75);
+    padding-right: ru(.75);
+  }
 }
 
 @media #{$small-and-medium-only} {
@@ -112,12 +125,19 @@
       display: none;
     }
   }
+
+  .main-col,
+  .right-rail {
+    padding-top: ru(1.5);
+    margin-bottom: ru(2);
+  }
 }
 
 @media #{$medium-only} {
-  .main-layout {
-    padding-left: ru(1.5);
-    padding-right: ru(1.5);
+  .main-layout,
+  .footer-wrapper {
+    padding-left: $main-section-padding;
+    padding-right: $main-section-padding;
   }
 
   .main-col {
@@ -140,16 +160,11 @@
     color('brand-2') 100%
     );
 
-    padding: ru(1.5);
+    padding: $main-section-padding;
 
     .step-progress {
       display: none;
     }
-  }
-
-  .logo-panel-col {
-    padding-left: ru(.25);
-    padding-right: ru(.25);
   }
 
   .contact-card,
@@ -162,11 +177,18 @@
   .layout {
     align-items: stretch;
     flex-direction: row;
+    flex-grow: 1;
   }
 
+  .main-layout {
+    max-width: $main-section-width;
+    padding: $main-section-padding;
+  }
+
+
   .logo-panel {
-    max-width: ru(11);
-    padding: ru(1.5) ru(1);
+    max-width: $logo-panel-width;
+    padding: $main-section-padding ru(1);
 
     .contact-card {
       display: none;

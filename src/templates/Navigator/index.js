@@ -24,7 +24,6 @@ function Navigator(props) {
     <div className={classnames(styles['navigator'], className)}>
       <Layout
         className={styles.layout}
-        largeCols={[ 3, 9 ]}
         fullwidth
       >
 
@@ -33,11 +32,9 @@ function Navigator(props) {
             mediumCols={[ 8, 4 ]}
             largeCols={[ 12 ]}
             className={styles['logo-panel-layout']}
-            fullwidth
           >
             <Col
               className={styles['logo-panel-col']}
-              fullwidth
             >
               <div className={styles['logo-wrapper']}>
                 { renderPartial('icon', {}) }
@@ -55,15 +52,13 @@ function Navigator(props) {
 
         <Col
           className={styles.main}
-          fullwidth
         >
           <Layout
             mediumCols={[ 7, 4 ]}
-            fullwidth
             className={styles['main-layout']}
           >
 
-            <Col className={styles['main-col']}>
+            <Col className={styles['main-col']} fullwidth>
               <Layout fullwidth>
                 { renderPartial('stepProgress', stepProgressData) }
               </Layout>
@@ -82,9 +77,11 @@ function Navigator(props) {
               { renderPartial('sidebar', parts.Sidebar) }
             </Col>
           </Layout>
-
-          { renderPartial('default', parts.Footer) }
-
+          <div className={styles['footer-container']}>
+            <div className={styles['footer-wrapper']}>
+              { renderPartial('default', parts.Footer) }
+            </div>
+          </div>
         </Col>
       </Layout>
     </div>

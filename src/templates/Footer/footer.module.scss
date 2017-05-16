@@ -1,8 +1,5 @@
 .footer {
   color: color('neutral-3');
-  background-color: color('neutral-6');
-  border-top: 1px solid color('neutral-5');
-  padding: ru(1) ru(.75);
 
   &-layout {
     display: flex;
@@ -20,7 +17,6 @@
 }
 
 .help {
-
   &-layout {
     margin-bottom: ru(.5);
     display: flex;
@@ -54,6 +50,7 @@
 
   &-text {
     @include typography-7(false);
+    padding: ru(.25);
   }
 }
 
@@ -100,8 +97,6 @@
 @media #{$small-only} {
 
   .footer {
-    padding: ru(1);
-
     &-layout { justify-content: center; }
     &-help { max-width: 24rem; }
   }
