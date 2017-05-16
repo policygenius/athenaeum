@@ -1,6 +1,7 @@
 @import 'assets/stylesheets/global';
 
-.playbackCard {
+.playback-card {
+  background: color('neutral-8');
   border-radius: ru(.25);
   border: 1px solid color('neutral-5');
   padding: ru(.75) ru(.75) ru(.25);
@@ -17,4 +18,15 @@
 
 .edit {
   @include typography-7(false);
+}
+
+
+@media #{$small-only} {
+
+  .playback-card {
+    background-color: transparent;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 }
