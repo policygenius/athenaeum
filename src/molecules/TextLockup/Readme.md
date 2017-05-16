@@ -18,6 +18,13 @@ TextLockup Example - Type B:
     />
 ```
 
+```example
+    <TextLockup
+      variant='B'
+      header='Header No Sub'
+    />
+```
+
 TextLockup Example - Type C:
 
 ```example

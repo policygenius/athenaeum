@@ -3,33 +3,40 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './text_component.module.scss';
 
-function setWeight( { semibold, light } ) {
-  if ( semibold ) return styles.semibold;
-  if ( light ) return styles.light;
+const weight = ({ semibold, light }) => {
+  if (semibold) return 'semibold';
+  if (light) return 'light';
 
-  return styles.regular;
-}
+  return 'regular';
+};
 
-function TextComponent( props ) {
+const filter = (children) => {
+  if (typeof children.type === 'function') return children.type(children.props);
+
+  return children;
+};
+
+function TextComponent(props) {
   const {
     tag,
     children,
     type,
     className,
-    variant
+    variant,
   } = props;
 
-  const kids = typeof children.type === 'function' ? children.type( children.props ) : [ ...children ];
+
+  if (!children) return null;
 
   return React.createElement(
     tag,
     { className: classnames(
       styles[`typography-${type}`],
-      setWeight( props ),
+      styles[weight(props)],
       styles[variant],
       className
     ) },
-    kids
+    filter(children),
   );
 }
 
