@@ -9,20 +9,19 @@ function DateField(props) {
     className,
     children,
     label,
-    focused,
-    error
+    meta
   } = props;
 
   const baseClassName = classnames(
     styles['datefield'],
-    { [styles.focused]: focused },
-    { [styles.hasError]: !!error },
+    { [styles.focused]: meta && meta.active },
+    { [styles.hasError]: meta && meta.touched && meta.error && !meta.active },
     className
   );
 
   const childClassName = classnames(
     styles['datefield-input'],
-    { [styles['datefield-input-focused']]: focused }
+    { [styles['datefield-input-focused']]: meta && meta.active }
   );
 
   return (
@@ -38,8 +37,8 @@ function DateField(props) {
           )}
         </div>
       </div>
-      {error &&
-        <div className={styles.error}>{ error }</div>
+      {meta && meta.touched && meta.error &&
+        <div className={styles.error}>{ meta.error }</div>
       }
     </div>
   );
@@ -56,13 +55,9 @@ DateField.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * Whether or not the date field is focused
+   * Meta object is passed from reduxForm
    */
-  focused: PropTypes.bool,
-  /**
-   * Any errors for the date form
-   */
-  error: PropTypes.string
+  meta: PropTypes.object
 };
 
 export default DateField;
