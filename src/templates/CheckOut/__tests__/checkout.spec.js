@@ -4,20 +4,6 @@ import { shallow, render } from 'enzyme';
 
 import CheckOut from 'templates/CheckOut';
 
-/* eslint-disable */
-jest.mock('atoms/Icon', () => {
-  const React = require('react');
-
-  class Icon extends React.Component {
-    render() {
-      return <div />;
-    }
-  }
-
-  return Icon;
-});
-/* eslint-enable */
-
 describe('<CheckOut />', () => {
 
   describe('Render', () => {

@@ -18,9 +18,7 @@ function Icon( props ) {
       className={classnames(styles['icon-wrapper'], { [styles.clickable]: onClick }, className)}
       onClick={onClick}
     >
-      <SVGInline
-        svg={icon}
-      />
+      { icon && <SVGInline svg={icon} /> }
     </div>
   );
 }

@@ -4,10 +4,6 @@ import { shallow } from 'enzyme';
 
 import DataRow from 'molecules/DataRow';
 
-/* eslint-disable no-undef*/
-jest.mock('atoms/Icon', () => function Icon() {});
-/* eslint-enable no-undef*/
-
 describe('<DataRow />', () => {
 
   it('renders', () => {

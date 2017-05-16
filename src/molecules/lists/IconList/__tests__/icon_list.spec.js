@@ -4,10 +4,6 @@ import { shallow } from 'enzyme';
 
 import IconList from 'molecules/lists/IconList';
 
-/* eslint-disable no-undef*/
-jest.mock('atoms/Icon', () => function Icon() {});
-/* eslint-enable no-undef*/
-
 describe('<IconList />', () => {
   let defaultProps;
 

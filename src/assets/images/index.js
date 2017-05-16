@@ -1,9 +1,23 @@
-const fromPairs = require('lodash/fromPairs');
 const camelCase = require('lodash/camelCase');
-const svgContext = require.context('.', true, /\.svg/);
 
-module.exports = fromPairs(svgContext.keys().map((svg) => {
-  const svgName = svg.match(/([^/]+)\./)[1];
+function filesManifest(context) {
+  if (!context) return null;
 
-  return [ camelCase(svgName), svgContext(svg) ];
-}));
+  const fileName = path => camelCase(path.match(/([^/]+)\./)[1]);
+  const fileManifest = (res, key) => {
+    const fileObj = { [fileName(key)]: context(key) };
+
+    return Object.assign({}, res, fileObj);
+  };
+
+  return context.keys().reduce(fileManifest, {});
+}
+
+let svgContext;
+
+// Skip context loading in tests. require.context is not available in jest.
+if (module.hot) {
+  svgContext = require.context('.', true, /\.svg/);
+}
+
+module.exports = filesManifest(svgContext);
