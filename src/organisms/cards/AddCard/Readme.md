@@ -1,8 +1,10 @@
 Add Card Examples:
 
 ```example
-    <div>
+    <Layout
+      bottomSpacing={'small'}
+    >
       <AddCard icon='plus' cardText='Add person to policy' onClick={() => alert('Clicked')} />
       <AddCard icon='jewelry' cardText='Add jewelry' />
-    </div>
+    </Layout>
 ```
