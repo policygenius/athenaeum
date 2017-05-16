@@ -31,24 +31,25 @@ function Footer(props) {
   const {
     className,
     phoneNumber,
-    text,
+    emailAddress,
     links,
     onClickChat,
   } = props;
-
 
   return (
     <div className={classnames(styles['footer'], className)}>
       <Layout
         className={styles['footer-layout']}
-        mediumCols={[ 5 ]}
+        mediumCols={[ 6 ]}
         smallCols={[ 12 ]}
         fullwidthAll
       >
-        <Col className={classnames(styles['footer-help'], styles['help'])}>
+        <Col
+          className={classnames(styles['footer-help'], styles['help'])}
+        >
           <Layout
             className={styles['help-layout']}
-            mediumCols={[ 7, 5 ]}
+            mediumCols={[ 6 ]}
             smallCols={[ 6 ]}
             fullwidthAll
           >
@@ -68,7 +69,10 @@ function Footer(props) {
             }
           </Layout>
 
-          { text && <p className={styles['help-text']}>{text}</p> }
+          <div className={styles['help-text']}>
+            { 'Experts available weekdays 9-7pm EST - 24/7 by ' }
+            <LinkWrapper href={`mailto:${emailAddress}`}>email.</LinkWrapper>
+          </div>
         </Col>
 
         <Col className={classnames(styles['footer-trust'], styles['trust'])}>
@@ -109,13 +113,13 @@ Footer.propTypes = {
     })
   ),
   /**
-   * Small Footer text.
+   * Sets the mailto: email address
    */
-  text: PropTypes.string,
+  emailAddress: PropTypes.string,
 };
 
 Footer.defaultProps = {
-  text: 'Experts available weekdays 9-7pm EST - 24/7 by email.',
+  emailAddress: 'team@policygenius.com'
 };
 
 export default Footer;

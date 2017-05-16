@@ -1,17 +1,22 @@
 .footer {
   color: color('neutral-3');
-  background-color: color('neutral-7');
+  background-color: color('neutral-6');
   border-top: 1px solid color('neutral-5');
 
-  padding: ru(1) ru(.75);
+  padding: ru(1) ru(2);
 
   &-layout {
     display: flex;
     flex-direction: row-reverse;
+    max-width: '1000px';
   }
 
   &-trust {
     flex: 1 0 auto;
+  }
+
+  &-help {
+    max-width: '330px';
   }
 }
 
@@ -26,6 +31,8 @@
 
   &-phone {
     @include typography-6(false);
+    @include typography-semibold;
+    color: inherit;
   }
 
   &-button {
@@ -102,7 +109,9 @@
 
   .help {
     &-layout { justify-content: center; }
-    &-text { display: none; }
+    &-text {
+      margin-bottom: ru(1);
+    }
   }
 
   .trust {
