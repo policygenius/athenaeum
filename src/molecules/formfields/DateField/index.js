@@ -29,8 +29,8 @@ function DateField(props) {
     <div>
       <div
         className={baseClassName}
-        onBlur={input.onBlur}
-        onFocus={input.onFocus}
+        onBlur={input && input.onBlur}
+        onFocus={input && input.onFocus}
       >
         <label htmlFor='date' className={styles.label}>{label}</label>
         <div className={styles['datefield-wrapper']}>
