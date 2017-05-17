@@ -81,3 +81,10 @@ Bold Example:
     />
 ```
 
+No Icon, No dataSrc Example:
+
+```example
+    <ImageAside
+      header='Vivamus ultricies augue'
+    />
+```
