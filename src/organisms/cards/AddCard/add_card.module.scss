@@ -11,12 +11,11 @@ $transition:         150ms ease-out, color 150ms ease-out;
 .add {
   composes: card;
 
-  @include typography-5;
+  height: 100%;
   border-style: dashed;
   border-color: $border-color;
   text-align: center;
   text-decoration: none;
-  white-space: nowrap;
   color: $color;
   background-color: $background-color;
   padding: ru(1.25) ru(1.5);
@@ -29,8 +28,6 @@ $transition:         150ms ease-out, color 150ms ease-out;
     color: $hover-color;
 
     .icon {
-      margin: auto;
-
       path {
         fill: $hover-color;
       }
@@ -39,7 +36,7 @@ $transition:         150ms ease-out, color 150ms ease-out;
 }
 
 .icon {
-  margin: auto;
+  margin: 0 auto;
   max-width: ru(1.25);
 
   path {

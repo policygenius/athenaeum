@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
+import TextComponent from 'atoms/TextComponent';
 import styles from './add_card.module.scss';
 
 function AddCard( props ) {
@@ -21,7 +22,11 @@ function AddCard( props ) {
         icon={icon}
         className={styles.icon}
       />
-      { cardText }
+      <TextComponent
+        type={5}
+      >
+        { cardText }
+      </TextComponent>
     </div>
   );
 }
