@@ -4,10 +4,6 @@ import { expect } from 'chai';
 
 import StepProgress from 'molecules/StepProgress';
 
-/* eslint-disable no-undef */
-jest.mock('atoms/Icon', () => function Icon() {});
-/* eslint-enable no-undef */
-
 describe('<StepProgress />', () => {
 
   it('renders', () => {

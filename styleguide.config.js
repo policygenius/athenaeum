@@ -14,25 +14,25 @@ module.exports = {
       sections: [
         {
           name: 'Getting Started',
-          content: 'docs/introduction/getting_started.md'
+          content: 'docs/introduction/getting_started.md',
         },
         {
           name: 'Atomic Design',
-          content: 'docs/introduction/atomic_design.md'
+          content: 'docs/introduction/atomic_design.md',
         },
         {
           name: 'Component Design',
-          content: 'docs/introduction/component_design.md'
+          content: 'docs/introduction/component_design.md',
         },
         {
           name: 'Best Practices',
-          content: 'docs/introduction/best_practices.md'
+          content: 'docs/introduction/best_practices.md',
         },
       ]
     },
     {
       name: 'Colors',
-      content: 'src/atoms/Color/Colors.md'
+      content: 'src/atoms/Color/Colors.md',
     },
     {
       name: 'Atoms',
@@ -43,19 +43,19 @@ module.exports = {
       sections: [
         {
           name: 'Asides',
-          components: 'src/molecules/asides/**/*.js'
+          components: 'src/molecules/asides/**/index.js'
         },
         {
           name: 'DataRow',
-          components: 'src/molecules/DataRow/**/*.js'
+          components: 'src/molecules/DataRow/index.js'
         },
         {
           name: 'FlashMessage',
-          components: 'src/molecules/FlashMessage/**/*.js'
+          components: 'src/molecules/FlashMessage/index.js'
         },
         {
           name: 'FormFields',
-          components: 'src/molecules/formfields/**/*.js'
+          components: 'src/molecules/formfields/**/index.js'
         },
         {
           name: 'Headers',
@@ -63,15 +63,15 @@ module.exports = {
         },
         {
           name: 'Lists',
-          components: 'src/molecules/lists/**/*.js'
+          components: 'src/molecules/lists/**/index.js'
         },
         {
           name: 'Modal',
-          components: 'src/molecules/Modal/**/*.js'
+          components: 'src/molecules/Modal/index.js'
         },
         {
           name: 'TextLockups',
-          components: 'src/molecules/TextLockup/**/*.js'
+          components: 'src/molecules/TextLockup/index.js'
         },
         {
           name: 'Other',
@@ -84,11 +84,11 @@ module.exports = {
       sections: [
         {
           name: 'Cards',
-          components: 'src/organisms/cards/**/*.js'
+          components: 'src/organisms/cards/**/index.js'
         },
         {
           name: 'Forms',
-          components: 'src/organisms/forms/**/*.js'
+          components: 'src/organisms/forms/**/index.js'
         },
         {
           name: 'Tables',
@@ -98,7 +98,7 @@ module.exports = {
     },
     {
       name: 'Templates',
-      components: 'src/templates/**/index.js'
+      components: 'src/templates/**/index.js',
     },
   ],
   // Use this to change the theme for the live code editor
