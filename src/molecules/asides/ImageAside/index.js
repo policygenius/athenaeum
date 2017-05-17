@@ -33,42 +33,41 @@ function ImageAside( props ) {
     { [styles.bold]: bold }
   );
 
-  return (
-    <div className={classnames( variant, className )}>
+  const renderIconImage = () => {
+    if (!icon && !dataSrc) return null;
+    if (icon && icons[icon]) return <Icon icon={icon} className={styles.icon} />;
 
-      { icons[icon] ?
-        <Icon
-          icon={icon}
-          className={styles.icon}
+    return (
+      <div className={styles['image-wrapper']} style={{ maxWidth }}>
+        <img
+          className={styles.image}
+          src={image}
+          data-src={dataSrc}
+          role='presentation'
         />
-        :
-        <div
-          className={styles['image-wrapper']}
-          style={{ maxWidth }}
-        >
-          <img
-            className={styles.image}
-            src={image}
-            data-src={dataSrc}
-            role='presentation'
-          />
-        </div>
-      }
+      </div>
+    );
+  };
 
+  const renderSubHeader = () => {
+    if (!subheader) return null;
+
+    return (
+      <TextComponent className={styles.subheader}>
+        { subheader }
+      </TextComponent>
+    );
+  };
+
+  return (
+    <div className={classnames(variant, className)}>
+      { renderIconImage() }
       <aside className={styles.aside}>
-        <TextComponent
-          className={styles.header}
-        >
+        <TextComponent className={styles.header}>
           { header }
         </TextComponent>
 
-        { subheader &&
-          <TextComponent
-            className={styles.subheader}
-          >
-            { subheader }
-          </TextComponent>
-        }
+        { renderSubHeader() }
       </aside>
     </div>
   );

@@ -3,6 +3,7 @@ Playback Card Example:
 ```example
   <PlaybackCard
     header='Policyholder Details'
+    icon='greenCheckWithCircle'
     onClick={() => alert('edit clicked')}
   >
     <PlaybackCard.LeftPanel>

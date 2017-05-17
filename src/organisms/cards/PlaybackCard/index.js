@@ -13,7 +13,8 @@ function PlaybackCard(props) {
   const {
     children,
     header,
-    onClick
+    onClick,
+    icon,
   } = props;
 
   const parts = separatePartials(children);
@@ -26,11 +27,8 @@ function PlaybackCard(props) {
         bottomSpacing='xSmall'
         fullwidth
       >
-        <ImageAside
-          bold
-          icon='greenCheckWithCircle'
-          header={header}
-        />
+
+        <ImageAside bold icon={icon} header={header} />
         <Col className={styles['edit-column']}>
           <LinkWrapper
             onClick={onClick}
@@ -83,7 +81,11 @@ PlaybackCard.propTypes = {
   /**
    * Callback for edit link
    */
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  /**
+   * This is the icon name from the [Icon component](/#icon).
+   */
+  icon: PropTypes.string,
 };
 
 export default PlaybackCard;
