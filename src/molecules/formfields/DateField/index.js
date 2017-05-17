@@ -9,7 +9,8 @@ function DateField(props) {
     className,
     children,
     label,
-    meta
+    meta,
+    input
   } = props;
 
   const baseClassName = classnames(
@@ -26,7 +27,11 @@ function DateField(props) {
 
   return (
     <div>
-      <div className={baseClassName}>
+      <div
+        className={baseClassName}
+        onBlur={input.onBlur}
+        onFocus={input.onFocus}
+      >
         <label htmlFor='date' className={styles.label}>{label}</label>
         <div className={styles['datefield-wrapper']}>
           { React.Children.map(children,
@@ -57,7 +62,11 @@ DateField.propTypes = {
   /**
    * Meta object is passed from reduxForm
    */
-  meta: PropTypes.object
+  meta: PropTypes.object,
+  /**
+   * Input object is passed from reduxForm
+   */
+  input: PropTypes.object
 };
 
 export default DateField;
