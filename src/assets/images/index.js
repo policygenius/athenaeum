@@ -1,23 +1,20 @@
+const fromPairs = require('lodash/fromPairs');
 const camelCase = require('lodash/camelCase');
 
-function filesManifest(context) {
-  if (!context) return null;
+if (process.env.NODE_ENV === 'test') {
+  // Our tests do not run through webpack,
+  // so the require.context is unavailable
+  // and will throw an error.
+  // We don't need the actual svgs for our tests,
+  // so returning null allows us to avoid having to mock
+  // every instance of the Icon component.
+  module.exports = null;
+} else {
+  const svgContext = require.context('.', true, /\.svg/);
 
-  const fileName = path => camelCase(path.match(/([^/]+)\./)[1]);
-  const fileManifest = (res, key) => {
-    const fileObj = { [fileName(key)]: context(key) };
+  module.exports = fromPairs(svgContext.keys().map((svg) => {
+    const svgName = svg.match(/([^/]+)\./)[1];
 
-    return Object.assign({}, res, fileObj);
-  };
-
-  return context.keys().reduce(fileManifest, {});
+    return [ camelCase(svgName), svgContext(svg) ];
+  }));
 }
-
-let svgContext;
-
-// Skip context loading in tests. require.context is not available in jest.
-if (module.hot) {
-  svgContext = require.context('.', true, /\.svg/);
-}
-
-module.exports = filesManifest(svgContext);

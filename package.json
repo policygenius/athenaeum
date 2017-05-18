@@ -11,7 +11,7 @@
     "build:publish:watch": "NODE_ENV='production' ./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors --watch",
     "publish": "rm -rf ./lib/* && yarn run build:publish && npm publish",
     "start": "yarn run styleguide:build && yarn run styleguide",
-    "test": "jest",
+    "test": "NODE_ENV='test' jest",
     "stylin": "yarn run start  && yarn run open",
     "styleguide": "styleguidist server",
     "styleguide:build": "rm -rf ./styleguide/* && styleguidist build",

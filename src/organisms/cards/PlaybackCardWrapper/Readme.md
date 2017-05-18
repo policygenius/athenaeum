@@ -3,7 +3,7 @@ PlaybackCardWrapper Example:
 ```example
     <PlaybackCardWrapper
       logo='Some Logo'
-      amount='10'
+      amount={10}
       footer='View Full Policy Details'
       footerOnClick={() => alert('go')}
     >
