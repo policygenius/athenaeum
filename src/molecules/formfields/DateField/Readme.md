@@ -5,6 +5,10 @@ DateField Example:
 
     <DateExample
       label='Date of Birth'
+      input={{
+        onBlur: () => true,
+        onFocus: () => true
+      }}
     >
       <TextField
         placeholder='MM'
@@ -27,6 +31,10 @@ DateField Example:
 
     <DateExample
       label='Date of Birth'
+      input={{
+        onBlur: () => true,
+        onFocus: () => true
+      }}
     >
       <TextField
         placeholder='MM'

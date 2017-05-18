@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import styles from '../shared/formfields.module.scss';
 
@@ -7,6 +8,7 @@ function CheckboxField( props ) {
   const {
     label,
     input,
+    fontStyle,
   } = props;
 
   return (
@@ -20,7 +22,11 @@ function CheckboxField( props ) {
         checked={input.value}
         {...input}
       />
-      <span className={styles.checkboxLabel}>{ label }</span>
+      <span
+        className={classnames(styles.checkboxLabel, styles[fontStyle])}
+      >
+        { label }
+      </span>
     </label>
   );
 }
@@ -37,7 +43,19 @@ CheckboxField.propTypes = {
   /**
    * The props under the input key are passed from `redux-form` and spread into `<input />`.
    */
-  input: PropTypes.object
+  input: PropTypes.object,
+
+  /**
+   * determines font style of label (weight and size)
+   */
+  fontStyle: PropTypes.oneOf([
+    'light',
+    'semibold'
+  ]),
+};
+
+CheckboxField.defaultProps = {
+  fontStyle: 'light',
 };
 
 export default CheckboxField;
