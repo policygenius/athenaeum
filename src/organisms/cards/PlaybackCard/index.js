@@ -27,7 +27,6 @@ function PlaybackCard(props) {
         bottomSpacing='xSmall'
         fullwidth
       >
-
         <ImageAside bold icon={icon} header={header} />
         <Col className={styles['edit-column']}>
           <LinkWrapper

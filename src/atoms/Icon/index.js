@@ -10,12 +10,17 @@ function Icon( props ) {
   const icon = icons[props.icon];
   const {
     className,
-    onClick
+    onClick,
   } = props;
 
   return (
     <div
-      className={classnames(styles['icon-wrapper'], { [styles.clickable]: onClick }, className)}
+      className={
+        classnames(
+          styles['icon-wrapper'],
+          { [styles.clickable]: onClick },
+          className
+        )}
       onClick={onClick}
     >
       { icon && <SVGInline svg={icon} /> }

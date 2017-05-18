@@ -5,7 +5,7 @@
   background: color('neutral-8');
   border-radius: ru(.25);
   border: 1px solid color('neutral-5');
-  padding: ru(.75) ru(.75) ru(.25);
+  padding: ru(.75) ru(1);
 }
 
 %card-reset {
@@ -18,13 +18,14 @@
 
 .playback-wrapper {
   @extend %card-base;
-  padding-bottom: ru(.75);
+
+  padding: ru(1) ru(1.5);
 
   &-head {
     @include typography-2(false);
 
-    display: flex;
-    padding-bottom: ru(.75);
+    padding-bottom: ru(1);
+    align-items: center;
     border-bottom: 1px solid color('neutral-5');
   }
 
@@ -64,13 +65,16 @@
 }
 
 .logo-wrapper {
-  flex-grow: 2;
-  align-items: center;
+  height: ru(2);
   font-weight: bold;
+
+  svg {
+    width: auto;
+    height: ru(2);
+  }
 }
 
 .amount {
-  flex-grow: 1;
   font-weight: bold;
   text-align: right;
   color: color('brand-2');
