@@ -23,6 +23,7 @@ function TextComponent(props) {
     type,
     className,
     variant,
+    color,
   } = props;
 
 
@@ -33,6 +34,7 @@ function TextComponent(props) {
     { className: classnames(
       styles[`typography-${type}`],
       styles[weight(props)],
+      styles[color],
       styles[variant],
       className
     ) },
@@ -74,8 +76,13 @@ TextComponent.propTypes = {
   /**
    * Text decoration
    */
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  /**
+   * Color style, see [Colors](#colors) for appropriate values
+   */
+  color: PropTypes.string,
 };
+
 
 TextComponent.defaultProps = {
   tag: 'p',
