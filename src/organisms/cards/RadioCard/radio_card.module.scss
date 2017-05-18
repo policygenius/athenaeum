@@ -1,5 +1,7 @@
 @import '../shared/cards.module.scss';
 
+$border-style: 1px solid color('neutral-5');
+
 .radio-card-wrapper {
   display: flex;
   justify-content: space-between;
@@ -14,14 +16,13 @@
   }
 }
 
-
 .card {
   @extend %card;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ru(1) ru(.25);
+  padding-top: ru(1);
   height: 100%;
   cursor: pointer;
   text-align: center;
@@ -68,9 +69,37 @@
 }
 
 .image {
-  margin: auto auto ru(-1.5);
+  margin: auto auto ru(-.5);
 }
 
+.sections {
+  @include typography-7(false);
+
+  display: flex;
+  border-top: $border-style;
+  color: color('neutral-2');
+
+  line-height: ru(.75);
+  text-align: center;
+
+  &-item {
+    flex: 1 1;
+    margin: 0;
+    padding: ru(.75);
+  }
+
+  &-value {
+    @include typography-4;
+    @include typography-semibold;
+    
+    margin: 0;
+    text-align: center;
+  }
+
+  &-item + &-item {
+    border-left: $border-style;
+  }
+}
 
 @media #{$small-only} {
 
@@ -108,8 +137,8 @@
 
   .title {
     @include typography-6;
+    @include typography-semibold;
 
-    font-weight: 600;
     margin: 0 0 ru(.125);
     color: inherit;
   }
@@ -126,4 +155,29 @@
     margin: auto;
     max-width: ru(3.5);
   }
+
+  .sectioned {
+    text-align: left;
+
+    .card { padding: 0 0 0 ru(.5); }
+
+    .title,
+    .description {
+      margin: ru(.5);
+    }
+
+    .title + .description {
+      margin-top: ru(-.5);
+    }
+
+    .content {
+      flex: 1 0;
+      margin-left: 0;
+      margin-right: 0;
+      border-left: $border-style;
+    }
+  }
+
+  .sections { margin: 0; }
+  .sections-item { padding: ru(.5); }
 }
