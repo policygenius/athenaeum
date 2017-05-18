@@ -5,6 +5,7 @@ import omit from 'lodash/omit';
 
 import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
+import Layout from 'atoms/Layout';
 
 import styles from '../shared/formfields.module.scss';
 
@@ -42,18 +43,20 @@ function ToggleField( props ) {
 
   return (
     <div className={classnames(className, { [styles.focused]: meta && meta.active }, styles.togglefield)}>
-      {
-        tooltipMessage &&
-        <div className={styles['tooltip-wrapper']}>
-          <Tooltip right>{ tooltipMessage }</Tooltip>
+      <Layout>
+        {
+          tooltipMessage &&
+            <div className={styles['tooltip-wrapper']}>
+              <Tooltip right>{ tooltipMessage }</Tooltip>
+            </div>
+        }
+
+        { label && <div className={styles.header}>{label}</div> }
+
+        <div className={styles['button-wrapper']}>
+          { renderChoices(toggleChoices, input) }
         </div>
-      }
-
-      { label && <div className={styles.header}>{label}</div> }
-
-      <div className={styles['button-wrapper']}>
-        { renderChoices(toggleChoices, input) }
-      </div>
+      </Layout>
     </div>
   );
 }
