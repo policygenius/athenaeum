@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
 import classnames from 'classnames';
 
 import styles from '../shared/formfields.module.scss';
@@ -12,7 +13,9 @@ function TextField( props ) {
     input,
     htmlFor,
     meta,
-    noBaseStyle
+    noBaseStyle,
+    mask,
+    maskChar
   } = props;
 
   const baseClassName = classnames(
@@ -35,13 +38,23 @@ function TextField( props ) {
             { label }
           </label>
         }
-
-        <input
-          className={styles.input}
-          type='text'
-          placeholder={placeholder}
-          {...input}
-        />
+        { mask ?
+          <InputMask
+            className={styles.input}
+            type='text'
+            placeholder={placeholder}
+            mask={mask}
+            maskChar={maskChar}
+            {...input}
+          />
+          :
+          <input
+            className={styles.input}
+            type='text'
+            placeholder={placeholder}
+            {...input}
+          />
+        }
       </div>
       {meta && meta.touched && meta.error &&
         <div className={styles.error}>{ meta.error }</div>
@@ -84,7 +97,15 @@ TextField.propTypes = {
   /**
    * Passing `noBaseStyle=true` will omit the base class style
    */
-  noBaseStyle: PropTypes.bool
+  noBaseStyle: PropTypes.bool,
+  /**
+   * Mask the input
+   */
+  mask: PropTypes.string,
+  /**
+   * Specific the maskChar (must have `mask` set for this to be applied)
+   */
+  maskChar: PropTypes.string
 };
 
 TextField.defaultProps = {
