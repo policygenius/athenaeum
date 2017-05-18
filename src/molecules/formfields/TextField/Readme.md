@@ -41,11 +41,26 @@ Text field with error:
     placeholder='Enter your first name'
     input={{
       value: state.value,
-      onChange: (value) => setState({ value })
+      onChange: (event) => setState({ value: event.target.value })
     }}
     meta={{
       error: 'Maecenas ullamcorper turpis quis elit volutpat',
       touched: true
     }}
+  />
+```
+
+Text field - phone number example:
+
+```example
+  <TextField
+    label='Phone Number'
+    placeholder='In case of emergency'
+    input={{
+      value: state.value,
+      onChange: event => setState({ value: event.target.value })
+    }}
+    mask='999-999-9999'
+    maskChar='_'
   />
 ```
