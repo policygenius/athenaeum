@@ -9,37 +9,31 @@ body {
     }
   }
 
-  .fullwidth {
-    max-width: 100%;
-
-    .component-wrapper {
-      max-width: 100%;
-    }
-  }
-
-  .sidebar {
-    background-color: black;
-  }
-
-
-  .component-section {
-    border: 1px solid #e8e8e8;
-    border-radius: 3px;
-  }
-
-  .component-wrapper {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 30px;
-  }
 }
 
 // These styles won't be processed by css-modules
 // so you can use the styleguidist classnames here.
 :global{
   body {
-    .isolatedLink-0-49 {
-      top: -1.8rem;
+    .RCL-Logo {
+      width: 100%;
+
+      path {
+        fill: #aa001b;
+      }
+    }
+
+    .list-toggle {
+      color: white;
+
+      li {
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          color: #1978c8;
+        }
+      }
     }
 
     .h2-0-20 {
@@ -48,6 +42,25 @@ body {
 
     .logo-0-5 {
       border-bottom: 0;
+    }
+
+    .fullwidth {
+      max-width: 100%;
+
+      .component-wrapper {
+        max-width: 100%;
+      }
+    }
+
+    .component-section {
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+    }
+
+    .component-wrapper {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 30px;
     }
 
     p,

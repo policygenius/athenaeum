@@ -41,7 +41,7 @@ jspm_packages
 /dist/*
 
 # Ignore styleguideist build
-styleguide
+/styleguide/
 
 # Ignore OSX system files
 .DS_Store
