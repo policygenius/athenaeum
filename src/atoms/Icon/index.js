@@ -11,6 +11,8 @@ function Icon( props ) {
   const {
     className,
     onClick,
+    height,
+    width
   } = props;
 
   return (
@@ -22,6 +24,10 @@ function Icon( props ) {
           className
         )}
       onClick={onClick}
+      style={{
+        width,
+        height
+      }}
     >
       { icon && <SVGInline svg={icon} /> }
     </div>
@@ -40,7 +46,15 @@ Icon.propTypes = {
   /**
    * Click handler for the wrapper div around the svg
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * Override the default height of the icon. Icon will maintain its proportions.
+   */
+  height: PropTypes.string,
+  /**
+   * Override the default width of the icon. Icon will maintain its proportions.
+   */
+  width: PropTypes.string
 };
 
 export default Icon;

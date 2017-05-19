@@ -1,4 +1,4 @@
-{{properCase name}} Example:
+### {{properCase name}} Example:
 
 ```example
     <{{properCase name}}>

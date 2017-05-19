@@ -1,0 +1,34 @@
+.list {
+  li {
+    margin-bottom: ru(1.25);
+  }
+}
+
+.mini {
+  li {
+    @include typography-7;
+    line-height: ru(.75);
+    margin: 0;
+  }
+
+  strong {
+    @include typography-6;
+    line-height: ru(1);
+    margin: 0;
+  }
+}
+
+.condensed {
+  li {
+    margin-bottom: 0;
+  }
+}
+
+.no-bullets {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-left: 0;
+  }
+}
