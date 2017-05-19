@@ -1,0 +1,3 @@
+@each $key, $value in $colors-map {
+  .#{$key} { color: $value; }
+}

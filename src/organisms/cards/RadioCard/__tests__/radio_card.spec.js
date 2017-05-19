@@ -7,7 +7,7 @@ import RadioCard from 'organisms/cards/RadioCard';
 describe('<RadioCard />', () => {
 
   it('renders', () => {
-    const wrapper = shallow(<RadioCard label='its a label' input={{}} />);
+    const wrapper = shallow(<RadioCard label='its a label' input={{}} radioValue='something' />);
 
     expect(wrapper.length).to.equal(1);
   });
