@@ -3,8 +3,9 @@ X-Icon example:
 ```example
     <Icon icon='xIcon' />
 ```
-All Icons (WIP):
 
+
+# All Available Icons (WIP):
 ```example
     const icons = require('assets/images');
 
@@ -52,4 +53,21 @@ All Icons (WIP):
     }
 
     <DisplayAllIcons />
+```
+
+
+### Suggested method to resize Icons:
+`<Icon />` returns an `svg` wrapped in a `div`.
+Its default size is `72px`x`72px` or `ru(3)`.
+
+```html
+  <div className='custom-icon-wrapper'>
+    <Icon icon='someLogo' />
+  </div>
+```
+
+```css
+  .custom-icon-wrapper svg{
+    height: 30px;
+  }
 ```

@@ -2,7 +2,7 @@ PlaybackCardWrapper Example:
 
 ```example
     <PlaybackCardWrapper
-      logo='Some Logo'
+      logo={<Icon icon='stillwaterLogoBlack' sizeAuto />}
       amount={10}
       footer='View Full Policy Details'
       footerOnClick={() => alert('go')}
