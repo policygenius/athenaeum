@@ -9,7 +9,7 @@ module.exports = {
   title: 'PolicyGenius React Component Library',
   sections: [
     {
-      name: 'Introduction',
+      name: 'Documentation',
       content: 'docs/introduction/index.md',
       sections: [
         {
@@ -31,75 +31,93 @@ module.exports = {
       ]
     },
     {
-      name: 'Colors',
+      name: 'Branding',
       content: 'src/atoms/Color/Colors.md',
     },
     {
-      name: 'Atoms',
-      components: 'src/atoms/**/index.js'
-    },
-    {
-      name: 'Molecules',
+      name: 'Engineering',
       sections: [
         {
-          name: 'Asides',
-          components: 'src/molecules/asides/**/index.js'
+          name: 'Atoms',
+          components: 'src/atoms/**/index.js'
         },
         {
-          name: 'DataRow',
-          components: 'src/molecules/DataRow/index.js'
+          name: 'Molecules',
+          sections: [
+            {
+              name: 'Asides',
+              components: 'src/molecules/asides/**/index.js'
+            },
+            {
+              name: 'DataRow',
+              components: 'src/molecules/DataRow/index.js'
+            },
+            {
+              name: 'FlashMessage',
+              components: 'src/molecules/FlashMessage/index.js'
+            },
+            {
+              name: 'FormFields',
+              components: 'src/molecules/formfields/**/index.js'
+            },
+            {
+              name: 'Headers',
+              components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
+            },
+            {
+              name: 'Lists',
+              components: 'src/molecules/lists/**/index.js'
+            },
+            {
+              name: 'Modal',
+              components: 'src/molecules/Modal/index.js'
+            },
+            {
+              name: 'TextLockups',
+              components: 'src/molecules/TextLockup/index.js'
+            },
+            {
+              name: 'Other',
+              components: () => [ 'src/molecules/StepProgress/index.js' ]
+            }
+          ]
         },
         {
-          name: 'FlashMessage',
-          components: 'src/molecules/FlashMessage/index.js'
+          name: 'Organisms',
+          sections: [
+            {
+              name: 'Cards',
+              components: 'src/organisms/cards/**/index.js'
+            },
+            {
+              name: 'Forms',
+              components: 'src/organisms/forms/**/index.js'
+            },
+            {
+              name: 'Tables',
+              components: 'src/organisms/tables/**/index.js'
+            }
+          ]
         },
         {
-          name: 'FormFields',
-          components: 'src/molecules/formfields/**/index.js'
-        },
-        {
-          name: 'Headers',
-          components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
-        },
-        {
-          name: 'Lists',
-          components: 'src/molecules/lists/**/index.js'
-        },
-        {
-          name: 'Modal',
-          components: 'src/molecules/Modal/index.js'
-        },
-        {
-          name: 'TextLockups',
-          components: 'src/molecules/TextLockup/index.js'
-        },
-        {
-          name: 'Other',
-          components: () => [ 'src/molecules/StepProgress/index.js' ]
+          name: 'Templates',
+          components: 'src/templates/**/index.js',
         }
       ]
     },
     {
-      name: 'Organisms',
+      name: 'Design',
       sections: [
         {
-          name: 'Cards',
-          components: 'src/organisms/cards/**/index.js'
+          name: 'Organisms',
+          components: 'src/organisms/**/index.js'
         },
         {
-          name: 'Forms',
-          components: 'src/organisms/forms/**/index.js'
+          name: 'Templates',
+          components: 'src/templates/**/index.js',
         },
-        {
-          name: 'Tables',
-          components: 'src/organisms/tables/**/index.js'
-        }
       ]
-    },
-    {
-      name: 'Templates',
-      components: 'src/templates/**/index.js',
-    },
+    }
   ],
   // Use this to change the theme for the live code editor
   // Themes here: http://codemirror.net/demo/theme.html#

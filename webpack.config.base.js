@@ -7,6 +7,11 @@ const variant = process.env.CSS_VARIANT;
 
 const baseDir = variant ? `tmp/${variant}` : 'src';
 
+const includePaths = [
+  path.resolve(__dirname, 'src'),
+  path.resolve(__dirname, 'styleguide_assets'),
+];
+
 module.exports = options => ({
   entry: options.entry,
   output: options.output,
@@ -18,20 +23,12 @@ module.exports = options => ({
       path.resolve(__dirname, baseDir),
       'node_modules'
     ],
-    alias: {
-      'rsg-components/ComponentsList/ComponentsListRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ComponentsListRenderer'),
-      'rsg-components/StyleGuide/StyleGuideRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/StyleGuideRenderer'),
-      'rsg-components/ReactComponent/ReactComponentRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ReactComponentRenderer'),
-    }
   },
   module: {
     rules: get(options, 'module.rules', []).concat([
       {
         test: /\.js$/,
-        exclude: [
-          path.resolve(__dirname, 'node_modules'),
-          /__tests__/
-        ],
+        include: includePaths,
         use: [
           {
             // babel-loader will throw a deprecation warning
@@ -77,7 +74,7 @@ module.exports = options => ({
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
-        exclude: /node_modules/,
+        include: includePaths,
         use: [
           {
             loader: 'file-loader',
