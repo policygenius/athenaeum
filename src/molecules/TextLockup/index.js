@@ -134,6 +134,29 @@ function TextLockup( props ) {
           </div>
         );
 
+      case 'H':
+        return (
+          <div className={styles[variant]}>
+            <TextComponent
+              className={styles['header']}
+              type={7}
+              light
+            >
+              { header }
+            </TextComponent>
+
+            {
+              React.Children.map(children, child =>
+                React.cloneElement(
+                  child,
+                  { className: styles['subheader'] }
+                )
+              )
+            }
+          </div>
+
+        );
+
       default:
         return (
           <div className={styles[variant]}>

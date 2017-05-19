@@ -75,3 +75,24 @@ TextLockup Example - Type G:
       subheader='Subheader'
     />
 ```
+TextLockup Example - Type H:
+
+```example
+    <TextLockup
+      variant='H'
+      header='Header'
+    >
+      <TextComponent
+        type={6}
+      >
+        Subheader 1
+      </TextComponent>
+
+      <TextComponent
+        type={6}
+      >
+        Subheader 2
+      </TextComponent>
+    </TextLockup>
+
+```

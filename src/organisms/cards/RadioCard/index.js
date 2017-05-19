@@ -51,7 +51,7 @@ function RadioCard(props) {
           className
         )
       }
-      {...omit(input, ['value', 'onClick'])}
+      {...omit(input, [ 'value', 'onClick' ])}
       onClick={() => input.onChange(radioValue)}
       id={`radio-${input.name}`}
       key={`radio-${radioValue}`}
