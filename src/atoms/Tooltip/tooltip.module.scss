@@ -6,6 +6,7 @@ $tooltip-shift-amount: 60%;
   width: $tooltip-width;
   height: $tooltip-width;
   cursor: help;
+  display: inline-block;
 }
 
 .hover-message {

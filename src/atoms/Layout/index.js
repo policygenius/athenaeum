@@ -18,10 +18,7 @@ function Layout( props ) {
     <div
       style={style}
       className={classnames(
-        styles.layout,
-        padding && styles.padding,
-        className
-      )}
+        styles.layout, padding && styles.padding, className)}
     >
       { kids }
     </div>
@@ -49,16 +46,6 @@ Layout.propTypes = {
    * each number in array sets column width for each child in Layout
    */
   childCols: PropTypes.arrayOf( PropTypes.number ),
-
-  /**
-   * determines alignment of columns horizontally
-   */
-  horizontalAlign: PropTypes.string,
-
-  /**
-   * determines alignment of columns vertically
-   */
-  verticalAlign: PropTypes.string,
 
   /**
    * Sets columns grid width in the Layout within a viewport from `0px` up

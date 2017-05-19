@@ -1,7 +1,7 @@
 import React from 'react';
 //import sinon from 'sinon';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import {{properCase name}} from '{{type}}s/{{properCase name}}';
 
@@ -15,8 +15,8 @@ describe('<{{properCase name}} />', () => {
   // });
 
   it('renders', () => {
-    const wrapper = shallow(<{{properCase name}} />);
+    const wrapper = mount(<{{properCase name}} />);
 
-    expect(wrapper.length).to.equal(1);
+    expect(wrapper.type()).to.equal({{properCase name}});
   });
 });

@@ -5,7 +5,7 @@ X-Icon example:
 ```
 
 
-# All Available Icons (WIP):
+# All Available Icons:
 ```example
     const icons = require('assets/images');
 
