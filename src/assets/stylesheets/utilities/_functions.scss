@@ -29,6 +29,10 @@ $rem-ratio:  24px; // Line height
 
 // Rhythm unit helper; default is 24px
 @function ru($units) {
+  @if $units % .25 != 0 {
+    @warn 'ru arguments should be a multiple of .25 --> `#{$units}` is not a multiple of .25';
+  }
+
   $rhythm-base:   rem-calc(24px);
   @return $units * $rhythm-base;
 }
