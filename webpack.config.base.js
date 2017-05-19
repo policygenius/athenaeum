@@ -22,6 +22,8 @@ module.exports = options => ({
       'rsg-components/ComponentsList/ComponentsListRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ComponentsListRenderer'),
       'rsg-components/StyleGuide/StyleGuideRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/StyleGuideRenderer'),
       'rsg-components/ReactComponent/ReactComponentRenderer': path.join(__dirname, 'styleguide_assets/CustomRenderers/ReactComponentRenderer'),
+      'rsg-components/TableOfContents': path.join(__dirname, 'styleguide_assets/rsg-components/TableOfContents'),
+      'rsg-components/StyleGuide': path.join(__dirname, 'styleguide_assets/rsg-components/StyleGuide'),
     }
   },
   module: {
