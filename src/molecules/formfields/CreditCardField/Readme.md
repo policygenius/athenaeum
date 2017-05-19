@@ -1,7 +1,12 @@
 CreditCardField Example:
 
 ```example
-    <CreditCardField>
+    <CreditCardField
+      input={{
+        onBlur: () => true,
+        onFocus: () => true
+      }}
+    >
       <CreditCardField.Top>
         <TextField
           placeholder='Credit Card Number'

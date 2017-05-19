@@ -311,7 +311,7 @@ $focused-border-color: color('brand-3');
 }
 
 .checkbox {
-  @include typography-6;
+  display: flex;
   margin: 0;
   position: relative;
   min-height: $checkbox-size;
@@ -336,8 +336,18 @@ $focused-border-color: color('brand-3');
 
   .checkboxLabel {
     display: inline-block;
-    color: $checkbox-label-color;
     cursor: pointer;
+  }
+
+  .light {
+    @include typography-6(false);
+    color: $checkbox-label-color;
+  }
+
+  .semibold {
+    @include typography-6(false);
+    font-weight: 600;
+    color: color('neutral-0');
   }
 
   .checkboxLabel:after {
@@ -365,8 +375,10 @@ $focused-border-color: color('brand-3');
     cursor: pointer;
   }
 
-  input:checked + .checkboxLabel {
-    color: $checkbox-label-selected-color;
+  input:checked {
+    + .light {
+      color: $checkbox-label-selected-color;
+    }
   }
 
   input:checked + .checkboxLabel:after {
@@ -387,9 +399,12 @@ $focused-border-color: color('brand-3');
   }
 
   @media #{$medium-up} {
-    @include typography-7;
     line-height: ru(.75);
     margin: 0;
+
+    .light {
+      @include typography-7(false);
+    }
 
     span {
       margin-top: ru(.125);

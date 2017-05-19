@@ -75,12 +75,10 @@ $border-color: color('neutral-5');
   cursor: pointer;
 }
 
-.radio:checked {
-  + .label {
+.checked {
     color: $label-selected-color;
 
     &:after { opacity: 1; }
-  }
 }
 
 .radio:disabled {

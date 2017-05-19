@@ -11,9 +11,10 @@ function CreditCardField(props) {
   const {
     className,
     label,
-    focused,
     cardType,
-    children
+    children,
+    meta,
+    input,
   } = props;
 
   const parts = separatePartials(children);
@@ -22,26 +23,37 @@ function CreditCardField(props) {
   const baseClass = [
     styles['formfield'],
     styles['credit-card'],
-    { [styles.focused]: focused },
+    { [styles.focused]: meta && meta.active },
+    { [styles.hasError]: meta && meta.touched && meta.error && !meta.active },
     className
   ];
 
   return (
-    <div className={classnames(...baseClass)}>
-      <div className={classnames(styles['formfield-header'], styles['credit-card-header'])}>
-        <label
-          htmlFor='date'
-          className={styles.label}
-        >
-          { label }
-        </label>
-        <Icon className={styles['credit-card-lock']} icon='lock' />
+    <div>
+      <div
+        className={classnames(...baseClass)}
+        onBlur={input.onBlur}
+        onFocus={input.onFocus}
+      >
+        <div className={classnames(styles['formfield-header'], styles['credit-card-header'])}>
+          <label
+            htmlFor='date'
+            className={styles.label}
+          >
+            { label }
+          </label>
+          <Icon className={styles['credit-card-lock']} icon='lock' />
+        </div>
+        <div className={styles['credit-card-line1']}>
+          {renderPartial('top', parts.Top)}
+          <Icon className={styles['credit-card-logo']} icon={cardType} />
+        </div>
+        {renderPartial('bottom', parts.Bottom)}
       </div>
-      <div className={styles['credit-card-line1']}>
-        {renderPartial('top', parts.Top)}
-        <Icon className={styles['credit-card-logo']} icon={cardType} />
-      </div>
-      {renderPartial('bottom', parts.Bottom)}
+
+      {meta && meta.touched && meta.error &&
+        <div className={styles.error}>{ meta.error }</div>
+      }
     </div>
   );
 }
@@ -57,13 +69,17 @@ CreditCardField.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * Whether or not the credit card field is focused
-   */
-  focused: PropTypes.bool,
-  /**
    *  Create Logo of credit card. Accepted Cards ['visa', 'americanExpress', 'masterCard', `discover`]
    */
   cardType: PropTypes.string,
+  /**
+   * Redux Form meta prop for touched, error, active
+   */
+  meta: PropTypes.object,
+  /**
+   * Redux form input object
+   */
+  input: PropTypes.object,
 };
 
 CreditCardField.defaultProps = {
