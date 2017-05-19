@@ -1,7 +1,7 @@
 Default Button Example:
 
 ```example
-  <Button onClick={() => alert('Button clicked')}>Default Button</Button>
+  <Button onClick={() => alert('Button clicked')} icon='lock'>Default Button</Button>
 ```
 
 Info Button Example:
@@ -19,7 +19,7 @@ Disabled Button Example:
 Action Button Example:
 
 ```example
-      <Button variant='action'>Action</Button>
+      <Button icon='lock' variant='action'>Action</Button>
 ```
 
 Action Lowlight Button Example:

@@ -44,6 +44,12 @@ $button-solid-background-primary-color:    color('brand-3');
 $button-solid-background-secondary-color:  #3ad1ba;
 $button-solid-background-tertiary-color:   #f08f5c;
 
+.icon {
+  height: rem-calc(16);
+  width: rem-calc(14);
+  margin-right: rem-calc(4);
+}
+
 .button {
   @include typography-6;
   @include typography-semibold;
@@ -59,11 +65,25 @@ $button-solid-background-tertiary-color:   #f08f5c;
   border: 1px solid $button-border-color;
   border-radius: $button-border-radius;
   transition: background-color 300ms ease-out,
-              border-color 300ms ease-out,
-              top 150ms ease-out,
-              color 150ms ease-out,
-              box-shadow 150ms ease-out;
+  border-color 300ms ease-out,
+  top 150ms ease-out,
+  color 150ms ease-out,
+  box-shadow 150ms ease-out;
   width: 100%;
+
+  .icon {
+    path {
+      transition: fill 300ms ease-out;
+      fill: $button-color;
+    }
+  }
+
+  &:hover {
+    path {
+      transition: fill 300ms ease-out;
+      fill: $button-background-color;
+    }
+  }
 }
 
 .disabled {
@@ -111,21 +131,27 @@ $button-solid-background-tertiary-color:   #f08f5c;
 .action {
   composes: button;
   @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-border-color,
-                        $button-action-background-color, $button-action-color);
+  $button-action-background-color, $button-action-color);
   position: relative;
   top: 0;
   width: 100%;
   background-color: $button-action-background-color;
-  padding-bottom: ru(.375);
+  padding-bottom: rem-calc(9);
   border: 0;
   color: $button-action-color;
-  box-shadow: 0 ru(.208) 0 $button-action-border-color;
+  box-shadow: 0 .312rem 0 $button-action-border-color;
+
+  .icon {
+    path {
+      fill: $button-action-color;
+    }
+  }
 }
 
 .actionDisabled {
   composes: action;
   @include hover-action(0, rem-calc(5px), $button-action-disabled-border-color,
-                        $button-action-disabled-background-color, $button-action-disabled-color);
+  $button-action-disabled-background-color, $button-action-disabled-color);
   background-color: $button-action-disabled-background-color;
   box-shadow: 0 ru(.208) 0 $button-action-disabled-border-color;
   color: $button-action-disabled-color;
@@ -137,7 +163,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
 .lowlight {
   composes: action;
   @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-lowlight-border-color,
-          $button-action-lowlight-background-color, $button-action-lowlight-color);
+  $button-action-lowlight-background-color, $button-action-lowlight-color);
   background-color: $button-action-lowlight-background-color;
   color: $button-action-lowlight-color;
   box-shadow: 0 ru(.208) 0 $button-action-lowlight-border-color;
@@ -146,8 +172,8 @@ $button-solid-background-tertiary-color:   #f08f5c;
 .outline {
   composes: button;
   @include hover($button-outline-hover-background-color,
-                 $button-outline-border-color,
-                 $button-outline-hover-color);
+  $button-outline-border-color,
+  $button-outline-hover-color);
   background-color: $button-outline-background-color;
   border-color: $button-outline-border-color;
   color: $button-outline-color;

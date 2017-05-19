@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import assign from 'lodash/assign';
 import { expect } from 'chai';
+
+import Icon from 'atoms/Icon';
 import Button from '../index';
 
 describe('Button', () => {
@@ -57,11 +59,15 @@ describe('Button', () => {
     expect(wrapper.prop('type')).to.equal(props.type);
   });
 
-  it('renders the children', () => {
-    const children = 'hello, world';
-    const wrapper = shallow(<Button {...defaultProps}>{children}</Button>);
+  it('renders the children correctly', () => {
+    const wrapper = shallow(
+      <Button {...defaultProps} icon='lock'>
+        {'hello world!'}
+      </Button>);
 
-    expect(wrapper.text()).to.equal(children);
+    expect(wrapper.contains('hello world!')).to.be.true;
+    expect(wrapper.find(Icon)).to.have.length(1);
+    expect(wrapper.find(Icon).prop('icon')).to.equal('lock');
   });
 
   it('triggers props.onClick when clicked', () => {
