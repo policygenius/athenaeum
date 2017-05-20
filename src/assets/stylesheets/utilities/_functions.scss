@@ -33,7 +33,7 @@ $rem-ratio:  24px; // Line height
     @warn 'ru arguments should be a multiple of .25 --> `#{$units}` is not a multiple of .25';
   }
 
-  $rhythm-base:   rem-calc(24px);
+  $rhythm-base: rem-calc(24px);
   @return $units * $rhythm-base;
 }
 

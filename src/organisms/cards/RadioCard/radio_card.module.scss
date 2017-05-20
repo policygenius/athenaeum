@@ -108,7 +108,7 @@ $border-style: 1px solid color('neutral-5');
     @include typography-6;
     @include typography-semibold;
 
-    margin: 0 0 ru(.125);
+    margin: 0;
     color: inherit;
   }
 

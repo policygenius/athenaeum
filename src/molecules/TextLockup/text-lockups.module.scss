@@ -1,14 +1,14 @@
 $subheader-color: color('neutral-4');
 
 .header {
-  margin: 0 0 ru(.125);
+  margin: 0;
 }
 
 .subheader {
   font-weight: 400;
   line-height: ru(.75);
   color: $subheader-color;
-  margin: 0 0 ru(.167);
+  margin: 0 0 ru(.25);
 }
 
 .secondary-icon, .small-screen-icon {

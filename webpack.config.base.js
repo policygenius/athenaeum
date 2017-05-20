@@ -2,9 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
-
 const variant = process.env.CSS_VARIANT;
-
 const baseDir = variant ? `tmp/${variant}` : 'src';
 
 const includePaths = [

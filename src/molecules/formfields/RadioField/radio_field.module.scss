@@ -36,7 +36,6 @@ $border-color: color('neutral-5');
     left: 0;
     width: $size;
     height: $size;
-    margin-top: (ru(1) - $size) / 2;
     border: 1px solid $border-color;
     background-color: $background-color;
     border-radius: 50%;
@@ -57,8 +56,6 @@ $border-color: color('neutral-5');
     left: 0;
     width: $checked-size;
     height: $checked-size;
-    margin-top: (ru(1) - $size) / 2 + ($size - $checked-size) / 2;
-    margin-left: ($size - $checked-size) / 2;
     border-radius: 50%;
     background-color: color('brand-3');
   }
@@ -99,6 +96,6 @@ $border-color: color('neutral-5');
   margin: 0;
 
   .label {
-    margin-top: ru(.125);
+    margin-top: 0;
   }
 }
