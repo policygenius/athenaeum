@@ -37,9 +37,11 @@ $focused-border-color: color('brand-3');
 
 // Children Classes
 .header,
+.body,
 .label {
   @include typography-7(false);
   @include typography-semibold;
+
   position: relative;
 }
 
@@ -188,10 +190,15 @@ $focused-border-color: color('brand-3');
   .tooltip-wrapper {
     z-index: 2;
     position: absolute;
-    right: ru(.75);
+    top: 0;
+    right: 0;
     width: ru(.5);
     height: ru(.5);
     z-index: 1;
+  }
+
+  .body {
+    margin-bottom: ru(.5);
   }
 
   .button-wrapper {
@@ -202,6 +209,10 @@ $focused-border-color: color('brand-3');
       flex-grow: 1;
       margin-bottom: ru(.5);
     }
+  }
+
+  ul {
+    padding-left: ru(.75);
   }
 
   @media #{$medium-up} {
