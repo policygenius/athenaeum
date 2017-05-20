@@ -35,7 +35,8 @@ class Tooltip extends React.Component {
       children,
       className,
       left,
-      right
+      right,
+      inline
     } = this.props;
 
     return (
@@ -43,6 +44,7 @@ class Tooltip extends React.Component {
         onClick={this.openModal}
         className={classnames(
           styles['tooltip-wrapper'],
+          inline && styles[`inline-${inline}`],
           className
         )}
       >
@@ -50,8 +52,9 @@ class Tooltip extends React.Component {
         <div
           className={classnames(
             styles['hover-message'],
-            { [styles['left']]: left },
-            { [styles['right']]: right }
+            left && styles['left'],
+            right && styles['right'],
+            inline && styles[`inline-hover-${inline}`]
           )}
         >
           { children }
@@ -85,7 +88,11 @@ Tooltip.propTypes = {
   /**
    * render right-side variant
    */
-  right: PropTypes.bool
+  right: PropTypes.bool,
+  /**
+   * Inlines the tooltip & adds appropriate margin
+   */
+  inline: PropTypes.oneOf([ 'left', 'right' ])
 };
 
 export default Tooltip;

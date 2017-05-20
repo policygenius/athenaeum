@@ -9,6 +9,18 @@ $tooltip-shift-amount: 60%;
   display: inline-block;
 }
 
+.inline-left, {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: ru(.25);
+}
+
+.inline-right {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: ru(.25);
+}
+
 .hover-message {
   @include typography-7;
   background: color('neutral-8');
@@ -64,6 +76,16 @@ $tooltip-shift-amount: 60%;
   &:after {
     right: $tooltip-shift-amount;
   }
+}
+
+.inline-hover-left {
+  margin-right: ru(.25);
+  top: inherit;
+}
+
+.inline-hover-right {
+  margin-left: ru(.25);
+  top: inherit;
 }
 
 @media #{$medium-up} {

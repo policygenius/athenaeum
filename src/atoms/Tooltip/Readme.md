@@ -13,3 +13,12 @@ Tooltip Example:
     </Tooltip>
   </div>
 ```
+
+Inline Tooltip Example:
+
+```example
+    <TextComponent>
+      <Tooltip inline='left'>I'm a tooltip</Tooltip>
+      Text with inlined tooltip
+    </TextComponent>
+```

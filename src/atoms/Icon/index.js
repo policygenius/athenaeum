@@ -12,7 +12,8 @@ function Icon( props ) {
     className,
     onClick,
     height,
-    width
+    width,
+    inline
   } = props;
 
   return (
@@ -20,7 +21,8 @@ function Icon( props ) {
       className={
         classnames(
           styles['icon-wrapper'],
-          { [styles.clickable]: onClick },
+          onClick && styles['clickable'],
+          inline && styles[`inline-${inline}`],
           className
         )}
       onClick={onClick}
@@ -54,7 +56,11 @@ Icon.propTypes = {
   /**
    * Override the default width of the icon. Icon will maintain its proportions.
    */
-  width: PropTypes.string
+  width: PropTypes.string,
+  /**
+   * For use with another component e.g. Text. Vertically aligns to the middle, adds margin.
+   */
+  inline: PropTypes.oneOf([ 'left', 'right' ])
 };
 
 export default Icon;
