@@ -20,19 +20,24 @@
   &-layout {
     margin-bottom: ru(.5);
     display: flex;
-    flex: 1 0 auto;
     justify-content: space-between;
   }
 
   &-phone {
     @include typography-6(false);
     @include typography-semibold;
+
+    flex-grow: 1;
+    flex-basis: 0;
     color: inherit;
   }
 
   &-button {
     $button-color: color('neutral-3');
     $button-padding: ru(.25);
+
+    flex-grow: 1;
+    flex-basis: 0;
 
     padding-top: $button-padding;
     padding-bottom: $button-padding;
@@ -50,7 +55,7 @@
 
   &-text {
     @include typography-7(false);
-    padding: ru(.25);
+    padding: ru(.25) 0;
   }
 }
 
@@ -104,6 +109,7 @@
   .help {
     &-layout { justify-content: center; }
     &-text {
+      text-align: center;
       margin-bottom: ru(1);
     }
   }

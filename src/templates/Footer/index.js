@@ -47,15 +47,13 @@ function Footer(props) {
         <Col
           className={classnames(styles['footer-help'], styles['help'])}
         >
-          <Layout
-            className={styles['help-layout']}
-            mediumCols={[ 6 ]}
-            smallCols={[ 6 ]}
-          >
-            <h4 className={styles['help-phone']}>
-              Questions?<br />
-              {phoneNumber}
-            </h4>
+          <div className={styles['help-layout']}>
+            { phoneNumber &&
+              <h4 className={styles['help-phone']}>
+                Questions?<br />
+                {phoneNumber}
+              </h4>
+            }
 
             { onClickChat &&
               <Button
@@ -66,12 +64,14 @@ function Footer(props) {
                 Expert Chat
               </Button>
             }
-          </Layout>
-
-          <div className={styles['help-text']}>
-            { 'Experts available weekdays 9-7pm EST - 24/7 by ' }
-            <LinkWrapper href={`mailto:${emailAddress}`}>email.</LinkWrapper>
           </div>
+
+          { emailAddress &&
+            <div className={styles['help-text']}>
+              { 'Experts available weekdays 9am-7pm ET - 24/7 by ' }
+              <LinkWrapper href={`mailto:${emailAddress}`}>email.</LinkWrapper>
+            </div>
+          }
         </Col>
 
         <Col className={classnames(styles['footer-trust'], styles['trust'])}>
