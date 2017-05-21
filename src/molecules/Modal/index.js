@@ -8,6 +8,15 @@ import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 import styles from './modal.module.scss';
 
+const wrapChild = child => React.cloneElement(
+  child,
+  {
+    className: classnames(
+      styles['section'],
+    )
+  }
+);
+
 function Modal(props) {
   const {
     children,
@@ -58,7 +67,7 @@ function Modal(props) {
         </div>
 
         <div className={styles.body}>
-          {children}
+          {React.Children.map(children, wrapChild)}
         </div>
       </div>
     </ReactModal>
