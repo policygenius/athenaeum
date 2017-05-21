@@ -41,13 +41,14 @@ export default {
     const clickExample = () => alert('Chat clicked!')
 
     return (
-      <ContactCard
-        className={styles['contact-card']}
-        phoneNumber='1 (800) 555-5309'
-        chatText='Chat with an Expert'
-        chatClick={clickExample}
-        inverted={data && data.inverted}
-      />
+      <div className={styles['contact-card']}>
+        <ContactCard
+          phoneNumber='1 (800) 555-5309'
+          chatText='Chat with an Expert'
+          chatClick={clickExample}
+          inverted={data && data.inverted}
+        />
+      </div>
     );
   },
 

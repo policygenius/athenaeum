@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import Icon from 'atoms/Icon';
@@ -21,9 +21,9 @@ describe('Navigator', () => {
     });
 
     it('has a ContactCard partial', () => {
-      const partial = NavigatorPartials.contactCard();
+      const partial = mount(NavigatorPartials.contactCard());
 
-      expect(partial.type).to.equal(ContactCard);
+      expect(partial.find(ContactCard)).to.have.length(1);
     });
 
     it('has a Icon partial', () => {
