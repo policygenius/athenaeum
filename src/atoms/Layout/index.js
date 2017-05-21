@@ -10,6 +10,7 @@ function Layout( props ) {
     className,
     padding,
     style,
+    variant,
   } = props;
 
   const kids = processChildren(props);
@@ -18,7 +19,11 @@ function Layout( props ) {
     <div
       style={style}
       className={classnames(
-        styles.layout, padding && styles.padding, className)}
+        styles.layout,
+        padding && styles.padding,
+        className,
+        variant && styles[variant]
+      )}
     >
       { kids }
     </div>
@@ -43,34 +48,44 @@ Layout.propTypes = {
   breakpoint: PropTypes.string,
 
   /**
-   * each number in array sets column width for each child in Layout
+   * Sets columns grid width in the Layout within a viewport from `0px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
-  childCols: PropTypes.arrayOf( PropTypes.number ),
+  smallCols: PropTypes.oneOfType([
+    PropTypes.arrayOf( PropTypes.number ),
+    PropTypes.oneOf([ 'auto' ]),
+  ]),
 
   /**
-   * Sets columns grid width in the Layout within a viewport from `0px` up
+   * Sets col grid width in viewport from `768px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
-  smallCols: PropTypes.arrayOf( PropTypes.number ),
+  mediumCols: PropTypes.oneOfType([
+    PropTypes.arrayOf( PropTypes.number ),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
-   * Sets col grid width in viewport from `768px` up
+   * Sets col grid width in viewport from `1024px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
-  mediumCols: PropTypes.arrayOf( PropTypes.number ),
+  largeCols: PropTypes.oneOfType([
+    PropTypes.arrayOf( PropTypes.number ),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
-   * Sets col grid width in viewport from `1024px` up
+   * Sets col grid width in viewport from `1280px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
-  largeCols: PropTypes.arrayOf( PropTypes.number ),
+  xLargeCols: PropTypes.oneOfType([
+    PropTypes.arrayOf( PropTypes.number ),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
-   * Sets col grid width in viewport from `1280px` up
+   * Sets col grid width in viewport from `1440px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
-  xLargeCols: PropTypes.arrayOf( PropTypes.number ),
-
-  /**
-   * Sets col grid width in viewport from `1440px` up
-   */
-  xxLargeCols: PropTypes.arrayOf( PropTypes.number ),
+  xxLargeCols: PropTypes.oneOfType([
+    PropTypes.arrayOf( PropTypes.number ),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
    * Adds standard (~6px) left/right padding to the `Layout`
@@ -88,6 +103,18 @@ Layout.propTypes = {
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    */
   style: PropTypes.object,
+
+  /**
+   * Gives child `Col`s `flex` prop.
+   */
+  flex: PropTypes.bool,
+
+  /**
+   * Special variant options.
+   *
+   * `'bordered-buckets'`: Creates borders around `Col` from medium viewports up.
+   */
+  variant: PropTypes.oneOf([ 'bordered-buckets' ]),
 };
 
 Layout.defaultProps = {

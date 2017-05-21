@@ -1,4 +1,5 @@
 $gutter-width: ru(.25);
+$border: 1px solid color('neutral-6');
 
 @mixin g-unit($cols: 1, $total-col-count: 12) {
   $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
@@ -10,12 +11,18 @@ $gutter-width: ru(.25);
 }
 
 @mixin createCols( $size ) {
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+
   @for $i from 1 through 12 {
     .col-#{$size}-#{$i} {
       @include g-unit($i);
-      padding-left: $gutter-width;
-      padding-right: $gutter-width;
     }
+  }
+
+  .col-#{$size}-auto {
+    width: auto;
+    flex-basis: auto;
   }
 }
 
@@ -24,12 +31,29 @@ $gutter-width: ru(.25);
   flex-wrap: wrap;
 }
 
+.col {
+  flex: 1 0 auto;
+}
+
 @media #{$small-up} {
   @include createCols( 'sm' );
 }
 
 @media #{$medium-up} {
   @include createCols( 'md' );
+
+  .bordered-buckets {
+    [class*='col-'] {
+      border-bottom: $border;
+      border-left: $border;
+      border-left: $border;
+      padding: ru(.75) ru(.5);
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
 }
 
 @media #{$large-up} {

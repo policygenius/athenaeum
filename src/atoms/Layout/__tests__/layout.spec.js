@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import Layout from 'atoms/Layout';
@@ -8,11 +8,16 @@ import Col from 'atoms/Layout/Col';
 describe('<Layout />', () => {
 
   it('renders', () => {
-    const wrapper = shallow(<Layout />);
+    const wrapper = mount(<Layout />);
 
-    expect(wrapper.length).to.equal(1);
+    expect(wrapper.type()).to.equal(Layout);
   });
 
+  it('can create variant via props', () => {
+    const wrapper = shallow(<Layout variant='bordered-buckets' />);
+
+    expect(wrapper.hasClass('bordered-buckets')).to.be.ok;
+  });
 
   it('renders its children', () => {
     const wrapper = shallow(
