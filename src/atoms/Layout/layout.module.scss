@@ -11,9 +11,6 @@ $border: 1px solid color('neutral-6');
 }
 
 @mixin createCols( $size ) {
-  padding-left: $gutter-width;
-  padding-right: $gutter-width;
-
   @for $i from 1 through 12 {
     .col-#{$size}-#{$i} {
       @include g-unit($i);
@@ -32,6 +29,8 @@ $border: 1px solid color('neutral-6');
 }
 
 .col {
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
   flex: 1 0 auto;
 }
 
@@ -44,7 +43,6 @@ $border: 1px solid color('neutral-6');
 
   .bordered-buckets {
     [class*='col-'] {
-      border-bottom: $border;
       border-left: $border;
       border-left: $border;
       padding: ru(.75) ru(.5);

@@ -38,40 +38,52 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
               isOpen={this.state.modalIsOpen}
               contentLabel='Modal'
             >
-              <Layout
-                fullwidth
-                mediumCols={[ 9, 3, 6, 3, 3 ]}
-                variant='form'
-              >
-                <TextField
-                  label='Street address'
-                  placeholder='Enter your street address'
-                />
-                <TextField
-                  label='Apt. #'
-                  placeholder='Apt. #'
-                />
-                <TextField
-                  label='City'
-                  placeholder='City'
-                />
-                <TextField
-                  label='State'
-                  placeholder='State'
-                />
-                <TextField
-                  label='Zip code'
-                  placeholder='Zip code'
-                />
-              </Layout>
+              <div>
+                <Layout
+                  mediumCols={[ 9, 3, 6, 3, 3 ]}
+                  bottomSpacing='small'
+                >
+                  <TextField
+                    label='Street address'
+                    placeholder='Enter your street address'
+                  />
+                  <TextField
+                    label='Apt. #'
+                    placeholder='Apt. #'
+                  />
+                  <TextField
+                    label='City'
+                    placeholder='City'
+                  />
+                  <TextField
+                    label='State'
+                    placeholder='State'
+                  />
+                  <TextField
+                    label='Zip code'
+                    placeholder='Zip code'
+                  />
+                </Layout>
 
-              <Spacer small />
+                <Spacer small />
 
-              <Layout
-                fullwidth
-              >
-                <Button variant='action'>Confirm your address</Button>
-              </Layout>
+                <Layout>
+                  <Button variant='action'>Confirm your address</Button>
+                </Layout>
+                <Spacer medium />
+              </div>
+              <div noPadding>
+                <Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex>
+                  <div>'Child 1'</div>
+                  <div>'Child 2'</div>
+                  <div>'Child 3'</div>
+                  <div>'Child 4'</div>
+                  <div>'Child 5'</div>
+                </Layout>
+              </div>
+              <div>
+                This is another section
+              </div>
             </Modal>
           </div>
         )
