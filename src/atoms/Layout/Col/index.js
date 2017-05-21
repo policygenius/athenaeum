@@ -24,6 +24,7 @@ function Col(props) {
     <div
       style={style}
       className={classnames(
+        styles['col'],
         { [styles[`col-sm-${smallCols}`]]: smallCols },
         { [styles[`col-md-${mediumCols}`]]: mediumCols },
         { [styles[`col-lg-${largeCols}`]]: largeCols },
@@ -54,29 +55,43 @@ Col.propTypes = {
   bottomSpacing: PropTypes.string,
 
   /**
-    * Overides column grid width within a viewport from `0px` up
-    */
-  smallCols: PropTypes.number,
+   * Overides column grid width within a viewport from `0px` up. Width can also be set to 'auto'.
+   */
+  smallCols: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
-   * Sets col grid width in viewport from `768px` up
+   * Sets col grid width in viewport from `768px` up. Width can also be set to 'auto'.
    */
-  mediumCols: PropTypes.number,
+  mediumCols: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
-   * Sets col grid width in viewport from `1024px` up
+   * Sets col grid width in viewport from `1024px` up. Width can also be set to 'auto'.
    */
-  largeCols: PropTypes.number,
+  largeCols: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
-   * Sets col grid width in viewport from `1280px` up
+   * Sets col grid width in viewport from `1280px` up. Width can also be set to 'auto'.
    */
-  xLargeCols: PropTypes.number,
-
+  xLargeCols: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
   /**
-   * Sets col grid width in viewport from `1440px` up
+   * Sets col grid width in viewport from `1440px` up. Width can also be set to 'auto'.
    */
-  xxLargeCols: PropTypes.number,
+  xxLargeCols: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.oneOf([ 'auto' ])
+  ]),
 
   /**
    * Overides flex, changes Col to grow to fill empty space in the row (`flex-grow: 1`)

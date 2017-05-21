@@ -36,6 +36,7 @@ export function processChildren(props) {
     xLargeCols,
     xxLargeCols,
     bottomSpacing,
+    flex,
     fullwidth,
   } = props;
 
@@ -80,7 +81,8 @@ export function processChildren(props) {
       xLargeCols: xLargeCols[xlgIdx],
       xxLargeCols: xxLargeCols[xxlgIdx],
       bottomSpacing,
-      fullwidth
+      fullwidth,
+      flex
     };
 
     return processChild(child, layoutProps);

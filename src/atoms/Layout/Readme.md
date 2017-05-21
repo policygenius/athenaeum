@@ -129,3 +129,17 @@ All child component props will be passed directly to the component itself.
       </Layout>
     </div>
 ```
+
+## Special Variants
+### `'bordered-buckets'`
+
+```example
+<Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex>
+  <div>'Child 1'</div>
+  <div>'Child 2'</div>
+  <div>'Child 3'</div>
+  <div>'Child 4'</div>
+  <div>'Child 5'</div>
+</Layout>
+```
+
