@@ -10,11 +10,37 @@ const weight = ({ semibold, light }) => {
   return 'regular';
 };
 
+const convertChild = (child) => {
+  // Check children for other TextComponents
+  // and automatically convert them into <spans> if they are <p>.
+  if (child.type === TextComponent &&
+    child.props.tag === 'p') {
+
+    return React.cloneElement(child, { tag: 'span' });
+  }
+
+  return child;
+};
+
+
 const filter = (children) => {
   if (typeof children.type === 'function') return children.type(children.props);
 
-  return children;
+  return React.Children.map(children, convertChild);
 };
+
+function chooseTag(props, tag) {
+  const {
+    semibold,
+    variant
+  } = props;
+
+  if (semibold) return 'strong';
+  if (variant === 'italics') return 'em';
+  if (variant === 'strikethrough') return 'span';
+
+  return tag;
+}
 
 function TextComponent(props) {
   const {
@@ -30,12 +56,13 @@ function TextComponent(props) {
   if (!children) return null;
 
   return React.createElement(
-    tag,
+    chooseTag(props, tag),
     { className: classnames(
       styles[`typography-${type}`],
       styles[weight(props)],
       styles[color],
       styles[variant],
+      styles[tag],
       className
     ) },
     filter(children),
@@ -43,6 +70,7 @@ function TextComponent(props) {
 }
 
 TextComponent.propTypes = {
+
   /**
    * You can use any html element text tag
    */
@@ -76,7 +104,11 @@ TextComponent.propTypes = {
   /**
    * Text decoration
    */
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf([
+    'strikethrough',
+    'underline'
+  ]),
+
   /**
    * Color style, see [Colors](#colors) for appropriate values
    */

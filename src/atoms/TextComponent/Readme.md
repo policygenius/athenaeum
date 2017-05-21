@@ -12,3 +12,13 @@ Text Examples:
     <TextComponent type={7}>Type 7</TextComponent>
   </div>
 ```
+
+```example
+  <div>
+    <TextComponent type={4} color='neutral-5' variant='strikethrough'>
+      <TextComponent tag='sup'>$</TextComponent>
+      <TextComponent type={3}>10 </TextComponent>
+      <TextComponent type={7} semibold>/mo.</TextComponent>
+    </TextComponent>
+  </div>
+```
