@@ -4,6 +4,19 @@ X-Icon example:
     <Icon icon='xIcon' />
 ```
 
+Inline Icon example:
+
+```example
+    <TextComponent>
+      <Icon
+        icon='checkmark'
+        height='15'
+        width='15'
+        inline='left'
+      />
+      Text with inlined icon
+    </TextComponent>
+```
 
 # All Available Icons:
 ```example

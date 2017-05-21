@@ -19,6 +19,16 @@
   }
 }
 
+.inline-left {
+  vertical-align: middle;
+  margin-right: ru(.25);
+}
+
+.inline-right {
+  vertical-align: middle;
+  margin-left: ru(.25);
+}
+
 .clickable {
   cursor: pointer;
 }

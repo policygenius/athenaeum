@@ -9,6 +9,10 @@
   &.simple {
     max-width: rem-calc(728);
   }
+
+  &.large {
+    max-width: rem-calc(940);
+  }
 }
 
 .dialog {

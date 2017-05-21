@@ -99,7 +99,7 @@ Modal.propTypes = {
   onRequestClose: PropTypes.func,
 
   /**
-   * variant for modal
+   * variant for modal - options are `simple` (default) & `large`
    */
   variant: PropTypes.string,
 };
