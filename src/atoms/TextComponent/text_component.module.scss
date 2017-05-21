@@ -21,6 +21,24 @@
   padding-bottom: 2px;
 }
 
+.sup {
+  vertical-align: text-top;
+  font-size: 60%;
+}
+
+.strikethrough {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    width: 110%;
+    border-bottom: 2px solid;
+  }
+}
+
 @each $key, $value in $colors-map {
   .#{$key} { color: $value; }
 }
