@@ -51,40 +51,50 @@ Layout.propTypes = {
    * Sets columns grid width in the Layout within a viewport from `0px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
   smallCols: PropTypes.oneOfType([
-    PropTypes.arrayOf( PropTypes.number ),
-    PropTypes.oneOf([ 'auto' ]),
+    PropTypes.arrayOf( PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf([ 'auto' ]),
+    ])),
   ]),
 
   /**
    * Sets col grid width in viewport from `768px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
   mediumCols: PropTypes.oneOfType([
-    PropTypes.arrayOf( PropTypes.number ),
-    PropTypes.oneOf([ 'auto' ])
+    PropTypes.arrayOf( PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf([ 'auto' ]),
+    ])),
   ]),
 
   /**
    * Sets col grid width in viewport from `1024px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
   largeCols: PropTypes.oneOfType([
-    PropTypes.arrayOf( PropTypes.number ),
-    PropTypes.oneOf([ 'auto' ])
+    PropTypes.arrayOf( PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf([ 'auto' ]),
+    ])),
   ]),
 
   /**
    * Sets col grid width in viewport from `1280px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
   xLargeCols: PropTypes.oneOfType([
-    PropTypes.arrayOf( PropTypes.number ),
-    PropTypes.oneOf([ 'auto' ])
+    PropTypes.arrayOf( PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf([ 'auto' ]),
+    ])),
   ]),
 
   /**
    * Sets col grid width in viewport from `1440px` up. Set to `'auto'` to allow width to be auto (i.e. flex-basis: auto)
    */
   xxLargeCols: PropTypes.oneOfType([
-    PropTypes.arrayOf( PropTypes.number ),
-    PropTypes.oneOf([ 'auto' ])
+    PropTypes.arrayOf( PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf([ 'auto' ]),
+    ])),
   ]),
 
   /**

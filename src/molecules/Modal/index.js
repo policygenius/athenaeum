@@ -2,19 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ReactModal from 'react-modal';
-import TextComponent from 'atoms/TextComponent';
+
+import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
-import Layout from 'atoms/Layout';
-import Col from 'atoms/Layout/Col';
+import { Layout, Col } from 'atoms/Layout';
 import styles from './modal.module.scss';
 
-const wrapChild = child => React.cloneElement(
-  child,
+const wrapChild = child => React.createElement(
+  'div',
   {
     className: classnames(
       styles['section'],
     )
-  }
+  },
+  child
 );
 
 function Modal(props) {
@@ -44,12 +45,12 @@ function Modal(props) {
             fullwidth
             smallCols={[ 11, 1 ]}
           >
-            <TextComponent
+            <Text
               type={2}
               light
             >
               {header}
-            </TextComponent>
+            </Text>
 
             <Col
               fullwidth
@@ -90,7 +91,7 @@ Modal.propTypes = {
   /**
    * label passed to ReactModal `contentLabel`
    */
-  contentLabel: PropTypes.string,
+  contentLabel: PropTypes.string.isRequired,
 
   /**
    * Boolean to determine modal open/closed
