@@ -5,21 +5,55 @@ import classnames from 'classnames';
 import colors from 'atoms/Color/colors.module.scss';
 import styles from './text.module.scss';
 
+const getTag = (props) => {
+  const {
+    tag,
+    semibold,
+    variant,
+  } = props;
+
+  if (semibold) return 'strong';
+  if (variant === 'italics') return 'em';
+  if (variant === 'strikethrough') return 'span';
+
+  return tag;
+};
+
+const getWeight = ({ semibold, light, weight }) => {
+  if (weight) return weight;
+  if (semibold) return 'semibold';
+  if (light) return 'light';
+
+  return 'regular';
+};
+
+const convertChild = (child) => {
+  // Check children for other TextComponents
+  // and automatically convert them into <spans> if they are <p>.
+  if (child.type === Text && child.props.tag === 'p') {
+    return React.cloneElement(child, { tag: 'span' });
+  }
+
+  return child;
+};
+
 function Text(props) {
   if (!props.children) return null;
 
   const {
     children,
     className,
-    tag,
     type,
-    weight,
     color,
     variant,
   } = props;
 
+  const tag = getTag(props);
+  const weight = getWeight(props);
+
   const Element = `${tag}`;
   const classes = [
+    styles['text'],
     styles[`typography-${type}`],
     styles[weight],
     colors[color],
@@ -30,7 +64,7 @@ function Text(props) {
 
   return (
     <Element className={classnames(...classes)}>
-      { children }
+      { React.Children.map(children, convertChild) }
     </Element>
   );
 }
@@ -53,28 +87,29 @@ Text.propTypes = {
   type: PropTypes.number,
 
   /**
-   * Font weight: light|semibold|bold
-   * - light = 300
-   * - semibold = 500
-   * - bold = 600
-   */
-  weight: PropTypes.oneOf([
-    'light',
-    'semibold',
-    'bold',
-  ]),
-
-  /**
    * Text decoration
    */
   variant: PropTypes.oneOf([
     'strikethrough',
     'underline',
   ]),
+
   /**
    * Color style, see [Colors](#colors) for appropriate values
    */
   color: PropTypes.string,
+
+  /**
+   * - light = 300
+   * - semibold = 500
+   */
+  weight: PropTypes.oneOf([
+    'light',
+    'semibold',
+  ]),
+
+  light: PropTypes.bool,
+  semibold: PropTypes.bool,
 };
 
 Text.defaultProps = {
