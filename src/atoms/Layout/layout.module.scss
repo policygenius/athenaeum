@@ -34,6 +34,12 @@ $border: 1px solid color('neutral-6');
   flex: 1 0 auto;
 }
 
+.bordered-buckets {
+  [class*='col-'] {
+    padding-bottom: ru(1);
+  }
+}
+
 @media #{$small-up} {
   @include createCols( 'sm' );
 }
@@ -45,10 +51,16 @@ $border: 1px solid color('neutral-6');
     [class*='col-'] {
       border-left: $border;
       border-left: $border;
-      padding: ru(.75) ru(.5);
+      padding: ru(.75) ru(.25) ru(1.25);
+      flex: 1;
 
       &:first-child {
+        padding-left: 0;
         border-left: none;
+      }
+
+      &:last-child {
+        padding-right: 0;
       }
     }
   }
@@ -56,6 +68,11 @@ $border: 1px solid color('neutral-6');
 
 @media #{$large-up} {
   @include createCols( 'lg' );
+  .bordered-buckets {
+    [class*='col-'] {
+      flex: 1 0 auto;
+    }
+  }
 }
 
 @media #{$xlarge-up} {
