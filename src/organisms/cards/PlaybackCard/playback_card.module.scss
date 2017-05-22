@@ -75,20 +75,19 @@
 }
 
 .amount {
-  font-weight: bold;
   text-align: right;
-  color: color('brand-2');
 }
 
 @media #{$small-only} {
-
   .playback-card {
-    // @extend %card-reset;
-
     background-color: transparent;
     border-radius: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 0;
+  }
+
+  .amount {
+    text-align: center;
+    margin-top: ru(.5);
   }
 }

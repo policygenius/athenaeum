@@ -3,9 +3,10 @@ PlaybackCardWrapper Example:
 ```example
     <PlaybackCardWrapper
       logo={<Icon icon='stillwaterLogoBlack' sizeAuto />}
-      amount={10}
+      amount={10.50}
       footer='View Full Policy Details'
       footerOnClick={() => alert('go')}
+      unit='/mo'
     >
 
       <PlaybackCard

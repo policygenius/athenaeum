@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import accounting from 'accounting';
 
 import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
+import Col from 'atoms/Layout/Col';
 
 import styles from 'organisms/cards/PlaybackCard/playback_card.module.scss';
 
@@ -18,6 +20,9 @@ function PlaybackCardWrapper(props) {
     footerOnClick,
   } = props;
 
+  const formattedNumber = accounting.formatNumber(amount, { precision: 2 });
+  const splitNumber = formattedNumber.toString().split('.');
+
   const renderHeader = () => {
     if (!logo || !amount) return null;
 
@@ -28,11 +33,16 @@ function PlaybackCardWrapper(props) {
         fullwidth
       >
         <div className={styles['logo-wrapper']}>{logo}</div>
-        <div className={styles['amount']}>
-          <sup>$</sup>
-          <span>{amount}</span>
-          { unit && <small>{unit}</small> }
-        </div>
+        <Col className={styles['amount']}>
+          <span>
+            <Text type={3} color='brand-2' tag='strong' semibold>
+              <Text tag='sup' type={3}>$</Text>
+              <Text type={2} tag='strong' semibold>{splitNumber[0]}</Text>
+              <Text tag='sup' type={3}> .{splitNumber[1]}</Text>
+              <Text type={5} semibold tag='strong'>{unit}</Text>
+            </Text>
+          </span>
+        </Col>
       </Layout>
     );
   };

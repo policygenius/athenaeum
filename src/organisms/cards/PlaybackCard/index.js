@@ -14,7 +14,7 @@ function PlaybackCard(props) {
     children,
     header,
     onClick,
-    icon,
+    icon
   } = props;
 
   const parts = separatePartials(children);
