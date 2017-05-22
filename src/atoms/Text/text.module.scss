@@ -4,16 +4,16 @@
   }
 }
 
-.semibold {
-  @include typography-semibold;
+.regular {
+  @include typography-regular;
 }
 
 .light {
   @include typography-light;
 }
 
-.regular {
-  @include typography-regular;
+.semibold {
+  @include typography-semibold;
 }
 
 .underline {

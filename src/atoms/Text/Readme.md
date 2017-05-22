@@ -13,9 +13,3 @@ Text Example:
       <Text type={7}>Type 7</Text>
     </div>
 ```
-
-```example
-    <div>
-      <Text tag='h1' color='brand-2'>can be an h1</Text>
-    </div>
-```
