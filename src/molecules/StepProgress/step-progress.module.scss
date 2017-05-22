@@ -1,7 +1,7 @@
 $icon-color:                        color('neutral-2');
 $inactive-color:                    color('neutral-4');
 $icon-size:                         rem-calc(20px);
-$item-size:                         ru(1.667);
+$item-size:                         ru(1.5);
 $item-border-width:                 rem-calc(2px);
 $item-border-color:                 color('brand-3');
 $item-background-color:             color('neutral-8');
@@ -47,7 +47,7 @@ $mobile-inactive-item-border-color: color('brand-2');
 
     .wrapper:before {
       z-index: -2;
-      width: calc(100% - #{ru(3.833)});
+      width: calc(100% - #{ru(3.75)});
     }
   }
 

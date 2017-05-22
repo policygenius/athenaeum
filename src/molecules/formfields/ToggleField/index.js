@@ -13,8 +13,7 @@ function renderChoices(choices, input) {
   if (!choices) return null;
 
   return choices.map((choice, idx) => {
-    // eslint-disable-next-line
-    const variantName = input.value == choice.value ? 'toggle-active' : 'toggle';
+    const variantName = input.value === choice.value ? 'toggle-active' : 'toggle';
 
     return (
       <Button

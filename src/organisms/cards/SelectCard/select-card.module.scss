@@ -10,7 +10,7 @@ $footer-link-hover-color:  color('neutral-2');
 .select {
   composes: card;
   border: $select-card-border;
-  border-bottom-width: ru(.125);
+  border-bottom-width: 3px;
 }
 
 .footer {
@@ -36,5 +36,3 @@ $footer-link-hover-color:  color('neutral-2');
     color: $footer-link-hover-color;
   }
 }
-
-
