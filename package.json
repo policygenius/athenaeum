@@ -31,6 +31,7 @@
   "homepage": "https://github.com/policygenius/athenaeum#readme",
   "dependencies": {
     "@policygenius/react-styleguidist": "git://github.com/policygenius/react-styleguidist",
+    "accounting": "^0.4.1",
     "classnames": "^2.2.5",
     "holderjs": "^2.9.4",
     "identity-obj-proxy": "^3.0.0",
