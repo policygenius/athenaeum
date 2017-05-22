@@ -10,8 +10,8 @@ Inline Icon example:
     <TextComponent>
       <Icon
         icon='checkmark'
-        height='15'
-        width='15'
+        height='15px'
+        width='15px'
         inline='left'
       />
       Text with inlined icon

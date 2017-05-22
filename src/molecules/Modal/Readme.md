@@ -72,7 +72,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
                 </Layout>
                 <Spacer medium />
               </div>
-              <div noPadding>
+              <div>
                 <Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex>
                   <div>'Child 1'</div>
                   <div>'Child 2'</div>

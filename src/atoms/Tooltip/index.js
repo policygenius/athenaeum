@@ -5,14 +5,13 @@ import Icon from 'atoms/Icon';
 import Modal from 'molecules/Modal';
 import styles from './tooltip.module.scss';
 
-/* eslint-disable */
 class Tooltip extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       modalIsOpen: false
-    }
+    };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -36,44 +35,42 @@ class Tooltip extends React.Component {
       className,
       left,
       right,
-      inline
     } = this.props;
 
     return (
-      <div
+      <span
         onClick={this.openModal}
         className={classnames(
           styles['tooltip-wrapper'],
-          inline && styles[`inline-${inline}`],
           className
         )}
       >
         <Icon icon='questionMark' className={styles['tooltip']} />
-        <div
+        <span
           className={classnames(
             styles['hover-message'],
             left && styles['left'],
             right && styles['right'],
-            inline && styles[`inline-hover-${inline}`]
           )}
         >
           { children }
-        </div>
+        </span>
         <Modal
-          header="Learn more"
-          isOpen={ this.state.modalIsOpen }
-          contentLabel=''
+          header='Learn more'
           onRequestClose={this.closeModal}
+          isOpen={this.state.modalIsOpen}
+          contentLabel=''
         >
-          { children }
+          {children}
         </Modal>
-      </div>
-    )
+      </span>
+    );
   }
 }
 
 
 Tooltip.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -89,10 +86,6 @@ Tooltip.propTypes = {
    * render right-side variant
    */
   right: PropTypes.bool,
-  /**
-   * Inlines the tooltip & adds appropriate margin
-   */
-  inline: PropTypes.oneOf([ 'left', 'right' ])
 };
 
 export default Tooltip;

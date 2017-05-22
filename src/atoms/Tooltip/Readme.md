@@ -17,8 +17,7 @@ Tooltip Example:
 Inline Tooltip Example:
 
 ```example
-    <TextComponent>
-      <Tooltip inline='left'>I'm a tooltip</Tooltip>
-      Text with inlined tooltip
-    </TextComponent>
+  <TextComponent>
+    <Tooltip left>I'm a tooltip</Tooltip> Text with inlined tooltip
+  </TextComponent>
 ```

@@ -79,7 +79,7 @@ CreditCardField.propTypes = {
   /**
    * Redux form input object
    */
-  input: PropTypes.object,
+  input: PropTypes.object.isRequired,
 };
 
 CreditCardField.defaultProps = {

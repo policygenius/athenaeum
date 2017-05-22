@@ -58,7 +58,7 @@ Col.propTypes = {
    * Overides column grid width within a viewport from `0px` up. Width can also be set to 'auto'.
    */
   smallCols: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.number,
     PropTypes.oneOf([ 'auto' ])
   ]),
 
@@ -66,7 +66,7 @@ Col.propTypes = {
    * Sets col grid width in viewport from `768px` up. Width can also be set to 'auto'.
    */
   mediumCols: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.number,
     PropTypes.oneOf([ 'auto' ])
   ]),
 
@@ -74,7 +74,7 @@ Col.propTypes = {
    * Sets col grid width in viewport from `1024px` up. Width can also be set to 'auto'.
    */
   largeCols: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.number,
     PropTypes.oneOf([ 'auto' ])
   ]),
 
@@ -82,14 +82,14 @@ Col.propTypes = {
    * Sets col grid width in viewport from `1280px` up. Width can also be set to 'auto'.
    */
   xLargeCols: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.number,
     PropTypes.oneOf([ 'auto' ])
   ]),
   /**
    * Sets col grid width in viewport from `1440px` up. Width can also be set to 'auto'.
    */
   xxLargeCols: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.number,
     PropTypes.oneOf([ 'auto' ])
   ]),
 

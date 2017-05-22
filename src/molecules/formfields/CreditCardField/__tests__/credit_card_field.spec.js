@@ -1,14 +1,14 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import CreditCardField from 'molecules/formfields/CreditCardField';
 
 describe('<CreditCardField />', () => {
 
-  xit('renders', () => {
-    const wrapper = shallow(<CreditCardField />);
+  it('renders', () => {
+    const wrapper = mount(<CreditCardField input={{}} />);
 
-    expect(wrapper.length).to.equal(1);
+    expect(wrapper.type()).to.equal(CreditCardField);
   });
 });

@@ -6,7 +6,7 @@ import ToggleField from 'molecules/formfields/ToggleField';
 
 describe('<ToggleField />', () => {
   it('renders', () => {
-    const wrapper = mount(<ToggleField />);
+    const wrapper = mount(<ToggleField input={{}} />);
 
     expect(wrapper.type()).to.equal(ToggleField);
   });

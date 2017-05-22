@@ -17,7 +17,7 @@ function Icon( props ) {
   } = props;
 
   return (
-    <div
+    <span
       className={
         classnames(
           styles['icon-wrapper'],
@@ -32,7 +32,7 @@ function Icon( props ) {
       }}
     >
       { icon && <SVGInline svg={icon} /> }
-    </div>
+    </span>
   );
 }
 

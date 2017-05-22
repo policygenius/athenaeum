@@ -5,7 +5,7 @@ import omit from 'lodash/omit';
 
 import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
-import Layout from 'atoms/Layout';
+import Layout, { Col } from 'atoms/Layout';
 
 import styles from '../shared/formfields.module.scss';
 
@@ -53,19 +53,19 @@ function ToggleField( props ) {
     <div className={classnames(...classes)}>
       <Layout>
         { label &&
-          <div className={styles['header']}>
+          <Col className={styles['header']}>
             { label }
             { tooltipMessage &&
               <div className={styles['tooltip-wrapper']}>
                 <Tooltip right>{ tooltipMessage }</Tooltip>
               </div>
             }
-          </div>
+          </Col>
         }
-        { children && <div className={styles['body']}>{children}</div> }
-        <div className={styles['button-wrapper']}>
+        { children && <Col className={styles['body']}>{children}</Col> }
+        <Col className={styles['button-wrapper']}>
           { renderChoices(toggleChoices, input) }
-        </div>
+        </Col>
       </Layout>
     </div>
   );
@@ -94,15 +94,18 @@ ToggleField.propTypes = {
       ])
     })
   ),
+
   /**
    * The `tooltopMessage` can be anything that can be rendered:
    * `numbers`, `strings`, `elements` or an `array` (or fragment) containing these types.
    */
   tooltipMessage: PropTypes.node,
+
   /**
    * input object contains any props to be passed directly to the button: value, onChange, onBlur etc.
    */
   input: PropTypes.object.isRequired,
+
   /**
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
