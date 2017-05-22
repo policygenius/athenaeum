@@ -3,7 +3,3 @@
   display: inline-block;
   text-decoration: underline;
 }
-
-@each $key, $value in $colors-map {
-  .#{$key} { color: $value; }
-}

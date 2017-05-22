@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import _ from 'lodash';
+
+import colors from 'atoms/Color/colors.module.scss';
 import styles from './link_wrapper.module.scss';
 
 function LinkWrapper( props ) {
@@ -14,7 +16,7 @@ function LinkWrapper( props ) {
   return (
     <a
       {..._.omit(props, [ 'children', 'className', 'color' ])}
-      className={classnames(styles.link, styles[color], className)}
+      className={classnames(styles.link, colors[color], className)}
     >
       { children }
     </a>
