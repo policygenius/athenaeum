@@ -1,15 +1,44 @@
 ```example
-  <ToggleField
-    htmlFor=''
-    label='Toggle Choices'
-    toggleChoices={[
-      { label: 'Choice 1', value: 1 },
-      { label: 'Choice 2', value: 2 }
-    ]}
-    tooltipMessage='You can choose either of these awesome options!'
-    input={{
-      value: state.value,
-      onChange: (value) => setState({ value })
-    }}
-  />
+  <div>
+    <ToggleField
+      htmlFor=''
+      label='Toggle Choices'
+      toggleChoices={[
+        { label: 'Choice 1', value: 1 },
+        { label: 'Choice 2', value: 2 }
+      ]}
+      input={{
+        value: state.value,
+        onChange: (value) => setState({ value })
+      }}
+    >
+    </ToggleField>
+
+    <Spacer />
+
+    <ToggleField
+      htmlFor=''
+      label='Toggle Choices'
+      toggleChoices={[
+        { label: 'Choice 1', value: 1 },
+        { label: 'Choice 2', value: 2 }
+      ]}
+      tooltipMessage='You can choose either of these awesome options!'
+      input={{
+        value: state.value,
+        onChange: (value) => setState({ value })
+      }}
+    >
+      <List
+        condensed
+        listItems={[
+          <strong>Hope</strong>,
+          'Love',
+          <em>Peace</em>,
+          <Icon icon='health' height='10px' width='20px' />
+        ]}
+      />
+      Additional info goes here....
+    </ToggleField>
+  </div>
 ```

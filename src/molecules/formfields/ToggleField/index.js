@@ -9,18 +9,17 @@ import Layout from 'atoms/Layout';
 
 import styles from '../shared/formfields.module.scss';
 
-function renderChoices(choices, input) {
+const renderChoices = (choices, input) => {
   if (!choices) return null;
 
-  return choices.map((choice, idx) => {
-    // eslint-disable-next-line
-    const variantName = input.value == choice.value ? 'toggle-active' : 'toggle';
+  const renderChoice = (choice, idx) => {
+    const variantName = input.value === choice.value ? 'toggle-active' : 'toggle';
 
     return (
       <Button
+        className={styles['button']}
         variant={variantName}
-        key={`button-toggle-btn-${idx}`}
-        className={styles.button}
+        key={`toggle-${idx}`}
         onClick={e => input.onChange(e.target.value)}
         value={choice.value}
         {...omit(input, 'value')}
@@ -28,11 +27,14 @@ function renderChoices(choices, input) {
         { choice.label }
       </Button>
     );
-  });
-}
+  };
+
+  return choices.map(renderChoice);
+};
 
 function ToggleField( props ) {
   const {
+    children,
     label,
     className,
     tooltipMessage,
@@ -41,18 +43,26 @@ function ToggleField( props ) {
     meta,
   } = props;
 
+  const classes = [
+    styles['togglefield'],
+    { [styles['focused']]: meta && meta.active },
+    className,
+  ];
+
   return (
-    <div className={classnames(className, { [styles.focused]: meta && meta.active }, styles.togglefield)}>
+    <div className={classnames(...classes)}>
       <Layout>
-        {
-          tooltipMessage &&
-            <div className={styles['tooltip-wrapper']}>
-              <Tooltip right>{ tooltipMessage }</Tooltip>
-            </div>
+        { label &&
+          <div className={styles['header']}>
+            { label }
+            { tooltipMessage &&
+              <div className={styles['tooltip-wrapper']}>
+                <Tooltip right>{ tooltipMessage }</Tooltip>
+              </div>
+            }
+          </div>
         }
-
-        { label && <div className={styles.header}>{label}</div> }
-
+        { children && <div className={styles['body']}>{children}</div> }
         <div className={styles['button-wrapper']}>
           { renderChoices(toggleChoices, input) }
         </div>
