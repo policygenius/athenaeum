@@ -1,16 +1,6 @@
-@import 'assets/stylesheets/global';
-
 /* stylelint-disable */
-@keyframes fadeIn {
-  0% { opacity: 0 }
-  100% { opacity: 1 }
-}
 
-@keyframes fadeInDown {
-  0% { opacity: 0; transform: translate3d(0,-100%,0) }
-  100% { opacity: 1; transform: translate3d(0,0,0) }
-}
-
+// Sidedown override animation
 @keyframes slideDown {
   0% {
     max-height: 0;

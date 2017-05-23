@@ -92,6 +92,7 @@ Text.propTypes = {
   variant: PropTypes.oneOf([
     'strikethrough',
     'underline',
+    'fineprint'
   ]),
 
   /**
