@@ -2,10 +2,41 @@ Generic Card Example:
 
 ```example
     <GenericCard
-      header='Janis Ian'
-      subheader='Added to policy'
       onClose={() => alert('I feel so closed rn')}
       footerText='Edit'
       onFooterLinkClick={() => alert("Ughhh~! You've clicked me")}
-    />
+    >
+      <Text tag={'h4'} type={4}>Janis Ian</Text>
+      <Text tag={'h5'} type={6} color='neutral-5'>Added to policy.</Text>
+    </GenericCard>
+```
+
+```example
+    <GenericCard>
+      <DataRow
+        label='Sub Data'
+        tooltip='Everybody needs a little tip'
+        amount={9.73}
+      />
+
+      <DataRow
+        label='Sub Totals'
+        value={<strong>10.22</strong>}
+      />
+
+      <DataRow
+        label='Sub Data'
+        value='10% off'
+        variant='sub'
+        indent
+      />
+
+      <Line border='dashed' spacer={1} />
+
+      <DataRow
+        label='More Data'
+        amount={19.73}
+        variant='large'
+      />
+    </GenericCard>
 ```

@@ -1,9 +1,8 @@
 .data-row {
   display: flex;
+  margin-bottom: ru(.25);
 
-  &-final {
-    margin-top: ru(.2);
-    border-top: 1px solid color('neutral-5');
+  &-large {
 
     .label {
       @include typography(4);
@@ -11,14 +10,26 @@
 
     .value {
       @include typography(3);
+      @include typography-semibold;
+
+      color: color('brand-2');
     }
   }
 
   &-sub {
     .label {
-      font-weight: normal;
+      @include typography-light;
+
       color: color('neutral-3');
     }
+
+    .value {
+      color: color('brand-2');
+    }
+  }
+
+  &-indent {
+    padding-left: ru(.75);
   }
 }
 
@@ -31,11 +42,10 @@
 }
 
 .value {
-  flex-grow: 1;
-  font-weight: bold;
-  text-align: right;
+  @include typography-light;
 
-  color: color('brand-2');
+  flex-grow: 1;
+  text-align: right;
 }
 
 .tip {
