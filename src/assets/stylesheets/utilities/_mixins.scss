@@ -49,3 +49,12 @@
     }
   }
 }
+
+/* stylelint-disable declaration-no-important */
+@mixin sticky-disable {
+  height: auto !important;
+  > div {
+    position: inherit !important;
+  }
+}
+/* stylelint-enable declaration-no-important */

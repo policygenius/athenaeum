@@ -1,5 +1,7 @@
 **[Open this in isolation mode to see it without the Styleguide sidebar.](/#!/Navigator)**
 
+The navigator uses [react-stickynode](https://github.com/yahoo/react-stickynode) to make the contact card and leftRail text sticky.
+
 Navigator Example:
 
 ```example

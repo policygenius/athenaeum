@@ -131,6 +131,10 @@ $main-section-padding: ru(1.5);
     padding-top: ru(1.5);
     margin-bottom: ru(2);
   }
+
+  .sticky {
+    @include sticky-disable;
+  }
 }
 
 @media #{$medium-only} {
@@ -143,6 +147,10 @@ $main-section-padding: ru(1.5);
   .main-col {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .step-progress {
+    margin-bottom: ru(3);
   }
 }
 
@@ -166,11 +174,6 @@ $main-section-padding: ru(1.5);
       display: none;
     }
   }
-
-  .contact-card,
-  .step-progress {
-    margin-bottom: ru(3);
-  }
 }
 
 @media #{$large-up} {
@@ -193,5 +196,11 @@ $main-section-padding: ru(1.5);
     .contact-card {
       display: none;
     }
+  }
+
+  .contact-card,
+  .step-progress,
+  .logo-wrapper {
+    height: ru(5.75);
   }
 }
