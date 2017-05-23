@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import classnames from 'classnames';
-
-import styles from '../shared/formfields.module.scss';
+import Icon from 'atoms/Icon';
+import styles from './text_field.module.scss';
 
 function TextField( props ) {
   const {
@@ -15,32 +15,30 @@ function TextField( props ) {
     meta,
     noBaseStyle,
     mask,
-    maskChar
+    maskChar,
+    secure,
   } = props;
 
-  const baseClassName = classnames(
-    { [styles.textfield]: !noBaseStyle },
-    { [styles.focused]: meta && meta.active && !noBaseStyle },
-    { [styles.hasError]: meta && meta.touched && meta.error && !meta.active },
-    className
-  );
-
+  const classes = [
+    !noBaseStyle && styles['text-field'],
+    meta && meta.active && !noBaseStyle && styles['focused'],
+    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+    className,
+  ];
 
   return (
     <div>
-      <div className={baseClassName}>
-        {
-          label &&
-          <label
-            className={styles.label}
-            htmlFor={htmlFor}
-          >
-            { label }
-          </label>
+      <div className={classnames(...classes)}>
+        { label &&
+          <div className={classnames(styles['header'])}>
+            <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
+            { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
+          </div>
         }
+
         { mask ?
           <InputMask
-            className={styles.input}
+            className={styles['input']}
             type='text'
             placeholder={placeholder}
             mask={mask}
@@ -49,15 +47,15 @@ function TextField( props ) {
           />
           :
           <input
-            className={styles.input}
+            className={styles['input']}
             type='text'
             placeholder={placeholder}
             {...input}
           />
         }
       </div>
-      {meta && meta.touched && meta.error &&
-        <div className={styles.error}>{ meta.error }</div>
+      { meta && meta.touched && meta.error &&
+        <div className={styles['error']}>{meta.error}</div>
       }
 
       {meta && meta.touched && meta.warning &&
@@ -109,11 +107,16 @@ TextField.propTypes = {
   /**
    * Specific the maskChar (must have `mask` set for this to be applied)
    */
-  maskChar: PropTypes.string
+  maskChar: PropTypes.string,
+
+  /**
+   * Adds a lock to the label.
+   */
+  secure: PropTypes.bool,
 };
 
 TextField.defaultProps = {
-  placeholder: 'Placeholder'
+  placeholder: 'Placeholder',
 };
 
 export default TextField;

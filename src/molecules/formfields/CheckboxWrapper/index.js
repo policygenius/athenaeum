@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import styles from '../shared/formfields.module.scss';
+import styles from './checkbox_wrapper.module.scss';
 
 function CheckboxWrapper( props ) {
   const {
@@ -12,19 +12,9 @@ function CheckboxWrapper( props ) {
   } = props;
 
   return (
-    <div className={classnames(styles.checkboxList, { [styles.focused]: focused })}>
-      {
-        label &&
-        <label
-          htmlFor='checkbox'
-          className={styles.label}
-        >
-          { label }
-        </label>
-      }
-      <div className={styles.content}>
-        { children }
-      </div>
+    <div className={classnames(styles['checkbox-list'], focused && styles['focused'] )}>
+      { label && <label htmlFor='checkbox' className={styles['label']}>{label}</label> }
+      <div className={styles['content']}>{ children }</div>
     </div>
   );
 }
@@ -41,4 +31,3 @@ CheckboxWrapper.propTypes = {
 };
 
 export default CheckboxWrapper;
-

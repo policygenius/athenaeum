@@ -8,21 +8,22 @@ $footer-link-hover-color:  color('neutral-2');
 
 
 .select {
-  composes: card;
+  @extend %card;
+
   border: $select-card-border;
   border-bottom-width: ru(.125);
 }
 
 .footer {
-  @include typography-7;
-  margin: 0;
+  @include typography-7(false);
+
   border-top: $select-card-border;
   background-color: $footer-background;
   border-radius: 0 0 $border-radius $border-radius;
 }
 
 .footer-link-wrapper {
-  padding: ru(.25) ru(1);
+  padding: ru(.5) ru(1);
 }
 
 .link {
@@ -36,5 +37,3 @@ $footer-link-hover-color:  color('neutral-2');
     color: $footer-link-hover-color;
   }
 }
-
-

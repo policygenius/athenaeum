@@ -32,7 +32,8 @@ $transition: border-color 150ms ease-out, color 150ms ease-out;
 }
 
 .icon {
-  margin: 0 auto;
+  margin: 0 auto ru(.25);
+  height: ru(1.25);
   max-width: ru(1.25);
 
   path {

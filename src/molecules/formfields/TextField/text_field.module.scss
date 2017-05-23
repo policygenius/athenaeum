@@ -1,0 +1,23 @@
+@import '../shared/formfields.module.scss';
+
+.text-field {
+  @extend %form-field;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-right: ru(.5);
+
+  border-bottom: $border;
+}
+
+.icon-lock {
+  width: ru(.75);
+  height: ru(.75);
+  margin-left: auto;
+}
+
+input[type='text'] {
+  outline: none;
+}

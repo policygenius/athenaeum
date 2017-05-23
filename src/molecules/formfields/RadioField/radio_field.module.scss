@@ -1,19 +1,6 @@
-@import 'assets/stylesheets/global';
-
 $size: ru(.75);
 $gap: ru(.5);
-
 $checked-size: ru(.5);
-$checked-background: color('brand-3');
-
-$label-color: color('neutral-3');
-$label-selected-color: color('neutral-2');
-
-$disabled-color: color('neutral-3');
-$disabled-sign-color: color('neutral-3');
-
-$background-color: color('neutral-8');
-$border-color: color('neutral-5');
 
 .radio-field {
   @include typography-6;
@@ -28,25 +15,27 @@ $border-color: color('neutral-5');
   + .radio-field {
     margin-top: ru(.75);
   }
+}
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $size;
-    height: $size;
-    margin-top: (ru(1) - $size) / 2;
-    border: 1px solid $border-color;
-    background-color: $background-color;
-    border-radius: 50%;
-    overflow: hidden;
-  }
+// pseudo radio button
+.radio-field:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $size;
+  height: $size;
+  overflow: hidden;
+  margin-top: (ru(1) - $size) / 2;
+
+  border: 1px solid color('neutral-5');
+  background-color: color('neutral-8');
+  border-radius: 50%;
+  content: '';
 }
 
 .label {
   display: inline-block;
-  color: $label-color;
+  color: color('neutral-3');
   cursor: pointer;
 
   &:after {
@@ -76,7 +65,7 @@ $border-color: color('neutral-5');
 }
 
 .checked {
-    color: $label-selected-color;
+    color: color('neutral-2');
 
     &:after { opacity: 1; }
 }
@@ -84,10 +73,10 @@ $border-color: color('neutral-5');
 .radio:disabled {
   + .label {
     cursor: not-allowed;
-    color: $disabled-color;
+    color: color('neutral-3');
 
     &:after {
-      box-shadow: 2px 2px 0 0 $disabled-sign-color;
+      box-shadow: 2px 2px 0 0 color('neutral-3');
     }
   }
 }

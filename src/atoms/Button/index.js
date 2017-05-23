@@ -51,7 +51,9 @@ Button.propTypes = {
   /**
    * Possible button variants are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
    */
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf([
+    'info', 'disabled', 'toggle', 'action', 'actionDisabled', 'low-light', 'outline', 'button'
+  ]),
 
   /**
    * Optional icon. Choices can be found here: [Icons](/#icon)

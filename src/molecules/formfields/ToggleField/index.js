@@ -7,13 +7,13 @@ import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
 import Layout, { Col } from 'atoms/Layout';
 
-import styles from '../shared/formfields.module.scss';
+import styles from './toggle_field.module.scss';
 
 const renderChoices = (choices, input) => {
   if (!choices) return null;
 
   const renderChoice = (choice, idx) => {
-    const variantName = input.value === choice.value ? 'toggle-active' : 'toggle';
+    const variantName = input.value == choice.value ? 'toggle-active' : 'toggle'; // eslint-disable-line
 
     return (
       <Button
@@ -34,9 +34,9 @@ const renderChoices = (choices, input) => {
 
 function ToggleField( props ) {
   const {
+    className,
     children,
     label,
-    className,
     tooltipMessage,
     toggleChoices,
     input,
@@ -44,8 +44,8 @@ function ToggleField( props ) {
   } = props;
 
   const classes = [
-    styles['togglefield'],
-    { [styles['focused']]: meta && meta.active },
+    styles['toggle-field'],
+    meta && meta.active && styles['focused'],
     className,
   ];
 

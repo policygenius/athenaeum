@@ -1,0 +1,28 @@
+@import '../shared/formfields.module.scss';
+
+.checkbox-list {
+  @extend %form-field;
+}
+
+.label {
+  border-bottom: 1px solid color('neutral-5');
+}
+
+.content {
+  padding: ru(.75);
+}
+
+
+@media #{$small-only} {
+  .content {
+    // TODO refactor & remove this mixin.
+    @include arrange-in-block-grid($per-row: 1, $gutter: ru(.75));
+  }
+}
+
+@media #{$medium-up} {
+  .content {
+    // TODO refactor & remove this mixin.
+    @include arrange-in-block-grid($per-row: 2, $gutter: ru(.75));
+  }
+}

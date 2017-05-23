@@ -1,7 +1,7 @@
 @import '../shared/cards.module.scss';
 
 .static-map-card {
-  composes: card;
+  @extend %card;
 }
 
 .map {
