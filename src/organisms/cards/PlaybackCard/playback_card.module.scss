@@ -50,7 +50,7 @@
 .playback-card {
   @extend %card-base;
 
-  span {
+  p {
     text-overflow: ellipsis;
     overflow: hidden;
   }

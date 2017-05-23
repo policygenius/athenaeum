@@ -6,6 +6,7 @@ import accounting from 'accounting';
 import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
+import Text from 'atoms/Text';
 
 import styles from 'organisms/cards/PlaybackCard/playback_card.module.scss';
 
