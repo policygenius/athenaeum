@@ -102,18 +102,44 @@ module.exports = {
     },
     {
       name: 'Branding',
-      content: 'src/atoms/Color/Colors.md',
+      sections: [
+        {
+          name: 'Colors',
+          content: 'src/atoms/Color/Colors.md',
+        },
+      ]
     },
     {
       name: 'Design',
       sections: [
         {
-          name: 'Organisms',
-          components: 'src/organisms/**/index.js'
+          name: 'Buttons',
+          content: 'src/atoms/Button/Design.md'
         },
         {
-          name: 'Templates',
-          components: 'src/templates/**/index.js',
+          name: 'Primary Header Row',
+          sections: [
+            {
+              name: 'PriceDiscountHeader',
+              components: 'src/molecules/PriceDiscountHeader/index.js'
+            }
+          ]
+        },
+        {
+          name: 'Fields',
+          components: 'src/molecules/formfields/**/index.js'
+        },
+        {
+          name: 'Data Rows',
+          components: 'src/molecules/DataRow/index.js'
+        },
+        {
+          name: 'Navigation',
+          components: 'src/molecules/StepProgress/index.js'
+        },
+        {
+          name: 'Cards',
+          components: 'src/organisms/cards/**/index.js'
         },
       ]
     }
