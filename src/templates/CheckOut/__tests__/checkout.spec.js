@@ -52,12 +52,9 @@ describe('<CheckOut />', () => {
     });
 
     it('should render `sidebar` children when passed in', () => {
+      props.sidebar = <div className='unique' />;
       const wrapper = shallow(
-        <CheckOut {...props}>
-          <CheckOut.Sidebar>
-            <div className='unique' />
-          </CheckOut.Sidebar>
-        </CheckOut>
+        <CheckOut {...props} />
       );
 
       expect(wrapper.contains(<div className='unique' />)).to.be.true;

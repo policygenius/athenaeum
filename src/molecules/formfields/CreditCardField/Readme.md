@@ -2,19 +2,14 @@ CreditCardField Example:
 
 ```example
     <CreditCardField
-      input={{
-        onBlur: () => true,
-        onFocus: () => true
-      }}
-    >
-      <CreditCardField.Top>
+      creditCardNumber={
         <TextField
           placeholder='Credit Card Number'
           noBaseStyle
         />
-      </CreditCardField.Top>
+      }
 
-      <CreditCardField.Bottom>
+      expirationDate={
         <TextField
           placeholder='Expiration Date'
           input={{
@@ -22,11 +17,18 @@ CreditCardField Example:
           }}
           noBaseStyle
         />
+      }
 
+      securityCode={
         <TextField
           placeholder='3/4 Digit Security Code'
           noBaseStyle
         />
-      </CreditCardField.Bottom>
-    </CreditCardField>
+      }
+
+      input={{
+        onBlur: () => true,
+        onFocus: () => true
+      }}
+    />
 ```

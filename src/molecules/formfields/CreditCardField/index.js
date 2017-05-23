@@ -4,21 +4,18 @@ import classnames from 'classnames';
 import Icon from 'atoms/Icon';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
-import { Partial, separatePartials, partialRenderer } from 'helpers/Partial';
-import CreditCardPartials from './CreditCardPartials';
 
 function CreditCardField(props) {
   const {
     className,
     label,
     cardType,
-    children,
+    creditCardNumber,
+    expirationDate,
+    securityCode,
     meta,
     input,
   } = props;
-
-  const parts = separatePartials(children);
-  const renderPartial = partialRenderer(CreditCardPartials);
 
   const baseClass = [
     styles['formfield'],
@@ -44,14 +41,18 @@ function CreditCardField(props) {
           </label>
           <Icon className={styles['credit-card-lock']} icon='lock' />
         </div>
+
         <div className={styles['credit-card-line1']}>
-          {renderPartial('top', parts.Top)}
+          { creditCardNumber }
           <Icon className={styles['credit-card-logo']} icon={cardType} />
         </div>
-        {renderPartial('bottom', parts.Bottom)}
-      </div>
 
-      {meta && meta.touched && meta.error &&
+        <div className={styles['credit-card-line2']}>
+          <div className={styles['credit-card-input']}>{ expirationDate }</div>
+          <div className={styles['credit-card-input']}>{ securityCode}</div>
+        </div>
+      </div>
+      { meta && meta.touched && meta.error &&
         <div className={styles.error}>{ meta.error }</div>
       }
     </div>
@@ -68,6 +69,22 @@ CreditCardField.propTypes = {
    * Label.
    */
   label: PropTypes.string,
+
+  /**
+   * Credit card form field.
+   */
+  creditCardNumber: PropTypes.node,
+
+  /**
+   * Expiration Date form field.
+   */
+  expirationDate: PropTypes.node,
+
+  /**
+   * Security Code form field.
+   */
+  securityCode: PropTypes.node,
+
   /**
    *  Create Logo of credit card. Accepted Cards ['visa', 'americanExpress', 'masterCard', `discover`]
    */
@@ -86,19 +103,6 @@ CreditCardField.defaultProps = {
   // Place any default props here.
   label: 'Credit Card Information',
   cardType: 'visa',
-};
-
-CreditCardField.Top = class Top extends Partial {};
-CreditCardField.Bottom = class Bottom extends Partial {
-  render() {
-    return (
-      <div className={styles['credit-card-line2']}>
-        { React.Children.map(this.props.children,
-          child => <div className={styles['credit-card-input']}>{ child }</div>
-        )}
-      </div>
-    );
-  }
 };
 
 export default CreditCardField;

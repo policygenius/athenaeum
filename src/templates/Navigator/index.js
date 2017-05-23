@@ -4,56 +4,17 @@ import classnames from 'classnames';
 import Sticky from 'react-stickynode';
 
 import { Layout, Col } from 'atoms/Layout';
+import Icon from 'atoms/Icon';
+import ContactCard from 'organisms/cards/ContactCard';
 import StepProgress from 'molecules/StepProgress';
-import { Partial, separatePartials, partialRenderer } from 'helpers/Partial';
-import NavigatorPartials from './NavigatorPartials';
+import Text from 'atoms/Text';
 
 import styles from './navigator.module.scss';
 
-function renderMain(props, parts, renderPartial) {
-  const {
-    stepProgressData,
-  } = props;
+function renderContactCard(contactProps, inverted) {
+  const newProps = Object.assign({}, contactProps, { inverted });
 
-  return (
-    <Col
-      className={styles.main}
-    >
-      <Layout
-        mediumCols={[ 7, 4 ]}
-        className={styles['main-layout']}
-      >
-        <Col className={styles['main-col']} fullwidth>
-          <div id='sticky-top'>
-            <Layout fullwidth>
-              { renderPartial('stepProgress', stepProgressData) }
-            </Layout>
-          </div>
-          <div id='sticky-bottom'>
-            { renderPartial('default', parts.Main) }
-          </div>
-        </Col>
-        <Col
-          className={styles['right-rail']}
-          style={{ marginLeft: 'auto' }}
-        >
-          { renderPartial('contactCard', {}) }
-          <Sticky
-            enabled
-            top='#sticky-top'
-            bottomBoundary='#sticky-bottom'
-          >
-            { renderPartial('sidebar', parts.Sidebar) }
-          </Sticky>
-        </Col>
-      </Layout>
-      <div className={styles['footer-container']}>
-        <div className={styles['footer-wrapper']}>
-          { renderPartial('default', parts.Footer) }
-        </div>
-      </div>
-    </Col>
-  );
+  return <ContactCard {...newProps} />;
 }
 
 function Navigator(props) {
@@ -62,11 +23,10 @@ function Navigator(props) {
     className,
     stepProgressData,
     leftRailText,
+    contact,
+    footer,
+    sidebar,
   } = props;
-
-  const parts = separatePartials(children);
-  const renderPartial = partialRenderer(NavigatorPartials);
-
 
   return (
     <div className={classnames(styles['navigator'], className)}>
@@ -84,25 +44,74 @@ function Navigator(props) {
               className={styles['logo-panel-col']}
             >
               <div className={styles['logo-wrapper']}>
-                { renderPartial('icon', {}) }
+                <Icon icon='pgLogo' className={styles['logo']} />
               </div>
 
               <div className={styles['mobile-header-wrapper']}>
-                { renderPartial('stepProgress', stepProgressData) }
+                <StepProgress
+                  className={styles['step-progress']}
+                  steps={stepProgressData}
+                />
+
                 <Sticky
                   enabled
                   top='#sticky-top'
                   bottomBoundary='#sticky-bottom'
                   activeClass={styles['sticky']}
                 >
-                  { renderPartial('railText', leftRailText) }
+                  <Text className={styles['logo-panel-text']} type={3} light>
+                    { leftRailText }
+                  </Text>
                 </Sticky>
               </div>
             </Col>
-            { renderPartial('contactCard', { inverted: true }) }
+            <div className={styles['contact-card']}>
+              { renderContactCard(contact, true) }
+            </div>
           </Layout>
         </Col>
-        { renderMain(props, parts, renderPartial) }
+
+        <Col className={styles['main']}>
+          <Layout
+            className={styles['main-layout']}
+            mediumCols={[ 7, 4 ]}
+          >
+            <Col className={styles['main-col']} fullwidth>
+              <div id='sticky-top'>
+                <Layout fullwidth>
+                  <StepProgress
+                    className={styles['step-progress']}
+                    steps={stepProgressData}
+                  />
+                </Layout>
+              </div>
+              <div id='sticky-bottom'>
+                { children }
+              </div>
+            </Col>
+
+            <Col
+              className={styles['right-rail']}
+              style={{ marginLeft: 'auto' }}
+            >
+              <div className={styles['contact-card']}>
+                { renderContactCard(contact) }
+              </div>
+
+              <Sticky
+                enabled
+                top='#sticky-top'
+                bottomBoundary='#sticky-bottom'
+              >
+                <div className='sidebar'>{sidebar}</div>
+              </Sticky>
+            </Col>
+
+          </Layout>
+          <div className={styles['footer-container']}>
+            <div className={styles['footer-wrapper']}>{footer}</div>
+          </div>
+        </Col>
       </Layout>
     </div>
   );
@@ -118,12 +127,14 @@ Navigator.propTypes = {
    * Text to show up on left rail
    */
   leftRailText: PropTypes.string,
-  stepProgressData: StepProgress.propTypes.steps
+  stepProgressData: StepProgress.propTypes.steps,
+  contact: PropTypes.shape({
+    phoneNumber: PropTypes.string.isRequired,
+    chatClick: PropTypes.func.isRequired,
+    chatText: PropTypes.string,
+  }),
+  sidebar: PropTypes.node,
+  footer: PropTypes.node,
 };
-
-renderMain.propTypes = Navigator.propTypes;
-
-Navigator.Sidebar = class Sidebar extends Partial {};
-Navigator.Footer = class Footer extends Partial {};
 
 export default Navigator;
