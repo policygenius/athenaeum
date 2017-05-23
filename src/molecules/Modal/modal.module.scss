@@ -47,8 +47,7 @@ $border: 1px solid color('neutral-5');
 }
 
 .section {
-  padding: ru(2);
-  padding-bottom: 0;
+  padding: ru(1) ru(2) 0;
   border-bottom: 1px solid color('neutral-6');
 
   &:last-child {
