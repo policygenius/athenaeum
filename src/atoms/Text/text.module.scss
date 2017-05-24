@@ -4,6 +4,10 @@
   }
 }
 
+.fineprint {
+  @include fineprint;
+}
+
 .regular {
   @include typography-regular;
 }

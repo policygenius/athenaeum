@@ -1,0 +1,32 @@
+/* stylelint-disable no-unknown-animations */
+$transition: 1s ease;
+
+.animation-wrapper,
+.animate {
+  display: inline-block;
+  transition: all 1s ease;
+}
+
+.shake {
+  animation: shake .5s ease-out;
+}
+
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+
+.rotate {
+  &-left {
+    transform: rotate(-180deg);
+    transition: transform $transition;
+  }
+
+  &-right {
+    transform: rotate(180deg);
+    transition: transform $transition;
+  }
+}
+
+.slideDown {
+  animation: slideDown $transition forwards;
+}

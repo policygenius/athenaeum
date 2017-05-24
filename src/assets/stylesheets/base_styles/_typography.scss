@@ -134,7 +134,7 @@ $semiboldweight:              600;
   font-weight: $semiboldweight;
 }
 
-.fineprint {
+@mixin fineprint {
   font-size: rem-calc(11px);
   line-height: rem-calc(15px);
   margin-bottom: 0;
