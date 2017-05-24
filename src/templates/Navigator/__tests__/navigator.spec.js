@@ -1,52 +1,23 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Icon from 'atoms/Icon';
-import StepProgress from 'molecules/StepProgress';
-import ContactCard from 'organisms/cards/ContactCard';
-import TextComponent from 'atoms/TextComponent';
-
 import Navigator from 'templates/Navigator';
-import NavigatorPartials from 'templates/Navigator/NavigatorPartials';
 
 describe('Navigator', () => {
 
-  describe('Partials', () => {
-
-    it('has a StepProgress partial', () => {
-      const partial = NavigatorPartials.stepProgress([]);
-
-      expect(partial.type).to.equal(StepProgress);
-    });
-
-    it('has a ContactCard partial', () => {
-      const partial = mount(NavigatorPartials.contactCard());
-
-      expect(partial.find(ContactCard)).to.have.length(1);
-    });
-
-    it('has a Icon partial', () => {
-      const partial = NavigatorPartials.icon();
-
-      expect(partial.type).to.equal(Icon);
-    });
-
-    it('has a TextComponent partial', () => {
-      const partial = NavigatorPartials.railText();
-
-      expect(partial.type).to.equal(TextComponent);
-    });
-
-  });
-
-  describe('Exported Partials', () => {
+  describe('Render', () => {
     let props;
 
     beforeEach(() => {
       props = {
         data: [],
         leftRailText: 'Left Rail Text',
+        contact: {
+          chatText: 'hi',
+          phoneNumber: '867-5309',
+          chatClick: () => null
+        }
       };
     });
 
@@ -61,28 +32,11 @@ describe('Navigator', () => {
     });
 
     it('should render `sidebar` children when passed in', () => {
-      const wrapper = shallow(
-        <Navigator {...props}>
-          <Navigator.Sidebar>
-            <div className='unique' />
-          </Navigator.Sidebar>
-        </Navigator>
-      );
+      props.sidebar = <div className='unique' />;
+      const wrapper = shallow(<Navigator {...props} />);
 
       expect(wrapper.find('.sidebar')).to.have.length(1);
       expect(wrapper.contains(<div className='unique' />)).to.be.true;
-    });
-
-  });
-
-  describe('Render', () => {
-    let props;
-
-    beforeEach(() => {
-      props = {
-        data: [],
-        leftRailText: 'Left Rail Text',
-      };
     });
 
     it('should render railText', () => {

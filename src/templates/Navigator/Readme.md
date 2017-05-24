@@ -17,6 +17,22 @@ Navigator Example:
         { current: true, icon: 'application', label: 'Curabitur', link: '#' },
         { inactive: true, icon: 'quotes', label: 'Etiam', link: '#' }
       ]}
+
+      contact={{
+        phoneNumber: '1 (800) 867-5309',
+        chatClick: () => alert('get clicks'),
+        chatText: 'hi, custom chat text'
+      }}
+
+      sidebar={<div>Sidebar</div>}
+
+      footer={
+        <Footer
+          phoneNumber='1 (808) 867-5309'
+          links={[ { text: 'Footer here', href: '#trust' } ]}
+          onClickChat={() => alert('yo')}
+        />
+      }
     >
       <GeneralForm
         formName='ExampleForm'
@@ -52,20 +68,6 @@ Navigator Example:
           <Button variant='action'>Continue</Button>
         </Layout>
       </GeneralForm>
-      <Navigator.Sidebar>
-        Sidebar!
-      </Navigator.Sidebar>
-
-      <Navigator.Footer>
-        <Footer
-          phoneNumber='1 (808) 867-5309'
-          links={[
-            { text: 'Footer here', href: '#trust' },
-          ]}
-          onClickChat={() => alert('yo')}
-        >
-        </Footer>
-      </Navigator.Footer>
 
     </Navigator>
   </div>

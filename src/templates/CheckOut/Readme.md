@@ -5,6 +5,8 @@ Checkout Example:
 
     <CheckOut
       totalCost={{ curr: '$', value: 100, unit: 'mo' }}
+      sidebar={<div>This is sidebar</div>}
+      footer={<Footer />}
     >
       <GeneralForm
         formName='ExampleForm'
@@ -40,11 +42,5 @@ Checkout Example:
           <Button variant='action'>Continue</Button>
         </Layout>
       </GeneralForm>
-      <CheckOut.Sidebar>
-        This is sidebar
-      </CheckOut.Sidebar>
-      <CheckOut.Footer>
-        <Footer />
-      </ CheckOut.Footer>
     </CheckOut>
 ```

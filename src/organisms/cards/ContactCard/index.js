@@ -69,7 +69,7 @@ ContactCard.propTypes = {
   /**
    * Text for the bottom of the contact card.
   */
-  chatText: PropTypes.string.isRequired,
+  chatText: PropTypes.string,
   /**
    * Inverted color scheme.
    */
