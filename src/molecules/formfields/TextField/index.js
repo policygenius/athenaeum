@@ -59,6 +59,10 @@ function TextField( props ) {
       {meta && meta.touched && meta.error &&
         <div className={styles.error}>{ meta.error }</div>
       }
+
+      {meta && meta.touched && meta.warning &&
+        <div className={styles.error}>{ meta.warning }</div>
+      }
     </div>
   );
 }
