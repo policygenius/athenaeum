@@ -1,7 +1,7 @@
 @import '../shared/cards.module.scss';
 
-.generic_card {
-  composes: card;
+.generic-card {
+  @extend %card;
 }
 
 .footer {

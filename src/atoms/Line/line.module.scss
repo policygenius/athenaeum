@@ -1,0 +1,38 @@
+.line {
+  // Place your component specific scss here.
+  border: 0;
+  border-top: 1px solid color('neutral-5');
+  margin: ru(.25) auto;
+}
+
+.dotted {
+  border-top-style: dotted;
+}
+
+.dashed {
+  border-top-style: dashed;
+}
+
+.spacer-0 {
+  margin: 0 auto;
+}
+
+.spacer-1 {
+  margin: ru(.5) auto;
+}
+
+.spacer-2 {
+  margin: ru(.75) auto;
+}
+
+.spacer-3 {
+  margin: ru(1.25) auto;
+}
+
+.spacer-4 {
+  margin: ru(1.5) auto;
+}
+
+.spacer-5 {
+  margin: ru(3) auto;
+}

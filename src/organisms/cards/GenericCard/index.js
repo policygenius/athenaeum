@@ -1,42 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import Icon from 'atoms/Icon';
-import TextLockup from 'molecules/TextLockup';
 import styles from './generic_card.module.scss';
+
+function renderFooter(text, onClick) {
+  if (!text) return null;
+
+  return (
+    <footer
+      className={classnames(styles['footer'], styles['col'] )}
+      onClick={onClick}
+    >
+      <a className={styles['link']}>{ text }</a>
+    </footer>
+  );
+}
 
 function GenericCard( props ) {
   const {
-    header,
-    subheader,
+    children,
     onClose,
     footerText,
     onFooterLinkClick,
-    className
+    className,
   } = props;
 
   return (
-    <div className={classnames( styles.generic_card, className )}>
-      <Icon
-        icon='xIcon'
-        className={styles['icon-close']}
-        onClick={onClose}
-      />
-
-      <div className={styles.col}>
-        <TextLockup
-          variant='A'
-          header={header}
-          subheader={subheader}
-        />
+    <div className={classnames( styles['generic-card'], className )}>
+      { onClose && <Icon icon='xIcon' className={styles['icon-close']} onClick={onClose} />}
+      <div className={styles['col']}>
+        { children }
       </div>
-
-      <footer
-        className={classnames( styles.footer, styles.col )}
-        onClick={onFooterLinkClick}
-      >
-        <a className={styles.link}>{ footerText }</a>
-      </footer>
+      { renderFooter(footerText, onFooterLinkClick) }
     </div>
   );
 }
@@ -50,22 +47,12 @@ GenericCard.propTypes = {
   /**
    * callback passed to xIcon to close card
    */
-  onClose: PropTypes.func.isRequired,
-
-  /**
-   * header text for card
-   */
-  header: PropTypes.string.isRequired,
-
-  /**
-   * subheader text for card
-   */
-  subheader: PropTypes.string,
+  onClose: PropTypes.func,
 
   /**
    * text displayed on footer
    */
-  footerText: PropTypes.string.isRequired,
+  footerText: PropTypes.string,
 
   /**
    * callback passed to footer

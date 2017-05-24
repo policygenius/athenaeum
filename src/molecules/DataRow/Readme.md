@@ -11,19 +11,19 @@ DataRow Example:
 
       <DataRow
         label='More Data'
-        value={19.73}
+        amount={19.73}
       />
 
       <DataRow
-        label='Sub Data'
-        value={9.73}
+        label='Discount'
+        value='10% off'
         variant='sub'
       />
 
       <DataRow
         label='More Data'
-        value={19.73}
-        variant='final'
+        amount={19.73}
+        variant='large'
       />
     </div>
 
