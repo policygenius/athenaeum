@@ -10,23 +10,26 @@ function AddCard( props ) {
     className,
     cardText,
     icon,
-    onClick
+    onClick,
+    disabled,
   } = props;
 
+  const classes = [
+    styles['add-card'],
+    disabled && styles['disabled'],
+    className,
+  ];
+
+  const wrappedOnClick = () => {
+    if (disabled) return undefined;
+
+    return onClick();
+  };
+
   return (
-    <div
-      className={classnames( styles.add, className )}
-      onClick={onClick}
-    >
-      <Icon
-        icon={icon}
-        className={styles.icon}
-      />
-      <TextComponent
-        type={5}
-      >
-        { cardText }
-      </TextComponent>
+    <div className={classnames(...classes)} onClick={wrappedOnClick}>
+      <Icon icon={icon} className={styles['icon']} />
+      <TextComponent type={5} >{ cardText }</TextComponent>
     </div>
   );
 }
@@ -50,7 +53,12 @@ AddCard.propTypes = {
   /**
    * onClick handler for top level div
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+
+  /**
+   * Prevents the onclick event and adds disabled class/styling.
+   */
+  disabled: PropTypes.bool,
 };
 
 export default AddCard;
