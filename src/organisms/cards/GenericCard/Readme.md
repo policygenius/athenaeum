@@ -40,3 +40,9 @@ Generic Card Example:
       />
     </GenericCard>
 ```
+
+```example
+    <GenericCard variant='box'>
+      <Icon icon='pgLogoOrange' width='160px' height='40px' />
+    </GenericCard>
+```

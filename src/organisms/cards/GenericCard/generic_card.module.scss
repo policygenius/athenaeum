@@ -7,3 +7,8 @@
 .footer {
   padding: $col-padding;
 }
+
+/* -- Variants -- */
+.box {
+  border-bottom-width: rem-calc(4px);
+}

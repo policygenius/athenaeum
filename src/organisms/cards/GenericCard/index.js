@@ -20,15 +20,22 @@ function renderFooter(text, onClick) {
 
 function GenericCard( props ) {
   const {
+    className,
     children,
     onClose,
     footerText,
     onFooterLinkClick,
-    className,
+    variant,
   } = props;
 
+  const classes = [
+    styles['generic-card'],
+    variant && styles[variant],
+    className,
+  ];
+
   return (
-    <div className={classnames( styles['generic-card'], className )}>
+    <div className={classnames(...classes)}>
       { onClose && <Icon icon='xIcon' className={styles['icon-close']} onClick={onClose} />}
       <div className={styles['col']}>
         { children }
@@ -57,7 +64,14 @@ GenericCard.propTypes = {
   /**
    * callback passed to footer
    */
-  onFooterLinkClick: PropTypes.func
+  onFooterLinkClick: PropTypes.func,
+
+  /**
+   * Different Variants of the generic card
+   */
+  variant: PropTypes.oneOf([
+    'box',
+  ]),
 };
 
 export default GenericCard;
