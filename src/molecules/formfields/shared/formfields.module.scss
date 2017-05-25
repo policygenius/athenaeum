@@ -1,82 +1,68 @@
-$border-color:    color('neutral-5');
-$border:          1px solid $border-color;
-$border-radius:   ru(.25);
-$section-padding: ru(.5) ru(.75);
-$checkbox-size: ru(1);
-$checkbox-gap: ru(.5);
-$checkbox-sign-width: $checkbox-size / 3;
-$checkbox-sign-height: $checkbox-size / 2;
-$checkbox-sign-color: color('neutral-2');
-$checkbox-label-color: color('neutral-3');
-$checkbox-label-selected-color: color('neutral-2');
-$checkbox-disabled-color: color('neutral-3');
-$checkbox-disabled-sign-color: color('neutral-3');
-$checkbox-background-color: color('neutral-8');
-$checkbox-border-color: color('neutral-5');
+$border: 1px solid color('neutral-5');
 $field-error-color: color('accent-2');
 $focused-border-color: color('brand-3');
 
-%formfield {
-  border: $border;
-  border-radius: $border-radius;
+// -- Base Style
+%form-field {
   display: flex;
   flex-direction: column;
   align-content: center;
+
+  border-radius: ru(.25);
+  border: $border;
   background-color: color('neutral-8');
 }
 
-// Base Style
-.formfield {
-  @extend %formfield;
+/* -- Field Elements -- */
+.header {
+  @include typography-7(false);
+  @include typography-semibold;
 
-  &-header,
-  &-label {
-    border-bottom: 1px solid color('neutral-5');
-  }
+  position: relative;
+  margin-bottom: ru(.25);
+  line-height: ru(.75);
 }
 
-// Children Classes
-.header,
-.body,
+.body {
+  @include typography-7(false);
+  @include typography-semibold;
+
+  position: relative;
+  line-height: ru(.75);
+}
+
+/* -- Field Elements -- */
 .label {
   @include typography-7(false);
   @include typography-semibold;
 
   position: relative;
+  padding: ru(.5) ru(.75);
+  line-height: ru(.75);
 }
 
-.header {
-  margin-bottom: ru(.25);
-}
-
-.label,
-.select,
 .input {
   @include typography-regular();
+
   padding: ru(.5) ru(.75);
-}
-
-.input,
-.select {
-  @include typography-6(false);
   border: 0;
+  -webkit-appearance: none;
 
-  &::placeholder {
-    color: color('neutral-4');
+  &:focus {
+    outline: none;
   }
 }
 
-.tooltip-wrapper {
-  position: absolute;
-  top: ru(.75);
-  right: ru(.75);
-}
-
 .select {
-  -webkit-appearance: none;
+  @include typography-regular();
+  @include typography-6(false);
+
+  border: 0;
   width: 100%;
+  padding: ru(.5) ru(.75);
   position: relative;
   background: transparent;
+  -webkit-appearance: none;
 
   &:focus {
     outline: none;
@@ -85,361 +71,41 @@ $focused-border-color: color('brand-3');
   &:invalid {
     color: color('neutral-4');
   }
-}
 
-.selectbox {
-  position: relative;
-  border-radius: ru(.25);
-
-  &:after {
-    width: 0;
-    height: 0;
-    border-left: ru(.25) solid transparent;
-    border-right: ru(.25) solid transparent;
-    border-top: ru(.25) solid color('neutral-2');
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: ru(.5);
-    z-index: 0;
-    right: ru(.75);
+  &::placeholder {
+    color: color('neutral-4');
   }
 }
 
-.border {
-  border: 1px solid color('neutral-4');
-}
-
-// Variants
-.textfield,
-.selectfield {
-
-  .label {
-    border-bottom: $border;
-    border-radius: $border-radius $border-radius 0 0;
-  }
-
-  input[type='text'] {
-    border-radius: $border-radius;
-    outline: none;
-  }
-}
-
-.textfield {
-  @extend %formfield;
-}
-
-.credit-card {
-  input {
-    width: 100%;
-  }
-  &-input {
-    width: 50%;
-
-    &:first-child {
-      border-right: $border;
-
-      .focused & {
-        border-right-color: $focused-border-color;
-      }
-    }
-  }
-
-  &-header {
-    display: flex;
-    align-items: center;
-    padding-right: ru(.5);
-  }
-
-  &-lock {
-    width: ru(.75);
-    height: ru(.75);
-    margin-left: auto;
-  }
-
-  &-line1 {
-    position: relative;
-    border-bottom: $border;
-
-    .focused & {
-      border-bottom-color: $focused-border-color;
-    }
-  }
-
-  &-logo {
-    position: absolute;
-    top: 0;
-    right: ru(.5);
-    height: 100%;
-    pointer-events: none;
-  }
-
-  &-line2 {
-    width: 100%;
-    display: flex;
-  }
-}
-
-.togglefield {
-  @extend %formfield;
-
-  position: relative;
-  padding: $section-padding;
-
-  .tooltip-wrapper {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: ru(.5);
-    height: ru(.5);
-    z-index: 1;
-  }
-
-  .body {
-    margin-bottom: ru(.5);
-  }
-
-  .button-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    .button {
-      flex-grow: 1;
-      margin-bottom: ru(.5);
-    }
-  }
-
-  ul {
-    padding-left: ru(.75);
-  }
-
-  @media #{$medium-up} {
-    .button-wrapper {
-      flex-direction: row;
-    }
-
-    .button {
-      margin-left: ru(1);
-      margin-bottom: 0;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
-.datefield {
-  @extend %formfield;
-
-  .label {
-    border-bottom: $border;
-    border-radius: $border-radius $border-radius 0 0;
-  }
-
-  &-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &-input {
-    flex: 1;
-    border-right: 1px solid color('neutral-4');
-
-    input {
-      width: 100%;
-    }
-
-    &.datefield-input-focused {
-      border-right: 1px solid color('brand-3');
-    }
-
-    &:last-child {
-      border-right: none;
-    }
-  }
-}
-
-// Select Field - types
-.selectfield {
-  @extend %formfield;
-}
-
-.select-card {
-  @extend %formfield;
-
-  border: 0;
-  color: color('brand-2');
-
-  .label {
-    @include typography-6(false);
-    padding: ru(.5) ru(1) 0;
-    border: 0;
-    letter-spacing: 0.1px;
-    color: color('neutral-2');
-  }
-
-  .select {
-    @include typography-5(false);
-    padding: ru(.5) ru(1);
-    letter-spacing: .2px;
-    pointer-events: all;
-
-    &:invalid {
-      @include typography-3(false);
-      color: color('brand-2');
-    }
-
-    @media #{$medium-up} {
-      @include typography-3(false);
-    }
-  }
+// -- Additional Elements
+.tooltip-wrapper {
+  position: absolute;
+  top: ru(.75);
+  right: ru(.75);
 }
 
 
-
-// Checkbox List
-.checkboxList {
-  @extend %formfield;
-
-  .label {
-    border-bottom: 1px solid $checkbox-border-color;
-  }
-
-  .content {
-    padding: ru(.75);
-
-    @media #{$small-only} {
-      @include arrange-in-block-grid($per-row: 1, $gutter: ru(.75));
-    }
-
-    @media #{$medium-up} {
-      @include arrange-in-block-grid($per-row: 2, $gutter: ru(.75));
-    }
-  }
-}
-
-.checkbox {
-  display: flex;
-  margin: 0;
-  position: relative;
-  min-height: $checkbox-size;
-  padding-left: $checkbox-size + $checkbox-gap;
-  user-select: none;
-
-  + .checkbox {
-    margin-top: ru(.75);
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $checkbox-size;
-    height: $checkbox-size;
-    border: 1px solid $checkbox-border-color;
-    background-color: $checkbox-background-color;
-    overflow: hidden;
-  }
-
-  .checkboxLabel {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .light {
-    @include typography-6(false);
-    color: $checkbox-label-color;
-  }
-
-  .semibold {
-    @include typography-6(false);
-    font-weight: 600;
-    color: color('neutral-0');
-  }
-
-  .checkboxLabel:after {
-    content: '';
-    opacity: 0;
-    position: absolute;
-    width: $checkbox-sign-width;
-    height: $checkbox-sign-height;
-    box-shadow: 2px 2px 0 0 $checkbox-sign-color;
-    transform: rotate(45deg);
-    transform-origin: right;
-    margin-left: rem-calc(1px);
-    top: $checkbox-sign-width / 2;
-    left: $checkbox-sign-height / 2;
-  }
-
-  input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $checkbox-size + $checkbox-gap;
-    height: $checkbox-size;
-    opacity: 0;
-    margin: 0;
-    cursor: pointer;
-  }
-
-  input:checked {
-    + .light {
-      color: $checkbox-label-selected-color;
-    }
-  }
-
-  input:checked + .checkboxLabel:after {
-    opacity: 1;
-  }
-
-  input:disabled,
-  input:disabled + .checkboxLabel {
-    cursor: not-allowed;
-  }
-
-  input:disabled + .checkboxLabel {
-    color: $checkbox-disabled-color;
-  }
-
-  input:disabled + .checkboxLabel:after {
-    box-shadow: 2px 2px 0 0 $checkbox-disabled-sign-color;
-  }
-
-  @media #{$medium-up} {
-    line-height: ru(.75);
-    margin: 0;
-
-    .light {
-      @include typography-7(false);
-    }
-
-    span {
-      margin-top: ru(.125);
-    }
-  }
-}
-
-// Focused state
+/* -- State:focus  -- */
 .focused {
   border-color: color('brand-3');
   background-color: color('brand-6');
 
-  .label, .formfield-header {
+  .header,
+  .label {
     border-bottom-color: color('brand-3');
   }
 }
 
-.hasError {
-  border: 1px solid $field-error-color;
-}
 
+/* -- State:error  -- */
 .error {
   @include typography-7;
+
   color: $field-error-color;
   margin-left: ru(0.5);
   margin-top: ru(0.5);
+}
+
+.hasError {
+  border: 1px solid $field-error-color;
 }

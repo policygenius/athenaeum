@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import styles from 'molecules/formfields/shared/formfields.module.scss';
+import styles from './date_field.module.scss';
 
 function DateField(props) {
   const {
@@ -13,37 +13,36 @@ function DateField(props) {
     input
   } = props;
 
-  const baseClassName = classnames(
-    styles['datefield'],
-    { [styles.focused]: meta && meta.active },
-    { [styles.hasError]: meta && meta.touched && meta.error && !meta.active },
-    className
-  );
+  const wrapChild = (child) => {
+    const classes = [
+      styles['input'],
+      meta && meta.active && styles['input-focused'],
+    ];
 
-  const childClassName = classnames(
-    styles['datefield-input'],
-    { [styles['datefield-input-focused']]: meta && meta.active }
-  );
+    return <div className={classnames(...classes)}>{child}</div>;
+  };
+
+  const classes = [
+    styles['date-field'],
+    meta && meta.active && styles['focused'],
+    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+    className
+  ];
 
   return (
     <div>
       <div
-        className={baseClassName}
+        className={classnames(...classes)}
         onBlur={input && input.onBlur}
         onFocus={input && input.onFocus}
       >
-        <label htmlFor='date' className={styles.label}>{label}</label>
-        <div className={styles['datefield-wrapper']}>
-          { React.Children.map(children,
-            child =>
-              <div className={childClassName}>
-                { child }
-              </div>
-          )}
+        <label htmlFor='date' className={styles['label']}>{label}</label>
+        <div className={styles['line-1']}>
+          { React.Children.map(children, wrapChild) }
         </div>
       </div>
-      {meta && meta.touched && meta.error &&
-        <div className={styles.error}>{ meta.error }</div>
+      { meta && meta.touched && meta.error &&
+        <div className={styles['error']}>{ meta.error }</div>
       }
     </div>
   );

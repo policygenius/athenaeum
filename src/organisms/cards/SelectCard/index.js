@@ -4,8 +4,7 @@ import classnames from 'classnames';
 
 import LinkWrapper from 'atoms/LinkWrapper';
 import SelectField from 'molecules/formfields/SelectField';
-import styles from './select-card.module.scss';
-
+import styles from './select_card.module.scss';
 
 function SelectCard( props ) {
   const {
@@ -21,7 +20,7 @@ function SelectCard( props ) {
   } = props;
 
   return (
-    <div className={classnames( styles.select, className )}>
+    <div className={classnames( styles.select, className)}>
 
       <SelectField
         type='select-card'
@@ -30,6 +29,7 @@ function SelectCard( props ) {
         selectOptions={selectOptions}
         input={input}
         defaultValue={defaultValue}
+        className={styles['select-field']}
       />
 
       <footer className={styles.footer}>
@@ -97,4 +97,3 @@ SelectCard.propTypes = {
 };
 
 export default SelectCard;
-

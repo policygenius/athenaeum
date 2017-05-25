@@ -45,15 +45,18 @@ $button-solid-background-secondary-color:  #3ad1ba;
 $button-solid-background-tertiary-color:   #f08f5c;
 
 .icon {
-  height: rem-calc(16);
+  position: relative;
   width: rem-calc(14);
-  margin-right: rem-calc(4);
+  height: rem-calc(16);
+  top: rem-calc(1);
+  margin-right: rem-calc(6);
 }
 
 .button {
   @include typography-6;
   @include typography-semibold;
   @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
+
   display: block;
   cursor: pointer;
   text-align: center;
@@ -111,10 +114,14 @@ $button-solid-background-tertiary-color:   #f08f5c;
   @include typography-7(false);
   @include typography-regular;
   @include hover(color('neutral-6'), color('neutral-5'), color('neutral-1'));
+
   color: color('neutral-4');
   border: 1px solid color('neutral-5');
   box-shadow: 0 4px 0 color('neutral-6');
-  padding-bottom: ru(.375);
+
+  padding-top: ru(.5);
+  padding-bottom: ru(.5);
+  line-height: 1em;
 
   &:focus {
     outline: none;
@@ -124,7 +131,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
 .toggle-active {
   composes: toggle;
   background-color: color('neutral-6');
-  color: color('neutral-1');
+  color: color('neutral-2');
   box-shadow: 0 4px 0 color('neutral-4');
 }
 

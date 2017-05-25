@@ -5,10 +5,12 @@ $main-section-width: $page-max-width - $logo-panel-width;
 $main-section-padding: ru(1.5);
 
 .navigator {
-  background-color: color('neutral-7');
   min-height: 100vh;
   width: 100%;
   display: flex;
+
+  background-color: color('neutral-7');
+  color: color('neutral-2');
 }
 
 .layout {

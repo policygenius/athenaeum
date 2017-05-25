@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import styles from '../shared/formfields.module.scss';
+import styles from './checkbox_field.module.scss';
 
 function CheckboxField( props ) {
   const {
@@ -13,17 +13,18 @@ function CheckboxField( props ) {
 
   return (
     <label
-      className={styles.checkbox}
+      className={styles['checkbox']}
       htmlFor={`checkbox-${input.name}`}
     >
       <input
         type='checkbox'
         id={`checkbox-${input.name}`}
+        className={styles['checkbox-input']}
         checked={input.value}
         {...input}
       />
       <span
-        className={classnames(styles.checkboxLabel, styles[fontStyle])}
+        className={classnames(styles['checkbox-label'], styles[fontStyle])}
       >
         { label }
       </span>

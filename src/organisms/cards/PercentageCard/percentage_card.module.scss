@@ -1,11 +1,18 @@
 @import '../shared/cards.module.scss';
 
 .percentage-card {
-  composes: card;
+  @extend %card;
+}
+
+.col {
+  border-left: $border;
+
+  &:first-of-type {
+    border-left: 0;
+  }
 }
 
 .percentage-col {
-  composes: col;
   flex-grow: 0;
   border-left: $border;
 }
@@ -16,14 +23,6 @@
   }
 
   .percentage-col {
-    border-left: 0;
-  }
-}
-
-.col {
-  border-left: $border;
-
-  &:first-of-type {
     border-left: 0;
   }
 }

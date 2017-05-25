@@ -1,0 +1,63 @@
+@import '../shared/formfields.module.scss';
+
+.select-field {
+  @extend %form-field;
+}
+
+.label {
+  border-bottom: $border;
+}
+
+.select-wrapper {
+  position: relative;
+  border-radius: ru(.25);
+
+  &:after {
+    width: 0;
+    height: 0;
+    border-left: ru(.25) solid transparent;
+    border-right: ru(.25) solid transparent;
+    border-top: ru(.25) solid color('neutral-2');
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: ru(.5);
+    z-index: 0;
+    right: ru(.75);
+  }
+}
+
+.select-card {
+  @extend %form-field;
+
+  border: 0;
+  color: color('brand-2');
+
+  .label {
+    @include typography-6(false);
+    @include typography-semibold;
+
+    padding: ru(.5) ru(1) 0;
+    border: 0;
+    letter-spacing: 0.1px;
+    color: color('neutral-2');
+  }
+
+  .select {
+    @include typography-5(false);
+
+    padding: ru(.25) ru(1);
+    letter-spacing: .2px;
+    pointer-events: all;
+
+    &:invalid {
+      @include typography-3(false);
+      color: color('brand-2');
+    }
+
+    @media #{$medium-up} {
+      @include typography-3(false);
+    }
+  }
+}

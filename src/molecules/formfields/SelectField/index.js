@@ -4,14 +4,23 @@ import classnames from 'classnames';
 import Tooltip from 'atoms/Tooltip';
 
 import { renderOption, renderPlaceholder } from 'utils/fieldUtils';
-
-import styles from 'molecules/formfields/shared/formfields.module.scss';
+import styles from './select_field.module.scss';
 
 function renderSelectOptions(options) {
   if (!options) return null;
 
   return options.map(renderOption);
 }
+
+const renderToolTip = (message) => {
+  if (!message) return null;
+
+  return (
+    <div className={styles['tooltip-wrapper']}>
+      <Tooltip right>{ message }</Tooltip>
+    </div>
+  );
+};
 
 function SelectField( props ) {
   const {
@@ -27,39 +36,32 @@ function SelectField( props ) {
     meta,
   } = props;
 
-  const focusedClass = { [styles.focused]: meta && meta.active };
+  const classes = [
+    styles[type],
+    meta && meta.active && styles['focused'],
+    className,
+  ];
 
   return (
-    <div className={classnames(styles[type], focusedClass, className)}>
-      {
-        label &&
-        <label
-          className={classnames( styles.label, focusedClass)}
-          htmlFor={forProp}
-        >
+    <div className={classnames(...classes)}>
+      { label &&
+        <label className={styles['label']} htmlFor={forProp}>
           { label }
-          {
-            tooltip &&
-            <div className={styles['tooltip-wrapper']}>
-              <Tooltip right>
-                { tooltip }
-              </Tooltip>
-            </div>
-          }
+          { renderToolTip(tooltip) }
         </label>
       }
 
       { defaultValue ?
-        <div className={styles.select}>{defaultValue}</div>
+        <div className={styles['select']}>{defaultValue}</div>
         :
-        <div className={styles.selectbox}>
+        <div className={styles['select-wrapper']}>
           <select
-            required
-            className={styles.select}
+            className={styles['select']}
             id={forProp}
+            required
             {...input}
           >
-            { placeholder && renderPlaceholder( placeholder, styles.option ) }
+            { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
             { renderSelectOptions(selectOptions) }
           </select>
         </div>
@@ -136,7 +138,7 @@ SelectField.propTypes = {
 };
 
 SelectField.defaultProps = {
-  type: 'selectfield'
+  type: 'select-field'
 };
 
 export default SelectField;

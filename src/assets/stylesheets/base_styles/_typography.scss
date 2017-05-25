@@ -80,15 +80,14 @@ $semiboldweight:              600;
   line-height: ru(1);
 
   @if $margin {
-    margin-top: ru(.5);
     margin-bottom: ru(.5);
   }
 }
 
 @mixin typography-7($margin: true) {
   @include base-font-family;
-  line-height: ru(1);
   font-size: rem-calc(13px);
+  line-height: ru(.75);
 
   @if $margin {
     margin-bottom: ru(1);

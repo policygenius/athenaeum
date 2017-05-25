@@ -1,0 +1,54 @@
+@import '../shared/formfields.module.scss';
+
+.credit-card {
+  @extend %form-field;
+
+  input { width: 100%; }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-right: ru(.5);
+
+  border-bottom: $border;
+}
+
+.line-1 {
+  position: relative;
+  border-bottom: $border;
+}
+
+.line-2 {
+  display: flex;
+  width: 100%;
+}
+
+.col {
+  width: 50%;
+
+  &:first-child {
+    border-right: $border;
+  }
+}
+
+.icon-lock {
+  width: ru(.75);
+  height: ru(.75);
+  margin-left: auto;
+}
+
+.icon-logo {
+  position: absolute;
+  top: 0;
+  right: ru(.5);
+  height: 100%;
+  pointer-events: none;
+}
+
+//-- state:focused --
+.focused {
+  .header,
+  .col,
+  .line-1 { border-color: $focused-border-color; }
+}

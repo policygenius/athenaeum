@@ -22,22 +22,22 @@ function PercentageCard( props ) {
   const hasFooter = () => footerText1 || footerText2;
 
   return (
-    <div className={classnames( styles['percentage-card'], className )}>
+    <div className={classnames(styles['percentage-card'], className)}>
       <Icon
         icon='xIcon'
         className={styles['icon-close']}
         onClick={onClose}
       />
 
-      <div className={styles.row}>
-        <div className={styles.col}>
+      <div className={styles['row']}>
+        <div className={styles['col']}>
           <TextLockup
             variant='A'
             header={header1}
             subheader={subheader1}
           />
         </div>
-        <div className={styles['percentage-col']}>
+        <div className={classnames(styles['col'], styles['percentage-col'])}>
           <TextLockup
             variant='B'
             header={`${percent}`}
@@ -47,13 +47,13 @@ function PercentageCard( props ) {
       </div>
 
       { hasFooter() &&
-        <footer className={styles.footer}>
-          <div className={styles.col}>
-            <a className={styles.link} onClick={onClick}>{ footerText1 }</a>
+        <footer className={styles['footer']}>
+          <div className={styles['col']}>
+            <a className={styles['link']} onClick={onClick}>{ footerText1 }</a>
           </div>
 
-          <div className={styles['percentage-col']}>
-            <a className={styles.link} onClick={onClick2}>{ footerText2 }</a>
+          <div className={classnames(styles['col'], styles['percentage-col'])}>
+            <a className={styles['link']} onClick={onClick2}>{ footerText2 }</a>
           </div>
         </footer>
       }

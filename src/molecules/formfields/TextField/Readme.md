@@ -64,3 +64,19 @@ Text field - phone number example:
     maskChar='_'
   />
 ```
+
+Text field - secure:
+
+```example
+  <TextField
+    label='Phone Number'
+    placeholder='In case of emergency'
+    input={{
+      value: state.value,
+      onChange: event => setState({ value: event.target.value })
+    }}
+    mask='999-999-9999'
+    maskChar='_'
+    secure
+  />
+```
