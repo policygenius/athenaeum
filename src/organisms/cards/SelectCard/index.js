@@ -16,7 +16,7 @@ function SelectCard( props ) {
     linkUrl,
     onClick,
     input,
-    defaultValue
+    defaultValue,
   } = props;
 
   return (

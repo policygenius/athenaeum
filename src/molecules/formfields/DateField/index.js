@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import ErrorMessage from 'atoms/ErrorMessage';
 import styles from './date_field.module.scss';
 
 function DateField(props) {
@@ -29,6 +30,8 @@ function DateField(props) {
     className
   ];
 
+  const message = meta && meta.touched && (meta.error || meta.warning);
+
   return (
     <div>
       <div
@@ -41,9 +44,11 @@ function DateField(props) {
           { React.Children.map(children, wrapChild) }
         </div>
       </div>
-      { meta && meta.touched && meta.error &&
-        <div className={styles['error']}>{ meta.error }</div>
-      }
+
+      <ErrorMessage
+        condition={!!message}
+        message={message}
+      />
     </div>
   );
 }

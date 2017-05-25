@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import classnames from 'classnames';
+
 import Icon from 'atoms/Icon';
+import ErrorMessage from 'atoms/ErrorMessage';
+
 import styles from './text_field.module.scss';
 
 function TextField( props ) {
@@ -25,6 +28,8 @@ function TextField( props ) {
     meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
   ];
+
+  const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
 
   return (
     <div>
@@ -54,13 +59,11 @@ function TextField( props ) {
           />
         }
       </div>
-      { meta && meta.touched && meta.error &&
-        <div className={styles['error']}>{meta.error}</div>
-      }
 
-      {meta && meta.touched && meta.warning &&
-        <div className={styles.error}>{ meta.warning }</div>
-      }
+      <ErrorMessage
+        condition={!!message}
+        message={message}
+      />
     </div>
   );
 }
@@ -117,6 +120,7 @@ TextField.propTypes = {
 
 TextField.defaultProps = {
   placeholder: 'Placeholder',
+  errorMessage: false,
 };
 
 export default TextField;

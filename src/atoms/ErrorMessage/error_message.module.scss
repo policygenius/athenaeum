@@ -1,0 +1,16 @@
+$field-error-color: color('accent-2');
+
+.error {
+  color: $field-error-color;
+  transition: all 500ms ease;
+  margin-left: ru(0.5);
+  opacity: 0;
+  margin-top: 0;
+  max-height: 0;
+}
+
+.visible {
+  opacity: 1;
+  margin-top: ru(.25);
+  max-height: ru(2);
+}

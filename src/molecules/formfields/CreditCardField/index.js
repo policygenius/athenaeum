@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import Icon from 'atoms/Icon';
+import ErrorMessage from 'atoms/ErrorMessage';
 
 import styles from './credit_card_field.module.scss';
 
@@ -23,6 +25,8 @@ function CreditCardField(props) {
     meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
   ];
+
+  const message = meta && meta.touched && (meta.error || meta.warning);
 
   return (
     <div>
@@ -48,13 +52,11 @@ function CreditCardField(props) {
           <div className={styles['col']}>{ securityCode }</div>
         </div>
       </div>
-      { meta && meta.touched && meta.error &&
-        <div className={styles['error']}>{ meta.error }</div>
-      }
 
-      {meta && meta.touched && meta.warning &&
-        <div className={styles.error}>{ meta.warning }</div>
-      }
+      <ErrorMessage
+        condition={!!message}
+        message={message}
+      />
     </div>
   );
 }

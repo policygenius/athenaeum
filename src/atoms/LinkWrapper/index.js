@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import _ from 'lodash';
 
-import colors from 'atoms/Color/colors.module.scss';
+/* eslint-disable import/first */
 import styles from './link_wrapper.module.scss';
+import colors from 'atoms/Color/colors.module.scss';
 
 function LinkWrapper( props ) {
   const {

@@ -100,11 +100,15 @@ $focused-border-color: color('brand-3');
 
 /* -- State:error  -- */
 .error {
-  @include typography-7;
-
   color: $field-error-color;
+  transition: all 500ms ease;
   margin-left: ru(0.5);
-  margin-top: ru(0.5);
+}
+
+.visible {
+  opacity: 1;
+  margin-top: ru(.5);
+  margin-bottom: ru(.5);
 }
 
 .hasError {
