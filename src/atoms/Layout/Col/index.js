@@ -20,23 +20,22 @@ function Col(props) {
     bottomSpacing
   } = props;
 
+  const classes = [
+    styles['col'],
+    smallCols && styles[`col-sm-${smallCols}`],
+    mediumCols && styles[`col-md-${mediumCols}`],
+    largeCols && styles[`col-lg-${largeCols}`],
+    xLargeCols && styles[`col-xlg-${xLargeCols}`],
+    xxLargeCols && styles[`col-xxlg-${xxLargeCols}`],
+    fullwidth && styles['fullwidth'],
+    flex && styles['flex'],
+    styles[`bottom-spacing-${bottomSpacing}`],
+    padding && styles['padding'],
+    className,
+  ];
+
   return (
-    <div
-      style={style}
-      className={classnames(
-        styles['col'],
-        { [styles[`col-sm-${smallCols}`]]: smallCols },
-        { [styles[`col-md-${mediumCols}`]]: mediumCols },
-        { [styles[`col-lg-${largeCols}`]]: largeCols },
-        { [styles[`col-xlg-${xLargeCols}`]]: xLargeCols },
-        { [styles[`col-xxlg-${xxLargeCols}`]]: xxLargeCols },
-        { [styles.fullwidth]: fullwidth },
-        { [styles.flex]: flex },
-        styles[`bottom-spacing-${bottomSpacing}`],
-        padding && styles.padding,
-        className,
-      )}
-    >
+    <div className={classnames(...classes)} style={style}>
       { children }
     </div>
   );

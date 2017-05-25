@@ -13,7 +13,7 @@
 }
 
 .header {
-  padding: 24px 30px;
+  padding: ru(1) ru(1.25);
   border-right: 1px solid color('neutral-5');
   border-bottom: 1px solid color('neutral-5');
 
@@ -23,8 +23,12 @@
 }
 
 .row {
-  padding: 18px 30px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: ru(.75) ru(1.25);
+
   border-right: 1px solid color('neutral-5');
   border-bottom: 1px solid color('neutral-5');
 

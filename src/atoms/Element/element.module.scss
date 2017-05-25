@@ -1,0 +1,67 @@
+/* -- NOTE --
+  An atomic element resets its default styles and overrides them using the classes
+  defined in the <Element /> component. To facilitate this behavior <Element />'s
+  css-modules must be imported as follows:
+
+  import styles from './element.module.scss';
+  import colors from 'atoms/Color/colors.scss';
+  import spacing from 'atoms/Spacer/spacer.scss';
+
+  This is to allow proper cascading of stylesheet rules, so that the color and spacers
+  will over-ride the styles set by the .element class.
+ -- */
+
+.element {
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: color('neutral-2');
+}
+
+.typ-0 { @include typography(0); }
+.typ-1 { @include typography(1); }
+.typ-2 { @include typography(2); }
+.typ-3 { @include typography(3); }
+.typ-4 { @include typography(4); }
+.typ-5 { @include typography(5); }
+.typ-6 { @include typography(6); }
+.typ-7 { @include typography(7); }
+
+.h1 { @extend .typ-0; }
+.h2 { @extend .typ-1; }
+.h3 { @extend .typ-2; }
+.h4 { @extend .typ-3; }
+.h5 { @extend .typ-4; }
+.h6 { @extend .typ-5; }
+
+.u,
+.underline {
+  text-decoration: none;
+  border-bottom: 2px solid #3ad1ba;
+  padding-bottom: 2px;
+}
+
+.strikethrough,
+.s {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    width: 110%;
+    border-bottom: 2px solid;
+  }
+}
+
+.em { font-style: italic; }
+
+.fineprint { @include fineprint; }
+.regular { @include typography-regular; }
+.light { @include typography-light; }
+
+.b,
+.strong,
+.semibold { @include typography-semibold; }

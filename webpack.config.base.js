@@ -34,7 +34,7 @@ module.exports = options => ({
             // babel-loader will throw a deprecation warning
             // waiting for stable v7.0.0 to upgrade
             loader: 'babel-loader',
-            options: { presets: [ 'react', 'es2015' ] }
+            options: { presets: [ 'react', 'es2015', 'stage-2' ] }
           }
         ]
       },

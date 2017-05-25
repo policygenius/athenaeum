@@ -1,0 +1,42 @@
+.comparison-row-item {
+  width: 100%;
+}
+
+.header,
+.sub-header {
+  text-align: center;
+  margin: auto;
+}
+
+.icon-lg,
+.icon-sm {
+  height: ru(1);
+  width: 100%;
+  max-width: ru(5);
+}
+
+.lockup-layout {
+  display: flex;
+}
+
+.lockup-col-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media #{$small-only} {
+  .icon-sm {
+    display: block;
+  }
+
+  .icon-lg {
+    display: none;
+  }
+}
+
+@media #{$medium-up} {
+  .lockup-layout {
+    display: none;
+  }
+}
