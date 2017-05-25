@@ -30,13 +30,13 @@
   "license": "MIT",
   "homepage": "https://github.com/policygenius/athenaeum#readme",
   "dependencies": {
-    "@policygenius/react-styleguidist": "git://github.com/policygenius/react-styleguidist",
     "accounting": "^0.4.1",
     "classnames": "^2.2.5",
     "holderjs": "^2.9.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
+    "policygenius-react-styleguidist": "^0.0.6",
     "react-input-mask": "^0.8.0",
     "react-svg-inline": "^2.0.0",
     "sinon": "^2.1.0"

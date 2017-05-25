@@ -19,7 +19,7 @@ describe('<Animate />', () => {
     );
 
     expect(wrapper.hasClass('animation-wrapper')).to.equal(true);
-    expect(wrapper.children().first().hasClass('shake animate')).to.equal(true);
-    expect(wrapper.childAt(0).childAt(0).hasClass('fadeIn animate')).to.equal(true);
+    expect(wrapper.children().first().hasClass('shake animation')).to.equal(true);
+    expect(wrapper.childAt(0).childAt(0).hasClass('fadeIn animation')).to.equal(true);
   });
 });
