@@ -1,0 +1,28 @@
+.header-amount {
+  padding: ru(.5) ru(1);
+
+  background: color('brand-1');
+  color: color('neutral-8');
+}
+
+.label {
+  @include typography(7);
+}
+
+.amount {
+  @include typography(1);
+  @include typography-semibold;
+}
+
+.unit,
+.curr {
+  @include typography-regular;
+
+  font-size: 60%;
+  line-height: inherit;
+}
+
+.curr {
+  position: relative;
+  vertical-align: 10%;
+}

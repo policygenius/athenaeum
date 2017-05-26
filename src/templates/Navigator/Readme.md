@@ -24,6 +24,8 @@ Navigator Example:
         chatText: 'hi, custom chat text'
       }}
 
+      mobileHeader={<HeaderAmount label='So far so good' amount={38.95} unit='/ month' />}
+
       sidebar={<div>Sidebar</div>}
 
       footer={

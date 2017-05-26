@@ -105,7 +105,7 @@ $main-section-padding: ru(1.5);
     display: none;
   }
 
-  .mobile-header-wrapper {
+  .mobile-nav {
     padding-left: ru(1);
     padding-right: ru(1);
   }
@@ -172,6 +172,7 @@ $main-section-padding: ru(1.5);
 
     padding: $main-section-padding;
 
+    .mobile-header,
     .step-progress {
       display: none;
     }
