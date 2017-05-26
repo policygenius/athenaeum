@@ -26,6 +26,7 @@ function Navigator(props) {
     contact,
     footer,
     sidebar,
+    mobileHeader,
   } = props;
 
   return (
@@ -48,21 +49,24 @@ function Navigator(props) {
               </div>
 
               <div className={styles['mobile-header-wrapper']}>
-                <StepProgress
-                  className={styles['step-progress']}
-                  steps={stepProgressData}
-                />
+                <div className={styles['mobile-nav']}>
+                  <StepProgress
+                    className={styles['step-progress']}
+                    steps={stepProgressData}
+                  />
 
-                <Sticky
-                  enabled
-                  top='#sticky-top'
-                  bottomBoundary='#sticky-bottom'
-                  activeClass={styles['sticky']}
-                >
-                  <Text className={styles['logo-panel-text']} type={3} light>
-                    { leftRailText }
-                  </Text>
-                </Sticky>
+                  <Sticky
+                    enabled
+                    top='#sticky-top'
+                    bottomBoundary='#sticky-bottom'
+                    activeClass={styles['sticky']}
+                  >
+                    <Text className={styles['logo-panel-text']} type={3} light>
+                      { leftRailText }
+                    </Text>
+                  </Sticky>
+                </div>
+                <div className={styles['mobile-header']}>{ mobileHeader }</div>
               </div>
             </Col>
             <div className={styles['contact-card']}>
@@ -133,6 +137,7 @@ Navigator.propTypes = {
     chatClick: PropTypes.func.isRequired,
     chatText: PropTypes.string,
   }),
+  mobileHeader: PropTypes.node,
   sidebar: PropTypes.node,
   footer: PropTypes.node,
 };

@@ -35,7 +35,10 @@ module.exports = {
             },
             {
               name: 'Headers',
-              components: () => [ 'src/molecules/PriceDiscountHeader/index.js' ]
+              components: () => [
+                'src/molecules/HeaderDiscount/index.js',
+                'src/molecules/HeaderAmount/index.js',
+              ]
             },
             {
               name: 'Lists',
@@ -123,8 +126,12 @@ module.exports = {
           name: 'Primary Header Row',
           sections: [
             {
-              name: 'PriceDiscountHeader',
-              components: 'src/molecules/PriceDiscountHeader/index.js'
+              name: 'HeaderAmount',
+              components: 'src/molecules/HeaderAmount/index.js'
+            },
+            {
+              name: 'HeaderDiscount',
+              components: 'src/molecules/HeaderDiscount/index.js'
             }
           ]
         },

@@ -1,6 +1,4 @@
-@import 'src/assets/stylesheets/global';
-
-.header {
+.header-discount {
   padding: ru(.5) ru(1);
 
   background: color('brand-3');
@@ -12,18 +10,22 @@
 
 .amount {
   @include typography(1);
-
-  font-weight: bold;
+  @include typography-semibold;
 }
 
-.sup {
-  @include typography-5(false);
+.prev-amount,
+.unit,
+.curr {
+  @include typography-regular;
+  @include typography-semibold;
 
-  vertical-align: super;
+  font-size: 60%;
+  line-height: inherit;
 }
 
-.sm {
-  @include typography-5(false);
+.curr {
+  position: relative;
+  vertical-align: 10%;
 }
 
 .prev-amount {
