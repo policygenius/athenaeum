@@ -11,7 +11,7 @@ $footer-link-hover-color:  color('neutral-2');
   @extend %card;
 
   border: $select-card-border;
-  border-bottom-width: ru(.125);
+  border-bottom-width: rem-calc(3);
 }
 
 .footer {

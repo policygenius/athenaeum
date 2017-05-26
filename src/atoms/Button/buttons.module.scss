@@ -160,7 +160,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
   @include hover-action(0, rem-calc(5px), $button-action-disabled-border-color,
   $button-action-disabled-background-color, $button-action-disabled-color);
   background-color: $button-action-disabled-background-color;
-  box-shadow: 0 ru(.208) 0 $button-action-disabled-border-color;
+  box-shadow: 0 rem-calc(5) 0 $button-action-disabled-border-color;
   color: $button-action-disabled-color;
   transition: none;
   cursor: not-allowed;
@@ -173,7 +173,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
   $button-action-lowlight-background-color, $button-action-lowlight-color);
   background-color: $button-action-lowlight-background-color;
   color: $button-action-lowlight-color;
-  box-shadow: 0 ru(.208) 0 $button-action-lowlight-border-color;
+  box-shadow: 0 rem-calc(5) 0 $button-action-lowlight-border-color;
 }
 
 .outline {
