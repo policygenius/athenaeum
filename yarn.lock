@@ -6785,9 +6785,9 @@ pngquant-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
-policygenius-react-styleguidist@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/policygenius-react-styleguidist/-/policygenius-react-styleguidist-0.0.6.tgz#6086a244d17a7544f42f65c3749001256292ccd1"
+policygenius-react-styleguidist@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/policygenius-react-styleguidist/-/policygenius-react-styleguidist-0.0.7.tgz#e7b18a34251f249d790b78901416753c2b438855"
   dependencies:
     ast-types "^0.9.11"
     buble "^0.15.2"
