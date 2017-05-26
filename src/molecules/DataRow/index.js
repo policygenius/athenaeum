@@ -46,7 +46,7 @@ function DataRow(props) {
     <div className={classnames(...classes)}>
       <div className={styles['row']}>
         <div className={classnames(styles['label'])}>
-          <span className={styles['label-text']}>{ label }</span>
+          <div className={styles['label-text']}>{ label }</div>
           { tooltip && <Tooltip className={styles['tip']}>{ tooltip }</Tooltip> }
         </div>
         { renderAmount(amount, unit) || <div className={classnames(styles['value'])}>{value}</div> }
@@ -91,7 +91,10 @@ DataRow.propTypes = {
    * a number that will be transformed into a currency amount to $00.00 format.
    * amount takes precedence over value, use one or the other.
    */
-  amount: PropTypes.number,
+  amount: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   /**
    * per unit for Amount displayed, used in conjuction with amount.
    */
