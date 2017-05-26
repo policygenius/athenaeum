@@ -19,7 +19,7 @@ $focused-border-color: color('brand-3');
   @include typography-semibold;
 
   position: relative;
-  margin-bottom: ru(.25);
+  // margin-bottom: ru(.25);
   line-height: ru(.75);
 }
 
@@ -43,6 +43,7 @@ $focused-border-color: color('brand-3');
 
 .input {
   @include typography-regular();
+  @include typography-6(false);
 
   padding: ru(.5) ru(.75);
   border: 0;
