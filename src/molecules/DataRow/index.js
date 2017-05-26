@@ -6,6 +6,22 @@ import Tooltip from 'atoms/Tooltip';
 
 import styles from './data_row.module.scss';
 
+const renderAmount = (amount, unit) => {
+  if (!amount) return null;
+
+  const formattedNumber = accounting.formatNumber(amount, { precision: 2 });
+  const splitNumber = formattedNumber.toString().split('.');
+
+  return (
+    <div className={classnames(styles['value'])}>
+      <sup>$</sup>
+      <strong>{splitNumber[0]}</strong>
+      <sup>.{splitNumber[1]}</sup>
+      { unit && <strong>{unit}</strong> }
+    </div>
+  );
+};
+
 function DataRow(props) {
   const {
     className,
@@ -16,42 +32,29 @@ function DataRow(props) {
     unit,
     tooltip,
     indent,
+    description,
   } = props;
 
   const classes = [
     styles['data-row'],
-    variant && styles[`data-row-${variant}`],
-    indent && styles['data-row-indent'],
+    variant && styles[variant],
+    indent && styles['indent'],
     className,
   ];
 
   return (
     <div className={classnames(...classes)}>
-      <span className={classnames(styles['label'])}>
-        { label }
-        { tooltip && <Tooltip className={styles['tip']}>{ tooltip }</Tooltip> }
-      </span>
-      { renderAmount(amount, unit) || <span className={classnames(styles['value'])}>{value}</span> }
+      <div className={styles['row']}>
+        <div className={classnames(styles['label'])}>
+          <span className={styles['label-text']}>{ label }</span>
+          { tooltip && <Tooltip className={styles['tip']}>{ tooltip }</Tooltip> }
+        </div>
+        { renderAmount(amount, unit) || <div className={classnames(styles['value'])}>{value}</div> }
+      </div>
+      { description && <p className={styles['description']}>{description}</p> }
     </div>
   );
 }
-
-function renderAmount(amount, unit) {
-  if (!amount) return null;
-
-  const formattedNumber = accounting.formatNumber(amount, { precision: 2 });
-  const splitNumber = formattedNumber.toString().split('.');
-
-  return (
-    <span className={classnames(styles['value'])}>
-      <sup>$</sup>
-      <strong>{splitNumber[0]}</strong>
-      <sup>.{splitNumber[1]}</sup>
-      { unit && <strong>{unit}</strong> }
-    </span>
-  );
-}
-
 
 DataRow.propTypes = {
   /**
@@ -69,7 +72,17 @@ DataRow.propTypes = {
   /**
    * label/name for data
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]).isRequired,
+  /**
+   * description in small text under label.
+   */
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
   /**
    * value can be anything preferably `string`, `number`, or `node`.
    */

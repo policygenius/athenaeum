@@ -1,42 +1,30 @@
 .data-row {
-  display: flex;
   margin-bottom: ru(.25);
 
-  &-large {
+  color: color('neutral-2');
+}
 
-    .label {
-      @include typography(4);
-    }
-
-    .value {
-      @include typography(3);
-      @include typography-semibold;
-
-      color: color('brand-2');
-    }
-  }
-
-  &-sub {
-    .label {
-      @include typography-light;
-
-      color: color('neutral-3');
-    }
-
-    .value {
-      color: color('brand-2');
-    }
-  }
-
-  &-indent {
-    padding-left: ru(.75);
-  }
+.row {
+  display: flex;
+  margin: 0;
 }
 
 .label {
-  display: flex;
-  flex-grow: 2;
-  align-items: center;
+  @include typography(6);
+
+  position: relative;
+  max-width: 75%;
+  padding-right: ru(.75);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  @include typography(7);
+
+  color: color('neutral-3');
 }
 
 .value {
@@ -47,6 +35,34 @@
 }
 
 .tip {
+  z-index: 1;
   margin: 0 0 0 ru(.25);
-  position: relative;
+  position: absolute;
+  right: 0;
+}
+
+/* -- Variants -- */
+.large {
+  .label {
+    @include typography(4);
+  }
+
+  .value {
+    @include typography(3);
+    @include typography-semibold;
+
+    line-height: 1em;
+    color: color('brand-2');
+  }
+}
+
+.sub {
+  .label {
+    @include typography-light;
+  }
+}
+
+// Can be applied in addition to a variant
+.indent {
+  padding-left: ru(.75);
 }
