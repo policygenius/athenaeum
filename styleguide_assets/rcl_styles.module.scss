@@ -36,6 +36,27 @@ body {
       }
     }
 
+    .root-0-84 > ul {
+      > li {
+        border-bottom: 2px dotted #2e2e2e;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+
+        > ul {
+          padding-left: 0;
+        }
+
+        a.toc-header {
+          color: #dadada;
+          font-weight: bold;
+        }
+
+        > a.toc-header {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
     .h2-0-20 {
       font-size: 1.5rem;
     }
@@ -61,6 +82,18 @@ body {
       max-width: 1000px;
       margin: auto;
       padding: 60px 30px;
+    }
+
+    .title-wrapper ~ section {
+      > h1 {
+        font-weight: bold;
+      }
+
+      .title-wrapper h1 {
+        font-size: 2.5rem;
+        font-weight: normal;
+        font-style: italic;
+      }
     }
 
     p,

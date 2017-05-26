@@ -8,7 +8,7 @@ const createWraps = (prevWrap, animation) =>
     'span',
     { className: classnames(
       styles[animation],
-      styles['animate']
+      styles['animation']
     ) },
     prevWrap
   );
@@ -57,7 +57,8 @@ Animate.propTypes = {
    * fadeOut,
    * rotate-left,
    * rotate-right,
-   * slideDown
+   * slideDown,
+   * animate
    * `
    */
   animations: PropTypes.string,

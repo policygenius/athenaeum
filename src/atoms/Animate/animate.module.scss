@@ -2,8 +2,11 @@
 $transition: 1s ease;
 
 .animation-wrapper,
-.animate {
+.animation {
   display: inline-block;
+}
+
+.animate {
   transition: all 1s ease;
 }
 
