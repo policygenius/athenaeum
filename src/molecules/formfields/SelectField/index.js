@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import Tooltip from 'atoms/Tooltip';
+import ErrorMessage from 'atoms/ErrorMessage';
 
 import { renderOption, renderPlaceholder } from 'utils/fieldUtils';
 import styles from './select_field.module.scss';
@@ -42,38 +44,39 @@ function SelectField( props ) {
     className,
   ];
 
+  const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+
   return (
-    <div className={classnames(...classes)}>
-      { label &&
-        <label className={styles['label']} htmlFor={forProp}>
-          { label }
-          { renderToolTip(tooltip) }
-        </label>
-      }
+    <div>
+      <div className={classnames(...classes)}>
+        { label &&
+          <label className={styles['label']} htmlFor={forProp}>
+            { label }
+            { renderToolTip(tooltip) }
+          </label>
+        }
 
-      { defaultValue ?
-        <div className={styles['select']}>{defaultValue}</div>
-        :
-        <div className={styles['select-wrapper']}>
-          <select
-            className={styles['select']}
-            id={forProp}
-            required
-            {...input}
-          >
-            { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
-            { renderSelectOptions(selectOptions) }
-          </select>
-        </div>
-      }
+        { defaultValue ?
+          <div className={styles['select']}>{defaultValue}</div>
+          :
+          <div className={styles['select-wrapper']}>
+            <select
+              className={styles['select']}
+              id={forProp}
+              required
+              {...input}
+            >
+              { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
+              { renderSelectOptions(selectOptions) }
+            </select>
+          </div>
+        }
+      </div>
 
-      {meta && meta.touched && meta.error &&
-        <div className={styles.error}>{ meta.error }</div>
-      }
-
-      {meta && meta.touched && meta.warning &&
-        <div className={styles.error}>{ meta.warning }</div>
-      }
+      <ErrorMessage
+        condition={!!message}
+        message={message}
+      />
     </div>
   );
 }
@@ -138,7 +141,8 @@ SelectField.propTypes = {
 };
 
 SelectField.defaultProps = {
-  type: 'select-field'
+  type: 'select-field',
+  errorMessage: false,
 };
 
 export default SelectField;

@@ -40,9 +40,9 @@
 
 .icon-logo {
   position: absolute;
-  top: 0;
+  top: rem-calc(4);
   right: ru(.5);
-  height: 100%;
+  height: rem-calc(40);
   pointer-events: none;
 }
 
