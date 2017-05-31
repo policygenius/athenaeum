@@ -1,0 +1,18 @@
+ $base: .25;
+
+/** -- shared spacer util classes --
+  Common spacer sizing incrementing ru(.25) to ru(2.5)
+*/
+@for $i from 1 through 10 {
+  .top-#{$i} { margin-top: ru($base * $i); }
+  .bot-#{$i} { margin-bottom: ru($base * $i); }
+}
+
+.top-0 { margin-top: 0; }
+.bot-0 { margin-bottom: 0; }
+
+.top-11 { margin-top: ru(3); }
+.bot-11 { margin-bottom: ru(3); }
+
+.top-12 { margin-top: ru(6); }
+.bot-12 { margin-bottom: ru(6); }

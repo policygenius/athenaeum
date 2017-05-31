@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import omit from 'lodash/omit';
 
 import Icon from 'atoms/Icon';
 import styles from './buttons.module.scss';
@@ -15,6 +14,7 @@ function Button( props ) {
     icon,
     disabled,
     shake,
+    ...rest,
   } = props;
 
   const classes = [
@@ -25,13 +25,8 @@ function Button( props ) {
   ];
 
   return (
-    <button
-      className={classnames(...classes)}
-      type={type}
-      disabled={disabled}
-      {...omit(props, [ 'className', 'children', 'variant', 'shake' ])}
-    >
-      { icon && <Icon icon={icon} className={styles['icon']} />}
+    <button className={classnames(...classes)} type={type} disabled={disabled} {...rest}>
+      { icon && <Icon icon={icon} className={styles['icon']} /> }
       { children }
     </button>
   );

@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import _ from 'lodash';
 
-/* eslint-disable import/first */
+import colors from 'atoms/Color/colors.scss';
 import styles from './link_wrapper.module.scss';
-import colors from 'atoms/Color/colors.module.scss';
 
 function LinkWrapper( props ) {
   const {
     className,
     children,
-    color
+    color,
+    ...rest,
   } = props;
 
+  const classes = [
+    styles.link,
+    colors[color],
+    className,
+  ];
+
   return (
-    <a
-      {..._.omit(props, [ 'children', 'className', 'color' ])}
-      className={classnames(styles.link, colors[color], className)}
-    >
+    <a {...rest} className={classnames(...classes)}>
       { children }
     </a>
   );
@@ -40,6 +42,10 @@ LinkWrapper.propTypes = {
    * color of link; follows PG color naming. Neutral colors not available
    */
   color: PropTypes.string
+};
+
+LinkWrapper.defaultProps = {
+  color: 'neutral-4',
 };
 
 export default LinkWrapper;

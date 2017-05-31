@@ -33,6 +33,7 @@
     "accounting": "^0.4.1",
     "classnames": "^2.2.5",
     "holderjs": "^2.9.4",
+    "html-tag-names": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
@@ -48,6 +49,7 @@
     "babel-preset-airbnb": "^2.1.1",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^3.5.0",
     "css-loader": "^0.28.0",
     "enzyme": "^2.8.2",
@@ -130,7 +132,8 @@
   "babel": {
     "presets": [
       "es2015",
-      "react"
+      "react",
+      "stage-2"
     ]
   },
   "jest": {

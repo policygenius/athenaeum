@@ -10,16 +10,14 @@ Playback Card Example:
         bottomSpacing='xSmall'
         fullwidth
       >
-        <TextLockup
-          variant='G'
-          header='Name'
-          subheader='Victoria Bangladesh'
+        <TextD
+          line1='Name'
+          line2='Victoria Bangladesh'
         />
 
-        <TextLockup
-          variant='G'
-          header='Email'
-          subheader='victoriabangladesh19283@gmail.com'
+        <TextD
+          line1='Email'
+          line2='victoriabangladesh19283@gmail.com'
         />
       </Layout>
     }
@@ -31,15 +29,13 @@ Playback Card Example:
         bottomSpacing='xSmall'
         fullwidth
       >
-        <TextLockup
-          variant='G'
-          header='Date of Birth'
-          subheader='9/19/1987'
+        <TextD
+          line1='Date of Birth'
+          line2='9/19/1987'
         />
-        <TextLockup
-          variant='G'
-          header='Phone Number'
-          subheader='917-887-8424'
+        <TextD
+          line1='Phone Number'
+          line2='917-887-8424'
         />
       </Layout>
     }

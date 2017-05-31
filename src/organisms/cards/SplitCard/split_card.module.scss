@@ -1,6 +1,6 @@
 @import '../shared/cards.module.scss';
 
-.percentage-card {
+.split-card {
   @extend %card;
 }
 
@@ -12,7 +12,7 @@
   }
 }
 
-.percentage-col {
+.col-r {
   flex-grow: 0;
   border-left: $border;
 }
@@ -22,7 +22,7 @@
     padding: $col-padding;
   }
 
-  .percentage-col {
+  .col-r {
     border-left: 0;
   }
 }

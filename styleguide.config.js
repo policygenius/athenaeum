@@ -22,12 +22,11 @@ module.exports = {
               components: 'src/molecules/asides/**/index.js'
             },
             {
-              name: 'DataRow',
-              components: 'src/molecules/DataRow/index.js'
-            },
-            {
-              name: 'FlashMessage',
-              components: 'src/molecules/FlashMessage/index.js'
+              name: 'Rows',
+              components: () => [
+                'src/molecules/DataRow/index.js',
+                'src/molecules/ComparisonRowItem/index.js',
+              ]
             },
             {
               name: 'FormFields',
@@ -49,8 +48,8 @@ module.exports = {
               components: 'src/molecules/Modal/index.js'
             },
             {
-              name: 'TextLockups',
-              components: 'src/molecules/TextLockup/index.js'
+              name: 'Lock Ups',
+              components: 'src/molecules/LockUps/**/index.js'
             },
             {
               name: 'Other',

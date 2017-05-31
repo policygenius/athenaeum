@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Col from 'atoms/Layout/Col';
 import Layout from 'atoms/Layout';
 import classnames from 'classnames';
+
 import styles from './comparison_table.module.scss';
 
 function ComparisonTableRow(props) {
@@ -12,7 +13,7 @@ function ComparisonTableRow(props) {
   } = props;
 
   return (
-    <Layout className={styles.layout}>
+    <Layout className={styles['layout']}>
       {React.Children.map(children, child =>
         <Col
           mediumCols={child.props.cols}

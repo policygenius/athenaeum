@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import colors from 'atoms/Color/colors.module.scss';
+import colors from 'atoms/Color/colors.scss';
 import styles from './text.module.scss';
 
 const getTag = (props) => {

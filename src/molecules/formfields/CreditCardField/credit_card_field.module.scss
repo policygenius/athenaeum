@@ -42,6 +42,7 @@
   position: absolute;
   top: rem-calc(4);
   right: ru(.5);
+  max-width: rem-calc(60);
   height: rem-calc(40);
   pointer-events: none;
 }
