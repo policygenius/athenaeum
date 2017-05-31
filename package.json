@@ -31,6 +31,7 @@
   "homepage": "https://github.com/policygenius/athenaeum#readme",
   "dependencies": {
     "accounting": "^0.4.1",
+    "babel-preset-jest": "^20.0.3",
     "classnames": "^2.2.5",
     "holderjs": "^2.9.4",
     "html-tag-names": "^1.1.1",
@@ -43,7 +44,7 @@
     "sinon": "^2.1.0"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^7.0.0",
     "babel-preset-airbnb": "^2.1.1",

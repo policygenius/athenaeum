@@ -1,22 +1,29 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { mount, shallow } from 'enzyme';
-import { expect } from 'chai';
 
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 
 describe('<Layout />', () => {
 
-  it('renders', () => {
+  it('creates a Layout component', () => {
     const wrapper = mount(<Layout />);
 
-    expect(wrapper.type()).to.equal(Layout);
+    expect(wrapper.type()).toEqual(Layout);
+  });
+
+  it('renders correctly', () => {
+    const component = renderer.create(<Layout />).toJSON();
+
+    expect(component).toMatchSnapshot();
   });
 
   it('can create variant via props', () => {
     const wrapper = shallow(<Layout variant='bordered-buckets' />);
 
-    expect(wrapper.hasClass('bordered-buckets')).to.be.ok;
+    expect(wrapper.hasClass('bordered-buckets')).toBeTruthy();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('renders its children', () => {
@@ -28,9 +35,9 @@ describe('<Layout />', () => {
       </Layout>
     );
 
-    expect(wrapper.find('.child')).to.have.length(2);
-    expect(wrapper.find('.some-child')).to.have.length(1);
-
+    expect(wrapper.find('.child')).toHaveLength(2);
+    expect(wrapper.find('.some-child')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('wraps its children in `<Col>`', () => {
@@ -42,7 +49,8 @@ describe('<Layout />', () => {
       </Layout>
     );
 
-    expect(wrapper.find('Col')).to.have.length(3);
+    expect(wrapper.find('Col')).toHaveLength(3);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('passes its `col` props down to its `<Col>` correctly', () => {
@@ -60,15 +68,16 @@ describe('<Layout />', () => {
       </Layout>
     );
 
-    expect(wrapper.find('Col').first().props().smallCols).to.be.ok;
-    expect(wrapper.find('Col').first().props().smallCols).to.equal(1);
+    expect(wrapper.find('Col').first().props().smallCols).toBeTruthy();
+    expect(wrapper.find('Col').first().props().smallCols).toEqual(1);
 
-    expect(wrapper.find('Col').first().props().mediumCols).to.be.ok;
-    expect(wrapper.find('Col').first().props().mediumCols).to.equal(6);
+    expect(wrapper.find('Col').first().props().mediumCols).toBeTruthy();
+    expect(wrapper.find('Col').first().props().mediumCols).toEqual(6);
 
-    expect(wrapper.find('Col').first().props().fullwidth).to.be.true;
-    expect(wrapper.find('Col').first().props().padding).not.to.be.true;
-    expect(wrapper.find('Col').first().props().bottomSpacing).to.equal('xLarge');
+    expect(wrapper.find('Col').first().props().fullwidth).toBeTruthy();
+    expect(wrapper.find('Col').first().props().padding).not.toBeTruthy();
+    expect(wrapper.find('Col').first().props().bottomSpacing).toEqual('xLarge');
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('wraps its child `<Col>` with column sizes', () => {
@@ -81,8 +90,9 @@ describe('<Layout />', () => {
       </Layout>
     );
 
-    expect(wrapper.find('Col').get(0).props.largeCols).to.equal(7);
-    expect(wrapper.find('Col').get(1).props.largeCols).to.equal(5);
+    expect(wrapper.find('Col').get(0).props.largeCols).toEqual(7);
+    expect(wrapper.find('Col').get(1).props.largeCols).toEqual(5);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('wraps its child `<Col>` with column sizes', () => {
@@ -101,9 +111,10 @@ describe('<Layout />', () => {
       </Layout>
     );
 
-    expect(wrapper.children().get(0).props.smallCols).to.equal(1);
-    expect(wrapper.children().get(1).props.smallCols).to.equal(3);
-    expect(wrapper.children().get(2).props.smallCols).to.equal(1);
+    expect(wrapper.children().get(0).props.smallCols).toEqual(1);
+    expect(wrapper.children().get(1).props.smallCols).toEqual(3);
+    expect(wrapper.children().get(2).props.smallCols).toEqual(1);
+    expect(wrapper).toMatchSnapshot();
   });
 
 });
