@@ -41,6 +41,7 @@ HeaderAmount.propTypes = {
   amount: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
+    PropTypes.node
   ]),
   /**
    * string label to denote unit (i.e /mo, per month, yr)

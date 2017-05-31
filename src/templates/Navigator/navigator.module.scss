@@ -119,6 +119,10 @@ $main-section-padding: ru(1.5);
     padding-left: ru(.75);
     padding-right: ru(.75);
   }
+
+  .sidebar {
+    display: none;
+  }
 }
 
 @media #{$small-and-medium-only} {
