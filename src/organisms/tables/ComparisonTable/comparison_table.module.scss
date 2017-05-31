@@ -1,44 +1,41 @@
-@import 'src/assets/stylesheets/global';
+$border: 1px solid color('neutral-5');
 
 .comparison-table {
-  border: 1px solid color('neutral-5');
+  border: $border;
   border-radius: 6px;
   padding: 0;
 
-  .child-wrapper:last-child {
-    .row {
-      border-bottom: none;
-    }
-  }
+  .row:last-child .col { border-bottom: 0; }
 }
 
-.header {
+.row {
+  padding: 0;
+}
+
+.col-head {
   padding: ru(1) ru(1.25);
-  border-right: 1px solid color('neutral-5');
-  border-bottom: 1px solid color('neutral-5');
+  border-right: $border;
+  border-bottom: $border;
 
   &:last-child {
     border-right: none;
   }
 }
 
-.row {
+
+.col {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: ru(.75) ru(1.25);
 
-  border-right: 1px solid color('neutral-5');
-  border-bottom: 1px solid color('neutral-5');
+  border-right: $border;
+  border-bottom: $border;
 
   &:last-child {
     border-right: none;
   }
-}
-
-.layout {
-  padding: 0;
 }
 
 @media #{$small-only} {
@@ -46,22 +43,18 @@
     border: none;
   }
 
-  .header {
+  .col-head {
     border: none;
-
-    &:not( :first-child ) {
-      display: none;
-    }
   }
 
-  .row {
+  .col {
     border: none;
     padding: 0 30px 18px;
 
     &:last-child {
       padding: 0 0 30px;
       margin: 0 30px 30px;
-      border-bottom: 1px solid color('neutral-5');
+      border-bottom: $border;
     }
   }
 }

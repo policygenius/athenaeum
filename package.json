@@ -37,7 +37,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
-    "policygenius-react-styleguidist": "^0.0.7",
+    "policygenius-react-styleguidist": "latest",
     "react-input-mask": "^0.8.0",
     "react-svg-inline": "^2.0.0",
     "sinon": "^2.1.0"
