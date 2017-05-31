@@ -12,19 +12,25 @@ function PlaybackCard(props) {
     leftPanel,
     rightPanel,
     onClick,
-    icon
+    icon,
+    editLinkText,
   } = props;
 
   return (
     <div className={styles['playback-card']}>
       <Layout
-        smallCols={[ 11, 1 ]}
+        smallCols={[ 9, 3 ]}
         bottomSpacing='xSmall'
         fullwidth
       >
         <ImageAside bold icon={icon} header={header} />
         <Col className={styles['edit-column']}>
-          <LinkWrapper onClick={onClick} className={styles['edit']}>Edit</LinkWrapper>
+          <LinkWrapper
+            onClick={onClick}
+            className={styles['edit']}
+          >
+            { editLinkText }
+          </LinkWrapper>
         </Col>
       </Layout>
       <Layout mediumCols={[ 8, 4 ]} fullwidth>
@@ -57,6 +63,15 @@ PlaybackCard.propTypes = {
    * Right Panel node
    */
   rightPanel: PropTypes.node,
+
+  /**
+   * text displayed for the Edit link
+   */
+  editLinkText: PropTypes.string,
+};
+
+PlaybackCard.defaultProps = {
+  editLinkText: 'Edit'
 };
 
 export default PlaybackCard;
