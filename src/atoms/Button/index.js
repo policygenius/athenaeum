@@ -17,22 +17,22 @@ function Button( props ) {
     shake,
   } = props;
 
+  const classes = [
+    styles['button'],
+    shake && styles['shaking'],
+    styles[variant],
+    className,
+  ];
+
   return (
     <button
-      className={classnames(
-        shake && styles['shaking'],
-        styles[variant],
-        className
-      )}
+      className={classnames(...classes)}
       type={type}
       disabled={disabled}
       {...omit(props, [ 'className', 'children', 'variant', 'shake' ])}
     >
-      {
-        icon &&
-          <Icon icon={icon} className={styles['icon']} />
-      }
-      {children}
+      { icon && <Icon icon={icon} className={styles['icon']} />}
+      { children }
     </button>
   );
 }

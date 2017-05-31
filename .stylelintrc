@@ -53,9 +53,7 @@
     "no-unknown-animations": true,
     "number-no-trailing-zeros": true,
     "property-case": "lower",
-    "property-no-unknown": [ true, {
-      ignoreProperties: [ 'composes' ]
-    }],
+    "property-no-unknown": [ true ],
     "rule-empty-line-before": [ "always-multi-line", {
       ignore: [ "after-comment", "inside-block" ]
     }],
