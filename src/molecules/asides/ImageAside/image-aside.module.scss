@@ -1,17 +1,13 @@
-$icon-aside-basic-icon-color:  color('brand-3');
-$small-aside-text-color: color('brand-2');
-$aside-text-color:               color('neutral-2');
-
 /* Types */
-
+%basic,
 .basic {
   display: flex;
   align-items: flex-start;
-  color: $aside-text-color;
+  color: color('neutral-2');
 }
 
 .compact {
-  composes: basic;
+  @extend %basic;
 
   .icon {
     width: rem-calc(80);
@@ -31,13 +27,13 @@ $aside-text-color:               color('neutral-2');
 }
 
 .centered {
-  composes: basic;
+  @extend %basic;
 
   align-items: center;
 }
 
 .simple {
-  composes: centered;
+  @extend %basic;
 
   .icon {
     width: rem-calc(45);
@@ -80,20 +76,24 @@ $aside-text-color:               color('neutral-2');
 }
 
 .text {
-  @include typography-5;
-  margin: 0;
+  @include typography-5(false);
+
   color: inherit;
 }
 
 .header {
-  composes: text;
-  font-weight: 600;
+  @include typography-5(false);
+  @include typography-semibold;
+
+  color: inherit;
   word-wrap: break-word;
 }
 
 .subheader {
-  composes: text;
-  font-weight: 400;
+  @include typography-5(false);
+  @include typography-regular;
+
+  color: inherit;
 }
 
 .small {
@@ -112,7 +112,8 @@ $aside-text-color:               color('neutral-2');
 
   .header {
     @include typography-7(false);
-    color: $small-aside-text-color;
+
+    color: color('brand-2');
   }
 }
 
