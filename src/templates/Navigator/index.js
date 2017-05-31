@@ -107,7 +107,7 @@ function Navigator(props) {
                 top='#sticky-top'
                 bottomBoundary='#sticky-bottom'
               >
-                <div className='sidebar'>{sidebar}</div>
+                <div className={styles['sidebar']}>{sidebar}</div>
               </Sticky>
             </Col>
 
