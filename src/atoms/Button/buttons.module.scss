@@ -126,6 +126,8 @@ $button-solid-background-tertiary-color:   #f08f5c;
 }
 
 .toggle-active {
+  @extend .toggle;
+
   background-color: color('neutral-6');
   color: color('neutral-2');
   box-shadow: 0 4px 0 color('neutral-4');
