@@ -58,7 +58,7 @@ SplitCard.propTypes = {
   /**
    * callback passed to xIcon to close card
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
 
   /**
    *  Left column node
