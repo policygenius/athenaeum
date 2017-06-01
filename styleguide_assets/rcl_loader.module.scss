@@ -1,0 +1,71 @@
+%pathfades {
+  $transition: opacity .3s ease-in;
+  opacity: 0;
+
+  &:nth-of-type(1) {
+    transition: $transition;
+  }
+  &:nth-of-type(2) {
+    transition: $transition .2s;
+  }
+  &:nth-of-type(3) {
+    transition: $transition .4s;
+  }
+}
+
+:global{
+
+  body {
+    .RCL-Logo {
+      width: 100%;
+
+      path {
+        fill: #aa001b;
+      }
+
+      &:hover {
+        path {
+          @extend %pathfades;
+        }
+      }
+    }
+
+    .RCL-loader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      opacity: 1;
+
+      .RCL-Logo {
+        display: block;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        padding: 30px;
+      }
+
+      .logo-wrapper {
+        opacity: 1;
+        transition: opacity 1s ease .6s;
+      }
+
+      &.fades {
+        .logo-wrapper {
+          opacity: 0;
+        }
+
+        path {
+          @extend %pathfades;
+        }
+      }
+    }
+  }
+}

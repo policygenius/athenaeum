@@ -115,6 +115,18 @@ Our RCL is structured around the concepts put forth by [Atomic Design](http://br
 
 ## Contributing
 
+### Gotchas:
+
+#### SCSS / CSS and How our CSS-Module config works
+
+- Our CSS Module config creates complex, hashed classes like this: `animate-module__shake--3Q0r1` which is `[name of the component]__[local classname]--[hash:base64:5]'`.
+- When webpack comes across an imported SCSS (`import styles from './button.module.scss'`), a new class is created name-spaced with the directory from where that file exists and added to the file css output file.
+- That `import styles..` will return a "styles" object of key / value pairs in this format: `{ "plain classname": "complex hashed classname" }`
+- You can then add classes to your JSX thus: `className: styles['classname']`
+
+**To prevent a bloated final CSS file, DON'T use the `@import` to import scss files that contain CSS selectors. `%placeholders`, `@mixin`, `@function`s are OK.**
+
+
 ### Coding styles and standards
 
 Most of our styles are enforced by linters ([stylelint](https://github.com/stylelint/stylelint), [eslint](http://eslint.org/), [eslint-plugin-markdown](https://github.com/jmcolella/eslint-plugin-markdown)), which must follow for the builds to pass.
