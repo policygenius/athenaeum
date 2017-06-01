@@ -11,4 +11,8 @@
 /* -- Variants -- */
 .box {
   border-bottom-width: rem-calc(4px);
+
+  .col {
+    padding: ru(1.25) ru(.75);
+  }
 }
