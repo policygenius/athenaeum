@@ -18,18 +18,18 @@ function ArticleList( props ) {
   return (
     <ul className={styles[type]} >
       {data.map(item =>
-        <li className={styles.listItem} key={item[itemProps.id]}>
-          <a className={styles.link} href={item[itemProps.link]}>
-            <figure className={styles.articleWrapper}>
+        <li className={styles['listItem']} key={item[itemProps.id]}>
+          <a className={styles['link']} href={item[itemProps.link]}>
+            <figure className={styles['articleWrapper']}>
               <img
-                className={[ styles.articleImg ]}
+                className={styles['articleImg']}
                 src={item[itemProps.imageSrc]}
                 role='presentation'
               />
 
-              <figcaption className={styles.articleInfoWrapper}>
-                <h3 className={styles.header}>{ item[itemProps.header] }</h3>
-                <p className={styles.subHeader}>{ item[itemProps.subHeader] }</p>
+              <figcaption className={styles['articleInfoWrapper']}>
+                <h3 className={styles['header']}>{ item[itemProps.header] }</h3>
+                <p className={styles['subHeader']}>{ item[itemProps.subHeader] }</p>
               </figcaption>
             </figure>
           </a>

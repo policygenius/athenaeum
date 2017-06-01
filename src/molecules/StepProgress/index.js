@@ -7,7 +7,7 @@ import TextComponent from 'atoms/TextComponent';
 import styles from './step-progress.module.scss';
 
 function renderStep(step, idx) {
-  const stepClassNames = [ styles.step ];
+  const stepClassNames = [ styles['step'] ];
 
   if (step.current) stepClassNames.push(styles['step-current']);
   if (step.inactive) stepClassNames.push(styles['step-inactive']);
@@ -20,7 +20,7 @@ function renderStep(step, idx) {
           <Icon icon={step.icon} className={styles['icon']} />
           { step.complete && <Icon icon='checkMark' className={styles['check']} /> }
         </span>
-        <TextComponent tag='span' className={styles.label}>{step.label}</TextComponent>
+        <TextComponent tag='span' className={styles['label']}>{step.label}</TextComponent>
       </a>
     </li>
   );
@@ -39,7 +39,7 @@ function StepProgress( props ) {
   } = props;
 
   return (
-    <ul className={classnames(styles.stepProgress, className)}>
+    <ul className={classnames(styles['step-progress'], className)}>
       { renderSteps(steps) }
     </ul>
   );

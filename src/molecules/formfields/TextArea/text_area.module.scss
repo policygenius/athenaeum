@@ -4,14 +4,13 @@
   @extend %form-field;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  padding-right: ru(.5);
+.label {
+  @extend %label;
+
   border-bottom: $border;
 }
 
-textarea.textarea-field {
+.textarea {
   border-style: none;
   border-color: Transparent;
   overflow: auto;
@@ -19,7 +18,12 @@ textarea.textarea-field {
   padding: .63rem 1.125rem;
 }
 
-.focused textarea.textarea-field {
-  background-color: color('brand-6');
+/* --  state:focus  -- */
+.focused {
+  @extend %focused;
 }
 
+/* --  state:error  -- */
+.hasError {
+  @extend %hasError;
+}

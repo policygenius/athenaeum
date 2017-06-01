@@ -27,20 +27,22 @@ const renderToolTip = (message) => {
 function SelectField( props ) {
   const {
     className,
-    placeholder,
-    label,
-    selectOptions,
-    forProp,
-    type,
-    input,
-    tooltip,
     defaultValue,
+    forProp,
+    input,
+    label,
     meta,
+    placeholder,
+    selectOptions,
+    tooltip,
+    variant,
   } = props;
 
   const classes = [
-    styles[type],
+    styles['select-field'],
+    variant && styles[variant],
     meta && meta.active && styles['focused'],
+    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
   ];
 
@@ -121,7 +123,10 @@ SelectField.propTypes = {
   /**
    * defines type of select field
    */
-  type: PropTypes.string,
+  variant: PropTypes.oneOf([
+    'card',
+  ]),
+
   /**
    * contains anything you want to pass directly to input e.g. value, onChange, onBlur
    */
@@ -141,7 +146,6 @@ SelectField.propTypes = {
 };
 
 SelectField.defaultProps = {
-  type: 'select-field',
   errorMessage: false,
 };
 

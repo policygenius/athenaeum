@@ -5,6 +5,8 @@
 }
 
 .label {
+  @extend %label;
+
   border-bottom: $border;
 }
 
@@ -28,9 +30,42 @@
   }
 }
 
-.select-card {
-  @extend %form-field;
+.select {
+  @include typography-regular();
+  @include typography-6(false);
 
+  border: 0;
+  width: 100%;
+  padding: ru(.5) ru(.75);
+  position: relative;
+  background: transparent;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:invalid {
+    color: color('neutral-4');
+  }
+
+  &::placeholder {
+    color: color('neutral-4');
+  }
+}
+
+/* --  state:focus  -- */
+.focused {
+  @extend %focused;
+}
+
+/* --  state:error  -- */
+.hasError {
+  @extend %hasError;
+}
+
+/* -- Variants -- */
+.card {
   border: 0;
   color: color('brand-2');
 
@@ -55,9 +90,11 @@
       @include typography-3(false);
       color: color('brand-2');
     }
+  }
+}
 
-    @media #{$medium-up} {
-      @include typography-3(false);
-    }
+@media #{$medium-up} {
+  .card .select {
+    @include typography-3(false);
   }
 }

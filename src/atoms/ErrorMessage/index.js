@@ -31,7 +31,7 @@ class ErrorMessage extends Component {
 
   render() {
     return (
-      <div className={classnames(styles['error'], this.state.visible && styles.visible)}>
+      <div className={classnames(styles['error'], this.state.visible && styles['visible'])}>
         <Text type={7}>
           { this.props.message }
         </Text>

@@ -6,7 +6,7 @@ import ErrorMessage from 'atoms/ErrorMessage';
 
 import styles from './text_area.module.scss';
 
-function TextArea( props ) {
+function TextArea(props) {
   const {
     className,
     placeholder,
@@ -31,11 +31,11 @@ function TextArea( props ) {
     <div>
       <div className={classnames(...classes)}>
         { label &&
-          <label className={classnames(styles['header'], styles['label'])} htmlFor={htmlFor}>{ label }</label>
+          <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
         }
 
         <textarea
-          className={styles['textarea-field']}
+          className={styles['textarea']}
           placeholder={placeholder}
           rows={rows}
           {...input}

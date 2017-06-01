@@ -4,8 +4,22 @@
   @extend %card;
 }
 
+.icon-close {
+  @extend %icon-close;
+}
+
+.col {
+  padding: ru(.75);
+}
+
 .footer {
+  @extend %footer;
+
   padding: $col-padding;
+}
+
+.link {
+  @extend %link;
 }
 
 /* -- Variants -- */

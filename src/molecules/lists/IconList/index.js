@@ -17,16 +17,16 @@ function IconList(props) {
       {
         data.map( (item, idx) =>
           <li
-            className={styles.item}
+            className={styles['item']}
             key={`iconlist-item-${idx}`}
           >
             <Icon
-              className={styles.icon}
+              className={styles['icon']}
               icon={item.icon}
             />
 
             <TextComponent
-              className={styles.text}
+              className={styles['text']}
               type={6}
               semibold
             >

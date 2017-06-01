@@ -41,16 +41,16 @@ function RadioCard(props) {
     children
   } = props;
 
+  const classes = classnames(
+    styles['radio-card'],
+    input.value === radioValue && styles['checked'],
+    isValid(sections) && styles['sectioned'],
+    className,
+  );
+
   return (
     <div
-      className={
-        classnames(
-          styles['radio-card'],
-          { [styles.checked]: input.value === radioValue },
-          { [styles.sectioned]: isValid(sections) },
-          className
-        )
-      }
+      className={classes}
       {...omit(input, [ 'value', 'onClick' ])}
       onClick={() => input.onChange(radioValue)}
       id={`radio-${input.name}`}

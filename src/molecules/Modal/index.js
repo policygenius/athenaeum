@@ -36,11 +36,11 @@ function Modal(props) {
       onAfterOpen={onAfterOpen}
       onRequestClose={onRequestClose}
       contentLabel={contentLabel}
-      className={classnames(styles.modal, styles[variant], className)}
-      overlayClassName={styles.overlay}
+      className={classnames(styles['modal'], styles[variant], className)}
+      overlayClassName={styles['overlay']}
     >
-      <div className={styles.dialog}>
-        <div className={styles.header}>
+      <div className={styles['dialog']}>
+        <div className={styles['header']}>
           <Layout
             fullwidth
             smallCols={[ 11, 1 ]}
@@ -60,14 +60,14 @@ function Modal(props) {
             >
               <Icon
                 icon='close'
-                className={styles.close}
+                className={styles['close']}
                 onClick={onRequestClose}
               />
             </Col>
           </Layout>
         </div>
 
-        <div className={styles.body}>
+        <div className={styles['body']}>
           {React.Children.map(children, wrapChild)}
         </div>
       </div>

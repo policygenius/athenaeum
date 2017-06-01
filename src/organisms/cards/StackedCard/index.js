@@ -13,16 +13,14 @@ function StackedCard(props) {
     inverted
   } = props;
 
+  const classes = [
+    styles['stacked'],
+    inverted && styles['inverted'],
+    className,
+  ];
+
   return (
-    <ul
-      className={
-        classnames(
-          styles['stacked'],
-          { [styles.inverted]: inverted },
-          className
-        )
-      }
-    >
+    <ul className={classnames(...classes)}>
       { stackChildren(children) }
     </ul>
   );

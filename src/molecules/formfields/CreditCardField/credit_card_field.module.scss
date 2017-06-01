@@ -7,11 +7,16 @@
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   padding-right: ru(.5);
 
   border-bottom: $border;
+}
+
+.label {
+  @extend %label;
 }
 
 .line-1 {
@@ -47,9 +52,16 @@
   pointer-events: none;
 }
 
-//-- state:focused --
+/* --  state:focus  -- */
 .focused {
+  @extend %focused;
+
   .header,
   .col,
   .line-1 { border-color: $focused-border-color; }
+}
+
+/* --  state:error  -- */
+.hasError {
+  @extend %hasError;
 }

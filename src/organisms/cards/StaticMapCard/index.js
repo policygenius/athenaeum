@@ -35,13 +35,13 @@ function StaticMapCard(props) {
 
   return (
     <div className={classnames(styles['static-map-card'], className)}>
-      <div className={classnames(styles.head)}>
-        <h3 className={classnames(styles.title)}>
-          <span className={classnames(styles.label)}>{ label }</span>
+      <div className={classnames(styles['head'])}>
+        <h3 className={classnames(styles['title'])}>
+          <span className={classnames(styles['label'])}>{ label }</span>
           { center }
         </h3>
       </div>
-      <div className={classnames(styles.map)} style={{ backgroundImage: `url(${mapImageSrc})` }} />
+      <div className={classnames(styles['map'])} style={{ backgroundImage: `url(${mapImageSrc})` }} />
     </div>
   );
 }

@@ -15,7 +15,7 @@ import styles from '../path/simple_button.scss';
 
 export default function simpleButton({ children }) {
   return (
-    <button className={styles.button}>{children}</button>
+    <button className={styles['button']}>{children}</button>
   )
 }
 ```

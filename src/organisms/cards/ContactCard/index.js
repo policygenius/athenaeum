@@ -18,35 +18,22 @@ function ContactCard( props ) {
     inverted
   } = props;
 
+  const classes = [
+    styles['contact'],
+    inverted && styles['inverted'],
+    className
+  ];
+
   return (
-    <StackedCard
-      inverted={inverted}
-      className={
-        classnames(
-          styles.contact,
-          { [styles.inverted]: inverted },
-          className
-        )
-      }
-    >
-      <a
-        className={styles['link-row']}
-        href={`tel:${cleanPhoneString(phoneNumber)}`}
-      >
-        <Icon
-          icon='phone'
-          className={styles.icon}
-        />{ phoneNumber }
+    <StackedCard className={classnames(...classes)} inverted={inverted}>
+      <a className={styles['link-row']} href={`tel:${cleanPhoneString(phoneNumber)}`}>
+        <Icon icon='phone' className={styles['icon']} />
+        { phoneNumber }
       </a>
 
-      <a
-        className={styles['link-row']}
-        onClick={chatClick}
-      >
-        <Icon
-          icon='chat'
-          className={styles.icon}
-        />{ chatText }
+      <a className={styles['link-row']} onClick={chatClick}>
+        <Icon icon='chat' className={styles['icon']} />
+        { chatText }
       </a>
     </StackedCard>
   );

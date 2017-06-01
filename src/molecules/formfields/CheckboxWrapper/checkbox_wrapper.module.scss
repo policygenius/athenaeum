@@ -5,13 +5,14 @@
 }
 
 .label {
+  @extend %label;
+
   border-bottom: 1px solid color('neutral-5');
 }
 
 .content {
   padding: ru(.75);
 }
-
 
 @media #{$small-only} {
   .content {

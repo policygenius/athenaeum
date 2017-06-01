@@ -1,14 +1,13 @@
-DateField Example:
+DateField (Month/Day/Year):
 
 ```example
-  const DateExample = require('utils/exampleWrapper')(DateField);
-
-    <DateExample
+    <DateField
       label='Date of Birth'
       input={{
         onBlur: () => true,
         onFocus: () => true
       }}
+      meta={{ touched: true, error: 'hello' }}
     >
       <TextField
         placeholder='MM'
@@ -22,14 +21,13 @@ DateField Example:
         placeholder='YYYY'
         noBaseStyle
       />
-    </DateExample>
+    </DateField>
 ```
 
+DateField (Month/Year):
 
 ```example
-    const DateExample = require('utils/exampleWrapper')(DateField);
-
-    <DateExample
+    <DateField
       label='Date of Birth'
       input={{
         onBlur: () => true,
@@ -44,5 +42,5 @@ DateField Example:
         placeholder='YYYY'
         noBaseStyle
       />
-    </DateExample>
+    </DateField>
 ```

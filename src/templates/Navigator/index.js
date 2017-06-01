@@ -32,7 +32,7 @@ function Navigator(props) {
   return (
     <div className={classnames(styles['navigator'], className)}>
       <Layout
-        className={styles.layout}
+        className={styles['layout']}
         fullwidth
       >
         <Col className={styles['logo-panel']}>
