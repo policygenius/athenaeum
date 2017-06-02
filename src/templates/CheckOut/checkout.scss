@@ -85,6 +85,15 @@ $layout-padding: ru(1);
   }
 }
 
+.footer-container {
+  background-color: color('neutral-6');
+  border-top: 1px solid color('neutral-5');
+}
+
+.footer-wrapper {
+  padding: ru(1.5);
+}
+
 @media #{$small-only} {
   .logo {
     &-wrapper {

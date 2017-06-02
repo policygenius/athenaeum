@@ -97,6 +97,11 @@
     width: 77px;
     height: 33px;
   }
+
+  &-digicert {
+    width: 100px;
+    height: 35px;
+  }
 }
 
 @media #{$small-only} {
