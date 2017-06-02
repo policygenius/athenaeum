@@ -1,0 +1,25 @@
+@import '../shared/formfields.module.scss';
+
+.textarea-field {
+  @extend %form-field;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-right: ru(.5);
+  border-bottom: $border;
+}
+
+textarea.textarea-field {
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  outline: none;
+  padding: .63rem 1.125rem;
+}
+
+.focused textarea.textarea-field {
+  background-color: color('brand-6');
+}
+
