@@ -18,5 +18,9 @@ module.exports = {
       name: 'Best Practices',
       content: 'docs/introduction/best_practices.md',
     },
+    {
+      name: 'RCL README',
+      content: 'README.md',
+    },
   ]
 };

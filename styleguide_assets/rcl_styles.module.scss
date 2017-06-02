@@ -1,19 +1,17 @@
-body {
-  // If you need to override a style from an RCL component
-  // make it more specifc by nesting so as to avoid using !important
-  .RCL-Logo {
-    width: 100%;
+@import 'rcl_loader.module.scss';
+/*
 
-    path {
-      fill: #aa001b;
-    }
-  }
+These styles won't be processed by css-modules
+You can add regular css here, but any styling that you want to
+add / change in the Styleguidist base should be made in the jss
+in the policygenius/react-styleguidist rep
 
-}
+Complicated css nesting that jss doesn't handle well is best placed here.
 
-// These styles won't be processed by css-modules
-// so you can use the styleguidist classnames here.
+ */
+
 :global{
+
   body {
     .RCL-Logo {
       width: 100%;
@@ -26,8 +24,8 @@ body {
     .list-toggle {
       color: white;
 
-      li {
-        cursor: pointer;
+      a {
+        transition: color .2s;
 
         &.active,
         &:hover {
@@ -55,14 +53,6 @@ body {
           font-size: 1.5rem;
         }
       }
-    }
-
-    .h2-0-20 {
-      font-size: 1.5rem;
-    }
-
-    .logo-0-5 {
-      border-bottom: 0;
     }
 
     .fullwidth {
@@ -93,16 +83,6 @@ body {
         font-size: 2.5rem;
         font-weight: normal;
         font-style: italic;
-      }
-    }
-
-    p,
-    li {
-      .code-0-34 {
-        background: #f1f1f1;
-        border-radius: 2px;
-        padding: 2px 4px;
-        font-size: 0.8rem;
       }
     }
   }
