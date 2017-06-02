@@ -4,7 +4,7 @@
   @extend %form-field;
 
   position: relative;
-  padding: ru(.5);
+  padding: ru(.5) ru(.5) ru(.75);
 }
 
 .header {
@@ -12,12 +12,7 @@
 }
 
 .tooltip-wrapper {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  right: ru(.25);
-  width: ru(.5);
-  height: ru(.5);
+  @extend %tooltip-wrapper;
 }
 
 .body {

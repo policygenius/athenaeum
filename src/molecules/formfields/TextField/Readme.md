@@ -21,6 +21,7 @@ First name Field:
           <TextField
             label='First Name'
             placeholder='Enter your first name here'
+            tooltip={"I'm a tooltip"}
             input={{
               value: this.state.value,
               onChange: this.onChange
@@ -39,6 +40,7 @@ Text field with error:
   <TextField
     label='First Name'
     placeholder='Enter your first name'
+    tooltip={"I'm a tooltip"}
     input={{
       value: state.value,
       onChange: (event) => setState({ value: event.target.value })
@@ -56,6 +58,7 @@ Text field - phone number example:
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
+    tooltip={"I'm a tooltip"}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
@@ -71,6 +74,7 @@ Text field - secure:
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
+    tooltip={"I'm a tooltip"}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })

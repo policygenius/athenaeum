@@ -48,6 +48,13 @@ $field-error-color: color('accent-2');
   }
 }
 
+%tooltip-wrapper {
+  z-index: 2;
+  position: absolute;
+  top: ru(.5);
+  right: ru(.75);
+}
+
 /* --  state:focus  -- */
 %focused {
   border-color: color('brand-3');

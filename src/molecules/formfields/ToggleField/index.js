@@ -37,7 +37,7 @@ function ToggleField( props ) {
     className,
     children,
     label,
-    tooltipMessage,
+    tooltip,
     toggleChoices,
     input,
     meta,
@@ -55,9 +55,9 @@ function ToggleField( props ) {
         { label &&
           <Col className={styles['header']}>
             { label }
-            { tooltipMessage &&
+            { tooltip &&
               <div className={styles['tooltip-wrapper']}>
-                <Tooltip right>{ tooltipMessage }</Tooltip>
+                <Tooltip right>{ tooltip }</Tooltip>
               </div>
             }
           </Col>
@@ -99,7 +99,7 @@ ToggleField.propTypes = {
    * The `tooltopMessage` can be anything that can be rendered:
    * `numbers`, `strings`, `elements` or an `array` (or fragment) containing these types.
    */
-  tooltipMessage: PropTypes.node,
+  tooltip: PropTypes.node,
 
   /**
    * input object contains any props to be passed directly to the button: value, onChange, onBlur etc.
