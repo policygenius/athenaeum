@@ -20,6 +20,7 @@ function TextField( props ) {
     noBaseStyle,
     placeholder,
     secure,
+    id
   } = props;
 
   const classes = [
@@ -48,6 +49,7 @@ function TextField( props ) {
             placeholder={placeholder}
             mask={mask}
             maskChar={maskChar}
+            id={id}
             {...input}
           />
           :
@@ -55,6 +57,7 @@ function TextField( props ) {
             className={styles['input']}
             type='text'
             placeholder={placeholder}
+            id={id}
             {...input}
           />
         }
@@ -117,6 +120,11 @@ TextField.propTypes = {
    * Adds a lock to the label.
    */
   secure: PropTypes.bool,
+
+  /**
+   * id added to the `input` node
+   */
+  id: PropTypes.string,
 };
 
 TextField.defaultProps = {
