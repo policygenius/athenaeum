@@ -6,7 +6,13 @@ Checkout Example:
     <CheckOut
       totalCost={{ curr: '$', value: 100, unit: 'mo' }}
       sidebar={<div>This is sidebar</div>}
-      footer={<Footer />}
+      footer={
+        <Footer
+          links={[ { text: 'Footer link', href: '#' } ]}
+          emailAddress='help@policygenius.com'
+          onClickChat={() => alert('clicked')}
+        />
+      }
     >
       <GeneralForm
         formName='ExampleForm'

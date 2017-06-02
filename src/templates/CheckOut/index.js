@@ -84,8 +84,11 @@ function CheckOut(props) {
               { sidebar }
             </Col>
           </Layout>
-
-          { footer }
+          <div className={styles['footer-container']}>
+            <div className={styles['footer-wrapper']}>
+              { footer }
+            </div>
+          </div>
         </Col>
       </Layout>
     </div>

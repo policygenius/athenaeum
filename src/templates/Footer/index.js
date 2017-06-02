@@ -79,6 +79,7 @@ function Footer(props) {
             <Col fullwidth className={styles['trust-logos']}>
               <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
               <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
+              <Icon className={classnames(styles['trust-logo'], styles['logo-digicert'])} icon='digicert' />
             </Col>
 
             { renderLinks(links) }
