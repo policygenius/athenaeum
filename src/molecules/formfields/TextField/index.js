@@ -11,14 +11,14 @@ import styles from './text_field.module.scss';
 function TextField( props ) {
   const {
     className,
-    placeholder,
-    label,
-    input,
     htmlFor,
-    meta,
-    noBaseStyle,
+    input,
+    label,
     mask,
     maskChar,
+    meta,
+    noBaseStyle,
+    placeholder,
     secure,
   } = props;
 
@@ -101,6 +101,7 @@ TextField.propTypes = {
   meta: PropTypes.object,
   /**
    * Passing `noBaseStyle=true` will omit the base class style
+   * Fields may at times be wrapped up as a collection. In this case, the wrapper would control the styling for those fields as a group.
    */
   noBaseStyle: PropTypes.bool,
   /**

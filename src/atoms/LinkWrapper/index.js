@@ -14,7 +14,7 @@ function LinkWrapper( props ) {
   } = props;
 
   const classes = [
-    styles.link,
+    styles['link'],
     colors[color],
     className,
   ];

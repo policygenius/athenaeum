@@ -10,32 +10,32 @@ import styles from './credit_card_field.module.scss';
 function CreditCardField(props) {
   const {
     className,
-    label,
     cardType,
     creditCardNumber,
     expirationDate,
-    securityCode,
-    meta,
     input,
+    label,
+    meta,
+    securityCode,
   } = props;
 
-  const classes = [
+  const classes = classnames(
     styles['credit-card'],
     meta && meta.active && styles['focused'],
     meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
-  ];
+  );
 
   const message = meta && meta.touched && (meta.error || meta.warning);
 
   return (
     <div>
       <div
-        className={classnames(...classes)}
+        className={classes}
         onBlur={input.onBlur}
         onFocus={input.onFocus}
       >
-        <div className={classnames(styles['header'])}>
+        <div className={styles['header']}>
           <label htmlFor='date' className={styles['label']}>
             { label }
           </label>

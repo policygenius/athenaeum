@@ -1,7 +1,3 @@
-@import 'src/assets/stylesheets/global';
-
-// .agent-callout {}
-
 .contact-item {
   @include typography-semibold;
 
@@ -27,5 +23,3 @@
   border-radius: 50%;
   border: 1px solid color('brand-2');
 }
-
-// @media #{$small-only} {}

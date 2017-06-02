@@ -1,6 +1,18 @@
+/**
+ * -- NOTE: Shared Classes. --
+ *
+ * Due to the way css-modules handles @imports, refrain from using using
+ * CSS selectors in shared.scss. Limit shared files to output-less sass
+ * (i.e %placeholders, @mixin, @functions).
+ *
+ * Shared placeholders are used as a factory to output a predetermined ruleset.
+ * Key Takeaway: With css-modules `@extend %class` rules will be duplicated.
+ *
+ */
+
 $border: 1px solid color('neutral-5');
-$field-error-color: color('accent-2');
 $focused-border-color: color('brand-3');
+$field-error-color: color('accent-2');
 
 // -- Base Style
 %form-field {
@@ -13,26 +25,8 @@ $focused-border-color: color('brand-3');
   background-color: color('neutral-8');
 }
 
-/* -- Field Elements -- */
-.header {
-  @include typography-7(false);
-  @include typography-semibold;
-
-  position: relative;
-  // margin-bottom: ru(.25);
-  line-height: ru(.75);
-}
-
-.body {
-  @include typography-7(false);
-  @include typography-semibold;
-
-  position: relative;
-  line-height: ru(.75);
-}
-
-/* -- Field Elements -- */
-.label {
+/* -- Shared Field Elements -- */
+%label {
   @include typography-7(false);
   @include typography-semibold;
 
@@ -41,7 +35,7 @@ $focused-border-color: color('brand-3');
   line-height: ru(.75);
 }
 
-.input {
+%field {
   @include typography-regular();
   @include typography-6(false);
 
@@ -54,40 +48,8 @@ $focused-border-color: color('brand-3');
   }
 }
 
-.select {
-  @include typography-regular();
-  @include typography-6(false);
-
-  border: 0;
-  width: 100%;
-  padding: ru(.5) ru(.75);
-  position: relative;
-  background: transparent;
-  -webkit-appearance: none;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:invalid {
-    color: color('neutral-4');
-  }
-
-  &::placeholder {
-    color: color('neutral-4');
-  }
-}
-
-// -- Additional Elements
-.tooltip-wrapper {
-  position: absolute;
-  top: ru(.75);
-  right: ru(.75);
-}
-
-
-/* -- State:focus  -- */
-.focused {
+/* --  state:focus  -- */
+%focused {
   border-color: color('brand-3');
   background-color: color('brand-6');
 
@@ -97,20 +59,7 @@ $focused-border-color: color('brand-3');
   }
 }
 
-
-/* -- State:error  -- */
-.error {
-  color: $field-error-color;
-  transition: all 500ms ease;
-  margin-left: ru(0.5);
-}
-
-.visible {
-  opacity: 1;
-  margin-top: ru(.5);
-  margin-bottom: ru(.5);
-}
-
-.hasError {
+/* --  state:error  -- */
+%hasError {
   border: 1px solid $field-error-color;
 }

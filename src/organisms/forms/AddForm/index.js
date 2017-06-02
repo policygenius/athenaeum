@@ -26,7 +26,7 @@ function AddForm( props ) {
         className={styles['icon-close']}
       />
       <form
-        className={styles.form}
+        className={styles['form']}
         onSubmit={onSubmit}
         name={formName}
       >

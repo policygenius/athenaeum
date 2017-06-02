@@ -85,9 +85,9 @@ Select Card Type Example:
     ];
 
     <SelectField
-      type='select-card'
       label='Select Field Label'
       selectOptions={selection}
       placeholder='Placeholder'
+      variant='card'
     />
 ```

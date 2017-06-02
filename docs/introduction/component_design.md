@@ -51,8 +51,6 @@ import styles from './component_name.module.scss';
   ...
  </button>
 ```
-You can styles class names to your JSX markup!
-**Note:** you have the option to use `styles.class` vs. `styles['action-button']` depending on your situation. Use your best judgement.
 
 ### classnames helper
 The `classNames` function takes any number of arguments which can be a string or object. The argument 'foo' is short for { foo: true }. If the value associated with a given key is falsy, that key won't be included in the output.
@@ -83,7 +81,7 @@ import styles from '../path/simple_button.scss';
 
 export default function simpleButton({ children }) {
   return (
-    <button className={styles.button}>{ children }</button>
+    <button className={styles['button']}>{ children }</button>
   )
 }
 ```

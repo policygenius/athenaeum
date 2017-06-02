@@ -4,7 +4,20 @@
   @extend %card;
 }
 
+.icon-close {
+  @extend %icon-close;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
 .col {
+  padding: ru(.75);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40%;
   border-left: $border;
 
   &:first-of-type {
@@ -18,6 +31,8 @@
 }
 
 .footer {
+  @extend %footer;
+
   .col {
     padding: $col-padding;
   }
@@ -25,4 +40,8 @@
   .col-r {
     border-left: 0;
   }
+}
+
+.link {
+  @extend %link;
 }

@@ -9,9 +9,9 @@ function DateField(props) {
   const {
     className,
     children,
+    input,
     label,
     meta,
-    input
   } = props;
 
   const wrapChild = (child) => {

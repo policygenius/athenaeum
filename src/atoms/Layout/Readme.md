@@ -37,7 +37,7 @@ All child component props will be passed directly to the component itself.
 ```example
     const exampleStyles = require('./example.module.scss');
 
-    <div className={exampleStyles.example}>
+    <div className={exampleStyles['example']}>
       <Layout
         padding
         fullwidth
@@ -72,7 +72,7 @@ All child component props will be passed directly to the component itself.
 ```example
     const exampleStyles = require('./example.module.scss');
 
-    <div className={exampleStyles.example}>
+    <div className={exampleStyles['example']}>
       <Layout
         smallCols={[ 6 ]}
         mediumCols={[ 4 ]}
@@ -95,7 +95,7 @@ All child component props will be passed directly to the component itself.
 ```example
     const exampleStyles = require('./example.module.scss');
 
-    <div className={exampleStyles.example}>
+    <div className={exampleStyles['example']}>
       <Layout
         smallCols={[ 3 ]}
       >
@@ -142,5 +142,3 @@ All child component props will be passed directly to the component itself.
   <div>'Child 5'</div>
 </Layout>
 ```
-
-

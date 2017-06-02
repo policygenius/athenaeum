@@ -24,23 +24,24 @@ function ImageAside( props ) {
     bold
   } = props;
 
-  const variant = classnames(
-    { [styles.basic]: basic },
-    { [styles.centered]: centered },
-    { [styles.compact]: compact },
-    { [styles.simple]: simple },
-    { [styles.small]: small },
-    { [styles.bold]: bold }
-  );
+  const classes = [
+    basic && styles['basic'],
+    centered && styles['centered'],
+    compact && styles['compact'],
+    simple && styles['simple'],
+    small && styles['small'],
+    bold && styles['bold'],
+    className,
+  ];
 
   const renderIconImage = () => {
     if (!icon && !dataSrc) return null;
-    if (icon && icons[icon]) return <Icon icon={icon} className={styles.icon} />;
+    if (icon && icons[icon]) return <Icon icon={icon} className={styles['icon']} />;
 
     return (
       <div className={styles['image-wrapper']} style={{ maxWidth }}>
         <img
-          className={styles.image}
+          className={styles['image']}
           src={image}
           data-src={dataSrc}
           role='presentation'
@@ -53,17 +54,17 @@ function ImageAside( props ) {
     if (!subheader) return null;
 
     return (
-      <TextComponent className={styles.subheader}>
+      <TextComponent className={styles['subheader']}>
         { subheader }
       </TextComponent>
     );
   };
 
   return (
-    <div className={classnames(variant, className)}>
+    <div className={classnames(...classes)}>
       { renderIconImage() }
-      <aside className={styles.aside}>
-        <TextComponent className={styles.header}>
+      <aside className={styles['aside']}>
+        <TextComponent className={styles['header']}>
           { header }
         </TextComponent>
 

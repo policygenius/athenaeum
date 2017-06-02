@@ -20,28 +20,25 @@ function SelectCard( props ) {
   } = props;
 
   return (
-    <div className={classnames( styles.select, className)}>
+    <div className={classnames(styles['select-card'], className)}>
 
       <SelectField
-        type='select-card'
+        variant='card'
         label={label}
         placeholder={placeholder}
         selectOptions={selectOptions}
         input={input}
         defaultValue={defaultValue}
-        className={styles['select-field']}
       />
 
-      <footer className={styles.footer}>
-        <div className={styles['footer-link-wrapper']}>
-          <LinkWrapper
-            href={linkUrl}
-            className={styles.link}
-            onClick={onClick}
-          >
-            { footerText }
-          </LinkWrapper>
-        </div>
+      <footer className={styles['footer']}>
+        <LinkWrapper
+          className={styles['link']}
+          href={linkUrl}
+          onClick={onClick}
+        >
+          { footerText }
+        </LinkWrapper>
       </footer>
     </div>
   );

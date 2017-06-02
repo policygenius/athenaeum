@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
-import TextComponent from 'atoms/TextComponent';
+import { P } from 'atoms/Elementals';
 import styles from './add_card.module.scss';
 
 function AddCard( props ) {
@@ -29,7 +29,7 @@ function AddCard( props ) {
   return (
     <div className={classnames(...classes)} onClick={wrappedOnClick}>
       <Icon icon={icon} className={styles['icon']} />
-      <TextComponent type={5} >{ cardText }</TextComponent>
+      <P typography={5} className={styles['text']}>{ cardText }</P>
     </div>
   );
 }

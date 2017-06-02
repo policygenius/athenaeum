@@ -54,7 +54,7 @@ function CheckOut(props) {
                 smallCols={[ 7, 5 ]}
               >
                 <Col className={styles['cost-title']}>
-                  <Icon className={styles.icon} icon='cart' /> Checkout
+                  <Icon className={styles['icon']} icon='cart' /> Checkout
                 </Col>
                 <Col className={styles['cost-price']}>
                   { curr && <sup>{curr}</sup> }

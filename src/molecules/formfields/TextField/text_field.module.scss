@@ -18,6 +18,24 @@
   margin-left: auto;
 }
 
+.label {
+  @extend %label;
+}
+
+.input {
+  @extend %field;
+}
+
 input[type='text'] {
   outline: none;
+}
+
+/* --  state:focus  -- */
+.focused {
+  @extend %focused;
+}
+
+/* --  state:error  -- */
+.hasError {
+  @extend %hasError;
 }

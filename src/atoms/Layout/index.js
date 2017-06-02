@@ -19,8 +19,8 @@ function Layout( props ) {
     <div
       style={style}
       className={classnames(
-        styles.layout,
-        padding && styles.padding,
+        styles['layout'],
+        padding && styles['padding'],
         className,
         variant && styles[variant]
       )}

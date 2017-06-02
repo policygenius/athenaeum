@@ -1,16 +1,21 @@
-$border-color:              color('neutral-5');
-$border:                    1px solid $border-color;
-$border-radius:             ru(.25);
-$icon-size:                 ru(1);
-$background-color:          color('neutral-8');
-$border-width:              1px;
-$footer-background-color:   color('neutral-6');
-$col-padding:               ru(.25) ru(.75);
-$icon-offset:               -$icon-size / 2 - rem-calc($border-width);
-$link-color:                color('neutral-4');
+/**
+ * -- NOTE: Shared Classes. --
+ *
+ * Due to the way css-modules handles @imports, refrain from using using
+ * CSS selectors in shared.scss. Limit shared files to output-less sass
+ * (i.e %placeholders, @mixin, @functions).
+ *
+ * Shared placeholders are used as a factory to output a predetermined ruleset.
+ * Key Takeaway: With css-modules `@extend %class` rules will be duplicated.
+ *
+ */
 
-%card,
-.card {
+$border-width: 1px;
+$border-radius: ru(.25);
+$border: $border-width solid color('neutral-5');
+$col-padding: ru(.25) ru(.75);
+
+%card {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -18,47 +23,35 @@ $link-color:                color('neutral-4');
   border: $border;
   width: 100%;
   position: relative;
-  background-color: $background-color;
+  background-color: color('neutral-8');
 }
 
-.icon-close {
-  position: absolute;
+%icon-close {
+  $icon-size: ru(1);
+  $icon-offset: -$icon-size / 2 - rem-calc($border-width);
+
   z-index: 1;
+  position: absolute;
   top: $icon-offset;
   right: $icon-offset;
-  cursor: pointer;
   width: $icon-size;
   height: $icon-size;
+  cursor: pointer;
 }
 
-.row {
+%footer {
   display: flex;
   width: 100%;
-}
-
-.col {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 40%;
-  padding: ru(.75);
-
-  &:first-of-type {
-    border-left: 0;
-  }
-}
-
-.footer {
-  display: flex;
-  width: 100%;
-  background-color: $footer-background-color;
+  background-color: color('neutral-6');
   border-top: $border;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
 }
 
-.link {
+%link {
   @include typography-7(false);
-  color: $link-color;
+
+  color: color('neutral-4');
 
   &:hover,
   &:active {
