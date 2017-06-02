@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import accounting from 'accounting';
+
 import Tooltip from 'atoms/Tooltip';
+import CurrencyAmount from 'molecules/LockUps/CurrencyAmount';
 
 import styles from './data_row.module.scss';
 
@@ -10,15 +12,12 @@ const renderAmount = (amount, unit) => {
   if (!amount) return null;
 
   const formattedNumber = accounting.formatNumber(amount, { precision: 2 });
-  const splitNumber = formattedNumber.toString().split('.');
 
   return (
-    <div className={classnames(styles['value'])}>
-      <sup>$</sup>
-      <strong>{splitNumber[0]}</strong>
-      <sup>.{splitNumber[1]}</sup>
-      { unit && <strong>{unit}</strong> }
-    </div>
+    <CurrencyAmount
+      className={styles['value']}
+      amount={formattedNumber.toString()} unit={unit}
+    />
   );
 };
 

@@ -4,9 +4,8 @@ import classnames from 'classnames';
 import accounting from 'accounting';
 
 import LinkWrapper from 'atoms/LinkWrapper';
-import Layout from 'atoms/Layout';
-import Col from 'atoms/Layout/Col';
-import Text from 'atoms/Text';
+import { Col, Layout } from 'atoms/Layout';
+import CurrencyAmount from 'molecules/LockUps/CurrencyAmount';
 
 import styles from 'organisms/cards/PlaybackCard/playback_card.module.scss';
 
@@ -22,7 +21,6 @@ function PlaybackCardWrapper(props) {
   } = props;
 
   const formattedNumber = accounting.formatNumber(amount, { precision: 2 });
-  const splitNumber = formattedNumber.toString().split('.');
 
   const renderHeader = () => {
     if (!logo || !amount) return null;
@@ -35,14 +33,7 @@ function PlaybackCardWrapper(props) {
       >
         <div className={styles['logo-wrapper']}>{logo}</div>
         <Col className={styles['amount']}>
-          <span>
-            <Text type={3} color='brand-2' tag='strong' semibold>
-              <Text tag='sup' type={3}>$</Text>
-              <Text type={2} tag='strong' semibold>{splitNumber[0]}</Text>
-              <Text tag='sup' type={3}> .{splitNumber[1]}</Text>
-              <Text type={5} semibold tag='strong'>{unit}</Text>
-            </Text>
-          </span>
+          <CurrencyAmount color='brand-2' amount={formattedNumber.toString()} unit={unit} />
         </Col>
       </Layout>
     );
