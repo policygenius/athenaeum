@@ -3,6 +3,7 @@
     <ToggleField
       htmlFor=''
       label='Toggle Choices'
+      tooltip="I'm a tooltip!"
       toggleChoices={[
         { label: 'Choice 1', value: 1 },
         { label: 'Choice 2', value: 2 }
@@ -14,11 +15,12 @@
     >
     </ToggleField>
 
-    <Spacer />
+    <Spacer small />
 
     <ToggleField
       htmlFor=''
       label='Toggle Choices'
+      tooltip="I'm a tooltip!"
       toggleChoices={[
         { label: 'Choice 1', value: 1 },
         { label: 'Choice 2', value: 2 }

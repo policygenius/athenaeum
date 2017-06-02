@@ -4,6 +4,10 @@
   @extend %form-field;
 }
 
+.tooltip-wrapper {
+  @extend %tooltip-wrapper;
+}
+
 .label {
   @extend %label;
 
