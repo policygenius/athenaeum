@@ -15,7 +15,7 @@ function renderStep(step, idx) {
 
   return (
     <li key={`step-${idx}`} className={classnames(...stepClassNames)}>
-      <a className={styles['wrapper']} href={step.link}>
+      <a className={styles['wrapper']} href={step.link} onClick={step.onClick}>
         <span className={styles['icon-wrapper']}>
           <Icon icon={step.icon} className={styles['icon']} />
           { step.complete && <Icon icon='checkMark' className={styles['check']} /> }
@@ -53,7 +53,8 @@ StepProgress.propTypes = {
       inactive: PropTypes.bool,
       icon: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
-      link: PropTypes.string
+      link: PropTypes.string,
+      onClick: PropTypes.func,
     })
   ),
 
