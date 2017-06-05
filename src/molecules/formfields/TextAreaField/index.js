@@ -4,9 +4,9 @@ import classnames from 'classnames';
 
 import ErrorMessage from 'atoms/ErrorMessage';
 
-import styles from './text_area.module.scss';
+import styles from './textarea_field.module.scss';
 
-function TextArea(props) {
+function TextAreaField(props) {
   const {
     className,
     placeholder,
@@ -49,7 +49,7 @@ function TextArea(props) {
   );
 }
 
-TextArea.propTypes = {
+TextAreaField.propTypes = {
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
@@ -94,10 +94,10 @@ TextArea.propTypes = {
   noBaseStyle: PropTypes.bool,
 };
 
-TextArea.defaultProps = {
+TextAreaField.defaultProps = {
   placeholder: '',
   rows: 3,
   errorMessage: false,
 };
 
-export default TextArea;
+export default TextAreaField;
