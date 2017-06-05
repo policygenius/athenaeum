@@ -87,6 +87,7 @@ function CheckOut(props) {
               <Sticky
                 enabled
                 bottomBoundary='#sticky-bottom'
+                top={24}
               >
                 { sidebar }
               </Sticky>
