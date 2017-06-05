@@ -163,6 +163,12 @@ $button-solid-background-tertiary-color:   #f08f5c;
   transition: none;
   cursor: not-allowed;
   outline: none;
+
+  .icon {
+    path {
+      fill: color('neutral-8');
+    }
+  }
 }
 
 .lowlight {

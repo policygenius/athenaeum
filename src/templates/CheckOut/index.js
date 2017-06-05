@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Sticky from 'react-stickynode';
 import Icon from 'atoms/Icon';
 import { Layout, Col } from 'atoms/Layout';
 import styles from './checkout.scss';
@@ -77,11 +78,18 @@ function CheckOut(props) {
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
           >
-            <Col className={styles['main-content']} fullwidth>
-              { children }
-            </Col>
+            <div id='sticky-bottom'>
+              <Col className={styles['main-content']} fullwidth>
+                { children }
+              </Col>
+            </div>
             <Col className={styles['main-sidebar']}>
-              { sidebar }
+              <Sticky
+                enabled
+                bottomBoundary='#sticky-bottom'
+              >
+                { sidebar }
+              </Sticky>
             </Col>
           </Layout>
           <div className={styles['footer-container']}>
