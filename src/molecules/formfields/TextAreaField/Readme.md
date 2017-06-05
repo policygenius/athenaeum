@@ -18,7 +18,7 @@ Comment Field:
 
       render() {
         return (
-          <TextArea
+          <TextAreaField
             label='Comment'
             placeholder='How did we do?'
             input={{
@@ -36,7 +36,7 @@ Comment Field:
 Text field with error:
 
 ```example
-  <TextArea
+  <TextAreaField
     label='Comment'
     placeholder='How did we do?'
     input={{
