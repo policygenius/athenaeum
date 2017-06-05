@@ -53,6 +53,8 @@ $mobile-inactive-item-border-color: color('brand-2');
 
   // State
   &-current {
+    pointer-events: none;
+    
     .icon-wrapper {
       border-color: $active-item-border-color;
     }
