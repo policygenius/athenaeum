@@ -1,4 +1,4 @@
-$layout-padding: ru(1);
+$layout-padding: ru(1.5);
 
 .checkout {
   width: 100%;
@@ -49,7 +49,6 @@ $layout-padding: ru(1);
 
   &-layout {
     justify-content: space-between;
-    padding: ru(1.5) $layout-padding 0;
   }
 }
 
@@ -134,6 +133,10 @@ $layout-padding: ru(1);
   .head-layout,
   .main-layout {
     max-width: $page-max-width;
+  }
+
+  .main-layout {
+    padding: ru(2) $layout-padding 0;
   }
 
   .head-foot {

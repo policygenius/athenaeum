@@ -54,9 +54,13 @@ $mobile-inactive-item-border-color: color('brand-2');
   // State
   &-current {
     pointer-events: none;
-    
+
     .icon-wrapper {
       border-color: $active-item-border-color;
+    }
+
+    &.clickable {
+      pointer-events: initial;
     }
   }
 
@@ -94,10 +98,6 @@ $mobile-inactive-item-border-color: color('brand-2');
 
     background-color: $item-border-color;
     pointer-events: none;
-  }
-
-  &:hover {
-    .icon path { fill: color('brand-2'); }
   }
 
   &:active {

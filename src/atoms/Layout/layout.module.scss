@@ -40,6 +40,18 @@ $border: 1px solid color('neutral-6');
   }
 }
 
+// used for a unique renters design where a form only needs padding
+// on small screen sizes.
+@media #{$small-only} {
+  .padding-small {
+    padding: 0 ru(1);
+
+    &:first-child {
+      padding-top: ru(1.5);
+    }
+  }
+}
+
 @media #{$small-up} {
   @include createCols( 'sm' );
 }

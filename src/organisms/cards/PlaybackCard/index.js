@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import ImageAside from 'molecules/asides/ImageAside';
 import Layout, { Col } from 'atoms/Layout';
 import LinkWrapper from 'atoms/LinkWrapper';
@@ -17,7 +18,7 @@ function PlaybackCard(props) {
   } = props;
 
   return (
-    <div className={styles['playback-card']}>
+    <div className={classnames(styles['playback-card'])}>
       <Layout
         smallCols={[ 9, 3 ]}
         bottomSpacing='xSmall'

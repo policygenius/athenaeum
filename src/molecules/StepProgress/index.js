@@ -12,6 +12,7 @@ function renderStep(step, idx) {
   if (step.current) stepClassNames.push(styles['step-current']);
   if (step.inactive) stepClassNames.push(styles['step-inactive']);
   if (step.complete) stepClassNames.push(styles['step-complete']);
+  if (step.onClick) stepClassNames.push(styles['clickable']);
 
   return (
     <li key={`step-${idx}`} className={classnames(...stepClassNames)}>

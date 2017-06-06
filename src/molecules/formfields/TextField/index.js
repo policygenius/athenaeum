@@ -53,7 +53,7 @@ function TextField( props ) {
             { tooltip && renderTooltip(tooltip, 'tooltip') }
           </div>
         }
-        <span>
+        <span className={styles['input-wrapper']}>
           { mask ?
             <InputMask
               className={styles['input']}
