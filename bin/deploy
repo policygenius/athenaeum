@@ -27,7 +27,7 @@ else
   VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
 fi
 
-echo '+++ Deploying styleguide to S3'
+echo '+++ Deploying version-specific styleguide to S3'
 aws s3 sync \
   ./styleguide s3://rcl-pg/$VERSION/ \
   --acl=public-read \
@@ -35,6 +35,15 @@ aws s3 sync \
   --exclude '.DS_Store'
 
 echo "Deployed styleguide to http://rcl.policygenius.com/$VERSION/index.html"
+
+echo '+++ Deploying styleguide latest to S3'
+aws s3 sync \
+  ./styleguide s3://rcl-pg/latest/ \
+  --acl=public-read \
+  --cache-control max-age=0 \
+  --exclude '.DS_Store'
+
+echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
 buildkite-agent artifact upload package.json
 buildkite-agent meta-data set 'new-version' $VERSION
