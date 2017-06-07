@@ -19,7 +19,6 @@ Navigator Example:
       ]}
 
       contact={{
-        phoneNumber: '1 (800) 867-5309',
         chatClick: () => alert('get clicks'),
         chatText: 'hi, custom chat text'
       }}

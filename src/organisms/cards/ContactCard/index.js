@@ -26,10 +26,12 @@ function ContactCard( props ) {
 
   return (
     <StackedCard className={classnames(...classes)} inverted={inverted}>
-      <a className={styles['link-row']} href={`tel:${cleanPhoneString(phoneNumber)}`}>
-        <Icon icon='phone' className={styles['icon']} />
-        { phoneNumber }
-      </a>
+      {phoneNumber &&
+        <a className={styles['link-row']} href={`tel:${cleanPhoneString(phoneNumber)}`}>
+          <Icon icon='phone' className={styles['icon']} />
+          { phoneNumber }
+        </a>
+      }
 
       <a className={styles['link-row']} onClick={chatClick}>
         <Icon icon='chat' className={styles['icon']} />
@@ -48,7 +50,7 @@ ContactCard.propTypes = {
   /**
    * Formatted phone number string. example: 1(855) 867-5309
   */
-  phoneNumber: PropTypes.string.isRequired,
+  phoneNumber: PropTypes.string,
   /**
    * Destination url to trigger chat.
   */
@@ -64,7 +66,6 @@ ContactCard.propTypes = {
 };
 
 ContactCard.defaultProps = {
-  phoneNumber: '1 (855) 695-2255',
   chatText: 'Chat with an Expert',
   inverted: false
 };

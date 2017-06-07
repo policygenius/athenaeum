@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './stacked_card.module.scss';
 
-const stackChild = child => <li className={styles['stacked-li']}>{ child }</li>;
+const stackChild = (child) => {
+  if (child) {
+    return <li className={styles['stacked-li']}>{ child }</li>;
+  }
+
+  return null;
+};
 const stackChildren = children => React.Children.map(children, stackChild);
 
 function StackedCard(props) {
