@@ -98,9 +98,9 @@ Footer.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Formatted Contact phone number.
+   * Formatted Contact phone number. Can be wrapped in additional markup
    */
-  phoneNumber: PropTypes.string,
+  phoneNumber: PropTypes.node,
   /**
    * Function to trigger chat.
    */
