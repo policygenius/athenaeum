@@ -133,7 +133,6 @@ Navigator.propTypes = {
   leftRailText: PropTypes.string,
   stepProgressData: StepProgress.propTypes.steps,
   contact: PropTypes.shape({
-    phoneNumber: PropTypes.string.isRequired,
     chatClick: PropTypes.func.isRequired,
     chatText: PropTypes.string,
   }),
