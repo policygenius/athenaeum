@@ -24,6 +24,17 @@
 
 .input {
   @extend %field;
+  width: 100%;
+}
+
+.tooltip {
+  margin-left: auto;
+}
+
+.input-tooltip {
+  position: absolute;
+  right: ru(1.25);
+  bottom: ru(1.5);
 }
 
 input[type='text'] {

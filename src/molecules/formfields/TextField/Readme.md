@@ -58,7 +58,7 @@ Text field - phone number example:
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
-    tooltip={"I'm a tooltip"}
+    tooltip={() => alert("I'm a tooltip")}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
@@ -74,7 +74,6 @@ Text field - secure:
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
-    tooltip={"I'm a tooltip"}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })

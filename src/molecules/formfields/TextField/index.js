@@ -4,9 +4,18 @@ import InputMask from 'react-input-mask';
 import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
+import Tooltip from 'atoms/Tooltip';
 import ErrorMessage from 'atoms/ErrorMessage';
 
 import styles from './text_field.module.scss';
+
+function renderTooltip(tooltip, className) {
+  if (typeof tooltip === 'string') {
+    return <Tooltip className={styles[className]}>{tooltip}</Tooltip>;
+  }
+
+  return <Tooltip className={styles[className]} onClick={tooltip} />;
+}
 
 function TextField( props ) {
   const {
@@ -20,7 +29,9 @@ function TextField( props ) {
     noBaseStyle,
     placeholder,
     secure,
-    id
+    id,
+    tooltip,
+    inputTooltip,
   } = props;
 
   const classes = [
@@ -39,28 +50,31 @@ function TextField( props ) {
           <div className={classnames(styles['header'])}>
             <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
             { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
+            { tooltip && renderTooltip(tooltip, 'tooltip') }
           </div>
         }
-
-        { mask ?
-          <InputMask
-            className={styles['input']}
-            type='text'
-            placeholder={placeholder}
-            mask={mask}
-            maskChar={maskChar}
-            id={id}
-            {...input}
-          />
-          :
-          <input
-            className={styles['input']}
-            type='text'
-            placeholder={placeholder}
-            id={id}
-            {...input}
-          />
-        }
+        <span>
+          { mask ?
+            <InputMask
+              className={styles['input']}
+              type='text'
+              placeholder={placeholder}
+              mask={mask}
+              maskChar={maskChar}
+              id={id}
+              {...input}
+            />
+            :
+            <input
+              className={styles['input']}
+              type='text'
+              placeholder={placeholder}
+              id={id}
+              {...input}
+            />
+          }
+          {inputTooltip && renderTooltip(inputTooltip, 'input-tooltip')}
+        </span>
       </div>
 
       <ErrorMessage
@@ -125,6 +139,20 @@ TextField.propTypes = {
    * id added to the `input` node
    */
   id: PropTypes.string,
+  /**
+   * either a handler for clicking the tooltip, or text to go in the tooltip for the label
+   */
+  tooltip: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
+  /**
+   * either a handler for clicking the tooltip, or text to go in the tooltip for the input
+   */
+  inputTooltip: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
 };
 
 TextField.defaultProps = {
