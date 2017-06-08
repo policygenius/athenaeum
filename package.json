@@ -1,6 +1,6 @@
 {
   "name": "athenaeum",
-  "version": "5.13.11",
+  "version": "5.13.12",
   "description": "PolicyGenius React Component Library (RCL)",
   "main": "lib/index.js",
   "scripts": {
