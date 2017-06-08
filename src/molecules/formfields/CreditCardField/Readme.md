@@ -22,6 +22,7 @@ CreditCardField Example:
       securityCode={
         <TextField
           placeholder='3/4 Digit Security Code'
+          inputTooltip={() => alert('input tooltip clicked')}
           noBaseStyle
         />
       }

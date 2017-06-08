@@ -35,11 +35,12 @@ class Tooltip extends React.Component {
       className,
       left,
       right,
+      onClick,
     } = this.props;
 
     return (
       <span
-        onClick={this.openModal}
+        onClick={onClick || this.openModal}
         className={classnames(
           styles['tooltip-wrapper'],
           className
@@ -48,7 +49,7 @@ class Tooltip extends React.Component {
         <Icon icon='questionMark' className={styles['tooltip']} />
         <span
           className={classnames(
-            styles['hover-message'],
+            children && styles['hover-message'],
             left && styles['left'],
             right && styles['right'],
           )}
@@ -86,6 +87,10 @@ Tooltip.propTypes = {
    * render right-side variant
    */
   right: PropTypes.bool,
+  /**
+   * onClick will override the default `openModal` click handler
+   */
+  onClick: PropTypes.func,
 };
 
 export default Tooltip;
