@@ -33,8 +33,12 @@
 
 .input-tooltip {
   position: absolute;
-  right: ru(1.25);
-  bottom: ru(1.5);
+  right: ru(0.5);
+  bottom: ru(0);
+}
+
+.input-wrapper {
+  position: relative;
 }
 
 input[type='text'] {

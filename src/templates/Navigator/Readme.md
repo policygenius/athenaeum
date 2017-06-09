@@ -35,10 +35,7 @@ Navigator Example:
         />
       }
     >
-      <GeneralForm
-        formName='ExampleForm'
-        onSubmit={() => alert('FormSubmitted!')}
-      >
+      <form>
         <Layout bottomSpacing='small'>
           <TextComponent tag='p' type={4} semibold>First, a little about you and your humble abode</TextComponent>
 
@@ -68,7 +65,7 @@ Navigator Example:
 
           <Button variant='action'>Continue</Button>
         </Layout>
-      </GeneralForm>
+      </form>
 
     </Navigator>
   </div>

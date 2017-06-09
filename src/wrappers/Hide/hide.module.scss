@@ -1,0 +1,16 @@
+$screens: (
+  $small-only: small,
+  $medium-only: medium,
+  $large-only: large,
+  $xlarge-only: xLarge,
+  $xxlarge-only: xxLarge
+);
+
+@each $screenSize, $className in $screens {
+  @media #{$screenSize} {
+    .#{$className} {
+      display: none;
+    }
+  }
+}
+

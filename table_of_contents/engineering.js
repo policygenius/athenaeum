@@ -71,6 +71,10 @@ module.exports = {
     {
       name: 'Templates',
       components: 'src/templates/**/index.js',
+    },
+    {
+      name: 'Wrappers',
+      components: 'src/wrappers/**/index.js',
     }
   ],
 };

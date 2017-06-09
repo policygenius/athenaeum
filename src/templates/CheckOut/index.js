@@ -77,6 +77,7 @@ function CheckOut(props) {
           <Layout
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
+            fullwidth
           >
             <div id='sticky-bottom'>
               <Col className={styles['main-content']} fullwidth>

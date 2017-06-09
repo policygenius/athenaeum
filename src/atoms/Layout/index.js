@@ -124,7 +124,7 @@ Layout.propTypes = {
    *
    * `'bordered-buckets'`: Creates borders around `Col` from medium viewports up.
    */
-  variant: PropTypes.oneOf([ 'bordered-buckets' ]),
+  variant: PropTypes.oneOf([ 'bordered-buckets', 'padding-small' ]),
 };
 
 Layout.defaultProps = {
