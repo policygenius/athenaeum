@@ -6,6 +6,7 @@ import omit from 'lodash/omit';
 import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
 import Layout, { Col } from 'atoms/Layout';
+import ErrorMessage from 'atoms/ErrorMessage';
 
 import styles from './toggle_field.module.scss';
 
@@ -49,24 +50,33 @@ function ToggleField( props ) {
     className,
   ];
 
+  const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+
   return (
-    <div className={classnames(...classes)}>
-      <Layout>
-        { label &&
+    <div>
+      <div className={classnames(...classes)}>
+        <Layout>
+          { label &&
           <Col className={styles['header']}>
             { label }
             { tooltip &&
-              <div className={styles['tooltip-wrapper']}>
-                <Tooltip right>{ tooltip }</Tooltip>
-              </div>
-            }
+            <div className={styles['tooltip-wrapper']}>
+              <Tooltip right>{ tooltip }</Tooltip>
+            </div>
+                }
           </Col>
-        }
-        { children && <Col className={styles['body']}>{children}</Col> }
-        <Col className={styles['button-wrapper']}>
-          { renderChoices(toggleChoices, input) }
-        </Col>
-      </Layout>
+          }
+          { children && <Col className={styles['body']}>{children}</Col> }
+          <Col className={styles['button-wrapper']}>
+            { renderChoices(toggleChoices, input) }
+          </Col>
+        </Layout>
+      </div>
+
+      <ErrorMessage
+        condition={!!message}
+        message={message}
+      />
     </div>
   );
 }
