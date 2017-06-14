@@ -34,6 +34,7 @@ Navigator Example:
           onClickChat={() => alert('yo')}
         />
       }
+      onMenuClick={() => alert('menu clicked')}
     >
       <form>
         <Layout bottomSpacing='small'>

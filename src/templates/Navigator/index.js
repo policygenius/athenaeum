@@ -27,6 +27,7 @@ function Navigator(props) {
     footer,
     sidebar,
     mobileHeader,
+    onMenuClick,
   } = props;
 
   return (
@@ -46,6 +47,13 @@ function Navigator(props) {
             >
               <div className={styles['logo-wrapper']}>
                 <Icon icon='pgLogo' className={styles['logo']} />
+                <Icon
+                  icon='hamburger'
+                  className={styles['icon-hamburger']}
+                  height='24px'
+                  width='24px'
+                  onClick={onMenuClick}
+                />
               </div>
 
               <div className={styles['mobile-header-wrapper']}>
@@ -139,6 +147,10 @@ Navigator.propTypes = {
   mobileHeader: PropTypes.node,
   sidebar: PropTypes.node,
   footer: PropTypes.node,
+  /**
+   * Click handler for mobile menu hambuger
+   */
+  onMenuClick: PropTypes.func,
 };
 
 export default Navigator;

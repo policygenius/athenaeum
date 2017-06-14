@@ -109,9 +109,9 @@ Modal.propTypes = {
   onRequestClose: PropTypes.func,
 
   /**
-   * variant for modal - options are `simple` (default) & `large`
+   * variant for modal - options are `simple` (default), `large` & `mobile`
    */
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf([ 'simple', 'large', 'mobile' ]),
 };
 
 Modal.defaultProps = {

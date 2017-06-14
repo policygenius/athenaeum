@@ -15,6 +15,16 @@ $border: 1px solid color('neutral-5');
   &.large {
     max-width: rem-calc(940);
   }
+
+  &.mobile {
+    margin-top: 0;
+    max-width: rem-calc(604);
+
+    .section:first-child {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
 }
 
 .dialog {
@@ -81,5 +91,10 @@ $border: 1px solid color('neutral-5');
     p {
       @include typography-4(false);
     }
+  }
+
+  .mobile {
+    padding: 0;
+    margin: 0;
   }
 }

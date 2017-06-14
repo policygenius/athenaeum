@@ -21,6 +21,7 @@ Checkout Example:
         text: 'Hello World',
         textColor: 'neutral-8'
       }}
+      onMenuClick={() => alert('menu clicked')}
     >
       <form>
         <Layout bottomSpacing='small'>
