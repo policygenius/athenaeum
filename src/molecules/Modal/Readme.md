@@ -92,3 +92,60 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
 
     <ModalExample />
 ```
+
+```example
+  class ModalExample extends React.Component {
+    constructor(props) {
+      super(props)
+
+      this.state = {
+      modalIsOpen: false
+      }
+
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
+    }
+
+    openModal() {
+      this.setState({
+        modalIsOpen: true
+      });
+    }
+
+     closeModal() {
+        this.setState({
+          modalIsOpen: false
+        });
+      }
+
+      render() {
+        return (
+          <div>
+            <Button onClick={this.openModal}>Open Mobile Modal</Button>
+
+            <Modal
+              header='Menu'
+              onRequestClose={this.closeModal}
+              isOpen={this.state.modalIsOpen}
+              contentLabel='Modal'
+              variant='mobile'
+            >
+              <MobileMenu
+                tabs={[
+                  { icon: 'phone', text: 'Expert Help', active: state.activeTab === 1 || !state.activeTab, key: 1 },
+                  { icon: 'user', text: 'Save My Progress', active: state.activeTab === 2, key: 2 }
+                ]}
+                onClick={(key) => setState({ activeTab: key })}
+              />
+              <Layout>
+                <div>Hello, world</div>
+              </Layout>
+            </Modal>
+          </div>
+        )
+      }
+    }
+
+    <ModalExample />
+```
+

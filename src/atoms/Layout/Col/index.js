@@ -17,7 +17,8 @@ function Col(props) {
     fullwidth,
     flex,
     style,
-    bottomSpacing
+    bottomSpacing,
+    onClick,
   } = props;
 
   const classes = [
@@ -35,7 +36,7 @@ function Col(props) {
   ];
 
   return (
-    <div className={classnames(...classes)} style={style}>
+    <div className={classnames(...classes)} style={style} onClick={onClick}>
       { children }
     </div>
   );
@@ -111,7 +112,11 @@ Col.propTypes = {
    * adds additional styles to the column as a React styles object  ``
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    */
-  style: PropTypes.object
+  style: PropTypes.object,
+  /**
+   * onClick handler
+   */
+  onClick: PropTypes.func,
 };
 
 

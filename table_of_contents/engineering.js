@@ -43,6 +43,10 @@ module.exports = {
           components: 'src/molecules/LockUps/**/index.js'
         },
         {
+          name: 'Menus',
+          components: 'src/molecules/MobileMenu/index.js'
+        },
+        {
           name: 'Other',
           components: () => [
             'src/molecules/StepProgress/index.js',

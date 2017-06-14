@@ -15,6 +15,7 @@ function CheckOut(props) {
     footer,
     sidebar,
     userAlert,
+    onMenuClick,
   } = props;
 
   const { curr, value, unit } = totalCost;
@@ -42,8 +43,11 @@ function CheckOut(props) {
               >
                 <Icon icon='pgLogo' className={styles['logo-pg']} />
                 <Col className={styles['logo-chat']}>
-                  <Icon className={styles['icon']} icon='chat' />
-                  <span>Live Chat</span>
+                  <Icon
+                    className={styles['icon']}
+                    icon='hamburger'
+                    onClick={onMenuClick}
+                  />
                 </Col>
               </Layout>
             </Col>
@@ -165,6 +169,10 @@ CheckOut.propTypes = {
     text: PropTypes.string,
     textColor: PropTypes.string,
   }),
+  /**
+   * Click handler for mobile menu hambuger
+   */
+  onMenuClick: PropTypes.func,
 };
 
 export default CheckOut;
