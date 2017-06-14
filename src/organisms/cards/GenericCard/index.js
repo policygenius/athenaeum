@@ -71,6 +71,7 @@ GenericCard.propTypes = {
    */
   variant: PropTypes.oneOf([
     'box',
+    'mobile',
   ]),
 };
 

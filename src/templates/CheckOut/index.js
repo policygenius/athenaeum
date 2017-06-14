@@ -52,24 +52,34 @@ function CheckOut(props) {
               </Layout>
             </Col>
 
-            <Col
-              className={styles['head-body']}
+            <Sticky
+              className={styles['sticky']}
+              activeClass={styles['sticky']}
+              bottomBoundary='#sticky-bottom'
+              enabled
             >
-              <Layout
-                className={styles['cost']}
-                mediumCols={[ 12 ]}
-                smallCols={[ 7, 5 ]}
+              <Col
+                className={styles['head-body']}
+                fullwidth
               >
-                <Col className={styles['cost-title']}>
-                  <Icon className={styles['icon']} icon='cart' /> Checkout
-                </Col>
-                <Col className={styles['cost-price']}>
-                  { curr && <sup>{curr}</sup> }
-                  { value }
-                  { unit && <small>/{unit}</small> }
-                </Col>
-              </Layout>
-            </Col>
+                <Layout
+                  className={styles['cost']}
+                  mediumCols={[ 12 ]}
+                  smallCols={[ 7, 5 ]}
+                >
+                  <Col className={styles['cost-title']}>
+                    <Icon className={styles['icon']} icon='cart' />
+                    {' '}
+                    <div>Checkout</div>
+                  </Col>
+                  <Col className={styles['cost-price']}>
+                    { curr && <sup>{curr}</sup> }
+                    { value }
+                    { unit && <small>/{unit}</small> }
+                  </Col>
+                </Layout>
+              </Col>
+            </Sticky>
 
             <Col className={styles['head-foot']}>
               <Icon icon='nortonW' className={styles['secure-logo']} />

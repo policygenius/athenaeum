@@ -46,3 +46,9 @@ Generic Card Example:
       <Icon icon='pgLogoOrange' width='160px' height='40px' />
     </GenericCard>
 ```
+
+```example
+    <GenericCard variant='mobile'>
+      <Icon icon='pgLogoOrange' width='160px' height='40px' />
+    </GenericCard>
+```

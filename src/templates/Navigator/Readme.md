@@ -23,7 +23,22 @@ Navigator Example:
         chatText: 'hi, custom chat text'
       }}
 
-      mobileHeader={<HeaderAmount label='So far so good' amount={38.95} unit='/ month' />}
+      mobileHeader={
+        <div>
+          <HeaderAmount
+            label='So far so good'
+            amount={38.95}
+            unit='/ month'
+            onClick={() => setState({ menuActive: !state.menuActive })}
+            menuActive={state.menuActive}
+          />
+          { state.menuActive &&
+            <GenericCard variant='mobile'>
+              <Button>hello, world</Button>
+            </GenericCard>
+          }
+        </div>
+      }
 
       sidebar={<div>Sidebar</div>}
 

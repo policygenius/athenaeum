@@ -74,7 +74,14 @@ function Navigator(props) {
                     </Text>
                   </Sticky>
                 </div>
-                <div className={styles['mobile-header']}>{ mobileHeader }</div>
+                <div className={styles['mobile-header']}>
+                  <Sticky
+                    enabled
+                    bottomBoundary='#mobile-bottom'
+                  >
+                    { mobileHeader }
+                  </Sticky>
+                </div>
               </div>
             </Col>
             <div className={styles['contact-card']}>
@@ -120,7 +127,7 @@ function Navigator(props) {
             </Col>
 
           </Layout>
-          <div className={styles['footer-container']}>
+          <div className={styles['footer-container']} id='mobile-bottom'>
             <div className={styles['footer-wrapper']}>{footer}</div>
           </div>
         </Col>
