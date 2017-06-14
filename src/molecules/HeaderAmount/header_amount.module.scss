@@ -3,6 +3,7 @@
 
   background: color('brand-1');
   color: color('neutral-8');
+  box-shadow: 0 ru(1) ru(1.5) ru(-0.5) rgba(77, 77, 77, 0.25);
 }
 
 .label {
@@ -10,7 +11,7 @@
 }
 
 .amount {
-  @include typography(1);
+  @include typography(2);
   @include typography-semibold;
 }
 
@@ -25,4 +26,8 @@
 .curr {
   position: relative;
   vertical-align: 10%;
+}
+
+.unit {
+  margin-right: ru(0.5);
 }

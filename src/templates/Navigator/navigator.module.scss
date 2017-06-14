@@ -23,9 +23,11 @@ $main-section-padding: ru(1.5);
   justify-content: space-between;
   padding-left: 0;
   padding-right: 0;
+  z-index: 0;
 }
 
 .logo-panel {
+  z-index: 1;
   background-color: color('brand-2');
   background-image: linear-gradient(
   to top,

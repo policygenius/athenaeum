@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Icon from 'atoms/Icon';
 import styles from './header_amount.module.scss';
 
 function HeaderAmount(props) {
@@ -9,6 +10,8 @@ function HeaderAmount(props) {
     label,
     amount,
     unit,
+    onClick,
+    menuActive,
   } = props;
 
   const classes = [
@@ -23,6 +26,7 @@ function HeaderAmount(props) {
         <sup className={styles['curr']}>$</sup>
         <span>{amount}</span>
         { unit && <small className={styles['unit']}>{unit}</small> }
+        <Icon icon={menuActive ? 'chevronUp' : 'chevronDown'} height='10px' width='20px' onClick={onClick} />
       </p>
     </div>
   );
@@ -51,6 +55,14 @@ HeaderAmount.propTypes = {
    * denote unit (i.e /mo, per month, yr)
    */
   unit: PropTypes.string,
+  /**
+   * onClick handler for the chevron
+   */
+  onClick: PropTypes.func,
+  /**
+   * whether or not the menu is active
+   */
+  menuActive: PropTypes.bool,
 };
 
 HeaderAmount.defaultProps = {

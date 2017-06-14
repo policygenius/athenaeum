@@ -14,6 +14,7 @@ $layout-padding: ru(1.5);
 }
 
 .head {
+  z-index: 1;
   background-color: color('brand-2');
   background-image: linear-gradient(
     to top,
@@ -42,6 +43,7 @@ $layout-padding: ru(1.5);
 }
 
 .main {
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,6 +63,10 @@ $layout-padding: ru(1.5);
   &-title {
     display: flex;
     align-items: center;
+
+    div {
+      margin-left: ru(0.25);
+    }
   }
 
   &-price {
@@ -77,7 +83,6 @@ $layout-padding: ru(1.5);
 .icon {
   width: ru(.75);
   height: ru(.75);
-  margin-right: ru(.25);
 
   path {
     fill: color('neutral-8');
@@ -126,7 +131,6 @@ $layout-padding: ru(1.5);
   }
 
   .secure-logo { display: none; }
-  .main-sidebar { display: none; }
 }
 
 @media #{$medium-up} {
@@ -156,4 +160,15 @@ $layout-padding: ru(1.5);
 
     &-chat { display: none; }
   }
+
+/* stylelint-disable declaration-no-important */
+  .sticky {
+    @include sticky-disable;
+
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+/* stylelint-enable declaration-no-important */
