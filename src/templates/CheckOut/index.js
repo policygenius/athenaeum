@@ -5,6 +5,7 @@ import Sticky from 'react-stickynode';
 import Icon from 'atoms/Icon';
 import { Layout, Col } from 'atoms/Layout';
 import UserAlert from 'atoms/UserAlert';
+import Text from 'atoms/Text';
 import styles from './checkout.scss';
 
 function CheckOut(props) {
