@@ -38,6 +38,8 @@ We use [Babel](https://babeljs.io/) to compile our JS, which allows us to use th
 
   `yarn link 'athenaeum'`
 
+5. Rebuild your dependencies,
+  `yarn run reset`
 
 ## Using the NPM package
 
