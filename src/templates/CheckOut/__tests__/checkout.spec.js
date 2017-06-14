@@ -11,7 +11,8 @@ describe('<CheckOut />', () => {
 
     beforeEach(() => {
       props = {
-        totalCost: { curr: '$', value: 100, unit: 'mo' }
+        totalCost: { curr: '$', value: 100, unit: 'mo' },
+        userAlert: {},
       };
     });
 
@@ -37,7 +38,8 @@ describe('<CheckOut />', () => {
 
     beforeEach(() => {
       props = {
-        totalCost: { curr: '$', value: 100, unit: 'mo' }
+        totalCost: { curr: '$', value: 100, unit: 'mo' },
+        userAlert: {},
       };
     });
 
@@ -59,7 +61,5 @@ describe('<CheckOut />', () => {
 
       expect(wrapper.contains(<div className='unique' />)).to.be.true;
     });
-
   });
-
 });

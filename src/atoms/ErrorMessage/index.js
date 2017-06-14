@@ -44,7 +44,7 @@ ErrorMessage.propTypes = {
   /**
    * the message to be displayed for the error or warning
    */
-  message: PropTypes.string,
+  message: PropTypes.node,
   /**
    * the condition for which the message will be shown or hidden
    */

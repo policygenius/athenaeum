@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Sticky from 'react-stickynode';
 import Icon from 'atoms/Icon';
 import { Layout, Col } from 'atoms/Layout';
+import UserAlert from 'atoms/UserAlert';
 import styles from './checkout.scss';
 
 function CheckOut(props) {
@@ -13,6 +14,7 @@ function CheckOut(props) {
     totalCost,
     footer,
     sidebar,
+    userAlert,
   } = props;
 
   const { curr, value, unit } = totalCost;
@@ -74,6 +76,25 @@ function CheckOut(props) {
         <Col
           className={styles['main']}
         >
+          { userAlert.condition &&
+            <UserAlert
+              enabled
+              onClick={userAlert.onClick}
+              alertBottom='#sticky-bottom'
+              innerZ={100}
+              alertColor={userAlert.color}
+              closeColor={userAlert.closeColor}
+            >
+              <Text
+                type={6}
+                color={userAlert.textColor}
+                semibold
+              >
+                {userAlert.text}
+              </Text>
+            </UserAlert>
+          }
+
           <Layout
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
@@ -133,6 +154,17 @@ CheckOut.propTypes = {
    * Footer node
    */
   footer: PropTypes.node,
+  /**
+   * object to set all properties for user alert
+   */
+  userAlert: PropTypes.shape({
+    condition: PropTypes.bool,
+    onClick: PropTypes.func,
+    color: PropTypes.string,
+    closeColor: PropTypes.string,
+    text: PropTypes.string,
+    textColor: PropTypes.string,
+  }),
 };
 
 export default CheckOut;
