@@ -13,6 +13,14 @@ Checkout Example:
           onClickChat={() => alert('clicked')}
         />
       }
+      userAlert={{
+        condition: false,
+        onClick: () => alert('you clicked the alert'),
+        color: 'accent-2',
+        closeColor: 'accent-1',
+        text: 'Hello World',
+        textColor: 'neutral-8'
+      }}
     >
       <form>
         <Layout bottomSpacing='small'>
