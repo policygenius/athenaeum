@@ -8,6 +8,33 @@ import UserAlert from 'atoms/UserAlert';
 import Text from 'atoms/Text';
 import styles from './checkout.scss';
 
+const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
+  <UserAlert
+    enabled={enabled}
+    onClick={userAlert.onClick}
+    alertBottom='#sticky-bottom'
+    innerZ={100}
+    alertColor={userAlert.color}
+    closeColor={userAlert.closeColor}
+    className={styles[className]}
+  >
+    <Text
+      type={6}
+      color={userAlert.textColor}
+      semibold
+    >
+      {userAlert.text}
+    </Text>
+  </UserAlert>
+
+;
+
+CheckoutUserAlert.propTypes = {
+  userAlert: PropTypes.object,
+  enabled: PropTypes.bool,
+  className: PropTypes.string,
+};
+
 function CheckOut(props) {
   const {
     children,
@@ -27,9 +54,7 @@ function CheckOut(props) {
         className={styles['checkout-layout']}
         fullwidth
       >
-        <Col
-          className={styles['head']}
-        >
+        <Col className={styles['head']}>
           <Layout
             className={styles['head-layout']}
             smallCols={[ 12 ]}
@@ -66,7 +91,7 @@ function CheckOut(props) {
                 <Layout
                   className={styles['cost']}
                   mediumCols={[ 12 ]}
-                  smallCols={[ 7, 5 ]}
+                  smallCols={[ 6 ]}
                 >
                   <Col className={styles['cost-title']}>
                     <Icon className={styles['icon']} icon='cart' />
@@ -76,40 +101,34 @@ function CheckOut(props) {
                   <Col className={styles['cost-price']}>
                     { curr && <sup>{curr}</sup> }
                     { value }
-                    { unit && <small>/{unit}</small> }
+                    { unit && <small>{unit}</small> }
                   </Col>
                 </Layout>
               </Col>
+              { userAlert.condition &&
+                <CheckoutUserAlert
+                  enabled={false}
+                  userAlert={userAlert}
+                  className='user-alert-mobile'
+                />
+              }
             </Sticky>
-
             <Col className={styles['head-foot']}>
               <Icon icon='nortonW' className={styles['secure-logo']} />
             </Col>
           </Layout>
+          { userAlert.condition &&
+            <CheckoutUserAlert
+              enabled
+              userAlert={userAlert}
+              className='user-alert'
+            />
+          }
         </Col>
 
         <Col
           className={styles['main']}
         >
-          { userAlert.condition &&
-            <UserAlert
-              enabled
-              onClick={userAlert.onClick}
-              alertBottom='#sticky-bottom'
-              innerZ={100}
-              alertColor={userAlert.color}
-              closeColor={userAlert.closeColor}
-            >
-              <Text
-                type={6}
-                color={userAlert.textColor}
-                semibold
-              >
-                {userAlert.text}
-              </Text>
-            </UserAlert>
-          }
-
           <Layout
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
@@ -124,7 +143,7 @@ function CheckOut(props) {
               <Sticky
                 enabled
                 bottomBoundary='#sticky-bottom'
-                top={24}
+                top={userAlert.condition ? 72 : 24}
               >
                 { sidebar }
               </Sticky>
