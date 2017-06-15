@@ -10,12 +10,14 @@ function LinkWrapper( props ) {
     className,
     children,
     color,
+    variant,
     ...rest,
   } = props;
 
   const classes = [
     styles['link'],
     colors[color],
+    styles[variant],
     className,
   ];
 
@@ -41,7 +43,11 @@ LinkWrapper.propTypes = {
   /**
    * color of link; follows PG color naming. Neutral colors not available
    */
-  color: PropTypes.string
+  color: PropTypes.string,
+  /**
+   * Possible variants are: `no-text-decoration`
+   */
+  variant: PropTypes.string,
 };
 
 LinkWrapper.defaultProps = {
