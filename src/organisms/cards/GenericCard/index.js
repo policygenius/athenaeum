@@ -70,6 +70,7 @@ GenericCard.propTypes = {
    * Different Variants of the generic card
    */
   variant: PropTypes.oneOf([
+    'checkout',
     'box',
     'mobile',
   ]),

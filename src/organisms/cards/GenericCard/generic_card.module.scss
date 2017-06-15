@@ -36,3 +36,11 @@
   border-radius: 0;
   border-bottom: 3px solid color('neutral-5');
 }
+
+@media #{$small-only} {
+  .checkout {
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+  }
+}
