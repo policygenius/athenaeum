@@ -12,7 +12,7 @@ Generic Card Example:
 ```
 
 ```example
-    <GenericCard>
+    <GenericCard variant='checkout'>
       <DataRow
         label='Sub Data'
         tooltip='Everybody needs a little tip'
