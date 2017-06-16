@@ -11,7 +11,7 @@ describe('<CheckOut />', () => {
 
     beforeEach(() => {
       props = {
-        totalCost: { curr: '$', value: 100, unit: 'mo' },
+        totalCost: { curr: '$', value: 100, unit: '/mo' },
         userAlert: {},
       };
     });
