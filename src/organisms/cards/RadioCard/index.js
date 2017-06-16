@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { camelCase, omit } from 'lodash';
 
+import Icon from 'atoms/Icon';
 import radioStyles from 'molecules/formfields/RadioField/radio_field.module.scss';
 import styles from './radio_card.module.scss';
+
 
 const isValid = collection => collection && collection.length && collection.length > 0;
 
@@ -29,6 +31,33 @@ const renderSection = (section, idx) => {
   );
 };
 
+const renderImage = (imgValues) => {
+  const {
+    img,
+    iconProps,
+  } = imgValues;
+
+  if (iconProps) {
+    return (
+      <Icon
+        {...iconProps}
+      />
+    );
+  }
+
+  if (img.image) {
+    return (
+      <img
+        className={styles['image']}
+        alt={img.label}
+        src={img.image}
+      />
+    );
+  }
+
+  return null;
+};
+
 function RadioCard(props) {
   const {
     className,
@@ -36,9 +65,10 @@ function RadioCard(props) {
     description,
     sections,
     image,
+    iconProps,
     input,
     radioValue,
-    children
+    children,
   } = props;
 
   const classes = classnames(
@@ -78,13 +108,7 @@ function RadioCard(props) {
           { renderSections(sections)}
         </div>
 
-        { image &&
-          <img
-            className={styles['image']}
-            alt={label}
-            src={image}
-          />
-        }
+        { renderImage({ img: { image, label }, iconProps }) }
       </label>
     </div>
   );
@@ -121,6 +145,16 @@ RadioCard.propTypes = {
    * optional image displayed below description
    */
   image: PropTypes.string,
+
+  /**
+   * optional icon displayed below description; `icon` overrides `image` prop;
+   * This is the icon name from the [Icon component](/#icon).
+   */
+  iconProps: PropTypes.shape({
+    icon: PropTypes.string,
+    width: PropTypes.string,
+    height: PropTypes.string,
+  }),
 
   /**
    * The props under the input key are passed from `redux-form` and spread into `<input />`.

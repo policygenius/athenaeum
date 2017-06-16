@@ -28,6 +28,7 @@ $border-style: 1px solid color('neutral-5');
   }
 }
 
+
 .content {
   flex: 1 0;
   display: flex;
@@ -89,6 +90,14 @@ $border-style: 1px solid color('neutral-5');
 @media #{$medium-up} {
   .sections-item {
     text-align: center;
+  }
+
+  .title {
+    padding: 0 ru(.5);
+  }
+
+  .description {
+    padding: 0 ru(.5);
   }
 }
 
