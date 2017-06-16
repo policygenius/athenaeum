@@ -7,12 +7,12 @@ Example:
 ### Br Example:
 ```example
   <div>
-    <h2>
-      I can decide where <Br small large />things will line break based on media queries. (small & large)
-    </h2>
+    <h2>I break on ↵<Br large />large.</h2>
+    <h2>I break on ↵<Br small medium large />medium large.</h2>
+    <h3>I break only on ↵<Br medium />medium.</h3>
+    <h3>I break on ↵<Br medium small />medium & small.</h3>
 
-    <h3>
-      I break on <Br small /> small.
-    </h3>
+    <h5>I break only on ↵<Br small />small</h5>
+
   </div>
 ```
