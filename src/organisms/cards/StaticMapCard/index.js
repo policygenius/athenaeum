@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import omit from 'lodash/omit';
 import classnames from 'classnames';
 import styles from './static_map_card.module.scss';
 
@@ -16,9 +17,10 @@ function mapUrl(mapOptions) {
 
   if (!mapOptions.apiKey) return baseUrl;
 
-  const mapOptionsString = toQueryString(mapOptions);
+  const mapOptionsString = toQueryString(omit(mapOptions, 'apiKey'));
+  const mapStringWithKey = `${mapOptionsString}&key=${encodeURIComponent(mapOptions.apiKey)}`;
 
-  return baseUrl + mapOptionsString;
+  return baseUrl + mapStringWithKey;
 }
 
 function StaticMapCard(props) {
