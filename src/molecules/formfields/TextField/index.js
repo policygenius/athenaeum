@@ -32,6 +32,7 @@ function TextField( props ) {
     id,
     tooltip,
     inputTooltip,
+    type,
   } = props;
 
   const classes = [
@@ -67,7 +68,7 @@ function TextField( props ) {
             :
             <input
               className={styles['input']}
-              type='text'
+              type={type}
               placeholder={placeholder}
               id={id}
               {...input}
@@ -153,11 +154,20 @@ TextField.propTypes = {
     PropTypes.func,
     PropTypes.string,
   ]),
+
+  /**
+   * HTML type for input node; when used with `mask` it always defaults to 'text'
+   */
+  type: PropTypes.oneOf([
+    'text',
+    'password',
+  ]),
 };
 
 TextField.defaultProps = {
   placeholder: 'Placeholder',
   errorMessage: false,
+  type: 'text',
 };
 
 export default TextField;
