@@ -3,7 +3,7 @@ $screens: (
   $medium-only: medium,
   $large-only: large,
   $xlarge-only: xLarge,
-  $xxlarge-only: xxLarge
+  $xxlarge-up: xxLarge
 );
 
 @each $screenSize, $className in $screens {
