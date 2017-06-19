@@ -30,17 +30,19 @@ function StaticMapCard(props) {
     zoom,
     size,
     label,
+    subheader,
+    markers,
     className,
   } = props;
 
-  const mapImageSrc = mapUrl({ apiKey, center, zoom, size });
+  const mapImageSrc = mapUrl({ apiKey, center, zoom, size, markers });
 
   return (
     <div className={classnames(styles['static-map-card'], className)}>
       <div className={classnames(styles['head'])}>
         <h3 className={classnames(styles['title'])}>
           <span className={classnames(styles['label'])}>{ label }</span>
-          { center }
+          { !!subheader && subheader }
         </h3>
       </div>
       <div className={classnames(styles['map'])} style={{ backgroundImage: `url(${mapImageSrc})` }} />
@@ -81,6 +83,14 @@ StaticMapCard.propTypes = {
    * Header label that describes the map.
    */
   label: PropTypes.string,
+  /**
+   * Any markers (map pins) - see [Google Maps Api](https://developers.google.com/maps/documentation/static-maps/intro#Markers) for formatting instructions
+   */
+  markers: PropTypes.string,
+  /**
+   * Text to go beneath the label
+   */
+  subheader: PropTypes.string,
 };
 
 StaticMapCard.defaultProps = {
