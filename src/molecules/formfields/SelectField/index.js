@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import omit from 'lodash/omit';
 
 import Tooltip from 'atoms/Tooltip';
 import ErrorMessage from 'atoms/ErrorMessage';
@@ -66,7 +67,7 @@ function SelectField( props ) {
               className={styles['select']}
               id={forProp}
               required
-              {...input}
+              {...(omit(input, 'onClick'))}
             >
               { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
               { renderSelectOptions(selectOptions) }

@@ -4,7 +4,7 @@ Checkout Example:
     const sampleOptions = [ { label: 'Select your home type', value: -1 } ];
 
     <CheckOut
-      totalCost={{ curr: '$', value: 100, unit: 'mo' }}
+      totalCost={{ curr: '$', value: 100, unit: ' due today' }}
       sidebar={<div>This is sidebar</div>}
       footer={
         <Footer

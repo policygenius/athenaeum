@@ -101,7 +101,7 @@ function CheckOut(props) {
                   <Col className={styles['cost-price']}>
                     { curr && <sup>{curr}</sup> }
                     { value }
-                    { unit && <small>{unit}</small> }
+                    { unit && <Text type={7} tag='span'>{unit}</Text> }
                   </Col>
                 </Layout>
               </Col>
