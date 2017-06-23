@@ -13,6 +13,7 @@ Playback Card Example:
         <TextD
           line1='Name'
           line2='Victoria Bangladesh'
+          spacer={3}
         />
 
         <TextD
@@ -32,6 +33,7 @@ Playback Card Example:
         <TextD
           line1='Date of Birth'
           line2='9/19/1987'
+          spacer={3}
         />
         <TextD
           line1='Phone Number'
