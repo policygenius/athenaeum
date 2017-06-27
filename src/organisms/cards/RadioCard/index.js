@@ -41,6 +41,7 @@ const renderImage = (imgValues) => {
     return (
       <Icon
         {...iconProps}
+        className={styles['icon']}
       />
     );
   }
