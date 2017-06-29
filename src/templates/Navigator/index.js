@@ -23,7 +23,7 @@ function Navigator(props) {
     className,
     stepProgressData,
     leftRailText,
-    contact,
+    contactProps,
     footer,
     sidebar,
     mobileHeader,
@@ -46,7 +46,15 @@ function Navigator(props) {
               className={styles['logo-panel-col']}
             >
               <div className={styles['logo-wrapper']}>
-                <Icon icon='pgLogo' className={styles['logo']} />
+                <Sticky
+                  enabled
+                  top={36}
+                  bottomBoundary='#sticky-bottom'
+                  activeClass={styles['sticky']}
+                >
+                  <Icon icon='pgLogo' className={styles['logo']} />
+                </Sticky>
+
                 <Icon
                   icon='hamburger'
                   className={styles['icon-hamburger']}
@@ -65,7 +73,7 @@ function Navigator(props) {
 
                   <Sticky
                     enabled
-                    top='#sticky-top'
+                    top={174}
                     bottomBoundary='#sticky-bottom'
                     activeClass={styles['sticky']}
                   >
@@ -85,7 +93,7 @@ function Navigator(props) {
               </div>
             </Col>
             <div className={styles['contact-card']}>
-              { renderContactCard(contact, true) }
+              { renderContactCard(contactProps, true) }
             </div>
           </Layout>
         </Col>
@@ -114,7 +122,7 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               <div className={styles['contact-card']}>
-                { renderContactCard(contact) }
+                { renderContactCard(contactProps) }
               </div>
 
               <Sticky
@@ -147,9 +155,9 @@ Navigator.propTypes = {
    */
   leftRailText: PropTypes.string,
   stepProgressData: StepProgress.propTypes.steps,
-  contact: PropTypes.shape({
-    chatClick: PropTypes.func.isRequired,
-    chatText: PropTypes.string,
+  contactProps: PropTypes.shape({
+    top: PropTypes.object,
+    bottom: PropTypes.object,
   }),
   mobileHeader: PropTypes.node,
   sidebar: PropTypes.node,

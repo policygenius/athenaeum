@@ -5,15 +5,10 @@ import Icon from 'atoms/Icon';
 import StackedCard from 'organisms/cards/StackedCard';
 import styles from './contact_card.module.scss';
 
-function cleanPhoneString( phoneString ) {
-  return phoneString.replace(/[^0-9]+/g, '');
-}
-
 function ContactCard( props ) {
   const {
-    phoneNumber,
-    chatClick,
-    chatText,
+    top,
+    bottom,
     className,
     inverted
   } = props;
@@ -24,19 +19,35 @@ function ContactCard( props ) {
     className
   ];
 
+  if (top && top.href) {
+    top.onClick = null;
+  }
+
+  if (bottom && bottom.href) {
+    bottom.onClick = null;
+  }
+
   return (
     <StackedCard className={classnames(...classes)} inverted={inverted}>
-      {phoneNumber &&
-        <a className={styles['link-row']} href={`tel:${cleanPhoneString(phoneNumber)}`}>
-          <Icon icon='phone' className={styles['icon']} />
-          { phoneNumber }
+      { top &&
+        <a className={styles['link-row']} onClick={top.onClick} href={top.href}>
+          <Icon
+            icon={top.icon}
+            className={styles['icon']}
+          />
+          { top.text }
         </a>
       }
 
-      <a className={styles['link-row']} onClick={chatClick}>
-        <Icon icon='chat' className={styles['icon']} />
-        { chatText }
-      </a>
+      { bottom &&
+        <a className={styles['link-row']} onClick={bottom.onClick} href={bottom.href}>
+          <Icon
+            icon={bottom.icon}
+            className={styles['icon']}
+          />
+          { bottom.text }
+        </a>
+      }
     </StackedCard>
   );
 }
@@ -48,17 +59,27 @@ ContactCard.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Formatted phone number string. example: 1(855) 867-5309
-  */
-  phoneNumber: PropTypes.string,
+   * object for top section of card
+   *
+   * NOTE: `href` overrides `onClick`
+   */
+  top: PropTypes.shape({
+    text: PropTypes.string,
+    icon: PropTypes.string,
+    onClick: PropTypes.func,
+    href: PropTypes.string,
+  }),
   /**
-   * Destination url to trigger chat.
-  */
-  chatClick: PropTypes.func.isRequired,
-  /**
-   * Text for the bottom of the contact card.
-  */
-  chatText: PropTypes.string,
+   * object for bottom section of card
+   *
+   * NOTE: `href` overrides `onClick`
+   */
+  bottom: PropTypes.shape({
+    text: PropTypes.string,
+    icon: PropTypes.string,
+    onClick: PropTypes.func,
+    href: PropTypes.string,
+  }),
   /**
    * Inverted color scheme.
    */
@@ -66,7 +87,6 @@ ContactCard.propTypes = {
 };
 
 ContactCard.defaultProps = {
-  chatText: 'Chat with an Expert',
   inverted: false
 };
 

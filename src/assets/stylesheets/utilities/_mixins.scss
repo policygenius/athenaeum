@@ -55,6 +55,7 @@
   height: auto !important;
   > div {
     position: inherit !important;
+    transform: none !important;
   }
 }
 /* stylelint-enable declaration-no-important */

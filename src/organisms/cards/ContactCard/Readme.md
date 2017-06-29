@@ -2,9 +2,16 @@ Contact Card example:
 
 ```example
     <ContactCard
-      phoneNumber='1 (800) 555-5309'
-      chatText='Chat with an Expert'
-      chatClick={() => alert('hi')}
+      top={{
+        text: 'Save my progress',
+        icon: 'user',
+        onClick: () => alert('top click')
+      }}
+      bottom={{
+        text: 'Chat with an Expert',
+        icon: 'chat',
+        onClick: () => alert('top click')
+      }}
     />
 ```
 
@@ -13,9 +20,16 @@ Inverted
     <div style={{ backgroundColor: 'grey', padding: '10px' }}>
       <ContactCard
         inverted
-        phoneNumber='1 (800) 555-5309'
-        chatText='Chat with an Expert'
-        chatClick={() => alert('hi')}
+        top={{
+          text: 'Save my progress',
+          icon: 'user',
+          onClick: () => alert('top click')
+        }}
+        bottom={{
+          text: 'Chat with an Expert',
+          icon: 'chat',
+          onClick: () => alert('top click')
+        }}
       />
     </div>
 ```
