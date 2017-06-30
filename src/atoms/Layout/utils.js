@@ -17,7 +17,7 @@ export function processChild(child, layoutProps) {
   const colProps = Object.assign(
     {},
     layoutProps,
-    _.omit(child.props, [ 'className', 'style' ])
+    _.omit(child.props, [ 'className', 'style', 'onClick', 'onChange' ])
   );
 
   return (
