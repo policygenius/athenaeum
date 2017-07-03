@@ -12,7 +12,8 @@ $border: 1px solid color('neutral-5');
     max-width: rem-calc(728);
   }
 
-  &.large {
+  &.large,
+  &.mobile-large {
     max-width: rem-calc(940);
   }
 
@@ -20,12 +21,7 @@ $border: 1px solid color('neutral-5');
     margin-top: 0;
     max-width: rem-calc(604);
 
-    .section:first-child {
-      padding: 0;
-      border-bottom: none;
-    }
-
-    .section:not( :first-child ) {
+    .section {
       padding: ru(1.25);
     }
 
@@ -101,7 +97,8 @@ $border: 1px solid color('neutral-5');
     }
   }
 
-  .mobile {
+  .mobile,
+  .mobile-large {
     padding: 0;
     margin: 0;
   }
