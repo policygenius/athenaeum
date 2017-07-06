@@ -41,6 +41,23 @@
   position: relative;
 }
 
+.prefix {
+  display: flex;
+
+  &:before {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: rem-calc(8px) ru(.75);
+    text-align: center;
+    content: attr(data-prefix);
+    background-color: color('neutral-6');
+    color: color('neutral-2');
+    border-right: 1px solid color('neutral-5');
+    border-radius: 0 0 0 ru(.25);
+  }
+}
+
 input[type='text'] {
   outline: none;
 }

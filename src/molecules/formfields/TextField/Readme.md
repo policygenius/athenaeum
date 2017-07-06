@@ -67,6 +67,20 @@ Text field - phone number example:
     maskChar='_'
   />
 ```
+Text field - prefix example:
+
+```example
+  <TextField
+    label='Income'
+    placeholder='Eg. 200,000'
+    tooltip={() => alert("I'm a tooltip")}
+    input={{
+      value: state.value,
+      onChange: event => setState({ value: event.target.value })
+    }}
+    prefix='$'
+  />
+```
 
 Text field - secure:
 
