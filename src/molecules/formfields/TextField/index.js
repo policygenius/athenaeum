@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import classnames from 'classnames';
+import omit from 'lodash/omit';
 
 import Icon from 'atoms/Icon';
 import Tooltip from 'atoms/Tooltip';
@@ -33,6 +34,8 @@ function TextField( props ) {
     tooltip,
     inputTooltip,
     type,
+    maskVal,
+    prefix,
   } = props;
 
   const classes = [
@@ -54,7 +57,10 @@ function TextField( props ) {
             { tooltip && renderTooltip(tooltip, 'tooltip') }
           </div>
         }
-        <span className={styles['input-wrapper']}>
+        <span
+          data-prefix={prefix}
+          className={classnames(styles['input-wrapper'], prefix && styles['prefix'])}
+        >
           { mask ?
             <InputMask
               className={styles['input']}
@@ -71,7 +77,8 @@ function TextField( props ) {
               type={type}
               placeholder={placeholder}
               id={id}
-              {...input}
+              value={maskVal(input.value)}
+              {...omit(input, [ 'value' ])}
             />
           }
           {inputTooltip && renderTooltip(inputTooltip, 'input-tooltip')}
@@ -126,10 +133,18 @@ TextField.propTypes = {
    * Mask the input
    */
   mask: PropTypes.string,
+
   /**
    * Specific the maskChar (must have `mask` set for this to be applied)
    */
   maskChar: PropTypes.string,
+
+  /**
+   * Function to mask the actual input value
+   *
+   * Provides for more specific customization over the `mask` prop
+   */
+  maskVal: PropTypes.func,
 
   /**
    * Adds a lock to the label.
@@ -162,12 +177,20 @@ TextField.propTypes = {
     'text',
     'password',
   ]),
+
+  /**
+   * provides a prefix for the input
+   */
+  prefix: PropTypes.oneOf([
+    '$',
+  ]),
 };
 
 TextField.defaultProps = {
   placeholder: 'Placeholder',
   errorMessage: false,
   type: 'text',
+  maskVal: val => val,
 };
 
 export default TextField;
