@@ -6,17 +6,22 @@ import ReactModal from 'react-modal';
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
 import { Layout, Col } from 'atoms/Layout';
+import MobileMenu from 'molecules/MobileMenu';
 import styles from './modal.module.scss';
 
-const wrapChild = child => React.createElement(
-  'div',
-  {
-    className: classnames(
-      styles['section'],
-    )
-  },
-  child
-);
+const wrapChild = (child) => {
+  if (child.type === MobileMenu) return child;
+
+  return React.createElement(
+    'div',
+    {
+      className: classnames(
+        styles['section'],
+      )
+    },
+    child
+  );
+};
 
 function Modal(props) {
   const {
@@ -111,7 +116,7 @@ Modal.propTypes = {
   /**
    * variant for modal - options are `simple` (default), `large` & `mobile`
    */
-  variant: PropTypes.oneOf([ 'simple', 'large', 'mobile' ]),
+  variant: PropTypes.oneOf([ 'simple', 'large', 'mobile', 'mobile-large' ]),
 };
 
 Modal.defaultProps = {
