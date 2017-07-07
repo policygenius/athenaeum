@@ -47,6 +47,7 @@ function ToggleField( props ) {
   const classes = [
     styles['toggle-field'],
     meta && meta.active && styles['focused'],
+    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
   ];
 
