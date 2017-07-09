@@ -58,3 +58,8 @@
     }
   }
 }
+
+/* --  state:error  -- */
+.hasError {
+  @extend %hasError;
+}
