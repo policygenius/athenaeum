@@ -12,14 +12,17 @@ DateField (Month/Day/Year):
       <TextField
         placeholder='MM'
         noBaseStyle
+        input={{}}
       />
       <TextField
         placeholder='DD'
         noBaseStyle
+        input={{}}
       />
       <TextField
         placeholder='YYYY'
         noBaseStyle
+        input={{}}
       />
     </DateField>
 ```
@@ -37,10 +40,12 @@ DateField (Month/Year):
       <TextField
         placeholder='MM'
         noBaseStyle
+        input={{}}
       />
       <TextField
         placeholder='YYYY'
         noBaseStyle
+        input={{}}
       />
     </DateField>
 ```

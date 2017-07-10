@@ -64,7 +64,12 @@ Navigator Example:
           <TextComponent tag='p' type={4} semibold>First, a little about you and your humble abode</TextComponent>
 
           <Col>
-            <TextField label='First name' placeholder='Enter your first name here' forProp='' />
+            <TextField
+              label='First name'
+              placeholder='Enter your first name here'
+              forProp=''
+              input={{}}
+            />
 
             <LinkWrapper href='#'>
               <TextComponent
@@ -83,7 +88,12 @@ Navigator Example:
             selectOptions={sampleOptions}
           />
 
-          <TextField label='Street address' placeholder='Enter address' forProp='' />
+          <TextField
+            label='Street address'
+            placeholder='Enter address'
+            forProp=''
+            input={{}}
+          />
 
           <Spacer xSmall />
 

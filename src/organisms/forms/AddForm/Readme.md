@@ -19,6 +19,7 @@ Add Jewelry item Example:
           label='Describe the item you want to cover'
           placeholder='e.g. 1 carat engagement ring'
           forProp=''
+          input={{}}
         />
 
         <Spacer small />
@@ -26,6 +27,7 @@ Add Jewelry item Example:
         <TextField
           label='How much is it worth?'
           placeholder='e.g. $2,000'
+          input={{}}
         />
 
         <Spacer medium />
@@ -47,6 +49,7 @@ Add Person Example:
         <TextField
           label='Full name'
           placeholder='Janis Ian'
+          input={{}}
         />
 
         <Spacer small />
