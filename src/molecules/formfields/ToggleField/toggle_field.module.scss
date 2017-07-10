@@ -12,7 +12,8 @@
 }
 
 .tooltip-wrapper {
-  @extend %tooltip-wrapper;
+  float: right;
+  margin-left: 1.5rem;
 }
 
 .body {

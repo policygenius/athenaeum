@@ -58,14 +58,14 @@ function ToggleField( props ) {
       <div className={classnames(...classes)}>
         <Layout>
           { label &&
-          <Col className={styles['header']}>
-            { label }
-            { tooltip &&
-            <div className={styles['tooltip-wrapper']}>
-              <Tooltip right>{ tooltip }</Tooltip>
-            </div>
-                }
-          </Col>
+            <Col className={styles['header']}>
+              { tooltip &&
+                <div className={styles['tooltip-wrapper']}>
+                  <Tooltip right>{ tooltip }</Tooltip>
+                </div>
+              }
+              { label }
+            </Col>
           }
           { children && <Col className={styles['body']}>{children}</Col> }
           <Col className={styles['button-wrapper']}>
