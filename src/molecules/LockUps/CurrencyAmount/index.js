@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Span } from 'atoms/Elementals';
+import Text from 'atoms/Text';
 
 const CurrencyAmount = (props) => {
   // eslint-disable-next-line
   const { tag, spacer, curr, amount, unit, ...rest } = props;
-  const [ whole, decimals ] = amount.split('.');
 
   return (
     <Span {...rest}>
       <sup>{curr}</sup>
-      <strong>{whole}</strong>
-      { decimals && <sup>.{decimals}</sup> }
-      { unit && <small>{ unit }</small> }
+      <strong>{amount}</strong>
+      { unit && <Text tag='span' weight='bold'>{ unit }</Text> }
     </Span>
   );
 };

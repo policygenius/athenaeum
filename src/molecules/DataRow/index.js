@@ -45,7 +45,7 @@ function DataRow(props) {
     <div className={classnames(...classes)}>
       <div className={styles['row']}>
         <div className={classnames(styles['label'])}>
-          <div className={styles['label-text']}>{ label }</div>
+          <div className={variant !== 'large' && styles['label-text']}>{ label }</div>
           { tooltip && <Tooltip className={styles['tip']}>{ tooltip }</Tooltip> }
         </div>
         { renderAmount(amount, unit) || <div className={classnames(styles['value'])}>{value}</div> }
