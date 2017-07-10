@@ -25,6 +25,7 @@ DataRow Example:
         description='some node.'
         amount={19.73}
         variant='large'
+        unit=' /mo'
       />
     </div>
 ```
