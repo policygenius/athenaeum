@@ -46,22 +46,27 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
                   <TextField
                     label='Street address'
                     placeholder='Enter your street address'
+                    input={{}}
                   />
                   <TextField
                     label='Apt. #'
                     placeholder='Apt. #'
+                    input={{}}
                   />
                   <TextField
                     label='City'
                     placeholder='City'
+                    input={{}}
                   />
                   <TextField
                     label='State'
                     placeholder='State'
+                    input={{}}
                   />
                   <TextField
                     label='Zip code'
                     placeholder='Zip code'
+                    input={{}}
                   />
                 </Layout>
 
