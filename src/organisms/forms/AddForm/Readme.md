@@ -3,7 +3,10 @@ Add Jewelry item Example:
 ```example
     <AddForm
       formName='ExampleForm'
-      onSubmit={() => alert('FormSubmitted!')}
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert('FormSubmitted!');
+      }}
       onClose={() => alert('Clicked close button')}
     >
       <Layout>
@@ -24,10 +27,10 @@ Add Jewelry item Example:
 
         <Spacer small />
 
-        <TextField
+        <SelectField
           label='How much is it worth?'
           placeholder='e.g. $2,000'
-          input={{}}
+          selectOptions={[ { label: "It's never enough", value: 0 } ]}
         />
 
         <Spacer medium />
