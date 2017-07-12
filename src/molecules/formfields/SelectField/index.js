@@ -37,6 +37,7 @@ function SelectField( props ) {
     selectOptions,
     tooltip,
     variant,
+    required
   } = props;
 
   const classes = [
@@ -48,6 +49,8 @@ function SelectField( props ) {
   ];
 
   const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+
+  const requiredAttr = () => required ? { required } : {};
 
   return (
     <div>
@@ -66,7 +69,7 @@ function SelectField( props ) {
             <select
               className={styles['select']}
               id={forProp}
-              required
+              {...requiredAttr()}
               {...(omit(input, 'onClick'))}
             >
               { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
@@ -144,10 +147,15 @@ SelectField.propTypes = {
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+  /**
+   * Make this field required. Defaults to required
+   */
+  required: PropTypes.bool
 };
 
 SelectField.defaultProps = {
   errorMessage: false,
+  required: true
 };
 
 export default SelectField;
