@@ -47,7 +47,7 @@ module.exports = options => ({
               loader: 'css-loader?importLoaders=3',
               options: {
                 modules: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: 'rcl-[name]__[local]--[hash:base64:5]',
                 sourceMap: true
               }
             },

@@ -27,9 +27,10 @@ function Modal(props) {
   const {
     children,
     className,
-    header,
-    isOpen,
     contentLabel,
+    header,
+    hideX,
+    isOpen,
     onAfterOpen,
     onRequestClose,
     variant
@@ -47,7 +48,6 @@ function Modal(props) {
       <div className={styles['dialog']}>
         <div className={styles['header']}>
           <Layout
-            fullwidth
             smallCols={[ 11, 1 ]}
           >
             <Text
@@ -63,11 +63,14 @@ function Modal(props) {
                 alignSelf: 'center'
               }}
             >
-              <Icon
-                icon='close'
-                className={styles['close']}
-                onClick={onRequestClose}
-              />
+              {
+                !hideX &&
+                  <Icon
+                    icon='close'
+                    className={styles['close']}
+                    onClick={onRequestClose}
+                  />
+              }
             </Col>
           </Layout>
         </div>
@@ -99,6 +102,11 @@ Modal.propTypes = {
   contentLabel: PropTypes.string.isRequired,
 
   /**
+   * Hide the X icon to close the modal
+   */
+  hideX: PropTypes.bool,
+
+  /**
    * Boolean to determine modal open/closed
    */
   isOpen: PropTypes.bool,
@@ -120,7 +128,8 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  variant: 'simple'
+  variant: 'simple',
+  hideX: false
 };
 
 export default Modal;
