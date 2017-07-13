@@ -41,11 +41,12 @@ function Text(props) {
   if (!props.children) return null;
 
   const {
+    align,
     children,
     className,
-    type,
     color,
-    variant,
+    type,
+    variant
   } = props;
 
   const tag = getTag(props);
@@ -59,6 +60,7 @@ function Text(props) {
     colors[color],
     styles[variant],
     styles[tag],
+    styles[align],
     className,
   ];
 
@@ -71,6 +73,14 @@ function Text(props) {
 
 
 Text.propTypes = {
+  /*
+   * Text alignment
+   */
+  align: PropTypes.oneOf([
+    'left',
+    'right',
+    'center'
+  ]),
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
