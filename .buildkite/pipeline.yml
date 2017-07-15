@@ -6,7 +6,8 @@ steps:
     plugins:
       docker-compose:
         build: athenaeum
-        image-repository: quay.io/policygenius/athenaeum
+        image-repository: us.gcr.io/pg-shared-v1/athenaeum
+        image-name: $BUILDKITE_BUILD_NUMBER
 
   - wait
 
