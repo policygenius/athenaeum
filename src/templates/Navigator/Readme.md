@@ -97,7 +97,11 @@ Navigator Example:
 
           <Spacer xSmall />
 
-          <Button variant='action'>Continue</Button>
+          <Col
+            bottomSpacing={0}
+          >
+            <Button variant='action'>Continue</Button>
+          </Col>
         </Layout>
       </form>
 
