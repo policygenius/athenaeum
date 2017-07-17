@@ -114,6 +114,10 @@ $main-section-padding: ru(1.5);
     }
   }
 
+  .right-rail {
+    display: none;
+  }
+
   .contact-card {
     display: none;
   }
@@ -158,15 +162,15 @@ $main-section-padding: ru(1.5);
 
   .sticky {
     @include sticky-disable;
-  }
 
-  /* stylelint-disable */
-  :global {
-    .sticky-outer-wrapper {
-      @include sticky-disable;
+    /* stylelint-disable */
+    :global {
+      .sticky-outer-wrapper {
+        @include sticky-disable;
+      }
     }
+    /* stylelint-enable */
   }
-  /* stylelint-enable */
 }
 
 @media #{$medium-only} {
@@ -221,6 +225,9 @@ $main-section-padding: ru(1.5);
     padding: $main-section-padding $main-section-padding ru(6) $main-section-padding;
   }
 
+  .logo {
+    margin-bottom: ru(3.75);
+  }
 
   .logo-panel {
     max-width: $logo-panel-width;
@@ -232,8 +239,14 @@ $main-section-padding: ru(1.5);
   }
 
   .contact-card,
-  .step-progress,
-  .logo-wrapper {
+  .step-progress {
     height: ru(5.75);
+  }
+
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: ru(7);
   }
 }

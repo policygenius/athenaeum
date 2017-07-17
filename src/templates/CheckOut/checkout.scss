@@ -104,6 +104,10 @@ $mobile-layout-padding: ru(1);
 }
 
 @media #{$small-only} {
+  .main-layout {
+    margin-bottom: ru(2);
+  }
+
   .logo {
     &-wrapper {
       justify-content: left;
@@ -153,7 +157,7 @@ $mobile-layout-padding: ru(1);
   }
 
   .main-layout {
-    padding: ru(2) $layout-padding 0;
+    padding: ru(2) $layout-padding ru(6);
   }
 
   .head-foot {

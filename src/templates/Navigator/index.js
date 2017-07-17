@@ -8,6 +8,7 @@ import Icon from 'atoms/Icon';
 import ContactCard from 'organisms/cards/ContactCard';
 import StepProgress from 'molecules/StepProgress';
 import Text from 'atoms/Text';
+import Hide from 'wrappers/Hide';
 
 import styles from './navigator.module.scss';
 
@@ -18,6 +19,8 @@ function renderContactCard(contactProps, inverted) {
 }
 
 function Navigator(props) {
+
+
   const {
     children,
     className,
@@ -29,6 +32,7 @@ function Navigator(props) {
     mobileHeader,
     onMenuClick,
   } = props;
+
 
   return (
     <div className={classnames(styles['navigator'], className)}>
@@ -49,10 +53,16 @@ function Navigator(props) {
                 <Sticky
                   enabled
                   top={36}
-                  bottomBoundary={1270}
+                  bottomBoundary={'#sticky-bottom'}
                   activeClass={styles['sticky']}
                 >
                   <Icon icon='pgLogo' className={styles['logo']} />
+
+                  <Hide hideOn='small medium'>
+                    <Text className={classnames(styles['logo-panel-text'], styles['logo-left-rail'])} type={3} light>
+                      { leftRailText }
+                    </Text>
+                  </Hide>
                 </Sticky>
 
                 <Icon
@@ -71,17 +81,13 @@ function Navigator(props) {
                     steps={stepProgressData}
                   />
 
-                  <Sticky
-                    enabled
-                    top={174}
-                    bottomBoundary='#sticky-bottom'
-                    activeClass={styles['sticky']}
-                  >
+                  <Hide hideOn='large xLarge xxLarge'>
                     <Text className={styles['logo-panel-text']} type={3} light>
                       { leftRailText }
                     </Text>
-                  </Sticky>
+                  </Hide>
                 </div>
+
                 <div className={styles['mobile-header']}>
                   <Sticky
                     enabled
