@@ -1,5 +1,6 @@
 $gutter-width: ru(.25);
 $border: 1px solid color('neutral-6');
+$spacer-base: .25;
 
 @mixin g-unit($cols: 1, $total-col-count: 12) {
   $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
@@ -116,6 +117,18 @@ $border: 1px solid color('neutral-6');
   }
 
   &-xLarge {
+    margin-bottom: ru(6);
+  }
+
+  @for $i from 1 through 10 {
+    &-#{$i} { margin-bottom: ru($spacer-base * $i); }
+  }
+
+  &-11 {
+    margin-bottom: ru(3);
+  }
+
+  &-12 {
     margin-bottom: ru(6);
   }
 }

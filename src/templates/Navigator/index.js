@@ -49,7 +49,7 @@ function Navigator(props) {
                 <Sticky
                   enabled
                   top={36}
-                  bottomBoundary='#sticky-bottom'
+                  bottomBoundary={1270}
                   activeClass={styles['sticky']}
                 >
                   <Icon icon='pgLogo' className={styles['logo']} />

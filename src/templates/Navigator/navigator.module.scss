@@ -152,13 +152,21 @@ $main-section-padding: ru(1.5);
 
   .main-col,
   .right-rail {
-    padding-top: ru(1.5);
+    padding-top: ru(1);
     margin-bottom: ru(2);
   }
 
   .sticky {
     @include sticky-disable;
   }
+
+  /* stylelint-disable */
+  :global {
+    .sticky-outer-wrapper {
+      @include sticky-disable;
+    }
+  }
+  /* stylelint-enable */
 }
 
 @media #{$medium-only} {
@@ -174,7 +182,7 @@ $main-section-padding: ru(1.5);
   }
 
   .step-progress {
-    margin-bottom: ru(3);
+    margin-bottom: ru(3.5);
   }
 }
 
@@ -210,7 +218,7 @@ $main-section-padding: ru(1.5);
 
   .main-layout {
     max-width: $main-section-width;
-    padding: $main-section-padding;
+    padding: $main-section-padding $main-section-padding ru(6) $main-section-padding;
   }
 
 
