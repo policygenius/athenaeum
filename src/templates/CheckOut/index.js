@@ -54,7 +54,10 @@ function CheckOut(props) {
         className={styles['checkout-layout']}
         fullwidth
       >
-        <Col className={styles['head']}>
+        <Col
+          className={styles['head']}
+          fullwidth
+        >
           <Layout
             className={styles['head-layout']}
             smallCols={[ 12 ]}
@@ -67,7 +70,11 @@ function CheckOut(props) {
                 smallCols={[ 7, 5 ]}
                 mediumCols={[ 12 ]}
               >
-                <Icon icon='pgLogo' className={styles['logo-pg']} />
+                <Col
+                  className={styles['logo-icon-wrapper']}
+                >
+                  <Icon icon='pgLogo' className={styles['logo-pg']} />
+                </Col>
                 <Col className={styles['logo-chat']}>
                   <Icon
                     className={styles['icon']}
@@ -78,41 +85,46 @@ function CheckOut(props) {
               </Layout>
             </Col>
 
-            <Sticky
-              className={styles['sticky']}
-              activeClass={styles['sticky']}
-              bottomBoundary='#sticky-bottom'
-              enabled
+            <Col
+              className={styles['sticky-wrapper']}
             >
-              <Col
-                className={styles['head-body']}
-                fullwidth
+              <Sticky
+                className={styles['sticky']}
+                activeClass={styles['sticky']}
+                bottomBoundary='#sticky-bottom'
+                enabled
               >
-                <Layout
-                  className={styles['cost']}
-                  mediumCols={[ 12 ]}
-                  smallCols={[ 6 ]}
+                <Col
+                  className={styles['head-body']}
+                  fullwidth
                 >
-                  <Col className={styles['cost-title']}>
-                    <Icon className={styles['icon']} icon='cart' />
-                    {' '}
-                    <div>Checkout</div>
-                  </Col>
-                  <Col className={styles['cost-price']}>
-                    { curr && <sup>{curr}</sup> }
-                    { value }
-                    { unit && <Text type={7} tag='span'>{unit}</Text> }
-                  </Col>
-                </Layout>
-              </Col>
-              { userAlert.condition &&
+                  <Layout
+                    className={styles['cost']}
+                    mediumCols={[ 12 ]}
+                    smallCols={[ 6 ]}
+                  >
+                    <Col className={styles['cost-title']}>
+                      <Icon className={styles['icon']} icon='cart' />
+                      {' '}
+                      <div>Checkout</div>
+                    </Col>
+                    <Col className={styles['cost-price']}>
+                      { curr && <sup>{curr}</sup> }
+                      { value }
+                      { unit && <Text type={7} tag='span'>{unit}</Text> }
+                    </Col>
+                  </Layout>
+                </Col>
+                { userAlert.condition &&
                 <CheckoutUserAlert
                   enabled={false}
                   userAlert={userAlert}
                   className='user-alert-mobile'
                 />
-              }
-            </Sticky>
+                }
+              </Sticky>
+            </Col>
+
             <Col className={styles['head-foot']}>
               <Icon icon='nortonW' className={styles['secure-logo']} />
             </Col>
