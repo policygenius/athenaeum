@@ -1,7 +1,10 @@
 Checkbox List Example:
 
 ```example
-  <CheckboxWrapper label='Pellentesque habitant'>
+  <CheckboxWrapper
+    label='Pellentesque habitant'
+    tooltip="I'm a tooltip!"
+  >
     <CheckboxField
       input={{
         name: 'extinguisher'
