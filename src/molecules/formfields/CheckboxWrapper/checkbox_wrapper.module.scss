@@ -4,10 +4,16 @@
   @extend %form-field;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: ru(.5);
+  border-bottom: 1px solid color('neutral-5');
+}
+
 .label {
   @extend %label;
-
-  border-bottom: 1px solid color('neutral-5');
 }
 
 .content {
