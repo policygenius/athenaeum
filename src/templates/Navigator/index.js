@@ -9,6 +9,7 @@ import ContactCard from 'organisms/cards/ContactCard';
 import StepProgress from 'molecules/StepProgress';
 import Text from 'atoms/Text';
 import Hide from 'wrappers/Hide';
+import UserAlert from 'atoms/UserAlert';
 
 import styles from './navigator.module.scss';
 
@@ -18,9 +19,28 @@ function renderContactCard(contactProps, inverted) {
   return <ContactCard {...newProps} />;
 }
 
+const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
+  <UserAlert
+    enabled={enabled}
+    onClick={userAlert.onClick}
+    alertBottom='#sticky-bottom'
+    innerZ={100}
+    alertColor={userAlert.color}
+    closeColor={userAlert.closeColor}
+    className={styles[className]}
+  >
+    <Text
+      type={6}
+      color={userAlert.textColor}
+      semibold
+    >
+      {userAlert.text}
+    </Text>
+  </UserAlert>
+
+;
+
 function Navigator(props) {
-
-
   const {
     children,
     className,
@@ -31,6 +51,7 @@ function Navigator(props) {
     sidebar,
     mobileHeader,
     onMenuClick,
+    userAlert,
   } = props;
 
 
@@ -103,8 +124,22 @@ function Navigator(props) {
             </div>
           </Layout>
         </Col>
-
         <Col className={styles['main']}>
+          <div className={styles['user-alert']}>
+            { userAlert.condition &&
+              <Sticky
+                enabled
+                bottomBoundary={'#mobile-bottom'}
+                activeClass={styles['sticky']}
+              >
+                <NavigatorUserAlert
+                  enabled={false}
+                  userAlert={userAlert}
+                  className='user-alert'
+                />
+              </Sticky>
+            }
+          </div>
           <Layout
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
@@ -172,6 +207,23 @@ Navigator.propTypes = {
    * Click handler for mobile menu hambuger
    */
   onMenuClick: PropTypes.func,
+  /**
+   * object to set all properties for user alert
+   */
+  userAlert: PropTypes.shape({
+    condition: PropTypes.bool,
+    onClick: PropTypes.func,
+    color: PropTypes.string,
+    closeColor: PropTypes.string,
+    text: PropTypes.string,
+    textColor: PropTypes.string,
+  }),
+};
+
+NavigatorUserAlert.propTypes = {
+  userAlert: PropTypes.object,
+  enabled: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Navigator;

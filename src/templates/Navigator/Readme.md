@@ -11,6 +11,14 @@ Navigator Example:
   <div>
     <Navigator
       leftRailText='Home sweet home'
+      userAlert={{
+        condition: true,
+        onClick: () => alert('click!'),
+        color: 'accent-2',
+        closeColor: 'accent-1',
+        text: 'We need a little bit more information from you before we can continue.',
+        textColor: 'neutral-8',
+      }}
       stepProgressData={[
         { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },
         { complete: true, icon: 'health', label: 'Phasellus', link: '#' },

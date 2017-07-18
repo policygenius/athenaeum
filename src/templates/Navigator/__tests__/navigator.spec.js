@@ -17,7 +17,8 @@ describe('Navigator', () => {
           chatText: 'hi',
           phoneNumber: '867-5309',
           chatClick: () => null
-        }
+        },
+        userAlert: {}
       };
     });
 
