@@ -147,6 +147,10 @@ $main-section-padding: ru(1.5);
   }
 }
 
+.user-alert {
+  z-index: 3;
+}
+
 @media #{$small-and-medium-only} {
   .right-rail {
     .contact-card {

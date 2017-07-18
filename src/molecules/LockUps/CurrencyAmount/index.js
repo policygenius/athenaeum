@@ -11,7 +11,7 @@ const CurrencyAmount = (props) => {
     <Span {...rest}>
       <sup>{curr}</sup>
       <strong>{amount}</strong>
-      { unit && <Text tag='span' weight='bold'>{ unit }</Text> }
+      { unit && <Text tag='span' weight='semibold'>{ unit }</Text> }
     </Span>
   );
 };

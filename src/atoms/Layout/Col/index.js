@@ -52,7 +52,10 @@ Col.propTypes = {
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values
    */
-  bottomSpacing: PropTypes.string,
+  bottomSpacing: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 
   /**
    * Overides column grid width within a viewport from `0px` up. Width can also be set to 'auto'.
