@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MobileMenu /> renders correctly 1`] = `
-<div
-  className="mobile-menu"
->
-  <div
-    className="tabs-wrapper"
-  />
-</div>
+<ul
+  className="tabs-wrapper"
+/>
 `;

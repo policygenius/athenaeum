@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Col } from 'atoms/Layout';
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
 import styles from './mobile_menu.module.scss';
@@ -14,45 +13,43 @@ function MobileMenu(props) {
   } = props;
 
   const classes = [
-    styles['mobile-menu'],
+    styles['tabs-wrapper'],
     className,
   ];
 
   return (
-    <div className={classnames(...classes)}>
-      <div className={styles['tabs-wrapper']}>
-        { tabs.map((tab, idx) =>
-          <Col
+    <ul className={classnames(...classes)}>
+      { tabs.map((tab, idx) =>
+        <li
+          className={classnames(
+            styles['tab'],
+            tab.active && styles['active'],
+            !tab.active && styles['inactive'],
+          )}
+          key={`tab-${idx}`}
+          onClick={() => onClick(tab.key)}
+        >
+          <Icon
             className={classnames(
-              styles['tab'],
-              tab.active && styles['active'],
-              !tab.active && styles['inactive'],
+              tab.active && styles['icon-active'],
+              !tab.active && styles['icon-inactive'],
             )}
-            key={`tab-${idx}`}
-            onClick={() => onClick(tab.key)}
+            icon={tab.icon}
+            width='20px'
+            height='26px'
+          />
+          <Text
+            className={styles['tag-text']}
+            tag='span'
+            type={5}
+            color={tab.active ? 'neutral-2' : 'neutral-3'}
+            weight='semibold'
           >
-            <Icon
-              className={classnames(
-                tab.active && styles['icon-active'],
-                !tab.active && styles['icon-inactive'],
-              )}
-              icon={tab.icon}
-              width='20px'
-              height='26px'
-            />
-            <Text
-              className={styles['tag-text']}
-              tag='span'
-              type={5}
-              color={tab.active ? 'neutral-2' : 'neutral-3'}
-              weight='semibold'
-            >
-              {tab.text}
-            </Text>
-          </Col>
-        )}
-      </div>
-    </div>
+            {tab.text}
+          </Text>
+        </li>
+      )}
+    </ul>
   );
 }
 
