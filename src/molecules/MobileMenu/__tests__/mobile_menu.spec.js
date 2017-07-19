@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
-import { Col } from 'atoms/Layout';
 import renderer from 'react-test-renderer';
 
 import MobileMenu from 'molecules/MobileMenu';
@@ -68,11 +67,11 @@ describe('<MobileMenu />', () => {
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
-    const activeTab = wrapper.find(Col).first();
+    const activeTab = wrapper.find('li').first();
 
     expect(activeTab.prop('className')).toEqual('tab active');
 
-    const inactiveTab = wrapper.find(Col).last();
+    const inactiveTab = wrapper.find('li').last();
 
     expect(inactiveTab.prop('className')).toEqual('tab inactive');
   });
