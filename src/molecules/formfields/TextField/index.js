@@ -88,6 +88,7 @@ function TextField( props ) {
       <ErrorMessage
         condition={!!message}
         message={message}
+        type={meta && meta.warning ? 'warning' : 'error'}
       />
     </div>
   );
