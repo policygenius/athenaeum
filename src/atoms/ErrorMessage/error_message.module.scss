@@ -1,12 +1,18 @@
-$field-error-color: color('accent-2');
-
+.warning,
 .error {
-  color: $field-error-color;
   transition: all 500ms ease;
   margin-left: ru(0.5);
   opacity: 0;
   margin-top: 0;
   max-height: 0;
+}
+
+.warning {
+  color: color('brand-2');
+}
+
+.error {
+  color: color('accent-2');
 }
 
 .visible {
