@@ -39,6 +39,10 @@ module.exports = {
           components: 'src/molecules/Modal/index.js'
         },
         {
+          name: 'Loading',
+          components: 'src/molecules/Loading/index.js'
+        },
+        {
           name: 'Lock Ups',
           components: 'src/molecules/LockUps/**/index.js'
         },
