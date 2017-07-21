@@ -31,7 +31,7 @@ class ErrorMessage extends Component {
 
   render() {
     return (
-      <div className={classnames(styles['error'], this.state.visible && styles['visible'])}>
+      <div className={classnames(styles[this.props.type], this.state.visible && styles['visible'])}>
         <Text type={7}>
           { this.props.message }
         </Text>
@@ -49,6 +49,11 @@ ErrorMessage.propTypes = {
    * the condition for which the message will be shown or hidden
    */
   condition: PropTypes.bool,
+  type: PropTypes.oneOf([ 'error', 'warning' ]),
+};
+
+ErrorMessage.defaultProps = {
+  type: 'error'
 };
 
 export default hocErrorMessage(ErrorMessage);

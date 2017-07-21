@@ -28,7 +28,7 @@ Simply use `<ErrorMessage {...props} />`
             Click Me to reveal error message
           </Button>
 
-          <ErrorMessage.default condition={this.state.visible} message={'Error'} />
+          <ErrorMessage.default condition={this.state.visible} message={'Error'} type='warning' />
         </div>
       )
     }
