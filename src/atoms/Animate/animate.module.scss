@@ -18,6 +18,10 @@ $transition: 1s ease;
   animation: fadeOut 1s forwards;
 }
 
+.fadeIn {
+  animation: fadeIn 2s backwards;
+}
+
 .rotate {
   &-left {
     transform: rotate(-180deg);

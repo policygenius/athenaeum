@@ -58,7 +58,8 @@ Animate.propTypes = {
    * rotate-left,
    * rotate-right,
    * slideDown,
-   * animate
+   * animate,
+   * fadeIn,
    * `
    */
   animations: PropTypes.string,
