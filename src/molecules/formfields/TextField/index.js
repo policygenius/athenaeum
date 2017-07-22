@@ -36,6 +36,7 @@ function TextField( props ) {
     type,
     maskVal,
     prefix,
+    activeValidation,
   } = props;
 
   const classes = [
@@ -45,7 +46,13 @@ function TextField( props ) {
     className,
   ];
 
-  const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+  let message;
+
+  if (activeValidation) {
+    message = meta && (meta.dirty || meta.touched) && (meta.error || meta.warning);
+  } else {
+    message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+  }
 
   return (
     <div>
@@ -95,6 +102,11 @@ function TextField( props ) {
 }
 
 TextField.propTypes = {
+  /**
+   * set to true to allow validation errors/warnings to occur `onChange`
+   */
+  activeValidation: PropTypes.bool,
+
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
