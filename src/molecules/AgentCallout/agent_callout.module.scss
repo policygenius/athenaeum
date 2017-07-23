@@ -11,7 +11,7 @@
 }
 
 .value {
-  @include typography-3(false);
+  @include typography-4(false);
 
   color: color('brand-2');
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import shuffle from 'lodash/shuffle';
+import random from 'lodash/random';
 import classnames from 'classnames';
 import ReactModal from 'react-modal';
 import Icon from 'atoms/Icon';
@@ -18,17 +20,24 @@ class Loading extends Component {
 
     this.state = {
       animations: FADE_IN,
-      message: props.messages[0]
+      message: props.messages[random(0, 4)],
+      messages: shuffle(props.messages),
     };
+  }
+
+  componentDidMount() {
+    this.mounted = true;
   }
 
   componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       this.interval = setInterval(() => {
-        this.setState({
-          animations: this.state.animations === FADE_IN ? FADE_OUT : FADE_IN,
-          message: this.state.animations === FADE_IN ? this.state.message : this.getNextMessage()
-        });
+        if (this.mounted) {
+          this.setState({
+            animations: this.state.animations === FADE_IN ? FADE_OUT : FADE_IN,
+            message: this.state.animations === FADE_IN ? this.state.message : this.getNextMessage()
+          });
+        }
       }, INTERVAL);
     }
 
@@ -37,8 +46,12 @@ class Loading extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
   getNextMessage() {
-    const { messages } = this.props;
+    const { messages } = this.state;
 
     const currMessageIdx = messages.indexOf(this.state.message);
     let nextMessageIdx;
@@ -70,7 +83,7 @@ class Loading extends Component {
         overlayClassName={modalStylesheet['overlay']}
         contentLabel='loaderModal'
       >
-        <div className={modalStylesheet['dialog']}>
+        <div className={classnames(modalStylesheet['dialog'], styles['dialog'])}>
           <div className={classnames(modalStylesheet['body'], styles['body'])}>
             <div className={styles['icon']}>
               <Icon

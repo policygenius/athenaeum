@@ -27,17 +27,19 @@ function AgentCallout(props) {
 
       <Col className={styles['contact-info']}>
         <Layout
-          mediumCols={[ 6 ]}
+          mediumCols={[ 7, 5 ]}
         >
           <Col className={styles['contact-item']}>
             <div className={styles['label']}>{contactLabel}</div>
             <div className={styles['value']}>{contactValue}</div>
           </Col>
 
-          <Col className={styles['contact-item']}>
-            <div className={styles['label']}>{caseLabel}</div>
-            <div className={styles['value']}>{caseValue}</div>
-          </Col>
+          { caseLabel && caseValue &&
+            <Col className={styles['contact-item']}>
+              <div className={styles['label']}>{caseLabel}</div>
+              <div className={styles['value']}>{caseValue}</div>
+            </Col>
+          }
         </Layout>
       </Col>
     </Layout>
