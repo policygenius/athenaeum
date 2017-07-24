@@ -111,7 +111,7 @@ $checkout-header-height: rem-calc(77);
 
 @media #{$small-only} {
   .main-layout {
-    padding-top: ru(1);
+    padding-top: 0;
     padding-bottom: ru(2);
   }
 
