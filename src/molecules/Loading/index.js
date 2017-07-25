@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import shuffle from 'lodash/shuffle';
 import random from 'lodash/random';
 import classnames from 'classnames';
 import ReactModal from 'react-modal';
@@ -20,8 +19,7 @@ class Loading extends Component {
 
     this.state = {
       animations: FADE_IN,
-      message: props.messages[random(0, 4)],
-      messages: shuffle(props.messages),
+      message: props.messages[0],
     };
   }
 
@@ -31,6 +29,7 @@ class Loading extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
+      this.setState({ message: this.props.messages[random(0, 4)] });
       this.interval = setInterval(() => {
         if (this.mounted) {
           this.setState({
@@ -51,7 +50,7 @@ class Loading extends Component {
   }
 
   getNextMessage() {
-    const { messages } = this.state;
+    const { messages } = this.props;
 
     const currMessageIdx = messages.indexOf(this.state.message);
     let nextMessageIdx;
