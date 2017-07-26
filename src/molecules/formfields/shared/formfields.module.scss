@@ -25,6 +25,14 @@ $field-error-color: color('accent-2');
   background-color: color('neutral-8');
 }
 
+// -- Mixins
+@mixin placeholder() {
+  &::placeholder {
+    color: color('neutral-5');
+    font-weight: 400;
+  }
+}
+
 /* -- Shared Field Elements -- */
 %label {
   @include typography-7(false);

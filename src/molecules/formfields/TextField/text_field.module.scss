@@ -24,13 +24,9 @@
 
 .input {
   @extend %field;
+  @include placeholder();
   width: 100%;
   color: color('neutral-2');
-
-  &::placeholder {
-    color: color('neutral-5');
-    font-weight: 400;
-  }
 }
 
 .tooltip {

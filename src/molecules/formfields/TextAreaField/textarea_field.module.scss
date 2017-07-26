@@ -11,6 +11,7 @@
 }
 
 .textarea {
+  @include placeholder();
   border-style: none;
   border-color: Transparent;
   color: color('neutral-2');
