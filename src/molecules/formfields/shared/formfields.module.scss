@@ -30,6 +30,7 @@ $field-error-color: color('accent-2');
   @include typography-7(false);
   @include typography-semibold;
 
+  color: color('neutral-2');
   position: relative;
   padding: ru(.5) ru(.75);
   line-height: ru(.75);

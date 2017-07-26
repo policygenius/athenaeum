@@ -37,6 +37,7 @@
 .select {
   @include typography-regular();
   @include typography-6(false);
+  color: color('neutral-2');
 
   border: 0;
   width: 100%;
@@ -54,7 +55,8 @@
   }
 
   &::placeholder {
-    color: color('neutral-4');
+    color: color('neutral-5');
+    font-weight: 400;
   }
 }
 
