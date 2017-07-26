@@ -37,6 +37,7 @@
 .select {
   @include typography-regular();
   @include typography-6(false);
+  @include placeholder();
   color: color('neutral-2');
 
   border: 0;
@@ -51,12 +52,7 @@
   }
 
   &:invalid {
-    color: color('neutral-4');
-  }
-
-  &::placeholder {
     color: color('neutral-5');
-    font-weight: 400;
   }
 }
 
