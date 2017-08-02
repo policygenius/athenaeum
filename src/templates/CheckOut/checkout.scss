@@ -115,6 +115,10 @@ $checkout-header-height: rem-calc(77);
     padding-bottom: ru(2);
   }
 
+  .contact-card {
+    display: none;
+  }
+
   .logo {
     &-wrapper {
       justify-content: left;
@@ -132,6 +136,12 @@ $checkout-header-height: rem-calc(77);
       align-items: center;
       justify-content: flex-end;
       font-weight: bold;
+      cursor: pointer;
+    }
+
+    &-text {
+      margin-left: ru(0.25);
+      cursor: pointer;
     }
   }
 
@@ -161,6 +171,11 @@ $checkout-header-height: rem-calc(77);
   .head-layout,
   .main-layout {
     max-width: $page-max-width;
+  }
+
+  .head-body-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   .main-layout {

@@ -5,7 +5,9 @@ import Sticky from 'react-stickynode';
 import Icon from 'atoms/Icon';
 import { Layout, Col } from 'atoms/Layout';
 import UserAlert from 'atoms/UserAlert';
+import ContactCard from 'organisms/cards/ContactCard';
 import Text from 'atoms/Text';
+import Spacer from 'atoms/Spacer';
 import styles from './checkout.scss';
 
 const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
@@ -44,6 +46,7 @@ function CheckOut(props) {
     sidebar,
     userAlert,
     onMenuClick,
+    contactProps,
   } = props;
 
   const { curr, value, unit } = totalCost;
@@ -75,18 +78,20 @@ function CheckOut(props) {
                 >
                   <Icon icon='pgLogo' className={styles['logo-pg']} />
                 </Col>
-                <Col className={styles['logo-chat']}>
+                <Col className={styles['logo-chat']} onClick={onMenuClick}>
                   <Icon
                     className={styles['icon']}
-                    icon='hamburger'
-                    onClick={onMenuClick}
+                    icon='chat'
                   />
+                  <div className={styles['logo-text']}>
+                    Live Chat
+                  </div>
                 </Col>
               </Layout>
             </Col>
 
             <Col
-              className={styles['sticky-wrapper']}
+              className={classnames(styles['sticky-wrapper'], styles['head-body-wrapper'])}
             >
               <Sticky
                 className={styles['sticky']}
@@ -152,6 +157,10 @@ function CheckOut(props) {
               </Col>
             </div>
             <Col className={styles['main-sidebar']}>
+              <div className={styles['contact-card']}>
+                <ContactCard {...contactProps} />
+              </div>
+              <Spacer small />
               <Sticky
                 enabled
                 bottomBoundary='#sticky-bottom'
@@ -195,6 +204,14 @@ CheckOut.propTypes = {
    * Sidebar node
    */
   sidebar: PropTypes.node,
+
+  /**
+   * This prop will be passed to <ContactForm />
+   */
+  contactProps: PropTypes.shape({
+    top: PropTypes.object,
+    bottom: PropTypes.object,
+  }),
 
   /**
    * Footer node
