@@ -13,6 +13,18 @@ Checkout Example:
           onClickChat={() => alert('clicked')}
         />
       }
+      contactProps={{
+        top: {
+          text: 'Save my progress',
+          icon: 'user',
+          onClick: () => alert('top click')
+        },
+        bottom: {
+          text: 'Chat with an Expert',
+          icon: 'chat',
+          onClick: () => alert('top click')
+        }
+      }}
       userAlert={{
         condition: false,
         onClick: () => alert('you clicked the alert'),
