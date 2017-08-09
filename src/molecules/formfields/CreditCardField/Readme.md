@@ -2,6 +2,7 @@ CreditCardField Example:
 
 ```example
     <CreditCardField
+      meta={{}}
       creditCardNumber={
         <TextField
           placeholder='Credit Card Number'

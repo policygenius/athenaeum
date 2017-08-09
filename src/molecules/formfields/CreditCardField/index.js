@@ -19,20 +19,24 @@ function CreditCardField(props) {
     securityCode,
   } = props;
 
+  const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
+
   const classes = classnames(
     styles['credit-card'],
     meta && meta.active && styles['focused'],
-    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+    meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
     className,
   );
 
-  const message = meta && meta.touched && (meta.error || meta.warning);
+  const message = meta && showErrorMessage && (meta.error || meta.warning);
 
   return (
     <div>
       <div
         className={classes}
-        onBlur={input.onBlur}
+        onBlur={(e) => {
+          if (!e.relatedTarget) input.onBlur();
+        }}
         onFocus={input.onFocus}
       >
         <div className={styles['header']}>
