@@ -113,7 +113,7 @@ function CheckOut(props) {
                       {' '}
                       <div>Checkout</div>
                     </Col>
-                    <Col className={styles['cost-price']}>
+                    <Col fullwidth className={styles['cost-price']}>
                       { curr && <sup>{curr}</sup> }
                       { value }
                       { unit && <Text type={7} tag='span'>{unit}</Text> }
