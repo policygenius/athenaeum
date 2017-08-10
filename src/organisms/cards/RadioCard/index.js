@@ -75,6 +75,7 @@ function RadioCard(props) {
   const classes = classnames(
     styles['radio-card'],
     input.value === radioValue && styles['checked'],
+    input.value && input.value !== radioValue && styles['not-selected'],
     isValid(sections) && styles['sectioned'],
     className,
   );
