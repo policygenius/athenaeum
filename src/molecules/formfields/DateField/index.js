@@ -23,20 +23,24 @@ function DateField(props) {
     return <div className={classnames(...classes)}>{child}</div>;
   };
 
+  const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
+
   const classes = [
     styles['date-field'],
     meta && meta.active && styles['focused'],
-    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+    meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
     className
   ];
 
-  const message = meta && meta.touched && (meta.error || meta.warning);
+  const message = meta && showErrorMessage && (meta.error || meta.warning);
 
   return (
     <div>
       <div
         className={classnames(...classes)}
-        onBlur={input && input.onBlur}
+        onBlur={(e) => {
+          if (!e.relatedTarget) input.onBlur();
+        }}
         onFocus={input && input.onFocus}
       >
         <label htmlFor='date' className={styles['label']}>{label}</label>
