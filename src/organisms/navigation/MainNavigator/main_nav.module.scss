@@ -1,0 +1,191 @@
+// Helper classes to make the nav work well with the body on mobile
+// Only necessary in implementation
+.wrapper {
+  height: ru(1.75);
+
+  .panel {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+}
+// End Helper
+
+.panel {
+  @include typography-6(false);
+
+  background-color: color('neutral-8');
+  height: ru(1.75);
+  transition: all .5s ease;
+  position: relative;
+
+  // scss-lint:disable all
+  // This is webkit/Safari specific to enhance performance for intensive transitions/rendering
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  // scss-lint:enable all
+
+  &.show-mobile-menu {
+    height: 100%;
+  }
+}
+
+.container {
+  height: 100%;
+}
+
+.logo {
+  left: ru(1);
+  margin-left: -.1rem;
+  order: 1;
+  position: absolute;
+  top: -5px;
+  transition: transform .3s ease;
+  z-index: 10;
+}
+
+.panel-wrapper {
+  background-color: color('neutral-7');
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.primary-nav,
+.secondary-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-panel {
+  height: 0;
+  order: 3;
+  position: absolute;
+  top: ru(1.75);
+  transition: height 1s ease;
+
+  &.mobile-collapsed {
+    transform: translateX(-100%);
+  }
+}
+
+.primary-panel,
+.secondary-panel {
+  height: calc(100% - 42px);
+  top: ru(1.75);
+  transition: transform .5s;
+  width: 100%;
+}
+
+.primary-panel-wrapper,
+.secondary-panel {
+  height: 100%;
+  background-color: color('neutral-8');
+  overflow: scroll;
+
+  // Disables momentum scrolling on primary to prevent hiding secondary panel
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-scroll-buffer {
+  display: block;
+  width: 100%;
+  border-top: 1px solid color('neutral-5');
+  padding: ru(.5) ru(1);
+}
+
+@media #{$large-up} {
+  .panel {
+    display: flex;
+    justify-content: center;
+    font-size: rem-calc(13px);
+    margin-bottom: ru(1);
+    margin: 0;
+    border-bottom: 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+
+    // returns panel to normal height if expanded from mobile to large on desktop
+    &.show-mobile-menu {
+      height: ru(1.75);
+    }
+  }
+
+  .searching {
+    .primary-panel {
+      flex-basis: 0;
+      overflow: hidden;
+    }
+
+    .primary-panel-wrapper {
+      opacity: 0;
+      transition: opacity 0s;
+    }
+  }
+
+  .container {
+    display: flex;
+    max-width: rem-calc(1240px);
+    width: 100%;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    height: 0;
+    left: 0;
+    margin: 0 1.5rem;
+    position: relative;
+    width: 5.5625rem;
+  }
+
+  .panel-wrapper {
+    background-color: color('neutral-8');
+    flex-basis: 100%;
+    flex-direction: row;
+    order: 2;
+    position: static;
+    margin-right: ru(1);
+  }
+
+  .primary-panel {
+    border-top: 0;
+    display: flex;
+    flex-basis: 100%;
+    position: static;
+    transition: flex-basis .3s ease;
+
+    li {
+      width: auto;
+    }
+
+    // returns primary-panel to normal position if expanded from mobile to large on desktop
+    &.mobile-collapsed {
+      transform: none;
+    }
+  }
+
+  .primary-panel,
+  .secondary-panel {
+    border-top: 0;
+  }
+
+  .primary-panel-wrapper {
+    display: flex;
+    height: ru(1.75); // Prevents menu items from showing on ".searching"
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity .3s;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-scroll-buffer {
+    display: none;
+  }
+}

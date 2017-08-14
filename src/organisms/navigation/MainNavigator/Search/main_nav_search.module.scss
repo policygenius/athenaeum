@@ -1,0 +1,101 @@
+.search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: color('neutral-8');
+  border-bottom: 1px solid color('neutral-5');
+  height: ru(1.75);
+  line-height: ru(1.75);
+  order: 2;
+  padding: 0 ru(1);
+  text-align: right;
+}
+
+.search-icon {
+  height: ru(.75);
+  width: ru(.75);
+  position: relative;
+}
+
+// this input is vastly different from our navigator inputs
+// adding custom styles here
+.input {
+  @include typography-7(false);
+
+  background: none;
+  color: color('neutral-2');
+  display: none;
+  overflow: hidden;
+  border: 0;
+  line-height: inherit;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: color('brand-2');
+  }
+}
+
+.icon-group {
+  display: inline-block;
+  margin-left: ru(1);
+  outline: none;
+  position: relative;
+  top: rem-calc(-2px);
+  height: 100%;
+  width: 24px;
+}
+
+
+@media #{$large-up} {
+  .searching {
+    &.search,
+    .input {
+      flex-basis: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .input {
+      display: inline;
+      margin-right: rem-calc(32);
+      padding: 0 ru(1);
+      transition: flex-basis .3s, padding 0s .1s, margin 0s .1s;
+    }
+
+    .icon-group {
+      pointer-events: all;
+      opacity: 1;
+      transition-delay: .3s;
+      transition: opacity .6s ease;
+    }
+  }
+
+  .search {
+    display: block;
+    align-items: center;
+    border-bottom: 0;
+    display: flex;
+    flex-basis: ru(1.25);
+    justify-content: flex-end;
+    max-width: ru(.75);
+    order: 3;
+    padding: 0;
+    position: relative;
+  }
+
+  .input {
+    flex-basis: 0;
+    padding: 0;
+  }
+
+  .icon-group {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

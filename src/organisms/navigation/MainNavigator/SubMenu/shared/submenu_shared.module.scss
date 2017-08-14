@@ -1,0 +1,7 @@
+@mixin submenu-list-item {
+  @include typography-7(false);
+
+  color: color('neutral-2');
+  line-height: initial;
+  margin-top: ru(.25);
+}

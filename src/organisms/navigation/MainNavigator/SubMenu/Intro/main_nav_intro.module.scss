@@ -1,0 +1,66 @@
+@import '../shared/submenu_shared.module.scss';
+
+.intro {
+  background-color: color('neutral-8');
+  margin-bottom: 0;
+  padding: ru(1);
+  border-top: 1px solid color('neutral-5');
+}
+
+.info {
+  line-height: ru(1);
+  display: inline-block;
+  width: 100%;
+  flex: 1 1 0%;
+  margin-top: ru(.5);
+}
+
+.info-image {
+  display: none;
+}
+
+.has-cta {
+  justify-content: space-between;
+}
+
+.button {
+  width: 100%;
+}
+
+@media #{$large-up} {
+  .intro {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33%;
+    margin-bottom: 0;
+    margin-top: ru(.25);
+    border-top: 0;
+    line-height: ru(1.25);
+    position: relative;
+    padding: 0 ru(1.5) 0 0;
+  }
+
+  .cta-container {
+    display: flex;
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-end;
+    margin: 0 ru(1) ru(1) 0;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  .info-image {
+    align-self: flex-end;
+    display: block;
+    max-height: rem-calc(124px);
+    max-width: rem-calc(124px);
+  }
+}
