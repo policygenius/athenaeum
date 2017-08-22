@@ -26,7 +26,10 @@ function PrimaryMenuWrapper(props) {
   ];
 
   return (
-    <li className={classnames(...classes)} data-has-children='true' onClick={() => onClick(activeName)}>
+    <li
+      className={classnames(...classes)}
+      onClick={() => onClick(activeName)}
+    >
       <Span
         className={styles['menu-header']}
         weight='semibold'
@@ -36,8 +39,8 @@ function PrimaryMenuWrapper(props) {
       </Span>
 
       { children &&
-      <div className={classnames(...submenuClasses)} data-submenu-wrapper=''>
-        <ul className={styles['submenu']} data-menu-aim=''>
+      <div className={classnames(...submenuClasses)}>
+        <ul className={styles['submenu']}>
           { children }
         </ul>
       </div>

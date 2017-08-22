@@ -5,3 +5,14 @@
   line-height: initial;
   margin-top: ru(.25);
 }
+
+@mixin chevron-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  width: ru(.5);
+  height: 100%;
+}

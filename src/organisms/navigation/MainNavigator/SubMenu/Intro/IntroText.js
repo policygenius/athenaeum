@@ -11,54 +11,61 @@ function IntroText({ product }) {
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
-          Life insurance is a financial safety net for your loved ones. <Text type={5} semibold>Compare plans today.</Text>
+          Life insurance is a financial safety net for your loved ones. <Text type={5} semibold color='neutral-2'>Compare plans today.</Text>
           </Text>
         );
       case 'health-insurance':
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
-          Health insurance plans for <Text type={5} semibold>all coverage types</Text> (PPO, HMO, EPO, and POS).
+          Health insurance plans for <Text type={5} semibold color='neutral-2'>all coverage types</Text> (PPO, HMO, EPO, and POS).
         </Text>
         );
       case 'renters-insurance':
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
-          Renters insurance for <Text type={5} semibold>{'apartment & home coverage'}</Text> in all 50 states.
+          Renters insurance for <Text type={5} semibold color='neutral-2'>{'apartment & home coverage'}</Text> in all 50 states.
         </Text>
         );
       case 'pet-insurance':
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
-            <Text type={5} semibold>Pet insurance for cats and dogs.</Text> {'Providing both accidental & comprehensive options'}
+            <Text type={5} semibold color='neutral-2'>Pet insurance for cats and dogs.</Text> {'Providing both accidental & comprehensive options'}
           </Text>
         );
       case 'disability-insurance':
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
-          Disability insurance to <Text type={5} semibold>protect your income</Text> from accidents and illness.
+          Disability insurance to <Text type={5} semibold color='neutral-2'>protect your income</Text> from accidents and illness.
         </Text>
         );
       case 'auto-insurance':
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
-          Car insurance that <Text type={5} semibold>protects you, your vehicle, and your family,</Text> available in all 50 states.
+          Car insurance that <Text type={5} semibold color='neutral-2'>protects you, your vehicle, and your family,</Text> available in all 50 states.
         </Text>
         );
       default:
         return (
           <Text
             type={5}
+            color='neutral-2'
           >
             {"From protecting your home to saving money on prescriptions, we've got you covered."}
             <Spacer small />
@@ -67,6 +74,7 @@ function IntroText({ product }) {
               style={{
                 fontStyle: 'italic'
               }}
+              color='neutral-2'
             >
             Not sure what you need?
           </Span>

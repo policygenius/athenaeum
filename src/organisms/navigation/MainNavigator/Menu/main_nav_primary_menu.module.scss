@@ -32,6 +32,7 @@
     display: inline-block;
     padding: 0 ru(1) 0 0;
     border-top: 0;
+    width: auto;
 
     &:first-of-type {
       padding-top: 0;
@@ -55,7 +56,7 @@
   }
 
   .has-children {
-    > .menu-header {
+    .menu-header {
       cursor: pointer;
     }
 
@@ -88,9 +89,9 @@
     display: flex;
     margin: auto;
     max-width: rem-calc(1240px);
-    padding: (ru(1) / 4) 0;
+    padding: ru(.25) 0;
 
     // Special padding to account for logo alignment
-    padding-left: 2 * ru(1) + rem-calc(89px);
+    padding-left: ru(2) + rem-calc(89px);
   }
 }

@@ -1,4 +1,5 @@
 @import '../shared/submenu_shared.module.scss';
+@import '../../../../../atoms/Button/buttons.module.scss';
 
 .intro {
   background-color: color('neutral-8');
@@ -23,8 +24,9 @@
   justify-content: space-between;
 }
 
-.button {
+.button-wrapper {
   width: 100%;
+  position: relative;
 }
 
 @media #{$large-up} {
@@ -32,13 +34,14 @@
     background: none;
     display: flex;
     flex-direction: column;
-    flex: 0 0 33%;
+    flex: 0 0 38%;
     margin-bottom: 0;
     margin-top: ru(.25);
     border-top: 0;
     line-height: ru(1.25);
     position: relative;
     padding: 0 ru(1.5) 0 0;
+    width: auto;
   }
 
   .cta-container {

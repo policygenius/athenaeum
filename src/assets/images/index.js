@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'test') {
   // every instance of the Icon component.
   module.exports = null;
 } else {
-  const svgContext = require.context('.', true, /\.svg/);
+  const svgContext = require.context('.', true, /((?!main-nav).)\.svg/);
 
   module.exports = fromPairs(svgContext.keys().map((svg) => {
     const svgName = svg.match(/([^/]+)\./)[1];

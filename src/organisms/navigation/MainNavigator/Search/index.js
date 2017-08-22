@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Icon from 'atoms/Icon';
 import Close from './Icons/Close';
 import Hamburger from './Icons/Hamburger';
 
@@ -19,17 +18,22 @@ function Search(props) {
   const classes = [
     styles['search'],
     searching && styles['searching'],
+    showMobileMenu && 'st-search-show-outputs',
   ];
 
   return (
     <div className={classnames(...classes)}>
-      <Icon
-        icon='search'
+      <div
         className={styles['search-icon']}
         onClick={() => toggleSearching(true)}
       />
+
       <input
-        className={styles['input']} data-search-input='' id='swiftype-search' name='query' placeholder='e.g. What is life insurance?'
+        className={styles['input']}
+        data-search-input=''
+        id='swiftype-search'
+        name='query'
+        placeholder='e.g. What is life insurance?'
         type='text'
       />
 

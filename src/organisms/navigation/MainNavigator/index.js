@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
+import Logo from './Logo';
 import PrimaryMenuWrapper from './Menu/PrimaryMenuWrapper';
 import MenuLink from './Menu/MenuLink';
 import Search from './Search';
@@ -9,7 +10,6 @@ import SubMenu from './SubMenu';
 import styles from './main_nav.module.scss';
 
 import insuranceProducts from './data/products';
-
 import aboutItems from './data/aboutItems';
 
 class MainNav extends Component {
@@ -51,7 +51,7 @@ class MainNav extends Component {
 
   render() {
     const panelClasses = [
-      styles['panel'],
+      styles['main-panel'],
       this.state.searching && styles['searching'],
       this.state.showMobileMenu && styles['show-mobile-menu']
     ];
@@ -63,19 +63,12 @@ class MainNav extends Component {
 
     return (
       <nav className={styles['wrapper']}>
-        <div className={classnames(...panelClasses)} data-behavior='MainNav'>
+        <div className={classnames(...panelClasses)}>
           <div className={styles['container']}>
-            <div className={styles['logo']}>
-              <a
-                data-behavior='TrackAnalyticsOnClick' data-analytics-event-data='{&quot;name&quot;:&quot;Used main nav&quot;,&quot;properties&quot;:{&quot;navigateTo&quot;:&quot;/&quot;,&quot;navigateFrom&quot;:&quot;/templates/main_nav&quot;}}'
-                href='/'
-              >
-                <img alt='PolicyGenius' src='https://res-3.cloudinary.com/policygenius/image/upload/v1/general/pg-logo-tab.svg' />
-              </a>
-            </div>
+            <Logo />
             <div className={styles['panel-wrapper']}>
-              <div className={classnames(...primaryPanelClasses)} data-primary-panel=''>
-                <div className={styles['primary-panel-wrapper']} data-primary-panel-wrapper=''>
+              <div className={classnames(...primaryPanelClasses)}>
+                <div className={styles['primary-panel-wrapper']}>
                   <ul className={styles['primary-nav']}>
                     <PrimaryMenuWrapper
                       header='Insurance Quotes & Guides'

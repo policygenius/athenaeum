@@ -21,21 +21,24 @@
 .list-item {
   @include typography-6(false);
 
-  padding: (ru(1) / 4) 0;
+  padding: ru(.25) 0;
 }
 
 .link {
   display: block;
   width: 100%;
   line-height: ru(1);
+  position: relative;
 }
 
 @media #{$large-up} {
   .wrapper {
     flex: 0 1 25%;
+    margin-top: ru(.25);
     margin-bottom: ru(.5);
     padding: 0 ru(1.5);
     border-top: 0;
+    width: auto;
   }
 
   .header {
@@ -48,6 +51,7 @@
 
     display: block;
     padding: 0 ru(1) 0 0;
+    width: auto;
   }
 
   .link {

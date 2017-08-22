@@ -31,8 +31,6 @@ function SubMenuList(props) {
             >
               <LinkWrapper
                 alt='PolicyGenius'
-                data-behavior='TrackAnalyticsOnClick'
-                data-analytics-event-data={`{&quot;name&quot;:&quot;Used main nav&quot;,&quot;properties&quot;:{&quot;navigateTo&quot;:&quot;${item.href}&quot;,&quot;navigateFrom&quot;:&quot;/templates/main_nav&quot;,&quot;clickedFrom&quot;:&quot;mega menu&quot;}}`}
                 href={item.href}
                 className={styles['link']}
                 variant='no-text-decoration'

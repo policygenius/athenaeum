@@ -21,8 +21,6 @@ function MenuLink(props) {
     <li className={classnames(...classes)} data-has-children='true'>
       <A
         className={styles['menu-header']}
-        data-behavior='TrackAnalyticsOnClick'
-        data-analytics-event-data={`{&quot;name&quot;:&quot;Used main nav&quot;,&quot;properties&quot;:{&quot;navigateTo&quot;:&quot;${href}&quot;,&quot;navigateFrom&quot;:&quot;/templates/main_nav&quot;,&quot;clickedFrom&quot;:&quot;secondary nav&quot;}}`}
         href={href}
         color='neutral-2'
         weight='semibold'

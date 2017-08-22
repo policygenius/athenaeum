@@ -1,9 +1,11 @@
+@import './shared/main_nav_shared.module.scss';
+
 // Helper classes to make the nav work well with the body on mobile
 // Only necessary in implementation
 .wrapper {
   height: ru(1.75);
 
-  .panel {
+  .main-panel {
     left: 0;
     position: fixed;
     top: 0;
@@ -13,7 +15,7 @@
 }
 // End Helper
 
-.panel {
+.main-panel {
   @include typography-6(false);
 
   background-color: color('neutral-8');
@@ -37,15 +39,6 @@
   height: 100%;
 }
 
-.logo {
-  left: ru(1);
-  margin-left: -.1rem;
-  order: 1;
-  position: absolute;
-  top: -5px;
-  transition: transform .3s ease;
-  z-index: 10;
-}
 
 .panel-wrapper {
   background-color: color('neutral-7');
@@ -64,27 +57,19 @@
 }
 
 .primary-panel {
-  height: 0;
+  height: calc(100% - 42px);
+  width: 100%;
   order: 3;
   position: absolute;
   top: ru(1.75);
-  transition: height 1s ease;
+  transition: height 1s ease, transform .5s;
 
   &.mobile-collapsed {
     transform: translateX(-100%);
   }
 }
 
-.primary-panel,
-.secondary-panel {
-  height: calc(100% - 42px);
-  top: ru(1.75);
-  transition: transform .5s;
-  width: 100%;
-}
-
-.primary-panel-wrapper,
-.secondary-panel {
+.primary-panel-wrapper {
   height: 100%;
   background-color: color('neutral-8');
   overflow: scroll;
@@ -94,14 +79,11 @@
 }
 
 .mobile-scroll-buffer {
-  display: block;
-  width: 100%;
-  border-top: 1px solid color('neutral-5');
-  padding: ru(.5) ru(1);
+  @include mobile-scroll-buffer;
 }
 
 @media #{$large-up} {
-  .panel {
+  .main-panel {
     display: flex;
     justify-content: center;
     font-size: rem-calc(13px);
@@ -134,14 +116,6 @@
     width: 100%;
   }
 
-  .logo {
-    flex-shrink: 0;
-    height: 0;
-    left: 0;
-    margin: 0 1.5rem;
-    position: relative;
-    width: 5.5625rem;
-  }
 
   .panel-wrapper {
     background-color: color('neutral-8');
@@ -159,19 +133,10 @@
     position: static;
     transition: flex-basis .3s ease;
 
-    li {
-      width: auto;
-    }
-
     // returns primary-panel to normal position if expanded from mobile to large on desktop
     &.mobile-collapsed {
       transform: none;
     }
-  }
-
-  .primary-panel,
-  .secondary-panel {
-    border-top: 0;
   }
 
   .primary-panel-wrapper {
