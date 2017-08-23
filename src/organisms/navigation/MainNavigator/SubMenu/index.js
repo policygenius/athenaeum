@@ -4,33 +4,38 @@ import classnames from 'classnames';
 
 import LinkWrapper from 'atoms/LinkWrapper';
 
-import Intro from './Intro';
-import SubMenuList from './SubMenuList';
-import BlogArticleList from './BlogArticleList';
+import ProductDisplay from './ProductDisplay';
+import MagazineDisplay from './MagazineDisplay';
 import styles from './main_nav_submenu.module.scss';
 
-function getList(list) {
-  switch (list.type) {
-      case 'links':
-        return (
-        list.items.map((l, idx) =>
-          <SubMenuList
-            key={`life-submenu-list-${idx}`}
-            header={l.header}
-            listItems={l.items}
-          />
-        )
-        );
-      case 'articles':
-        return (
-          <BlogArticleList
-            data={list.items}
-            alt={list.alt}
-          />
-        );
-      default:
-        return null;
+function getChildren(props) {
+  if (props.product) {
+    return (
+      <ProductDisplay
+        intro={props.intro}
+        list={props.list}
+        active={props.active}
+        activeName={props.activeName}
+        headerText={props.headerText}
+      />
+    );
   }
+
+  if (props.magazine) {
+    return (
+      <MagazineDisplay
+        intro={{
+          ...props.intro,
+          linkHref: props.link
+        }}
+        active={props.active}
+        activeName={props.activeName}
+        headerText={props.headerText}
+      />
+    );
+  }
+
+  return null;
 }
 
 function SubMenu(props) {
@@ -39,15 +44,12 @@ function SubMenu(props) {
     headerLink,
     active,
     activeName,
-    intro,
-    list,
     setActiveSubTab,
     showMobileMenu,
     setMobileCollapsedMenu,
     mobileCollapsedMenu,
+    hasChildren,
   } = props;
-
-  const hasChildren = intro && list;
 
   const classes = [
     styles['item'],
@@ -74,31 +76,7 @@ function SubMenu(props) {
         { headerText }
       </LinkWrapper>
 
-      { hasChildren &&
-      <div className={styles['wrapper']}>
-        <ul className={styles['panel']}>
-          <li
-            className={styles['mobile-back-wrapper']}
-            onClick={() => setMobileCollapsedMenu(null)}
-          >
-            <div className={styles['mobile-back-header']}>
-              <span className={styles['mobile-back-text']}>{ headerText }</span>
-            </div>
-          </li>
-
-          <Intro
-            cta={intro.cta}
-            product={activeName}
-            imgSrc={intro.imgSrc}
-            linkHref={intro.linkHref}
-          />
-
-          { getList(list) }
-
-          <li className={styles['mobile-scroll-buffer']}></li>
-        </ul>
-      </div>
-      }
+      { getChildren(props) }
     </li>
   );
 }

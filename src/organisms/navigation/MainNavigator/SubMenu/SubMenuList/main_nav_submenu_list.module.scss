@@ -16,12 +16,14 @@
 
 .list {
   padding: 0;
+  margin: 0;
 }
 
 .list-item {
   @include typography-6(false);
 
   padding: ru(.25) 0;
+  list-style: none;
 }
 
 .link {
@@ -29,6 +31,10 @@
   width: 100%;
   line-height: ru(1);
   position: relative;
+
+  &:hover {
+    color: color('neutral-2');
+  }
 }
 
 @media #{$large-up} {

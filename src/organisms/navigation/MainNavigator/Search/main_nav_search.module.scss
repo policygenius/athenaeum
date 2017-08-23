@@ -9,6 +9,28 @@
   order: 2;
   padding: 0 ru(1);
   text-align: right;
+
+  // this input is vastly different from our navigator inputs
+  // adding custom styles here
+  // need to nest within .search to override selectors from Styles
+  .input {
+    @include typography-7(false);
+
+    background: none;
+    color: color('neutral-2');
+    display: none;
+    overflow: hidden;
+    border: 0;
+    line-height: inherit;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: color('brand-2');
+    }
+  }
 }
 
 // Requiring svg in CSS because <Icon /> component requires ALL svgs
@@ -24,26 +46,6 @@
   padding: rem-calc(9px);
 }
 
-// this input is vastly different from our navigator inputs
-// adding custom styles here
-.input {
-  @include typography-7(false);
-
-  background: none;
-  color: color('neutral-2');
-  display: none;
-  overflow: hidden;
-  border: 0;
-  line-height: inherit;
-
-  &:focus {
-    outline: none;
-  }
-
-  &::placeholder {
-    color: color('brand-2');
-  }
-}
 
 .icon-group {
   display: inline-block;
@@ -94,6 +96,7 @@
     .input {
       display: inline;
       margin-right: rem-calc(32);
+      margin-bottom: 0;
       padding: 0 ru(1);
       transition: flex-basis .3s, padding 0s .1s, margin 0s .1s;
     }

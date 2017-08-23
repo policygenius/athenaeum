@@ -49,7 +49,7 @@ module.exports = options => ({
               options: {
                 modules: true,
                 localIdentName: 'rcl-[name]__[local]--[hash:base64:5]',
-                sourceMap: true
+                sourceMap: true,
               }
             },
             {

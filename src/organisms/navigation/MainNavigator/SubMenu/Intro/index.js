@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -8,44 +8,79 @@ import Spacer from 'atoms/Spacer';
 import IntroText from './IntroText';
 import styles from './main_nav_intro.module.scss';
 
-function Intro(props) {
-  const {
-    cta,
-    imgSrc,
-    linkHref,
-    product
-  } = props;
+class Intro extends Component {
+  constructor() {
+    super();
 
-  return (
-    <li className={classnames(styles['intro'], styles['has-cta'])}>
-      <IntroText
-        product={product}
-      />
+    this.state = {
+      loadImg: false,
+    };
+  }
 
-      <Spacer medium />
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.active && !this.state.loadImg) {
+      this.setState({ loadImg: true });
+    }
+  }
 
-      <div className={styles['cta-container']}>
-        <div className={styles['cta']}>
-          <LinkWrapper
-            rel='nofollow'
-            href={linkHref}
-            variant='no-text-decoration'
-            className={styles['button-wrapper']}
-          >
-            {/* <Button /> component requires <Icon />, making it too bloated for use here */}
-            <button
-              className={classnames(styles['button'], styles['action'])}
+  render() {
+    const {
+      cta,
+      imgSrc,
+      linkHref,
+      product,
+    } = this.props;
+
+    const imgProps = {
+      'data-src': imgSrc,
+    };
+
+    if (this.state.loadImg) {
+      imgProps.src = imgSrc;
+    }
+
+    const classes = [
+      styles['intro'],
+      cta && styles['has-cta'],
+    ];
+
+    return (
+      <li className={classnames(...classes)}>
+        <IntroText
+          product={product}
+        />
+
+        <Spacer medium />
+
+        { cta &&
+        <div className={styles['cta-container']}>
+          <div className={styles['cta']}>
+            <LinkWrapper
+              rel='nofollow'
+              href={linkHref}
+              variant='no-text-decoration'
+              className={styles['button-wrapper']}
             >
-              { cta }
-            </button>
-          </LinkWrapper>
-          <span className={styles['info']}></span>
-        </div>
+              {/* <Button /> component requires <Icon />, making it too bloated for use here */}
+              <button
+                className={classnames(styles['button'], styles['action'])}
+              >
+                { cta }
+              </button>
+            </LinkWrapper>
+            <span className={styles['info']}></span>
+          </div>
 
-        <img alt='PolicyGenius' className={styles['info-image']} src={imgSrc} />
-      </div>
-    </li>
-  );
+          <img
+            alt='PolicyGenius'
+            className={styles['info-image']}
+            {...imgProps}
+          />
+        </div>
+      }
+      </li>
+    );
+  }
 }
 
 Intro.propTypes = {

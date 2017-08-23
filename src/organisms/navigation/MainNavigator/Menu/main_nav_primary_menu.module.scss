@@ -17,6 +17,8 @@
 }
 
 .menu-header {
+  @include typography-6(false);
+
   display: inline-block;
   padding: rem-calc(8) 0;
   text-decoration: none;
@@ -24,6 +26,7 @@
 
 .submenu {
   padding: 0;
+  margin: 0;
 }
 
 @media #{$large-up} {
@@ -66,6 +69,8 @@
   }
 
   .menu-header {
+    @include typography-7(false);
+
     padding: 0;
   }
 

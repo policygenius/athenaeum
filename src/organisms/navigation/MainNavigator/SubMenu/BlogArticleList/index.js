@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Text from 'atoms/Text';
@@ -7,65 +7,94 @@ import Layout from 'atoms/Layout';
 
 import styles from './main_nav_blog_article_list.module.scss';
 
-function BlogArticleList(props) {
-  const {
-    data,
-    alt,
-  } = props;
+class BlogArticleList extends Component {
+  constructor() {
+    super();
 
-  return (
-    <li className={styles['blog-articles']}>
-      <Layout
-        smallCols={[ 12 ]}
-        mediumCols={[ 6, 6, 12 ]}
-        largeCols={[ 4 ]}
-        className={styles['grid']}
-      >
-        {
-          data.map(item =>
-            <div
-              className={styles['article-wrapper']}
-              key={item.subHeader}
-            >
-              <LinkWrapper
-                href={item.link}
-                className={styles['link']}
-                variant='no-text-decoration'
-              >
-                <figure>
-                  <img
-                    alt={alt}
-                    src={item.imageSrc}
-                    className={styles['image']}
-                  />
+    this.state = {
+      loadImg: false,
+    };
+  }
 
-                  <figcaption>
-                    <Text
-                      type={7}
-                      semibold
-                      color='neutral-3'
-                      className={styles['tag']}
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.active && !this.state.loadImg) {
+      this.setState({ loadImg: true });
+    }
+  }
+
+  render() {
+    const {
+      data,
+      alt,
+      active,
+    } = this.props;
+
+    return (
+      <li className={styles['blog-articles']}>
+        <Layout
+          smallCols={[ 12 ]}
+          mediumCols={[ 6, 6, 12 ]}
+          largeCols={[ 4 ]}
+          className={styles['grid']}
+        >
+          {
+            data.map((item) => {
+              const imgProps = {
+                'data-src': item.imageSrc,
+              };
+
+              if (this.state.loadImg) {
+                imgProps.src = item.imageSrc;
+              }
+
+              return (
+                <div
+                  className={styles['article-wrapper']}
+                  key={item.subHeader}
+                >
+                  <LinkWrapper
+                    href={item.link}
+                    className={styles['link']}
+                    variant='no-text-decoration'
+                  >
+                    <figure
+                      className={styles['figure']}
                     >
-                      { item.header }
-                    </Text>
+                      <img
+                        alt={alt}
+                        className={styles['image']}
+                        {...imgProps}
+                      />
 
-                    <Text
-                      tag='h3'
-                      type={6}
-                      color='neutral-2'
-                      className={styles['sub-tag']}
-                    >
-                      { item.subHeader }
-                    </Text>
-                  </figcaption>
-                </figure>
-              </LinkWrapper>
-            </div>
-          )
-        }
-      </Layout>
-    </li>
-  );
+                      <figcaption>
+                        <Text
+                          type={7}
+                          semibold
+                          color='neutral-3'
+                          className={styles['tag']}
+                        >
+                          { item.header }
+                        </Text>
+
+                        <Text
+                          tag='h3'
+                          type={6}
+                          color='neutral-2'
+                          className={styles['sub-tag']}
+                        >
+                          { item.subHeader }
+                        </Text>
+                      </figcaption>
+                    </figure>
+                  </LinkWrapper>
+                </div>
+              );
+            })
+          }
+        </Layout>
+      </li>
+    );
+  }
 }
 
 BlogArticleList.propTypes = {

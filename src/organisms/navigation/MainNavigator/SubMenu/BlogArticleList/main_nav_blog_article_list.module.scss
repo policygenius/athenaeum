@@ -13,6 +13,8 @@
 
 .grid {
   @include submenu-list-item;
+
+  flex-wrap: nowrap;
 }
 
 .link {
@@ -29,6 +31,10 @@
       color: color('neutral-1');
     }
   }
+}
+
+.figure {
+  margin: 0;
 }
 
 .image {

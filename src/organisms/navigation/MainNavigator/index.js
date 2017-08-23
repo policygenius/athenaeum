@@ -11,6 +11,7 @@ import styles from './main_nav.module.scss';
 
 import insuranceProducts from './data/products';
 import aboutItems from './data/aboutItems';
+import magazineItems from './data/magazineItems';
 
 class MainNav extends Component {
   constructor() {
@@ -90,6 +91,8 @@ class MainNav extends Component {
                             setMobileCollapsedMenu={this.setMobileCollapsedMenu}
                             showMobileMenu={this.state.showMobileMenu}
                             mobileCollapsedMenu={this.state.mobileCollapsedMenu}
+                            hasChildren
+                            product
                           />
                         )
                       }
@@ -99,6 +102,32 @@ class MainNav extends Component {
                       header='Insurance Checkup ™'
                       href='/insurance-checkup-and-advice/'
                     />
+
+                    <PrimaryMenuWrapper
+                      header='Magazine'
+                      activeName='magazine'
+                      active={this.state.activePrimaryTab}
+                      onClick={this.setActivePrimaryTab}
+                    >
+                      {
+                        magazineItems.map((category, idx) =>
+                          <SubMenu
+                            key={`${category.activeName}-${idx}`}
+                            headerText={category.header}
+                            headerLink={category.link}
+                            activeName={category.activeName}
+                            intro={category.intro}
+                            active={this.state.activeSubTab}
+                            setActiveSubTab={this.setActiveSubTab}
+                            setMobileCollapsedMenu={this.setMobileCollapsedMenu}
+                            showMobileMenu={this.state.showMobileMenu}
+                            mobileCollapsedMenu={this.state.mobileCollapsedMenu}
+                            hasChildren
+                            magazine
+                          />
+                        )
+                      }
+                    </PrimaryMenuWrapper>
 
                     <PrimaryMenuWrapper
                       header='About'

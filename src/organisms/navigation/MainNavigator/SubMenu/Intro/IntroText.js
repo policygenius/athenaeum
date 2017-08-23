@@ -61,6 +61,12 @@ function IntroText({ product }) {
           Car insurance that <Text type={5} semibold color='neutral-2'>protects you, your vehicle, and your family,</Text> available in all 50 states.
         </Text>
         );
+    // case 'latest':
+      // return (
+      // );
+    // case 'genius':
+      // return (
+      // );
       default:
         return (
           <Text
