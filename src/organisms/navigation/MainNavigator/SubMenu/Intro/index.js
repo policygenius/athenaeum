@@ -10,12 +10,12 @@ import styles from './main_nav_intro.module.scss';
 
 class Intro extends Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       loadImg: false,
     };
-  }
+  };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.active && !this.state.loadImg) {
@@ -31,13 +31,13 @@ class Intro extends Component {
       product,
     } = this.props;
 
-    const imgProps = {
+    let imgProps = {
       'data-src': imgSrc,
     };
 
     if (this.state.loadImg) {
       imgProps.src = imgSrc;
-    }
+    };
 
     const classes = [
       styles['intro'],
@@ -48,37 +48,38 @@ class Intro extends Component {
       <li className={classnames(...classes)}>
         <IntroText
           product={product}
+          link={linkHref}
         />
 
-        <Spacer medium />
+      <Spacer medium />
 
-        { cta &&
-        <div className={styles['cta-container']}>
-          <div className={styles['cta']}>
-            <LinkWrapper
-              rel='nofollow'
-              href={linkHref}
-              variant='no-text-decoration'
-              className={styles['button-wrapper']}
-            >
-              {/* <Button /> component requires <Icon />, making it too bloated for use here */}
-              <button
-                className={classnames(styles['button'], styles['action'])}
+      { cta &&
+          <div className={styles['cta-container']}>
+            <div className={styles['cta']}>
+              <LinkWrapper
+                rel='nofollow'
+                href={linkHref}
+                variant='no-text-decoration'
+                className={styles['button-wrapper']}
               >
-                { cta }
-              </button>
-            </LinkWrapper>
-            <span className={styles['info']}></span>
-          </div>
+                {/* <Button /> component requires <Icon />, making it too bloated for use here */}
+                <button
+                  className={classnames(styles['button'], styles['action'])}
+                >
+                  { cta }
+                </button>
+              </LinkWrapper>
+              <span className={styles['info']}></span>
+            </div>
 
-          <img
-            alt='PolicyGenius'
-            className={styles['info-image']}
-            {...imgProps}
-          />
-        </div>
+            <img
+              alt='PolicyGenius'
+              className={styles['info-image']}
+              {...imgProps}
+            />
+          </div>
       }
-      </li>
+    </li>
     );
   }
 }

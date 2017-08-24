@@ -24,10 +24,7 @@ function getChildren(props) {
   if (props.magazine) {
     return (
       <MagazineDisplay
-        intro={{
-          ...props.intro,
-          linkHref: props.link
-        }}
+        intro={props.intro}
         active={props.active}
         activeName={props.activeName}
         headerText={props.headerText}
