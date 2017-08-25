@@ -20,9 +20,11 @@ const submenuItems = [
 ];
 
 export default {
-  header: 'Pet Insurance',
-  link: '/pet-insurance/',
-  activeName: 'pet-insurance',
+  menu: {
+    header: 'Pet Insurance',
+    link: '/pet-insurance/',
+    activeName: 'pet-insurance',
+  },
   intro: {
     cta: 'Get A Free Quote',
 

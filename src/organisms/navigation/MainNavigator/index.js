@@ -81,9 +81,7 @@ class MainNav extends Component {
                         insuranceProducts.map((product, idx) =>
                           <SubMenu
                             key={`${product.activeName}-${idx}`}
-                            headerText={product.header}
-                            headerLink={product.link}
-                            activeName={product.activeName}
+                            menu={product.menu}
                             intro={product.intro}
                             list={product.list}
                             active={this.state.activeSubTab}
@@ -113,9 +111,7 @@ class MainNav extends Component {
                         magazineItems.map((category, idx) =>
                           <SubMenu
                             key={`${category.activeName}-${idx}`}
-                            headerText={category.header}
-                            headerLink={category.link}
-                            activeName={category.activeName}
+                            menu={category.menu}
                             intro={category.intro}
                             active={this.state.activeSubTab}
                             setActiveSubTab={this.setActiveSubTab}
@@ -138,11 +134,13 @@ class MainNav extends Component {
                       {
                         aboutItems.map(item =>
                           <SubMenu
-                            key={`about-${item.name}`}
-                            headerText={item.header}
-                            headerLink={item.link}
+                            key={`about-${item.activeName}`}
+                            menu={{
+                              header: item.header,
+                              link: item.link,
+                              activeName: item.activeName,
+                            }}
                             active={this.state.activeSubTab}
-                            activeName={item.name}
                             setActiveSubTab={this.setActiveSubTab}
                           />
                         )

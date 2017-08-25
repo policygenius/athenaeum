@@ -15,8 +15,9 @@ function getChildren(props) {
         intro={props.intro}
         list={props.list}
         active={props.active}
-        activeName={props.activeName}
-        headerText={props.headerText}
+        activeName={props.menu.activeName}
+        headerText={props.menu.header}
+        setMobileCollapsedMenu={props.setMobileCollapsedMenu}
       />
     );
   }
@@ -26,8 +27,10 @@ function getChildren(props) {
       <MagazineDisplay
         intro={props.intro}
         active={props.active}
-        activeName={props.activeName}
-        headerText={props.headerText}
+        activeName={props.menu.activeName}
+        headerText={props.menu.header}
+        tag={props.menu.tag}
+        setMobileCollapsedMenu={props.setMobileCollapsedMenu}
       />
     );
   }
@@ -37,10 +40,12 @@ function getChildren(props) {
 
 function SubMenu(props) {
   const {
-    headerText,
-    headerLink,
+    menu: {
+      header,
+      link,
+      activeName,
+    },
     active,
-    activeName,
     setActiveSubTab,
     showMobileMenu,
     setMobileCollapsedMenu,
@@ -63,17 +68,17 @@ function SubMenu(props) {
     >
       <LinkWrapper
         className={styles['header']}
-        href={showMobileMenu ? null : headerLink}
+        href={showMobileMenu ? null : link}
         onClick={
           showMobileMenu ? () => setMobileCollapsedMenu(activeName) : () => true
         }
         variant='no-text-decoration'
         color='neutral-2'
       >
-        { headerText }
+        { header }
       </LinkWrapper>
 
-      { getChildren(props) }
+      { hasChildren && getChildren(props) }
     </li>
   );
 }

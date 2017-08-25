@@ -1,62 +1,83 @@
 const items = [
   {
-    header: 'Latest Articles',
-    link: 'https://www.policygenius.com/blog',
-    activeName: 'latest-magazine',
+    menu: {
+      header: 'Latest Articles',
+      link: 'https://www.policygenius.com/blog',
+      activeName: 'latest-magazine',
+      tag: '',
+    },
     intro: {
       textType: 'latest',
       link: 'https://www.policygenius.com/blog',
     },
   },
   {
-    header: 'Money',
-    link: 'https://www.policygenius.com/blog/tag/money/',
-    activeName: 'money-magazine',
+    menu: {
+      header: 'Money',
+      link: 'https://www.policygenius.com/blog/tag/money/',
+      activeName: 'money-magazine',
+      tag: 'money',
+    },
     intro: {
       textType: 'Money',
       link: 'https://www.policygenius.com/blog/tag/money/',
     },
   },
   {
-    header: 'Tech',
-    link: 'https://www.policygenius.com/blog/tag/technology/',
-    activeName: 'tech-magazine',
+    menu: {
+      header: 'Tech',
+      link: 'https://www.policygenius.com/blog/tag/technology/',
+      activeName: 'tech-magazine',
+      tag: 'technology',
+    },
     intro: {
       textType: 'Tech',
       link: 'https://www.policygenius.com/blog/tag/technology/',
     },
   },
   {
-    header: 'Health',
-    link: 'https://www.policygenius.com/blog/tag/health/',
-    activeName: 'health-magazine',
+    menu: {
+      header: 'Health',
+      link: 'https://www.policygenius.com/blog/tag/health/',
+      activeName: 'health-magazine',
+      tag: 'health',
+    },
     intro: {
       textType: 'Health',
       link: 'https://www.policygenius.com/blog/tag/health/',
     },
   },
   {
-    header: 'Auto',
-    link: 'https://www.policygenius.com/blog/tag/cars/',
-    activeName: 'auto-magazine',
+    menu: {
+      header: 'Auto',
+      link: 'https://www.policygenius.com/blog/tag/cars/',
+      activeName: 'auto-magazine',
+      tag: 'cars',
+    },
     intro: {
       textType: 'Auto',
       link: 'https://www.policygenius.com/blog/tag/cars/',
     },
   },
   {
-    header: 'Pet',
-    link: 'https://www.policygenius.com/blog/tag/pets/',
-    activeName: 'pet-magazine',
+    menu: {
+      header: 'Pet',
+      link: 'https://www.policygenius.com/blog/tag/pets/',
+      activeName: 'pet-magazine',
+      tag: 'pets',
+    },
     intro: {
       textType: 'Pet',
       link: 'https://www.policygenius.com/blog/tag/pets/',
     },
   },
   {
-    header: 'Insurance',
-    link: 'https://www.policygenius.com/blog/tag/insurance/',
-    activeName: 'insurance-magazine',
+    menu: {
+      header: 'Insurance',
+      link: 'https://www.policygenius.com/blog/tag/insurance/',
+      activeName: 'insurance-magazine',
+      tag: 'insurance',
+    },
     intro: {
       textType: 'Insurance',
       link: 'https://www.policygenius.com/blog/tag/insurance/',

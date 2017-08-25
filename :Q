@@ -23,11 +23,9 @@ const submenuItems = [
 ];
 
 export default {
-  menu: {
-    header: 'Renters Insurance',
-    link: '/renters-insurance/',
-    activeName: 'renters-insurance',
-  },
+  header: 'Renters Insurance',
+  link: '/renters-insurance/',
+  activeName: 'renters-insurance',
   intro: {
     cta: 'Get A Free Quote',
     imgSrc: 'https://res-5.cloudinary.com/policygenius/image/upload/v1/general/renters',

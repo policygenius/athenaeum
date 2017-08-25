@@ -20,9 +20,11 @@ const submenuItems = [
 ];
 
 export default {
-  header: 'Auto Insurance',
-  link: '/auto-insurance/',
-  activeName: 'auto-insurance',
+  menu: {
+    header: 'Auto Insurance',
+    link: '/auto-insurance/',
+    activeName: 'auto-insurance',
+  },
   intro: {
     cta: 'Get A Free Quote',
     imgSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/auto-small',

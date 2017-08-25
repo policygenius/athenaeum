@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
@@ -10,10 +11,16 @@ function SubMenuList(props) {
   const {
     header,
     listItems,
+    className,
   } = props;
 
+  const classes = [
+    styles['wrapper'],
+    className,
+  ];
+
   return (
-    <li className={styles['wrapper']}>
+    <li className={classnames(...classes)}>
       <Text
         tag='h3'
         type={6}
@@ -31,7 +38,7 @@ function SubMenuList(props) {
             >
               <LinkWrapper
                 alt='PolicyGenius'
-                href={item.href}
+                href={item.url}
                 className={styles['link']}
                 variant='no-text-decoration'
                 color='neutral-2'

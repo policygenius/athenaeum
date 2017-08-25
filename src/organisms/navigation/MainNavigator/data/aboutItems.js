@@ -2,37 +2,37 @@ const items = [
   {
     header: 'Our Story',
     link: '/about',
-    name: 'about',
+    activeName: 'about',
   },
   {
     header: 'Values',
     link: '/about/values',
-    name: 'values',
+    activeName: 'values',
   },
   {
     header: 'Trust & Security',
     link: '/about/trust',
-    name: 'trust',
+    activeName: 'trust',
   },
   {
     header: 'Team',
     link: '/about/team',
-    name: 'team',
+    activeName: 'team',
   },
   {
     header: 'Careers',
     link: '/careers',
-    name: 'careers',
+    activeName: 'careers',
   },
   {
     header: 'Press',
     link: '/about/press',
-    name: 'press',
+    activeName: 'press',
   },
   {
     header: 'FAQ',
     link: '/about/faq',
-    name: 'faq',
+    activeName: 'faq',
   },
 ];
 

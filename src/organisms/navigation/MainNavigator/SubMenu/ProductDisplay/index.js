@@ -2,7 +2,7 @@ import React from 'react';
 
 import Intro from '../Intro';
 import SubMenuList from '../SubMenuList';
-import BlogArticleList from '../BlogArticleList';
+import ProductArticleList from '../ArticleList/Product';
 
 import styles from '../main_nav_submenu.module.scss';
 
@@ -20,7 +20,7 @@ function getList({ list, active, activeName }) {
         );
       case 'articles':
         return (
-          <BlogArticleList
+          <ProductArticleList
             data={list.items}
             alt={list.alt}
             active={active === activeName}
@@ -37,6 +37,7 @@ function ProductDisplay(props) {
     headerText,
     activeName,
     active,
+    setMobileCollapsedMenu,
   } = props;
 
   return (

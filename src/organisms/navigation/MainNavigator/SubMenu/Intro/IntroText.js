@@ -79,7 +79,7 @@ function IntroText({ product, link }) {
             href={link}
             style={{ textDecoration: 'none' }}
           >
-            View all articles
+            View all articles →
           </A>
         </div>
       );
@@ -106,7 +106,7 @@ function IntroText({ product, link }) {
             href={link}
             style={{ textDecoration: 'none' }}
           >
-            {`More in ${product}`}
+            {`More in ${product} →`}
           </A>
         </div>
       );

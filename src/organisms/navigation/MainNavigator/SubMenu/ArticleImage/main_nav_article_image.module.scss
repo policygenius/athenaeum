@@ -1,20 +1,5 @@
-@import '../shared/submenu_shared.module.scss';
-
-.blog-articles {
-  @include submenu-list-item;
-
-  padding: ru(1);
-  border-top: 1px solid color('neutral-5');
-}
-
 .article-wrapper {
   margin-bottom: ru(1.25);
-}
-
-.grid {
-  @include submenu-list-item;
-
-  flex-wrap: nowrap;
 }
 
 .link {
@@ -58,21 +43,15 @@
   transition: all .25s ease;
 }
 
+
 @media #{$medium-up} {
   .article-wrapper {
     margin-bottom: ru(2);
   }
 }
 
-@media #{$large-up} {
-  .blog-articles {
-    padding: 0;
-    flex: 1 1 66%;
-    margin-bottom: ru(1);
-    border-top: 0;
-    width: auto;
-  }
 
+@media #{$large-up} {
   .article-wrapper {
     margin-bottom: 0;
   }
