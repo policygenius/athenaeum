@@ -7,6 +7,8 @@ import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
 
 import ArticleImage from '../../ArticleImage';
+import LoadingImage from '../../Loading/LoadingImage';
+import LoadingList from '../../Loading/LoadingList';
 import SubMenuList from '../../SubMenuList';
 
 import sharedStyles from '../shared/main_nav_article_list.module.scss';
@@ -19,6 +21,12 @@ class BlogArticleList extends Component {
 
   renderItem = (item) => {
     if (item.type === 'list') {
+      if (this.props.loading) {
+        return (
+          <LoadingList />
+        );
+      }
+
       return (
         <SubMenuList
           header={item.header}
@@ -29,14 +37,19 @@ class BlogArticleList extends Component {
     }
 
     if (item.type === 'featured') {
-      const imgProps = {
-        'src': `${item.post.feature_image}?fit=crop&w=640&h=360`,
-      };
+      if (this.props.loading) {
+        return (
+          <LoadingImage />
+        );
+      }
 
       return (
         <ArticleImage
+          key={item.post.title}
           subHeader={item.post.title}
-          imgProps={imgProps}
+          imgProps={{
+            'src': `${item.post.feature_image}?fit=crop&w=640&h=360`,
+          }}
           link={item.post.url}
         />
       );
@@ -53,6 +66,12 @@ class BlogArticleList extends Component {
       className,
     } = this.props;
 
+    let blogItems = data;
+
+    if (this.props.loading) {
+      blogItems = [{ type: 'list' }, { type: 'featured' }, { type: 'featured' }];
+    }
+
     const classes = [
       sharedStyles['blog-articles'],
       className,
@@ -66,7 +85,7 @@ class BlogArticleList extends Component {
           largeCols={[ 4 ]}
         >
           {
-            data.map(item => this.renderItem(item))
+            blogItems.map(item => this.renderItem(item))
           }
         </Layout>
       </li>

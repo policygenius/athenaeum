@@ -1,3 +1,3 @@
-import MainNav from 'organisms/navigation/MainNavigator';
+import MainNav from 'static/MainNav';
 
 export default MainNav;

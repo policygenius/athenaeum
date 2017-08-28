@@ -13,19 +13,39 @@ class MagazineDisplay extends Component {
     super();
 
     this.state = {
-      ['latest-magazine']: [],
-      ['money-magazine']: [],
-      ['tech-magazine']: [],
-      ['health-magazine']: [],
-      ['auto-magazine']: [],
-      ['pet-magazine']: [],
-      ['insurance-magazine']: [],
+      ['latest-magazine']: {
+        loading: true,
+        data: [],
+      },
+      ['money-magazine']: {
+        loading: true,
+        data: [],
+      },
+      ['tech-magazine']: {
+        loading: true,
+        data: [],
+      },
+      ['health-magazine']: {
+        loading: true,
+        data: [],
+      },
+      ['auto-magazine']: {
+        loading: true,
+        data: [],
+      },
+      ['pet-magazine']: {
+        loading: true,
+        data: [],
+      },
+      ['insurance-magazine']: {
+        loading: true,
+        data: [],
+      },
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    const emptyPosts = this.state[this.props.activeName].length === 0;
-    const hasTag = !!this.props.tag;
+    const emptyPosts = this.state[this.props.activeName].data.length === 0;
 
     if (nextProps.active === this.props.activeName && emptyPosts) {
       Promise.all([
@@ -42,21 +62,24 @@ class MagazineDisplay extends Component {
       ])
         .then(data => {
           this.setState({
-            [this.props.activeName]: [
-              {
-                type: 'list',
-                header: 'Recommended',
-                posts: data[0].posts,
-              },
-              {
-                type: 'featured',
-                post: data[1].posts[0],
-              },
-              {
-                type: 'featured',
-                post: data[1].posts[1],
-              }
-            ]
+            [this.props.activeName]: {
+              loading: false,
+              data: [
+                {
+                  type: 'list',
+                  header: 'Recommended',
+                  posts: data[0].posts,
+                },
+                {
+                  type: 'featured',
+                  post: data[1].posts[0],
+                },
+                {
+                  type: 'featured',
+                  post: data[1].posts[1],
+                }
+              ]
+            }
           });
         })
     }
@@ -89,7 +112,8 @@ class MagazineDisplay extends Component {
           />
 
           <BlogArticleList
-            data={this.state[activeName]}
+            loading={this.state[activeName].loading}
+            data={this.state[activeName].data}
             className={styles['submenu-list-wrapper']}
           />
 
@@ -101,4 +125,3 @@ class MagazineDisplay extends Component {
 }
 
 export default MagazineDisplay;
-

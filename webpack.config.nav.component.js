@@ -7,4 +7,5 @@ module.exports = navBaseConfig({
   output: {
     filename: 'component.js',
   },
+  plugins: [],
 });

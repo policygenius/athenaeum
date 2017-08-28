@@ -1,4 +1,21 @@
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 const navBaseConfig = require('./webpack.config.nav.base.js');
+
+const dev = process.env.NODE_ENV === 'development';
+
+let plugins = [];
+
+if (dev) {
+  plugins.push(
+    new HTMLWebpackPlugin({
+      template: path.resolve(__dirname, './main_nav/index.html'),
+      filename: 'index.html',
+      inject: 'body',
+    })
+  );
+};
 
 module.exports = navBaseConfig({
   entry: [
@@ -14,4 +31,5 @@ module.exports = navBaseConfig({
       'react-dom': 'preact-compat',
     }
   },
+  plugins,
 });

@@ -25,6 +25,7 @@
 .image {
   min-width: 100%;
   max-width: 100%;
+  min-height: rem-calc(150px);
   margin: auto auto ru(.5);
   border-bottom: rem-calc(2) solid transparent;
   transition: all .25s ease;
@@ -49,7 +50,6 @@
     margin-bottom: ru(2);
   }
 }
-
 
 @media #{$large-up} {
   .article-wrapper {

@@ -2,7 +2,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -36,11 +35,13 @@ module.exports = (options) => baseConfig({
       },
     ]
   },
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, './main_nav/index.html'),
-      filename: 'index.html',
-      inject: 'body',
+  plugins: options.plugins.concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        GHOST_ENDPOINT: JSON.stringify(process.env.GHOST_ENDPOINT),
+        GHOST_CLIENT_SECRET: JSON.stringify(process.env.GHOST_CLIENT_SECRET),
+      },
     }),
     new OptimizeCSSAssetsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -52,13 +53,13 @@ module.exports = (options) => baseConfig({
       sourceMap: true
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    // new CompressionPlugin({
-      // asset: "[path].gz[query]",
-      // algorithm: "gzip",
-      // test: /\.js$|\.css$/,
-      // threshold: 10240,
-      // minRatio: 0.8
-    // }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
     // new BundleAnalyzerPlugin()
-  ]
+  ]),
 });
