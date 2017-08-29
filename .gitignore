@@ -43,6 +43,9 @@ jspm_packages
 # Ignore styleguideist build
 /styleguide/
 
+# Ignore main nav build
+/main_nav/build/
+
 # Ignore OSX system files
 .DS_Store
 

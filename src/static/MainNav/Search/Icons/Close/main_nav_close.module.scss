@@ -1,0 +1,45 @@
+@import '../shared/search_shared.module.scss';
+
+.close {
+  display: none;
+
+  &.searching {
+    @include icon-cursor;
+
+    .close-icon {
+      &:before,
+      &:after {
+        @include icon-base;
+        content: '';
+        top: 20px;
+        left: 0px;
+        opacity: 1;
+        transition: opacity 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.close-icon {
+  &:before,
+  &:after {
+    opacity: 0;
+    display: block;
+    content: '';
+    transform: rotate(0deg);
+  }
+}
+
+@media #{$large-up} {
+  .close {
+    display: block;
+  }
+}

@@ -33,7 +33,19 @@ module.exports = baseConfig({
             loader: 'react-hot-loader'
           }
         ]
-      }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+        options: {
+          classPrefix: 'svg-class-[hash:8]-',
+          idPrefix: 'svg-id-[hash:8]-',
+          removeTags: true,
+          removingTags: [ 'desc', 'defs', 'style' ],
+          removeSVGTagAttrs: true,
+          removingTagAttrs: [ 'xmlns', 'id', 'data-name', 'version', 'xlink', 'class' ]
+        }
+      },
     ]
   },
   plugins: [

@@ -1,0 +1,112 @@
+.search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: color('neutral-8');
+  border-bottom: 1px solid color('neutral-5');
+  height: ru(1.75);
+  line-height: ru(1.75);
+  order: 2;
+  padding: 0 ru(1);
+  text-align: right;
+
+  // this input is vastly different from our navigator inputs
+  // adding custom styles here
+  // need to nest within .search to override selectors from Styles
+  .input {
+    @include typography-7(false);
+
+    background: none;
+    color: color('neutral-2');
+    display: none;
+    overflow: hidden;
+    border: 0;
+    line-height: inherit;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: color('brand-2');
+    }
+  }
+}
+
+// Requiring svg in CSS because <Icon /> component requires ALL svgs
+// This adds too much weight to the final bundle
+// This solution slims down the file for the main nav, where speed is king
+.search-icon {
+  background-image: url('../../../../../assets/images/main_nav/search-main-nav.svg');
+  background-repeat: no-repeat;
+  background-size: ru(.75) ru(.75);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: rem-calc(9px);
+}
+
+
+.icon-group {
+  display: inline-block;
+  margin-left: ru(1);
+  outline: none;
+  position: relative;
+  top: rem-calc(-2px);
+  height: 100%;
+  width: 24px;
+}
+
+
+@media #{$large-up} {
+  .search {
+    display: block;
+    align-items: center;
+    border-bottom: 0;
+    display: flex;
+    flex-basis: ru(1.25);
+    justify-content: flex-end;
+    max-width: ru(.75);
+    order: 3;
+    padding: 0;
+    position: relative;
+  }
+
+  .input {
+    flex-basis: 0;
+    padding: 0;
+  }
+
+  .icon-group {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .searching {
+    &.search,
+    .input {
+      flex-basis: 100%;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    .input {
+      display: inline;
+      margin-right: rem-calc(32);
+      margin-bottom: 0;
+      padding: 0 ru(1);
+      transition: flex-basis .3s, padding 0s .1s, margin 0s .1s;
+    }
+
+    .icon-group {
+      pointer-events: all;
+      opacity: 1;
+      transition-delay: .3s;
+      transition: opacity .6s ease;
+    }
+  }
+}
