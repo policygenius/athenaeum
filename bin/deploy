@@ -6,6 +6,7 @@ git config --global user.email "robot@policygenius.com"
 
 NODE_ENV=development yarn
 NODE_ENV=production yarn run styleguide:build
+NODE_ENV=production yarn run build:nav:styleguide
 
 if [ "$BUILDKITE_BRANCH" == "master" ]; then
   echo '+++ Publishing the package'
@@ -43,6 +44,16 @@ aws s3 sync \
   --cache-control max-age=0 \
   --exclude '.DS_Store'
 
+echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
+
+echo '+++ Deploying styleguide latest to S3'
+aws s3 sync \
+  ./styleguide/main_nav s3://rcl-pg/main_nav/ \
+  --acl=public-read \
+  --cache-control max-age=0 \
+  --exclude '.DS_Store'
+
+echo "Deployed Main Nav to http://rcl.policygenius.com/main_nav/index.html"
 
 NODE_ENV=production yarn run build:publish:nav
 
@@ -54,7 +65,7 @@ aws s3 sync \
   --cache-control max-age=0 \
   --exclude '.DS_Store'
 
-echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
+echo "Deployed Main Nav to s3"
 
 buildkite-agent artifact upload package.json
 buildkite-agent meta-data set 'new-version' $VERSION

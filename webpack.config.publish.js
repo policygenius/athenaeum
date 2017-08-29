@@ -29,22 +29,6 @@ module.exports = baseConfig({
     lodash: 'lodash',
     classnames: 'classnames'
   },
-  module: {
-    rules: [
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader',
-        options: {
-          classPrefix: 'svg-class-[hash:8]-',
-          idPrefix: 'svg-id-[hash:8]-',
-          removeTags: true,
-          removingTags: [ 'desc', 'defs', 'style' ],
-          removeSVGTagAttrs: true,
-          removingTagAttrs: [ 'xmlns', 'id', 'data-name', 'version', 'xlink', 'class' ]
-        }
-      }
-    ]
-  },
   plugins: [
     new OptimizeCSSAssetsPlugin(),
     new webpack.optimize.UglifyJsPlugin({

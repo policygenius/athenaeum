@@ -5,7 +5,8 @@ module.exports = navBaseConfig({
     './main_nav_component_entry.js',
   ],
   output: {
-    filename: 'component.js',
+    path: path.resolve(__dirname, './main_nav/build/'),
+    filename: 'static.js',
   },
   plugins: [],
 });

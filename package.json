@@ -17,7 +17,7 @@
     "publish": "rm -rf ./lib/* && yarn run build:publish && npm publish",
     "clean:nav": "rm -rf ./main_nav/build/*",
     "nav": "yarn run clean:nav && NODE_ENV=development webpack-dev-server --config ./webpack.config.nav.bundle.js --hot --inline",
-    "build:nav:styleguide": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --config ./webpack.config.nav.bundle.js",
+    "build:nav:styleguide": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.nav.styleguide.js --progress --colors",
     "build:nav:bundle": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config ./webpack.config.nav.bundle.js --progress --colors",
     "build:nav:static": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config ./webpack.config.nav.static.js --progress --colors",
     "build:nav:html": "babel-node main_nav/index.js",
