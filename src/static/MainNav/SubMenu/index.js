@@ -94,6 +94,18 @@ SubMenu.propTypes = {
   showMobileMenu: PropTypes.bool,
   setMobileCollapsedMenu: PropTypes.func,
   mobileCollapsedMenu: PropTypes.string,
+  menu: PropTypes.object,
+  hasChildren: PropTypes.bool,
+};
+
+getChildren.propTypes = {
+  list: PropTypes.array,
+  product: PropTypes.bool,
+  magazine: PropTypes.bool,
+  intro: PropTypes.object,
+  active: PropTypes.string,
+  menu: PropTypes.object,
+  setMobileCollapsedMenu: PropTypes.func,
 };
 
 export default SubMenu;

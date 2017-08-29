@@ -5,7 +5,7 @@ const navBaseConfig = require('./webpack.config.nav.base.js');
 
 const dev = process.env.NODE_ENV === 'development';
 
-let plugins = [];
+const plugins = [];
 
 if (dev) {
   plugins.push(
@@ -15,7 +15,7 @@ if (dev) {
       inject: 'body',
     })
   );
-};
+}
 
 module.exports = navBaseConfig({
   entry: [

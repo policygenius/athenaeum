@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Intro from '../Intro';
 import SubMenuList from '../SubMenuList';
@@ -65,5 +66,19 @@ function ProductDisplay(props) {
     </div>
   );
 }
+
+ProductDisplay.propTypes = {
+  intro: PropTypes.object,
+  headerText: PropTypes.string,
+  activeName: PropTypes.string,
+  active: PropTypes.string,
+  setMobileCollapsedMenu: PropTypes.func,
+};
+
+getList.propTypes = {
+  list: PropTypes.array,
+  activeName: PropTypes.string,
+  active: PropTypes.string,
+};
 
 export default ProductDisplay;

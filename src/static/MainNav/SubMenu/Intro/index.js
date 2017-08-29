@@ -10,12 +10,12 @@ import styles from './main_nav_intro.module.scss';
 
 class Intro extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       loadImg: false,
     };
-  };
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.active && !this.state.loadImg) {
@@ -30,13 +30,13 @@ class Intro extends Component {
       cta
     } = this.props;
 
-    let imgProps = {
+    const imgProps = {
       'data-src': imgSrc,
     };
 
     if (this.state.loadImg) {
       imgProps.src = imgSrc;
-    };
+    }
 
     return (
       <div className={styles['cta-container']}>
@@ -69,7 +69,6 @@ class Intro extends Component {
   render() {
     const {
       cta,
-      imgSrc,
       linkHref,
       product,
       className,
@@ -102,6 +101,8 @@ Intro.propTypes = {
   product: PropTypes.string,
   imgSrc: PropTypes.string,
   linkHref: PropTypes.string,
+  active: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Intro;

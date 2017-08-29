@@ -61,79 +61,80 @@ function IntroText({ product, link }) {
           Car insurance that <Text type={5} semibold color='neutral-2'>protects you, your vehicle, and your family,</Text> available in all 50 states.
         </Text>
         );
-    case 'latest':
-      return (
-        <div>
-          <Text
-            type={2}
-            color="neutral-2"
-          >
+      case 'latest':
+        return (
+          <div>
+            <Text
+              type={2}
+              color='neutral-2'
+            >
             Latest Articles
           </Text>
 
-          <Spacer small />
+            <Spacer small />
 
-          <A
-            typography={5}
-            color="brand-2"
-            href={link}
-            style={{ textDecoration: 'none' }}
-          >
+            <A
+              typography={5}
+              color='brand-2'
+              href={link}
+              style={{ textDecoration: 'none' }}
+            >
             View all articles →
           </A>
-        </div>
-      );
-    case 'Money':
-    case 'Tech':
-    case 'Health':
-    case 'Auto':
-    case 'Pet':
-    case 'Insurance':
-      return (
-        <div>
-          <Text
-            type={2}
-            color="neutral-2"
-          >
-            <Span typography={2} color="neutral-2" weight="semibold">{ product }</Span>Genius
+          </div>
+        );
+      case 'Money':
+      case 'Tech':
+      case 'Health':
+      case 'Auto':
+      case 'Pet':
+      case 'Insurance':
+        return (
+          <div>
+            <Text
+              type={2}
+              color='neutral-2'
+            >
+              <Span typography={2} color='neutral-2' weight='semibold'>{ product }</Span>Genius
           </Text>
 
-          <Spacer small />
+            <Spacer small />
 
-          <A
-            typography={5}
-            color="brand-2"
-            href={link}
-            style={{ textDecoration: 'none' }}
-          >
-            {`More in ${product} →`}
-          </A>
-        </div>
-      );
-    default:
-      return (
-        <Text
-          type={5}
-          color='neutral-2'
-        >
-          {"From protecting your home to saving money on prescriptions, we've got you covered."}
-          <Spacer small />
-          <Span
-            typography={5}
-            style={{
-              fontStyle: 'italic'
-            }}
+            <A
+              typography={5}
+              color='brand-2'
+              href={link}
+              style={{ textDecoration: 'none' }}
+            >
+              {`More in ${product} →`}
+            </A>
+          </div>
+        );
+      default:
+        return (
+          <Text
+            type={5}
             color='neutral-2'
           >
+            {"From protecting your home to saving money on prescriptions, we've got you covered."}
+            <Spacer small />
+            <Span
+              typography={5}
+              style={{
+                fontStyle: 'italic'
+              }}
+              color='neutral-2'
+            >
             Not sure what you need?
           </Span>
-        </Text>
-      );
+          </Text>
+        );
   }
 }
 
 IntroText.propTypes = {
   product: PropTypes.string,
+  link: PropTypes.string,
 };
 
 export default IntroText;

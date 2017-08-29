@@ -56,6 +56,7 @@ function SubMenuList(props) {
 SubMenuList.propTypes = {
   header: PropTypes.string,
   listItems: PropTypes.array,
+  className: PropTypes.string,
 };
 
 export default SubMenuList;

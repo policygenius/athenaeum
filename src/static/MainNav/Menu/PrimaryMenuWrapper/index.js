@@ -11,6 +11,7 @@ function PrimaryMenuWrapper(props) {
     header,
     active,
     activeName,
+    searching,
     onClick,
   } = props;
 
@@ -22,7 +23,7 @@ function PrimaryMenuWrapper(props) {
 
   const submenuClasses = [
     styles['submenu-wrapper'],
-    (active === activeName) && styles['submenu-wrapper-active'],
+    (active === activeName) && !searching && styles['submenu-wrapper-active'],
   ];
 
   return (
@@ -54,6 +55,7 @@ PrimaryMenuWrapper.propTypes = {
   active: PropTypes.string,
   activeName: PropTypes.string,
   onClick: PropTypes.func,
+  searching: PropTypes.bool,
 };
 
 export default PrimaryMenuWrapper;

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Text from 'atoms/Text';
-import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
 
 import ArticleImage from '../../ArticleImage';
@@ -29,7 +27,6 @@ class ProductArticleList extends Component {
     const {
       data,
       alt,
-      active,
       className,
     } = this.props;
 
@@ -47,7 +44,7 @@ class ProductArticleList extends Component {
           className={sharedStyles['grid']}
         >
           {
-            data.map(item => {
+            data.map((item) => {
               const imgProps = {
                 'data-src': item.imageSrc,
               };
@@ -76,6 +73,8 @@ class ProductArticleList extends Component {
 ProductArticleList.propTypes = {
   data: PropTypes.array,
   alt: PropTypes.string,
+  className: PropTypes.string,
+  active: PropTypes.string,
 };
 
 

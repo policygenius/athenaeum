@@ -74,6 +74,7 @@ class MainNav extends Component {
                     <PrimaryMenuWrapper
                       header='Insurance Quotes & Guides'
                       activeName='insurance'
+                      searching={this.state.searching}
                       active={this.state.activePrimaryTab}
                       onClick={this.setActivePrimaryTab}
                     >

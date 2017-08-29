@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const html = ReactDOMServer.renderToString(<MainNav.default />);
 
-fs.writeFile('./main_nav/component-index.html', html, (err) => {
+fs.writeFile('./main_nav/build/component-index.html', html, (err) => {
   if (err) {
     console.log('ERR:', err);
     return;

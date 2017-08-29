@@ -131,7 +131,8 @@
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^2.4.2",
     "webpack-hot-middleware": "^2.13.2",
-    "webpack-stats-plugin": "^0.1.5"
+    "webpack-stats-plugin": "^0.1.5",
+    "whatwg-fetch": "^2.0.3"
   },
   "peerDependencies": {
     "react": "^15.5.4"

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Text from 'atoms/Text';
-import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
 
 import ArticleImage from '../../ArticleImage';
@@ -15,10 +13,6 @@ import sharedStyles from '../shared/main_nav_article_list.module.scss';
 import styles from './main_nav_blog_article_list.module.scss';
 
 class BlogArticleList extends Component {
-  constructor() {
-    super();
-  }
-
   renderItem = (item) => {
     if (item.type === 'list') {
       if (this.props.loading) {
@@ -48,7 +42,7 @@ class BlogArticleList extends Component {
           key={item.post.title}
           subHeader={item.post.title}
           imgProps={{
-            'src': `${item.post.feature_image}?fit=crop&w=640&h=360`,
+            src: `${item.post.feature_image}?fit=crop&w=640&h=360`,
           }}
           link={item.post.url}
         />
@@ -61,15 +55,13 @@ class BlogArticleList extends Component {
   render() {
     const {
       data,
-      alt,
-      active,
       className,
     } = this.props;
 
     let blogItems = data;
 
     if (this.props.loading) {
-      blogItems = [{ type: 'list' }, { type: 'featured' }, { type: 'featured' }];
+      blogItems = [ { type: 'list' }, { type: 'featured' }, { type: 'featured' } ];
     }
 
     const classes = [
@@ -83,6 +75,7 @@ class BlogArticleList extends Component {
           smallCols={[ 12 ]}
           mediumCols={[ 6, 6, 12 ]}
           largeCols={[ 4 ]}
+          className={sharedStyles['grid']}
         >
           {
             blogItems.map(item => this.renderItem(item))
@@ -95,7 +88,8 @@ class BlogArticleList extends Component {
 
 BlogArticleList.propTypes = {
   data: PropTypes.array,
-  alt: PropTypes.string,
+  loading: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Intro from '../Intro';
 import BlogArticleList from '../ArticleList/Blog';
@@ -13,31 +14,31 @@ class MagazineDisplay extends Component {
     super();
 
     this.state = {
-      ['latest-magazine']: {
+      'latest-magazine': {
         loading: true,
         data: [],
       },
-      ['money-magazine']: {
+      'money-magazine': {
         loading: true,
         data: [],
       },
-      ['tech-magazine']: {
+      'tech-magazine': {
         loading: true,
         data: [],
       },
-      ['health-magazine']: {
+      'health-magazine': {
         loading: true,
         data: [],
       },
-      ['auto-magazine']: {
+      'auto-magazine': {
         loading: true,
         data: [],
       },
-      ['pet-magazine']: {
+      'pet-magazine': {
         loading: true,
         data: [],
       },
-      ['insurance-magazine']: {
+      'insurance-magazine': {
         loading: true,
         data: [],
       },
@@ -50,17 +51,17 @@ class MagazineDisplay extends Component {
     if (nextProps.active === this.props.activeName && emptyPosts) {
       Promise.all([
         fetchPosts({
-          featured: "false",
+          featured: 'false',
           tag: this.props.tag,
           limit: 4,
         }),
         fetchPosts({
-          featured: "true",
+          featured: 'true',
           tag: this.props.tag,
           limit: 2,
         })
       ])
-        .then(data => {
+        .then((data) => {
           this.setState({
             [this.props.activeName]: {
               loading: false,
@@ -81,7 +82,7 @@ class MagazineDisplay extends Component {
               ]
             }
           });
-        })
+        });
     }
   }
 
@@ -123,5 +124,14 @@ class MagazineDisplay extends Component {
     );
   }
 }
+
+MagazineDisplay.propTypes = {
+  activeName: PropTypes.string,
+  active: PropTypes.string,
+  tag: PropTypes.string,
+  headerText: PropTypes.string,
+  setMobileCollapsedMenu: PropTypes.string,
+  intro: PropTypes.object,
+};
 
 export default MagazineDisplay;

@@ -71,10 +71,6 @@ module.exports = {
           components: 'src/organisms/forms/**/index.js'
         },
         {
-          name: 'Navigation',
-          components: 'src/organisms/navigation/**/index.js'
-        },
-        {
           name: 'Tables',
           components: 'src/organisms/tables/**/index.js'
         }

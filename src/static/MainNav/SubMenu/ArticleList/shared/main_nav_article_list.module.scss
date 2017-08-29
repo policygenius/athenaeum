@@ -9,8 +9,6 @@
 
 .grid {
   @include submenu-list-item;
-
-  flex-wrap: nowrap;
 }
 
 @media #{$large-up} {
@@ -20,5 +18,9 @@
     margin-bottom: ru(1);
     border-top: 0;
     width: auto;
+  }
+
+  .grid {
+    flex-wrap: nowrap;
   }
 }
