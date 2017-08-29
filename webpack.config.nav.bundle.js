@@ -10,7 +10,7 @@ const plugins = [];
 if (dev) {
   plugins.push(
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, './main_nav/index.html'),
+      template: path.resolve(__dirname, './styleguide/main_nav/index.ejs'),
       filename: 'index.html',
       inject: 'body',
     })
