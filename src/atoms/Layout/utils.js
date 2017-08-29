@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import omit from 'lodash/omit';
 import Col from './Col';
 
 export function processChild(child, layoutProps) {
@@ -7,7 +7,7 @@ export function processChild(child, layoutProps) {
   if (child.type === Col) {
     const colProps = Object.assign(
       {},
-      _.omit(layoutProps, [ 'padding' ]),
+      omit(layoutProps, [ 'padding' ]),
       child.props,
     );
 
@@ -17,7 +17,7 @@ export function processChild(child, layoutProps) {
   const colProps = Object.assign(
     {},
     layoutProps,
-    _.omit(child.props, [ 'className', 'style', 'onClick', 'onChange' ])
+    omit(child.props, [ 'className', 'style', 'onClick', 'onChange' ])
   );
 
   return (

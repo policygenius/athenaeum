@@ -1,0 +1,71 @@
+@import '../shared/submenu_shared.module.scss';
+
+.wrapper {
+  @include submenu-list-item;
+
+  margin: 0;
+  padding: ru(.5) ru(1);
+  border-top: 1px solid color('neutral-5');
+}
+
+.header {
+  padding: rem-calc(8px) 0;
+  font-weight: 600;
+  line-height: ru(1);
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  @include typography-6(false);
+
+  padding: ru(.25) 0;
+  list-style: none;
+}
+
+.link {
+  display: block;
+  width: 100%;
+  line-height: ru(1);
+  position: relative;
+
+  &:hover {
+    color: color('neutral-2');
+  }
+}
+
+@media #{$large-up} {
+  .wrapper {
+    flex: 0 1 25%;
+    margin-top: ru(.25);
+    margin-bottom: ru(.5);
+    padding: 0 ru(1.5);
+    border-top: 0;
+    width: auto;
+  }
+
+  .header {
+    padding: 0;
+    line-height: ru(.75);
+  }
+
+  .list-item {
+    @include submenu-list-item;
+
+    display: block;
+    padding: 0 ru(1) 0 0;
+    width: auto;
+  }
+
+  .link {
+    line-height: ru(.75);
+
+    &:hover {
+      color: color('accent-2');
+      transition: color .3s;
+    }
+  }
+}

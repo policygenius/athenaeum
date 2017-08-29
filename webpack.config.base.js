@@ -2,6 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
+const assign = require('lodash/assign');
 
 const variant = process.env.CSS_VARIANT;
 
@@ -18,12 +19,12 @@ module.exports = options => ({
   externals: options.externals,
   devtool: 'source-map',
   context: path.resolve(__dirname, baseDir),
-  resolve: {
+  resolve: assign({
     modules: [
       path.resolve(__dirname, baseDir),
       'node_modules'
     ],
-  },
+  }, options.resolve),
   module: {
     rules: get(options, 'module.rules', []).concat([
       {
@@ -48,7 +49,7 @@ module.exports = options => ({
               options: {
                 modules: true,
                 localIdentName: 'rcl-[name]__[local]--[hash:base64:5]',
-                sourceMap: true
+                sourceMap: true,
               }
             },
             {
@@ -85,18 +86,6 @@ module.exports = options => ({
             }
           }
         ]
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader',
-        options: {
-          classPrefix: 'svg-class-[hash:8]-',
-          idPrefix: 'svg-id-[hash:8]-',
-          removeTags: true,
-          removingTags: [ 'desc', 'defs', 'style' ],
-          removeSVGTagAttrs: true,
-          removingTagAttrs: [ 'xmlns', 'id', 'data-name', 'version', 'xlink', 'class' ]
-        }
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,

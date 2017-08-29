@@ -1,0 +1,57 @@
+@import '../shared/search_shared.module.scss';
+
+.hamburger {
+  @include icon-cursor;
+}
+
+.hamburger-icon {
+  @include icon-base;
+
+  top: 50%;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+
+  &:before,
+  &:after {
+    @include icon-base;
+
+    content: '';
+  }
+
+  &:before {
+    top: -8px;
+    transition: top 0.1s 0.14s ease, opacity 0.1s ease;
+  }
+
+  &:after {
+    bottom: -8px;
+    transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+}
+
+.mobile {
+  .hamburger-icon {
+    transform: rotate(45deg);
+    transition-delay: .14s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &:before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.1s ease, opacity 0.1s 0.14s ease;
+    }
+
+    &:after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  }
+}
+
+@media #{$large-up} {
+  .hamburger {
+    display: none;
+  }
+}

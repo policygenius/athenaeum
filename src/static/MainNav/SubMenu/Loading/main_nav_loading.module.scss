@@ -1,0 +1,29 @@
+.image-loading {
+  height: rem-calc(150px);
+}
+
+.sub-tag-loading,
+.list-item-loading {
+  height: ru(1);
+}
+
+.list-item-loading {
+  margin-bottom: ru(.5);
+}
+
+.image-loading,
+.sub-tag-loading,
+.list-item-loading {
+  background-color: color('neutral-6');
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+}
+
+// Animation for loading
+@keyframes flash {
+  0% { opacity: .75; }
+  100% { opacity: .25; }
+}
