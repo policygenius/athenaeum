@@ -12,7 +12,6 @@ fs.writeFile('./main_nav/build/component-index.html', html, (err) => {
     return;
   }
 
-  console.log('html works!', html);
   console.log('Successfully wrote MainNav component to component-index.html');
 });
 

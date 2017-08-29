@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const path = require('path');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const baseConfig = require('./webpack.config.base.js');
 
@@ -60,6 +59,5 @@ module.exports = (options) => baseConfig({
       threshold: 10240,
       minRatio: 0.8
     }),
-    // new BundleAnalyzerPlugin()
   ]),
 });
