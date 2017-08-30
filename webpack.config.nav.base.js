@@ -8,11 +8,7 @@ const baseConfig = require('./webpack.config.base.js');
 
 module.exports = (options) => baseConfig({
   entry: options.entry,
-  output: {
-    path: path.resolve(__dirname, './main_nav/build/'),
-    filename: options.output.filename,
-    libraryTarget: 'umd'
-  },
+  output: options.output,
   resolve: options.resolve,
   module: {
     rules: [
