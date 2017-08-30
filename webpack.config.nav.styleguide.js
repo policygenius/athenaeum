@@ -10,7 +10,7 @@ module.exports = navBaseConfig({
   ],
   output: {
     path: path.resolve(__dirname, './styleguide/main_nav/build/'),
-    filename: 'bundle.js',
+    filename: 'styleguide_bundle.js',
   },
   resolve: {
     alias: {
@@ -21,7 +21,7 @@ module.exports = navBaseConfig({
   plugins:[
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, './main_nav/index.ejs'),
-      filename: 'main_nav/index.html',
+      filename: 'index.html',
       inject: 'body',
     })
   ],

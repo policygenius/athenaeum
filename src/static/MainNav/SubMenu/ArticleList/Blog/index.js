@@ -22,11 +22,13 @@ class BlogArticleList extends Component {
       }
 
       return (
-        <SubMenuList
-          header={item.header}
-          listItems={item.posts}
-          className={styles['submenu-list']}
-        />
+        <ul className={styles['submenu-list-wrapper']}>
+          <SubMenuList
+            header={item.header}
+            listItems={item.posts}
+            className={styles['submenu-list']}
+          />
+        </ul>
       );
     }
 
