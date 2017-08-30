@@ -21,11 +21,16 @@ $NPM_EMAIL
 
   bin/build_assets
   npm publish
+
 else
   echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
 
   VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
 fi
+
+echo "Creating rcl-important-styles.css"
+sed -i '.new' 's/;/ !important;/g' ./styleguide/assets/styles.css
+mv ./styleguide/assets/styles.css.new ./styleguide/assets/rcl-important-styles.css
 
 echo '+++ Deploying version-specific styleguide to S3'
 aws s3 sync \
