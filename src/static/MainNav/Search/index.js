@@ -17,8 +17,7 @@ function Search(props) {
 
   const classes = [
     styles['search'],
-    searching && styles['searching'],
-    showMobileMenu && 'st-search-show-outputs',
+    searching && styles['searching']
   ];
 
   return (
@@ -26,6 +25,10 @@ function Search(props) {
       <div
         className={styles['search-icon']}
         onClick={() => toggleSearching(true)}
+      />
+
+      <div
+        className={classnames(styles['search-icon-mobile'], 'st-search-show-outputs')}
       />
 
       <input

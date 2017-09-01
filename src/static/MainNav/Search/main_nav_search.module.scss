@@ -36,7 +36,7 @@
 // Requiring svg in CSS because <Icon /> component requires ALL svgs
 // This adds too much weight to the final bundle
 // This solution slims down the file for the main nav, where speed is king
-.search-icon {
+@mixin search-icon {
   background-image: url('https://s3.amazonaws.com/rcl-pg/images/search.svg');
   background-repeat: no-repeat;
   background-size: ru(.75) ru(.75);
@@ -44,6 +44,15 @@
   position: relative;
   cursor: pointer;
   padding: rem-calc(9px);
+}
+
+.search-icon,
+.search-icon-mobile {
+  @include search-icon;
+}
+
+.search-icon {
+  display: none;
 }
 
 
@@ -83,6 +92,14 @@
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .search-icon {
+    display: block;
+  }
+
+  .search-icon-mobile {
+    display: none;
   }
 
   .searching {
