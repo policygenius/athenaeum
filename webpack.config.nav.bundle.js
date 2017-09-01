@@ -25,6 +25,7 @@ module.exports = navBaseConfig({
   output: {
     path: path.resolve(__dirname, './main_nav/build/'),
     filename: 'bundle.js',
+    libraryTarget: 'umd'
   },
   resolve: {
     alias: {

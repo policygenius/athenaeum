@@ -45,6 +45,8 @@ jspm_packages
 
 # Ignore main nav build
 /main_nav/build/
+/main_nav/static/
+/main_nav/zip/
 
 # Ignore OSX system files
 .DS_Store

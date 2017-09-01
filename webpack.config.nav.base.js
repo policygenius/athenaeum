@@ -4,32 +4,40 @@ const path = require('path');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 
+const isProd = process.env.NODE_ENV === 'production';
+
+const imagePublicPath = isProd ? '/rcl-pg/latest/main_nav/' : '/';
+
 const baseConfig = require('./webpack.config.base.js');
 
 module.exports = (options) => baseConfig({
   entry: options.entry,
   output: options.output,
   resolve: options.resolve,
-  module: {
-    rules: [
-      {
-        test: /\.svg$/i,
-        include: [
-          path.resolve(__dirname, 'src/assets/images/main_nav'),
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-              publicPath: '/'
-            }
-          }
-        ]
-      },
-    ]
-  },
+
+  // Add this back in when this config is decoupled from main base config
+  //
+  // module: {
+    // rules: [
+      // {
+        // test: /\.svg$/i,
+        // include: [
+          // path.resolve(__dirname, 'src/assets/images/main_nav'),
+        // ],
+        // use: [
+          // {
+            // loader: 'file-loader',
+            // options: {
+              // name: '[name].[ext]',
+              // outputPath: 'images/',
+              // publicPath: imagePublicPath,
+            // }
+          // }
+        // ]
+      // },
+    // ]
+  // },
+
   plugins: options.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -49,7 +57,7 @@ module.exports = (options) => baseConfig({
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new CompressionPlugin({
-      asset: "[path].gz[query]",
+      asset: "../zip/[path].gz[query]",
       algorithm: "gzip",
       test: /\.js$|\.css$/,
       threshold: 10240,

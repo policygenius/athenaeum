@@ -24,7 +24,7 @@
     // Requiring svg in CSS because <Icon /> component requires ALL svgs
     // This adds too much weight to the final bundle
     // This solution slims down the file for the main nav, where speed is king
-    background-image: url('../../../../../assets/images/main_nav/chevron-right-main-nav.svg');
+    background-image: url('https://s3.amazonaws.com/rcl-pg/images/chevron-right.svg');
     right: 5px;
     top: 0;
   }
@@ -62,7 +62,7 @@
       // Requiring svg in CSS because <Icon /> component requires ALL svgs
       // This adds too much weight to the final bundle
       // This solution slims down the file for the main nav, where speed is king
-      background-image: url('../../../../../assets/images/main_nav/chevron-left-main-nav.svg');
+      background-image: url('https://s3.amazonaws.com/rcl-pg/images/chevron-left.svg');
       top: 0;
     }
   }
