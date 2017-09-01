@@ -101,7 +101,7 @@ Intro.propTypes = {
   product: PropTypes.string,
   imgSrc: PropTypes.string,
   linkHref: PropTypes.string,
-  active: PropTypes.string,
+  active: PropTypes.bool,
   className: PropTypes.string,
 };
 

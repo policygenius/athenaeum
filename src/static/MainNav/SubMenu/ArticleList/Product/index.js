@@ -74,7 +74,7 @@ ProductArticleList.propTypes = {
   data: PropTypes.array,
   alt: PropTypes.string,
   className: PropTypes.string,
-  active: PropTypes.string,
+  active: PropTypes.bool,
 };
 
 
