@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import reduce from 'lodash/reduce';
 
 import Logo from './Logo';
 import PrimaryMenuWrapper from './Menu/PrimaryMenuWrapper';
@@ -12,18 +13,34 @@ import styles from './main_nav.module.scss';
 import insuranceProducts from './data/products';
 import aboutItems from './data/aboutItems';
 import magazineItems from './data/magazineItems';
+import urlMatchData from './data/urlMatchData';
 
 class MainNav extends Component {
   constructor() {
     super();
 
     this.state = {
-      activePrimaryTab: 'insurance',
+      activePrimaryTab: null,
       activeSubTab: null,
       searching: false,
       showMobileMenu: false,
       mobileCollapsedMenu: null,
     };
+  }
+
+  componentDidMount() {
+    const currentPath = window.location.pathname;
+
+    const activeTab = reduce(urlMatchData, (res, data) => {
+      let active = res;
+      if (data.path.includes(currentPath)) {
+        active = data.active;
+      }
+
+      return active;
+    }, 'insurance');
+
+    this.setActivePrimaryTab(activeTab);
   }
 
   setActivePrimaryTab = (activePrimaryTab) => {

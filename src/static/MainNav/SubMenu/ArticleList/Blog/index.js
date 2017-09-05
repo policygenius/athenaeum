@@ -46,7 +46,7 @@ class BlogArticleList extends Component {
           imgProps={{
             src: `${item.post.feature_image}?fit=crop&w=640&h=360`,
           }}
-          link={item.post.url}
+          link={`blog${item.post.url}`}
         />
       );
     }

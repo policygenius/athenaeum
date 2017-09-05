@@ -62,6 +62,13 @@ class MagazineDisplay extends Component {
         })
       ])
         .then((data) => {
+          const recommendedPosts = data[0].posts.map((post) => {
+            const postCopy = post;
+            postCopy.url = `blog${post.url}`;
+
+            return postCopy;
+          });
+
           this.setState({
             [this.props.activeName]: {
               loading: false,
@@ -69,7 +76,7 @@ class MagazineDisplay extends Component {
                 {
                   type: 'list',
                   header: 'Recommended',
-                  posts: data[0].posts,
+                  posts: recommendedPosts,
                 },
                 {
                   type: 'featured',
