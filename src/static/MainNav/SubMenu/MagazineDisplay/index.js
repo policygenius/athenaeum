@@ -64,6 +64,7 @@ class MagazineDisplay extends Component {
         .then((data) => {
           const recommendedPosts = data[0].posts.map((post) => {
             const postCopy = post;
+
             postCopy.url = `blog${post.url}`;
 
             return postCopy;

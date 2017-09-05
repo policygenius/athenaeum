@@ -33,6 +33,7 @@ class MainNav extends Component {
 
     const activeTab = reduce(urlMatchData, (res, data) => {
       let active = res;
+
       if (data.path.includes(currentPath)) {
         active = data.active;
       }

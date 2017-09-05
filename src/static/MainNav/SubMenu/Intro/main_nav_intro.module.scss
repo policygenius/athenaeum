@@ -1,5 +1,13 @@
 @import '../shared/submenu_shared.module.scss';
-@import '../../../../../atoms/Button/buttons.module.scss';
+$button-background-color:                  color('neutral-8');
+$button-border-color:                      color('accent-2');
+$button-border-radius:                     ru(.25);
+$button-color:                             color('accent-2');
+$button-hover-background-color:            color('accent-2');
+$button-hover-color:                       color('neutral-8');
+$button-action-background-color:           color('accent-2');
+$button-action-border-color:               color('accent-1');
+$button-action-color:                      color('neutral-8');
 
 .intro {
   background-color: color('neutral-8');
@@ -27,6 +35,42 @@
 .button-wrapper {
   width: 100%;
   position: relative;
+}
+
+.button {
+  @include typography-6;
+  @include typography-semibold;
+  @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
+
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: $button-color;
+  margin: 0;
+  padding: ru(.5);
+  background-color: $button-background-color;
+  border: 1px solid $button-border-color;
+  border-radius: $button-border-radius;
+  transition: background-color 300ms ease-out,
+  border-color 300ms ease-out,
+  top 150ms ease-out,
+  color 150ms ease-out,
+  box-shadow 150ms ease-out;
+  width: 100%;
+}
+
+.action {
+  @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-border-color,
+  $button-action-background-color, $button-action-color);
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: $button-action-background-color;
+  padding-bottom: rem-calc(9);
+  border: 0;
+  color: $button-action-color;
+  box-shadow: 0 .312rem 0 $button-action-border-color;
 }
 
 @media #{$large-up} {

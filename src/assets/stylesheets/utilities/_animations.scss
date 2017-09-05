@@ -131,11 +131,6 @@
   100% { transform:rotate(0deg) translateZ(0) }
 }
 
-.spin {
-  transform-origin: 50% 50%;
-  animation: spin 1s infinite linear;
-}
-
 @keyframes flash {
   50% { background-color: #deb543; }
 }
