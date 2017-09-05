@@ -49,7 +49,7 @@ module.exports = (options) => baseConfig({
     new OptimizeCSSAssetsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
-      mangle: true,
+      mangle: false,
       compress: {
         warnings: false
       },
