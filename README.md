@@ -113,9 +113,9 @@ Since the MainNav is the only static component, the command is simply:
 
 2. Navigate to `localhost:8080`
 
-To fetch blog posts locally, you will need to include the following keys:
-- `PG_GHOST_URL`
-- `PG_GHOST_CLIENT_SECRET`
+To fetch blog posts locally, you will need to include the following keys in your `env`:
+- `GHOST_API_URL`
+- `GHOST_API_CLIENT_SECRET`
 
 ### Building Static components
 Build bundled JS / assets for MainNav:
