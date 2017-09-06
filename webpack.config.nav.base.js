@@ -42,8 +42,8 @@ module.exports = (options) => baseConfig({
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        GHOST_ENDPOINT: JSON.stringify(process.env.GHOST_ENDPOINT),
-        GHOST_CLIENT_SECRET: JSON.stringify(process.env.GHOST_CLIENT_SECRET),
+        GHOST_API_URL: JSON.stringify(process.env.GHOST_API_URL),
+        GHOST_API_CLIENT_SECRET: JSON.stringify(process.env.GHOST_API_CLIENT_SECRET),
       },
     }),
     new OptimizeCSSAssetsPlugin(),
