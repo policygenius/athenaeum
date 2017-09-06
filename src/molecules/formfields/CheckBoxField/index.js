@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import styles from './checkbox_field.module.scss';
 
-function CheckboxField( props ) {
+function CheckBoxField( props ) {
   const {
     label,
     input,
@@ -32,7 +32,7 @@ function CheckboxField( props ) {
   );
 }
 
-CheckboxField.propTypes = {
+CheckBoxField.propTypes = {
   label: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
@@ -55,8 +55,8 @@ CheckboxField.propTypes = {
   ]),
 };
 
-CheckboxField.defaultProps = {
+CheckBoxField.defaultProps = {
   fontStyle: 'light',
 };
 
-export default CheckboxField;
+export default CheckBoxField;

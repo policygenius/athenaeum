@@ -39,6 +39,7 @@
   "dependencies": {
     "accounting": "^0.4.1",
     "classnames": "^2.2.5",
+    "cloudinary-react": "^1.0.4",
     "critical": "^0.9.0",
     "holderjs": "^2.9.4",
     "html-tag-names": "^1.1.1",
