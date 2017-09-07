@@ -130,7 +130,7 @@ MagazineDisplay.propTypes = {
   active: PropTypes.string,
   tag: PropTypes.string,
   headerText: PropTypes.string,
-  setMobileCollapsedMenu: PropTypes.string,
+  setMobileCollapsedMenu: PropTypes.func,
   intro: PropTypes.object,
 };
 

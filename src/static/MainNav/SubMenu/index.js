@@ -99,7 +99,7 @@ SubMenu.propTypes = {
 };
 
 getChildren.propTypes = {
-  list: PropTypes.array,
+  list: PropTypes.object,
   product: PropTypes.bool,
   magazine: PropTypes.bool,
   intro: PropTypes.object,
