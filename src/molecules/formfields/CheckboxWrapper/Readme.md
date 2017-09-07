@@ -5,31 +5,31 @@ Checkbox List Example:
     label='Pellentesque habitant'
     tooltip="I'm a tooltip!"
   >
-    <CheckboxField
+    <CheckBoxField
       input={{
         name: 'extinguisher'
       }}
       label='Fire extinguisher'
     />
-    <CheckboxField
+    <CheckBoxField
       input={{
         name: 'localFireAlarm'
       }}
       label='Local fire/smoke alarm (sounds in home)'
     />
-    <CheckboxField
+    <CheckBoxField
       input={{
         name: 'centralFireAlarm'
       }}
       label='Central fire/smoke alarm (alerts monitoring system)'
     />
-    <CheckboxField
+    <CheckBoxField
       input={{
         name: 'automaticSprinklersAll'
       }}
       label='Automatic sprinklers in all rooms (including closets)'
     />
-    <CheckboxField
+    <CheckBoxField
       input={{
         name: 'automaticSprinklersSome'
       }}

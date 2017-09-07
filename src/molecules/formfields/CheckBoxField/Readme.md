@@ -1,7 +1,7 @@
 Checkbox Example:
 
 ```example
-  <CheckboxField
+  <CheckBoxField
     label='Fire extinguisher'
     input={{
       name: 'checkbox_test'
