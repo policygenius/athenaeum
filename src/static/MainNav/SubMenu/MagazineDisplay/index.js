@@ -62,6 +62,14 @@ class MagazineDisplay extends Component {
         })
       ])
         .then((data) => {
+          const recommendedPosts = data[0].posts.map(p => {
+            const post = p;
+
+            post.url = `https://policygenius.com/blog${p.url}`;
+
+            return post;
+          });
+
           this.setState({
             [this.props.activeName]: {
               loading: false,
@@ -69,7 +77,7 @@ class MagazineDisplay extends Component {
                 {
                   type: 'list',
                   header: 'Recommended',
-                  posts: data[0].posts,
+                  posts: recommendedPosts,
                 },
                 {
                   type: 'featured',
