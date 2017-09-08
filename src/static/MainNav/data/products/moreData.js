@@ -18,7 +18,6 @@ const submenuItems = [
 export default {
   menu: {
     header: 'More',
-    link: 'https://www.policygenius.com/blog/',
     activeName: 'more',
   },
   intro: {
