@@ -6,14 +6,9 @@ import omit from 'lodash/omit';
 import Tooltip from 'atoms/Tooltip';
 import ErrorMessage from 'atoms/ErrorMessage';
 
-import { renderOption, renderPlaceholder } from 'utils/fieldUtils';
+import { renderSelectOptions, renderPlaceholder } from 'utils/fieldUtils';
 import styles from './select_field.module.scss';
 
-function renderSelectOptions(options) {
-  if (!options) return null;
-
-  return options.map(renderOption);
-}
 
 const renderToolTip = (message) => {
   if (!message) return null;

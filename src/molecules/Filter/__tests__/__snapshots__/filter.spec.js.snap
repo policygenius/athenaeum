@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Filter /> renders correctly 1`] = `
+<div
+  className="filter"
+>
+  <label
+    className="label"
+    htmlFor={undefined}
+  >
+    Test label
+  </label>
+  <div
+    className="select-wrapper"
+  >
+    <select
+      className="select"
+      id={undefined}
+      onChange={[Function]}
+      value={2}
+    >
+      <option
+        className="option"
+        value={1}
+      >
+        Option 1
+      </option>
+      <option
+        className="option"
+        value={2}
+      >
+        Option 2
+      </option>
+      <option
+        className="option"
+        value={3}
+      >
+        Option 3
+      </option>
+    </select>
+  </div>
+</div>
+`;

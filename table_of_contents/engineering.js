@@ -20,6 +20,10 @@ module.exports = {
           ]
         },
         {
+          name: 'Filter',
+          components: 'src/molecules/Filter/**/index.js'
+        },
+        {
           name: 'FormFields',
           components: 'src/molecules/formfields/**/index.js'
         },
