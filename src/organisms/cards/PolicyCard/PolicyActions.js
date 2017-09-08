@@ -36,24 +36,25 @@ export const PolicyActions = (props) => {
       </Text>
       {discount && discount}
       <Spacer spacer={3} />
-      <Layout mediumCols={[ 6 ]} smallCols={[ 12, 6, 6 ]}>
+      <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]}>
         <Button
           variant='action'
           onClick={onContinue}
           className={classnames(styles['continue'])}
         >
-          <Hide hideOn='small'>
+          <Hide hideOn='small medium xLarge xxLarge'>
             <ResponsiveText text='Continue' offset={-3} size={75} />
           </Hide>
-          <Hide hideOn='medium large xLarge xxLarge'>
+
+          <Hide hideOn='large'>
             Continue
           </Hide>
         </Button>
         <Button onClick={onDetails}>
-          <Hide hideOn='small'>
-            <ResponsiveText text='Details' offset={-10} size={70} />
+          <Hide hideOn='small medium xLarge xxLarge'>
+            <ResponsiveText text='Details' offset={-10} size={75} />
           </Hide>
-          <Hide hideOn='medium large xLarge xxLarge'>
+          <Hide hideOn='large'>
             Details
           </Hide>
         </Button>
