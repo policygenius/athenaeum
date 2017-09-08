@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import styles from './policy_card.module.scss';
 import propTypes from './propTypes';
 
@@ -22,11 +23,12 @@ function PolicyCard(props) {
     onDetails,
     compareSelected,
     onCompare,
-    footer
+    footer,
+    className
   } = props;
 
   return (
-    <div className={styles['policy-card']}>
+    <div className={classnames(styles['policy-card'], className)}>
       <div className={styles['body']}>
         <Compare
           onCompare={onCompare}
