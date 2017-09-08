@@ -7,9 +7,9 @@ export default {
    */
   className: PropTypes.string,
   /**
-   * The insurance carrier logo
+   * The insurance carrier logo node
    */
-  carrierLogo: PropTypes.object.isRequired,
+  carrierLogo: PropTypes.node.isRequired,
   /**
    * The type of policy
    */

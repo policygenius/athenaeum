@@ -41,14 +41,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     <div
       className="carrier-logo"
     >
-      <img
-        src=""
-        style={
-          Object {
-            "width": "105px",
-          }
-        }
-      />
+      <div />
       <div
         className="divider"
       />
@@ -211,7 +204,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </svg>
             </div>
             <div
-              className="hide medium large xLarge"
+              className="hide medium large xLarge xxLarge"
             >
               Details
             </div>
