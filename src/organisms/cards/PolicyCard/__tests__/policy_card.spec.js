@@ -10,7 +10,7 @@ describe('<PolicyCard />', () => {
   beforeEach(() => {
     defaultProps = {
       footer: [],
-      carrierLogo: {},
+      carrierLogo: <div></div>,
       policyType: 'Type',
       policyTooltip: 'Tooltip',
       financialStrength: 'A+',

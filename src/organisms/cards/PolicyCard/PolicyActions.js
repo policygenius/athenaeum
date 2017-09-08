@@ -53,7 +53,7 @@ export const PolicyActions = (props) => {
           <Hide hideOn='small'>
             <ResponsiveText text='Details' offset={-10} size={70} />
           </Hide>
-          <Hide hideOn='medium large xLarge'>
+          <Hide hideOn='medium large xLarge xxLarge'>
             Details
           </Hide>
         </Button>

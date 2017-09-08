@@ -62,7 +62,7 @@ class MagazineDisplay extends Component {
         })
       ])
         .then((data) => {
-          const recommendedPosts = data[0].posts.map(p => {
+          const recommendedPosts = data[0].posts.map((p) => {
             const post = p;
 
             post.url = `https://policygenius.com/blog${p.url}`;

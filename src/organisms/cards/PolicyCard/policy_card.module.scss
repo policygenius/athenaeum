@@ -57,6 +57,12 @@ $footer: #f6f6f6;
   font-weight: 600;
 }
 
+.carrier-logo {
+  img {
+    width: 105px;
+  }
+}
+
 .policy-tooltip {
   > * {
     display: flex;
