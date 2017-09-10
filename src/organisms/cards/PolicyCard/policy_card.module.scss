@@ -21,7 +21,7 @@ $footer: #f6f6f6;
 }
 
 .body {
-  padding: ru(1) 0;
+  padding: rem-calc(20px) 0 ru(1);
   display: flex;
 }
 
@@ -82,10 +82,6 @@ $footer: #f6f6f6;
     flex-direction: column;
   }
 
-  .continue {
-    margin-bottom: ru(.75);
-  }
-
   .footer {
     justify-content: center;
     text-align: center;
@@ -121,6 +117,12 @@ $footer: #f6f6f6;
     &:first-child {
       padding-right: ru(.25);
     }
+  }
+}
+
+@media #{$small-and-medium-only} {
+  .continue {
+    margin-bottom: ru(.75);
   }
 }
 

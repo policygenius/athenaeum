@@ -143,7 +143,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         style={undefined}
       >
         <div
-          className="col col-sm-12 col-md-6 bottom-spacing-undefined"
+          className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined"
           onClick={undefined}
           style={undefined}
         >
@@ -154,7 +154,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             type="button"
           >
             <div
-              className="hide small"
+              className="hide small medium xLarge xxLarge"
             >
               <svg
                 height="100%"
@@ -170,14 +170,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </svg>
             </div>
             <div
-              className="hide medium large xLarge xxLarge"
+              className="hide large"
             >
               Continue
             </div>
           </button>
         </div>
         <div
-          className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
           onClick={undefined}
           style={undefined}
         >
@@ -188,11 +188,11 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             type="button"
           >
             <div
-              className="hide small"
+              className="hide small medium xLarge xxLarge"
             >
               <svg
                 height="100%"
-                viewBox="-10 0 70 15"
+                viewBox="-10 0 75 15"
                 width="100%"
               >
                 <text
@@ -204,14 +204,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </svg>
             </div>
             <div
-              className="hide medium large xLarge xxLarge"
+              className="hide large"
             >
               Details
             </div>
           </button>
         </div>
         <div
-          className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
           onClick={undefined}
           style={undefined}
         >
