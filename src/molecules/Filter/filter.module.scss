@@ -1,0 +1,43 @@
+.filter {
+  display: flex;
+}
+
+.label {
+  @include typography-6(false);
+  color: color('neutral-3');
+  padding-right: rem-calc(8px);
+}
+
+.select-wrapper {
+  position: relative;
+  display: flex;
+  width: rem-calc(84px);
+
+  &:after {
+    width: 0;
+    height: 0;
+    border-left: rem-calc(4px) solid transparent;
+    border-right: rem-calc(4px) solid transparent;
+    border-top: ru(.25) solid color('neutral-2');
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    right: ru(.25);
+  }
+}
+
+.select {
+  @include typography-6(false);
+  width: 100%;
+  color: color('neutral-2');
+  border: 0;
+  -webkit-appearance: none;
+  font-weight: 600;
+  z-index: 1;
+
+  &:focus {
+    outline: none;
+  }
+}
