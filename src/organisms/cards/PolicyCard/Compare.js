@@ -6,22 +6,28 @@ import Spacer from 'atoms/Spacer';
 import CheckBoxField from 'molecules/formfields/CheckBoxField';
 import styles from './policy_card.module.scss';
 
-const Compare = ({ compareSelected, onCompare }) =>
+const Compare = ({ compareSelected, onCompare, name }) =>
   <Hide hideOn='small' className={styles['compare']}>
-    <Text
-      color='neutral-3'
-      light
-      className={compareSelected && styles['checked']}
+    <div
+      id={`${name}-checkbox-wrapper`}
+      className={styles['checkbox-wrapper']}
+      onClick={onCompare}
     >
-      Compare
-    </Text>
-    <Spacer spacer={1} />
-    <CheckBoxField
-      input={{
-        onChange: onCompare,
-        value: compareSelected
-      }}
-    />
+      <Text
+        color='neutral-3'
+        light
+        className={compareSelected && styles['checked']}
+      >
+        Compare
+      </Text>
+      <Spacer spacer={1} />
+      <CheckBoxField
+        input={{
+          value: compareSelected,
+          name
+        }}
+      />
+    </div>
     <div className={styles['divider']} />
   </Hide>
 
@@ -29,7 +35,8 @@ const Compare = ({ compareSelected, onCompare }) =>
 
 Compare.propTypes = {
   compareSelected: PropTypes.bool,
-  onCompare: PropTypes.func
+  onCompare: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default Compare;

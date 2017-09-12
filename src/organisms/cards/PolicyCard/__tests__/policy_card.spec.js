@@ -22,7 +22,9 @@ describe('<PolicyCard />', () => {
       },
       onContinue: () => {},
       onDetails: () => {},
-      onCompare: () => {},
+      compareCheckbox: {
+        onCompare: () => {},
+      }
     };
   });
 

@@ -21,18 +21,16 @@ function PolicyCard(props) {
     discount,
     onContinue,
     onDetails,
-    compareSelected,
-    onCompare,
+    compareCheckbox,
     footer,
-    className
+    className,
   } = props;
 
   return (
     <div className={classnames(styles['policy-card'], className)}>
       <div className={styles['body']}>
         <Compare
-          onCompare={onCompare}
-          compareSelected={compareSelected}
+          {...compareCheckbox}
         />
         <CarrierLogo
           carrierLogo={carrierLogo}
@@ -49,7 +47,7 @@ function PolicyCard(props) {
         <PolicyActions
           onContinue={onContinue}
           onDetails={onDetails}
-          onCompare={onCompare}
+          onCompare={compareCheckbox.onCompare}
           discount={discount}
           premium={premium}
         />

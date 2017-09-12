@@ -52,6 +52,13 @@ $footer: #f6f6f6;
   display: block;
 }
 
+.checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
 .checked {
   color: color('neutral-2');
   font-weight: 600;

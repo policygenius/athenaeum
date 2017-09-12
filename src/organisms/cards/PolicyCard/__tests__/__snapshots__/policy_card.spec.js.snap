@@ -10,30 +10,36 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     <div
       className="hide compare small"
     >
-      <p
-        className="text typography-6 light neutral-3 undefined p undefined"
-      >
-        Compare
-      </p>
       <div
-        className="top-1"
-      />
-      <label
-        className="checkbox"
-        htmlFor="checkbox-undefined"
+        className="checkbox-wrapper"
+        id="undefined-checkbox-wrapper"
+        onClick={[Function]}
       >
-        <input
-          checked={undefined}
-          className="checkbox-input"
-          id="checkbox-undefined"
-          onChange={[Function]}
-          type="checkbox"
-          value={undefined}
+        <p
+          className="text typography-6 light neutral-3 undefined p undefined"
+        >
+          Compare
+        </p>
+        <div
+          className="top-1"
         />
-        <span
-          className="checkbox-label light"
-        />
-      </label>
+        <label
+          className="checkbox"
+          htmlFor="checkbox-undefined"
+        >
+          <input
+            checked={undefined}
+            className="checkbox-input"
+            id="checkbox-undefined"
+            name={undefined}
+            type="checkbox"
+            value={undefined}
+          />
+          <span
+            className="checkbox-label light"
+          />
+        </label>
+      </div>
       <div
         className="divider"
       />
