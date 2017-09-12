@@ -1,5 +1,6 @@
 .filter {
   display: flex;
+  width: 100%;
 }
 
 .label {
@@ -11,7 +12,7 @@
 .select-wrapper {
   position: relative;
   display: flex;
-  width: rem-calc(84px);
+  width: 100%;
 
   &:after {
     width: 0;

@@ -1,8 +1,9 @@
+NOTE: Filter will need to be placed inside a parent container to set the appropriate width in implementation. The width is not set here because the length of content in the select field will vary, causing the placement of the select caret to change.
 ### Filter Example:
 
 ```example
     <Filter
-      label='Test label'
+      label='Test'
       selectOptions={[
         { label: 'Option 1',
           value: 1 },
