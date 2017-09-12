@@ -1,17 +1,17 @@
 .filter {
   display: flex;
-  width: 100%;
 }
 
 .label {
   @include typography-6(false);
   color: color('neutral-3');
   padding-right: rem-calc(8px);
+  white-space: nowrap;
 }
 
 .select-wrapper {
-  position: relative;
   display: flex;
+  position: relative;
   width: 100%;
 
   &:after {
@@ -37,6 +37,8 @@
   -webkit-appearance: none;
   font-weight: 600;
   z-index: 1;
+  padding: 0;
+  padding-right: ru(1);
 
   &:focus {
     outline: none;

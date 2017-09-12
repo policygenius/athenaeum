@@ -18,21 +18,21 @@ const ResponsiveText = ({ text, offset, size }) =>
 
 export const PolicyActions = (props) => {
   const {
-    monthlyPremium,
+    premium,
     discount,
     onContinue,
     onDetails,
     onCompare
   } = props;
 
-  const formattedPremium = accounting.formatMoney(monthlyPremium);
+  const formattedPremium = accounting.formatMoney(premium.price);
 
   return (
     <div className={styles['actions']}>
       <Text type={5} color='neutral-2' semibold>
         <Text type={3} semibold>{formattedPremium}</Text>
         { ' ' }
-        mo
+        {premium.format}
       </Text>
       {discount && discount}
       <Spacer spacer={3} />
@@ -71,7 +71,10 @@ export const PolicyActions = (props) => {
 };
 
 PolicyActions.propTypes = {
-  monthlyPremium: PropTypes.number,
+  premium: PropTypes.shape({
+    price: PropTypes.number,
+    format: PropTypes.string,
+  }),
   discount: PropTypes.node,
   onContinue: PropTypes.func,
   onDetails: PropTypes.func,

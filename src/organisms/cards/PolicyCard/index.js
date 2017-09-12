@@ -17,7 +17,7 @@ function PolicyCard(props) {
     policyType,
     policyTooltip,
     carrierLogo,
-    monthlyPremium,
+    premium,
     discount,
     onContinue,
     onDetails,
@@ -51,7 +51,7 @@ function PolicyCard(props) {
           onDetails={onDetails}
           onCompare={onCompare}
           discount={discount}
-          monthlyPremium={monthlyPremium}
+          premium={premium}
         />
       </div>
       {!!footer.length &&
