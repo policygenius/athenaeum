@@ -31,9 +31,12 @@ export default {
    */
   totalCustomers: PropTypes.number.isRequired,
   /**
-   * The insurance carrier logo
+   * The insurance premium
    */
-  monthlyPremium: PropTypes.number.isRequired,
+  premium: PropTypes.shape({
+    price: PropTypes.number.isRequired,
+    format: PropTypes.string.isRequired,
+  }),
   /**
    * Optional discount percentage
    */

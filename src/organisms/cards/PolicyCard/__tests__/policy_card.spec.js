@@ -16,7 +16,10 @@ describe('<PolicyCard />', () => {
       financialStrength: 'A+',
       customerService: 'A+',
       totalCustomers: 5200000,
-      monthlyPremium: 19.8,
+      premium: {
+        price: 19.8,
+        format: 'mo'
+      },
       onContinue: () => {},
       onDetails: () => {},
       onCompare: () => {},
