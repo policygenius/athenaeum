@@ -54,11 +54,13 @@ export default {
    */
   onDetails: PropTypes.func.isRequired,
   /**
-   * Click handler for the compare checkbox/ button
+   * Props for the Checkbox to compare
+   *
+   * NOTE: `name` must be unique
    */
-  onCompare: PropTypes.func.isRequired,
-  /**
-   * Whether or not the compare checkbox is selected
-   */
-  compareSelected: PropTypes.bool,
+  compareCheckbox: PropTypes.shape({
+    onCompare: PropTypes.func.isRequired,
+    compareSelected: PropTypes.bool,
+    name: PropTypes.string,
+  })
 };
