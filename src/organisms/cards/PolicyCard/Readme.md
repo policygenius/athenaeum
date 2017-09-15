@@ -23,7 +23,10 @@
           alt='hello'
         />
       }
-      monthlyPremium={19.80}
+      premium={{
+        price: '19.80',
+        format: 'mo'
+      }}
       discount={
         <Text color='neutral-3' type={7} light>
           <Text semibold type={7}>Save 5%</Text>
@@ -33,8 +36,11 @@
       }
       onContinue={() => alert('continue button clicked')}
       onDetails={() => alert('details button clicked')}
-      onCompare={(e) => setState({ compare: e.target.checked })}
-      compareSelected={state.compare}
+      compareCheckbox={{
+        onCompare: (e) => setState({ compare: e.target.checked }),
+        compareSelected: state.compare,
+        name: 'unique-name'
+      }}
       footer={[
         <Icon icon='checkmark' height='16px' width='16px' />,
         <span style={{ color: '#78c07f', fontWeight: 'bold' }}>Excellent rates for diabetics</span>,
