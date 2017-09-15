@@ -106,6 +106,9 @@ Static components are ones that are completely self contained, displaying a fini
 
 While this may seem counterintuitive to what the RCL is trying to achieve, these static components will prove incredible useful as PolicyGenius moves to a full React environment. By utilizing the power of RCL components, Static components can be built with minimal dependency weight and be exported as static assets as well as part of the NPM package, giving PolicyGenius a couple of options to leverage them. In an effort to improve overall page speed for the PolicyGenius blog, the first of these components to be included in the RCL is the MainNav.
 
+### How main nav is being consumed
+![main nav](main_nav.png)
+
 ### Serving Static components
 Since the MainNav is the only static component, the command is simply:
 
