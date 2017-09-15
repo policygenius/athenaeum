@@ -19,6 +19,18 @@ steps:
       docker-compose:
         run: athenaeum
 
+  - wait
+
+  - name: ':rocket: :s3: staging!'
+    command: bin/deploy_nav_staging
+    agents:
+      queue: builder
+    plugins:
+      docker-compose:
+        run: athenaeum
+
+  - wait
+
   - block: 'Trigger deploy/publish'
     prompt: 'Choose a version bump'
     branches: 'master'
