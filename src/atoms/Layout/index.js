@@ -11,6 +11,7 @@ function Layout( props ) {
     padding,
     style,
     variant,
+    columnBreakpoint
   } = props;
 
   const kids = processChildren(props);
@@ -22,7 +23,8 @@ function Layout( props ) {
         styles['layout'],
         padding && styles['padding'],
         className,
-        variant && styles[variant]
+        variant && styles[variant],
+        columnBreakpoint && styles[`break-${columnBreakpoint}`]
       )}
     >
       { kids }

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import styles from '../layout.module.scss';
+import colors from 'atoms/Color/colors.scss';
 
 function Col(props) {
   const {
@@ -19,6 +19,7 @@ function Col(props) {
     style,
     bottomSpacing,
     onClick,
+    borderColor
   } = props;
 
   const classes = [
@@ -32,7 +33,8 @@ function Col(props) {
     flex && styles['flex'],
     styles[`bottom-spacing-${bottomSpacing}`],
     padding && styles['padding'],
-    className,
+    colors[`border-${borderColor}`],
+    className
   ];
 
   return (
@@ -122,5 +124,8 @@ Col.propTypes = {
   onClick: PropTypes.func,
 };
 
+Col.defaultProps = {
+  borderColor: 'neutral-6'
+};
 
 export default Col;

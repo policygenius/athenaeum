@@ -59,6 +59,7 @@ module.exports = {
           components: () => [
             'src/molecules/StepProgress/index.js',
             'src/molecules/AgentCallout/index.js',
+            'src/molecules/FeatureSquare/index.js',
           ]
         }
       ]
