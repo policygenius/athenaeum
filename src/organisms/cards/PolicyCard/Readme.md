@@ -17,6 +17,11 @@
           Requires Medical Exam
         </div>
       }
+      policyTypeHoverMessage={
+        <div>
+          hello, world
+        </div>
+      }
       carrierLogo={
         <img
           src='http://localhost:3000/assets/insurance-cards-logos/banner-life-dark-2x.png'

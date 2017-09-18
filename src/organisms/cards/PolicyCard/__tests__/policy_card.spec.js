@@ -24,7 +24,8 @@ describe('<PolicyCard />', () => {
       onDetails: () => {},
       compareCheckbox: {
         onCompare: () => {},
-      }
+      },
+      policyTypeHoverMessage: <div></div>
     };
   });
 

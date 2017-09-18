@@ -40,7 +40,10 @@ Layout.propTypes = {
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values
    */
-  bottomSpacing: PropTypes.string,
+  bottomSpacing: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
 
   /**
    * determines pixel breakpoint for columns and rows

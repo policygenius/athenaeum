@@ -79,6 +79,12 @@ $footer: #f6f6f6;
   }
 }
 
+.policy-type-tooltip {
+  left: 50%;
+  top: calc(100% + 18px);
+  width: ru(11.5);
+}
+
 @media #{$small-only} {
   .policy-tooltip {
     > * {

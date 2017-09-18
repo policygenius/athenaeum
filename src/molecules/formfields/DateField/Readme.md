@@ -36,6 +36,7 @@ DateField (Month/Year):
         onBlur: () => true,
         onFocus: () => true
       }}
+      meta={{ touched: true, error: 'hello' }}
     >
       <TextField
         placeholder='MM'

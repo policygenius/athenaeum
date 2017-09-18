@@ -14,6 +14,14 @@ Tooltip Example:
   </div>
 ```
 
+Tooltip with custom text
+
+```example
+  <Tooltip text='When you hover over me I become a tooltip'>
+    See!
+  </Tooltip>
+```
+
 Inline Tooltip Example:
 
 ```example

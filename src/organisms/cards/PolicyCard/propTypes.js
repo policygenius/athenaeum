@@ -19,6 +19,10 @@ export default {
    */
   policyTooltip: PropTypes.node.isRequired,
   /**
+   * Details about the policy that show on hover
+   */
+  policyTypeHoverMessage: PropTypes.node.isRequired,
+  /**
    * The financial strength of the carrier
    */
   financialStrength: PropTypes.string.isRequired,

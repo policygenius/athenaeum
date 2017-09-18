@@ -16,6 +16,7 @@ function PolicyCard(props) {
     totalCustomers,
     policyType,
     policyTooltip,
+    policyTypeHoverMessage,
     carrierLogo,
     premium,
     discount,
@@ -38,6 +39,7 @@ function PolicyCard(props) {
         <PolicyType
           policyType={policyType}
           policyTooltip={policyTooltip}
+          policyTypeHoverMessage={policyTypeHoverMessage}
         />
         <PolicyInformation
           financialStrength={financialStrength}
