@@ -8,6 +8,7 @@ import styles from './main_nav_magazine_display.module.scss';
 import sharedStyles from '../main_nav_submenu.module.scss';
 
 import { fetchPosts } from '../../utils/fetchMagazinePosts';
+import fullBlogUrl from '../../utils/fullBlogUrl';
 
 class MagazineDisplay extends Component {
   constructor() {
@@ -65,7 +66,7 @@ class MagazineDisplay extends Component {
           const recommendedPosts = data[0].posts.map((p) => {
             const post = p;
 
-            post.url = `https://policygenius.com/blog${p.url}`;
+            post.url = fullBlogUrl(p.url);
 
             return post;
           });
