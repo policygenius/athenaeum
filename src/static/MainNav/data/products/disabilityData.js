@@ -2,7 +2,7 @@ const submenuItems = [
   {
     header: 'Types of Disability Insurance',
     items: [
-      { title: 'Long-Term Disability Insurance', url: '/long-term-disability-insurance', },
+      { title: 'Long-Term Disability Insurance', url: '/long-term-disability-insurance/', },
       { title: 'Short-Term Disability Insurance', url: '/long-term-disability-insurance/learn/short-term-disability-insurance', },
       { title: 'Social Security Disability Insurance', url: '/long-term-disability-insurance/learn/social-security-disability-insurance', },
       { title: 'Supplemental Disability Insurance', url: '/long-term-disability-insurance/learn/supplemental-disability-insurance', },
