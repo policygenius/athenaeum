@@ -39,7 +39,8 @@ export const PolicyType = ({ policyType, policyTooltip, policyTypeHoverMessage }
           </Text>
         </div>
       }
-      hoverMessageClassName={styles['policy-type-tooltip']}
+      hoverMessageClassName={styles['policy-type-hover-message']}
+      className={styles['policy-type-tooltip']}
     >
       { policyTypeHoverMessage }
     </Tooltip>

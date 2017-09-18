@@ -39,6 +39,7 @@ export const PolicyActions = (props) => {
       <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]}>
         <Button
           variant='action'
+          slim
           onClick={onContinue}
           className={classnames(styles['continue'])}
         >
@@ -50,7 +51,7 @@ export const PolicyActions = (props) => {
             Continue
           </Hide>
         </Button>
-        <Button onClick={onDetails}>
+        <Button slim onClick={onDetails}>
           <Hide hideOn='small medium xLarge xxLarge'>
             <ResponsiveText text='Details' offset={-10} size={75} />
           </Hide>
@@ -61,6 +62,7 @@ export const PolicyActions = (props) => {
         <Hide hideOn='medium large xLarge xxLarge'>
           <Button
             onClick={onCompare}
+            slim
           >
             Compare
           </Button>

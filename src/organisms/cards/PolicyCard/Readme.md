@@ -29,7 +29,7 @@
         />
       }
       premium={{
-        price: '19.80',
+        price: 19.80,
         format: 'mo'
       }}
       discount={

@@ -56,7 +56,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       className="policy-type"
     >
       <span
-        className="tooltip-wrapper"
+        className="tooltip-wrapper policy-type-tooltip"
         onClick={[Function]}
       >
         <div>
@@ -81,7 +81,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </strong>
         </div>
         <span
-          className="hover-message policy-type-tooltip"
+          className="hover-message policy-type-hover-message"
         >
           <div />
         </span>
@@ -167,7 +167,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <button
-            className="button action continue"
+            className="button action continue slim"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -201,7 +201,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <button
-            className="button button"
+            className="button button slim"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -238,7 +238,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="hide medium large xLarge xxLarge"
           >
             <button
-              className="button button"
+              className="button button slim"
               disabled={undefined}
               onClick={[Function]}
               type="button"

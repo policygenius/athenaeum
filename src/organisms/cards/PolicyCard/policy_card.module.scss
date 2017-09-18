@@ -79,10 +79,14 @@ $footer: #f6f6f6;
   }
 }
 
-.policy-type-tooltip {
+.policy-type-hover-message {
   left: 50%;
   top: calc(100% + 18px);
   width: ru(11.5);
+}
+
+.policy-type-tooltip {
+  cursor: help;
 }
 
 @media #{$small-only} {
@@ -175,5 +179,6 @@ $footer: #f6f6f6;
   .policy-name {
     margin: rem-calc(3px) 0;
     line-height: ru(1);
+    display: block;
   }
 }
