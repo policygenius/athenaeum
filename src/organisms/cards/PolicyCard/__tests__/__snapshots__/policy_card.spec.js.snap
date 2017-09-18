@@ -55,25 +55,38 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     <div
       className="policy-type"
     >
-      <div
-        className="hide small"
+      <span
+        className="tooltip-wrapper"
+        onClick={[Function]}
       >
-        <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined"
+        <div>
+          <div
+            className="hide small"
+          >
+            <strong
+              className="text typography-7 semibold neutral-3 undefined strong undefined"
+            >
+              Policy Type
+            </strong>
+          </div>
+          <strong
+            className="text typography-5 semibold neutral-2 undefined strong undefined policy-name"
+          >
+            Type
+          </strong>
+          <strong
+            className="text typography-7 semibold neutral-2 undefined strong undefined policy-tooltip"
+          >
+            Tooltip
+          </strong>
+        </div>
+        <span
+          className="hover-message policy-type-tooltip"
         >
-          Policy Type
-        </strong>
-      </div>
-      <strong
-        className="text typography-5 semibold neutral-2 undefined strong undefined policy-name"
-      >
-        Type
-      </strong>
-      <strong
-        className="text typography-7 semibold neutral-2 undefined strong undefined policy-tooltip"
-      >
-        Tooltip
-      </strong>
+          <div />
+        </span>
+        <noscript />
+      </span>
       <div
         className="divider"
       />

@@ -36,6 +36,8 @@ class Tooltip extends React.Component {
       left,
       right,
       onClick,
+      text,
+      hoverMessageClassName,
     } = this.props;
 
     return (
@@ -46,12 +48,13 @@ class Tooltip extends React.Component {
           className
         )}
       >
-        <Icon icon='questionMark' className={styles['tooltip']} />
+        { text }
         <span
           className={classnames(
             children && styles['hover-message'],
             left && styles['left'],
             right && styles['right'],
+            hoverMessageClassName
           )}
         >
           { children }
@@ -91,6 +94,18 @@ Tooltip.propTypes = {
    * onClick will override the default `openModal` click handler
    */
   onClick: PropTypes.func,
+  /**
+   * defaults to a question mark Icon
+   */
+  text: PropTypes.node,
+  /**
+   * className for the hover message
+   */
+  hoverMessageClassName: PropTypes.string,
+};
+
+Tooltip.defaultProps = {
+  text: <Icon icon='questionMark' className={styles['tooltip']} />
 };
 
 export default Tooltip;
