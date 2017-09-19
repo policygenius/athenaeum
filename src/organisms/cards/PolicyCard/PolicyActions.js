@@ -29,12 +29,18 @@ export const PolicyActions = (props) => {
 
   return (
     <div className={styles['actions']}>
-      <Text type={5} color='neutral-2' semibold>
-        <Text type={3} semibold>{formattedPremium}</Text>
-        { ' ' }
-        {premium.format}
-      </Text>
-      {discount && discount}
+      { premium.price ?
+        <div>
+          <Text type={5} color='neutral-2' semibold>
+            <Text type={3} semibold>{formattedPremium}</Text>
+            { ' ' }
+            {premium.format}
+          </Text>
+          {discount && discount}
+        </div>
+        :
+        <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
+      }
       <Spacer spacer={3} />
       <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]}>
         <Button
@@ -76,6 +82,7 @@ PolicyActions.propTypes = {
   premium: PropTypes.shape({
     price: PropTypes.number,
     format: PropTypes.string,
+    defaultText: PropTypes.string,
   }),
   discount: PropTypes.node,
   onContinue: PropTypes.func,

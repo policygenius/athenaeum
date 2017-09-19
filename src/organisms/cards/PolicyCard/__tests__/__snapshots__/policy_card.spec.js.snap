@@ -143,17 +143,19 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     <div
       className="actions"
     >
-      <strong
-        className="text typography-5 semibold neutral-2 undefined strong undefined"
-      >
+      <div>
         <strong
-          className="text typography-3 semibold undefined undefined strong undefined"
+          className="text typography-5 semibold neutral-2 undefined strong undefined"
         >
-          $19.80
+          <strong
+            className="text typography-3 semibold undefined undefined strong undefined"
+          >
+            $19.80
+          </strong>
+           
+          mo
         </strong>
-         
-        mo
-      </strong>
+      </div>
       <div
         className="top-3"
       />
