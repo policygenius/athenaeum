@@ -107,6 +107,12 @@ $button-solid-background-tertiary-color:   #f08f5c;
   color: $button-info-color;
 }
 
+.slim {
+  padding-top: ru(.5);
+  padding-bottom: ru(.5);
+  line-height: 1rem;
+}
+
 .toggle {
   @include typography-7(false);
   @include typography-regular;
@@ -118,7 +124,7 @@ $button-solid-background-tertiary-color:   #f08f5c;
 
   padding-top: ru(.5);
   padding-bottom: ru(.5);
-  line-height: 1em;
+  line-height: 1rem;
 
   &:focus {
     outline: none;

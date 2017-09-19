@@ -78,3 +78,9 @@ Toggle Button Active Example:
 ```example
       <Button variant='toggle-active'>Toggle Button</Button>
 ```
+
+Slim Button Example:
+
+``` example
+      <Button variant='action' slim>A Vertically Slim Button</Button>
+```
