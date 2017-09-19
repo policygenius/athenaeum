@@ -8,6 +8,7 @@ import ArticleImage from '../../ArticleImage';
 import LoadingImage from '../../Loading/LoadingImage';
 import LoadingList from '../../Loading/LoadingList';
 import SubMenuList from '../../SubMenuList';
+import fullBlogUrl from '../../../utils/fullBlogUrl';
 
 import sharedStyles from '../shared/main_nav_article_list.module.scss';
 import styles from './main_nav_blog_article_list.module.scss';
@@ -46,7 +47,7 @@ class BlogArticleList extends Component {
           imgProps={{
             src: `${item.post.feature_image}?fit=crop&w=640&h=360`,
           }}
-          link={`https://policygenius.com/blog${item.post.url}`}
+          link={fullBlogUrl(item.post.url)}
         />
       );
     }
