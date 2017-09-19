@@ -29,8 +29,9 @@
         />
       }
       premium={{
-        price: 19.80,
-        format: 'mo'
+        price: null,
+        format: 'mo',
+        defaultText: 'Quote available from a PolicyGenius expert'
       }}
       discount={
         <Text color='neutral-3' type={7} light>
