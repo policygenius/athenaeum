@@ -51,6 +51,7 @@ function SubMenu(props) {
     setMobileCollapsedMenu,
     mobileCollapsedMenu,
     hasChildren,
+    magazine,
   } = props;
 
   const classes = [
@@ -61,6 +62,11 @@ function SubMenu(props) {
   ];
 
   return (
+    /*
+      Removing magazine headers from mobile menu functionality because of
+      issues with mobile Safari not fetching blog posts.
+      Will need to remove this once we have a solution
+    */
     <li
       className={classnames(...classes)}
       onMouseEnter={() => setActiveSubTab(activeName)}
@@ -68,9 +74,9 @@ function SubMenu(props) {
     >
       <LinkWrapper
         className={styles['header']}
-        href={showMobileMenu ? null : link}
+        href={showMobileMenu && !magazine ? null : link}
         onClick={
-          showMobileMenu ? () => setMobileCollapsedMenu(activeName) : () => true
+          showMobileMenu && !magazine ? () => setMobileCollapsedMenu(activeName) : () => true
         }
         variant='no-text-decoration'
         color='neutral-2'
@@ -96,6 +102,7 @@ SubMenu.propTypes = {
   mobileCollapsedMenu: PropTypes.string,
   menu: PropTypes.object,
   hasChildren: PropTypes.bool,
+  magazine: PropTypes.bool,
 };
 
 getChildren.propTypes = {
