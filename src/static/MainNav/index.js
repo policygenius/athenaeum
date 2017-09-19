@@ -63,7 +63,15 @@ class MainNav extends Component {
   }
 
   toggleMobileMenu = (toggle) => {
-    this.setState({ showMobileMenu: toggle });
+    setTimeout(() => {
+      this.setState({
+        mobileCollapsedMenu: null,
+      });
+    }, 500);
+
+    this.setState({
+      showMobileMenu: toggle
+    });
   }
 
   toggleSearching = (toggle) => {

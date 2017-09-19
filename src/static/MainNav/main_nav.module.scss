@@ -66,6 +66,11 @@
 
   &.mobile-collapsed {
     transform: translateX(-100%);
+
+    // quick hack to allow for visible secondary menu on true mobile
+    .primary-panel-wrapper {
+      overflow: visible;
+    }
   }
 }
 
