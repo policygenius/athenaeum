@@ -113,7 +113,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </strong>
         </strong>
         <span
-          className="hover-message"
+          className="hover-message policy-type-hover-message"
         >
           <div />
         </span>
@@ -138,7 +138,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </strong>
         </strong>
         <span
-          className="hover-message"
+          className="hover-message policy-type-hover-message"
         >
           <div />
         </span>
@@ -163,7 +163,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </strong>
         </strong>
         <span
-          className="hover-message"
+          className="hover-message policy-type-hover-message"
         >
           <div />
         </span>

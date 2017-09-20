@@ -15,6 +15,7 @@ export const PolicyInformation = ({ financialStrength, customerService, totalCus
           <Text color='neutral-2' semibold>{financialStrength.value}</Text>
         </Text>
       }
+      hoverMessageClassName={styles['policy-type-hover-message']}
       className={styles['policy-info-tooltip']}
     >
       { financialStrength.hoverMessage }
@@ -26,6 +27,7 @@ export const PolicyInformation = ({ financialStrength, customerService, totalCus
           <Text color='neutral-2' semibold>{customerService.value}</Text>
         </Text>
       }
+      hoverMessageClassName={styles['policy-type-hover-message']}
       className={styles['policy-info-tooltip']}
     >
       { customerService.hoverMessage }
@@ -37,6 +39,7 @@ export const PolicyInformation = ({ financialStrength, customerService, totalCus
           <Text color='neutral-2' semibold>{accounting.formatNumber(totalCustomers.value)}</Text>
         </Text>
       }
+      hoverMessageClassName={styles['policy-type-hover-message']}
       className={styles['policy-info-tooltip']}
     >
       { totalCustomers.hoverMessage }
