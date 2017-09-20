@@ -23,7 +23,6 @@ export default {
   menu: {
     header: 'More',
     activeName: 'more',
-    link: '/blog/',
   },
   intro: {
     cta: 'Get Your Insurance Checkup™',
