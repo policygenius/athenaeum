@@ -13,9 +13,18 @@ describe('<PolicyCard />', () => {
       carrierLogo: <div></div>,
       policyType: 'Type',
       policyTooltip: 'Tooltip',
-      financialStrength: 'A+',
-      customerService: 'A+',
-      totalCustomers: 5200000,
+      financialStrength: {
+        value: 'A+',
+        hoverMessage: <div></div>
+      },
+      customerService: {
+        value: 'A+',
+        hoverMessage: <div></div>
+      },
+      totalCustomers: {
+        value: 16,
+        hoverMessage: <div></div>
+      },
       premium: {
         price: 19.8,
         format: 'mo'

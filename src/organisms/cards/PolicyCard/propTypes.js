@@ -25,15 +25,24 @@ export default {
   /**
    * The financial strength of the carrier
    */
-  financialStrength: PropTypes.string.isRequired,
+  financialStrength: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    hoverMessage: PropTypes.node.isRequired
+  }),
   /**
    * The customer service rating of the carrier
    */
-  customerService: PropTypes.string.isRequired,
+  customerService: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    hoverMessage: PropTypes.node.isRequired
+  }),
   /**
    * The total number of customers for the carrier
    */
-  totalCustomers: PropTypes.number.isRequired,
+  totalCustomers: PropTypes.shape({
+    value: PropTypes.number.isRequired,
+    hoverMessage: PropTypes.node.isRequired
+  }),
   /**
    * The insurance premium
    */

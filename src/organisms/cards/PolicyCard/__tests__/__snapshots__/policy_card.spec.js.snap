@@ -94,48 +94,81 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     <div
       className="hide policy-info small medium"
     >
-      <strong
-        className="text typography-7 semibold neutral-3 undefined strong undefined"
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
       >
-        <div
-          className="label"
-        >
-          Financial Strength
-        </div>
         <strong
-          className="text typography-6 semibold neutral-2 undefined strong undefined"
+          className="text typography-7 semibold neutral-3 undefined strong undefined"
         >
-          A+
+          <div
+            className="policy-info-label"
+          >
+            Financial Strength
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined"
+          >
+            A+
+          </strong>
         </strong>
-      </strong>
-      <strong
-        className="text typography-7 semibold neutral-3 undefined strong undefined"
+        <span
+          className="hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
       >
-        <div
-          className="label"
-        >
-          Customer Service
-        </div>
         <strong
-          className="text typography-6 semibold neutral-2 undefined strong undefined"
+          className="text typography-7 semibold neutral-3 undefined strong undefined"
         >
-          A+
+          <div
+            className="policy-info-label"
+          >
+            Customer Service
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined"
+          >
+            A+
+          </strong>
         </strong>
-      </strong>
-      <strong
-        className="text typography-7 semibold neutral-3 undefined strong undefined"
+        <span
+          className="hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
       >
-        <div
-          className="label"
-        >
-          Total Customers
-        </div>
         <strong
-          className="text typography-6 semibold neutral-2 undefined strong undefined"
+          className="text typography-7 semibold neutral-3 undefined strong undefined"
         >
-          5,200,000
+          <div
+            className="policy-info-label"
+          >
+            Total Customers
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined"
+          >
+            16
+          </strong>
         </strong>
-      </strong>
+        <span
+          className="hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
       <div
         className="divider"
       />
