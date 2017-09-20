@@ -165,10 +165,15 @@ $footer: #f6f6f6;
 
   .policy-info > strong {
     padding-bottom: ru(.25);
-    .label {
-      display: inline-block;
-      width: ru(5);
-    }
+  }
+
+  .policy-info-tooltip {
+    cursor: pointer;
+  }
+
+  .policy-info-label {
+    display: inline-block;
+    width: ru(5);
   }
 
   .actions {

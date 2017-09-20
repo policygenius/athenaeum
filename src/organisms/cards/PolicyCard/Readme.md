@@ -2,9 +2,18 @@
 
 ```example
     <PolicyCard
-      financialStrength='A+'
-      customerService='A+'
-      totalCustomers={5200000}
+      financialStrength={{
+        value: 'A+',
+        hoverMessage: <Text>Financial Strength Important</Text>
+      }}
+      customerService={{
+        value: 'A+',
+        hoverMessage: <Text>Customer Service Important</Text>
+      }}
+      totalCustomers={{
+        value: 16,
+        hoverMessage: <Text>Crowds Important</Text>
+      }}
       policyType='Simplified Issue Whole Life'
       policyTooltip={
         <div>
