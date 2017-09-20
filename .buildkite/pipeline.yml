@@ -20,14 +20,9 @@ steps:
         run: athenaeum
 
   - wait
-
-  - name: ':rocket: :s3: staging!'
-    command: bin/deploy_nav_staging
-    agents:
-      queue: builder
-    plugins:
-      docker-compose:
-        run: athenaeum
+  - trigger: "athenaeum-main-nav"
+    label: ':roller_coaster: Trigger MainNav Build'
+    async: true
 
   - wait
 
