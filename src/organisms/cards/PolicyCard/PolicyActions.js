@@ -10,7 +10,11 @@ import Spacer from 'atoms/Spacer';
 import styles from './policy_card.module.scss';
 
 const ResponsiveText = ({ text, offset, size }) =>
-  <svg width='100%' height='100%' viewBox={`${offset} 0 ${size} 15`}>
+  <svg
+    width='100%'
+    viewBox={`${offset} 0 ${size} 15`}
+    className={styles['svg-text']}
+  >
     <text x='0' y='12'>{text}</text>
   </svg>
 
@@ -42,7 +46,7 @@ export const PolicyActions = (props) => {
         <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
       }
       <Spacer spacer={3} />
-      <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]}>
+      <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]} style={{ width: '100%' }}>
         <Button
           variant='action'
           slim

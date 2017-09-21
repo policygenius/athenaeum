@@ -44,7 +44,6 @@ export const PolicyInformation = ({ financialStrength, customerService, totalCus
     >
       { totalCustomers.hoverMessage }
     </Tooltip>
-    <div className={styles['divider']} />
   </Hide>
 ;
 
