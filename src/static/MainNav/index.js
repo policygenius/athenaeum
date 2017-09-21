@@ -207,7 +207,7 @@ class MainNav extends Component {
 
     return (
       <nav className={styles['wrapper']}>
-        <div className={classnames(...panelClasses)}>
+        <div className={classnames(...panelClasses)} style={{ zIndex: '100' }}>
           <div className={styles['container']}>
             <Logo />
             { this.props.showMiniNav ? this.renderMiniNav() : this.renderFullNav() }
