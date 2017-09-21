@@ -33,7 +33,7 @@
       }
       carrierLogo={
         <img
-          src='http://localhost:3000/assets/insurance-cards-logos/banner-life-dark-2x.png'
+          src='example.com'
           alt='hello'
         />
       }
