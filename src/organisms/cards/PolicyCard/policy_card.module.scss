@@ -89,6 +89,11 @@ $footer: #f6f6f6;
   cursor: help;
 }
 
+/* IE 11 hack to make sure svg does not take up 100% height */
+.svg-text {
+  max-height: rem-calc(37px);
+}
+
 @media #{$small-only} {
   .policy-tooltip {
     > * {
