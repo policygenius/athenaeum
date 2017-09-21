@@ -24,6 +24,7 @@ $footer: #f6f6f6;
 .body {
   padding: rem-calc(20px) 0 ru(1);
   display: flex;
+  align-items: center;
 }
 
 .footer {
@@ -38,8 +39,10 @@ $footer: #f6f6f6;
 .divider {
   height: ru(3.25);
   border-left: 1px solid $border;
-  position: absolute;
-  right: 0;
+}
+
+.info-divider {
+  display: none;
 }
 
 .node {
@@ -91,7 +94,7 @@ $footer: #f6f6f6;
 
 /* IE 11 hack to make sure svg does not take up 100% height */
 .svg-text {
-  max-height: rem-calc(37px);
+  max-height: ru(1);
 }
 
 @media #{$small-only} {
@@ -114,10 +117,11 @@ $footer: #f6f6f6;
     display: none;
   }
 
-  .actions, {
+  .actions {
     padding: ru(1) ru(1) 0 ru(1);
     text-align: center;
     border-top: 1px solid $border;
+    width: 100%;
   }
 
   .policy-type {
@@ -189,6 +193,12 @@ $footer: #f6f6f6;
   .policy-name {
     margin: rem-calc(3px) 0;
     line-height: ru(1);
+    display: block;
+  }
+}
+
+@media #{$large-up} {
+  .info-divider {
     display: block;
   }
 }

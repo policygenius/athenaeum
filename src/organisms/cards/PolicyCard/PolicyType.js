@@ -44,7 +44,6 @@ export const PolicyType = ({ policyType, policyTooltip, policyTypeHoverMessage }
     >
       { policyTypeHoverMessage }
     </Tooltip>
-    <div className={styles['divider']} />
   </div>
 ;
 

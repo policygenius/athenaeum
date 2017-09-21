@@ -40,18 +40,18 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           />
         </label>
       </div>
-      <div
-        className="divider"
-      />
     </div>
+    <div
+      className="divider"
+    />
     <div
       className="carrier-logo"
     >
       <div />
-      <div
-        className="divider"
-      />
     </div>
+    <div
+      className="divider"
+    />
     <div
       className="policy-type"
     >
@@ -87,10 +87,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         </span>
         <noscript />
       </span>
-      <div
-        className="divider"
-      />
     </div>
+    <div
+      className="divider"
+    />
     <div
       className="hide policy-info small medium"
     >
@@ -169,10 +169,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         </span>
         <noscript />
       </span>
-      <div
-        className="divider"
-      />
     </div>
+    <div
+      className="divider info-divider"
+    />
     <div
       className="actions"
     >
@@ -194,7 +194,11 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       />
       <div
         className="layout"
-        style={undefined}
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
       >
         <div
           className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined"
@@ -211,7 +215,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small medium xLarge xxLarge"
             >
               <svg
-                height="100%"
+                className="svg-text"
                 viewBox="-3 0 75 15"
                 width="100%"
               >
@@ -245,7 +249,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small medium xLarge xxLarge"
             >
               <svg
-                height="100%"
+                className="svg-text"
                 viewBox="-10 0 75 15"
                 width="100%"
               >

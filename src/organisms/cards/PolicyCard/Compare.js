@@ -29,7 +29,6 @@ const Compare = ({ compareSelected, onCompare, name }) =>
         }}
       />
     </div>
-    <div className={styles['divider']} />
   </Hide>
 
 ;
