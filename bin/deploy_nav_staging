@@ -19,4 +19,4 @@ aws s3 sync \
   --content-encoding gzip \
   --exclude '.DS_Store'
 
-echo "Deployed Main Nav to Staging s3"
+echo "Deployed Main Nav to  http://rcl.policygenius.com/staging/main_nav/"
