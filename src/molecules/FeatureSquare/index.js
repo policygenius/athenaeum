@@ -6,6 +6,7 @@ import colors from 'atoms/Color/colors.scss';
 
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
+import Button from 'atoms/Button';
 
 function FeatureSquare(props) {
   const {
@@ -14,7 +15,8 @@ function FeatureSquare(props) {
     backgroundColor,
     header,
     subheader,
-    icon
+    icon,
+    buttonText
   } = props;
 
   const classes = [
@@ -26,9 +28,10 @@ function FeatureSquare(props) {
 
   return (
     <div className={classnames(...classes)}>
-      <Icon icon={icon} />
-      <Text type={4}>{ header }</Text>
-      <Text type={6}>{ subheader }</Text>
+      <Icon icon={icon} className={ styles['icon'] }/>
+      <Text type={4} semibold>{ header }</Text>
+      <Text type={6} className={ styles['subheader'] }>{ subheader }</Text>
+      <Button>{ buttonText }</Button>
     </div>
   );
 }
@@ -44,6 +47,7 @@ FeatureSquare.propTypes = {
 
 FeatureSquare.defaultProps = {
   // Place any default props here.
+  buttonText: 'Get Quotes'
 };
 
 export default FeatureSquare;

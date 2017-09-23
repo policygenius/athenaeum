@@ -15,6 +15,8 @@ function Button( props ) {
     disabled,
     shake,
     slim,
+    text,
+    unflex,
     ...rest,
   } = props;
 
@@ -24,12 +26,13 @@ function Button( props ) {
     styles[variant],
     className,
     slim && styles['slim'],
+    unflex && styles['unflex'],
   ];
 
   return (
     <button className={classnames(...classes)} type={type} disabled={disabled} {...rest}>
       { icon && <Icon icon={icon} className={styles['icon']} /> }
-      { children }
+      { children || text }
     </button>
   );
 }

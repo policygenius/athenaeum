@@ -98,6 +98,7 @@ StaticMapCard.defaultProps = {
   center: '10003',
   size: '400x400',
   zoom: 15,
+  apiKey: 'AIzaSyAwkgj-WPIXXtTT7zkxqAHE9DlqFqEB5Ws'
 };
 
 export default StaticMapCard;

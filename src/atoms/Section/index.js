@@ -11,17 +11,21 @@ function Section(props) {
     className,
     backgroundImageUrl,
     backgroundColor,
+    color,
     spacing,
-    center
+    center,
+    padding,
+    style
   } = props;
 
   const classes = [
     styles['section'],
-    (backgroundColor || backgroundImageUrl) && colors['neutral-8'],
+    color && colors[color],
     colors[`background-${backgroundColor}`],
     spacing && styles[`top-${spacing}`],
     spacing && styles[`bot-${spacing}`],
     center && styles['center'],
+    padding && styles['padding'],
     className
   ];
 
@@ -29,6 +33,7 @@ function Section(props) {
     <div
       className={classnames(...classes)}
       style={{
+        ...style,
         backgroundImage: `url(${backgroundImageUrl})`
       }}
     >
