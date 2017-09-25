@@ -34,6 +34,20 @@
   }
 }
 
+@-moz-document url-prefix() {
+  .select-wrapper {
+    select {
+      -moz-appearance: none;
+      color: rgba(0,0,0,0);
+    }
+    
+    select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 color('brand-2');
+    }
+  }
+}
+
 .select {
   @include typography-regular();
   @include typography-6(false);

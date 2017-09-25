@@ -58,7 +58,7 @@
       ignore: [ "after-comment", "inside-block" ]
     }],
     "scale-unlimited/declaration-strict-value": [ "color", {
-      "ignoreKeywords": "inherit"
+      "ignoreKeywords": ["inherit", "transparent"]
     }],
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
