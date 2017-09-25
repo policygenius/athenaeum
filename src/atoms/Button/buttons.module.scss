@@ -203,6 +203,11 @@ $button-solid-background-tertiary-color:   #f08f5c;
   animation: disabled-button-shake .5s ease-out;
 }
 
+.unflex {
+  width: auto;
+  clear: both;
+}
+
 @keyframes disabled-button-shake {
   0% { transform: translateX(0); }
   20% { transform: translateX(-$button-shaking-offset); }

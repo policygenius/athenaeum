@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
-import TextComponent from 'atoms/TextComponent';
+import Text from 'atoms/Text';
 import styles from './icon_list.module.scss';
 
 function IconList(props) {
   const {
     className,
     data,
+    type,
+    weight
   } = props;
 
   return (
@@ -25,13 +27,13 @@ function IconList(props) {
               icon={item.icon}
             />
 
-            <TextComponent
+            <Text
               className={styles['text']}
-              type={6}
-              semibold
+              type={type}
+              weight={weight}
             >
               {item.text}
-            </TextComponent>
+            </Text>
           </li>
         )
       }
@@ -56,5 +58,9 @@ IconList.propTypes = {
   })).isRequired,
 };
 
+IconList.defaultProps = {
+  type: 6,
+  weight: 'semibold'
+};
 
 export default IconList;

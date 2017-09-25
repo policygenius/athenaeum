@@ -5,3 +5,7 @@
 @each $key, $value in $colors-map {
   .background-#{$key} { background-color: $value; }
 }
+
+@each $key, $value in $colors-map {
+  .border-#{$key} { border-color: $value; }
+}
