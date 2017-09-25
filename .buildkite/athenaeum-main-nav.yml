@@ -21,7 +21,8 @@ steps:
 
   - wait
 
-  - block: 'Deploy MainNav to Production?'
+  - block: 'Deploy git:master MainNav to Production?'
+    prompt: "Please review and approve your changes at: http://rcl.policygenius.com/staging/main_nav/index.html"
     branches: 'master'
 
   - name: 'Upload MainNav to Production :s3:'
