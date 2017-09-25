@@ -1,6 +1,6 @@
 StackedCard Example:
 
-```example
+```jsx
     <StackedCard>
       <div>YU NO PADDING?</div>
       <div style={{ padding: '5px 10px' }}>Manual Padding!</div>
@@ -10,7 +10,7 @@ StackedCard Example:
 ```
 
 Inverted Example:
-```example
+```jsx
     <div style={{ backgroundColor: 'grey', padding: '10px' }}>
       <StackedCard inverted>
         <div>YU NO PADDING?</div>

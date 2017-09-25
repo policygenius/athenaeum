@@ -15,7 +15,7 @@ function Button( props ) {
     disabled,
     shake,
     slim,
-    ...rest,
+    ...rest
   } = props;
 
   const classes = [

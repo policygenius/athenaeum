@@ -1,6 +1,6 @@
 RadioField Example:
 
-```example
+```jsx
   <div>
     <RadioField
       label='Fire extinguisher'

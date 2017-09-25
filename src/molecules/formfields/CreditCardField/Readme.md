@@ -1,6 +1,6 @@
 CreditCardField Example:
 
-```example
+```jsx
     <CreditCardField
       meta={{}}
       creditCardNumber={

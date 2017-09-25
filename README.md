@@ -56,9 +56,9 @@ RCL components are React components, which are exported as a collection of modul
 
 e.g.
 
-```js
-import { TextComponent, Button, Layout, Col } from 'athenaeum';
+`import { TextComponent, Button, Layout, Col } from 'athenaeum';`
 
+```html
 function MyReactComponent( props ) {
 return (
   <div>
@@ -73,7 +73,7 @@ return (
   )
 }
 
-export default MyReactComponent;
+// export default MyReactComponent;
 ```
 
 The RCL gets exported with a bundled JS file and a CSS file. To use the RCL stylesheet, you can either import them directly into your project:

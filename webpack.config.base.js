@@ -115,9 +115,7 @@ module.exports = options => {
   };
 
   return {
-    entry: [
-      'babel-polyfill'
-    ].concat(options.entry),
+    entry: options.entry,
     output: options.output,
     externals: options.externals,
     devtool: 'source-map',

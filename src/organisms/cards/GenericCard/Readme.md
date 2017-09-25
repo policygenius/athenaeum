@@ -1,6 +1,6 @@
 Generic Card Example:
 
-```example
+```jsx
     <GenericCard
       onClose={() => alert('I feel so closed rn')}
       footerText='Edit'
@@ -11,7 +11,7 @@ Generic Card Example:
     </GenericCard>
 ```
 
-```example
+```jsx
     <GenericCard variant='checkout'>
       <DataRow
         label='Sub Data'
@@ -41,13 +41,13 @@ Generic Card Example:
     </GenericCard>
 ```
 
-```example
+```jsx
     <GenericCard variant='box'>
       <Icon icon='pgLogoOrange' width='160px' height='40px' />
     </GenericCard>
 ```
 
-```example
+```jsx
     <GenericCard variant='mobile'>
       <Icon icon='pgLogoOrange' width='160px' height='40px' />
     </GenericCard>

@@ -1,6 +1,6 @@
 Playback Card Example:
 
-```example
+```jsx
   <PlaybackCard
     header='Policyholder Details'
     icon='greenCheckWithCircle'

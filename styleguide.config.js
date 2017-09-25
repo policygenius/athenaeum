@@ -29,5 +29,14 @@ module.exports = {
     'holderjs',
     'assets/stylesheets/base.scss',
     path.join(__dirname, 'styleguide_assets/rcl_styles.module.scss')
-  ]
+  ],
+  updateExample: (props) => {
+    // Not sure why this doesn't work
+    const { settings, lang } = props;
+    if (lang == '') {
+      console.log('lang', lang);
+      settings.static = true;
+    }
+    return props;
+  }
 };

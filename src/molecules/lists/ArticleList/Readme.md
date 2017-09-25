@@ -1,6 +1,6 @@
 Item example:
 
-```example
+```jsx
     <ArticleList
       type='articleList'
       data={[

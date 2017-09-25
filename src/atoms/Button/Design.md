@@ -1,16 +1,16 @@
 I am a design doc.
 
 Primary
-```example
+```jsx
       <Button icon='lock' variant='action'>Action</Button>
 ```
 
 Secondary
-```example
+```jsx
       <Button variant='lowlight'>Lowlight Action</Button>
 ```
 
 Tertiary
-```example
+```jsx
   <Button onClick={() => alert('Button clicked')} icon='lock'>Default Button</Button>
 ```

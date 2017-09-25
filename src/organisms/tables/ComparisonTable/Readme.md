@@ -1,6 +1,6 @@
 ComparisonTable Example:
 
-```example
+```jsx
   // Same content that goes inside the comparison rows.
   const IconPg = <Icon icon='pgLogoOrange' width='120px' height='24px' />;
   const IconMetLife = <Icon icon='metlife' width='120px' height='24px' />;

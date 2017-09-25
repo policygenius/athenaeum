@@ -1,6 +1,6 @@
 ### PolicyCard Example:
 
-```example
+```jsx
     <PolicyCard
       financialStrength={{
         value: 'A+',

@@ -1,6 +1,6 @@
 Add Card Examples:
 
-```example
+```jsx
     <Layout
       bottomSpacing={'small'}
     >

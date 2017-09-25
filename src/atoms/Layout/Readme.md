@@ -34,7 +34,7 @@ All child component props will be passed directly to the component itself.
 
 ## Mixed Layout Examples with Shorthand, Cols, children, and Overrides:
 
-```example
+```jsx
     const exampleStyles = require('./example.module.scss');
 
     <div className={exampleStyles['example']}>
@@ -69,7 +69,7 @@ All child component props will be passed directly to the component itself.
 ## Small 2 Col, Medium 3 Col Grid Example:
 
 
-```example
+```jsx
     const exampleStyles = require('./example.module.scss');
 
     <div className={exampleStyles['example']}>
@@ -92,7 +92,7 @@ All child component props will be passed directly to the component itself.
 
 ## Nested Grid Example:
 
-```example
+```jsx
     const exampleStyles = require('./example.module.scss');
 
     <div className={exampleStyles['example']}>
@@ -133,7 +133,7 @@ All child component props will be passed directly to the component itself.
 ## Special Variants
 ### `'bordered-buckets'`
 
-```example
+```jsx
 <Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex>
   <div>'Child 1'</div>
   <div>'Child 2'</div>

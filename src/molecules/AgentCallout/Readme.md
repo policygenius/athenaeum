@@ -1,6 +1,6 @@
 AgentCallout Example:
 
-```example
+```jsx
   <AgentCallout
     imgSrc='https://placehold.it/80x80'
     contactLabel='Call at'

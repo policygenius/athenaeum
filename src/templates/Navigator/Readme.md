@@ -4,7 +4,7 @@ The navigator uses [react-stickynode](https://github.com/yahoo/react-stickynode)
 
 Navigator Example:
 
-```example
+```jsx
 
   const sampleOptions = [ { label: 'Select your home type', value: -1 } ];
 

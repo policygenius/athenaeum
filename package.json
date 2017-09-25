@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn styleguide:build && yarn run styleguide",
     "stylin": "yarn start  && yarn run open",
-    "styleguide": "styleguidist server",
+    "styleguide": "styleguidist server --verbose",
     "styleguide:build": "rm -rf ./styleguide/* && styleguidist build",
     "reset": "rm -rf node_modules && yarn",
     "open": "open http://localhost:6060",

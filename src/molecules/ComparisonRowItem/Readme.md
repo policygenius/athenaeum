@@ -2,7 +2,7 @@
 
 This is a responsive helper component used with `<ComparisonTable />` to render cells that display differently on smaller devices. On larger screen it renders as  a checkmark or x icon. On small screens it renders as a `<LogoText />`.
 
-```example
+```jsx
     const IconPg = <Icon icon='pgLogoOrange' width='120px' height='24px' />;
     const IconMetLife = <Icon icon='metlife' width='120px' height='24px' />;
     const LogoPg = <LogoTextA line1='header' logo={IconPg} />;

@@ -9,7 +9,7 @@ Import styles into a component, the syntax is very specific. Just as you would i
 
 The unique name is typically created in the following format: `fileName__className__uniqueId`.
 
-```js
+```html
 import React from 'react';
 import styles from '../path/simple_button.scss';
 
@@ -23,7 +23,7 @@ export default function simpleButton({ children }) {
 ### PropTypes
 `propTypes` and `defaultProps` are static properties, declared as high as possible within the component code. They should be immediately visible when reading the file, since they serve as documentation. All components should have propTypes.
 
-```js
+```html
 function Layout( props ) {
   const {
     children,
@@ -36,7 +36,7 @@ function Layout( props ) {
 ```
 
 ### Methods
-```js
+```html
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.model.save()

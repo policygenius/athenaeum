@@ -3,7 +3,7 @@ ErrorMessage example:
 Note: You do not need to specifiy `ErrorMessage.default` in implementation. This is only needed for use in this guide.
 Simply use `<ErrorMessage {...props} />`
 
-```example
+```jsx
   const ErrorMessage = require('atoms/ErrorMessage');
 
   class ErrorMessageExample extends React.Component {
