@@ -29,6 +29,19 @@
   }
 }
 
+@-moz-document url-prefix() {
+  .select-wrapper {
+    select {
+      -moz-appearance: none;
+    }
+    
+    select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 color('neutral-2');
+    }
+  }
+}
+
 .select {
   @include typography-6(false);
   width: 100%;
