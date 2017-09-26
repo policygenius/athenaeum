@@ -1,4 +1,4 @@
-```example
+```jsx
   const spacers = {
     xSmall: 'Extra Small',
     small: 'Small',

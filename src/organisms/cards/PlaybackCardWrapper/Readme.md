@@ -1,6 +1,6 @@
 PlaybackCardWrapper Example:
 
-```example
+```jsx
     <PlaybackCardWrapper
       logo={<Icon icon='stillwaterLogoBlack' sizeAuto />}
       amount={10.50}

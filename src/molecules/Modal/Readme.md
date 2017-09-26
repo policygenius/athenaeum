@@ -2,7 +2,7 @@ Modal Example:
 
 This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood to handle modal functionality.
 
-```example
+```jsx
   class ModalExample extends React.Component {
     constructor(props) {
       super(props)
@@ -98,7 +98,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
     <ModalExample />
 ```
 
-```example
+```jsx
   class ModalExample extends React.Component {
     constructor(props) {
       super(props)

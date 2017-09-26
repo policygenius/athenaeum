@@ -1,6 +1,6 @@
 Tooltip Example:
 
-```example
+```jsx
   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
     <Tooltip left>
       I'm a left tooltip!
@@ -16,7 +16,7 @@ Tooltip Example:
 
 Tooltip with custom text
 
-```example
+```jsx
   <Tooltip text='When you hover over me I become a tooltip'>
     See!
   </Tooltip>
@@ -24,7 +24,7 @@ Tooltip with custom text
 
 Inline Tooltip Example:
 
-```example
+```jsx
   <TextComponent>
     <Tooltip left>I'm a tooltip</Tooltip> Text with inlined tooltip
   </TextComponent>

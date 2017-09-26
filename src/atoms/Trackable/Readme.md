@@ -23,13 +23,13 @@ It should:
   <div className='someComponent' data-a-key-name=100>I have data-attributes!</div>
 ```
 
-```example
+```jsx
     <Trackable data={{ 'some-key': 100, 'some space': 'oh' }}>
       <div className='someComponent'>I have data-attributes!</div>
     </Trackable>
 ```
 
-```example
+```jsx
     <Trackable data={{ 'moar-keys': 101, 'LOWER CASE KEBABS': 'renames keys' }}>
       <Button>Trackable</Button>
     </Trackable>

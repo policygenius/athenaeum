@@ -1,6 +1,6 @@
 Contact Card example:
 
-```example
+```jsx
     <ContactCard
       top={{
         text: 'Save my progress',
@@ -16,7 +16,7 @@ Contact Card example:
 ```
 
 Inverted
-```example
+```jsx
     <div style={{ backgroundColor: 'grey', padding: '10px' }}>
       <ContactCard
         inverted

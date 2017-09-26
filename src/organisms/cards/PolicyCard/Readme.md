@@ -1,6 +1,6 @@
 ### PolicyCard Example:
 
-```example
+```jsx
     <PolicyCard
       financialStrength={{
         value: 'A+',
@@ -33,12 +33,12 @@
       }
       carrierLogo={
         <img
-          src='example.com'
+          src='#'
           alt='hello'
         />
       }
       premium={{
-        price: null,
+        price: 13,
         format: 'mo',
         defaultText: 'Quote available from a PolicyGenius expert'
       }}

@@ -1,6 +1,6 @@
 ### UserAlert Example:
 
-```example
+```jsx
     <UserAlert
       enabled={false}
       onClick={() => alert('you clicked me')}

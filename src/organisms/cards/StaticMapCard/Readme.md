@@ -1,6 +1,6 @@
 StaticMapCard Example:
 
-```example
+```jsx
     <StaticMapCard
       label='A map has no label'
       center='10010'

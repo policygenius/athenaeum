@@ -40,7 +40,7 @@
       -moz-appearance: none;
       color: rgba(0,0,0,0);
     }
-    
+
     select:-moz-focusring {
       color: transparent;
       text-shadow: 0 0 0 color('brand-2');
@@ -67,6 +67,10 @@
 
   &:invalid {
     color: color('neutral-5');
+  }
+
+  &::-ms-expand {
+    display: none;
   }
 }
 

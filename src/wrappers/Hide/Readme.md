@@ -1,6 +1,6 @@
 ### Hide Example:
 
-```example
+```jsx
     <div>
       <Text>hello, </Text>
       <Hide hideOn='small medium'>

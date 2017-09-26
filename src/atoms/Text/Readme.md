@@ -1,6 +1,6 @@
 Text Example:
 
-```example
+```jsx
 
     <div>
       <Text type={0}>Type 0</Text>

@@ -1,6 +1,6 @@
 Comment Field:
 
-```example
+```jsx
     class TextAreaExample extends React.Component {
       constructor() {
         super();
@@ -35,7 +35,7 @@ Comment Field:
 
 Text field with error:
 
-```example
+```jsx
   <TextAreaField
     label='Comment'
     placeholder='How did we do?'

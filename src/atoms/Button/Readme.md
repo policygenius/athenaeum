@@ -1,36 +1,36 @@
 Default Button Example:
 
-```example
+```jsx
   <Button onClick={() => alert('Button clicked')} icon='lock'>Default Button</Button>
 ```
 
 Info Button Example:
 
-```example
+```jsx
       <Button variant='info'>Info</Button>
 ```
 
 Disabled Button Example:
 
-```example
+```jsx
       <Button variant='disabled'>Disabled</Button>
 ```
 
 Action Button Example:
 
-```example
+```jsx
       <Button icon='lock' variant='action'>Action</Button>
 ```
 
 Action Lowlight Button Example:
 
-```example
+```jsx
       <Button variant='lowlight'>Lowlight Action</Button>
 ```
 
 Action Disabled Button Example:
 
-```example
+```jsx
       class ButtonExample extends React.Component {
         constructor() {
           super();
@@ -63,19 +63,19 @@ Action Disabled Button Example:
 
 Outline Button Example:
 
-```example
+```jsx
       <Button variant='outline'>Outline Button</Button>
 ```
 
 Toggle Button Example:
 
-```example
+```jsx
       <Button variant='toggle'>Toggle Button</Button>
 ```
 
 Toggle Button Active Example:
 
-```example
+```jsx
       <Button variant='toggle-active'>Toggle Button</Button>
 ```
 

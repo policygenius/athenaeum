@@ -4,7 +4,7 @@ If you pass in both `children` and `listItems`, the `listItems` will extend the 
 ### List Example:
 
 Passing list items in as children:
-```example
+```jsx
     <List>
       <strong>New Component Created!</strong>
       <small>Now go and write some code! -- <em>You code monkey, you ;).</em></small>
@@ -16,7 +16,7 @@ Passing list items in as children:
 ```
 
 Using the listItems prop directly:
-```example
+```jsx
     <List
       listItems={[
         <strong>Hope</strong>,
@@ -28,7 +28,7 @@ Using the listItems prop directly:
 ```
 
 Condensed example:
-```example
+```jsx
     <List
       condensed
       listItems={[
@@ -41,7 +41,7 @@ Condensed example:
 ```
 
 Multiple column example:
-```example
+```jsx
     <List
       condensed
       columns={3}
@@ -63,7 +63,7 @@ Multiple column example:
 ```
 
 Numbered example:
-```example
+```jsx
     <List
       numberedList
       listItems={[

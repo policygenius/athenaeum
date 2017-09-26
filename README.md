@@ -56,7 +56,8 @@ RCL components are React components, which are exported as a collection of modul
 
 e.g.
 
-```js
+
+```html
 import { TextComponent, Button, Layout, Col } from 'athenaeum';
 
 function MyReactComponent( props ) {

@@ -1,6 +1,6 @@
 DataRow Example:
 
-```example
+```jsx
 
     <div style={{ margin: '15px' }}>
       <DataRow
@@ -32,7 +32,7 @@ DataRow Example:
 
 
 #### Calculator Example: (GenericCard, DataRow, Line)
-```example
+```jsx
     <GenericCard>
       <DataRow
         label='Sub Data'

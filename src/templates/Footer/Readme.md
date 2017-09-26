@@ -1,6 +1,6 @@
 Footer Example:
 
-```example
+```jsx
     <div>
       <Footer
         phoneNumber='1 (855) 695-2255'

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn styleguide:build && yarn run styleguide",
     "stylin": "yarn start  && yarn run open",
-    "styleguide": "styleguidist server",
+    "styleguide": "styleguidist server --verbose",
     "styleguide:build": "rm -rf ./styleguide/* && styleguidist build",
     "reset": "rm -rf node_modules && yarn",
     "open": "open http://localhost:6060",
@@ -38,6 +38,7 @@
   "homepage": "https://github.com/policygenius/athenaeum#readme",
   "dependencies": {
     "accounting": "^0.4.1",
+    "babel-preset-env": "^1.6.0",
     "classnames": "^2.2.5",
     "cloudinary-react": "^1.0.4",
     "critical": "^0.9.0",
@@ -47,9 +48,9 @@
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
     "npm": "^5.0.0",
-    "policygenius-react-styleguidist": "latest",
     "react-input-mask": "^0.8.0",
     "react-stickynode": "^1.3.1",
+    "react-styleguidist": "^6.0.26",
     "react-svg-inline": "^2.0.0",
     "sinon": "^2.1.0"
   },
@@ -59,7 +60,6 @@
     "babel-loader": "^7.0.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-airbnb": "^2.1.1",
-    "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^3.5.0",
@@ -125,7 +125,7 @@
     "stylelint": "^7.10.1",
     "stylelint-declaration-strict-value": "^1.0.3",
     "stylelint-webpack-plugin": "^0.7.0",
-    "svg-inline-loader": "^0.7.1",
+    "svg-inline-loader": "^0.8.0",
     "url-loader": "^0.5.8",
     "watchify": "^3.9.0",
     "webpack": "2.2.1",
@@ -152,7 +152,7 @@
   },
   "babel": {
     "presets": [
-      "es2015",
+      "env",
       "react",
       "stage-2"
     ]

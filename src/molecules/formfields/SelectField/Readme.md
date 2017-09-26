@@ -1,6 +1,6 @@
 Label Example:
 
-```example
+```jsx
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -19,7 +19,7 @@ Label Example:
 
 No Label Example:
 
-```example
+```jsx
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -37,7 +37,7 @@ No Label Example:
 ```
 
 Focused Example:
-```example
+```jsx
     const selection = [
       { label: 'Option 1',
         value: 1 },
@@ -62,7 +62,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 
 `{ group: 'groupName', options: [{label: 'optionName', value: 1}]}`.
 
-```example
+```jsx
 
     <SelectField
       tooltip={"I'm a tooltip"}
@@ -78,7 +78,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 
 Select Card Type Example:
 
-```example
+```jsx
     const selection = [
       { label: 'Option 1',
         value: 1 },

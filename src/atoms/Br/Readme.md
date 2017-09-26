@@ -5,7 +5,7 @@ Example:
 `<Br small large ... />`
 
 ### Br Example:
-```example
+```jsx
   <div>
     <h2>I break on ↵<Br large />large.</h2>
     <h2>I break on ↵<Br small medium large />medium large.</h2>

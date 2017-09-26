@@ -1,5 +1,5 @@
 LinkWrapper Examples:
 
-```example
+```jsx
   <LinkWrapper href='#'>This is a link!</LinkWrapper>
 ```
