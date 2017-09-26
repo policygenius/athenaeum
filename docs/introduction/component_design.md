@@ -22,10 +22,10 @@ Starts a cli prompt which will create the following component directory and file
 
 ### Basic component libraries
 ```html
-//import React from 'react';
-//import PropTypes from 'prop-types';
-//import classnames from 'classnames';
-//import styles from './component_name.module.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import styles from './component_name.module.scss';
 ```
 
 ### Standard Props
@@ -55,7 +55,7 @@ The `classNames` function takes any number of arguments which can be a string or
 
 [See classnames github](https://github.com/JedWatson/classnames) .
 
-`
+```html
   classNames('foo', 'bar'); // => 'foo bar'
   classNames('foo', { bar: true }); // => 'foo bar'
   classNames({ 'foo-bar': true }); // => 'foo-bar'
@@ -68,7 +68,7 @@ The `classNames` function takes any number of arguments which can be a string or
 
   // other falsy values are just ignored
   classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
-`
+```
 
 
 ### Example Component:

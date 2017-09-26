@@ -25,8 +25,7 @@ const baseRules = [
         // waiting for stable v7.0.0 to upgrade
         loader: 'babel-loader',
         options: {
-          presets: [ 'env', 'react', 'stage-2' ],
-          plugins: ['babel-polyfill']
+          presets: [ 'env', 'react', 'stage-2' ]
         }
       }
     ]
