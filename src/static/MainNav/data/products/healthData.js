@@ -4,7 +4,7 @@ const submenuItems = [
     items: [
       { title: 'Health Insurance Learn Center', url: '/health-insurance/learn/', },
       { title: 'Health Insurance 101', url: '/health-insurance/learn/health-insurance-basics-and-guide/', },
-      { title: 'ACA: How to Shop the Exchanges', url: '/health-insurance/learn/how-to-shop-on-marketplace-and-exchanges/', },
+      { title: 'ACA: How to Shop the Exchanges', url: '/health-insurance/learn/how-to-shop-on-marketplaces-and-exchanges/', },
       { title: 'Open Enrollment State Guide 2018', url: 'https://www.policygenius.com/blog/health-insurance-open-enrollment-state-guide/', },
       { title: 'FSA vs. HSA', url: 'https://www.policygenius.com/blog/flexible-spending-account/', },
     ],
