@@ -81,6 +81,6 @@ Toggle Button Active Example:
 
 Slim Button Example:
 
-``` example
+```jsx
       <Button variant='action' slim>A Vertically Slim Button</Button>
 ```

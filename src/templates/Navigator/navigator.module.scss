@@ -136,6 +136,7 @@ $main-section-padding: ru(1.5);
   .footer-container {
     padding-left: ru(.75);
     padding-right: ru(.75);
+    flex: 1 0 auto;
   }
 
   .sidebar {
