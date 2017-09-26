@@ -105,6 +105,7 @@
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "prop-types": "^15.5.8",
+    "rc-slider": "^8.3.1",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.5.4",
