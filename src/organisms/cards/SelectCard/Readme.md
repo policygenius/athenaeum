@@ -1,6 +1,6 @@
 Select Card example: 
 
-```example
+```jsx
     class SelectCardExample extends React.Component {
       constructor() {
         super();

@@ -1,6 +1,6 @@
 Checkbox List Example:
 
-```example
+```jsx
   <CheckboxWrapper
     label='Pellentesque habitant'
     tooltip="I'm a tooltip!"

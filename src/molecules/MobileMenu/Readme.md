@@ -1,6 +1,6 @@
 ### MobileMenu Example:
 
-```example
+```jsx
     <MobileMenu
       tabs={[
         { icon: 'phone', text: 'Expert Help', active: state.activeTab === 1 || !state.activeTab, key: 1 },

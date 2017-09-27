@@ -2,12 +2,11 @@ const submenuItems = [
   {
     header: 'Helpful Resources',
     items: [
-      { title: 'Health Insurance Marketplace', url: '/health-insurance/learn/how-to-shop-on-marketplaces-and-exchanges/', },
-      { title: 'Open Enrollment 2017', url: 'https://www.policygenius.com/blog/2017-health-insurance-open-enrollment-period-state-changes/', },
-      { title: 'Obamacare', url: '/health-insurance/faq/how-do-i-apply-for-obamacare/', },
-      { title: 'HMO vs PPO vs. EPO vs. POS', url: '/health-insurance/faq/difference-between-hmo-ppo-epo-pos/', },
+      { title: 'Health Insurance Learn Center', url: '/health-insurance/learn/', },
+      { title: 'Health Insurance 101', url: '/health-insurance/learn/health-insurance-basics-and-guide/', },
+      { title: 'ACA: How to Shop the Exchanges', url: '/health-insurance/learn/how-to-shop-on-marketplaces-and-exchanges/', },
+      { title: 'Open Enrollment State Guide 2018', url: 'https://www.policygenius.com/blog/health-insurance-open-enrollment-state-guide/', },
       { title: 'FSA vs. HSA', url: 'https://www.policygenius.com/blog/flexible-spending-account/', },
-      { title: 'Special Enrollment', url: '/health-insurance/glossary/special-enrollment-period/', },
     ],
   },
   {

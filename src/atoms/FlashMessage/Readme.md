@@ -1,6 +1,6 @@
 Transition Example:
 
-```example
+```jsx
   <div>
     <Button onClick={() => setState({ showMessage: !state.showMessage })}>Click me!</Button>
     <Spacer xsmall />

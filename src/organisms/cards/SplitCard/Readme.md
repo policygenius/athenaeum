@@ -1,6 +1,6 @@
 Split Card Example:
 
-```example
+```jsx
     <SplitCard
       columnLeft={<TextA line1='header' line2='subheader' />}
       columnRight={<TextB line1='10%' line2='subheader' />}
@@ -11,7 +11,7 @@ Split Card Example:
 ```
 
 optional `onClose` remove the x.
-```example
+```jsx
     <SplitCard
       columnLeft={<TextA line1='header' line2='subheader' />}
       columnRight={<TextA line1='10%' line2='anything goes' />}
@@ -22,7 +22,7 @@ optional `onClose` remove the x.
 
 `onClick` is bound to `footerLeft`. If a `footerLeft` prop is not passed in there won't be
 anything to `onClick` on.
-```example
+```jsx
     <SplitCard
       columnLeft={<TextA line1='header' line2='has an onclick' />}
       columnRight={<TextB line1='100%' line2='but no footer' />}

@@ -3,43 +3,63 @@ import PropTypes from 'prop-types';
 import accounting from 'accounting';
 import Hide from 'wrappers/Hide';
 import Text from 'atoms/Text';
+import Tooltip from 'atoms/Tooltip';
 import styles from './policy_card.module.scss';
 
 export const PolicyInformation = ({ financialStrength, customerService, totalCustomers }) =>
   <Hide hideOn='small medium' className={styles['policy-info']}>
-    <Text
-      type={7}
-      color='neutral-3'
-      semibold
+    <Tooltip
+      text={
+        <Text type={7} color='neutral-3' semibold>
+          <div className={styles['policy-info-label']}>Financial Strength</div>
+          <Text color='neutral-2' semibold>{financialStrength.value}</Text>
+        </Text>
+      }
+      hoverMessageClassName={styles['policy-type-hover-message']}
+      className={styles['policy-info-tooltip']}
     >
-      <div className={styles['label']}>Financial Strength</div>
-      <Text color='neutral-2' semibold>{financialStrength}</Text>
-    </Text>
-    <Text
-      type={7}
-      color='neutral-3'
-      semibold
+      { financialStrength.hoverMessage }
+    </Tooltip>
+    <Tooltip
+      text={
+        <Text type={7} color='neutral-3' semibold>
+          <div className={styles['policy-info-label']}>Customer Service</div>
+          <Text color='neutral-2' semibold>{customerService.value}</Text>
+        </Text>
+      }
+      hoverMessageClassName={styles['policy-type-hover-message']}
+      className={styles['policy-info-tooltip']}
     >
-      <div className={styles['label']}>Customer Service</div>
-      <Text color='neutral-2' semibold>{customerService}</Text>
-    </Text>
-    <Text
-      type={7}
-      color='neutral-3'
-      semibold
+      { customerService.hoverMessage }
+    </Tooltip>
+    <Tooltip
+      text={
+        <Text type={7} color='neutral-3' semibold>
+          <div className={styles['policy-info-label']}>Total Customers</div>
+          <Text color='neutral-2' semibold>{accounting.formatNumber(totalCustomers.value)}</Text>
+        </Text>
+      }
+      hoverMessageClassName={styles['policy-type-hover-message']}
+      className={styles['policy-info-tooltip']}
     >
-      <div className={styles['label']}>Total Customers</div>
-      <Text color='neutral-2' semibold>{accounting.formatNumber(totalCustomers)}</Text>
-    </Text>
-    <div className={styles['divider']} />
+      { totalCustomers.hoverMessage }
+    </Tooltip>
   </Hide>
-
 ;
 
 PolicyInformation.propTypes = {
-  totalCustomers: PropTypes.number,
-  customerService: PropTypes.string,
-  financialStrength: PropTypes.string,
+  totalCustomers: PropTypes.shape({
+    value: PropTypes.number.isRequired,
+    hoverMessage: PropTypes.node.isRequired
+  }),
+  customerService: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    hoverMessage: PropTypes.node.isRequired
+  }),
+  financialStrength: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    hoverMessage: PropTypes.node.isRequired
+  }),
 };
 
 export default PolicyInformation;

@@ -15,7 +15,7 @@ const Element = (props) => {
     spacer,
     color,
     className,
-    ...rest,
+    ...rest
   } = props;
 
   const Component = tag || 'div';

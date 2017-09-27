@@ -1,6 +1,6 @@
 ### Loading Example:
 
-```example
+```jsx
   class ModalExample extends React.Component {
     constructor(props) {
       super(props)

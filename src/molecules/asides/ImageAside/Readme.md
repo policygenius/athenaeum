@@ -9,7 +9,7 @@ In the examples below, we utilized the exposed `data-src` via the `dataSrc` prop
 
 Basic Example:
 
-```example
+```jsx
     <ImageAside
       dataSrc='holder.js/300x300?auto=yes'
       header='Vivamus ultricies augue'
@@ -19,7 +19,7 @@ Basic Example:
 
 Max Width Example:
 
-```example
+```jsx
     <ImageAside
       dataSrc='holder.js/300x300?auto=yes'
       maxWidth='200px'
@@ -30,7 +30,7 @@ Max Width Example:
 
 Center Example:
 
-```example
+```jsx
     <ImageAside
       centered
       dataSrc='holder.js/100x100'
@@ -41,7 +41,7 @@ Center Example:
 
 Compact Example:
 
-```example
+```jsx
     <ImageAside
       compact
       dataSrc='holder.js/80x80'
@@ -53,7 +53,7 @@ Compact Example:
 
 Simple Example:
 
-```example
+```jsx
     <ImageAside
       simple
       dataSrc='holder.js/45x45'
@@ -63,7 +63,7 @@ Simple Example:
 
 Small Example:
 
-```example
+```jsx
     <ImageAside
       small
       dataSrc='holder.js/20x20'
@@ -73,7 +73,7 @@ Small Example:
 
 Bold Example:
 
-```example
+```jsx
     <ImageAside
       bold
       dataSrc='holder.js/24x24'
@@ -83,7 +83,7 @@ Bold Example:
 
 No Icon, No dataSrc Example:
 
-```example
+```jsx
     <ImageAside
       header='Vivamus ultricies augue'
     />

@@ -1,6 +1,6 @@
 DateField (Month/Day/Year):
 
-```example
+```jsx
     <DateField
       label='Date of Birth'
       input={{
@@ -29,13 +29,14 @@ DateField (Month/Day/Year):
 
 DateField (Month/Year):
 
-```example
+```jsx
     <DateField
       label='Date of Birth'
       input={{
         onBlur: () => true,
         onFocus: () => true
       }}
+      meta={{ touched: true, error: 'hello' }}
     >
       <TextField
         placeholder='MM'

@@ -1,6 +1,6 @@
 Checkout Example:
 
-```example
+```jsx
     const sampleOptions = [ { label: 'Select your home type', value: -1 } ];
 
     <CheckOut

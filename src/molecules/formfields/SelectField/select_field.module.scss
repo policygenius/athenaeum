@@ -31,6 +31,21 @@
     right: ru(.5);
     z-index: 0;
     right: ru(.75);
+    pointer-events: none;
+  }
+}
+
+@-moz-document url-prefix() {
+  .select-wrapper {
+    select {
+      -moz-appearance: none;
+      color: rgba(0,0,0,0);
+    }
+
+    select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 color('brand-2');
+    }
   }
 }
 
@@ -53,6 +68,10 @@
 
   &:invalid {
     color: color('neutral-5');
+  }
+
+  &::-ms-expand {
+    display: none;
   }
 }
 

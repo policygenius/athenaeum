@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Text from 'atoms/Text';
 import Hide from 'wrappers/Hide';
 import Spacer from 'atoms/Spacer';
@@ -16,7 +17,7 @@ const Compare = ({ compareSelected, onCompare, name }) =>
       <Text
         color='neutral-3'
         light
-        className={compareSelected && styles['checked']}
+        className={classnames(compareSelected && styles['checked'])}
       >
         Compare
       </Text>
@@ -28,7 +29,6 @@ const Compare = ({ compareSelected, onCompare, name }) =>
         }}
       />
     </div>
-    <div className={styles['divider']} />
   </Hide>
 
 ;

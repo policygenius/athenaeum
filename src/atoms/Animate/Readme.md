@@ -9,7 +9,7 @@ and allows for the transition to go in reverse.
 **Note: Animations default to 1s, except for the following:**
 - `shake`: .5s
 
-```example
+```jsx
     <Animate animations='shake rotate-left slideDown'>
       <strong>New Component Created!</strong><br /><small>Now go and write some code! -- <em>You code monkey, you ;)</em></small>.
     </Animate>

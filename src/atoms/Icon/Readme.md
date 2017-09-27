@@ -1,12 +1,12 @@
 X-Icon example:
 
-```example
+```jsx
     <Icon icon='xIcon' />
 ```
 
 Inline Icon example:
 
-```example
+```jsx
     <TextComponent>
       <Icon
         icon='checkmark'
@@ -19,7 +19,7 @@ Inline Icon example:
 ```
 
 # All Available Icons:
-```example
+```jsx
     const icons = require('assets/images');
 
     function DisplayAllIcons() {

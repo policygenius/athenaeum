@@ -1,3 +1,5 @@
+process.traceDeprecation = true;
+
 const path = require('path');
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const postCSSConfig = require('./postcss.config.js');
@@ -22,7 +24,9 @@ const baseRules = [
         // babel-loader will throw a deprecation warning
         // waiting for stable v7.0.0 to upgrade
         loader: 'babel-loader',
-        options: { presets: [ 'react', 'es2015', 'stage-2' ] }
+        options: {
+          presets: [ 'env', 'react', 'stage-2' ]
+        }
       }
     ]
   },

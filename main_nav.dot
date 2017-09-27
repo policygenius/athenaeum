@@ -1,0 +1,69 @@
+digraph G {
+  graph [
+    rankdir = "TB"
+    label = "Main Nav Architecture"
+  ];
+
+  CDN [
+    shape = cylinder
+    label = "http://rcl.policygenius.com\n(cloudfront)"
+  ]
+
+  storage [
+    shape = cylinder
+    label = "s3\n (rcl-pg)"
+  ]
+
+  nav_js [
+    shape = note
+    label = "main_nav-bg87s.js"
+  ]
+
+  nav_css [
+    shape = note
+    label = "main_nav-fc7de.css"
+  ]
+
+  nav_html [
+    label = "static_nav.html"
+    shape = "note"
+  ]
+
+  proxy [
+    shape = cylinder
+    label = "Proxy\n(static)"
+
+  ]
+
+  ghost [
+    shape = cylinder
+    label = "Ghost\n(blog)"
+  ]
+
+  pg_rails [
+    shape = cylinder
+    label = "pg_rails"
+  ]
+
+  athenaeum [
+    shape = component
+    label = "athenaeum\n(node)"
+  ]
+
+  athenaeum -> nav_js[color=green]
+  athenaeum -> nav_css[color=green label="Generates Assets"]
+  athenaeum -> nav_html[color=green]
+
+
+  storage -> nav_js
+  storage  -> nav_css
+  storage -> nav_html
+
+  CDN -> storage
+
+  proxy -> CDN
+  ghost -> CDN
+  pg_rails -> CDN
+
+
+}

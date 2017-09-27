@@ -19,6 +19,13 @@ steps:
       docker-compose:
         run: athenaeum
 
+  - wait
+  - trigger: "athenaeum-main-nav"
+    label: ':roller_coaster: Trigger MainNav Build'
+    async: true
+
+  - wait
+
   - block: 'Trigger deploy/publish'
     prompt: 'Choose a version bump'
     branches: 'master'

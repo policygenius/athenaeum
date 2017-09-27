@@ -58,10 +58,7 @@ function Modal(props) {
             </Text>
 
             <Col
-              fullwidth
-              style={{
-                alignSelf: 'center'
-              }}
+              className={styles['close-col']}
             >
               {
                 !hideX &&

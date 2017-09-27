@@ -1,5 +1,6 @@
 $tooltip-width: ru(.5);
 $tooltip-shift-amount: 60%;
+$hover-message-shift: calc(50% - 3.06rem);
 
 .tooltip-wrapper {
   display: inline-block;
@@ -24,7 +25,8 @@ $tooltip-shift-amount: 60%;
   padding: $tooltip-width;
   position: absolute;
   top: calc(100% + 10px);
-  transform: translateX(calc(-50% - #{$tooltip-width / 2}));
+  transform: translateX(-50%);
+  left: 50%;
   transition: opacity .15s ease-out;
   visibility: hidden;
   width: ru(10);
@@ -55,8 +57,14 @@ $tooltip-shift-amount: 60%;
   }
 }
 
+.right,
+.left {
+  left: auto;
+  transform: none;
+}
+
 .right {
-  transform: translateX(calc(#{-50% - $tooltip-shift-amount / 2} - #{$tooltip-width / 2}));
+  right: $hover-message-shift;
   &:before,
   &:after {
     right: -$tooltip-shift-amount;
@@ -64,7 +72,7 @@ $tooltip-shift-amount: 60%;
 }
 
 .left {
-  transform: translateX(calc(#{-50% + $tooltip-shift-amount / 2} - #{$tooltip-width / 2}));
+  left: $hover-message-shift;
   &:before,
   &:after {
     right: $tooltip-shift-amount;

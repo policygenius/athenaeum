@@ -1,6 +1,6 @@
 First name Field:
 
-```example
+```jsx
     class TextFieldExample extends React.Component {
       constructor() {
         super();
@@ -36,7 +36,7 @@ First name Field:
 
 Text field with error:
 
-```example
+```jsx
   <TextField
     label='First Name'
     placeholder='Enter your first name'
@@ -54,7 +54,7 @@ Text field with error:
 
 Text field - phone number example:
 
-```example
+```jsx
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
@@ -69,7 +69,7 @@ Text field - phone number example:
 ```
 Text field - prefix example:
 
-```example
+```jsx
   <TextField
     label='Income'
     placeholder='Eg. 200,000'
@@ -84,7 +84,7 @@ Text field - prefix example:
 
 Text field - secure:
 
-```example
+```jsx
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'

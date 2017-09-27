@@ -1,6 +1,6 @@
 Checkbox Example:
 
-```example
+```jsx
   <CheckBoxField
     label='Fire extinguisher'
     input={{

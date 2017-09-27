@@ -14,7 +14,8 @@ function Button( props ) {
     icon,
     disabled,
     shake,
-    ...rest,
+    slim,
+    ...rest
   } = props;
 
   const classes = [
@@ -22,6 +23,7 @@ function Button( props ) {
     shake && styles['shaking'],
     styles[variant],
     className,
+    slim && styles['slim'],
   ];
 
   return (
@@ -64,6 +66,10 @@ Button.propTypes = {
    * Triggers shake animation if true
    */
   shake: PropTypes.bool,
+  /**
+   * Reduces vertical padding if true
+   */
+  slim: PropTypes.bool,
   onClick: PropTypes.func,
 };
 

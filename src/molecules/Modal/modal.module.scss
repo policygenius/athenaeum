@@ -49,6 +49,11 @@ $border: 1px solid color('neutral-5');
   color: color('neutral-2');
 }
 
+.close-col {
+  align-self: center;
+  text-align: right;
+}
+
 .close {
   margin: 0 auto;
   width: rem-calc(30px);

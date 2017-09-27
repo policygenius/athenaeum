@@ -1,10 +1,19 @@
 ### PolicyCard Example:
 
-```example
+```jsx
     <PolicyCard
-      financialStrength='A+'
-      customerService='A+'
-      totalCustomers={5200000}
+      financialStrength={{
+        value: 'A+',
+        hoverMessage: <Text>Financial Strength Important</Text>
+      }}
+      customerService={{
+        value: 'A+',
+        hoverMessage: <Text>Customer Service Important</Text>
+      }}
+      totalCustomers={{
+        value: 16,
+        hoverMessage: <Text>Crowds Important</Text>
+      }}
       policyType='Simplified Issue Whole Life'
       policyTooltip={
         <div>
@@ -17,13 +26,22 @@
           Requires Medical Exam
         </div>
       }
+      policyTypeHoverMessage={
+        <div>
+          hello, world
+        </div>
+      }
       carrierLogo={
         <img
-          src='http://localhost:3000/assets/insurance-cards-logos/banner-life-dark-2x.png'
+          src='#'
           alt='hello'
         />
       }
-      monthlyPremium={19.80}
+      premium={{
+        price: 13,
+        format: 'mo',
+        defaultText: 'Quote available from a PolicyGenius expert'
+      }}
       discount={
         <Text color='neutral-3' type={7} light>
           <Text semibold type={7}>Save 5%</Text>
@@ -33,8 +51,11 @@
       }
       onContinue={() => alert('continue button clicked')}
       onDetails={() => alert('details button clicked')}
-      onCompare={(e) => setState({ compare: e.target.checked })}
-      compareSelected={state.compare}
+      compareCheckbox={{
+        onCompare: (e) => setState({ compare: e.target.checked }),
+        compareSelected: state.compare,
+        name: 'unique-name'
+      }}
       footer={[
         <Icon icon='checkmark' height='16px' width='16px' />,
         <span style={{ color: '#78c07f', fontWeight: 'bold' }}>Excellent rates for diabetics</span>,

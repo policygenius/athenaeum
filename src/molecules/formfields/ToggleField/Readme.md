@@ -1,4 +1,4 @@
-```example
+```jsx
   <div>
     <ToggleField
       htmlFor=''

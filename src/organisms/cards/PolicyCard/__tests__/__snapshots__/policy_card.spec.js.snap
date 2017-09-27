@@ -40,113 +40,165 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           />
         </label>
       </div>
-      <div
-        className="divider"
-      />
     </div>
+    <div
+      className="divider"
+    />
     <div
       className="carrier-logo"
     >
       <div />
-      <div
-        className="divider"
-      />
     </div>
+    <div
+      className="divider"
+    />
     <div
       className="policy-type"
     >
-      <div
-        className="hide small"
+      <span
+        className="tooltip-wrapper policy-type-tooltip"
+        onClick={[Function]}
+      >
+        <div>
+          <div
+            className="hide small"
+          >
+            <strong
+              className="text typography-7 semibold neutral-3 undefined strong undefined"
+            >
+              Policy Type
+            </strong>
+          </div>
+          <strong
+            className="text typography-5 semibold neutral-2 undefined strong undefined policy-name"
+          >
+            Type
+          </strong>
+          <strong
+            className="text typography-7 semibold neutral-2 undefined strong undefined policy-tooltip"
+          >
+            Tooltip
+          </strong>
+        </div>
+        <span
+          className="hover-message policy-type-hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
+    </div>
+    <div
+      className="divider"
+    />
+    <div
+      className="hide policy-info small medium"
+    >
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
       >
         <strong
           className="text typography-7 semibold neutral-3 undefined strong undefined"
         >
-          Policy Type
+          <div
+            className="policy-info-label"
+          >
+            Financial Strength
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined"
+          >
+            A+
+          </strong>
         </strong>
-      </div>
-      <strong
-        className="text typography-5 semibold neutral-2 undefined strong undefined policy-name"
+        <span
+          className="hover-message policy-type-hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
       >
-        Type
-      </strong>
-      <strong
-        className="text typography-7 semibold neutral-2 undefined strong undefined policy-tooltip"
+        <strong
+          className="text typography-7 semibold neutral-3 undefined strong undefined"
+        >
+          <div
+            className="policy-info-label"
+          >
+            Customer Service
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined"
+          >
+            A+
+          </strong>
+        </strong>
+        <span
+          className="hover-message policy-type-hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
       >
-        Tooltip
-      </strong>
-      <div
-        className="divider"
-      />
+        <strong
+          className="text typography-7 semibold neutral-3 undefined strong undefined"
+        >
+          <div
+            className="policy-info-label"
+          >
+            Total Customers
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined"
+          >
+            16
+          </strong>
+        </strong>
+        <span
+          className="hover-message policy-type-hover-message"
+        >
+          <div />
+        </span>
+        <noscript />
+      </span>
     </div>
     <div
-      className="hide policy-info small medium"
-    >
-      <strong
-        className="text typography-7 semibold neutral-3 undefined strong undefined"
-      >
-        <div
-          className="label"
-        >
-          Financial Strength
-        </div>
-        <strong
-          className="text typography-6 semibold neutral-2 undefined strong undefined"
-        >
-          A+
-        </strong>
-      </strong>
-      <strong
-        className="text typography-7 semibold neutral-3 undefined strong undefined"
-      >
-        <div
-          className="label"
-        >
-          Customer Service
-        </div>
-        <strong
-          className="text typography-6 semibold neutral-2 undefined strong undefined"
-        >
-          A+
-        </strong>
-      </strong>
-      <strong
-        className="text typography-7 semibold neutral-3 undefined strong undefined"
-      >
-        <div
-          className="label"
-        >
-          Total Customers
-        </div>
-        <strong
-          className="text typography-6 semibold neutral-2 undefined strong undefined"
-        >
-          5,200,000
-        </strong>
-      </strong>
-      <div
-        className="divider"
-      />
-    </div>
+      className="divider info-divider"
+    />
     <div
       className="actions"
     >
-      <strong
-        className="text typography-5 semibold neutral-2 undefined strong undefined"
-      >
+      <div>
         <strong
-          className="text typography-3 semibold undefined undefined strong undefined"
+          className="text typography-5 semibold neutral-2 undefined strong undefined"
         >
-          $19.80
+          <strong
+            className="text typography-3 semibold undefined undefined strong undefined"
+          >
+            $19.80
+          </strong>
+           
+          mo
         </strong>
-         
-        mo
-      </strong>
+      </div>
       <div
         className="top-3"
       />
       <div
         className="layout"
-        style={undefined}
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
       >
         <div
           className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined"
@@ -154,7 +206,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <button
-            className="button action continue"
+            className="button action continue slim"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -163,7 +215,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small medium xLarge xxLarge"
             >
               <svg
-                height="100%"
+                className="svg-text"
                 viewBox="-3 0 75 15"
                 width="100%"
               >
@@ -188,7 +240,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <button
-            className="button button"
+            className="button button slim"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -197,7 +249,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small medium xLarge xxLarge"
             >
               <svg
-                height="100%"
+                className="svg-text"
                 viewBox="-10 0 75 15"
                 width="100%"
               >
@@ -225,7 +277,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="hide medium large xLarge xxLarge"
           >
             <button
-              className="button button"
+              className="button button slim"
               disabled={undefined}
               onClick={[Function]}
               type="button"

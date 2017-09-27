@@ -1,6 +1,6 @@
 Add Jewelry item Example:
 
-```example
+```jsx
     <AddForm
       formName='ExampleForm'
       onSubmit={(e) => {
@@ -42,7 +42,7 @@ Add Jewelry item Example:
 
 Add Person Example:
 
-```example
+```jsx
     <AddForm
       formName='ExampleForm'
       onSubmit={() => alert('FormSubmitted!')}

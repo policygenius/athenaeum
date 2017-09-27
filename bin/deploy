@@ -45,35 +45,5 @@ aws s3 sync \
 
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
-NODE_ENV=production yarn run build:nav:styleguide
-
-echo '+++ Deploying main_nav styleguide latest to S3'
-aws s3 sync \
-  ./styleguide/main_nav/build s3://rcl-pg/latest/main_nav/ \
-  --acl=public-read \
-  --cache-control max-age=0 \
-  --exclude '.DS_Store'
-
-echo "Deployed Main Nav to http://rcl.policygenius.com/latest/main_nav/index.html"
-
-NODE_ENV=production yarn run build:publish:nav
-
-echo '+++ Compiling & Building Main Navigation'
-
-aws s3 sync \
-  ./main_nav/build s3://rcl-pg/main_nav/ \
-  --acl=public-read \
-  --cache-control max-age=0 \
-  --exclude '.DS_Store'
-
-aws s3 sync \
-  ./main_nav/zip s3://rcl-pg/main_nav/zip/ \
-  --acl=public-read \
-  --cache-control max-age=0 \
-  --content-encoding gzip \
-  --exclude '.DS_Store'
-
-echo "Deployed Main Nav to s3"
-
 buildkite-agent artifact upload package.json
 buildkite-agent meta-data set 'new-version' $VERSION

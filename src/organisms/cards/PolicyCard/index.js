@@ -16,6 +16,7 @@ function PolicyCard(props) {
     totalCustomers,
     policyType,
     policyTooltip,
+    policyTypeHoverMessage,
     carrierLogo,
     premium,
     discount,
@@ -32,18 +33,23 @@ function PolicyCard(props) {
         <Compare
           {...compareCheckbox}
         />
+        <div className={styles['divider']} />
         <CarrierLogo
           carrierLogo={carrierLogo}
         />
+        <div className={styles['divider']} />
         <PolicyType
           policyType={policyType}
           policyTooltip={policyTooltip}
+          policyTypeHoverMessage={policyTypeHoverMessage}
         />
+        <div className={styles['divider']} />
         <PolicyInformation
           financialStrength={financialStrength}
           customerService={customerService}
           totalCustomers={totalCustomers}
         />
+        <div className={classnames(styles['divider'], styles['info-divider'])} />
         <PolicyActions
           onContinue={onContinue}
           onDetails={onDetails}

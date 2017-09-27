@@ -11,7 +11,7 @@ function LinkWrapper( props ) {
     children,
     color,
     variant,
-    ...rest,
+    ...rest
   } = props;
 
   const classes = [

@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="15px" height="10px" viewBox="0 0 15 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
-    <title>fast_forward</title>
+    <title>noun_1196951</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Quotes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="20" font-family="MaterialIcons-Regular, Material Icons" font-weight="normal">
-        <g id="Comparison---Desktop" transform="translate(-397.000000, -1230.000000)" fill="#4D4D4D">
-            <g id="Result-1" transform="translate(71.000000, 1131.000000)">
-                <g id="Dividers" transform="translate(127.000000, 39.000000)">
-                    <g id="Group" transform="translate(196.000000, 5.000000)">
-                        <g id="Policy-Type" transform="translate(0.000000, 21.000000)">
-                            <text id="fast_forward">
-                                <tspan x="0" y="49">fast_forward</tspan>
-                            </text>
-                        </g>
-                    </g>
-                </g>
+    <g id="Quotes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Comparison---Desktop" transform="translate(-377.000000, -784.000000)" fill-rule="nonzero" fill="#4D4D4D">
+            <g id="noun_1196951" transform="translate(377.000000, 784.000000)">
+                <path d="M15.1965659,4.50827837 L8.55990171,0.0918179357 C8.38594753,-0.0230498009 8.16542819,-0.030667473 7.9844761,0.0719402978 C7.80352401,0.174548069 7.69084829,0.371101952 7.69045884,0.584830176 L7.69045884,4.71477564 C7.64518651,4.62758858 7.57915425,4.55384024 7.49863333,4.50053472 L0.869442868,0.0918179357 C0.695488692,-0.0230498009 0.474969353,-0.030667473 0.294017264,0.0719402978 C0.113065175,0.174548069 0.000389457515,0.371101952 0,0.584830176 L0,9.41516982 C0.000389457515,9.62889805 0.113065175,9.82545193 0.294017264,9.9280597 C0.474969353,10.0306675 0.695488692,10.0230498 0.869442868,9.90818206 L7.49863333,5.49172163 C7.57915425,5.43841611 7.64518651,5.36466777 7.69045884,5.27748071 L7.69045884,9.40742618 C7.69084829,9.6211544 7.80352401,9.81770828 7.9844761,9.92031605 C8.16542819,10.0229238 8.38594753,10.0153062 8.55990171,9.90043842 L15.1965659,5.49172163 C15.3574363,5.38371149 15.4545455,5.19861668 15.4545455,5 C15.4545455,4.80138332 15.3574363,4.61628851 15.1965659,4.50827837 Z" id="Shape"></path>
             </g>
         </g>
     </g>

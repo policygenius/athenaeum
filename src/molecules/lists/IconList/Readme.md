@@ -1,6 +1,6 @@
 IconList Example:
 
-```example
+```jsx
     <IconList
       data={[
         { icon: 'checkmark', text: 'Item 1' },

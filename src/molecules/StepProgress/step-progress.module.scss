@@ -25,6 +25,19 @@ $mobile-inactive-item-border-color: color('brand-2');
   padding: 0;
   background: none;
   list-style: none;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: $item-size / 2;
+    height: $item-border-width;
+    left: $item-size / 2;
+    right: $item-size / 2;
+
+    background-color: $item-border-color;
+    pointer-events: none;
+  }
 }
 
 .step {
@@ -86,19 +99,6 @@ $mobile-inactive-item-border-color: color('brand-2');
   width: ru(3);
   text-decoration: none;
   color: inherit;
-
-  &:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: $item-size / 2;
-    width: calc(100% - #{ru(.75)});
-    height: $item-border-width;
-    transform: translateX(-100%) translateY(-50%);
-
-    background-color: $item-border-color;
-    pointer-events: none;
-  }
 
   &:active {
     .icon { top: 1px; }

@@ -10,7 +10,11 @@ import Spacer from 'atoms/Spacer';
 import styles from './policy_card.module.scss';
 
 const ResponsiveText = ({ text, offset, size }) =>
-  <svg width='100%' height='100%' viewBox={`${offset} 0 ${size} 15`}>
+  <svg
+    width='100%'
+    viewBox={`${offset} 0 ${size} 15`}
+    className={styles['svg-text']}
+  >
     <text x='0' y='12'>{text}</text>
   </svg>
 
@@ -29,16 +33,23 @@ export const PolicyActions = (props) => {
 
   return (
     <div className={styles['actions']}>
-      <Text type={5} color='neutral-2' semibold>
-        <Text type={3} semibold>{formattedPremium}</Text>
-        { ' ' }
-        {premium.format}
-      </Text>
-      {discount && discount}
+      { premium.price ?
+        <div>
+          <Text type={5} color='neutral-2' semibold>
+            <Text type={3} semibold>{formattedPremium}</Text>
+            { ' ' }
+            {premium.format}
+          </Text>
+          {discount && discount}
+        </div>
+        :
+        <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
+      }
       <Spacer spacer={3} />
-      <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]}>
+      <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]} style={{ width: '100%' }}>
         <Button
           variant='action'
+          slim
           onClick={onContinue}
           className={classnames(styles['continue'])}
         >
@@ -50,7 +61,7 @@ export const PolicyActions = (props) => {
             Continue
           </Hide>
         </Button>
-        <Button onClick={onDetails}>
+        <Button slim onClick={onDetails}>
           <Hide hideOn='small medium xLarge xxLarge'>
             <ResponsiveText text='Details' offset={-10} size={75} />
           </Hide>
@@ -61,6 +72,7 @@ export const PolicyActions = (props) => {
         <Hide hideOn='medium large xLarge xxLarge'>
           <Button
             onClick={onCompare}
+            slim
           >
             Compare
           </Button>
@@ -74,6 +86,7 @@ PolicyActions.propTypes = {
   premium: PropTypes.shape({
     price: PropTypes.number,
     format: PropTypes.string,
+    defaultText: PropTypes.string,
   }),
   discount: PropTypes.node,
   onContinue: PropTypes.func,

@@ -1,5 +1,5 @@
 HeaderDiscount Example:
 
-```example
+```jsx
     <HeaderDiscount amount={20} label='/mo' prevAmount={40} />
 ```

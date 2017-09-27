@@ -1,6 +1,6 @@
 Step Progress example:
 
-```example
+```jsx
     <StepProgress
       steps={[
         { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },

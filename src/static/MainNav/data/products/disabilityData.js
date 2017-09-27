@@ -2,19 +2,19 @@ const submenuItems = [
   {
     header: 'Types of Disability Insurance',
     items: [
-      { title: 'Long Term Disability Insurance', url: '/long-term-disability-insurance', },
-      { title: 'Short Term Disability Insurance', url: 'https://www.policygenius.com/blog/is-short-term-disability-insurance-worth-it/', },
-      { title: 'Social Security Disability', url: 'https://www.policygenius.com/blog/what-is-social-security-disability-insurance/', },
+      { title: 'Long-Term Disability Insurance', url: '/long-term-disability-insurance/', },
+      { title: 'Short-Term Disability Insurance', url: '/long-term-disability-insurance/learn/short-term-disability-insurance', },
+      { title: 'Supplemental Disability Insurance', url: '/long-term-disability-insurance/learn/supplemental-disability-insurance', },
+      { title: 'Mortgage Disability Insurance', url: '/long-term-disability-insurance/learn/mortgage-disability-insurance', },
     ],
   },
   {
     header: 'Helpful Resources',
     items: [
-      { title: 'How To Apply For Disability Insurance?', url: '/long-term-disability-insurance/guide/application-process/', },
-      { title: 'Long Term vs. Short Term Disability Insurance', url: 'https://www.policygenius.com/blog/long-term-disability-vs-short-term-disability-explained/', },
-      { title: 'How Does Disability Insurance Work?', url: '/long-term-disability-insurance/guide/', },
-      { title: 'Real Claims Stories', url: '/long-term-disability-insurance/guide/real-claims-stories/', },
-      { title: 'How Long Do Disability Benefits Last?', url: 'https://www.policygenius.com/blog/long-term-disability-insurance-benefits/', },
+      { title: 'Disability Insurance Learn Center', url: '/long-term-disability-insurance/learn', },
+      { title: 'How Does Long-Term Disability Insurance Work?', url: '/long-term-disability-insurance/learn/how-does-long-term-disability-insurance-work', },
+      { title: 'How Much Does Long-Term Disability Insurance Cost?', url: '/long-term-disability-insurance/learn/how-much-does-long-term-disability-insurance-cost', },
+      { title: 'Disability Insurance Features & Riders', url: '/long-term-disability-insurance/learn/disability-insurance-riders', },
     ],
   },
 ];

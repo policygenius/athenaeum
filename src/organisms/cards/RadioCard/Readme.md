@@ -2,7 +2,7 @@ RadioCard Example:
 
 No Image:
 
-```example
+```jsx
     class RadioCardExample extends React.Component {
       constructor(props) {
         super(props);
@@ -56,7 +56,7 @@ No Image:
 
 With Image:
 
-```example
+```jsx
     class RadioCardExample extends React.Component {
       constructor(props) {
         super(props);
@@ -112,7 +112,7 @@ With Image:
 
 With Bottom Sections:
 
-```example
+```jsx
     class RadioCardExample extends React.Component {
       constructor(props) {
         super(props);

@@ -14,6 +14,7 @@ $main-section-padding: ru(1.5);
 }
 
 .layout {
+  width: 100%;
   flex-direction: column;
   flex-wrap: nowrap;
 }
@@ -25,6 +26,11 @@ $main-section-padding: ru(1.5);
   padding-left: 0;
   padding-right: 0;
   z-index: 0;
+}
+
+.main-layout,
+.footer-container {
+  flex: 1 0 auto;
 }
 
 .logo-panel {

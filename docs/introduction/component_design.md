@@ -3,9 +3,9 @@
 So you want to create a component. A Component should list component `propTypes`.
 RCL shows live, editable examples based on Markdown files. Uses hot reloaded dev server.
 
-Creating a new component. You can generate a component with [plop]() by running:  
+Creating a new component. You can generate a component with [plop]() by running:
 
- `yarn run c`  
+ `yarn run c`
 
 Starts a cli prompt which will create the following component directory and files:
 
@@ -21,7 +21,7 @@ Starts a cli prompt which will create the following component directory and file
 
 
 ### Basic component libraries
-```js
+```html
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -40,13 +40,11 @@ You import these styles into a component, the syntax is very specific. Just as y
 
 To give a component access to its styles, import the styles from the `component_name.module.scss` file as a styles object.
 
-**Importing Component Styles:**  
-```js
-import styles from './component_name.module.scss';
-```
+**Importing Component Styles:**
+`import styles from './component_name.module.scss';`
 
-**Using Component Styles:**  
-```js
+**Using Component Styles:**
+```html
  <button className={styles['action-button']}>
   ...
  </button>
@@ -57,7 +55,7 @@ The `classNames` function takes any number of arguments which can be a string or
 
 [See classnames github](https://github.com/JedWatson/classnames) .
 
-```js
+```html
   classNames('foo', 'bar'); // => 'foo bar'
   classNames('foo', { bar: true }); // => 'foo bar'
   classNames({ 'foo-bar': true }); // => 'foo-bar'
@@ -75,7 +73,7 @@ The `classNames` function takes any number of arguments which can be a string or
 
 ### Example Component:
 
-```js
+```html
 import React from 'react';
 import styles from '../path/simple_button.scss';
 
