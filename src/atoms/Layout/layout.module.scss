@@ -143,6 +143,14 @@ $spacer-base: .25;
   padding-right: $gutter-width;
 }
 
+.column {
+  flex-direction: column;
+
+  .col {
+    flex: 1 0 auto;
+  }
+}
+
 .flex {
   flex-grow: 1;
 }

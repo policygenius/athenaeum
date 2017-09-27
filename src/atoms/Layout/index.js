@@ -11,6 +11,7 @@ function Layout( props ) {
     padding,
     style,
     variant,
+    column
   } = props;
 
   const kids = processChildren(props);
@@ -22,7 +23,8 @@ function Layout( props ) {
         styles['layout'],
         padding && styles['padding'],
         className,
-        variant && styles[variant]
+        variant && styles[variant],
+        column && styles['column'],
       )}
     >
       { kids }
@@ -121,6 +123,12 @@ Layout.propTypes = {
    * Gives child `Col`s `flex` prop.
    */
   flex: PropTypes.bool,
+
+  /**
+   * Short hand to give layout 'flex-direction: column'
+   * Will give all child columns 'flex: 1 0 auto'
+   */
+  column: PropTypes.bool,
 
   /**
    * Special variant options.
