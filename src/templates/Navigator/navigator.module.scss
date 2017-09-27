@@ -28,6 +28,11 @@ $main-section-padding: ru(1.5);
   z-index: 0;
 }
 
+.main-layout,
+.footer-container {
+  flex: 1 0 auto;
+}
+
 .logo-panel {
   z-index: 1;
   background-color: color('brand-2');
@@ -136,7 +141,6 @@ $main-section-padding: ru(1.5);
   .footer-container {
     padding-left: ru(.75);
     padding-right: ru(.75);
-    flex: 1 0 auto;
   }
 
   .sidebar {
