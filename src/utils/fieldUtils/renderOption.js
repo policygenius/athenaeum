@@ -12,13 +12,17 @@ export default function renderOption(opt, idx = 0) {
     reactKey,
     value,
     label,
+    selected,
   } = opt;
+  const selectedOption = selected ? { selected: 'selected' } : {};
+
 
   return (
     <option
       key={reactKey ? `${reactKey}-${idx}` : `opt-${randomStr()}`}
       value={value}
       className={styles['option']}
+      { ...selectedOption }
     >
       { label }
     </option>
