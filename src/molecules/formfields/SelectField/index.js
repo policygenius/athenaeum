@@ -20,11 +20,6 @@ const renderToolTip = (message) => {
   );
 };
 
-const appliedSelectOptions = ({ selectOptions, value }) => selectOptions.map(option => ({
-  ...option,
-  selected: option.value === value
-}));
-
 function SelectField( props ) {
   const {
     className,
@@ -39,7 +34,6 @@ function SelectField( props ) {
     variant,
     required
   } = props;
-  const value = input ? input.value : undefined;
 
   const classes = [
     styles['select-field'],
@@ -74,7 +68,7 @@ function SelectField( props ) {
               {...(omit(input, 'onClick'))}
             >
               { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
-              { renderSelectOptions(appliedSelectOptions({ selectOptions, value })) }
+              { renderSelectOptions(selectOptions) }
             </select>
           </div>
         }
