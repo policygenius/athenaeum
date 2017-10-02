@@ -12,7 +12,6 @@ const Compare = ({ compareSelected, onCompare, name }) =>
     <div
       id={`${name}-checkbox-wrapper`}
       className={styles['checkbox-wrapper']}
-      onClick={onCompare}
     >
       <Text
         color='neutral-3'
@@ -27,6 +26,7 @@ const Compare = ({ compareSelected, onCompare, name }) =>
           value: compareSelected,
           name
         }}
+        onClick={onCompare}
       />
     </div>
   </Hide>

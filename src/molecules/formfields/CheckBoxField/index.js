@@ -9,6 +9,7 @@ function CheckBoxField( props ) {
     label,
     input,
     fontStyle,
+    onClick
   } = props;
 
   return (
@@ -19,6 +20,7 @@ function CheckBoxField( props ) {
       <input
         type='checkbox'
         id={`checkbox-${input.name}`}
+        onClick={onClick}
         className={styles['checkbox-input']}
         checked={input.value}
         {...input}
@@ -53,6 +55,7 @@ CheckBoxField.propTypes = {
     'light',
     'semibold'
   ]),
+  onClick: PropTypes.func,
 };
 
 CheckBoxField.defaultProps = {
