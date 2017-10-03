@@ -201,7 +201,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         }
       >
         <div
-          className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined"
+          className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
           onClick={undefined}
           style={undefined}
         >
@@ -235,7 +235,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </button>
         </div>
         <div
-          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
+          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
           onClick={undefined}
           style={undefined}
         >
@@ -269,7 +269,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </button>
         </div>
         <div
-          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
+          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
           onClick={undefined}
           style={undefined}
         >

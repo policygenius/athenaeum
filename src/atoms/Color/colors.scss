@@ -1,7 +1,5 @@
 @each $key, $value in $colors-map {
   .#{$key} { color: $value; }
-}
-
-@each $key, $value in $colors-map {
   .background-#{$key} { background-color: $value; }
+  .border-#{$key} { border-color: $value; }
 }
