@@ -1,0 +1,19 @@
+.feature-square {
+  color: colors('neutral-8');
+  padding: ru(2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-bottom: ru(1);
+}
+
+.subheader {
+  margin-bottom: ru(1);
+}
