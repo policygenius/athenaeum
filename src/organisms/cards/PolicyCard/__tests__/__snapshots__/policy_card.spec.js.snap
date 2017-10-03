@@ -423,9 +423,22 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       <div
         className="actions"
       >
+<<<<<<< HEAD
         <div>
           <strong
             className="text typography-5 semibold neutral-2 undefined strong undefined"
+=======
+        <div
+          className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
+          onClick={undefined}
+          style={undefined}
+        >
+          <button
+            className="button action continue slim"
+            disabled={undefined}
+            onClick={[Function]}
+            type="button"
+>>>>>>> 163295e... Update basic components for rebrand
           >
             <strong
               className="text typography-3 semibold undefined undefined strong undefined"
@@ -437,6 +450,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </strong>
         </div>
         <div
+<<<<<<< HEAD
           className="top-3"
         />
         <div
@@ -446,6 +460,11 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               "width": "100%",
             }
           }
+=======
+          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
+          onClick={undefined}
+          style={undefined}
+>>>>>>> 163295e... Update basic components for rebrand
         >
           <div
             className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined"
@@ -466,6 +485,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                   viewBox="-3 0 75 15"
                   width="100%"
                 >
+<<<<<<< HEAD
                   <text
                     x="0"
                     y="12"
@@ -481,6 +501,24 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
             </button>
           </div>
+=======
+                  Details
+                </text>
+              </svg>
+            </div>
+            <div
+              className="hide large"
+            >
+              Details
+            </div>
+          </button>
+        </div>
+        <div
+          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
+          onClick={undefined}
+          style={undefined}
+        >
+>>>>>>> 163295e... Update basic components for rebrand
           <div
             className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
             onClick={undefined}
