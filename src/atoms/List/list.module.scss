@@ -34,3 +34,13 @@
     margin-left: 0;
   }
 }
+
+.horizontal {
+  li {
+    display: inline-flex;
+    &:first-child {
+      margin-left: 0px;
+    }
+    margin-left: 12px;
+  }
+}
