@@ -1,8 +1,42 @@
 .link {
   display: inline-block;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.float {
+  &:hover {
+    padding-bottom: 5px;
+    border-bottom: 1px solid color('neutral-1');
+  }
+}
+
+.underline {
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: inherit;
+  }
 }
 
 .no-text-decoration {
   text-decoration: none;
 }
+
+.secondary {
+  color: color('neutral-1');
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid color('neutral-3');
+
+  &:hover {
+    border-bottom: 1px solid color('neutral-1');
+  }
+}
+
+.primary {
+  color: color('accent-1');
+  text-decoration: none;
+  &:hover {
+    border-bottom: 1px solid color('accent-1');
+  }
+}
+
