@@ -38,6 +38,32 @@ function getChildren(props) {
   return null;
 }
 
+function getOnClick(props) {
+  const {
+    menu: {
+      link,
+      activeName,
+    },
+    showMobileMenu,
+    magazine,
+    setMobileCollapsedMenu,
+  } = props;
+
+  if (showMobileMenu && !magazine) {
+    return () => setMobileCollapsedMenu(activeName);
+  }
+
+  if (!link) {
+    return (e) => {
+      e.stopPropagation();
+
+      return false;
+    };
+  }
+
+  return () => true;
+}
+
 function SubMenu(props) {
   const {
     menu: {
@@ -48,7 +74,6 @@ function SubMenu(props) {
     active,
     setActiveSubTab,
     showMobileMenu,
-    setMobileCollapsedMenu,
     mobileCollapsedMenu,
     hasChildren,
     magazine,
@@ -69,15 +94,13 @@ function SubMenu(props) {
     */
     <li
       className={classnames(...classes)}
-      onMouseEnter={() => setActiveSubTab(activeName)}
-      onMouseLeave={() => setActiveSubTab(null)}
+      onMouseEnter={!showMobileMenu ? () => setActiveSubTab(activeName) : () => true}
+      onMouseLeave={!showMobileMenu ? () => setActiveSubTab(null) : () => true}
     >
       <LinkWrapper
         className={styles['header']}
         href={showMobileMenu && !magazine ? null : link}
-        onClick={
-          showMobileMenu && !magazine ? () => setMobileCollapsedMenu(activeName) : () => true
-        }
+        onClick={getOnClick(props)}
         variant='no-text-decoration'
         color='neutral-2'
       >
