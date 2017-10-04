@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const navBaseConfig = require('./webpack.config.nav.base.js');
