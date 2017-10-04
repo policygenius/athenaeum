@@ -1,3 +1,15 @@
+ $size-map: (
+  6: ru(.25),
+  12: ru(.5),
+  18: ru(.75),
+  24: ru(1),
+  36: ru(1.5),
+  60: ru(2.5),
+  84: ru(3.5),
+  120: ru(5),
+  162: ru(6.75),
+ );
+
 .list {
   padding-left: 1rem;
 
@@ -32,5 +44,27 @@
 
   li {
     margin-left: 0;
+  }
+}
+
+.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  @each $type, $size in $size-map {
+    &.horizontal-space-#{$type} {
+      li {
+        padding: 0 $size;
+      }
+    }
+  }
+}
+
+@each $type, $size in $size-map {
+  .bottom-spacing-#{$type} {
+    li {
+      margin-bottom: $size;
+    }
   }
 }
