@@ -4,9 +4,11 @@
 }
 
 .float {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
   &:hover {
-    padding-bottom: 5px;
     border-bottom: 1px solid color('neutral-1');
+    border-top: 1px solid transparent;
   }
 }
 
@@ -33,10 +35,13 @@
 }
 
 .primary {
-  color: color('accent-1');
+  color: color('accent-2');
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
   text-decoration: none;
   &:hover {
-    border-bottom: 1px solid color('accent-1');
+    border-bottom: 1px solid color('accent-2');
+    border-top: 1px solid transparent;
   }
 }
 
