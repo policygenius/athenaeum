@@ -19,10 +19,11 @@ const getTag = (props) => {
   return tag;
 };
 
-const getWeight = ({ semibold, light, weight }) => {
+const getWeight = ({ semibold, light, weight, bold }) => {
   if (weight) return weight;
   if (semibold) return 'semibold';
   if (light) return 'light';
+  if (bold) return 'bold';
 
   return 'regular';
 };
@@ -46,7 +47,10 @@ function Text(props) {
     className,
     color,
     type,
-    variant
+    variant,
+    font,
+    spaced,
+    italic,
   } = props;
 
   const tag = getTag(props);
@@ -61,6 +65,11 @@ function Text(props) {
     styles[variant],
     styles[tag],
     styles[align],
+    spaced && styles['spaced'],
+    italic && styles['italic'],
+    styles[`type-${font}-${type}-bold`],
+    styles[`type-${font}-${type}-medium`],
+    styles[`type-${font}-${type}-regular`],
     className,
   ];
 
@@ -93,6 +102,12 @@ Text.propTypes = {
 
   /**
    * Determines typography class
+   *
+   * Types for `a`: `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11`
+   *
+   * Types for `b`: `5, 6, 7, 8, 10, 12`
+   *
+   * Types fo `c`: `1`
    */
   type: PropTypes.number,
 
@@ -121,6 +136,18 @@ Text.propTypes = {
 
   light: PropTypes.bool,
   semibold: PropTypes.bool,
+  /**
+   * Possible font types are `a`, `b`, and `c`
+   */
+  font: PropTypes.string,
+  /**
+   * Adds letter spacing
+   */
+  spaced: PropTypes.bool,
+  /**
+   * Adds italic
+   */
+  italic: PropTypes.bool,
 };
 
 Text.defaultProps = {

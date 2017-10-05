@@ -27,7 +27,8 @@ function List(props) {
     mini,
     noBullets,
     listItems,
-    numberedList
+    numberedList,
+    horizontal,
   } = props;
 
   return React.createElement(
@@ -38,6 +39,7 @@ function List(props) {
         condensed && styles['condensed'],
         mini && styles['mini'],
         noBullets && styles['no-bullets'],
+        horizontal && styles['horizontal'],
         className
       ),
       style: {
@@ -87,6 +89,11 @@ List.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
+  /**
+   * Makes the list horizontal
+   */
+  horizontal: PropTypes.bool,
 };
 
 List.defaultProps = {

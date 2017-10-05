@@ -1,16 +1,28 @@
 @import 'colors';
 
-$font-family-serif:           'PolicyGenius', Georgia, serif;
-$font-family-sans-serif:      'PolicyGenius', Helvetica, Arial, sans-serif;
+$font-family-serif:           'PolicyGeniusSSMedium', Georgia, serif;
+$font-family-sans-serif:      'PolicyGeniusSSDispNo1', Arial, sans-serif;
+$font-family-sans-serif-bold: 'PolicyGeniusSSBold', Arial, sans-serif;
+$font-family-c: Georgia;
 $main-font-color:             color('neutral-2');
 $label-font-color:            color('neutral-4');
 
-$lightweight:                 300;
-$regularweight:               400;
-$semiboldweight:              600;
+$lightweight:                 normal;
+$regularweight:               bold;
+$semiboldweight:              900;
 
 @mixin base-font-family() {
   font-family: $font-family-sans-serif;
+  margin: 0;
+}
+
+@mixin font-family-medium() {
+  font-family: $font-family-serif;
+  margin: 0;
+}
+
+@mixin font-family-c() {
+  font-family: $font-family-c;
   margin: 0;
 }
 
@@ -28,6 +40,7 @@ $semiboldweight:              600;
   @include base-font-family;
   font-size: rem-calc(42px);
   line-height: ru(2);
+  font-weight: $semiboldweight;
 
   @if $margin {
     margin-bottom: ru(1);
@@ -94,6 +107,205 @@ $semiboldweight:              600;
   }
 }
 
+@mixin typography-a-1-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(68px);
+  line-height: ru(3.5);
+  letter-spacing: 0.9px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-2-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(54px);
+  line-height: ru(2.75);
+  letter-spacing: 0.9px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-3-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(42px);
+  line-height: ru(2.25);
+  letter-spacing: 0.9px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-4-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+  letter-spacing: 0.9px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+
+@mixin typography-a-5-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+  letter-spacing: 0.7px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-6-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+  letter-spacing: 0.7px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-7-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(19px);
+  line-height: ru(1);
+  letter-spacing: 0.9px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-8-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(16px);
+  line-height: ru(.75);
+  letter-spacing: 0.7px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-9-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(15px);
+  line-height: ru(.75);
+  letter-spacing: 0.9px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-10-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(13px);
+  line-height: ru(.75);
+  letter-spacing: 0.7px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-a-11-bold($margin: true) {
+  @include base-font-family;
+  font-size: rem-calc(12px);
+  line-height: ru(.5);
+  letter-spacing: 0.7px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-b-5-medium($margin: true) {
+  @include font-family-medium;
+  font-size: rem-calc(26px);
+  line-height: ru(1.75);
+  letter-spacing: 0.1px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-b-6-medium($margin: true) {
+  @include font-family-medium;
+  font-size: rem-calc(22px);
+  line-height: ru(1.5);
+  letter-spacing: 0.1px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-b-7-medium($margin: true) {
+  @include font-family-medium;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+  letter-spacing: 0.1px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-b-8-medium($margin: true) {
+  @include font-family-medium;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+  letter-spacing: 0.1px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-b-10-medium($margin: true) {
+  @include font-family-medium;
+  font-size: rem-calc(13px);
+  line-height: ru(.75);
+  letter-spacing: 0.1px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-b-12-medium($margin: true) {
+  @include font-family-medium;
+  font-size: rem-calc(10px);
+  line-height: ru(.75);
+  letter-spacing: 0.1px;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-c-1-regular($margin: true) {
+  @include font-family-c;
+  font-size: rem-calc(19px);
+  line-height: ru(1.5);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+
 @mixin typography($number) {
   @if $number == 0 {
     @include typography-0(false);
@@ -119,6 +331,73 @@ $semiboldweight:              600;
   @if $number == 7 {
     @include typography-7(false);
   }
+}
+
+@mixin typographyA($number) {
+  @if $number == 1 {
+    @include typography-a-1-bold(false);
+  }
+  @if $number == 2 {
+    @include typography-a-2-bold(false);
+  }
+  @if $number == 3 {
+    @include typography-a-3-bold(false);
+  }
+  @if $number == 4 {
+    @include typography-a-4-bold(false);
+  }
+  @if $number == 5 {
+    @include typography-a-5-bold(false);
+  }
+  @if $number == 6 {
+    @include typography-a-6-bold(false);
+  }
+  @if $number == 7 {
+    @include typography-a-7-bold(false);
+  }
+  @if $number == 8 {
+    @include typography-a-8-bold(false);
+  }
+  @if $number == 9 {
+    @include typography-a-9-bold(false);
+  }
+  @if $number == 10 {
+    @include typography-a-10-bold(false);
+  }
+  @if $number == 11 {
+    @include typography-a-11-bold(false);
+  }
+}
+
+@mixin typographyB($number) {
+  @if $number == 5 {
+    @include typography-b-5-medium(false);
+  }
+  @if $number == 6 {
+    @include typography-b-6-medium(false);
+  }
+  @if $number == 7 {
+    @include typography-b-7-medium(false);
+  }
+  @if $number == 8 {
+    @include typography-b-8-medium(false);
+  }
+  @if $number == 9 {
+    @include typography-b-8-medium(false);
+  }
+  @if $number == 10 {
+    @include typography-b-10-medium(false);
+  }
+  @if $number == 11 {
+    @include typography-b-10-medium(false);
+  }
+  @if $number == 12 {
+    @include typography-b-12-medium(false);
+  }
+}
+
+@mixin typographyC() {
+  @include typography-c-1-regular(false);
 }
 
 @mixin typography-light() {
