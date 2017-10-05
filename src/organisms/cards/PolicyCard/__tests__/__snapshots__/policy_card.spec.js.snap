@@ -11,14 +11,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       <div
         className="content"
       >
-        <div
-          className="premium"
+        <p
+          className="text typography-6 light neutral-3 undefined p undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
         >
           <strong
             className="text typography-2 semibold neutral-1 undefined strong undefined"
           >
             $19.80
-             
+
             <strong
               className="text typography-7 semibold neutral-4 undefined strong undefined"
             >
@@ -203,10 +203,8 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="layout secondary-actions-wrapper"
             style={undefined}
           >
-            <div
-              className="col col-sm-6 fullwidth bottom-spacing-undefined"
-              onClick={undefined}
-              style={undefined}
+            <strong
+              className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
             >
               <div
                 className="col bottom-spacing-undefined secondary-action"
@@ -244,6 +242,19 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
             </div>
           </div>
+<<<<<<< HEAD
+=======
+          <strong
+            className="text typography-5 semibold neutral-2 undefined strong undefined type-undefined-5-bold type-undefined-5-medium type-undefined-5-regular policy-name"
+          >
+            Type
+          </strong>
+          <strong
+            className="text typography-7 semibold neutral-2 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular policy-tooltip"
+          >
+            Tooltip
+          </strong>
+>>>>>>> f2ee96e... Update Text component with new fonts
         </div>
       </div>
     </div>
@@ -257,14 +268,20 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       <div
         className="hide compare small"
       >
+<<<<<<< HEAD
         <div
           className="checkbox-wrapper"
           id="undefined-checkbox-wrapper"
           onClick={[Function]}
+=======
+        <strong
+          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
         >
           <p
             className="text typography-6 light neutral-3 undefined p undefined"
           >
+<<<<<<< HEAD
             Compare
           </p>
           <div
@@ -273,6 +290,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <label
             className="checkbox"
             htmlFor="checkbox-undefined"
+=======
+            Financial Strength
+          </div>
+          <strong
+            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
           >
             <input
               checked={undefined}
@@ -341,12 +364,21 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       <div
         className="hide policy-info small medium"
       >
+<<<<<<< HEAD
         <span
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
+=======
+        <strong
+          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
         >
           <strong
+<<<<<<< HEAD
             className="text typography-7 semibold neutral-3 undefined strong undefined"
+=======
+            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
           >
             <div
               className="policy-info-label"
@@ -366,12 +398,27 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </span>
           <noscript />
         </span>
+<<<<<<< HEAD
         <span
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
+=======
+        <noscript />
+      </span>
+      <span
+        className="tooltip-wrapper policy-info-tooltip"
+        onClick={[Function]}
+      >
+        <strong
+          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
         >
           <strong
+<<<<<<< HEAD
             className="text typography-7 semibold neutral-3 undefined strong undefined"
+=======
+            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
           >
             <div
               className="policy-info-label"
@@ -391,12 +438,30 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </span>
           <noscript />
         </span>
+<<<<<<< HEAD
         <span
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
         >
           <strong
             className="text typography-7 semibold neutral-3 undefined strong undefined"
+=======
+        <noscript />
+      </span>
+    </div>
+    <div
+      className="divider info-divider"
+    />
+    <div
+      className="actions"
+    >
+      <div>
+        <strong
+          className="text typography-5 semibold neutral-2 undefined strong undefined type-undefined-5-bold type-undefined-5-medium type-undefined-5-regular"
+        >
+          <strong
+            className="text typography-3 semibold undefined undefined strong undefined type-undefined-3-bold type-undefined-3-medium type-undefined-3-regular"
+>>>>>>> f2ee96e... Update Text component with new fonts
           >
             <div
               className="policy-info-label"
@@ -445,7 +510,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               $19.80
             </strong>
-             
+
             mo
           </strong>
         </div>
