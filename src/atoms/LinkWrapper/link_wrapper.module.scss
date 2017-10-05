@@ -4,9 +4,11 @@
 }
 
 .float {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
   &:hover {
-    padding-bottom: 5px;
     border-bottom: 1px solid color('neutral-1');
+    border-top: 1px solid transparent;
   }
 }
 
