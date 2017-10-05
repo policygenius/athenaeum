@@ -67,6 +67,22 @@ Outline Button Example:
       <Button variant='outline'>Outline Button</Button>
 ```
 
+Outline Orange Button Example:
+
+```jsx
+      <Button variant='outline-orange'>Outline Button</Button>
+```
+
+Filled Button Example:
+
+```jsx
+      <Button variant='filled'>Filled Button</Button>
+```
+Filled Orange Button Example:
+
+```jsx
+      <Button variant='filled-orange'>Filled Button</Button>
+```
 Toggle Button Example:
 
 ```jsx
