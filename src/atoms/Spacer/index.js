@@ -12,9 +12,11 @@ const classes = (args) => {
     large,
     xLarge,
     spacer,
+    size,
     className
   } = args;
 
+  if (size) return [ styles[`size-${size}`], className ];
   if (spacer) return [ styles[`top-${spacer}`], className ];
 
   return [
@@ -67,11 +69,15 @@ Spacer.propTypes = {
   /**
    * additional className to be added to classSet
    */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /**
+   * Size of the spacer
+   */
+  size: PropTypes.oneOf([ 6, 12, 18, 24, 36, 60, 84, 162 ]),
 };
 
 Spacer.defaultProps = {
-  xSmall: true
+  xSmall: true,
 };
 
 export default Spacer;

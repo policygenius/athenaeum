@@ -1,4 +1,14 @@
  $base: .25;
+ $size-map: (
+  6: ru(.25),
+  12: ru(.5),
+  18: ru(.75),
+  24: ru(1),
+  36: ru(1.5),
+  60: ru(2.5),
+  84: ru(3.5),
+  162: ru(6.75),
+ );
 
 /** -- shared spacer util classes --
   Common spacer sizing incrementing ru(.25) to ru(2.5)
@@ -16,3 +26,9 @@
 
 .top-12 { margin-top: ru(6); }
 .bot-12 { margin-bottom: ru(6); }
+
+@each $type, $size in $size-map {
+  .size-#{$type} {
+    margin-top: $size;
+  }
+}
