@@ -12,7 +12,7 @@ describe('renderOption Util', () => {
       label: 'Test Label',
     };
 
-    const wrapper = shallow(renderOption(sampleOption));
+    const wrapper = shallow(renderOption(sampleOption, 0));
 
     expect(wrapper.is('option')).to.be.true;
     expect(wrapper.props().value).to.equal(sampleOption.value);
@@ -20,12 +20,9 @@ describe('renderOption Util', () => {
     expect(wrapper.contains('Test Label')).to.be.true;
   });
 
-  it('generates a random key if one has not been provided', () => {
-    const wrapper = shallow(renderOption({}));
+  it('uses the index as a key if one has not been provided', () => {
+    const wrapper = shallow(renderOption({}, 0));
 
-    expect(wrapper.key()).to.be.a('string');
-    expect(wrapper.key().includes('opt-')).to.be.true;
-    expect(wrapper.key().length).to.be.above(5);
+    expect(wrapper.key()).to.eq('0');
   });
-
 });

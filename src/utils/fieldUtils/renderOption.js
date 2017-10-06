@@ -3,9 +3,7 @@ import renderOptGroup from 'utils/fieldUtils/renderOptGroup';
 
 import styles from 'molecules/formfields/shared/formfields.module.scss';
 
-const randomStr = () => Math.random().toString(36).substring(7);
-
-export default function renderOption(opt, idx = 0) {
+export default function renderOption(opt, idx) {
   if (opt.group) return renderOptGroup(opt, idx);
 
   const {
@@ -16,7 +14,7 @@ export default function renderOption(opt, idx = 0) {
 
   return (
     <option
-      key={reactKey ? `${reactKey}-${idx}` : `opt-${randomStr()}`}
+      key={reactKey ? `${reactKey}-${idx}` : idx.toString()}
       value={value}
       className={styles['option']}
     >
