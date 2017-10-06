@@ -15,20 +15,16 @@ describe('renderOptGroup Util', () => {
       ],
     };
 
-    const wrapper = shallow(renderOptGroup(optGroup));
+    const wrapper = shallow(renderOptGroup(optGroup, 0));
 
     expect(wrapper.is('optgroup')).to.be.true;
     expect(wrapper.key().includes(optGroup.reactKey)).to.be.true;
     expect(wrapper.find('option').length).to.equal(2);
   });
 
-  it('generates a random key if one has not been provided', () => {
-    const wrapper = shallow(renderOptGroup({}));
+  it('uses the index as a key if one has not been provided', () => {
+    const wrapper = shallow(renderOptGroup({}, 0));
 
-    expect(wrapper.key()).to.be.a('string');
-    expect(wrapper.key().includes('grp-')).to.be.true;
-    expect(wrapper.key().length).to.be.above(5);
+    expect(wrapper.key()).to.eq('0');
   });
-
-
 });
