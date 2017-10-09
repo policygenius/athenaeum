@@ -16,7 +16,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <p
-          className="text typography-6 light neutral-3 undefined p undefined"
+          className="text typography-6 light neutral-3 undefined p undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
         >
           Compare
         </p>
@@ -64,18 +64,18 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="hide small"
           >
             <strong
-              className="text typography-7 semibold neutral-3 undefined strong undefined"
+              className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
             >
               Policy Type
             </strong>
           </div>
           <strong
-            className="text typography-5 semibold neutral-2 undefined strong undefined policy-name"
+            className="text typography-5 semibold neutral-2 undefined strong undefined type-undefined-5-bold type-undefined-5-medium type-undefined-5-regular policy-name"
           >
             Type
           </strong>
           <strong
-            className="text typography-7 semibold neutral-2 undefined strong undefined policy-tooltip"
+            className="text typography-7 semibold neutral-2 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular policy-tooltip"
           >
             Tooltip
           </strong>
@@ -99,7 +99,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined"
+          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
         >
           <div
             className="policy-info-label"
@@ -107,7 +107,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             Financial Strength
           </div>
           <strong
-            className="text typography-6 semibold neutral-2 undefined strong undefined"
+            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
           >
             A+
           </strong>
@@ -124,7 +124,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined"
+          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
         >
           <div
             className="policy-info-label"
@@ -132,7 +132,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             Customer Service
           </div>
           <strong
-            className="text typography-6 semibold neutral-2 undefined strong undefined"
+            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
           >
             A+
           </strong>
@@ -149,7 +149,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined"
+          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
         >
           <div
             className="policy-info-label"
@@ -157,7 +157,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             Total Customers
           </div>
           <strong
-            className="text typography-6 semibold neutral-2 undefined strong undefined"
+            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
           >
             16
           </strong>
@@ -178,10 +178,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     >
       <div>
         <strong
-          className="text typography-5 semibold neutral-2 undefined strong undefined"
+          className="text typography-5 semibold neutral-2 undefined strong undefined type-undefined-5-bold type-undefined-5-medium type-undefined-5-regular"
         >
           <strong
-            className="text typography-3 semibold undefined undefined strong undefined"
+            className="text typography-3 semibold undefined undefined strong undefined type-undefined-3-bold type-undefined-3-medium type-undefined-3-regular"
           >
             $19.80
           </strong>
