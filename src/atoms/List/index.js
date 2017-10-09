@@ -27,7 +27,9 @@ function List(props) {
     mini,
     noBullets,
     listItems,
-    numberedList
+    numberedList,
+    horizontal,
+    bottomSpacing,
   } = props;
 
   return React.createElement(
@@ -38,6 +40,9 @@ function List(props) {
         condensed && styles['condensed'],
         mini && styles['mini'],
         noBullets && styles['no-bullets'],
+        horizontal && styles['horizontal'],
+        horizontal && horizontal.spaceBetween && styles[`horizontal-space-${horizontal.spaceBetween}`],
+        bottomSpacing && styles[`bottom-spacing-${bottomSpacing}`],
         className
       ),
       style: {
@@ -87,6 +92,17 @@ List.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
+  /**
+   * Makes the list horizontal and adds additional props
+   */
+  horizontal: PropTypes.shape({
+    spaceBetween: PropTypes.oneOf([ 6, 12, 18, 24, 36 ]),
+  }),
+  /**
+   * Adds bottomSpacing to each child `li`. See `Spacer` for size details
+   */
+  bottomSpacing: PropTypes.oneOf([ 6, 12, 18, 24, 36, 60, 84, 120, 162 ])
 };
 
 List.defaultProps = {
