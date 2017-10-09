@@ -73,7 +73,7 @@ Spacer.propTypes = {
   /**
    * Size of the spacer
    */
-  size: PropTypes.oneOf([ 6, 12, 18, 24, 36, 60, 84, 162 ]),
+  size: PropTypes.oneOf([ 6, 12, 18, 24, 36, 60, 84, 120, 162 ]),
 };
 
 Spacer.defaultProps = {
