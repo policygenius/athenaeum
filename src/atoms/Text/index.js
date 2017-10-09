@@ -25,7 +25,7 @@ const getWeight = ({ semibold, light, weight, bold }) => {
   if (light) return 'light';
   if (bold) return 'bold';
 
-  return 'regular';
+  return '';
 };
 
 const convertChild = (child) => {
