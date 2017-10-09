@@ -1,23 +1,28 @@
 @import 'colors';
 
-$font-family-serif:           'PolicyGeniusSSMedium', Georgia, serif;
-$font-family-sans-serif:      'PolicyGeniusSSDispNo1', Arial, sans-serif;
-$font-family-sans-serif-bold: 'PolicyGeniusSSBold', Arial, sans-serif;
+$font-family-serif:           'PolicyGenius', Georgia, serif;
+$font-family-sans-serif:      'PolicyGenius', Arial, sans-serif;
+$font-family-sans-serif-bold: 'PolicyGenius', Arial, sans-serif;
 $font-family-c: Georgia;
+
 $main-font-color:             color('neutral-2');
 $label-font-color:            color('neutral-4');
 
 $lightweight:                 300;
-$regularweight:               400;
+$regularweight:               normal;
 $semiboldweight:              600;
+$mediumweight:                normal;
+$boldweight:                  900;
 
 @mixin base-font-family() {
   font-family: $font-family-sans-serif;
+  font-weight: $boldweight;
   margin: 0;
 }
 
 @mixin font-family-medium() {
   font-family: $font-family-serif;
+  font-weight: $regularweight;
   margin: 0;
 }
 
@@ -190,7 +195,7 @@ $semiboldweight:              600;
   font-size: rem-calc(26px);
   line-height: ru(1.75);
   letter-spacing: 0.1px;
-  font-weight: 500;
+  font-weight: $mediumweight;
 }
 
 @mixin typography-b-6-medium() {
@@ -198,7 +203,7 @@ $semiboldweight:              600;
   font-size: rem-calc(22px);
   line-height: ru(1.5);
   letter-spacing: 0.1px;
-  font-weight: 500;
+  font-weight: $mediumweight;
 }
 
 @mixin typography-b-7-medium() {
@@ -206,7 +211,7 @@ $semiboldweight:              600;
   font-size: rem-calc(19px);
   line-height: ru(1.25);
   letter-spacing: 0.1px;
-  font-weight: 500;
+  font-weight: $mediumweight;
 }
 
 @mixin typography-b-8-medium() {
@@ -214,7 +219,7 @@ $semiboldweight:              600;
   font-size: rem-calc(16px);
   line-height: ru(1);
   letter-spacing: 0.1px;
-  font-weight: 500;
+  font-weight: $mediumweight;
 }
 
 @mixin typography-b-10-medium() {
@@ -222,7 +227,7 @@ $semiboldweight:              600;
   font-size: rem-calc(13px);
   line-height: ru(.75);
   letter-spacing: 0.1px;
-  font-weight: 500;
+  font-weight: $mediumweight;
 }
 
 @mixin typography-b-12-medium() {
@@ -230,13 +235,14 @@ $semiboldweight:              600;
   font-size: rem-calc(10px);
   line-height: ru(.75);
   letter-spacing: 0.1px;
-  font-weight: 500;
+  font-weight: $mediumweight;
 }
 
 @mixin typography-c-7-regular() {
   @include font-family-c;
   font-size: rem-calc(19px);
   line-height: ru(1.5);
+  font-weight: $regularweight;
 }
 
 
