@@ -27,7 +27,7 @@ const screen = 'only screen';
 
 export const breakpoints = {
   smallUp: screen,
-  smallOnly: `${screen} and (max-width: ${smallRange.lower})`,
+  smallOnly: `${screen} and (max-width: ${smallRange.upper})`,
   mediumUp: `${screen} and (min-width: ${mediumRange.lower})`,
   mediumOnly: `${screen} and (min-width: ${mediumRange.lower}) and (max-width: ${mediumRange.upper})`,
   largeUp: `${screen} and (min-width: ${largeRange.lower})`,
