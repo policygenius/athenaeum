@@ -51,8 +51,6 @@ jspm_packages
 # Ignore OSX system files
 .DS_Store
 
-lib/
-
 .sass-cache
 NERD_tree_*
 tmp/
