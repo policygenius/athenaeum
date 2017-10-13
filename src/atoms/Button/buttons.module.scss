@@ -19,7 +19,7 @@ $brand-white: color('neutral-8');
   text-decoration: none;
   color: $brand-white;
   margin: 0;
-  padding: rem-calc(19) ru(1.5);
+  padding: rem-calc(19);
   background-color: $action-color;
   border: 2px solid $action-color;
   transition: background-color 300ms ease-out,
@@ -29,6 +29,7 @@ $brand-white: color('neutral-8');
   box-shadow 150ms ease-out;
   width: 100%;
   font-size: ru(.5);
+  text-transform: uppercase;
 
   .icon {
     path {

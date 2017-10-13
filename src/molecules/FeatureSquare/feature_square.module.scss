@@ -1,6 +1,4 @@
 .feature-square {
-  color: colors('neutral-8');
-  padding: ru(2);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -11,9 +9,14 @@
 }
 
 .icon {
-  margin-bottom: ru(1);
+  margin-bottom: ru(.25);
 }
 
-.subheader {
-  margin-bottom: ru(1);
+.button-wrapper {
+  width: 100%;
+  justify-content: center;
+}
+
+.button {
+  text-transform: uppercase;
 }
