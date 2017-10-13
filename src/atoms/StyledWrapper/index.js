@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import styled, { css as styledComponentsCss } from 'styled-components';
 import breakpoints from './constants/breakpoints';
 import colors from './constants/colors';
+import spacing from './constants/spacing';
 
-const variables = { breakpoints, colors };
+const variables = { breakpoints, colors, spacing };
 
 function StyledWrapper({ children, css, component, ...props }) {
   return React.createElement(
