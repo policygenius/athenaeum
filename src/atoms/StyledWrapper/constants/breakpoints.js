@@ -1,14 +1,14 @@
-const smallRange = {
+const mobileRange = {
   lower: '0em',
-  upper: '48em',
+  upper: '47.9375em',
 };
 
-const mediumRange = {
-  lower: '48.0625em',
+const tabletRange = {
+  lower: '48em',
   upper: '64em',
 };
 
-const largeRange = {
+const desktopRange = {
   lower: '64.0625em',
   upper: '80em',
 };
@@ -25,13 +25,27 @@ const xxLargeRange = {
 
 const screen = 'only screen';
 
+const mobile = screen;
+const mobileOnly = `${screen} and (max-width: ${mobileRange.upper})`;
+const tablet = `${screen} and (min-width: ${tabletRange.lower})`;
+const tabletOnly = `${screen} and (min-width: ${tabletRange.lower}) and (max-width: ${tabletRange.upper})`;
+const desktop = `${screen} and (min-width: ${desktopRange.lower})`;
+
 export default {
-  smallUp: screen,
-  smallOnly: `${screen} and (max-width: ${smallRange.upper})`,
-  mediumUp: `${screen} and (min-width: ${mediumRange.lower})`,
-  mediumOnly: `${screen} and (min-width: ${mediumRange.lower}) and (max-width: ${mediumRange.upper})`,
-  largeUp: `${screen} and (min-width: ${largeRange.lower})`,
-  largeOnly: `${screen} and (min-width: ${largeRange.lower}) and (max-width: ${largeRange.upper})`,
+  mobile,
+  mobileOnly,
+  tablet,
+  tabletOnly,
+  desktop,
+
+  // previous breakpoint names left for backwards compatability
+
+  smallUp: mobile,
+  smallOnly: mobileOnly,
+  mediumUp: tablet,
+  mediumOnly: tabletOnly,
+  largeUp: desktop,
+  largeOnly: `${screen} and (min-width: ${desktopRange.lower}) and (max-width: ${desktopRange.upper})`,
   xLargeUp: `${screen} and (min-width: ${xLargeRange.lower})`,
   xLargeOnly: `${screen} and (min-width: ${xLargeRange.lower}) and (max-width: ${xLargeRange.upper})`,
   xxLargeUp: `${screen} and (min-width: ${xxLargeRange.lower})`,

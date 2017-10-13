@@ -37,9 +37,24 @@ Hide.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * The screen sizes on which to hide the children -- use screen sizes from `Layout` component
+   * The screen sizes on which to hide the children. Pass in a space separated string
+   *
+   * Values:
+   * * `mobile`: hides element on screens up to 767px
+   *
+   * * `tablet`: hide element only on screens from 768px to 1024px
+   *
+   * * `tablet-up`: hide element on screens from 768px up
+   *
+   * * `desktop`: hide element on screens from 1025px up
    */
-  hideOn: PropTypes.string.isRequired,
+  /* eslint-disable */
+  hideOn: (props, propName, componentName) => {
+    if (/small|medium|large|xLarge|xxLarge/.test(props[propName])) {
+      throw new Error(`Deprecated prop values for ${propName} supplied to ${componentName}. Please use one or a combination of mobile, tablet and desktop. Refer to RCL documentation for correct breakpoint mappings.`);
+    }
+  }
+  /* eslint-enable */
 };
 
 export default Hide;
