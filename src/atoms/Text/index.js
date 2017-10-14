@@ -51,6 +51,7 @@ function Text(props) {
     font,
     spaced,
     italic,
+    size
   } = props;
 
   const tag = getTag(props);
@@ -59,7 +60,7 @@ function Text(props) {
   const Element = `${tag}`;
   const classes = [
     styles['text'],
-    styles[`typography-${type}`],
+    styles[`typography-${size || type}`],
     styles[weight],
     colors[color],
     styles[variant],
@@ -67,9 +68,9 @@ function Text(props) {
     styles[align],
     spaced && styles['spaced'],
     italic && styles['italic'],
-    styles[`type-${font}-${type}-bold`],
-    styles[`type-${font}-${type}-medium`],
-    styles[`type-${font}-${type}-regular`],
+    styles[`type-${font}-${size || type}-bold`],
+    styles[`type-${font}-${size || type}-medium`],
+    styles[`type-${font}-${size || type}-regular`],
     className,
   ];
 
@@ -152,7 +153,8 @@ Text.propTypes = {
 
 Text.defaultProps = {
   tag: 'p',
-  type: 6
+  type: 7,
+  font: 'b'
 };
 
 export default Text;
