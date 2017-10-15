@@ -110,6 +110,11 @@ Text.propTypes = {
    *
    * Types fo `c`: `1`
    */
+  size: PropTypes.number,
+
+  /**
+   * Deprecated. Use 'size' instead
+   */
   type: PropTypes.number,
 
   /**

@@ -80,8 +80,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'button',
-  variant: 'button',
+  type: 'button'
 };
 
 export default Button;
