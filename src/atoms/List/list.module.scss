@@ -13,13 +13,13 @@
 .list {
   padding-left: 1rem;
 
-  li {
-    margin-bottom: ru(1.25);
+  &.no-padding {
+    padding: 0;
   }
 }
 
 .mini {
-  li {
+  .list-item {
     @include typography-7;
     line-height: ru(.75);
     margin: 0;
@@ -33,7 +33,7 @@
 }
 
 .condensed {
-  li {
+  .list-item {
     margin-bottom: 0;
   }
 }
@@ -42,7 +42,7 @@
   padding-left: 0;
   list-style: none;
 
-  li {
+  .list-item {
     margin-left: 0;
   }
 }
@@ -51,11 +51,19 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+}
 
-  @each $type, $size in $size-map {
-    &.horizontal-space-#{$type} {
-      li {
-        padding: 0 $size;
+@each $type, $size in $size-map {
+  .horizontal-space-#{$type} {
+    > li {
+      padding: 0 $size;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
       }
     }
   }
@@ -63,8 +71,20 @@
 
 @each $type, $size in $size-map {
   .bottom-spacing-#{$type} {
-    li {
+    > li {
       margin-bottom: $size;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.link-list {
+  > .list-item {
+    a:hover {
+      color: color('accent-2');
     }
   }
 }
