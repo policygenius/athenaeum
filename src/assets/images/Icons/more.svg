@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 47 (45392) - http://www.bohemiancoding.com/sketch -->
+    <title>1x/Social/More</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1x/Social/More" fill-rule="nonzero" fill="#B2B2B2">
+            <g id="more">
+                <path d="M18,0 L18,0 L18,0 C27.9411255,0 36,8.0588745 36,18 L36,18 C36,27.9411255 27.9411255,36 18,36 L18,36 C8.0588745,36 0,27.9411255 0,18 L0,18 L0,18 C0,8.0588745 8.0588745,0 18,0 L18,0 Z M12.516,18.02 C12.516,16.436 11.652,15.608 10.068,15.608 C8.484,15.608 7.62,16.436 7.62,18.02 C7.62,19.64 8.484,20.432 10.068,20.432 C11.652,20.432 12.516,19.604 12.516,18.02 Z M20.652,18.02 C20.652,16.436 19.788,15.608 18.204,15.608 C16.62,15.608 15.756,16.436 15.756,18.02 C15.756,19.64 16.62,20.432 18.204,20.432 C19.788,20.432 20.652,19.604 20.652,18.02 Z M28.788,18.02 C28.788,16.436 27.924,15.608 26.34,15.608 C24.756,15.608 23.892,16.436 23.892,18.02 C23.892,19.64 24.756,20.432 26.34,20.432 C27.924,20.432 28.788,19.604 28.788,18.02 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
