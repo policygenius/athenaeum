@@ -58,6 +58,7 @@ module.exports = {
           name: 'Other',
           components: () => [
             'src/molecules/StepProgress/index.js',
+            'src/molecules/StepIndicator/index.js',
             'src/molecules/AgentCallout/index.js',
           ]
         }
