@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import omit from 'lodash/omit';
 
 import Icon from 'atoms/Icon';
+import Text from 'atoms/Text';
 import Tooltip from 'atoms/Tooltip';
 import ErrorMessage from 'atoms/ErrorMessage';
 
@@ -12,10 +13,33 @@ import styles from './text_field.module.scss';
 
 function renderTooltip(tooltip, className) {
   if (typeof tooltip === 'string') {
-    return <Tooltip className={styles[className]}>{tooltip}</Tooltip>;
+    return (
+      <Tooltip
+        className={styles[className]}
+        text={
+          <Icon
+            icon='tooltip'
+            className={styles['tooltip-icon']}
+          />
+        }
+      >
+        {tooltip}
+      </Tooltip>
+    );
   }
 
-  return <Tooltip className={styles[className]} onClick={tooltip} />;
+  return (
+    <Tooltip
+      className={styles[className]}
+      onClick={tooltip}
+      text={
+        <Icon
+          icon='tooltip'
+          className={styles['tooltip-icon']}
+        />
+      }
+    />
+  );
 }
 
 function TextField( props ) {
@@ -36,7 +60,9 @@ function TextField( props ) {
     type,
     maskVal,
     prefix,
+    postfix,
     activeValidation,
+    subLabel,
   } = props;
 
   const classes = [
@@ -44,6 +70,12 @@ function TextField( props ) {
     meta && meta.active && !noBaseStyle && styles['focused'],
     meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
+  ];
+
+  const inputClasses = [
+    styles['input-wrapper'],
+    prefix && styles['prefix'],
+    postfix && styles['postfix'],
   ];
 
   let message;
@@ -59,14 +91,20 @@ function TextField( props ) {
       <div className={classnames(...classes)}>
         { label &&
           <div className={classnames(styles['header'])}>
-            <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
-            { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
-            { tooltip && renderTooltip(tooltip, 'tooltip') }
+            <div className={styles['label-wrapper']}>
+              <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
+              { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
+              { tooltip && renderTooltip(tooltip, 'tooltip') }
+            </div>
+            <Text size={10} font='b'>
+              { subLabel }
+            </Text>
           </div>
         }
         <span
           data-prefix={prefix}
-          className={classnames(styles['input-wrapper'], prefix && styles['prefix'])}
+          data-postfix={postfix}
+          className={classnames(...inputClasses)}
         >
           { mask ?
             <InputMask
@@ -197,6 +235,16 @@ TextField.propTypes = {
   prefix: PropTypes.oneOf([
     '$',
   ]),
+
+  /**
+   * provides a postfix for the inpit
+   */
+  postfix: PropTypes.string,
+
+  /**
+   * Options text displayed directly underneath label
+   */
+  subLabel: PropTypes.string,
 };
 
 TextField.defaultProps = {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import ErrorMessage from 'atoms/ErrorMessage';
+import Text from 'atoms/Text';
 import styles from './date_field.module.scss';
 
 function DateField(props) {
@@ -12,6 +13,7 @@ function DateField(props) {
     input,
     label,
     meta,
+    subLabel,
   } = props;
 
   const wrapChild = (child) => {
@@ -43,7 +45,18 @@ function DateField(props) {
         }}
         onFocus={input && input.onFocus}
       >
-        <label htmlFor='date' className={styles['label']}>{label}</label>
+        <div className={styles['label']}>
+          <label htmlFor='date'>{label}</label>
+          {
+            subLabel &&
+              <Text
+                size={10}
+                font='b'
+              >
+                {subLabel}
+              </Text>
+          }
+        </div>
         <div className={styles['line-1']}>
           { React.Children.map(children, wrapChild) }
         </div>
@@ -67,6 +80,10 @@ DateField.propTypes = {
    * Label.
    */
   label: PropTypes.string,
+  /**
+   * Label text placed underneath label.
+   */
+  subLabel: PropTypes.string,
   /**
    * Meta object is passed from reduxForm
    */

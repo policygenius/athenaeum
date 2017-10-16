@@ -8,6 +8,10 @@
   @extend %tooltip-wrapper;
 }
 
+.tooltip-icon {
+  @extend %tooltip-icon;
+}
+
 .label {
   @extend %label;
 
@@ -16,14 +20,13 @@
 
 .select-wrapper {
   position: relative;
-  border-radius: ru(.25);
 
   &:after {
     width: 0;
     height: 0;
     border-left: ru(.25) solid transparent;
     border-right: ru(.25) solid transparent;
-    border-top: ru(.25) solid color('neutral-2');
+    border-top: ru(.25) solid color('primary-3');
     content: '';
     position: absolute;
     top: 50%;
@@ -44,10 +47,8 @@
 }
 
 .select {
-  @include typography-regular();
-  @include typography-6(false);
-  @include placeholder();
-  color: color('neutral-2');
+  @include typography-b-8();
+  color: color('primary-3');
 
   border: 0;
   width: 100%;
@@ -61,7 +62,7 @@
   }
 
   &:invalid {
-    color: color('neutral-5');
+    color: color('neutral-3');
   }
 
   &::-ms-expand {
@@ -104,7 +105,7 @@
 
     &:invalid {
       @include typography-3(false);
-      color: color('brand-2');
+      color: color('neutral-3');
     }
   }
 }

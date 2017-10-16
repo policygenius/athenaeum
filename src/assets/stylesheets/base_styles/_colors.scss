@@ -1,4 +1,25 @@
 $colors-map: (
+  /* Grey. From dark to light. */
+  neutral-1: #504a4a,
+  neutral-2: #808080,
+  neutral-3: #b2b2b2,
+  neutral-4: #d6d6d6,
+  neutral-5: #f5f5f5,
+
+  /* Orange, white, black */
+  primary-1: #ff700a,
+  primary-2: #ffffff,
+  primary-3: #2b2727,
+
+  /* Assorted accent colors */
+  secondary-1: #7023ff,
+  secondary-2: #00aeff,
+  secondary-3: #ff3ab9,
+  secondary-4: #00cc00,
+  secondary-5: #ffc700,
+);
+
+$backwards-compat-colors-map: (
   /* Black. From dark to light. */
   neutral-1: #2b2727,
   neutral-2: #504a4a,
@@ -33,12 +54,22 @@ $colors-map: (
   action-5: #ff700a,
   action-6: #ff700a,
 
+  secondary-1: #7023ff,
+  secondary-2: #00aeff,
+  secondary-3: #ff3ab9,
+  secondary-4: #00cc00,
+  secondary-5: #ffc700,
+
   /* Modal overlay background */
   transparent-neutral-2: rgba(77,77,77,0.8)
 );
 
 @function color($type) {
-  @return #{map-get($colors-map, #{$type})};
+  @if map-has-key($colors-map, $type) {
+    @return #{map-get($colors-map, #{$type})};
+  } @else {
+    @return #{map-get($backwards-compat-colors-map, #{$type})};
+  }
 }
 
 /* For debugging ease of use. */
