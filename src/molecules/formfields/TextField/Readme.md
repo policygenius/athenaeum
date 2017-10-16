@@ -1,4 +1,37 @@
-First name Field:
+Text field without label:
+
+```jsx
+    class TextFieldExample extends React.Component {
+      constructor() {
+        super();
+
+        this.state = {
+          value: ''
+        };
+
+        this.onChange = this.onChange.bind(this);
+      }
+
+      onChange(event) {
+        this.setState({ value: event.target.value });
+      }
+
+      render() {
+        return (
+          <TextField
+            placeholder='Enter your first name here'
+            input={{
+              value: this.state.value,
+              onChange: this.onChange
+            }}
+          />
+        )
+      }
+    }
+
+    <TextFieldExample />
+```
+Text field:
 
 ```jsx
     class TextFieldExample extends React.Component {
@@ -26,12 +59,30 @@ First name Field:
               value: this.state.value,
               onChange: this.onChange
             }}
+            subLabel='Optional subheader'
           />
         )
       }
     }
 
     <TextFieldExample />
+```
+
+Text field with focus:
+
+```jsx
+  <TextField
+    label='First Name'
+    placeholder='Enter your first name'
+    tooltip={"I'm a tooltip"}
+    input={{
+      value: state.value,
+      onChange: (event) => setState({ value: event.target.value })
+    }}
+    meta={{
+      active: true
+    }}
+  />
 ```
 
 Text field with error:
@@ -79,6 +130,20 @@ Text field - prefix example:
       onChange: event => setState({ value: event.target.value })
     }}
     prefix='$'
+  />
+```
+Text field - postfix example:
+
+```jsx
+  <TextField
+    label='Weight'
+    placeholder='Enter your weight'
+    tooltip={() => alert("I'm a tooltip")}
+    input={{
+      value: state.value,
+      onChange: event => setState({ value: event.target.value })
+    }}
+    postfix='lbs.'
   />
 ```
 
