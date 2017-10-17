@@ -63,7 +63,7 @@ LinkWrapper.propTypes = {
 };
 
 LinkWrapper.defaultProps = {
-  color: 'neutral-1',
+  color: 'neutral-4',
 };
 
 export default LinkWrapper;
