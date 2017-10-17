@@ -1,5 +1,51 @@
-$info-color: color('neutral-1');
-$action-color: color('accent-2');
+$button-background-color:                  color('neutral-8');
+$button-border-color:                      color('accent-2');
+$button-border-radius:                     ru(.25);
+$button-color:                             color('accent-2');
+$button-hover-background-color:            color('accent-2');
+$button-hover-color:                       color('neutral-8');
+$button-disabled-border-color:             color('neutral-5');
+$button-disabled-color:                    color('neutral-4');
+$button-info-color:                        color('brand-2');
+$button-info-hover-color:                  color('neutral-8');
+$button-shaking-offset:                    ru(.25);
+$button-action-background-color:           color('accent-2');
+$button-action-border-color:               color('accent-1');
+$button-action-color:                      color('neutral-8');
+$button-action-lowlight-background-color:  color('brand-2');
+$button-action-lowlight-border-color:      color('brand-1');
+$button-action-lowlight-color:             color('neutral-8');
+$button-action-disabled-background-color:  color('neutral-5');
+$button-action-disabled-border-color:      color('neutral-3');
+$button-action-disabled-color:             color('neutral-8');
+$button-stacked-background-color:          color('neutral-8');
+$button-stacked-border-color:              color('neutral-5');
+$button-stacked-color:                     color('neutral-2');
+$button-stacked-hover-background-color:    color('neutral-4');
+$button-stacked-hover-color:               color('neutral-8');
+$button-outline-color:                     color('neutral-2');
+$button-outline-border-color:              color('neutral-2');
+$button-outline-background-color:          color('neutral-8');
+$button-outline-hover-color:               color('neutral-8');
+$button-outline-hover-background-color:    color('neutral-2');
+$button-graphic-border-color:              color('neutral-5');
+$button-graphic-hover-border-color:        color('brand-2');
+$button-graphic-border-radius:             ru(.25);
+$button-graphic-background-color:          color('neutral-8');
+$button-graphic-color:                     color('brand-2');
+$button-tag-background-color:              color('brand-5');
+$button-tag-hover-background-color:        color('brand-2');
+$button-tag-color:                         color('neutral-2');
+$button-tag-hover-color:                   color('neutral-8');
+$button-solid-background-color:            color('neutral-8');
+$button-solid-background-hover-color:      color('brand-2');
+$button-font:                              $font-family-sans-serif;
+$button-solid-background-primary-color:    color('brand-3');
+$button-solid-background-secondary-color:  #3ad1ba;
+$button-solid-background-tertiary-color:   #f08f5c;
+
+$brand-black: color('neutral-1');
+$brand-orange: color('accent-2');
 $brand-white: color('neutral-8');
 
 .icon {
@@ -11,17 +57,20 @@ $brand-white: color('neutral-8');
 }
 
 .button {
-  @include typographyA(8);
+  @include typography-6;
+  @include typography-semibold;
+  @include hover($button-hover-background-color, $button-border-color, $button-hover-color);
 
   display: block;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: $brand-white;
+  color: $button-color;
   margin: 0;
-  padding: rem-calc(19);
-  background-color: $action-color;
-  border: 2px solid $action-color;
+  padding: ru(.5);
+  background-color: $button-background-color;
+  border: 1px solid $button-border-color;
+  border-radius: $button-border-radius;
   transition: background-color 300ms ease-out,
   border-color 300ms ease-out,
   top 150ms ease-out,
@@ -29,43 +78,170 @@ $brand-white: color('neutral-8');
   box-shadow 150ms ease-out;
   width: 100%;
   font-size: ru(.5);
-  text-transform: uppercase;
 
   .icon {
     path {
       transition: fill 300ms ease-out;
-      fill: $action-color;
+      fill: $button-color;
     }
   }
 
-  &.outline {
-    background-color: $brand-white;
-    color: $action-color;
-    border: 2px solid inherit;
+  &:hover {
+    path {
+      transition: fill 300ms ease-out;
+      fill: $button-background-color;
+    }
   }
 }
 
 .disabled {
-  opacity: .5;
+  @include hover($button-background-color, $button-disabled-border-color, $button-disabled-color);
+  border-color: $button-disabled-border-color;
+  background-color: $button-background-color;
+  color: $button-disabled-color;
   cursor: not-allowed;
   user-select: none;
   outline: none;
 }
 
 .info {
+  @include hover($button-info-color, $button-info-color, $button-info-hover-color);
   display: block;
-  background-color: $info-color;
-  border-color: $info-color;
-  color: $brand-white;
+  background-color: inherit;
+  border-color: $button-info-color;
+  color: $button-info-color;
+}
 
-  &.outline {
-    background-color: $brand-white;
-    color: $info-color;
-    border: 2px solid inherit;
+.slim {
+  padding-top: ru(.5);
+  padding-bottom: ru(.5);
+  line-height: 1rem;
+}
+
+.toggle {
+  @include typography-7(false);
+  @include typography-regular;
+  @include hover(color('neutral-6'), color('neutral-5'), color('neutral-1'));
+
+  color: color('neutral-4');
+  border: 1px solid color('neutral-5');
+  box-shadow: 0 4px 0 color('neutral-6');
+
+  padding-top: ru(.5);
+  padding-bottom: ru(.5);
+  line-height: 1rem;
+
+  &:focus {
+    outline: none;
   }
+}
+
+.toggle-active {
+  @extend .toggle;
+
+  background-color: color('neutral-6');
+  color: color('neutral-2');
+  box-shadow: 0 4px 0 color('neutral-4');
+}
+
+.action {
+  @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-border-color,
+  $button-action-background-color, $button-action-color);
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: $button-action-background-color;
+  padding-bottom: rem-calc(9);
+  border: 0;
+  color: $button-action-color;
+  box-shadow: 0 .312rem 0 $button-action-border-color;
+
+  .icon {
+    path {
+      fill: $button-action-color;
+    }
+  }
+}
+
+.actionDisabled {
+  @include hover-action(0, rem-calc(5px), $button-action-disabled-border-color,
+  $button-action-disabled-background-color, $button-action-disabled-color);
+
+  border-width: 0;
+  background-color: $button-action-disabled-background-color;
+  box-shadow: 0 rem-calc(5) 0 $button-action-disabled-border-color;
+  color: $button-action-disabled-color;
+  transition: none;
+  cursor: not-allowed;
+  outline: none;
+
+  .icon {
+    path {
+      fill: color('neutral-8');
+    }
+  }
+}
+
+.lowlight {
+  @include hover-action(rem-calc(3px), rem-calc(2px), $button-action-lowlight-border-color,
+  $button-action-lowlight-background-color, $button-action-lowlight-color);
+
+  position: relative;
+  top: 0;
+  width: 100%;
+  border: 0;
+  background-color: $button-action-lowlight-background-color;
+  color: $button-action-lowlight-color;
+  box-shadow: 0 rem-calc(5) 0 $button-action-lowlight-border-color;
+}
+
+.outline {
+  background-color: $brand-white;
+  color: $brand-black;
+  border: 2px solid $brand-black;
+  border-radius: 0;
+}
+
+.outline-black {
+  background-color: $brand-white;
+  color: $brand-black;
+  border: 2px solid $brand-black;
+  border-radius: 0;
+}
+
+.outline-orange {
+  background-color: $brand-white;
+  color: $brand-orange;
+  border: 2px solid $brand-orange;
+  border-radius: 0;
+}
+
+.solid-black {
+  background-color: $brand-black;
+  color: $brand-white;
+  border-radius: 0;
+}
+
+.solid-orange {
+  background-color: $brand-orange;
+  color: $brand-white;
+  border-radius: 0;
+}
+
+.shaking {
+  animation: disabled-button-shake .5s ease-out;
 }
 
 .unflex {
   width: auto;
   clear: both;
+}
+
+@keyframes disabled-button-shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-$button-shaking-offset); }
+  40% { transform: translateX($button-shaking-offset); }
+  60% { transform: translateX(-$button-shaking-offset); }
+  80% { transform: translateX($button-shaking-offset); }
+  100% { transform: translateX(0); }
 }

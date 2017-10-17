@@ -13,17 +13,19 @@ function Button( props ) {
     variant,
     icon,
     disabled,
+    shake,
+    slim,
     text,
     unflex,
-    outline,
     ...rest
   } = props;
 
   const classes = [
     styles['button'],
+    shake && styles['shaking'],
     styles[variant],
-    outline && styles['outline'],
     className,
+    slim && styles['slim'],
     unflex && styles['unflex'],
   ];
 
@@ -47,16 +49,11 @@ Button.propTypes = {
   type: PropTypes.string,
 
   /**
-   * Possible button variants are: `info`, `disabled`, `outline` (deprecated)
+   * Possible button variants are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
    */
   variant: PropTypes.oneOf([
-    'info', 'disabled', 'outline'
+    'info', 'disabled', 'toggle', 'action', 'actionDisabled', 'lowlight', 'outline', 'button', 'toggle-active', 'outline-black', 'outline-orange', 'solid-black', 'solid-orange'
   ]),
-
-  /**
-   * Turns button into the outlined version
-   */
-  outline: PropTypes.bool,
 
   /**
    * Optional icon. Choices can be found here: [Icons](/#icon)
@@ -68,6 +65,14 @@ Button.propTypes = {
    */
   disabled: PropTypes.bool,
 
+  /**
+   * Triggers shake animation if true
+   */
+  shake: PropTypes.bool,
+  /**
+   * Reduces vertical padding if true
+   */
+  slim: PropTypes.bool,
   onClick: PropTypes.func,
   /**
    * Passes text into the button. Works the same way as passing children
@@ -80,7 +85,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  type: 'button'
+  type: 'button',
+  variant: 'button',
 };
 
 export default Button;

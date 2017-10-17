@@ -1,7 +1,6 @@
 export const ru = num => `${num * 1.5}rem`;
 
 export default {
-  ru,
   6: ru(0.25),
   12: ru(0.5),
   18: ru(0.75),
