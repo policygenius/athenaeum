@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import colors from 'atoms/Color/colors.scss';
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
+import { Layout } from 'atoms/Layout';
 import Button from 'atoms/Button';
 
 import styles from './feature_square.module.scss';
@@ -28,10 +29,12 @@ function FeatureSquare(props) {
 
   return (
     <div className={classnames(...classes)}>
-      <Icon icon={icon} className={styles['icon']} />
-      <Text type={4} semibold>{ header }</Text>
-      <Text type={6} className={styles['subheader']}>{ subheader }</Text>
-      <Button onClick={onClick}>{ buttonText }</Button>
+      <Icon icon={icon} className={styles['icon']} width='100' />
+      <Text type={5} font='a'>{ header }</Text>
+      <Text type={8} className={styles['subheader']}>{ subheader }</Text>
+      <Layout smallCols={[ 6 ]} className={styles['button-wrapper']}>
+        <Button onClick={onClick} outline className={styles['button']}>{ buttonText }</Button>
+      </Layout>
     </div>
   );
 }
@@ -62,7 +65,7 @@ FeatureSquare.propTypes = {
 
 FeatureSquare.defaultProps = {
   // Place any default props here.
-  buttonText: 'Get Quotes'
+  buttonText: 'Learn More'
 };
 
 export default FeatureSquare;
