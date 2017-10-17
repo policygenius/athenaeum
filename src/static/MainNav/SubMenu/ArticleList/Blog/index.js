@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { generate } from 'shortid';
 
 import Layout from 'atoms/Layout';
 
@@ -18,12 +19,12 @@ class BlogArticleList extends Component {
     if (item.type === 'list') {
       if (this.props.loading) {
         return (
-          <LoadingList />
+          <LoadingList key={generate()} />
         );
       }
 
       return (
-        <ul className={styles['submenu-list-wrapper']}>
+        <ul className={styles['submenu-list-wrapper']} key={generate()}>
           <SubMenuList
             header={item.header}
             listItems={item.posts}
@@ -36,7 +37,7 @@ class BlogArticleList extends Component {
     if (item.type === 'featured') {
       if (this.props.loading) {
         return (
-          <LoadingImage />
+          <LoadingImage key={generate()} />
         );
       }
 

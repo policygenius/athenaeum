@@ -42,8 +42,8 @@ steps:
         - label: 'Patch'
           value: 'patch'
 
-  - block: 'Trigger deploy'
-    branches: '!master'
+  - block: 'Trigger custom deploy'
+    branches: !rebrand
 
   - wait
 

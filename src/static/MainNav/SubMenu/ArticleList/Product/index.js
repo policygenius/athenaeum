@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { generate } from 'shortid';
 
 import Layout from 'atoms/Layout';
 
@@ -60,6 +61,7 @@ class ProductArticleList extends Component {
                   imgProps={imgProps}
                   alt={alt}
                   link={item.link}
+                  key={generate()}
                 />
               );
             })
