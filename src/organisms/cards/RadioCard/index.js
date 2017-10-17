@@ -21,12 +21,13 @@ const renderSections = (sections) => {
 };
 
 const renderSection = (section, idx) => {
-  const { label, value } = section;
+  const { label, value, sublabel } = section;
 
   return (
     <div key={`sec-item-${idx}`} className={styles['sections-item']}>
       <span>{label}</span>
       <div className={styles['sections-value']}>{value}</div>
+      { sublabel ? <span>{sublabel}</span> : null }
     </div>
   );
 };
@@ -140,6 +141,7 @@ RadioCard.propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
+      sublabel: PropTypes.string
     })
   ),
 
@@ -166,7 +168,10 @@ RadioCard.propTypes = {
   /**
    * value used to check if RadioCard is selected
    */
-  radioValue: PropTypes.string.isRequired
+  radioValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]).isRequired
 };
 
 export default RadioCard;
