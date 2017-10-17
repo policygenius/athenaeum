@@ -12,9 +12,7 @@ describe('Button', () => {
 
   beforeEach(() => {
     defaultProps = {
-      variant: 'button',
       onClick: sinon.spy(),
-      className: 'button',
       shake: false,
       type: 'button',
       disabled: false
@@ -32,16 +30,6 @@ describe('Button', () => {
     const wrapper = shallow(<Button {...props} />);
 
     expect(wrapper.hasClass(props.variant)).to.be.true;
-  });
-
-  it('adds the shaking className if props.shake is true', () => {
-    const props = assign({}, defaultProps, { shake: false });
-    const wrapper = shallow(<Button {...props} />);
-
-    expect(wrapper.hasClass('shaking')).to.be.false;
-
-    wrapper.setProps({ shake: true });
-    expect(wrapper.hasClass('shaking')).to.be.true;
   });
 
   it('adds a custom className to button if given in props', () => {

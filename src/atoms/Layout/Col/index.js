@@ -31,7 +31,7 @@ function Col(props) {
     xxLargeCols && styles[`col-xxlg-${xxLargeCols}`],
     fullwidth && styles['fullwidth'],
     flex && styles['flex'],
-    styles[`bottom-spacing-${bottomSpacing}`],
+    bottomSpacing && styles[`bottom-spacing-${bottomSpacing}`],
     padding && styles['padding'],
     colors[`border-${borderColor}`],
     className

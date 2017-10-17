@@ -1,7 +1,9 @@
 ### FeatureSquare Example:
 
 ```example
-    <FeatureSquare>
-      <strong>New Component Created!</strong><br /><small>Now go and write some code! -- <em>You code monkey, you ;)</em></small>.
-    </FeatureSquare>
+    <FeatureSquare
+      header='Header'
+      subheader='Subheader'
+      icon='veryPopular'
+    />
 ```
