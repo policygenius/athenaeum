@@ -26,6 +26,7 @@ $border-style: 1px solid color('neutral-5');
 
   span:after {
     opacity: 1;
+    left: 19%;
   }
 }
 
@@ -43,12 +44,15 @@ $border-style: 1px solid color('neutral-5');
 
 .radio-field {
   margin-bottom: ru(.75);
+  &:before {
+    left: 19%;
+  }
 }
 
 .title {
   @include typography-5(false);
   font-weight: 600;
-  margin: 0 0 ru(.25);
+  margin: 0 0 ru(.75);
   color: inherit;
 }
 
@@ -66,14 +70,16 @@ $border-style: 1px solid color('neutral-5');
   @include typography-7(false);
 
   display: flex;
+
   border-top: $border-style;
   color: color('neutral-2');
-
+  
   line-height: ru(.75);
   text-align: center;
 
   &-item {
     flex: 1 1;
+
     margin: 0;
     padding: ru(.75);
 
@@ -88,6 +94,10 @@ $border-style: 1px solid color('neutral-5');
   }
 
   &-item + &-item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
     border-left: $border-style;
   }
 }
@@ -119,6 +129,15 @@ $border-style: 1px solid color('neutral-5');
 
   .radio-field {
     margin: 0;
+    &:before {
+      left: 5%;
+    }
+  }
+
+  .checked {
+    span:after {
+      left: 5%;
+    }
   }
 
   .content {
