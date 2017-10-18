@@ -62,6 +62,7 @@
   width: 10px;
   pointer-events: none;
   z-index: 1;
+  position: absolute;
 
   &-active {
     background: #fff;
