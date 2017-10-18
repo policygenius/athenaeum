@@ -43,7 +43,7 @@ steps:
           value: 'patch'
 
   - block: 'Trigger custom deploy'
-    branches: !rebrand
+    branches: '!rebrand'
 
   - wait
 
