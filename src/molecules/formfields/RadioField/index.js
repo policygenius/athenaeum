@@ -8,12 +8,21 @@ import styles from './radio_field.module.scss';
 function RadioField(props) {
   const {
     label,
+    className,
     input,
+    radioValue
   } = props;
+
+  const classes = [
+    styles['radio-field'],
+    input.value === radioValue && styleds['checked'],
+    input.value && input.value !== radioValue && styles['not-selected'],
+    className,
+  ];
 
   return (
     <label
-      className={classnames(styles['radio-field'])}
+      className={classnames(...classes)}
       htmlFor={`radio-${camelCase(input.value)}`}
     >
       <input
