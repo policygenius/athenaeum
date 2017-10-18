@@ -10,17 +10,28 @@ exports[`<FeatureSquare /> renders correctly 1`] = `
     style={
       Object {
         "height": undefined,
-        "width": undefined,
+        "width": "100",
       }
     }
   />
-  <button
-    className="button button"
-    disabled={undefined}
-    onClick={undefined}
-    type="button"
+  <div
+    className="layout button-wrapper"
+    style={undefined}
   >
-    Get Quotes
-  </button>
+    <div
+      className="col col-sm-6 border-neutral-6"
+      onClick={undefined}
+      style={undefined}
+    >
+      <button
+        className="button outline button"
+        disabled={undefined}
+        onClick={undefined}
+        type="button"
+      >
+        Learn More
+      </button>
+    </div>
+  </div>
 </div>
 `;

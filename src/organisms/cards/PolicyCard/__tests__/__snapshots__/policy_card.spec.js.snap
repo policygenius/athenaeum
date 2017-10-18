@@ -16,7 +16,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <p
-          className="text typography-6 light neutral-3 undefined p undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+          className="text typography-7 light neutral-3 p undefined type-b-7-bold type-b-7-medium type-b-7-regular"
         >
           Compare
         </p>
@@ -64,18 +64,18 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="hide small"
           >
             <strong
-              className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+              className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
             >
               Policy Type
             </strong>
           </div>
           <strong
-            className="text typography-5 semibold neutral-2 undefined strong undefined type-undefined-5-bold type-undefined-5-medium type-undefined-5-regular policy-name"
+            className="text typography-5 semibold neutral-2 strong undefined type-b-5-bold type-b-5-medium type-b-5-regular policy-name"
           >
             Type
           </strong>
           <strong
-            className="text typography-7 semibold neutral-2 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular policy-tooltip"
+            className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular policy-tooltip"
           >
             Tooltip
           </strong>
@@ -99,7 +99,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+          className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
         >
           <div
             className="policy-info-label"
@@ -107,7 +107,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             Financial Strength
           </div>
           <strong
-            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+            className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
           >
             A+
           </strong>
@@ -124,7 +124,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+          className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
         >
           <div
             className="policy-info-label"
@@ -132,7 +132,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             Customer Service
           </div>
           <strong
-            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+            className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
           >
             A+
           </strong>
@@ -149,7 +149,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <strong
-          className="text typography-7 semibold neutral-3 undefined strong undefined type-undefined-7-bold type-undefined-7-medium type-undefined-7-regular"
+          className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
         >
           <div
             className="policy-info-label"
@@ -157,7 +157,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             Total Customers
           </div>
           <strong
-            className="text typography-6 semibold neutral-2 undefined strong undefined type-undefined-6-bold type-undefined-6-medium type-undefined-6-regular"
+            className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
           >
             16
           </strong>
@@ -178,10 +178,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
     >
       <div>
         <strong
-          className="text typography-5 semibold neutral-2 undefined strong undefined type-undefined-5-bold type-undefined-5-medium type-undefined-5-regular"
+          className="text typography-5 semibold neutral-2 strong undefined type-b-5-bold type-b-5-medium type-b-5-regular"
         >
           <strong
-            className="text typography-3 semibold undefined undefined strong undefined type-undefined-3-bold type-undefined-3-medium type-undefined-3-regular"
+            className="text typography-3 semibold strong undefined type-b-3-bold type-b-3-medium type-b-3-regular"
           >
             $19.80
           </strong>
@@ -201,12 +201,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         }
       >
         <div
-          className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
+          className="col col-sm-12 col-md-12 col-lg-6 border-neutral-6"
           onClick={undefined}
           style={undefined}
         >
           <button
-            className="button action continue slim"
+            className="button continue"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -235,12 +235,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </button>
         </div>
         <div
-          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
+          className="col col-sm-6 col-md-12 col-lg-6 border-neutral-6"
           onClick={undefined}
           style={undefined}
         >
           <button
-            className="button button slim"
+            className="button"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -269,7 +269,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </button>
         </div>
         <div
-          className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined border-neutral-6"
+          className="col col-sm-6 col-md-12 col-lg-6 border-neutral-6"
           onClick={undefined}
           style={undefined}
         >
@@ -277,7 +277,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="hide medium large xLarge xxLarge"
           >
             <button
-              className="button button slim"
+              className="button"
               disabled={undefined}
               onClick={[Function]}
               type="button"
