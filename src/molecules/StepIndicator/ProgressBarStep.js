@@ -10,7 +10,7 @@ export default class ProgressBarStep extends Component {
       step
     } = this.props;
 
-    if (step.clickable) {
+    if (step.currentStepActive) {
       return {
         color: 'neutral-2',
         weight: 'semibold',
@@ -18,7 +18,8 @@ export default class ProgressBarStep extends Component {
     }
 
     return {
-      color: 'neutral-5'
+      color: 'neutral-5',
+      weight: 'semibold'
     };
   }
 
