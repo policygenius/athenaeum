@@ -190,52 +190,54 @@ $boldweight:                  900;
   letter-spacing: 0.7px;
 }
 
-@mixin typography-b-5-medium() {
+@mixin typography-b-5($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(26px);
+  font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(1.75);
   letter-spacing: 0.1px;
-  font-weight: $mediumweight;
 }
 
-@mixin typography-b-6-medium() {
+@mixin typography-b-6($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(22px);
+  font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(1.5);
   letter-spacing: 0.1px;
-  font-weight: $mediumweight;
 }
 
-@mixin typography-b-7-medium() {
+@mixin typography-b-7($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(19px);
+  font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(1.25);
   letter-spacing: 0.1px;
-  font-weight: $mediumweight;
 }
 
-@mixin typography-b-8-medium() {
+@mixin typography-b-8($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(16px);
+  font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(1);
   letter-spacing: 0.1px;
-  font-weight: $mediumweight;
 }
 
-@mixin typography-b-10-medium() {
+@mixin typography-b-10($bold: false) {
   @include font-family-medium;
+  font-size: rem-calc(16px);
   font-size: rem-calc(13px);
+  font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(.75);
   letter-spacing: 0.1px;
-  font-weight: $mediumweight;
 }
 
-@mixin typography-b-12-medium() {
+@mixin typography-b-12($bold: false) {
   @include font-family-medium;
+  font-size: rem-calc(16px);
   font-size: rem-calc(10px);
+  font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(.75);
   letter-spacing: 0.1px;
-  font-weight: $mediumweight;
 }
 
 @mixin typography-c-7-regular() {
@@ -243,6 +245,14 @@ $boldweight:                  900;
   font-size: rem-calc(19px);
   line-height: ru(1.5);
   font-weight: $regularweight;
+}
+
+@function tyopgraphy-b-weight($bold: false) {
+  @if $bold {
+    @return #{$boldweight};
+  }
+
+  @return #{$mediumweight};
 }
 
 
@@ -311,28 +321,28 @@ $boldweight:                  900;
 
 @mixin typographyB($number) {
   @if $number == 5 {
-    @include typography-b-5-medium();
+    @include typography-b-5();
   }
   @if $number == 6 {
-    @include typography-b-6-medium();
+    @include typography-b-6();
   }
   @if $number == 7 {
-    @include typography-b-7-medium();
+    @include typography-b-7();
   }
   @if $number == 8 {
-    @include typography-b-8-medium();
+    @include typography-b-8();
   }
   @if $number == 9 {
-    @include typography-b-8-medium();
+    @include typography-b-8();
   }
   @if $number == 10 {
-    @include typography-b-10-medium();
+    @include typography-b-10();
   }
   @if $number == 11 {
-    @include typography-b-10-medium();
+    @include typography-b-10();
   }
   @if $number == 12 {
-    @include typography-b-12-medium();
+    @include typography-b-12();
   }
 }
 

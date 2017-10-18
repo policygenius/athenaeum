@@ -5,11 +5,15 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  padding-right: ru(.5);
+  padding: ru(.5) ru(.75);
 
   border-bottom: $border;
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .icon-lock {
@@ -20,17 +24,23 @@
 
 .label {
   @extend %label;
+  padding: 0;
 }
 
 .input {
   @extend %field;
   @include placeholder();
   width: 100%;
-  color: color('neutral-2');
+  color: color('primary-3');
+  font-weight: 400;
 }
 
 .tooltip {
   margin-left: auto;
+}
+
+.tooltip-icon {
+  @extend %tooltip-icon;
 }
 
 .input-tooltip {
@@ -43,20 +53,33 @@
   position: relative;
 }
 
+@mixin text-field-fix() {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  padding: ru(.5) ru(1);
+  text-align: center;
+  background-color: color('neutral-5');
+  color: color('primary-3');
+}
+
 .prefix {
   display: flex;
 
   &:before {
-    display: flex;
-    align-items: center;
-    flex: 1 0 auto;
-    padding: rem-calc(8px) ru(.75);
-    text-align: center;
+    @include text-field-fix();
     content: attr(data-prefix);
-    background-color: color('neutral-6');
-    color: color('neutral-2');
-    border-right: 1px solid color('neutral-5');
-    border-radius: 0 0 0 ru(.25);
+    border-right: 1px solid color('neutral-4');
+  }
+}
+
+.postfix {
+  display: flex;
+
+  &:after {
+    @include text-field-fix();
+    content: attr(data-postfix);
+    border-left: 1px solid color('neutral-4');
   }
 }
 
