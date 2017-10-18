@@ -3,7 +3,7 @@ $gap: ru(.5);
 $checked-size: ru(.5);
 
 .radio-field {
-  @include typography-b-8-medium;
+  @include typography-b-8;
 
   margin: 0;
   display: block;
@@ -12,25 +12,19 @@ $checked-size: ru(.5);
   padding-left: $size + $gap;
   user-select: none;
 
-  + .radio-field {
-    margin-top: ru(.75);
+  &:before {
+    position: absolute;
+    top: (ru(1) - $size) / 2;
+    left: 0;
+    width: $size;
+    height: $size;
+    overflow: hidden;
+
+    border: 1px solid color('neutral-3');
+    background-color: color('primary-2');
+    border-radius: 50%;
+    content: '';
   }
-}
-
-// pseudo radio button
-.radio-field:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: $size;
-  height: $size;
-  overflow: hidden;
-  margin-top: (ru(1) - $size) / 2;
-
-  border: 1px solid color('neutral-3');
-  background-color: color('primary-2');
-  border-radius: 50%;
-  content: '';
 }
 
 .label {
@@ -42,16 +36,13 @@ $checked-size: ru(.5);
     content: '';
     opacity: 0;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: (ru(1) - $size) / 2 + ($size - $checked-size) / 2;
+    left: ($size - $checked-size) / 2;
     width: $checked-size;
     height: $checked-size;
-    margin-top: (ru(1) - $size) / 2 + ($size - $checked-size) / 2;
-    margin-left: ($size - $checked-size) / 2;
     border-radius: 50%;
     background-color: color('secondary-2');
   }
-
 
   &.checked {
     &:after { opacity: 1; }
@@ -66,11 +57,14 @@ $checked-size: ru(.5);
   position: absolute;
   top: 0;
   left: 0;
-  width: $size + $gap;
+  width: 100%;
+  // width: $size + $gap;
   height: $size;
   opacity: 0;
   margin: 0;
   cursor: pointer;
+  z-index: 10;
+  pointer-events: all;
 }
 
 .radio:disabled {
@@ -81,16 +75,5 @@ $checked-size: ru(.5);
     &:after {
       box-shadow: 2px 2px 0 0 color('neutral-3');
     }
-  }
-}
-
-
-@media #{$medium-up} {
-  @include typography-b-8-medium;
-  line-height: ru(.75);
-  margin: 0;
-
-  .label {
-    margin-top: rem-calc(3);
   }
 }
