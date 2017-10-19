@@ -51,7 +51,8 @@ function Text(props) {
     font,
     spaced,
     italic,
-    size
+    size,
+    onClick,
   } = props;
 
   const tag = getTag(props);
@@ -76,7 +77,7 @@ function Text(props) {
   ];
 
   return (
-    <Element className={classnames(...classes)}>
+    <Element className={classnames(...classes)} onClick={onClick}>
       { React.Children.map(children, convertChild) }
     </Element>
   );
@@ -155,6 +156,10 @@ Text.propTypes = {
    * Adds italic
    */
   italic: PropTypes.bool,
+  /**
+   * onClick callback
+   */
+  onClick: PropTypes.func,
 };
 
 Text.defaultProps = {

@@ -17,6 +17,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <p
           className="text typography-7 light neutral-3 p undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+          onClick={undefined}
         >
           Compare
         </p>
@@ -65,17 +66,20 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           >
             <strong
               className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+              onClick={undefined}
             >
               Policy Type
             </strong>
           </div>
           <strong
             className="text typography-5 semibold neutral-2 strong undefined type-b-5-bold type-b-5-medium type-b-5-regular policy-name"
+            onClick={undefined}
           >
             Type
           </strong>
           <strong
             className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular policy-tooltip"
+            onClick={undefined}
           >
             Tooltip
           </strong>
@@ -100,6 +104,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <strong
           className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+          onClick={undefined}
         >
           <div
             className="policy-info-label"
@@ -108,6 +113,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </div>
           <strong
             className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+            onClick={undefined}
           >
             A+
           </strong>
@@ -125,6 +131,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <strong
           className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+          onClick={undefined}
         >
           <div
             className="policy-info-label"
@@ -133,6 +140,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </div>
           <strong
             className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+            onClick={undefined}
           >
             A+
           </strong>
@@ -150,6 +158,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <strong
           className="text typography-7 semibold neutral-3 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+          onClick={undefined}
         >
           <div
             className="policy-info-label"
@@ -158,6 +167,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </div>
           <strong
             className="text typography-7 semibold neutral-2 strong undefined type-b-7-bold type-b-7-medium type-b-7-regular"
+            onClick={undefined}
           >
             16
           </strong>
@@ -179,9 +189,11 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       <div>
         <strong
           className="text typography-5 semibold neutral-2 strong undefined type-b-5-bold type-b-5-medium type-b-5-regular"
+          onClick={undefined}
         >
           <strong
             className="text typography-3 semibold strong undefined type-b-3-bold type-b-3-medium type-b-3-regular"
+            onClick={undefined}
           >
             $19.80
           </strong>
