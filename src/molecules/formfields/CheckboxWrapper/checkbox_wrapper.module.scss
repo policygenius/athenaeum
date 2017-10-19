@@ -5,31 +5,55 @@
 }
 
 .header {
+  padding: ru(.5) ru(.75);
+  border-bottom: 1px solid color('neutral-4');
+}
+
+.label-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: ru(.5);
-  border-bottom: 1px solid color('neutral-5');
 }
 
 .label {
   @extend %label;
+  padding: 0;
 }
 
-.content {
-  padding: ru(.75);
+.tooltip {
+  margin-left: auto;
 }
 
-@media #{$small-only} {
-  .content {
-    // TODO refactor & remove this mixin.
-    @include arrange-in-block-grid($per-row: 1, $gutter: ru(.75));
+.tooltip-icon {
+  @extend %tooltip-icon;
+}
+
+.checkbox {
+  padding: ru(.5) ru(.75);
+  border-bottom: 1px solid color('neutral-4');
+
+  &:last-child {
+    border: 0;
   }
 }
 
-@media #{$medium-up} {
-  .content {
-    // TODO refactor & remove this mixin.
-    @include arrange-in-block-grid($per-row: 2, $gutter: ru(.75));
+.footer-box {
+  padding: ru(.5) ru(.75);
+  border-top: 1px solid color('neutral-4');
+}
+
+/* --  state:focus  -- */
+.focused {
+  border: 1px solid color('secondary-2');
+}
+
+/* --  state:error  -- */
+.hasError {
+  border: 1px solid color('primary-1');
+}
+
+@media #{$tablet} {
+  .checkbox {
+    border: 0;
   }
 }
