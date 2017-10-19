@@ -8,67 +8,106 @@ Navigator Example:
 
   const sampleOptions = [ { label: 'Select your home type', value: -1 } ];
 
-  <div>
+  <div style={{ border: '1px solid black' }}>
     <Navigator
-      leftRailText='Home sweet home'
-      userAlert={{
-        condition: true,
-        onClick: () => alert('click!'),
-        color: 'accent-2',
-        closeColor: 'accent-1',
-        text: 'We need a little bit more information from you before we can continue.',
-        textColor: 'neutral-8',
-      }}
-      stepProgressData={[
-        { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },
-        { complete: true, icon: 'health', label: 'Phasellus', link: '#' },
-        { current: true, icon: 'application', label: 'Curabitur', link: '#' },
-        { inactive: true, icon: 'quotes', label: 'Etiam', link: '#' }
-      ]}
-
-      contactProps={{
-        top: {
-          text: 'Save my progress',
-          icon: 'user',
-          onClick: () => alert('top click')
-        },
-        bottom: {
-          text: 'Chat with an Expert',
-          icon: 'chat',
-          onClick: () => alert('top click')
-        }
-      }}
-
-      mobileHeader={
-        <div>
-          <HeaderAmount
-            label='So far so good'
-            amount={38.95}
-            unit='/ month'
-            onClick={() => setState({ menuActive: !state.menuActive })}
-            menuActive={state.menuActive}
-          />
-          { state.menuActive &&
-            <GenericCard variant='mobile'>
-              <Button>hello, world</Button>
-            </GenericCard>
+      stepIndicatorProps={{
+        steps: [
+          { text: 'Basics',
+            path: '/basics',
+            currentStepActive: false,
+            clickable: true,
+            nextStepAccessible: true
+          },
+          { text: 'Health',
+            path: '/health_profile',
+            currentStepActive: false,
+            clickable: true,
+            nextStepAccessible: true
+          },
+          { text: 'Lifestyle',
+            path: '/lifestyle',
+            currentStepActive: true,
+            clickable: true,
+            nextStepAccessible: false
+          },
+          { text: 'Pick a policy',
+            path: 'comparison',
+            currentStepActive: false,
+            clickable: false,
+            nextStepAccessible: false
+          },
+          { text: 'Application',
+            path: 'application',
+            currentStepActive: false,
+            clickable: false,
+            nextStepAccessible: false
           }
-        </div>
-      }
-
-      sidebar={<div>Sidebar</div>}
-
-      footer={
-        <Footer
-          phoneNumber='1 (808) 867-5309'
-          links={[ { text: 'Footer here', href: '#trust' } ]}
-          onClickChat={() => alert('yo')}
+        ],
+        navigateToPath: '/health/basic_info'
+      }}
+      mobileHeader={
+        <MobileHeader
+          text={
+            <LinkWrapper
+              type='secondary'
+              onClick={() => alert('save progress')}
+            >
+              <Text size={10} font='b'>
+                Save your progress
+              </Text>
+            </LinkWrapper>
+          }
+          quote={
+            <Text
+              size={6}
+              font='a'
+            >
+              <Text tag='sup' size={10} font='a'>$</Text>39.50 <Text tag='span' size={10} font='a'>/mo</Text>
+            </Text>
+          }
+          dropdown={{
+            menuActive: false,
+            onClick: () => alert('dropdown'),
+          }}
         />
+      }
+      headerLinks={[
+        {
+          icon: 'chat',
+          text: 'Chat',
+          link: () => alert('chat!'),
+        },
+        {
+          icon: 'phone',
+          text: 'Call',
+          link: 'tel:1-855-695-2255',
+        },
+      ]}
+      overflow={{
+        onClick: () => alert('overflow'),
+      }}
+      sidebar={<div>Sidebar</div>}
+      footer={
+          <Footer
+            phoneNumber='1 (855) 695-2255'
+            links={[
+              { text: 'Security & Trust', href: '#trust' },
+              { text: 'Privacy', href: '#privacy' },
+              { text: 'Terms of Services', href: '#terms' },
+            ]}
+            onClickChat={() => alert('hi')}
+            hours={
+              [
+                'Monday-Thursday | 9am-8pm EST',
+                'Friday | 9am-6pm EST'
+              ]
+            }
+          />
       }
       onMenuClick={() => alert('menu clicked')}
     >
       <form>
-        <Layout bottomSpacing='small'>
+        <Layout bottomSpacing='small' fullwidth>
           <TextComponent tag='p' type={4} semibold>First, a little about you and your humble abode</TextComponent>
 
           <Col>

@@ -32,6 +32,7 @@ module.exports = {
           components: () => [
             'src/molecules/HeaderDiscount/index.js',
             'src/molecules/HeaderAmount/index.js',
+            'src/molecules/MobileHeader/index.js',
           ]
         },
         {
@@ -57,6 +58,7 @@ module.exports = {
         {
           name: 'Other',
           components: () => [
+            'src/molecules/StepIndicator/index.js',
             'src/molecules/StepProgress/index.js',
             'src/molecules/AgentCallout/index.js',
             'src/molecules/FeatureSquare/index.js',

@@ -6,6 +6,7 @@ import Button from 'atoms/Button';
 import Icon from 'atoms/Icon';
 import { Layout, Col } from 'atoms/Layout';
 import LinkWrapper from 'atoms/LinkWrapper';
+import Spacer from 'atoms/Spacer';
 
 import styles from './footer.module.scss';
 
@@ -15,7 +16,7 @@ function renderLinks(linksArr) {
   function renderLink(link, index) {
     return (
       <li key={`link-${index}`} className={styles['trust-link']}>
-        <LinkWrapper href={link.href}>{link.text}</LinkWrapper>
+        <LinkWrapper href={link.href} type='secondary'>{link.text}</LinkWrapper>
       </li>
     );
   }
@@ -27,6 +28,14 @@ function renderLinks(linksArr) {
   );
 }
 
+function formatPhoneNumber(number) {
+  const numberArray = number.split(' ');
+
+  if (numberArray.length === 1) return numberArray.join();
+
+  return numberArray.join('-');
+}
+
 function Footer(props) {
   const {
     className,
@@ -34,56 +43,150 @@ function Footer(props) {
     emailAddress,
     links,
     onClickChat,
+    hours,
   } = props;
 
   return (
     <div className={classnames(styles['footer'], className)}>
       <Layout
         className={styles['footer-layout']}
-        mediumCols={[ 6 ]}
         smallCols={[ 12 ]}
+        mediumCols={[ 4 ]}
         fullwidth
       >
-        <Col
-          className={classnames(styles['footer-help'], styles['help'])}
-        >
-          <div className={styles['help-layout']}>
-            { phoneNumber &&
-              <h4 className={styles['help-phone']}>
-                Questions?<br />
-                {phoneNumber}
-              </h4>
-            }
+        <Col className={styles['lockup']}>
+          <LinkWrapper
+            href={`tel:${formatPhoneNumber(phoneNumber)}`}
+            className={classnames(styles['icon-text-wrapper'], styles['link'])}
+            type='resource'
+          >
+            <Icon
+              icon='phone'
+              width='24px'
+              height='24px'
+              className={styles['icon']}
+            />
 
-            { onClickChat &&
-              <Button
-                className={styles['help-button']}
-                variant='outline'
-                onClick={onClickChat}
-              >
-                Expert Chat
-              </Button>
-            }
+            <Text
+              size={8}
+              font='a'
+            >
+              {phoneNumber}
+            </Text>
+          </LinkWrapper>
+
+          <div className={styles['mobile-questions']}>
+            <Spacer size={36} />
+            <Text
+              size={7}
+              font='a'
+            >
+              Questions?
+            </Text>
           </div>
 
-          { emailAddress &&
-            <div className={styles['help-text']}>
-              { 'Experts available weekdays 9am-7pm ET - 24/7 by ' }
-              <LinkWrapper href={`mailto:${emailAddress}`}>email.</LinkWrapper>
-            </div>
-          }
+          <Spacer size={6} />
+
+          <div className={styles['hours']}>
+            {
+              hours &&
+                hours.map(hour =>
+                  <Text
+                    size={10}
+                    type='b'
+                  >
+                    {hour}
+                  </Text>
+                )
+            }
+          </div>
         </Col>
 
-        <Col className={classnames(styles['footer-trust'], styles['trust'])}>
-          <Layout>
-            <Col fullwidth className={styles['trust-logos']}>
-              <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
-              <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
-              <Icon className={classnames(styles['trust-logo'], styles['logo-digicert'])} icon='digicert' />
-            </Col>
+        <Col className={styles['actions']}>
+          <LinkWrapper
+            className={classnames(styles['icon-text-wrapper'], styles['link'])}
+            onClick={onClickChat}
+            type='resource'
+          >
+            <Icon
+              icon='chat'
+              width='24px'
+              height='24px'
+              className={styles['icon']}
+            />
+            <Text
+              size={8}
+              font='a'
+            >
+              Live chat
+            </Text>
+          </LinkWrapper>
 
-            { renderLinks(links) }
-          </Layout>
+          <Spacer size={24} />
+
+          <LinkWrapper
+            href={`mailto:${emailAddress}`}
+            className={classnames(styles['icon-text-wrapper'], styles['link'])}
+            type='resource'
+          >
+            <Icon
+              icon='email'
+              width='24px'
+              height='24px'
+              className={styles['icon']}
+            />
+            <Text
+              size={8}
+              font='a'
+            >
+              {emailAddress}
+            </Text>
+          </LinkWrapper>
+        </Col>
+
+        <Col className={styles['mobile-actions']}>
+          <Spacer size={18} />
+
+          <LinkWrapper
+            href={`tel:${phoneNumber}`}
+          >
+            <Button variant='info' outline>
+              {phoneNumber}
+            </Button>
+          </LinkWrapper>
+
+          <Spacer size={18} />
+
+          <Button
+            variant='info'
+            outline
+            onClick={onClickChat}
+          >
+            Live Chat
+          </Button>
+
+          <Spacer size={18} />
+
+          <LinkWrapper
+            href={`mailto:${emailAddress}`}
+          >
+            <Button variant='info' outline>
+              {emailAddress}
+            </Button>
+          </LinkWrapper>
+
+          <Spacer size={36} />
+        </Col>
+
+        <Col className={styles['trust']}>
+          <div className={styles['trust-logos']}>
+            <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
+            <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
+          </div>
+
+          <Spacer size={6} />
+
+          { renderLinks(links) }
         </Col>
       </Layout>
     </div>
@@ -100,11 +203,11 @@ Footer.propTypes = {
   /**
    * Formatted Contact phone number. Can be wrapped in additional markup
    */
-  phoneNumber: PropTypes.node,
+  phoneNumber: PropTypes.node.isRequired,
   /**
    * Function to trigger chat.
    */
-  onClickChat: PropTypes.func,
+  onClickChat: PropTypes.func.isRequired,
   /**
    * Array of Links `[ { text: 'link text', href: 'http://link.com' } ]`
    */
@@ -115,9 +218,14 @@ Footer.propTypes = {
     })
   ),
   /**
-   * Sets the mailto: email address
+   * Sets the email address
    */
   emailAddress: PropTypes.string,
+
+  /**
+   * Sets the Policygenius hours. Each item in the array is displayed as a new line
+   */
+  hours: PropTypes.array,
 };
 
 Footer.defaultProps = {

@@ -25,6 +25,10 @@ module.exports = {
   template: 'styleguide_assets/index.html',
   webpackConfig,
   serverPort: parseInt(process.env.PORT, 10) || 6060,
+  theme: {
+    maxWidth: '1280px',
+    padding: '0',
+  },
   require: [
     'holderjs',
     'assets/stylesheets/base.scss',

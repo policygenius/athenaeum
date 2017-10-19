@@ -224,7 +224,6 @@ $boldweight:                  900;
 
 @mixin typography-b-10($bold: false) {
   @include font-family-medium;
-  font-size: rem-calc(16px);
   font-size: rem-calc(13px);
   font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(.75);
@@ -233,7 +232,6 @@ $boldweight:                  900;
 
 @mixin typography-b-12($bold: false) {
   @include font-family-medium;
-  font-size: rem-calc(16px);
   font-size: rem-calc(10px);
   font-weight: tyopgraphy-b-weight($bold);
   line-height: ru(.75);

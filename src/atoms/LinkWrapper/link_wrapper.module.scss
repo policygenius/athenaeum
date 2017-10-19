@@ -52,3 +52,11 @@
   }
 }
 
+.resource {
+  color: color('primary-3');
+
+  &:hover {
+    color: color('primary-1');
+  }
+}
+
