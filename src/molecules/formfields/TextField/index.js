@@ -6,41 +6,11 @@ import omit from 'lodash/omit';
 
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
-import Tooltip from 'atoms/Tooltip';
 import ErrorMessage from 'atoms/ErrorMessage';
 
+import { renderTooltip } from 'utils/fieldUtils';
+
 import styles from './text_field.module.scss';
-
-function renderTooltip(tooltip, className) {
-  if (typeof tooltip === 'string') {
-    return (
-      <Tooltip
-        className={styles[className]}
-        text={
-          <Icon
-            icon='tooltip'
-            className={styles['tooltip-icon']}
-          />
-        }
-      >
-        {tooltip}
-      </Tooltip>
-    );
-  }
-
-  return (
-    <Tooltip
-      className={styles[className]}
-      onClick={tooltip}
-      text={
-        <Icon
-          icon='tooltip'
-          className={styles['tooltip-icon']}
-        />
-      }
-    />
-  );
-}
 
 function TextField( props ) {
   const {
@@ -94,7 +64,7 @@ function TextField( props ) {
             <div className={styles['label-wrapper']}>
               <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
               { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
-              { tooltip && renderTooltip(tooltip, 'tooltip') }
+              { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
             <Text size={10} font='b'>
               { subLabel }
@@ -126,7 +96,7 @@ function TextField( props ) {
               {...omit(input, [ 'value' ])}
             />
           }
-          {inputTooltip && renderTooltip(inputTooltip, 'input-tooltip')}
+          {inputTooltip && renderTooltip(inputTooltip, styles['input-tooltip'], styles['tooltip-icon'])}
         </span>
       </div>
 

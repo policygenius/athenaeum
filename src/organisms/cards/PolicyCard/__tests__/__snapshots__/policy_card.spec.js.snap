@@ -178,20 +178,8 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div
             className="top-4"
           />
-        </div>
-        <div
-          className="button-group"
-        >
-          <button
-            className="button action"
-            disabled={undefined}
-            onClick={[Function]}
-            type="button"
-          >
-            Continue
-          </button>
-          <div
-            className="top-2"
+          <span
+            className="checkbox-label"
           />
           <a
             className="link neutral-4 undefined details-link"

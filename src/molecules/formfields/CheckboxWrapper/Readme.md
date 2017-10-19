@@ -4,6 +4,12 @@ Checkbox List Example:
   <CheckboxWrapper
     label='Pellentesque habitant'
     tooltip="I'm a tooltip!"
+    subLabel='Test sublabel'
+    input={{
+      onBlur: () => true,
+      onFocus: () => true,
+    }}
+    meta={{}}
   >
     <CheckBoxField
       input={{
@@ -34,6 +40,60 @@ Checkbox List Example:
         name: 'automaticSprinklersSome'
       }}
       label='Automatic sprinklers in some rooms'
+    />
+  </CheckboxWrapper>
+```
+
+Checkbox List w/Footer Example:
+
+```jsx
+  <CheckboxWrapper
+    label='Pellentesque habitant'
+    tooltip="I'm a tooltip!"
+    subLabel='Test sublabel'
+    footerBox={
+      <CheckBoxField
+        input={{
+          name: 'none',
+        }}
+        label='None of the above'
+      />
+    }
+    input={{
+      onBlur: () => true,
+      onFocus: () => true,
+    }}
+    meta={{}}
+  >
+    <CheckBoxField
+      input={{
+        name: 'burgers',
+      }}
+      label='Burgers'
+    />
+    <CheckBoxField
+      input={{
+        name: 'dogs',
+      }}
+      label='Hot Dogs'
+    />
+    <CheckBoxField
+      input={{
+        name: 'fries',
+      }}
+      label='French Fries'
+    />
+    <CheckBoxField
+      input={{
+        name: 'shake',
+      }}
+      label='Milkshake'
+    />
+    <CheckBoxField
+      input={{
+        name: 'pop',
+      }}
+      label='Soda Pop'
     />
   </CheckboxWrapper>
 ```
