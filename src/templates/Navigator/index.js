@@ -5,153 +5,125 @@ import Sticky from 'react-stickynode';
 
 import { Layout, Col } from 'atoms/Layout';
 import Icon from 'atoms/Icon';
-import ContactCard from 'organisms/cards/ContactCard';
-import StepProgress from 'molecules/StepProgress';
+import StepIndicator from 'molecules/StepIndicator';
+import LinkWrapper from 'atoms/LinkWrapper';
 import Text from 'atoms/Text';
-import Hide from 'wrappers/Hide';
-import UserAlert from 'atoms/UserAlert';
+import Spacer from 'atoms/Spacer';
 
 import styles from './navigator.module.scss';
 
-function renderContactCard(contactProps, inverted) {
-  const newProps = Object.assign({}, contactProps, { inverted });
+const headerLink = (item) => {
+  const linkProps = {};
 
-  return <ContactCard {...newProps} />;
-}
+  if (typeof item.link === 'string') {
+    linkProps.href = item.link;
+  } else {
+    linkProps.onClick = item.link;
+  }
 
-const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
-  <UserAlert
-    enabled={enabled}
-    onClick={userAlert.onClick}
-    alertBottom='#sticky-bottom'
-    innerZ={100}
-    alertColor={userAlert.color}
-    closeColor={userAlert.closeColor}
-    className={styles[className]}
-  >
-    <Text
-      type={6}
-      color={userAlert.textColor}
-      semibold
+  return (
+    <LinkWrapper
+      type='resource'
+      key={item.icon}
+      className={styles['header-icon-lockup']}
+      {...linkProps}
     >
-      {userAlert.text}
-    </Text>
-  </UserAlert>
-
-;
+      <Icon
+        icon={item.icon}
+        height='22px'
+        width='22px'
+        className={styles['header-icon']}
+      />
+      <Text
+        size={10}
+        font='a'
+        className={styles['header-secondary-text']}
+      >
+        {item.text}
+      </Text>
+    </LinkWrapper>
+  );
+};
 
 function Navigator(props) {
   const {
     children,
     className,
-    stepProgressData,
-    leftRailText,
-    contactProps,
     footer,
     sidebar,
     mobileHeader,
-    onMenuClick,
-    userAlert,
+    headerLinks,
+    stepIndicatorProps,
+    overflow,
   } = props;
-
 
   return (
     <div className={classnames(styles['navigator'], className)}>
+      <div className={styles['header']}>
+        <Icon
+          icon='pgLogoBlack'
+          height='22px'
+          width='125px'
+        />
+
+        <StepIndicator
+          className={classnames(styles['indicator'], styles['indicator-desktop'])}
+          {...stepIndicatorProps}
+        />
+
+        <div className={styles['header-icons']}>
+          {
+            headerLinks.map(headerLink)
+          }
+
+          {
+            overflow &&
+              <div
+                className={styles['header-icon-overflow']}
+                onClick={overflow.onClick}
+              >
+                <Icon
+                  icon='overflow'
+                  height='22px'
+                  width='22px'
+                  className={styles['overflow-icon']}
+                />
+              </div>
+          }
+        </div>
+      </div>
+
+      {
+        mobileHeader &&
+          <Sticky
+            enabled
+            top={0}
+            bottomBoundary='#mobile-bottom'
+            innerZ={10}
+          >
+            <div className={styles['mobile-subheader']}>
+              {mobileHeader}
+            </div>
+          </Sticky>
+      }
+
       <Layout
         className={styles['layout']}
         fullwidth
       >
-        <Col className={styles['logo-panel']}>
-          <Layout
-            mediumCols={[ 8, 4 ]}
-            largeCols={[ 12 ]}
-            className={styles['logo-panel-layout']}
-          >
-            <Col
-              className={styles['logo-panel-col']}
-            >
-              <div className={styles['logo-wrapper']}>
-                <Sticky
-                  enabled
-                  top={36}
-                  bottomBoundary={'#sticky-bottom'}
-                  activeClass={styles['sticky']}
-                >
-                  <Icon icon='pgLogo' className={styles['logo']} />
-
-                  <Hide hideOn='small medium'>
-                    <Text className={classnames(styles['logo-panel-text'], styles['logo-left-rail'])} type={3} light>
-                      { leftRailText }
-                    </Text>
-                  </Hide>
-                </Sticky>
-
-                <Icon
-                  icon='hamburger'
-                  className={styles['icon-hamburger']}
-                  height='24px'
-                  width='24px'
-                  onClick={onMenuClick}
-                />
-              </div>
-
-              <div className={styles['mobile-header-wrapper']}>
-                <div className={styles['mobile-nav']}>
-                  <StepProgress
-                    className={styles['step-progress']}
-                    steps={stepProgressData}
-                  />
-
-                  <Hide hideOn='large xLarge xxLarge'>
-                    <Text className={styles['logo-panel-text']} type={3} light>
-                      { leftRailText }
-                    </Text>
-                  </Hide>
-                </div>
-
-                <div className={styles['mobile-header']}>
-                  <Sticky
-                    enabled
-                    bottomBoundary='#mobile-bottom'
-                  >
-                    { mobileHeader }
-                  </Sticky>
-                </div>
-              </div>
-            </Col>
-            <div className={styles['contact-card']}>
-              { renderContactCard(contactProps, true) }
-            </div>
-          </Layout>
-        </Col>
         <Col className={styles['main']}>
-          <div className={styles['user-alert']}>
-            { userAlert.condition &&
-              <Sticky
-                enabled
-                bottomBoundary={'#mobile-bottom'}
-                activeClass={styles['sticky']}
-              >
-                <NavigatorUserAlert
-                  enabled={false}
-                  userAlert={userAlert}
-                  className='user-alert'
-                />
-              </Sticky>
-            }
+
+          <div className={classnames(styles['indicator'], styles['indicator-tablet'])}>
+            <Spacer size={24} />
+            <StepIndicator {...stepIndicatorProps} />
           </div>
+
           <Layout
             className={styles['main-layout']}
             mediumCols={[ 7, 4 ]}
           >
             <Col className={styles['main-col']} fullwidth>
               <div id='sticky-top'>
-                <Layout fullwidth>
-                  <StepProgress
-                    className={styles['step-progress']}
-                    steps={stepProgressData}
-                  />
-                </Layout>
               </div>
               <div id='sticky-bottom'>
                 { children }
@@ -162,10 +134,6 @@ function Navigator(props) {
               className={styles['right-rail']}
               style={{ marginLeft: 'auto' }}
             >
-              <div className={styles['contact-card']}>
-                { renderContactCard(contactProps) }
-              </div>
-
               <Sticky
                 enabled
                 top='#sticky-top'
@@ -191,39 +159,41 @@ Navigator.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
-  /**
-   * Text to show up on left rail
-   */
-  leftRailText: PropTypes.string,
-  stepProgressData: StepProgress.propTypes.steps,
-  contactProps: PropTypes.shape({
-    top: PropTypes.object,
-    bottom: PropTypes.object,
-  }),
-  mobileHeader: PropTypes.node,
-  sidebar: PropTypes.node,
-  footer: PropTypes.node,
-  /**
-   * Click handler for mobile menu hambuger
-   */
-  onMenuClick: PropTypes.func,
-  /**
-   * object to set all properties for user alert
-   */
-  userAlert: PropTypes.shape({
-    condition: PropTypes.bool,
-    onClick: PropTypes.func,
-    color: PropTypes.string,
-    closeColor: PropTypes.string,
-    text: PropTypes.string,
-    textColor: PropTypes.string,
-  }),
-};
 
-NavigatorUserAlert.propTypes = {
-  userAlert: PropTypes.object,
-  enabled: PropTypes.bool,
-  className: PropTypes.string,
+  /**
+   * Props for StepIndicator component
+   */
+  stepIndicatorProps: PropTypes.shape({
+    steps: StepIndicator.propTypes.steps,
+    navigateToPath: StepIndicator.propTypes.navigateToPath,
+  }),
+
+  /**
+   * Component to be used as the MobileHeader
+   */
+  mobileHeader: PropTypes.node,
+
+  /**
+   * Component to be used as the right sticky sidebar
+   */
+  sidebar: PropTypes.node,
+
+  /**
+   * Component to be used as the footer
+   */
+  footer: PropTypes.node,
+
+  /**
+   * List of links with icons to be displayed in Navigator header
+   */
+  headerLinks: PropTypes.array,
+
+  /**
+   * Displays overflow icon on mobile
+   */
+  overflow: PropTypes.shape({
+    onClick: PropTypes.func,
+  }),
 };
 
 export default Navigator;

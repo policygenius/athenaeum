@@ -12,14 +12,12 @@ export default class ProgressBarStep extends Component {
 
     if (step.currentStepActive) {
       return {
-        color: 'neutral-2',
-        weight: 'semibold',
+        color: 'primary-3',
       };
     }
 
     return {
-      color: 'neutral-5',
-      weight: 'semibold'
+      color: 'neutral-3',
     };
   }
 
@@ -43,7 +41,7 @@ export default class ProgressBarStep extends Component {
 
     return [
       styles['circle-wrapper'],
-      step.nextStepAccessible && styles['circle-wrapper-accessible'],
+      step.nextStepAccessible ? styles['circle-wrapper-accessible'] : styles['circle-wrapper-inaccessible'],
     ];
   }
 
@@ -78,7 +76,7 @@ export default class ProgressBarStep extends Component {
     return (
       <div className={styles['breadcrumb']} onClick={this.handleClick}>
         <div className={classnames(this.textClasses())}>
-          <Text tag='span' type={7} {...this.textProps()}>{ step.text }</Text>
+          <Text tag='span' size={11} font='b' semibold {...this.textProps()}>{ step.text.toUpperCase() }</Text>
         </div>
         <div className={classnames(...this.circleWrapperClasses())}>
           <div className={classnames(...this.circleClasses())} />

@@ -53,9 +53,13 @@ LinkWrapper.propTypes = {
    */
   variant: PropTypes.string,
   /**
-   * Possible type attributes are: `primary` and `secondary`
+   * Possible type attributes are: `primary`, `secondary`, `resource`
    */
-  type: PropTypes.string,
+  type: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'resource',
+  ]),
   /**
    * Possible type attributes are: `float`, `underline`
    */

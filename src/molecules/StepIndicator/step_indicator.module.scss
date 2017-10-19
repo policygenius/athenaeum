@@ -15,7 +15,7 @@
 .step-wrapper {
   text-align: center;
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: ru(1);
 
   &-clickable {
     cursor: pointer;
@@ -30,48 +30,52 @@
 
   &:after {
     content: '';
+    background-color: color('secondary-2');
     height: .125rem;
     pointer-events: none;
     position: absolute;
-    top: 4px;
-    width: 100%;
+    top: 5px;
+    transition: width 600ms ease-out;
+    width: 0%;
+  }
 
-    background-size: 200%;
-    background-image: linear-gradient(to right, #2bc253 50%, #ccc 50%);
-    transition: background-position 1s;
-    background-position: right;
+  &-inaccessible {
+    &:after {
+      background-color: color('neutral-4');
+      width: 100%;
+    }
   }
 
   &-accessible {
     &:after {
-      background-position: left;
+      width: 100%;
     }
   }
 }
 
 .circle {
-  background: #fff;
-  border: 1px solid #ccc;
+  background: color('primary-2');
+  border: 1px solid color('neutral-4');
   border-radius: 50%;
-  height: 10px;
+  height: ru(.5);
   margin-right: auto;
-  width: 10px;
+  width: ru(.5);
   pointer-events: none;
   z-index: 1;
   position: absolute;
 
   &-active {
-    background: #fff;
-    border: 2px solid #2bc253;
+    background: color('primary-2');
+    border: 2px solid color('secondary-2');
   }
 
   &-completed {
-    background: #2bc253;
-    border: 1px solid #2bc253;
+    background: color('secondary-2');
+    border: 1px solid color('secondary-2');
   }
 }
 
-@media #{$small-only} {
+@media #{$mobile-only} {
   .step-wrapper {
     &-inactive {
      opacity: 0;
