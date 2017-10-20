@@ -40,6 +40,7 @@ exports[`<RadioGroup /> renders correctly 1`] = `
       </div>
       <p
         className="text typography-10 p undefined type-b-10-bold type-b-10-medium type-b-10-regular"
+        onClick={undefined}
       >
         Sublabel action
       </p>
