@@ -18,7 +18,7 @@ const submenuItems = [
     ],
   },
   {
-    header: 'Company Reviews',
+    header: 'Disability Insurance Company Reviews',
     items: [
       { title: 'Mutual of Omaha', url: '/long-term-disability-insurance/companies/mutual-of-omaha/', },
       { title: 'Principal', url: '/long-term-disability-insurance/companies/principal/', },
