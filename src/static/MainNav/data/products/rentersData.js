@@ -1,25 +1,33 @@
 const submenuItems = [
   {
-    header: 'Advice',
-    subHeader: 'What Does Renters Insurance Cover?',
-    link: '/renters-insurance/guide/',
-    imageSrc: 'https://res-5.cloudinary.com/policygenius/image/upload/v1/general/renters-guide-opt',
-    type: 'article',
+    header: 'Compare Renters Insurance',
+    items: [
+      { title: 'How to buy cheap renters insurance online', url: '/renters-insurance/learn/how-to-buy-cheap-renters-insurance-online/', },
+      { title: 'Replacement cost renters Insurance', url: '/renters-insurance/learn/replacement-cost-renters-insurance/', },
+      { title: 'Cash value renters insurance', url: '/renters-insurance/learn/actual-cash-value-renters-insurance/', },
+      { title: 'The Best Renters Insurance Companies', url: '/renters-insurance/learn/the-best-renters-insurance-companies/', },
+    ],
   },
   {
-    header: 'Advice',
-    subHeader: 'Renters Insurance FAQ',
-    link: '/renters-insurance/guide/faqs',
-    imageSrc: 'https://res-5.cloudinary.com/policygenius/image/upload/v1/general/renters-faq-opt',
-    type: 'article',
+    header: 'Helpful Resources',
+    items: [
+      { title: 'What Does Renters Insurance Cover?', url: '/renters-insurance/learn/what-does-renters-insurance-cover/', },
+      { title: 'How Much Is Renters Insurance?', url: '/renters-insurance/learn/how-much-is-renters-insurance/', },
+      { title: 'How Does Renters Insurance Work?', url: '/renters-insurance/learn/how-renters-insurance-works/', },
+      { title: 'How Much Renters Insurance Do I Need?', url: '/renters-insurance/learn/how-much-renters-insurance-do-i-need/', },
+      { title: 'Renters insurance FAQ', url: '/renters-insurance/learn/renters-insurance-faq/', },
+    ],
   },
   {
-    header: 'Advice',
-    subHeader: 'Typical Renters Insurance Policy',
-    link: '/renters-insurance/guide/typical-policy',
-    imageSrc: 'https://res-3.cloudinary.com/policygenius/image/upload/v1/general/renters-policy-opt',
-    type: 'article',
+    header: 'Renters Insurance Company Reviews',
+    items: [
+      { title: 'Geico', url: '/renters-insurance/companies/geico/', },
+      { title: 'Progressive', url: '/renters-insurance/companies/progressive/', },
+      { title: 'State Farm', url: '/renters-insurance/companies/state-farm/', },
+      { title: 'Allstate', url: '/renters-insurance/companies/allstate/', },
+    ],
   },
+
 ];
 
 export default {

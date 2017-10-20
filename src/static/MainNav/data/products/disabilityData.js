@@ -17,6 +17,19 @@ const submenuItems = [
       { title: 'Disability Insurance Features & Riders', url: '/long-term-disability-insurance/learn/disability-insurance-riders', },
     ],
   },
+  {
+    header: 'Disability Insurance Company Reviews',
+    items: [
+      { title: 'Mutual of Omaha', url: '/long-term-disability-insurance/companies/mutual-of-omaha/', },
+      { title: 'Principal', url: '/long-term-disability-insurance/companies/principal/', },
+      { title: 'MassMutual', url: '/long-term-disability-insurance/companies/massmutual/', },
+      { title: 'Ameritas', url: '/long-term-disability-insurance/companies/ameritas/', },
+      { title: 'Guardian', url: '/long-term-disability-insurance/companies/guardian-berkshire/', },
+      { title: 'The Standard', url: '/long-term-disability-insurance/companies/the-standard/', },
+      { title: 'Assurity', url: '/long-term-disability-insurance/companies/assurity/', },
+    ],
+  },
+
 ];
 
 export default {
