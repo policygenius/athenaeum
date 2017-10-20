@@ -44,6 +44,6 @@ export default {
   list: {
     alt: 'Renters Insurance',
     items: submenuItems,
-    type: 'articles',
+    type: 'links',
   }
 };
