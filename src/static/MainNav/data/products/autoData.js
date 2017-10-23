@@ -1,5 +1,5 @@
 const submenuItems = [
-{
+  {
     header: 'Compare Renters Insurance',
     items: [
       { title: 'Non-owner Car Insurance', url: '/auto-insurance/learn/non-owner-car-insurance/', },

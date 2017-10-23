@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
+<div
+  className="featured-policy-card"
+>
+  <div
+    className="header"
+  />
+  <div
+    className="content"
+  >
+    <div
+      className="premium"
+    >
+      <strong
+        className="text typography-2 semibold neutral-1 undefined strong undefined"
+      >
+        $19.8
+         
+        <span
+          className="text typography-7 regular neutral-4 undefined span undefined"
+        >
+          /MO
+        </span>
+      </strong>
+      <div
+        className="top-1"
+      />
+      <div />
+    </div>
+    <div
+      className="top-6"
+    />
+    <div
+      className="carrier-logo"
+    >
+      <div />
+    </div>
+    <div
+      className="top-6"
+    />
+    <div
+      className="policy-info"
+    >
+      <div
+        className="layout policy-info-item"
+        style={undefined}
+      >
+        <div
+          className="col col-sm-6 fullwidth bottom-spacing-undefined"
+          onClick={undefined}
+          style={undefined}
+        >
+          <div
+            className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
+            onClick={undefined}
+            style={undefined}
+          >
+            <p
+              className="text typography-7 regular undefined undefined p undefined"
+            >
+              Policy Type
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
+              <span
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
+              </span>
+              <noscript />
+            </span>
+          </div>
+        </div>
+        <div
+          className="col col-sm-6 bottom-spacing-undefined"
+          onClick={undefined}
+          style={undefined}
+        >
+          <strong
+            className="text typography-6 semibold undefined undefined strong undefined"
+          >
+            A+
+          </strong>
+        </div>
+      </div>
+      <div
+        className="top-2"
+      />
+      <div
+        className="layout policy-info-item"
+        style={undefined}
+      >
+        <div
+          className="col col-sm-6 fullwidth bottom-spacing-undefined"
+          onClick={undefined}
+          style={undefined}
+        >
+          <div
+            className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
+            onClick={undefined}
+            style={undefined}
+          >
+            <p
+              className="text typography-7 regular undefined undefined p undefined"
+            >
+              Financial Strength
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
+              <span
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
+              </span>
+              <noscript />
+            </span>
+          </div>
+        </div>
+        <div
+          className="col col-sm-6 bottom-spacing-undefined"
+          onClick={undefined}
+          style={undefined}
+        >
+          <strong
+            className="text typography-6 semibold undefined undefined strong undefined"
+          >
+            A+
+          </strong>
+        </div>
+      </div>
+      <div
+        className="top-2"
+      />
+      <div
+        className="layout policy-info-item"
+        style={undefined}
+      >
+        <div
+          className="col col-sm-6 fullwidth bottom-spacing-undefined"
+          onClick={undefined}
+          style={undefined}
+        >
+          <div
+            className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
+            onClick={undefined}
+            style={undefined}
+          >
+            <p
+              className="text typography-7 regular undefined undefined p undefined"
+            >
+              Total Customers
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
+              <span
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
+              </span>
+              <noscript />
+            </span>
+          </div>
+        </div>
+        <div
+          className="col col-sm-6 bottom-spacing-undefined"
+          onClick={undefined}
+          style={undefined}
+        >
+          <strong
+            className="text typography-6 semibold undefined undefined strong undefined"
+          >
+            16
+          </strong>
+        </div>
+      </div>
+    </div>
+    <div
+      className="top-6"
+    />
+    <button
+      className="button action"
+      disabled={undefined}
+      onClick={[Function]}
+      type="button"
+    >
+      Continue
+    </button>
+    <div
+      className="top-2"
+    />
+    <a
+      className="link neutral-4 undefined details-link"
+      onClick={[Function]}
+    >
+      Deatils & Review
+    </a>
+  </div>
+</div>
+`;
