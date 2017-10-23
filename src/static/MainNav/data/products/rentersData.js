@@ -2,9 +2,9 @@ const submenuItems = [
   {
     header: 'Compare Renters Insurance',
     items: [
-      { title: 'How to buy cheap renters insurance online', url: '/renters-insurance/learn/how-to-buy-cheap-renters-insurance-online/', },
-      { title: 'Replacement cost renters Insurance', url: '/renters-insurance/learn/replacement-cost-renters-insurance/', },
-      { title: 'Cash value renters insurance', url: '/renters-insurance/learn/actual-cash-value-renters-insurance/', },
+      { title: 'How to Buy Cheap Renters Insurance Online', url: '/renters-insurance/learn/how-to-buy-cheap-renters-insurance-online/', },
+      { title: 'Replacement Cost Renters Insurance', url: '/renters-insurance/learn/replacement-cost-renters-insurance/', },
+      { title: 'Cash Value Renters Insurance', url: '/renters-insurance/learn/actual-cash-value-renters-insurance/', },
       { title: 'The Best Renters Insurance Companies', url: '/renters-insurance/learn/the-best-renters-insurance-companies/', },
     ],
   },
@@ -25,6 +25,9 @@ const submenuItems = [
       { title: 'Progressive', url: '/renters-insurance/companies/progressive/', },
       { title: 'State Farm', url: '/renters-insurance/companies/state-farm/', },
       { title: 'Allstate', url: '/renters-insurance/companies/allstate/', },
+      { title: 'Lemonade', url: '/renters-insurance/companies/lemonade/', },
+      { title: 'Stillwater', url: '/renters-insurance/companies/stillwater/', },
+      { title: 'Liberty Mutual', url: '/renters-insurance/companies/liberty-mutual/', },
     ],
   },
 
