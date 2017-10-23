@@ -1,22 +1,25 @@
 const submenuItems = [
-  {
-    header: 'Advice',
-    subHeader: "Can you Get Car Insurance If Your Don't Have A License?",
-    link: 'https://www.policygenius.com/blog/can-you-get-car-insurance-if-you-dont-have-a-license/',
-    imageSrc: 'https://res-3.cloudinary.com/policygenius/image/upload/v1/general/keys',
+{
+    header: 'Compare Renters Insurance',
+    items: [
+      { title: 'Non-owner Car Insurance', url: '/auto-insurance/learn/non-owner-car-insurance/', },
+      { title: 'Gap Insurance', url: '/auto-insurance/learn/gap-insurance-protection/', },
+      { title: 'Ride-share Insurance', url: '/rideshare-insurance/', },
+      { title: 'Rental Car Insurance', url: '/auto-insurance/learn/rental-car-insurance/', },
+    ],
   },
   {
-    header: 'Advice',
-    subHeader: 'The Best Insurance Options If You Have Multiple Cars',
-    link: 'https://www.policygenius.com/blog/the-best-insurance-options-if-you-have-multiple-cars/',
-    imageSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/many-cars',
+    header: 'Helpful Resources',
+    items: [
+      { title: 'Auto Insurance Advice', url: '/auto-insurance/learn/', },
+      { title: 'How to Compare Auto Insurance Quotes', url: '/auto-insurance/learn/auto-insurance-quotes-comparison/', },
+      { title: 'How Much is Car Insurance in Each State', url: '/auto-insurance/learn/how-much-is-car-insurance/', },
+      { title: 'Finding the Best Car Insurance for You', url: '/auto-insurance/learn/finding-the-best-car-insurance-for-you/', },
+      { title: 'Auto Insurance Discounts, Features, and Riders', url: '/auto-insurance/learn/auto-insurance-tips-features-discounts-riders/', },
+      { title: 'Auto Insurance FAQ', url: '/auto-insurance/learn/auto-insurance-frequently-asked-questions/', },
+    ],
   },
-  {
-    header: 'Advice',
-    subHeader: 'At What Age Does Auto Insurance Decrease',
-    link: 'https://www.policygenius.com/blog/auto-insurance-decrease-age/',
-    imageSrc: 'https://res-1.cloudinary.com/policygenius/image/upload/v1/general/money',
-  },
+
 ];
 
 export default {
@@ -33,6 +36,6 @@ export default {
   list: {
     alt: 'Auto Insurance',
     items: submenuItems,
-    type: 'articles',
+    type: 'links',
   }
 };
