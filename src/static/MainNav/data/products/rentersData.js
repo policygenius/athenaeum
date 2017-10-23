@@ -15,7 +15,7 @@ const submenuItems = [
       { title: 'How Much Is Renters Insurance?', url: '/renters-insurance/learn/how-much-is-renters-insurance/', },
       { title: 'How Does Renters Insurance Work?', url: '/renters-insurance/learn/how-renters-insurance-works/', },
       { title: 'How Much Renters Insurance Do I Need?', url: '/renters-insurance/learn/how-much-renters-insurance-do-i-need/', },
-      { title: 'Renters insurance FAQ', url: '/renters-insurance/learn/renters-insurance-faq/', },
+      { title: 'Renters Insurance FAQ', url: '/renters-insurance/learn/renters-insurance-faqs/', },
     ],
   },
   {
