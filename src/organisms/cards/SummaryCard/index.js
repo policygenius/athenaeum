@@ -131,7 +131,7 @@ SummaryCard.propTypes = {
   })),
 
   /**
-   * Adds icon to upper right corner. See [Icon]('#icon') for available values
+   * Adds icon to upper right corner. See [Icon](#icon) for available values
    */
   icon: PropTypes.string,
 
