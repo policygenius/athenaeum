@@ -1,4 +1,4 @@
-### Split Card Example:
+### Examples:
 
 ```jsx
     <SummaryCard
@@ -27,6 +27,7 @@
     />
 ```
 
+With additional information as children
 ```jsx
     <SummaryCard
       text={[
@@ -48,8 +49,8 @@
         }
       ]}
     >
-      <Text>
-        Hey there how is this going pretty great
+      <Text size={9} font='b'>
+        Additional information your can supply to the card.
       </Text>
     </SummaryCard>
 ```
