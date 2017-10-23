@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
+
 import styles from '../shared/forms.module.scss';
 
 function AddForm( props ) {
@@ -10,7 +11,8 @@ function AddForm( props ) {
     children,
     formName,
     onSubmit,
-    onClose
+    onClose,
+    closeIcon,
   } = props;
 
   const kids = React.Children.map(children, child => React.cloneElement(child, {
@@ -19,19 +21,27 @@ function AddForm( props ) {
   }));
 
   return (
-    <div className={classnames( styles['formWrapper'], className )}>
-      <Icon
-        icon='xIcon'
-        onClick={onClose}
-        className={styles['icon-close']}
-      />
-      <form
-        className={styles['form']}
-        onSubmit={onSubmit}
-        name={formName}
-      >
-        { kids }
-      </form>
+    <div className={classnames( styles['form-wrapper'], className )}>
+      <div className={styles['form-border']}>
+        <div className={styles['inner-form']}>
+          {
+            closeIcon &&
+            <Icon
+              icon='xIcon'
+              onClick={onClose}
+              className={styles['icon-close']}
+            />
+          }
+
+          <form
+            className={styles['form']}
+            onSubmit={onSubmit}
+            name={formName}
+          >
+            { kids }
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
@@ -45,7 +55,12 @@ AddForm.propTypes = {
   /**
    * callback to close card
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
+
+  /**
+   * determines if the close icon is present
+   */
+  closeIcon: PropTypes.bool.isRequired,
 
   /**
    * name given to the `name` prop for the form
@@ -56,6 +71,10 @@ AddForm.propTypes = {
    * callback for submitting form
    */
   onSubmit: PropTypes.func
+};
+
+AddForm.defaultProps = {
+  closeIcon: true,
 };
 
 export default AddForm;
