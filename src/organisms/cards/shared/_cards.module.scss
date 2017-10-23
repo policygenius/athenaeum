@@ -11,23 +11,21 @@
  */
 
 $border-width: 1px;
-$border-radius: ru(.25);
-$border: $border-width solid color('neutral-5');
+$border: $border-width solid color('neutral-4');
 $col-padding: ru(.25) ru(.75);
 
 %card {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border-radius: $border-radius;
   border: $border;
   width: 100%;
   position: relative;
   background-color: color('neutral-8');
 }
 
-%icon-close {
-  $icon-size: ru(1);
+%icon {
+  $icon-size: ru(1.5);
   $icon-offset: -$icon-size / 2 - rem-calc($border-width);
 
   z-index: 1;
@@ -42,10 +40,8 @@ $col-padding: ru(.25) ru(.75);
 %footer {
   display: flex;
   width: 100%;
-  background-color: color('neutral-6');
+  background-color: color('neutral-5');
   border-top: $border;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
 }
 
 %link {
