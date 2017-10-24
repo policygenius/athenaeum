@@ -1,5 +1,6 @@
 /* stylelint-disable no-unknown-animations */
 $transition: 1s ease;
+$short-transition: 0.25s ease;
 
 .animation-wrapper,
 .animation {
@@ -37,3 +38,12 @@ $transition: 1s ease;
 .slideDown {
   animation: slideDown $transition forwards;
 }
+
+.slideIn {
+  animation: slideIn $short-transition forwards;
+}
+
+.slideOut {
+  animation: slideOut $short-transition forwards;
+}
+
