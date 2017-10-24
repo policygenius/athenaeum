@@ -43,7 +43,7 @@ export default class ProgressBarStep extends Component {
 
     return [
       styles['circle-wrapper'],
-      step.nextStepAccessible ? styles['circle-wrapper-accessible'] : styles['circle-wrapper-inaccessible'],
+      step.nextStepAccessible && styles['circle-wrapper-accessible'],
     ];
   }
 

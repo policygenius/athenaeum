@@ -30,25 +30,21 @@
 
   &:after {
     content: '';
-    background-color: #2bc253;
     height: .125rem;
     pointer-events: none;
     position: absolute;
     top: 4px;
-    transition: width 600ms ease-out;
-    width: 0%;
-  }
+    width: 100%;
 
-  &-inaccessible {
-    &:after {
-      background-color: #ccc;
-      width: 100%;
-    }
+    background-size: 200%;
+    background-image: linear-gradient(to right, #2bc253 50%, #ccc 50%);
+    transition: background-position 1s;
+    background-position: right;
   }
 
   &-accessible {
     &:after {
-      width: 100%;
+      background-position: left;
     }
   }
 }
