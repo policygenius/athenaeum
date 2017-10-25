@@ -27,20 +27,20 @@ steps:
   - wait
 
   - block: 'Trigger deploy/publish'
-    prompt: 'Choose a version bump'
     branches: 'rebrand'
-    fields:
-    - select: 'Increment'
-      key: 'bump-size'
-      hint: "MAJOR: incompatible API changes // MINOR: add backwards-compatible functionality // PATCH: backwards-compatible bug fixes"
-      required: true
-      options:
-        - label: 'Major'
-          value: 'major'
-        - label: 'Minor'
-          value: 'minor'
-        - label: 'Patch'
-          value: 'patch'
+    # prompt: 'Choose a version bump'
+    # fields:
+    # - select: 'Increment'
+    #   key: 'bump-size'
+    #   hint: "MAJOR: incompatible API changes // MINOR: add backwards-compatible functionality // PATCH: backwards-compatible bug fixes"
+    #   required: true
+    #   options:
+    #     - label: 'Major'
+    #       value: 'major'
+    #     - label: 'Minor'
+    #       value: 'minor'
+    #     - label: 'Patch'
+    #       value: 'patch'
 
   - block: 'Trigger custom deploy'
     branches: '!rebrand'
