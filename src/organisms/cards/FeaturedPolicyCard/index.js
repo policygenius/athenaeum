@@ -19,24 +19,27 @@ const formatValue = (value) => {
   return formattedValue !== '0' ? formattedValue : value;
 };
 
-const renderPolicyInformation = (value, details) =>
-  <Layout
-    smallCols={[ 6 ]}
-    className={styles['policy-info-item']}
-  >
-    <Col
-      fullwidth
-      className={styles['policy-info-tooltip-group']}
+const renderPolicyInformation = (info, idx) =>
+  <div key={`policy-info-${idx}`}>
+    <Layout
+      smallCols={[ 6 ]}
+      className={styles['policy-info-item']}
     >
-      <Text type={7}>{value}</Text>
-      <Tooltip
-        className={styles['policy-info-tooltip-icon']}
+      <Col
+        fullwidth
+        className={styles['policy-info-tooltip-group']}
       >
-        {details.tooltipMessage}
-      </Tooltip>
-    </Col>
-    <Text type={6} semibold>{formatValue(details.value)}</Text>
-  </Layout>
+        <Text type={7}>{info.label}</Text>
+        <Tooltip
+          className={styles['policy-info-tooltip-icon']}
+        >
+          {info.hoverMessage}
+        </Tooltip>
+      </Col>
+      <Text type={6} semibold>{formatValue(info.value)}</Text>
+    </Layout>
+    <Spacer spacer={2} />
+  </div>
 
 ;
 
@@ -49,15 +52,15 @@ function FeaturedPolicyCard(props) {
     carrierLogo,
     onContinue,
     onDetails,
-    financialStrength,
-    policyType,
-    totalCustomers,
+    information
   } = props;
 
   const classes = [
     styles['featured-policy-card'],
     className,
   ];
+
+  const formattedPremium = accounting.formatMoney(premium.price);
 
   return (
     <div className={classnames(...classes)}>
@@ -82,7 +85,7 @@ function FeaturedPolicyCard(props) {
               color='neutral-1'
               semibold
             >
-              {`$${premium.price}`} <Text tag='span' type={7} color='neutral-4'>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium} <Text tag='span' type={7} color='neutral-4'>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
 
             <Spacer spacer={1} />
@@ -101,31 +104,33 @@ function FeaturedPolicyCard(props) {
 
         <Spacer spacer={6} />
 
-        <div className={styles['policy-info']}>
-          {renderPolicyInformation('Policy Type', policyType)}
+        {
+          information &&
+            <div className={styles['policy-info']}>
+              {
+                information.map(renderPolicyInformation)
+              }
+              <Spacer spacer={4} />
+            </div>
+        }
+
+        <div className={styles['button-group']}>
+          <Button
+            variant='action'
+            onClick={onContinue}
+          >
+            Continue
+          </Button>
+
           <Spacer spacer={2} />
-          {renderPolicyInformation('Financial Strength', financialStrength)}
-          <Spacer spacer={2} />
-          {renderPolicyInformation('Total Customers', totalCustomers)}
+
+          <LinkWrapper
+            onClick={onDetails}
+            className={styles['details-link']}
+          >
+            {'Details & Review'}
+          </LinkWrapper>
         </div>
-
-        <Spacer spacer={6} />
-
-        <Button
-          variant='action'
-          onClick={onContinue}
-        >
-          Continue
-        </Button>
-
-        <Spacer spacer={2} />
-
-        <LinkWrapper
-          onClick={onDetails}
-          className={styles['details-link']}
-        >
-          {'Deatils & Review'}
-        </LinkWrapper>
       </div>
     </div>
   );
@@ -179,41 +184,16 @@ FeaturedPolicyCard.propTypes = {
   onDetails: PropTypes.func,
 
   /**
-   * Supplies information and tooltip message for financial strength section
+   * Supplies information about policy to card. Examples would include type, financial strength or total customers
    */
-  financialStrength: PropTypes.shape({
+  information: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
-    ]),
-    tooltipMessage: PropTypes.node,
-  }),
-
-  /**
-   * Supplies information and tooltip message for policy type section
-   */
-  policyType: PropTypes.shape({
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    tooltipMessage: PropTypes.node,
-  }),
-
-  /**
-   * Supplies information and tooltip message for total customers section
-   */
-  totalCustomers: PropTypes.shape({
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    tooltipMessage: PropTypes.node,
-  }),
-};
-
-FeaturedPolicyCard.defaultProps = {
-  // Place any default props here.
+    ]).isRequired,
+    hoverMessage: PropTypes.node.isRequired,
+  })),
 };
 
 export default FeaturedPolicyCard;

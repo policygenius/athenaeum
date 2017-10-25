@@ -11,18 +11,23 @@ describe('<FeaturedPolicyCard />', () => {
     defaultProps = {
       header: [],
       carrierLogo: <div />,
-      policyType: {
-        value: 'A+',
-        tooltipMessage: <div />
-      },
-      financialStrength: {
-        value: 'A+',
-        tooltipMessage: <div />
-      },
-      totalCustomers: {
-        value: 16,
-        tooltipMessage: <div />
-      },
+      information: [
+        {
+          label: 'Financial Strength',
+          value: 'A+',
+          hoverMessage: <div />
+        },
+        {
+          label: 'Total Customers',
+          value: 16000000,
+          hoverMessage: <div />
+        },
+        {
+          label: 'Policy Type',
+          value: 'Level Term',
+          hoverMessage: <div />
+        },
+      ],
       premium: {
         price: 19.8,
         format: 'mo'

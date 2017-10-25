@@ -2,18 +2,23 @@
 
 ```jsx
     <FeaturedPolicyCard
-      financialStrength={{
-        value: 'A+',
-        tooltipMessage: <Text>This is information about the financial strength</Text>
-      }}
-      policyType={{
-        value: 'Level Term',
-        tooltipMessage: <Text>This is information about the policy type.</Text>
-      }}
-      totalCustomers={{
-        value: 16000000,
-        tooltipMessage: <Text>This is information about total customers.</Text>
-      }}
+      information={[
+        {
+          label: 'Financial Strength',
+          value: 'A+',
+          hoverMessage: <Text>This is information about the financial strength</Text>
+        },
+        {
+          label: 'Total Customers',
+          value: 16000000,
+          hoverMessage: <Text>This is information about total customers.</Text>
+        },
+        {
+          label: 'Policy Type',
+          value: 'Level Term',
+          hoverMessage: <Text>This is information about the policy type.</Text>
+        },
+      ]}
       carrierLogo={
         <img
           src='http://res.cloudinary.com/policygenius/image/upload/v1500328467/mutual-of-omaha-dark.svg'

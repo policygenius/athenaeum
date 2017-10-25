@@ -7,6 +7,23 @@ $details-link-border: 1px solid #b2b2b2;
 .featured-policy-card {
   border-radius: $radius;
   border: $card-border;
+  background-color: color('neutral-8');
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .details-link {
+    @include typography-7(false);
+
+    padding-bottom: 2px;
+    color: $details-link-color;
+    border-bottom: $details-link-border;
+    text-decoration: none;
+
+    &:hover {
+      border-color: $details-link-color;
+    }
+  }
 }
 
 .header {
@@ -39,7 +56,8 @@ $details-link-border: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
 .premium {
@@ -47,7 +65,11 @@ $details-link-border: 1px solid #b2b2b2;
 }
 
 .carrier-logo {
-  max-width: rem-calc(150px);
+  max-height: rem-calc(44px);
+
+  img {
+    max-height: rem-calc(44px);
+  }
 }
 
 .policy-info {
@@ -67,13 +89,18 @@ $details-link-border: 1px solid #b2b2b2;
   }
 }
 
-.details-link {
-  padding-bottom: 2px;
-  color: $details-link-color;
-  border-bottom: $details-link-border;
-  text-decoration: none;
+.button-group {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
 
-  &:hover {
-    border-color: $details-link-color;
+@media #{$small-only} {
+  .carrier-logo {
+    max-width: rem-calc(150px);
+
+    img {
+      max-width: rem-calc(150px);
+    }
   }
 }
