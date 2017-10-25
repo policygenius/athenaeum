@@ -1,30 +1,46 @@
-$border-color:     color('brand-3');
-$background-color: color('neutral-8');
-$border-width:     ru(.25);
-$icon-size:        ru(.75);
-$icon-size:        ru(1);
+$icon-size:        ru(1.5);
 
 .icon-close {
   position: absolute;
   z-index: 1;
-  top: -$icon-size / 2 - $border-width / 2;
-  right: -$icon-size / 2;
+  top: -1rem;
+  right: -2rem;
   background-size: 100%;
-  cursor: pointer;
+  cursor: pointe2;
   width: $icon-size;
   height: $icon-size;
 }
 
-.formWrapper {
-  border-radius: ru(.25);
+.form-wrapper {
   position: relative;
-  border: 1px solid $border-color;
-  border-top-width: $border-width;
-  border-bottom-width: $border-width;
-  padding-top: ru(1);
-  padding-bottom: ru(1.75);
-  padding-left: ru(.75);
-  padding-right: ru(.75);
+  padding: 0 ru(.75);
+}
+
+.form-border {
+  position: relative;
+  width: 100%;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+  }
+
+  &:before {
+    border-top: 4px solid color('secondary-2');
+    top: 0;
+  }
+
+  &:after {
+    border-bottom: 4px solid color('secondary-2');
+    bottom: 0;
+  }
+}
+
+.inner-form {
+  padding: ru(1.5) ru(.75);
 }
 
 .form-item {
