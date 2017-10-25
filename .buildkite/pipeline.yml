@@ -27,7 +27,6 @@ steps:
   - wait
 
   - block: 'Trigger deploy/publish'
-    prompt: 'Choose a version bump'
     branches: 'rebrand'
     fields:
     - select: 'Increment'
