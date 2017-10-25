@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {
-  Layout,
-  Col,
-  Spacer,
-  StyledWrapper,
-} from 'athenaeum';
+// import {
+  // Layout,
+  // Col,
+  // Spacer,
+  // StyledWrapper,
+// } from 'athenaeum';
+
+import Text from 'atoms/Text';
+import Spacer from 'atoms/Spacer';
+import Layout from 'atoms/Layout';
+import Col from 'atoms/Layout/Col';
+import StyledWrapper from 'atoms/StyledWrapper';
+
 import { generate } from 'shortid';
 
 import BlogIntro from '../Intro/Blog';
@@ -170,15 +177,15 @@ class MagazineDisplay extends Component {
       <div className={classnames(...displayClasses)}>
         <MobileBack
           setMobileCollapsedMenu={setMobileCollapsedMenu}
-          text="Magazine"
+          text='Magazine'
         />
 
         <Spacer size={36} />
 
         <Layout
           fullwidth
-          smallCols={[12]}
-          largeCols={[4, 8]}
+          smallCols={[ 12 ]}
+          largeCols={[ 4, 8 ]}
           className={styles.content}
         >
           <Col
@@ -199,8 +206,8 @@ class MagazineDisplay extends Component {
           >
             <Layout
               fullwidth
-              smallCols={[12]}
-              mediumCols={[4]}
+              smallCols={[ 12 ]}
+              mediumCols={[ 4 ]}
             >
               { this.list }
             </Layout>

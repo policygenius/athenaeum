@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import {
-  Layout,
-  Col,
-  Button,
-  List,
-  Text,
-  Spacer,
-  Icon
-} from 'athenaeum';
+import Layout from 'atoms/Layout';
+import Col from 'atoms/Layout/Col';
+import Spacer from 'atoms/Spacer';
+
 import { generate } from 'shortid';
 
 import styles from './product_display.module.scss';
@@ -25,22 +20,23 @@ class ProductDisplay extends Component {
     const { list, isActive, activeName, mobileCollapsedMenu } = this.props;
 
     switch (list.type) {
-      case 'links':
-        return (
+        case 'links':
+          return (
           list.items.map((item, idx) =>
-            (<Col
+            <Col
               className={styles['display-list']}
               fullwidth={mobileCollapsedMenu}
+              key={idx}
             >
               <LinkList
                 item={item}
                 key={generate()}
               />
-            </Col>)
+            </Col>
           )
-        );
-      case 'articles':
-        return (
+          );
+        case 'articles':
+          return (
           list.items.map((item, idx) => {
             const imgProps = {
               'data-src': item.imageSrc,
@@ -53,6 +49,7 @@ class ProductDisplay extends Component {
             return (
               <Col
                 fullwidth={mobileCollapsedMenu}
+                key={idx}
               >
                 <ArticleImage
                   header={item.header}
@@ -62,9 +59,9 @@ class ProductDisplay extends Component {
               </Col>
             );
           })
-        );
-      default:
-        return null;
+          );
+        default:
+          return null;
     }
   }
 
@@ -72,7 +69,6 @@ class ProductDisplay extends Component {
     const {
       intro,
       headerText,
-      list,
       isActive,
       activeName,
       mobileCollapsedMenu,
@@ -85,12 +81,12 @@ class ProductDisplay extends Component {
       mobileCollapsedMenu === activeName && styles['mobile-collapsed'],
     ];
 
-    const specialMediumCols = ['disability-insurance', 'more'];
+    const specialMediumCols = [ 'disability-insurance', 'more' ];
 
     const listColumns = {
-      smallCols: [12],
-      mediumCols: specialMediumCols.includes(activeName) ? [7, 5] : [4],
-      largeCols: [4],
+      smallCols: [ 12 ],
+      mediumCols: specialMediumCols.includes(activeName) ? [ 7, 5 ] : [ 4 ],
+      largeCols: [ 4 ],
     };
 
 
@@ -101,15 +97,15 @@ class ProductDisplay extends Component {
         <div className={styles['submenu-display-wrapper']}>
           <MobileBack
             setMobileCollapsedMenu={setMobileCollapsedMenu}
-            text="Insurance Quotes & Guides"
+            text='Insurance Quotes & Guides'
           />
 
           <Spacer size={36} />
 
           <Layout
             fullwidth
-            smallCols={[12]}
-            largeCols={[4, 8]}
+            smallCols={[ 12 ]}
+            largeCols={[ 4, 8 ]}
             className={styles.content}
           >
             <Col

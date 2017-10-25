@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {
-  Layout,
-  Col,
-  Text,
-  Spacer,
-  List
-} from 'athenaeum';
 
 import styles from './main_nav.module.scss';
 
 import Logo from './Logo';
 import Menu from './Menu';
-import SecondaryMenu from './Menu/SecondaryMenu';
 import Search from './Search';
 import SimpleNav from './SimpleNav';
 

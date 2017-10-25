@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import {
-  Layout,
-  List,
-} from 'athenaeum';
+import Layout from 'atoms/Layout';
+import List from 'atoms/List';
 
 import ArticleImage from '../../ArticleImage';
 
@@ -33,9 +31,9 @@ class ProductArticleList extends Component {
     return (
       <div className={classnames(className)}>
         <Layout
-          smallCols={[12]}
-          mediumCols={[6, 6, 12]}
-          largeCols={[4]}
+          smallCols={[ 12 ]}
+          mediumCols={[ 6, 6, 12 ]}
+          largeCols={[ 4 ]}
         >
           {
             data.map((item) => {

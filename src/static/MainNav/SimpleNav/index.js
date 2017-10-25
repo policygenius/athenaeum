@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyledWrapper,
-  Text,
-} from 'athenaeum';
+// import {
+  // StyledWrapper,
+  // Text,
+// } from 'athenaeum';
+
+import Text from 'atoms/Text';
+import StyledWrapper from 'atoms/StyledWrapper';
 
 import { simpleNav, secondaryTextWrapper, content } from './styles';
 
@@ -23,16 +26,16 @@ function SimpleNav(props) {
       >
         <Text
           type={10}
-          font="b"
-          variant="italics"
+          font='b'
+          variant='italics'
         >
-          { regularPrimaryText } <Text tag="span" type={10} font="a">{ boldPrimaryText }</Text>
+          { regularPrimaryText } <Text tag='span' type={10} font='a'>{ boldPrimaryText }</Text>
         </Text>
         <StyledWrapper
           css={secondaryTextWrapper}
           component={Text}
           type={10}
-          font="a"
+          font='a'
         >
           { secondaryText }
         </StyledWrapper>

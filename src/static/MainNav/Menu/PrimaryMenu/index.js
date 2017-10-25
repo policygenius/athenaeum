@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import {
-  List,
-  Text,
-  LinkWrapper,
-} from 'athenaeum';
+
+import List from 'atoms/List';
 
 import styles from '../menu.module.scss';
 import PrimaryMenuHeader from '../PrimaryMenuHeader';
 import MenuLink from '../MenuLink';
-import Submenu from '../../Submenu';
 import insuranceProducts from '../../data/products';
 import magazineItems from '../../data/magazineItems';
 import aboutItems from '../../data/aboutItems';
@@ -21,28 +17,28 @@ class PrimaryMenu extends Component {
         className={styles['primary-menu']}
       >
         <PrimaryMenuHeader
-          header="Insurance Quotes & Guides"
-          activeName="insurance"
+          header='Insurance Quotes & Guides'
+          activeName='insurance'
           submenu={insuranceProducts}
-          displayType="product"
+          displayType='product'
           {...this.props}
         />
         <MenuLink
-          header="Insurance Checkup"
-          activeName="checkup"
-          href="/insurance-checkup-and-advice"
+          header='Insurance Checkup'
+          activeName='checkup'
+          href='/insurance-checkup-and-advice'
           {...this.props}
         />
         <PrimaryMenuHeader
-          header="Magazine"
-          activeName="magazine"
+          header='Magazine'
+          activeName='magazine'
           submenu={magazineItems}
-          displayType="magazine"
+          displayType='magazine'
           {...this.props}
         />
         <PrimaryMenuHeader
-          header="About"
-          activeName="about"
+          header='About'
+          activeName='about'
           submenu={aboutItems}
           {...this.props}
         />
