@@ -1,13 +1,27 @@
 #!/bin/bash
 set -eo pipefail
 
-if [ "$BUILDKITE_BRANCH" != "master" ]; then
+if [ "$BUILDKITE_BRANCH" == "rebrand" ]; then
   git config --global user.name "Randy the PolicyGenius Robot"
   git config --global user.email "robot@policygenius.com"
 
   NODE_ENV=development yarn
   NODE_ENV=production yarn run styleguide:build
   NODE_ENV=production yarn run build:publish
+
+  echo '+++ Publishing the package'
+
+  BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
+  VERSION=$(npm version $BUMP_SIZE)
+
+  npm adduser <<!
+$NPM_USERNAME
+$NPM_PASSWORD
+$NPM_EMAIL
+!
+
+  bin/build_assets
+  npm publish --tag rebrand
 
   cp package.json ./lib/
 
@@ -34,5 +48,5 @@ if [ "$BUILDKITE_BRANCH" != "master" ]; then
 
   echo "Deployed rebrand styleguide latest to http://rcl.policygenius.com/rebrand/"
 else
-  echo "Not publishing rebrand lib and styleguide to S3 for branch $BUILDKITE_BRANCH"
+  echo "Not publishing lib and styleguide to S3 for branch $BUILDKITE_BRANCH"
 fi
