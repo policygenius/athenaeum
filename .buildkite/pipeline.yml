@@ -28,6 +28,7 @@ steps:
 
   - block: 'Trigger deploy/publish'
     branches: 'rebrand'
+    prompt: 'Choose a version bump'
     fields:
     - select: 'Increment'
       key: 'bump-size'
