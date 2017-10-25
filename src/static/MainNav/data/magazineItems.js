@@ -19,7 +19,8 @@ const items = [
       tag: 'money',
     },
     intro: {
-      textType: 'Money',
+      textType: 'money',
+      width: '175px',
       link: 'https://www.policygenius.com/blog/tag/money/',
     },
   },
@@ -31,7 +32,8 @@ const items = [
       tag: 'technology',
     },
     intro: {
-      textType: 'Tech',
+      textType: 'tech',
+      width: '160px',
       link: 'https://www.policygenius.com/blog/tag/technology/',
     },
   },
@@ -43,7 +45,8 @@ const items = [
       tag: 'health',
     },
     intro: {
-      textType: 'Health',
+      textType: 'health',
+      width: '175px',
       link: 'https://www.policygenius.com/blog/tag/health/',
     },
   },
@@ -55,7 +58,8 @@ const items = [
       tag: 'cars',
     },
     intro: {
-      textType: 'Auto',
+      textType: 'auto',
+      width: '150px',
       link: 'https://www.policygenius.com/blog/tag/cars/',
     },
   },
@@ -67,7 +71,8 @@ const items = [
       tag: 'pets',
     },
     intro: {
-      textType: 'Pet',
+      textType: 'pet',
+      width: '140px',
       link: 'https://www.policygenius.com/blog/tag/pets/',
     },
   },
@@ -79,7 +84,8 @@ const items = [
       tag: 'insurance',
     },
     intro: {
-      textType: 'Insurance',
+      textType: 'insurance',
+      width: '225px',
       link: 'https://www.policygenius.com/blog/tag/insurance/',
     },
   },

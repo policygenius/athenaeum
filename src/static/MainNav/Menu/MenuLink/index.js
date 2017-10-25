@@ -1,40 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import {
+  Text,
+  LinkWrapper,
+  StyledWrapper,
+} from 'athenaeum';
 
-import { A } from 'atoms/Elementals';
-import styles from '../main_nav_primary_menu.module.scss';
+import styles from '../menu.module.scss';
+import { primaryHeader } from '../PrimaryMenuHeader/styles';
 
 function MenuLink(props) {
   const {
     header,
     href,
-    secondary,
   } = props;
 
-  const classes = [
-    styles['header-wrapper'],
-    secondary && styles['secondary-header-wrapper'],
-  ];
-
   return (
-    <li className={classnames(...classes)} data-has-children='true'>
-      <A
-        className={styles['menu-header']}
-        href={href}
-        color='neutral-2'
-        weight='semibold'
+    <LinkWrapper
+      href={href}
+      className={styles['menu-link']}
+    >
+      <StyledWrapper
+        css={primaryHeader(props)}
+        component={Text}
+        font="a"
+        type={10}
       >
         { header }
-      </A>
-    </li>
+      </StyledWrapper>
+    </LinkWrapper>
   );
 }
 
 MenuLink.propTypes = {
   header: PropTypes.string,
   href: PropTypes.string,
-  secondary: PropTypes.bool,
 };
 
 export default MenuLink;

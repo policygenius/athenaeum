@@ -21,13 +21,11 @@ const submenuItems = [
 
 export default {
   menu: {
-    header: 'More',
+    header: 'More Products',
     activeName: 'more',
   },
   intro: {
-    cta: 'Get Your Insurance Checkup™',
-    imgSrc: 'https://res-3.cloudinary.com/policygenius/image/upload/v1/general/checkup-small',
-    linkHref: '/insurance-checkup-and-advice/',
+    icon: 'policygeniusSymbolCenter',
   },
   list: {
     key: 'more-submenu-list-',

@@ -38,8 +38,8 @@ export default {
     activeName: 'life-insurance',
   },
   intro: {
-    cta: 'Get A Free Quote',
-    imgSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/life',
+    cta: 'Start Shopping Now',
+    icon: 'lifeColor3X',
     linkHref: '/life-insurance/',
   },
   list: {

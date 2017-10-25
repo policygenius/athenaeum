@@ -1,84 +1,153 @@
-import React from 'react';
+import React, { Component } from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import Intro from '../Intro';
-import SubMenuList from '../SubMenuList';
-import ProductArticleList from '../ArticleList/Product';
+import {
+  Layout,
+  Col,
+  Button,
+  List,
+  Text,
+  Spacer,
+  Icon
+} from 'athenaeum';
+import { generate } from 'shortid';
 
-import styles from '../main_nav_submenu.module.scss';
+import styles from './product_display.module.scss';
+import ProductIntro from '../Intro/Product';
+import LinkList from '../LinkList';
+import ArticleImage from '../ArticleImage';
+import MobileBack from '../MobileBack';
 
-function getList({ list, active, activeName }) {
-  switch (list.type) {
+
+class ProductDisplay extends Component {
+  get displayList() {
+    const { list, isActive, activeName, mobileCollapsedMenu } = this.props;
+
+    switch (list.type) {
       case 'links':
         return (
-        list.items.map((l, idx) =>
-          <SubMenuList
-            key={`life-submenu-list-${idx}`}
-            header={l.header}
-            listItems={l.items}
-          />
-        )
+          list.items.map((item, idx) =>
+            (<Col
+              className={styles['display-list']}
+              fullwidth={mobileCollapsedMenu}
+            >
+              <LinkList
+                item={item}
+                key={generate()}
+              />
+            </Col>)
+          )
         );
       case 'articles':
         return (
-          <ProductArticleList
-            data={list.items}
-            alt={list.alt}
-            active={active === activeName}
-          />
+          list.items.map((item, idx) => {
+            const imgProps = {
+              'data-src': item.imageSrc,
+            };
+
+            if (isActive || mobileCollapsedMenu === activeName) {
+              imgProps.src = item.imageSrc;
+            }
+
+            return (
+              <Col
+                fullwidth={mobileCollapsedMenu}
+              >
+                <ArticleImage
+                  header={item.header}
+                  imgProps={imgProps}
+                  link={item.link}
+                />
+              </Col>
+            );
+          })
         );
       default:
         return null;
+    }
   }
-}
 
-function ProductDisplay(props) {
-  const {
-    intro,
-    headerText,
-    activeName,
-    active,
-    setMobileCollapsedMenu,
-  } = props;
+  render() {
+    const {
+      intro,
+      headerText,
+      list,
+      isActive,
+      activeName,
+      mobileCollapsedMenu,
+      setMobileCollapsedMenu,
+    } = this.props;
 
-  return (
-    <div className={styles['wrapper']}>
-      <ul className={styles['panel']}>
-        <li
-          className={styles['mobile-back-wrapper']}
-          onClick={() => setMobileCollapsedMenu(null)}
-        >
-          <span className={styles['mobile-back-header']}>{ headerText }</span>
-        </li>
+    const displayClasses = [
+      styles['submenu-display'],
+      isActive && styles['submenu-display-active'],
+      mobileCollapsedMenu === activeName && styles['mobile-collapsed'],
+    ];
 
-        <Intro
-          cta={intro.cta}
-          product={activeName}
-          imgSrc={intro.imgSrc}
-          linkHref={intro.linkHref}
-          active={active === activeName}
-        />
+    const specialMediumCols = ['disability-insurance', 'more'];
 
-        { getList(props) }
+    const listColumns = {
+      smallCols: [12],
+      mediumCols: specialMediumCols.includes(activeName) ? [7, 5] : [4],
+      largeCols: [4],
+    };
 
-        <li className={styles['mobile-scroll-buffer']}></li>
-      </ul>
-    </div>
-  );
+
+    return (
+      <div
+        className={classnames(...displayClasses)}
+      >
+        <div className={styles['submenu-display-wrapper']}>
+          <MobileBack
+            setMobileCollapsedMenu={setMobileCollapsedMenu}
+            text="Insurance Quotes & Guides"
+          />
+
+          <Spacer size={36} />
+
+          <Layout
+            fullwidth
+            smallCols={[12]}
+            largeCols={[4, 8]}
+            className={styles.content}
+          >
+            <Col
+              className={styles.intro}
+            >
+              <ProductIntro
+                intro={intro}
+                headerText={headerText}
+              />
+            </Col>
+
+            <Col
+              fullwidth
+            >
+              <Layout
+                fullwidth
+                {...listColumns}
+              >
+                { this.displayList }
+              </Layout>
+            </Col>
+          </Layout>
+          <Spacer size={36} />
+          <Spacer size={12} />
+        </div>
+      </div>
+    );
+  }
 }
 
 ProductDisplay.propTypes = {
   intro: PropTypes.object,
   headerText: PropTypes.string,
-  activeName: PropTypes.string,
-  active: PropTypes.string,
-  setMobileCollapsedMenu: PropTypes.func,
-};
-
-getList.propTypes = {
   list: PropTypes.array,
+  isActive: PropTypes.bool,
   activeName: PropTypes.string,
-  active: PropTypes.string,
+  mobileCollapsedMenu: PropTypes.string,
+  setMobileCollapsedMenu: PropTypes.func,
 };
 
 export default ProductDisplay;

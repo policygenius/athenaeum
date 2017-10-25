@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import {
+  Layout,
+  Col,
+  Spacer,
+  StyledWrapper,
+} from 'athenaeum';
+import { generate } from 'shortid';
 
-import Intro from '../Intro';
-import BlogArticleList from '../ArticleList/Blog';
-
-import styles from './main_nav_magazine_display.module.scss';
-import sharedStyles from '../main_nav_submenu.module.scss';
-
+import BlogIntro from '../Intro/Blog';
+import LinkList from '../LinkList';
+import ArticleImage from '../ArticleImage';
+import MobileBack from '../MobileBack';
 import { fetchPosts } from '../../utils/fetchMagazinePosts';
-import fullBlogUrl from '../../utils/fullBlogUrl';
+
+import { introTextTopSpacer, introTextBottomSpacer } from './styles';
+
+import styles from '../ProductDisplay/product_display.module.scss';
 
 class MagazineDisplay extends Component {
   constructor() {
@@ -49,7 +58,7 @@ class MagazineDisplay extends Component {
   componentWillReceiveProps(nextProps) {
     const emptyPosts = this.state[this.props.activeName].data.length === 0;
 
-    if (nextProps.active === this.props.activeName && emptyPosts) {
+    if (nextProps.isActive && emptyPosts) {
       Promise.all([
         fetchPosts({
           featured: 'false',
@@ -66,7 +75,7 @@ class MagazineDisplay extends Component {
           const recommendedPosts = data[0].posts.map((p) => {
             const post = p;
 
-            post.url = fullBlogUrl(p.url);
+            post.url = p.url;
 
             return post;
           });
@@ -95,52 +104,123 @@ class MagazineDisplay extends Component {
     }
   }
 
+  get list() {
+    const {
+      activeName,
+      mobileCollapsedMenu,
+    } = this.props;
+
+    const data = this.state[activeName].data;
+
+    return (
+      data.map((item, idx) => {
+        if (item.type === 'list') {
+          return (
+            <Col
+              fullwidth
+              key={generate()}
+              className={styles['display-list']}
+            >
+              <LinkList
+                item={item}
+              />
+            </Col>
+          );
+        }
+
+        if (item.type === 'featured') {
+          return (
+            <Col
+              key={generate()}
+              fullwidth={mobileCollapsedMenu}
+            >
+              <ArticleImage
+                header={item.post.title}
+                imgProps={{
+                  src: `${item.post.feature_image}?fit=crop&w=640&h=360`,
+                }}
+                link={item.post.url}
+              />
+            </Col>
+          );
+        }
+
+        return null;
+      })
+    );
+  }
+
   render() {
     const {
       headerText,
       setMobileCollapsedMenu,
       intro,
-      active,
+      isActive,
       activeName,
+      mobileCollapsedMenu,
     } = this.props;
 
+    const displayClasses = [
+      styles['submenu-display'],
+      isActive && styles['submenu-display-active'],
+      mobileCollapsedMenu === activeName && styles['mobile-collapsed'],
+    ];
+
     return (
-      <div className={sharedStyles['wrapper']}>
-        <ul className={sharedStyles['panel']}>
-          <li
-            className={sharedStyles['mobile-back-wrapper']}
-            onClick={() => setMobileCollapsedMenu(null)}
+      <div className={classnames(...displayClasses)}>
+        <MobileBack
+          setMobileCollapsedMenu={setMobileCollapsedMenu}
+          text="Magazine"
+        />
+
+        <Spacer size={36} />
+
+        <Layout
+          fullwidth
+          smallCols={[12]}
+          largeCols={[4, 8]}
+          className={styles.content}
+        >
+          <Col
+            className={styles.intro}
           >
-            <span className={sharedStyles['mobile-back-header']}>{ headerText }</span>
-          </li>
+            <StyledWrapper css={introTextTopSpacer} />
 
-          <Intro
-            product={intro.textType}
-            linkHref={intro.link}
-            active={active === activeName}
-            className={styles['intro']}
-          />
+            <BlogIntro
+              intro={intro}
+              headerText={headerText}
+            />
 
-          <BlogArticleList
-            loading={this.state[activeName].loading}
-            data={this.state[activeName].data}
-            className={styles['submenu-list-wrapper']}
-          />
+            <StyledWrapper css={introTextBottomSpacer} />
+          </Col>
 
-          <li className={sharedStyles['mobile-scroll-buffer']}></li>
-        </ul>
+          <Col
+            fullwidth
+          >
+            <Layout
+              fullwidth
+              smallCols={[12]}
+              mediumCols={[4]}
+            >
+              { this.list }
+            </Layout>
+          </Col>
+        </Layout>
+        <Spacer size={36} />
+        <Spacer size={12} />
       </div>
     );
   }
 }
 
 MagazineDisplay.propTypes = {
+  isActive: PropTypes.bool,
   activeName: PropTypes.string,
-  active: PropTypes.string,
   tag: PropTypes.string,
   headerText: PropTypes.string,
   setMobileCollapsedMenu: PropTypes.func,
   intro: PropTypes.object,
+  mobileCollapsedMenu: PropTypes.string,
 };
 
 export default MagazineDisplay;

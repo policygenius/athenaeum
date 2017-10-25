@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  Text,
+  LinkWrapper,
+  Spacer,
+  StyledWrapper,
+} from 'athenaeum';
 
-import Text from 'atoms/Text';
-import LinkWrapper from 'atoms/LinkWrapper';
-
-import styles from './main_nav_article_image.module.scss';
+import { wrapper, image } from './styles';
 
 function ArticleImage(props) {
   const {
@@ -12,51 +15,35 @@ function ArticleImage(props) {
     imgProps,
     header,
     subHeader,
-    alt,
   } = props;
 
   return (
-    <div
-      className={styles['article-wrapper']}
+    <StyledWrapper
+      css={wrapper}
+      component={LinkWrapper}
+      href={link}
+      variant="no-text-decoration"
     >
-      <LinkWrapper
-        href={link}
-        className={styles['link']}
-        variant='no-text-decoration'
-      >
-        <figure
-          className={styles['figure']}
-        >
-          <img
-            alt={alt}
-            className={styles['image']}
-            {...imgProps}
-          />
+      <figure>
+        <StyledWrapper
+          css={image}
+          component="img"
+          {...imgProps}
+        />
 
-          <figcaption>
-            { header &&
-            <Text
-              type={7}
-              semibold
-              color='neutral-3'
-              className={styles['tag']}
-            >
-              { header }
-            </Text>
-          }
+        <Spacer size={18} />
 
-            <Text
-              tag='h3'
-              type={6}
-              color='neutral-2'
-              className={styles['sub-tag']}
-            >
-              { subHeader }
-            </Text>
-          </figcaption>
-        </figure>
-      </LinkWrapper>
-    </div>
+        <figcaption>
+          <Text
+            type={8}
+            font="a"
+            color="neutral-1"
+          >
+            { header }
+          </Text>
+        </figcaption>
+      </figure>
+    </StyledWrapper>
   );
 }
 
@@ -65,7 +52,6 @@ ArticleImage.propTypes = {
   imgProps: PropTypes.object,
   header: PropTypes.string,
   subHeader: PropTypes.string,
-  alt: PropTypes.string,
 };
 
 export default ArticleImage;
