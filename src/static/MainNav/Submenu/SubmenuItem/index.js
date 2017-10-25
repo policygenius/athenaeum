@@ -2,10 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {
-  Text,
-  LinkWrapper,
-} from 'athenaeum';
+// import {
+  // Text,
+  // LinkWrapper,
+// } from 'athenaeum';
+
+import Text from 'atoms/Text';
+import LinkWrapper from 'atoms/LinkWrapper';
 
 import styles from './submenu_item.module.scss';
 import ProductDisplay from '../ProductDisplay';
@@ -77,6 +80,7 @@ class SubmenuItem extends React.Component {
     return (e) => {
       e.stopPropagation();
       setActiveSubTab(item.menu.activeName);
+
       return false;
     };
   };
@@ -87,8 +91,6 @@ class SubmenuItem extends React.Component {
       showMobileMenu,
       setMobileCollapsedMenu,
       displayType,
-      showMobileCollpased,
-      setActiveSubTab,
       activeSubTab
     } = this.props;
 
@@ -118,8 +120,8 @@ class SubmenuItem extends React.Component {
         >
           <Text
             type={10}
-            font="b"
-            color="neutral-1"
+            font='b'
+            color='neutral-1'
             className={classnames(...headerClasses)}
           >
             {item.menu.header}

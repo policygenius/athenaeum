@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Icon,
-  Text,
-  Button,
-  LinkWrapper,
-  Layout,
-  Col,
-  Spacer,
-  StyledWrapper,
-} from 'athenaeum';
 
-import styles from '../intro.module.scss';
+import Icon from 'atoms/Icon';
+import Text from 'atoms/Text';
+import LinkWrapper from 'atoms/LinkWrapper';
+import StyledWrapper from 'atoms/StyledWrapper';
+import Spacer from 'atoms/Spacer';
+import Layout from 'atoms/Layout';
 
 class BlogIntro extends Component {
   get introText() {
     const { intro, headerText } = this.props;
+
     if (intro.textType === 'latest') {
       return (
         <StyledWrapper
@@ -23,7 +19,7 @@ class BlogIntro extends Component {
         >
           <Text
             type={4}
-            font="a"
+            font='a'
           >
             {headerText}
           </Text>
@@ -35,7 +31,7 @@ class BlogIntro extends Component {
       <Icon
         icon={`${intro.textType}genius`}
         width={intro.width}
-        height="38px"
+        height='38px'
       />
     );
   }
@@ -57,8 +53,8 @@ class BlogIntro extends Component {
 
         <Spacer size={18} />
 
-        <LinkWrapper type="secondary" href={intro.link}>
-          <Text type={10} font="b">
+        <LinkWrapper type='secondary' href={intro.link}>
+          <Text type={10} font='b'>
             View All
           </Text>
         </LinkWrapper>

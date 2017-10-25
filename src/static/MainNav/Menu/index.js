@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {
-  List,
-  Text,
-  LinkWrapper,
-} from 'athenaeum';
 
 import styles from './menu.module.scss';
 import PrimaryMenu from './PrimaryMenu';

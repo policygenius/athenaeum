@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {
-  List,
-  Text,
-  StyledWrapper
-} from 'athenaeum';
+// import {
+  // List,
+  // Text,
+  // StyledWrapper
+// } from 'athenaeum';
+
+import Text from 'atoms/Text';
+import StyledWrapper from 'atoms/StyledWrapper';
+import List from 'atoms/List';
 
 import styles from './submenu.module.scss';
-import SubmenuItem from './SubmenuItem';
+import SubMenuItem from './SubMenuItem';
 import SecondaryMenu from '../Menu/SecondaryMenu';
 
-class Submenu extends Component {
+class SubMenu extends Component {
   constructor() {
     super();
 
@@ -33,7 +37,7 @@ class Submenu extends Component {
 
     const classes = [
       styles['submenu-wrapper'],
-      (isActive) && styles['submenu-wrapper-active'],
+      isActive && styles['submenu-wrapper-active'],
     ];
 
     const submenuClasses = [
@@ -49,13 +53,13 @@ class Submenu extends Component {
         >
           {
             submenuItems.map(item =>
-              (<SubmenuItem
+              <SubMenuItem
                 key={item.menu.activeName}
                 item={item}
                 activeSubTab={this.state.activeSubTab}
                 setActiveSubTab={this.setActiveSubTab}
                 {...otherProps}
-              />)
+              />
             )
           }
         </List>
@@ -70,10 +74,10 @@ class Submenu extends Component {
   }
 }
 
-Submenu.propTypes = {
+SubMenu.propTypes = {
   submenuItems: PropTypes.array,
   isActive: PropTypes.bool,
   activeName: PropTypes.string,
 };
 
-export default Submenu;
+export default SubMenu;

@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  StyledWrapper,
-  Icon,
-} from 'athenaeum';
+// import {
+  // StyledWrapper,
+  // Icon,
+// } from 'athenaeum';
+
+import StyledWrapper from 'atoms/StyledWrapper';
+import Icon from 'atoms/Icon';
 
 const getDimensions = ({ icon }) => {
   let height = '1.125rem';
@@ -21,7 +24,7 @@ const getDimensions = ({ icon }) => {
   };
 };
 
-const IconWrapper = props => (
+const IconWrapper = props =>
   <StyledWrapper
     {...props}
   >
@@ -30,7 +33,8 @@ const IconWrapper = props => (
       {...getDimensions(props)}
     />
   </StyledWrapper>
-);
+
+;
 
 IconWrapper.propTypes = {
   icon: PropTypes.string,

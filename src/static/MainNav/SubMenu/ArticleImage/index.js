@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Text,
-  LinkWrapper,
-  Spacer,
-  StyledWrapper,
-} from 'athenaeum';
+// import {
+  // Text,
+  // LinkWrapper,
+  // Spacer,
+  // StyledWrapper,
+// } from 'athenaeum';
+
+import Text from 'atoms/Text';
+import LinkWrapper from 'atoms/LinkWrapper';
+import Spacer from 'atoms/Spacer';
+import StyledWrapper from 'atoms/StyledWrapper';
 
 import { wrapper, image } from './styles';
 
@@ -22,12 +27,12 @@ function ArticleImage(props) {
       css={wrapper}
       component={LinkWrapper}
       href={link}
-      variant="no-text-decoration"
+      variant='no-text-decoration'
     >
       <figure>
         <StyledWrapper
           css={image}
-          component="img"
+          component='img'
           {...imgProps}
         />
 
@@ -36,8 +41,8 @@ function ArticleImage(props) {
         <figcaption>
           <Text
             type={8}
-            font="a"
-            color="neutral-1"
+            font='a'
+            color='neutral-1'
           >
             { header }
           </Text>

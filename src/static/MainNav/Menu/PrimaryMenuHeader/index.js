@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Text,
-  StyledWrapper,
-} from 'athenaeum';
 
-import styles from '../menu.module.scss';
+import Text from 'atoms/Text';
+import StyledWrapper from 'atoms/StyledWrapper';
+
 import { primaryHeader } from './styles';
-import Submenu from '../../Submenu';
+import SubMenu from '../../SubMenu';
 
 function PrimaryMenuHeader(props) {
   const {
@@ -27,7 +25,7 @@ function PrimaryMenuHeader(props) {
       <StyledWrapper
         css={primaryHeader(props)}
         component={Text}
-        font="a"
+        font='a'
         type={10}
       >
         { header }
@@ -35,7 +33,7 @@ function PrimaryMenuHeader(props) {
 
       {
         submenu &&
-          <Submenu
+          <SubMenu
             submenuItems={submenu}
             isActive={activeName === activePrimaryTab}
             activeName={activeName}
