@@ -106,7 +106,7 @@ List.propTypes = {
   /**
    * Adds bottomSpacing to each child `li`. See `Spacer` for size details
    */
-  bottomSpacing: PropTypes.oneOf([ 6, 12, 18, 24, 36, 60, 84, 120, 162 ]),
+  bottomSpacing: PropTypes.oneOf([ 6, 12, 13, 16, 18, 24, 36, 60, 84, 120, 162 ]),
 
   /**
    * Removes 1rem left padding on `ul` or `ol`

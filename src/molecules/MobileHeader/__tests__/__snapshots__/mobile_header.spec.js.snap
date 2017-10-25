@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MobileHeader /> renders correctly 1`] = `
+<div
+  className="mobile-header"
+>
+  <div
+    className="main-text"
+  >
+    <a
+      className="link neutral-1 undefined secondary"
+      onClick={[Function]}
+    >
+      <p
+        className="text typography-10 p undefined type-b-10-bold type-b-10-medium type-b-10-regular"
+        onClick={undefined}
+      >
+        Save your progress
+      </p>
+    </a>
+  </div>
+  <div
+    className="quote"
+  >
+    <p
+      className="text typography-6 p undefined type-a-6-bold type-a-6-medium type-a-6-regular"
+      onClick={undefined}
+    >
+      <sup
+        className="text typography-10 sup undefined type-a-10-bold type-a-10-medium type-a-10-regular"
+        onClick={undefined}
+      >
+        $
+      </sup>
+      39.50 
+      <span
+        className="text typography-10 span undefined type-a-10-bold type-a-10-medium type-a-10-regular"
+        onClick={undefined}
+      >
+        /mo
+      </span>
+    </p>
+  </div>
+  <div
+    className="dropdown"
+    onClick={[Function]}
+  >
+    <span
+      className="icon-wrapper"
+      onClick={undefined}
+      style={
+        Object {
+          "height": "8px",
+          "width": "14px",
+        }
+      }
+    />
+  </div>
+</div>
+`;

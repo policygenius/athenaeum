@@ -11,7 +11,7 @@ $label-font-color:            color('neutral-4');
 $lightweight:                 300;
 $regularweight:               normal;
 $semiboldweight:              600;
-$mediumweight:                normal;
+$mediumweight:                bold;
 $boldweight:                  900;
 
 @mixin base-font-family() {
@@ -115,28 +115,28 @@ $boldweight:                  900;
 @mixin typography-a-1-bold() {
   @include base-font-family;
   font-size: rem-calc(68px);
-  line-height: ru(3.5);
+  line-height: rem-calc(85px);
   letter-spacing: 0.9px;
 }
 
 @mixin typography-a-2-bold() {
   @include base-font-family;
   font-size: rem-calc(54px);
-  line-height: ru(2.75);
+  line-height: rem-calc(67px);
   letter-spacing: 0.9px;
 }
 
 @mixin typography-a-3-bold() {
   @include base-font-family;
   font-size: rem-calc(42px);
-  line-height: ru(2.25);
+  line-height: rem-calc(52px);
   letter-spacing: 0.9px;
 }
 
 @mixin typography-a-4-bold() {
   @include base-font-family;
   font-size: rem-calc(32px);
-  line-height: ru(1.75);
+  line-height: rem-calc(40px);
   letter-spacing: 0.9px;
 }
 
@@ -144,115 +144,113 @@ $boldweight:                  900;
 @mixin typography-a-5-bold() {
   @include base-font-family;
   font-size: rem-calc(26px);
-  line-height: ru(1.5);
+  line-height: rem-calc(34px);
   letter-spacing: 0.7px;
 }
 
 @mixin typography-a-6-bold() {
   @include base-font-family;
   font-size: rem-calc(22px);
-  line-height: ru(1.25);
+  line-height: rem-calc(29px);
   letter-spacing: 0.7px;
 }
 
 @mixin typography-a-7-bold() {
   @include base-font-family;
   font-size: rem-calc(19px);
-  line-height: ru(1);
-  letter-spacing: 0.9px;
+  line-height: rem-calc(25px);
+  letter-spacing: 0.7px;
 }
 
 @mixin typography-a-8-bold() {
   @include base-font-family;
   font-size: rem-calc(16px);
-  line-height: ru(.75);
+  line-height: rem-calc(21px);
   letter-spacing: 0.7px;
 }
 
 @mixin typography-a-9-bold() {
   @include base-font-family;
   font-size: rem-calc(15px);
-  line-height: ru(.75);
-  letter-spacing: 0.9px;
+  line-height: rem-calc(19px);
+  letter-spacing: 0.7px;
 }
 
 @mixin typography-a-10-bold() {
   @include base-font-family;
   font-size: rem-calc(13px);
-  line-height: ru(.75);
+  line-height: rem-calc(17px);
   letter-spacing: 0.7px;
 }
 
 @mixin typography-a-11-bold() {
   @include base-font-family;
   font-size: rem-calc(12px);
-  line-height: ru(.5);
+  line-height: rem-calc(16px);
   letter-spacing: 0.7px;
 }
 
 @mixin typography-b-5($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(26px);
-  font-weight: tyopgraphy-b-weight($bold);
-  line-height: ru(1.75);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(42px);
   letter-spacing: 0.1px;
 }
 
 @mixin typography-b-6($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(22px);
-  font-weight: tyopgraphy-b-weight($bold);
-  line-height: ru(1.5);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(35px);
   letter-spacing: 0.1px;
 }
 
 @mixin typography-b-7($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(19px);
-  font-weight: tyopgraphy-b-weight($bold);
-  line-height: ru(1.25);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(30px);
   letter-spacing: 0.1px;
 }
 
 @mixin typography-b-8($bold: false) {
   @include font-family-medium;
   font-size: rem-calc(16px);
-  font-weight: tyopgraphy-b-weight($bold);
-  line-height: ru(1);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(26px);
   letter-spacing: 0.1px;
 }
 
 @mixin typography-b-10($bold: false) {
   @include font-family-medium;
-  font-size: rem-calc(16px);
   font-size: rem-calc(13px);
-  font-weight: tyopgraphy-b-weight($bold);
-  line-height: ru(.75);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(21px);
   letter-spacing: 0.1px;
 }
 
 @mixin typography-b-12($bold: false) {
   @include font-family-medium;
-  font-size: rem-calc(16px);
   font-size: rem-calc(10px);
-  font-weight: tyopgraphy-b-weight($bold);
-  line-height: ru(.75);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(16px);
   letter-spacing: 0.1px;
 }
 
 @mixin typography-c-7-regular() {
   @include font-family-c;
   font-size: rem-calc(19px);
-  line-height: ru(1.5);
+  line-height: rem-calc(35px);
   font-weight: $regularweight;
 }
 
-@function tyopgraphy-b-weight($bold: false) {
+@function typography-b-weight($bold: false) {
   @if $bold {
-    @return #{$boldweight};
+    @return #{$mediumweight};
   }
 
-  @return #{$mediumweight};
+  @return #{$regularweight};
 }
 
 
