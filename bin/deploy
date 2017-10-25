@@ -1,15 +1,14 @@
 #!/bin/bash
 set -eo pipefail
 
+git config --global user.name "Randy the PolicyGenius Robot"
+git config --global user.email "robot@policygenius.com"
+
+NODE_ENV=development yarn
+NODE_ENV=production yarn run styleguide:build
+
 if [ "$BUILDKITE_BRANCH" == "rebrand" ]; then
-  git config --global user.name "Randy the PolicyGenius Robot"
-  git config --global user.email "robot@policygenius.com"
-
-  NODE_ENV=development yarn
-  NODE_ENV=production yarn run styleguide:build
-  NODE_ENV=production yarn run build:publish
-
-  echo '+++ Publishing the package'
+  echo '+++ Publishing rebrand package'
 
   BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
   VERSION=$(npm version $BUMP_SIZE)
@@ -22,31 +21,29 @@ $NPM_EMAIL
 
   bin/build_assets
   npm publish --tag rebrand
-
-  cp package.json ./lib/
-
-  echo '+++ Building tarball'
-  tar -czvf lib.tgz lib
-
-  mv lib.tgz ./lib
-
-  echo '+++ Deploying lib/ to S3'
-  aws s3 sync \
-    ./lib s3://rcl-pg/rebrand/ \
-    --acl=public-read \
-    --cache-control no-cache \
-    --exclude '.DS_Store'
-
-  echo "Deployed lib to http://rcl.policygenius.com/rebrand/lib/"
-
-  echo '+++ Deploying rebrand styleguide latest to S3'
-  aws s3 sync \
-    ./styleguide s3://rcl-pg/rebrand/ \
-    --acl=public-read \
-    --cache-control max-age=0 \
-    --exclude '.DS_Store'
-
-  echo "Deployed rebrand styleguide latest to http://rcl.policygenius.com/rebrand/"
 else
-  echo "Not publishing lib and styleguide to S3 for branch $BUILDKITE_BRANCH"
+  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
+
+  VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
 fi
+
+echo '+++ Deploying lib/ to S3'
+aws s3 sync \
+  ./lib s3://rcl-pg/rebrand/ \
+  --acl=public-read \
+  --cache-control no-cache \
+  --exclude '.DS_Store'
+
+echo "Deployed lib to http://rcl.policygenius.com/rebrand/lib/"
+
+echo '+++ Deploying rebrand styleguide latest to S3'
+aws s3 sync \
+  ./styleguide s3://rcl-pg/rebrand/ \
+  --acl=public-read \
+  --cache-control max-age=0 \
+  --exclude '.DS_Store'
+
+echo "Deployed rebrand styleguide latest to http://rcl.policygenius.com/rebrand/"
+
+buildkite-agent artifact upload package.json
+buildkite-agent meta-data set 'new-version' $VERSION
