@@ -1,14 +1,26 @@
 import React from 'react';
+import {
+  Icon,
+  Col,
+  StyledWrapper,
+  LinkWrapper,
+} from 'athenaeum';
 
-import styles from './main_nav_logo.module.scss';
+import { logo } from './styles';
 
-const Logo = () =>
-  <div className={styles['logo']}>
-    <a href='/'>
-      <img alt='PolicyGenius' src='https://res-3.cloudinary.com/policygenius/image/upload/v1/general/pg-logo-tab.svg' />
-    </a>
-  </div>
-
-;
+const Logo = () => (
+  <StyledWrapper
+    css={logo}
+    component={LinkWrapper}
+    href="/"
+  >
+    <Icon
+      icon="pgLogoBlack"
+      height="22px"
+      width="122px"
+      className="main-nav-icon"
+    />
+  </StyledWrapper>
+);
 
 export default Logo;

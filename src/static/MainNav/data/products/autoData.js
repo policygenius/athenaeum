@@ -26,8 +26,8 @@ export default {
     activeName: 'auto-insurance',
   },
   intro: {
-    cta: 'Get A Free Quote',
-    imgSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/auto-small',
+    cta: 'Start Shopping Now',
+    icon: 'autoColor3X',
     linkHref: '/auto-insurance/',
   },
   list: {

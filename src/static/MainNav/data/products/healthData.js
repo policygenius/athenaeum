@@ -37,8 +37,8 @@ export default {
     activeName: 'health-insurance',
   },
   intro: {
-    cta: 'Get A Free Quote',
-    imgSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/health',
+    cta: 'Start Shopping Now',
+    icon: 'healthColor3X',
     linkHref: '/health-insurance/',
   },
   list: {

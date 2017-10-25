@@ -26,9 +26,8 @@ export default {
     activeName: 'disability-insurance',
   },
   intro: {
-    cta: 'Get A Free Quote',
-
-    imgSrc: 'https://res-1.cloudinary.com/policygenius/image/upload/v1/general/disability',
+    cta: 'Start Shopping Now',
+    icon: 'disabilityColor3X',
     linkHref: '/long-term-disability-insurance/',
   },
   list: {

@@ -1,38 +1,38 @@
 const items = [
   {
-    header: 'Our Story',
-    link: '/about',
-    activeName: 'about',
+    menu: {
+      header: 'Our Story',
+      link: '/about',
+      activeName: 'about',
+    }
   },
   {
-    header: 'Values',
-    link: '/about/values',
-    activeName: 'values',
+    menu: {
+      header: 'Team',
+      link: '/about/team',
+      activeName: 'team',
+    }
   },
   {
-    header: 'Trust & Security',
-    link: '/about/trust',
-    activeName: 'trust',
+    menu: {
+      header: 'Careers',
+      link: '/careers',
+      activeName: 'careers',
+    }
   },
   {
-    header: 'Team',
-    link: '/about/team',
-    activeName: 'team',
+    menu: {
+      header: 'Press',
+      link: '/about/press',
+      activeName: 'press',
+    }
   },
   {
-    header: 'Careers',
-    link: '/careers',
-    activeName: 'careers',
-  },
-  {
-    header: 'Press',
-    link: '/about/press',
-    activeName: 'press',
-  },
-  {
-    header: 'FAQ',
-    link: '/about/faq',
-    activeName: 'faq',
+    menu: {
+      header: 'Legal',
+      link: '/about/faq',
+      activeName: 'legal',
+    }
   },
 ];
 

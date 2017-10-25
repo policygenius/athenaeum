@@ -29,8 +29,8 @@ export default {
     activeName: 'renters-insurance',
   },
   intro: {
-    cta: 'Get A Free Quote',
-    imgSrc: 'https://res-5.cloudinary.com/policygenius/image/upload/v1/general/renters',
+    cta: 'Start Shopping Now',
+    icon: 'rentersColor3X',
     linkHref: '/renters-insurance/',
   },
   list: {

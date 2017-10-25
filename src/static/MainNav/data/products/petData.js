@@ -26,9 +26,8 @@ export default {
     activeName: 'pet-insurance',
   },
   intro: {
-    cta: 'Get A Free Quote',
-
-    imgSrc: 'https://res-4.cloudinary.com/policygenius/image/upload/v1/general/pet',
+    cta: 'Start Shopping Now',
+    icon: 'petColor3X',
     linkHref: '/pet-insurance/',
   },
   list: {
