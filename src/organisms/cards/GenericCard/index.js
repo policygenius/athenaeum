@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
+import LinkWrapper from 'atoms/LinkWrapper';
 import styles from './generic_card.module.scss';
 
 function renderFooter(text, onClick) {
@@ -11,9 +12,12 @@ function renderFooter(text, onClick) {
   return (
     <footer
       className={classnames(styles['footer'], styles['col'] )}
-      onClick={onClick}
     >
-      <a className={styles['link']}>{ text }</a>
+      <LinkWrapper onClick={onClick} type='secondary'>
+        <Text size={10} font='b'>
+          { text }
+        </Text>
+      </LinkWrapper>
     </footer>
   );
 }
@@ -22,7 +26,8 @@ function GenericCard( props ) {
   const {
     className,
     children,
-    onClose,
+    icon,
+    onIconClick,
     footerText,
     onFooterLinkClick,
     variant,
@@ -34,9 +39,19 @@ function GenericCard( props ) {
     className,
   ];
 
+  const iconProps = {
+    icon,
+    className: styles['icon'],
+  };
+
+  if (onIconClick) {
+    iconProps.onClick = onIconClick;
+    iconProps.className = classnames(styles['icon'], styles['icon-click']);
+  }
+
   return (
     <div className={classnames(...classes)}>
-      { onClose && <Icon icon='xIcon' className={styles['icon-close']} onClick={onClose} />}
+      { icon && <Icon {...iconProps} /> }
       <div className={styles['col']}>
         { children }
       </div>
@@ -52,9 +67,14 @@ GenericCard.propTypes = {
   className: PropTypes.string,
 
   /**
-   * callback passed to xIcon to close card
+   * Adds icon to upper right corner. See [Icon](#icon) for available values
    */
-  onClose: PropTypes.func,
+  icon: PropTypes.string,
+
+  /**
+   * callback passed to the icon
+   */
+  onIconClick: PropTypes.func,
 
   /**
    * text displayed on footer

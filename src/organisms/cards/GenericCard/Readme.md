@@ -2,12 +2,13 @@ Generic Card Example:
 
 ```jsx
     <GenericCard
-      onClose={() => alert('I feel so closed rn')}
+      icon='xIcon'
+      onIconClick={() => alert('I feel so closed rn')}
       footerText='Edit'
       onFooterLinkClick={() => alert("Ughhh~! You've clicked me")}
     >
-      <Text tag={'h4'} type={4}>Janis Ian</Text>
-      <Text tag={'h5'} type={6} color='neutral-5'>Added to policy.</Text>
+      <Text size={5} font='a' color='primary-3'>Janis Ian</Text>
+      <Text size={8} font='b' color='neutral-3'>Added to policy.</Text>
     </GenericCard>
 ```
 
