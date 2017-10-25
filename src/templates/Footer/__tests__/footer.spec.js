@@ -8,15 +8,7 @@ import Footer from 'templates/Footer';
 describe('<Footer />', () => {
 
   it('renders', () => {
-    const wrapper = shallow(
-      <Footer
-        phoneNumber='1-800-888-8888'
-        emailAddress='email@email.com'
-        links={[]}
-        hours={[]}
-        onClickChat={jest.fn()}
-      />
-    );
+    const wrapper = shallow(<Footer />);
 
     expect(wrapper.length).to.equal(1);
   });
