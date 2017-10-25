@@ -35,8 +35,8 @@ steps:
       hint: "MAJOR: incompatible API changes // MINOR: add backwards-compatible functionality // PATCH: backwards-compatible bug fixes"
       required: true
       options:
-        - label: 'Major'
-          value: 'major'
+        # - label: 'Major'
+        #   value: 'major'
         - label: 'Minor'
           value: 'minor'
         - label: 'Patch'
