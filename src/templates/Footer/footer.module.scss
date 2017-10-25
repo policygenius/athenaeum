@@ -1,29 +1,68 @@
 .footer {
-  background-color: color('primary-2');
+  color: color('neutral-3');
 
   &-layout {
-    padding: 0 ru(1) ru(1) ru(1);
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: $page-max-width;
+  }
+
+  &-trust {
+    flex: 1 0 auto;
+  }
+
+  &-help {
+    max-width: 330px;
   }
 }
 
-.actions {
-  display: none;
-}
+.help {
+  &-layout {
+    margin-bottom: ru(.5);
+    display: flex;
+    justify-content: space-between;
+  }
 
-.icon-text-wrapper {
-  display: none;
-}
+  &-phone {
+    @include typography-6(false);
+    @include typography-semibold;
 
-.link {
-  width: 100%;
-}
+    flex-grow: 1;
+    flex-basis: 0;
+    color: inherit;
+  }
 
-.hours {
-  text-align: center;
+  &-button {
+    $button-color: color('neutral-3');
+    $button-padding: ru(.25);
+
+    flex-grow: 1;
+    flex-basis: 0;
+
+    padding-top: $button-padding;
+    padding-bottom: $button-padding;
+    background-color: transparent;
+    border-color: $button-color;
+    color: $button-color;
+
+    font-weight: bold;
+
+    &:hover {
+      background-color: $button-color;
+      border-color: $button-color;
+    }
+  }
+
+  &-text {
+    @include typography-7(false);
+    padding: ru(.25) 0;
+  }
 }
 
 .trust {
+
   &-logos {
+    margin-bottom: ru(1);
     display: flex;
   }
 
@@ -32,23 +71,21 @@
   }
 
   &-links {
+    @include typography-7(false);
+
     padding: 0;
     display: flex;
     justify-content: flex-start;
     list-style: none;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
   }
 
   &-link {
-    @include typography-b-10;
     margin-right: ru(.5);
-    margin-top: ru(.5);
   }
 }
 
 .logo {
+
   &-bbb {
     width: 95px;
     height: 32px;
@@ -58,79 +95,32 @@
     position: relative;
     top: -2px;
     width: 77px;
-    height: 32px;
+    height: 33px;
+  }
+
+  &-digicert {
+    width: 100px;
+    height: 35px;
   }
 }
 
-.mobile {
-  &-questions {
-    display: block;
-    text-align: center;
-  }
+@media #{$small-only} {
 
-  &-actions {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media #{$mobile-only} {
   .footer {
     &-layout { justify-content: center; }
+    &-help { max-width: 24rem; }
+  }
+
+  .help {
+    &-layout { justify-content: center; }
+    &-text {
+      text-align: center;
+      margin-bottom: ru(1);
+    }
   }
 
   .trust {
     &-logos,
     &-links { justify-content: center; }
-  }
-}
-
-@media #{$tablet} {
-  .footer-layout {
-    padding: ru(1) ru(2);
-  }
-
-  .actions {
-    display: block;
-  }
-
-  .icon-text-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    .icon {
-      margin-right: ru(.5);
-    }
-  }
-
-  .hours {
-    text-align: left;
-  }
-
-  .trust {
-    padding-left: ru(.5);
-
-    &-links {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  }
-
-  .mobile {
-    &-questions {
-      display: none;
-    }
-
-    &-actions {
-      display: none;
-    }
-  }
-}
-
-@media #{$desktop} {
-  .footer-layout {
-    padding-left: 64px;
-    padding-right: 64px;
   }
 }
