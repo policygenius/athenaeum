@@ -11,23 +11,14 @@ describe('Navigator', () => {
 
     beforeEach(() => {
       props = {
-        stepIndicatorProps: {
-          steps: [],
-          navigateToPath: '/health/basic_info',
+        data: [],
+        leftRailText: 'Left Rail Text',
+        contact: {
+          chatText: 'hi',
+          phoneNumber: '867-5309',
+          chatClick: () => null
         },
-        mobileHeader: <div><p>Hello World</p></div>,
-        headerLinks: [
-          {
-            icon: 'chat',
-            text: 'Chat',
-            link: jest.fn(),
-          },
-          {
-            icon: 'phone',
-            text: 'Call',
-            link: 'tel:1-855-695-2255',
-          },
-        ]
+        userAlert: {}
       };
     });
 
@@ -49,14 +40,11 @@ describe('Navigator', () => {
       expect(wrapper.contains(<div className='unique' />)).to.be.true;
     });
 
-    it('should render header links', () => {
+    it('should render railText', () => {
       const wrapper = shallow(<Navigator {...props} />);
 
-      const headerLinks = wrapper.find('.header-icon-lockup');
-
-      expect(headerLinks).to.have.length(2);
-      expect(headerLinks.find('.header-icon').findWhere(n => n.props().icon === 'chat')).to.have.length(1);
-      expect(headerLinks.find('.header-icon').findWhere(n => n.props().icon === 'phone')).to.have.length(1);
+      expect(wrapper.contains(props.leftRailText)).to.be.true;
     });
   });
+
 });
