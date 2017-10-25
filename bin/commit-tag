@@ -12,6 +12,6 @@ buildkite-agent artifact download "package.json" .
 VERSION=$(buildkite-agent meta-data get 'new-version')
 
 git add package.json
-git commit -m "Bump to $VERSION [ci skip]" 
-git tag -a "v$VERSION" -m "Publish version v$VERSION"
+git commit -m "Bump to $VERSION-rebrand [ci skip]" 
+git tag -a "v$VERSION-rebrand" -m "Publish version v$VERSION-rebrand"
 git push --follow-tags origin $BUILDKITE_BRANCH
