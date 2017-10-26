@@ -9,7 +9,7 @@ import Menu from './Menu';
 import Search from './Search';
 import SimpleNav from './SimpleNav';
 
-class MainNav extends Component {
+class MainNavNew extends Component {
   constructor() {
     super();
 
@@ -114,8 +114,8 @@ class MainNav extends Component {
   }
 }
 
-MainNav.propTypes = {
+MainNavNew.propTypes = {
   simpleNav: PropTypes.bool,
 };
 
-export default MainNav;
+export default MainNavNew;

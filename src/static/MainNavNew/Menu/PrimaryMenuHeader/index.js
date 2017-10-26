@@ -6,7 +6,7 @@ import Text from 'atoms/Text';
 import StyledWrapper from 'atoms/StyledWrapper';
 
 import { primaryHeader } from './styles';
-import SubMenu from '../../SubMenu';
+import Submenu from '../../Submenu';
 
 function PrimaryMenuHeader(props) {
   const {
@@ -33,7 +33,7 @@ function PrimaryMenuHeader(props) {
 
       {
         submenu &&
-          <SubMenu
+          <Submenu
             submenuItems={submenu}
             isActive={activeName === activePrimaryTab}
             activeName={activeName}
