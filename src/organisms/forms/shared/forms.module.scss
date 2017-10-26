@@ -1,14 +1,29 @@
-$icon-size:        ru(1.5);
+$icon-size:        ru(2);
 
 .icon-close {
   position: absolute;
   z-index: 1;
-  top: -1rem;
-  right: -2rem;
+  top: -1.375rem;
+  right: -.75rem;
   background-size: 100%;
   cursor: pointer;
   width: $icon-size;
   height: $icon-size;
+
+  circle, line, path {
+    stroke: color('primary-1');
+    transition: stroke 150ms ease-out;
+  }
+
+  &:hover {
+    circle, line, path {
+    stroke: color('primary-3');
+    }
+  }
+}
+
+.form svg g {
+  fill: color('primary-3');
 }
 
 .form-wrapper {
@@ -26,21 +41,30 @@ $icon-size:        ru(1.5);
     position: absolute;
     height: 4px;
     width: 100%;
+    border-top: 4px solid color('secondary-2');
   }
 
+
   &:before {
-    border-top: 4px solid color('secondary-2');
     top: 0;
   }
 
   &:after {
-    border-bottom: 4px solid color('secondary-2');
     bottom: 0;
   }
 }
 
+.hr {
+  background-color: color('secondary-2');
+  height: 6px;
+  margin: 0 10px;
+  padding: 0;
+  border: none;
+}
+
 .inner-form {
   padding: ru(1.5) ru(.75);
+  background-color: color('primary-2');
 }
 
 .form-item {

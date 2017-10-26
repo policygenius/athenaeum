@@ -4,9 +4,13 @@ $border-style: 1px solid color('neutral-5');
 
 .radio-card {
   display: block;
-  opacity: .6;
   width: 100%;
   height: 100%;
+  color: color('neutral-4');
+
+  svg path {
+    fill: color('neutral-4');
+  }
 }
 
 .card {
@@ -19,18 +23,15 @@ $border-style: 1px solid color('neutral-5');
   height: 100%;
   cursor: pointer;
   text-align: center;
+  padding-bottom: ru(1);
 }
 
 .checked {
-  opacity: 1;
+  color: color('primary-3');
 
-  span:after {
-    opacity: 1;
+  svg g {
+    fill: color('primary-3');
   }
-}
-
-.not-selected {
-  opacity: .4;
 }
 
 .content {

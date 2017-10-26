@@ -46,13 +46,13 @@ function Modal(props) {
       overlayClassName={styles['overlay']}
     >
       <div className={styles['dialog']}>
-        <div className={styles['header']}>
+        <div className={styles['body']}>
           <Layout
             smallCols={[ 11, 1 ]}
           >
             <Text
-              type={2}
-              light
+              type={4}
+              font='a'
             >
               {header}
             </Text>
@@ -70,9 +70,7 @@ function Modal(props) {
               }
             </Col>
           </Layout>
-        </div>
 
-        <div className={styles['body']}>
           {React.Children.map(children, wrapChild)}
         </div>
       </div>
