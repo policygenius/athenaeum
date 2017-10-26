@@ -9,8 +9,8 @@ $main-section-padding: ru(1.5);
   width: 100%;
   display: flex;
 
-  background-color: color('neutral-7');
-  color: color('neutral-2');
+  background-color: color('neutral-5');
+  color: color('primary-3');
 }
 
 .layout {
@@ -34,16 +34,7 @@ $main-section-padding: ru(1.5);
 }
 
 .logo-panel {
-  z-index: 1;
-  background-color: color('brand-2');
-  background-image: linear-gradient(
-  to top,
-  color('brand-1') 0,
-  color('brand-2') 100%
-  );
-  flex-basis: auto;
-
-  color: color('neutral-8');
+  background-color: color('primary-2');
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,7 +43,7 @@ $main-section-padding: ru(1.5);
 }
 
 .logo-panel-text {
-  color: color('neutral-8');
+  color: color('primary-3');
 }
 
 .logo {
@@ -206,12 +197,6 @@ $main-section-padding: ru(1.5);
   }
 
   .logo-panel {
-    background-image: linear-gradient(
-    to bottom,
-    color('brand-1') 0,
-    color('brand-2') 100%
-    );
-
     padding: $main-section-padding;
 
     .mobile-header,

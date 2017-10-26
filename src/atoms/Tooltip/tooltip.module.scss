@@ -17,7 +17,6 @@ $hover-message-shift: calc(50% - 3.06rem);
 .hover-message {
   @include typography-7;
   background: color('neutral-8');
-  border-radius: ru(.25);
   border: 1px solid color('neutral-5');
   color: color('neutral-2');
   font-weight: 400;

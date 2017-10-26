@@ -16,6 +16,7 @@ function Button( props ) {
     text,
     unflex,
     outline,
+    href,
     ...rest
   } = props;
 
@@ -26,6 +27,19 @@ function Button( props ) {
     className,
     unflex && styles['unflex'],
   ];
+
+  if (href) {
+    return (
+      <a
+        className={classnames(...classes)}
+        disabled={disabled}
+        href={href}
+      >
+        { icon && <Icon icon={icon} className={styles['icon']} /> }
+        { children || text }
+      </a>
+    );
+  }
 
   return (
     <button className={classnames(...classes)} type={type} disabled={disabled} {...rest}>
@@ -47,11 +61,17 @@ Button.propTypes = {
   type: PropTypes.string,
 
   /**
-   * Possible button variants are: `info`, `disabled`, `outline` (deprecated)
+   * Possible button variants are: `info`, `disabled`, `outline` (deprecated). 
+   * Toggle buttons are either `toggle` or `toggle-selected` 
    */
   variant: PropTypes.oneOf([
-    'info', 'disabled', 'outline'
+    'info', 'disabled', 'outline', 'toggle', 'toggle-selected'
   ]),
+
+  /**
+   * If Button is passed an `href`, outputs as an `a` tag
+   */
+  href: PropTypes.string,
 
   /**
    * Turns button into the outlined version

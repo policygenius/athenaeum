@@ -47,7 +47,7 @@
 }
 
 .select {
-  @include typography-b-8();
+  @include typography-b-8(false);
   color: color('primary-3');
 
   border: 0;
@@ -86,8 +86,7 @@
   color: color('brand-2');
 
   .label {
-    @include typography-6(false);
-    @include typography-semibold;
+    @include typography-b-8(true);
 
     padding: ru(.5) ru(1) 0;
     border: 0;
@@ -96,7 +95,6 @@
   }
 
   .select {
-    @include typography-5(false);
     color: color('brand-2');
 
     padding: ru(.25) ru(1);
@@ -110,8 +108,3 @@
   }
 }
 
-@media #{$medium-up} {
-  .card .select {
-    @include typography-3(false);
-  }
-}
