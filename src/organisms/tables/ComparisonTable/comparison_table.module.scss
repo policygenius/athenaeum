@@ -2,7 +2,6 @@ $border: 1px solid color('neutral-5');
 
 .comparison-table {
   border: $border;
-  border-radius: 6px;
   padding: 0;
 
   .row:last-child .col { border-bottom: 0; }

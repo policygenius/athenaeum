@@ -360,6 +360,12 @@ $boldweight:                  900;
   font-weight: $semiboldweight;
 }
 
+@mixin typography-label() {
+  @include typography-a-10-bold();
+  letter-spacing: rem-calc(1.8px);
+  text-transform: uppercase;
+}
+
 @mixin fineprint {
   font-size: rem-calc(11px);
   line-height: rem-calc(15px);

@@ -8,6 +8,8 @@ import Icon from 'atoms/Icon';
 import ContactCard from 'organisms/cards/ContactCard';
 import StepProgress from 'molecules/StepProgress';
 import Text from 'atoms/Text';
+import Spacer from 'atoms/Spacer';
+import Button from 'atoms/Button';
 import Hide from 'wrappers/Hide';
 import UserAlert from 'atoms/UserAlert';
 
@@ -17,6 +19,14 @@ function renderContactCard(contactProps, inverted) {
   const newProps = Object.assign({}, contactProps, { inverted });
 
   return <ContactCard {...newProps} />;
+}
+
+function renderButton(buttonProps) {
+  return (
+    <div className={styles['buttonWrapper']}>
+      <Button {...buttonProps} variant='info' outline />
+    </div>
+  );
 }
 
 const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
@@ -30,9 +40,9 @@ const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
     className={styles[className]}
   >
     <Text
-      type={6}
+      size={6}
       color={userAlert.textColor}
-      semibold
+      font='a'
     >
       {userAlert.text}
     </Text>
@@ -42,6 +52,7 @@ const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
 
 function Navigator(props) {
   const {
+    buttonProps,
     children,
     className,
     stepProgressData,
@@ -80,7 +91,7 @@ function Navigator(props) {
                   <Icon icon='pgLogo' className={styles['logo']} />
 
                   <Hide hideOn='small medium'>
-                    <Text className={classnames(styles['logo-panel-text'], styles['logo-left-rail'])} type={3} light>
+                    <Text className={styles['logo-panel-text']} type={6} font='b'>
                       { leftRailText }
                     </Text>
                   </Hide>
@@ -172,6 +183,8 @@ function Navigator(props) {
                 bottomBoundary='#sticky-bottom'
               >
                 <div className={styles['sidebar']}>{sidebar}</div>
+                <Spacer small />
+                { buttonProps && renderButton(buttonProps) }
               </Sticky>
             </Col>
 
@@ -196,6 +209,12 @@ Navigator.propTypes = {
    */
   leftRailText: PropTypes.string,
   stepProgressData: StepProgress.propTypes.steps,
+  buttonProps: PropTypes.shape({
+    text: PropTypes.string,
+    onClick: PropTypes.func,
+    href: PropTypes.string,
+    variant: PropTypes.string
+  }),
   contactProps: PropTypes.shape({
     top: PropTypes.object,
     bottom: PropTypes.object,
