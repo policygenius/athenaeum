@@ -105,7 +105,7 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {
-  text: <Icon icon='questionMark' className={styles['tooltip']} />
+  text: <Icon icon='questionMarkWhite' className={styles['tooltip']} />
 };
 
 export default Tooltip;
