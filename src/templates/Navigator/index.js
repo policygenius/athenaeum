@@ -183,6 +183,8 @@ function Navigator(props) {
                 bottomBoundary='#sticky-bottom'
               >
                 <div className={styles['sidebar']}>{sidebar}</div>
+                <Spacer small />
+                { buttonProps && renderButton(buttonProps) }
               </Sticky>
             </Col>
 

@@ -16,8 +16,9 @@ const renderChoices = (choices, input) => {
   const renderChoice = (choice, idx) => {
     const variantName = () => {
       if (input.value) {
-        return input.value == choice.value ? 'toggle-selected' : 'toggle-unselected';
+        return input.value == choice.value ? 'toggle-selected' : 'toggle-unselected';  // eslint-disable-line
       }
+
       return 'toggle';
     };
 
