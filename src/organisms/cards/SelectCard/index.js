@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import LinkWrapper from 'atoms/LinkWrapper';
 import SelectField from 'molecules/formfields/SelectField';
-import styles from './select_card.module.scss';
 
 function SelectCard( props ) {
   const {
@@ -12,34 +10,21 @@ function SelectCard( props ) {
     label,
     placeholder,
     selectOptions,
-    footerText,
-    linkUrl,
     onClick,
     input,
     defaultValue,
   } = props;
 
   return (
-    <div className={classnames(styles['select-card'], className)}>
-
+    <div className={className}
       <SelectField
-        variant='card'
         label={label}
         placeholder={placeholder}
         selectOptions={selectOptions}
         input={input}
         defaultValue={defaultValue}
+        onAdditionalInfoClick={onClick}
       />
-
-      <footer className={styles['footer']}>
-        <LinkWrapper
-          className={styles['link']}
-          href={linkUrl}
-          onClick={onClick}
-        >
-          { footerText }
-        </LinkWrapper>
-      </footer>
     </div>
   );
 }
@@ -51,7 +36,7 @@ SelectCard.propTypes = {
   className: PropTypes.string,
 
   /**
-   * text for footer link
+   * text for footer link// Deprecated. No more footer link.
    */
   footerText: PropTypes.string.isRequired,
 
@@ -64,7 +49,7 @@ SelectCard.propTypes = {
   ]),
 
   /**
-   * url for footer link
+   * url for footer link // Deprecated. No more footer link.
    */
   linkUrl: PropTypes.string,
 

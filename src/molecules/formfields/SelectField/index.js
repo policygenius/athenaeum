@@ -11,6 +11,19 @@ import ErrorMessage from 'atoms/ErrorMessage';
 import { renderSelectOptions, renderPlaceholder } from 'utils/fieldUtils';
 import styles from './select_field.module.scss';
 
+const renderAdditionalInfo = (func) => {
+  if (!func) return null;
+
+  return (
+    <Icon
+      icon='questionMark'
+      height='15px'
+      width='15px'
+      inline='right'
+      onClick={func}
+    />
+  );
+};
 
 const renderToolTip = (message) => {
   if (!message) return null;
@@ -40,6 +53,7 @@ function SelectField( props ) {
     input,
     label,
     meta,
+    onAdditionalInfoClick,
     placeholder,
     selectOptions,
     tooltip,
@@ -67,6 +81,7 @@ function SelectField( props ) {
         { label &&
           <label className={styles['label']} htmlFor={forProp}>
             { label }
+            { renderAdditionalInfo(onAdditionalInfoClick) }
             { renderToolTip(tooltip) }
             {
               subLabel &&
@@ -130,7 +145,11 @@ SelectField.propTypes = {
    * Removes base field style, including border, from SelectField. Best for use in a group of fields.
    */
   noBaseStyle: PropTypes.bool,
-
+  /**
+   * To add an (i) icon to the label, pass in a function
+   * (called when icon is clicked)
+   */
+  onAdditionalInfoClick: PropTypes.func,
   /**
    * placeholder text for select box
    */

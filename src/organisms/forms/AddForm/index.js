@@ -22,9 +22,9 @@ function AddForm( props ) {
 
   return (
     <div className={classnames( styles['form-wrapper'], className )}>
-      <div className={styles['form-border']}>
-        <div className={styles['inner-form']}>
-          {
+      <hr className={styles['hr']} />
+      <div className={styles['inner-form']}>
+        {
             closeIcon &&
             <Icon
               icon='xIcon'
@@ -33,15 +33,15 @@ function AddForm( props ) {
             />
           }
 
-          <form
-            className={styles['form']}
-            onSubmit={onSubmit}
-            name={formName}
-          >
-            { kids }
-          </form>
-        </div>
+        <form
+          className={styles['form']}
+          onSubmit={onSubmit}
+          name={formName}
+        >
+          { kids }
+        </form>
       </div>
+      <hr className={styles['hr']} />
     </div>
   );
 }

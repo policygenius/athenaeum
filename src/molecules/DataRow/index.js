@@ -25,6 +25,7 @@ function DataRow(props) {
   const {
     className,
     variant,
+    highlight,
     label,
     value,
     amount,
@@ -36,6 +37,7 @@ function DataRow(props) {
 
   const classes = [
     styles['data-row'],
+    highlight && styles['highlight'],
     variant && styles[variant],
     indent && styles['indent'],
     className,
@@ -68,6 +70,11 @@ DataRow.propTypes = {
     'large',
     'sub',
   ]),
+  /**
+   * When passed `highlight`, the datarow wraps its value
+   * with a highlight class & accordant styles
+   */
+  hightlight: PropTypes.bool,
   /**
    * label/name for data
    */

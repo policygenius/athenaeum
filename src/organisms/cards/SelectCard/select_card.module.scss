@@ -2,12 +2,9 @@
 
 .select-card {
   @extend %card;
-
-  border-bottom-width: rem-calc(3);
 }
 
 .footer {
-  @extend %footer;
 
   padding: ru(.5) ru(1);
 }
