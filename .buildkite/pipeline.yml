@@ -23,6 +23,8 @@ steps:
   - trigger: "athenaeum-main-nav"
     label: ':roller_coaster: Trigger MainNav Build'
     async: true
+    build:
+      branch: ${BUILDKITE_BRANCH}
 
   - wait
 

@@ -2,9 +2,9 @@
 const fs = require('fs');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const MainNav = require('./static/static.js');
+const MainNavNew = require('./static/static.js');
 
-const html = ReactDOMServer.renderToStaticMarkup(React.createElement(MainNav.default));
+const html = ReactDOMServer.renderToStaticMarkup(React.createElement(MainNavNew.default));
 
 fs.writeFile('./main_nav/build/static-index.html', html, (err) => {
   if (err) {
@@ -12,6 +12,6 @@ fs.writeFile('./main_nav/build/static-index.html', html, (err) => {
     return;
   }
 
-  console.log('Successfully wrote MainNav component to static-index.html');
+  console.log('Successfully wrote MainNavNew component to static-index.html');
 });
 
