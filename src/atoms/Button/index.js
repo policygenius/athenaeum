@@ -61,8 +61,8 @@ Button.propTypes = {
   type: PropTypes.string,
 
   /**
-   * Possible button variants are: `info`, `disabled`, `outline` (deprecated). 
-   * Toggle buttons are either `toggle` or `toggle-selected` 
+   * Possible button variants are: `info`, `disabled`, `outline` (deprecated).
+   * Toggle buttons are either `toggle` or `toggle-selected`
    */
   variant: PropTypes.oneOf([
     'info', 'disabled', 'outline', 'toggle', 'toggle-selected'
