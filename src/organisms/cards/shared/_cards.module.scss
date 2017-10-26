@@ -11,7 +11,7 @@
  */
 
 $border-width: 1px;
-$border: $border-width solid color('neutral-5');
+$border: $border-width solid color('neutral-4');
 $col-padding: ru(.25) ru(.75);
 
 %card {
@@ -42,6 +42,11 @@ $col-padding: ru(.25) ru(.75);
   width: 100%;
   background-color: color('neutral-5');
   border-top: $border;
+}
+
+%label {
+  @include typography-label();
+  color: color('neutral-3');
 }
 
 %link {

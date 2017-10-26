@@ -1,6 +1,8 @@
-$info-color: color('neutral-1');
-$action-color: color('accent-2');
-$brand-white: color('neutral-8');
+$info-color: color('primary-3');
+$action-color: color('primary-1');
+$selected-color: color('secondary-2');
+$unselected-color: color('neutral-2');
+$brand-white: color('primary-2');
 
 .icon {
   position: relative;
@@ -11,7 +13,7 @@ $brand-white: color('neutral-8');
 }
 
 .button {
-  @include typographyA(8);
+  @include typography-label();
 
   display: block;
   cursor: pointer;
@@ -28,8 +30,6 @@ $brand-white: color('neutral-8');
   color 150ms ease-out,
   box-shadow 150ms ease-out;
   width: 100%;
-  font-size: ru(.5);
-  text-transform: uppercase;
 
   .icon {
     path {
@@ -51,6 +51,45 @@ $brand-white: color('neutral-8');
   user-select: none;
   outline: none;
 }
+
+.toggle, .toggle-unselected, .toggle-selected {
+  display: block;
+  background-color: $brand-white;
+  transition: color 300ms ease-out,
+    border 300ms ease-out;
+
+  &:hover {
+    color: $selected-color;
+  }
+}
+
+.toggle {
+  color: $info-color;
+  border: 2px solid $info-color;
+  &:hover {
+    color: $selected-color;
+    border: 2px solid $selected-color;
+  }
+}
+
+.toggle-unselected {
+  color: $unselected-color;
+  border: 2px solid $unselected-color;
+  &:hover {
+    color: $selected-color;
+    border: 2px solid $selected-color;
+  }
+}
+
+.toggle-selected {
+  color: $selected-color;
+  border: 2px solid $selected-color;
+
+  &:hover {
+    cursor: default;
+  }
+}
+
 
 .info {
   display: block;

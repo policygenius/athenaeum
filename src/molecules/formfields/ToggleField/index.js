@@ -14,12 +14,17 @@ const renderChoices = (choices, input) => {
   if (!choices) return null;
 
   const renderChoice = (choice, idx) => {
-    const variantName = input.value == choice.value ? 'toggle-active' : 'toggle'; // eslint-disable-line
+    const variantName = () => {
+      if (input.value) {
+        return input.value == choice.value ? 'toggle-selected' : 'toggle-unselected';
+      }
+      return 'toggle';
+    };
 
     return (
       <Button
         className={styles['button']}
-        variant={variantName}
+        variant={variantName()}
         key={`toggle-${idx}`}
         onClick={e => input.onChange(e.target.value)}
         value={choice.value}

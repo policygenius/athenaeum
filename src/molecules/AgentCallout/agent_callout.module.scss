@@ -1,19 +1,18 @@
 .contact-item {
-  @include typography-semibold;
-
+  padding-top: rem-calc(11px);
   margin-bottom: ru(1);
 }
 
 .label {
-  @include typography-7(false);
-
-  color: color('neutral-4');
+  @include typography-label();
+  padding-bottom: rem-calc(6px);
+  color: color('neutral-3');
 }
 
 .value {
-  @include typography-4(false);
+  @include typography-a-6-bold();
 
-  color: color('brand-2');
+  color: color('primary-3');
 }
 
 .image {
@@ -21,5 +20,5 @@
   margin: 0 auto;
 
   border-radius: 50%;
-  border: 1px solid color('brand-2');
+  border: 2px solid color('secondary-2');
 }
