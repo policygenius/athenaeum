@@ -65,9 +65,11 @@ $details-link-border: 1px solid #b2b2b2;
 }
 
 .carrier-logo {
+  max-width: rem-calc(150px);
   max-height: rem-calc(44px);
 
   img {
+    max-width: rem-calc(150px);
     max-height: rem-calc(44px);
   }
 }
