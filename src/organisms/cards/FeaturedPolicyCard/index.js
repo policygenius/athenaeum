@@ -3,45 +3,13 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import accounting from 'accounting';
 
-import Button from 'atoms/Button';
-import Layout from 'atoms/Layout';
-import Col from 'atoms/Layout/Col';
-import LinkWrapper from 'atoms/LinkWrapper';
 import Text from 'atoms/Text';
 import Spacer from 'atoms/Spacer';
-import Tooltip from 'atoms/Tooltip';
 
 import styles from './featured_policy_card.module.scss';
-
-const formatValue = (value) => {
-  const formattedValue = accounting.formatNumber(value);
-
-  return formattedValue !== '0' ? formattedValue : value;
-};
-
-const renderPolicyInformation = (info, idx) =>
-  <div key={`policy-info-${idx}`}>
-    <Layout
-      smallCols={[ 6 ]}
-      className={styles['policy-info-item']}
-    >
-      <Col
-        fullwidth
-        className={styles['policy-info-tooltip-group']}
-      >
-        <Text type={7}>{info.label}</Text>
-        <Tooltip
-          className={styles['policy-info-tooltip-icon']}
-        >
-          {info.hoverMessage}
-        </Tooltip>
-      </Col>
-      <Text type={6} semibold>{formatValue(info.value)}</Text>
-    </Layout>
-    <Spacer spacer={2} />
-  </div>
-
-;
+import Header from './Header';
+import ButtonGroup from './ButtonGroup';
+import PolicyInformation from './PolicyInformation';
 
 function FeaturedPolicyCard(props) {
   const {
@@ -52,7 +20,8 @@ function FeaturedPolicyCard(props) {
     carrierLogo,
     onContinue,
     onDetails,
-    information
+    information,
+    onCompare,
   } = props;
 
   const classes = [
@@ -64,18 +33,7 @@ function FeaturedPolicyCard(props) {
 
   return (
     <div className={classnames(...classes)}>
-      <div className={styles['header']}>
-        {
-          header.map((item, idx) =>
-            <div
-              key={`header-item-${idx}`}
-              className={styles['header-item']}
-            >
-              {item}
-            </div>
-          )
-        }
-      </div>
+      { header && <Header header={header} /> }
 
       <div className={styles['content']}>
         { premium.price ?
@@ -85,7 +43,7 @@ function FeaturedPolicyCard(props) {
               color='neutral-1'
               semibold
             >
-              {formattedPremium} <Text tag='span' type={7} color='neutral-4'>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium} <Text tag='span' type={7} color='neutral-4' semibold>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
 
             <Spacer spacer={1} />
@@ -104,33 +62,13 @@ function FeaturedPolicyCard(props) {
 
         <Spacer spacer={6} />
 
-        {
-          information &&
-            <div className={styles['policy-info']}>
-              {
-                information.map(renderPolicyInformation)
-              }
-              <Spacer spacer={4} />
-            </div>
-        }
+        { information && <PolicyInformation information={information} /> }
 
-        <div className={styles['button-group']}>
-          <Button
-            variant='action'
-            onClick={onContinue}
-          >
-            Continue
-          </Button>
-
-          <Spacer spacer={2} />
-
-          <LinkWrapper
-            onClick={onDetails}
-            className={styles['details-link']}
-          >
-            {'Details & Review'}
-          </LinkWrapper>
-        </div>
+        <ButtonGroup
+          onDetails={onDetails}
+          onContinue={onContinue}
+          onCompare={onCompare}
+        />
       </div>
     </div>
   );
@@ -176,12 +114,17 @@ FeaturedPolicyCard.propTypes = {
   /**
    * Function supplied to main action button
    */
-  onContinue: PropTypes.func,
+  onContinue: PropTypes.func.isRequired,
 
   /**
    * Function supplied to details link below CTA
    */
-  onDetails: PropTypes.func,
+  onDetails: PropTypes.func.isRequired,
+
+  /**
+   * Function supplied to compare CTA on mobile only
+   */
+  onCompare: PropTypes.func.isRequired,
 
   /**
    * Supplies information about policy to card. Examples would include type, financial strength or total customers

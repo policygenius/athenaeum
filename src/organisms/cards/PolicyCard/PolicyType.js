@@ -5,7 +5,7 @@ import Hide from 'wrappers/Hide';
 import Tooltip from 'atoms/Tooltip';
 import styles from './policy_card.module.scss';
 
-export const PolicyType = ({ policyType, policyTooltip, policyTypeHoverMessage }) =>
+export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
   <div
     className={styles['policy-type']}
   >
@@ -18,7 +18,7 @@ export const PolicyType = ({ policyType, policyTooltip, policyTypeHoverMessage }
               color='neutral-3'
               semibold
             >
-              Policy Type
+              { label }
             </Text>
           </Hide>
           <Text
@@ -27,7 +27,7 @@ export const PolicyType = ({ policyType, policyTooltip, policyTypeHoverMessage }
             semibold
             className={styles['policy-name']}
           >
-            {policyType}
+            {value}
           </Text>
           <Text
             type={7}
@@ -35,22 +35,23 @@ export const PolicyType = ({ policyType, policyTooltip, policyTypeHoverMessage }
             semibold
             className={styles['policy-tooltip']}
           >
-            {policyTooltip}
+            {tooltip}
           </Text>
         </div>
       }
       hoverMessageClassName={styles['policy-type-hover-message']}
       className={styles['policy-type-tooltip']}
     >
-      { policyTypeHoverMessage }
+      { hoverMessage }
     </Tooltip>
   </div>
 ;
 
 PolicyType.propTypes = {
-  policyType: PropTypes.string,
-  policyTooltip: PropTypes.node,
-  policyTypeHoverMessage: PropTypes.node,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  tooltip: PropTypes.node,
+  hoverMessage: PropTypes.node,
 };
 
 export default PolicyType;
