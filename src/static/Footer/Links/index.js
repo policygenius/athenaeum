@@ -11,16 +11,16 @@ import StyledWrapper from 'atoms/StyledWrapper';
 import { links, linksList } from './styles';
 import { footerLinkItems } from '../data/links';
 
-const Links = () => (
-  <Hide hideOn="small" >
+const Links = () =>
+  <Hide hideOn='small' >
     <StyledWrapper
       css={links}
     >
       <Icon
-        icon="madeInNy"
-        height="48px"
-        width="48px"
-        className="made-in-ny-icon"
+        icon='madeInNy'
+        height='48px'
+        width='48px'
+        className='made-in-ny-icon'
       />
       <StyledWrapper
         css={linksList}
@@ -30,27 +30,28 @@ const Links = () => (
       >
         {
               footerLinkItems.map(link =>
-                (<div
+                <div
                   key={`link-item-${generate()}`}
-                  className="link-wrapper"
+                  className='link-wrapper'
                 >
                   <LinkWrapper
-                    hover="float"
+                    hover='float'
                     href={link.href}
-                    color="primary-3"
+                    color='primary-3'
                   >
                     <Text
                       type={10}
-                      font="b"
+                      font='b'
                     >{ link.title }
                     </Text>
                   </LinkWrapper>
-                </div>)
+                </div>
               )
             }
       </StyledWrapper>
     </StyledWrapper>
   </Hide>
-  );
+
+  ;
 
 export default Links;

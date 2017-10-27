@@ -21,24 +21,24 @@ const Contact = (props) => {
       <StyledWrapper
         css={header}
         component={Icon}
-        icon="pgLogoBlack"
+        icon='pgLogoBlack'
       />
       <StyledWrapper
         css={address}
       >
-        <Text type={10} font="b" align="left">
+        <Text type={10} font='b' align='left'>
           22 West 19th St, Floor 8
         </Text>
-        <Text type={10} font="b" align="left">
+        <Text type={10} font='b' align='left'>
           New York, NY 10011
         </Text>
       </StyledWrapper>
       {
         contactItems.map(item =>
-          (<ContactItem
+          <ContactItem
             key={`contact-item-${generate()}`}
             item={item}
-          />)
+          />
         )
       }
     </StyledWrapper>

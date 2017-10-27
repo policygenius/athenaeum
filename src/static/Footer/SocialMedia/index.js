@@ -8,7 +8,7 @@ import StyledWrapper from 'atoms/StyledWrapper';
 import { iconList } from './styles.js';
 import { socialMediaData } from '../data/socialMediaData';
 
-const SocialMedia = () => (
+const SocialMedia = () =>
   <StyledWrapper
     css={iconList}
     component={List}
@@ -18,19 +18,20 @@ const SocialMedia = () => (
   >
     {
         socialMediaData.map(company =>
-          (<LinkWrapper
+          <LinkWrapper
             key={`social-media-${company.name}`}
             href={company.href}
           >
             <Icon
               icon={company.name}
-              height="28px"
-              width="28px"
+              height='28px'
+              width='28px'
             />
-          </LinkWrapper>)
+          </LinkWrapper>
         )
       }
   </StyledWrapper>
-  );
+
+  ;
 
 export default SocialMedia;
