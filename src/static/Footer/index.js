@@ -1,10 +1,9 @@
 import React from 'react';
-import {
-  Layout,
-  Col,
-  StyledWrapper,
-  Text
-} from 'athenaeum';
+
+import Col from 'atoms/Layout/Col';
+import Layout from 'atoms/Layout';
+import StyledWrapper from 'atoms/StyledWrapper';
+import Text from 'atoms/Text';
 
 import Contact from './Contact';
 import ResourceList from './ResourceList';

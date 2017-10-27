@@ -1,12 +1,11 @@
 import React from 'react';
-import {
-  Icon,
-  Text,
-  Hide,
-  Spacer,
-  Br,
-  StyledWrapper,
-} from 'athenaeum';
+
+import Icon from 'atoms/Icon';
+import Text from 'atoms/Text';
+import Hide from 'wrappers/Hide';
+import Spacer from 'atoms/Spacer';
+import Br from 'atoms/Br';
+import StyledWrapper from 'atoms/StyledWrapper';
 
 import { copyright } from './styles';
 

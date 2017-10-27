@@ -1,10 +1,9 @@
 import React from 'react';
-import {
-  Icon,
-  List,
-  LinkWrapper,
-  StyledWrapper,
-} from 'athenaeum';
+
+import Icon from 'atoms/Icon';
+import List from 'atoms/List';
+import LinkWrapper from 'atoms/LinkWrapper';
+import StyledWrapper from 'atoms/StyledWrapper';
 
 import { iconList } from './styles.js';
 import { socialMediaData } from '../data/socialMediaData';
