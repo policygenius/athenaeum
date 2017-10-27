@@ -1,14 +1,13 @@
 import React from 'react';
 import { generate } from 'shortid';
-import {
-  List,
-  Text,
-  Spacer,
-  LinkWrapper,
-  Icon,
-  Hide,
-  StyledWrapper,
-} from 'athenaeum';
+
+import List from 'atoms/List';
+import Text from 'atoms/Text';
+import Spacer from 'atoms/Spacer';
+import LinkWrapper from 'atoms/LinkWrapper';
+import Icon from 'atoms/Icon';
+import Hide from 'wrappers/Hide';
+import StyledWrapper from 'atoms/StyledWrapper';
 
 import { legalLinkItems } from '../data/links';
 import { legalWrapper, links, linksList } from './styles';

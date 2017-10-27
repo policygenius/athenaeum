@@ -1,13 +1,12 @@
 import React from 'react';
 import { generate } from 'shortid';
-import {
-  Icon,
-  List,
-  Text,
-  Hide,
-  LinkWrapper,
-  StyledWrapper,
-} from 'athenaeum';
+
+import Icon from 'atoms/Icon';
+import List from 'atoms/List';
+import Text from 'atoms/Text';
+import Hide from 'wrappers/Hide';
+import LinkWrapper from 'atoms/LinkWrapper';
+import StyledWrapper from 'atoms/StyledWrapper';
 
 import { links, linksList } from './styles';
 import { footerLinkItems } from '../data/links';

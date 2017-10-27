@@ -2,17 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { generate } from 'shortid';
-import {
-  Layout,
-  Col,
-  StyledWrapper,
-  Text,
-  Icon,
-  Spacer,
-  List,
-  Hide,
-  LinkWrapper,
-} from 'athenaeum';
+// import {
+  // Layout,
+  // Col,
+  // StyledWrapper,
+  // Text,
+  // Icon,
+  // Spacer,
+  // List,
+  // Hide,
+  // LinkWrapper,
+// } from 'athenaeum';
+
+import Layout from 'atoms/Layout';
+import Col from 'atoms/Layout/Col';
+import StyledWrapper from 'atoms/StyledWrapper';
+import Text from 'atoms/Text';
+import Icon from 'atoms/Icon';
+import Spacer from 'atoms/Spacer';
+import List from 'atoms/List';
+import Hide from 'wrappers/Hide';
+import LinkWrapper from 'atoms/LinkWrapper';
 
 const Resource = (props) => {
   const {

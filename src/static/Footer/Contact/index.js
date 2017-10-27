@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { generate } from 'shortid';
-import {
-  Icon,
-  Text,
-  Hide,
-  Spacer,
-  StyledWrapper,
-} from 'athenaeum';
+
+import Hide from 'wrappers/Hide';
+import Icon from 'atoms/Icon';
+import Spacer from 'atoms/Spacer';
+import StyledWrapper from 'atoms/StyledWrapper';
+import Text from 'atoms/Text';
 
 import { address, contactBottom, contactWrapper, header } from './styles';
 import ContactItem from './ContactItem';
