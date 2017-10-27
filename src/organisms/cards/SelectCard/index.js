@@ -16,7 +16,7 @@ function SelectCard( props ) {
   } = props;
 
   return (
-    <div className={className}
+    <div className={className}>
       <SelectField
         label={label}
         placeholder={placeholder}
