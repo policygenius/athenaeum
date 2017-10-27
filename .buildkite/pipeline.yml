@@ -20,6 +20,7 @@ steps:
         run: athenaeum
 
   - wait
+
   - trigger: "athenaeum-main-nav"
     label: ':roller_coaster: Trigger MainNav Build'
     async: true
