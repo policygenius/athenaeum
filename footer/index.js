@@ -2,31 +2,33 @@
 const fs = require('fs');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const MainNavNew = require('./static/static.js');
+const Footer = require('./static/static.js');
 const ServerStyleSheet = require('styled-components').ServerStyleSheet;
 
 const sheet = new ServerStyleSheet();
 
 const html = ReactDOMServer.renderToStaticMarkup(
-  sheet.collectStyles(React.createElement(MainNavNew.default))
+  sheet.collectStyles(React.createElement(Footer.default))
 );
 
 const css = sheet.getStyleTags();
 
-fs.writeFile('./main_nav/build/static-index.html', html, (err) => {
+fs.writeFile('./footer/build/static-index.html', html, (err) => {
   if (err) {
     console.log('ERR:', err);
     return;
   }
 
-  console.log('Successfully wrote MainNavNew component to static-index.html');
+  console.log('Successfully wrote Footer component to static-index.html');
 });
 
-fs.writeFile('./main_nav/build/assets/styled.css', css, (err) => {
+console.log('CSS!!', css);
+
+fs.writeFile('./footer/build/assets/styled.css', css, (err) => {
   if (err) {
     console.log('ERR:', err);
     return;
   }
 
-  console.log('Successfully wrote MainNavNew css to styled.css');
+  console.log('Successfully wrote Footer css to styled.css');
 });

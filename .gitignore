@@ -48,6 +48,11 @@ jspm_packages
 /main_nav/static/
 /main_nav/zip/
 
+# Ignore footer build
+/footer/build/
+/footer/static/
+/footer/zip/
+
 # Ignore OSX system files
 .DS_Store
 
