@@ -9,9 +9,9 @@ function AddCard( props ) {
   const {
     className,
     cardText,
-    icon,
     onClick,
     disabled,
+    icon = 'plus'
   } = props;
 
   const classes = [
@@ -29,7 +29,7 @@ function AddCard( props ) {
   return (
     <div className={classnames(...classes)} onClick={wrappedOnClick}>
       <Icon icon={icon} className={styles['icon']} />
-      <Text size={11} font='a' className={styles['text']}>{ cardText.toUpperCase() }</Text>
+      <Text size={11} className={styles['text']}>{ cardText }</Text>
     </div>
   );
 }

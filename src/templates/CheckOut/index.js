@@ -93,41 +93,34 @@ function CheckOut(props) {
             <Col
               className={classnames(styles['sticky-wrapper'], styles['head-body-wrapper'])}
             >
-              <Sticky
-                className={styles['sticky']}
-                activeClass={styles['sticky']}
-                bottomBoundary='#sticky-bottom'
-                enabled
+              <Col
+                className={styles['head-body']}
+                fullwidth
               >
-                <Col
-                  className={styles['head-body']}
-                  fullwidth
+                <Layout
+                  className={styles['cost']}
+                  mediumCols={[ 12 ]}
+                  smallCols={[ 6 ]}
                 >
-                  <Layout
-                    className={styles['cost']}
-                    mediumCols={[ 12 ]}
-                    smallCols={[ 6 ]}
-                  >
-                    <Col className={styles['cost-title']}>
-                      <Icon className={styles['icon']} icon='cart' />
-                      {' '}
-                      <div>Checkout</div>
-                    </Col>
-                    <Col fullwidth className={styles['cost-price']}>
-                      { curr && <sup>{curr}</sup> }
-                      { value }
-                      { unit && <Text type={7} tag='span'>{unit}</Text> }
-                    </Col>
-                  </Layout>
-                </Col>
-                { userAlert.condition &&
+                  <Col className={styles['cost-title']}>
+                    <Icon className={styles['icon']} icon='cart' />
+                    {' '}
+                    <div>Checkout</div>
+                  </Col>
+                  <Col fullwidth className={styles['cost-price']}>
+                    { curr && <sup>{curr}</sup> }
+                    { value }
+                    { unit && <Text type={7} tag='span'>{unit}</Text> }
+                  </Col>
+                </Layout>
+              </Col>
+              { userAlert.condition &&
                 <CheckoutUserAlert
                   enabled={false}
                   userAlert={userAlert}
                   className='user-alert-mobile'
                 />
                 }
-              </Sticky>
             </Col>
 
             <Col className={styles['head-foot']}>
