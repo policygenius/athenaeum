@@ -1,0 +1,35 @@
+---
+steps:
+  - name: ':docker: Build'
+    agents:
+      queue: builder
+    plugins:
+      docker-compose:
+        build: athenaeum
+        image-repository: us.gcr.io/pg-shared-v1/athenaeum
+        image-name: $BUILDKITE_BUILD_NUMBER
+
+  - wait
+
+  - name: 'Upload Footer to Staging :s3:'
+    command: bin/deploy_footer_staging
+    agents:
+      queue: builder
+    plugins:
+      docker-compose:
+        run: athenaeum
+
+  - wait
+
+  - block: 'Deploy git:master Footer to Production?'
+    prompt: "Please review and approve your changes at: http://rcl.policygenius.com/staging/footer/index.html"
+    branches: 'master'
+
+  - name: 'Upload Footer to Production :s3:'
+    branches: 'master'
+    command: bin/deploy_footer_production
+    agents:
+      queue: builder
+    plugins:
+      docker-compose:
+        run: athenaeum
