@@ -18,21 +18,21 @@ const ContactItem = (props) => {
     <StyledWrapper
       css={contactItem}
     >
-      <Hide hideOn="medium large xLarge xxLarge">
-        <Button variant="info" outline>{ item.header }</Button>
+      <Hide hideOn='medium large xLarge xxLarge'>
+        <Button variant='info' outline>{ item.header }</Button>
         <Spacer size={12} />
       </Hide>
-      <Hide hideOn="small">
+      <Hide hideOn='small'>
         <StyledWrapper
           css={contactItemHeader}
         >
-          <Text type={8} font="a">
+          <Text type={8} font='a'>
             <Icon
               icon={item.icon}
-              height="24px"
-              width="24px"
-              inline="left"
-              className="contact-icon"
+              height='24px'
+              width='24px'
+              inline='left'
+              className='contact-icon'
             />
             { item.header }
           </Text>
@@ -41,14 +41,14 @@ const ContactItem = (props) => {
       </Hide>
       {
         item.text.map(text =>
-          (<Text
+          <Text
             key={`contact-item-text-${generate()}`}
-            font="b"
+            font='b'
             type={10}
-            className="contact-info"
+            className='contact-info'
           >
             { text }
-          </Text>)
+          </Text>
         )
       }
     </StyledWrapper>

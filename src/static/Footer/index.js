@@ -18,12 +18,12 @@ import { footer, divider, socialMediaWrapper, rightColumn } from './styles';
 
 import { footerLinkItems, legalLinkItems } from './data/links';
 
-const Footer = () => (
+const Footer = () =>
   <div style={{ borderTop: '1px solid #b2b2b2' }}>
     <StyledWrapper
       css={footer}
     >
-      <Layout mediumCols={[3, 1, 8, 3, 1, 8]}>
+      <Layout mediumCols={[ 3, 1, 8, 3, 1, 8 ]}>
         <Col fullwidth>
           <Contact
             contactItems={contactItems}
@@ -39,8 +39,8 @@ const Footer = () => (
             css={rightColumn}
             component={Layout}
             fullwidth
-            mediumCols={[12]}
-            largeCols={[4, 8]}
+            mediumCols={[ 12 ]}
+            largeCols={[ 4, 8 ]}
           >
             <SelectProduct />
             <ResourceList />
@@ -64,6 +64,7 @@ const Footer = () => (
     </StyledWrapper>
     <Legal />
   </div>
-  );
+
+  ;
 
 export default Footer;

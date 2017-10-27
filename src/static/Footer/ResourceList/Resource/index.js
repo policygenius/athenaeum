@@ -38,19 +38,19 @@ const Resource = (props) => {
   ];
 
   return (
-    <Col className="resource-group">
-      <div onClick={onClick} role="presentation">
+    <Col className='resource-group'>
+      <div onClick={onClick} role='presentation'>
         <Text
           type={7}
-          font="a"
+          font='a'
         >
           { resources.header }
           <Icon
             icon={icon}
-            height="8px"
-            width="24px"
-            inline="right"
-            className="icon"
+            height='8px'
+            width='24px'
+            inline='right'
+            className='icon'
           />
         </Text>
       </div>
@@ -58,23 +58,23 @@ const Resource = (props) => {
       <List bottomSpacing={18} noBullets className={classnames(...resourceClasses)}>
         {
           resources.items.map(resource =>
-            (<LinkWrapper
+            <LinkWrapper
               key={`resource-${generate()}`}
-              color="neutral-1"
+              color='neutral-1'
               href={resource.href}
             >
               <Text
                 type={10}
-                font="b"
+                font='b'
               >
                 { resource.title }
               </Text>
-            </LinkWrapper>)
+            </LinkWrapper>
           )
         }
       </List>
       <Spacer size={18} />
-      <Hide hideOn="small"><Spacer size={60} /></Hide>
+      <Hide hideOn='small'><Spacer size={60} /></Hide>
     </Col>
   );
 };
