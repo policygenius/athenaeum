@@ -13,22 +13,11 @@ const html = ReactDOMServer.renderToStaticMarkup(
 
 const css = sheet.getStyleTags();
 
-fs.writeFile('./footer/build/static-index.html', html, (err) => {
+fs.writeFile('./footer/build/static-index.html', css + html, (err) => {
   if (err) {
     console.log('ERR:', err);
     return;
   }
 
   console.log('Successfully wrote Footer component to static-index.html');
-});
-
-console.log('CSS!!', css);
-
-fs.writeFile('./footer/build/assets/styled.css', css, (err) => {
-  if (err) {
-    console.log('ERR:', err);
-    return;
-  }
-
-  console.log('Successfully wrote Footer css to styled.css');
 });
