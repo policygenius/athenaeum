@@ -13,20 +13,11 @@ const html = ReactDOMServer.renderToStaticMarkup(
 
 const css = sheet.getStyleTags();
 
-fs.writeFile('./main_nav/build/static-index.html', html, (err) => {
+fs.writeFile('./main_nav/build/static-index.html', css + html, (err) => {
   if (err) {
     console.log('ERR:', err);
     return;
   }
 
   console.log('Successfully wrote MainNavNew component to static-index.html');
-});
-
-fs.writeFile('./main_nav/build/assets/styled.css', css, (err) => {
-  if (err) {
-    console.log('ERR:', err);
-    return;
-  }
-
-  console.log('Successfully wrote MainNavNew css to styled.css');
 });
