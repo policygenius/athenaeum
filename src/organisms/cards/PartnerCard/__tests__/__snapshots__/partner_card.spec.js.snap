@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PartnerCard /> renders correctly 1`] = `
+<div
+  className="partner-card"
+>
+  <div
+    className="cell"
+  >
+    <span
+      className="icon-wrapper"
+      onClick={undefined}
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    />
+  </div>
+  <div
+    className="cell"
+  >
+    <h2
+      className="label"
+    >
+      BBB Rating
+    </h2>
+    <span
+      className="a5"
+    >
+      A
+    </span>
+  </div>
+  <div
+    className="cell"
+  >
+    <button
+      className="button info outline"
+      disabled={undefined}
+      onClick={undefined}
+      type="button"
+    >
+      Shop Now
+    </button>
+  </div>
+</div>
+`;

@@ -42,6 +42,8 @@ function Text(props) {
   if (!props.children) return null;
 
   const {
+    a,
+    b,
     align,
     children,
     className,
@@ -70,9 +72,9 @@ function Text(props) {
     styles[align],
     spaced && styles['spaced'],
     italic && styles['italic'],
-    styles[`type-${font}-${fontSize}-bold`],
-    styles[`type-${font}-${fontSize}-medium`],
-    styles[`type-${font}-${fontSize}-regular`],
+    !a && styles[`type-${font}-${fontSize}-medium`],
+    a && styles[`type-a-${fontSize}-bold`],
+    b && styles[`type-b-${fontSize}-medium`],
     className,
   ];
 
@@ -85,6 +87,18 @@ function Text(props) {
 
 
 Text.propTypes = {
+  /*
+   * This prop provides a shorthand for setting the
+   * font type to 'a'
+   */
+  a: PropTypes.bool,
+
+  /*
+   * This prop provides a shorthand for setting the
+   * font type to 'b'
+   */
+  b: PropTypes.bool,
+
   /*
    * Text alignment
    */
@@ -125,7 +139,8 @@ Text.propTypes = {
   variant: PropTypes.oneOf([
     'strikethrough',
     'underline',
-    'fineprint'
+    'fineprint',
+    'label'
   ]),
 
   /**
@@ -165,7 +180,8 @@ Text.propTypes = {
 Text.defaultProps = {
   tag: 'p',
   type: 7,
-  font: 'b'
+  font: 'b',
+  color: 'primary-3'
 };
 
 export default Text;

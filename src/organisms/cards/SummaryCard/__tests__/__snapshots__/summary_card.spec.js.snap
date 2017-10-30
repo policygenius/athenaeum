@@ -28,7 +28,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       >
         <div>
           <p
-            className="text typography-5 p undefined type-a-5-bold type-a-5-medium type-a-5-regular"
+            className="text typography-5 primary-3 p undefined type-a-5-medium"
             onClick={undefined}
           >
             header
@@ -37,7 +37,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
             className="size-6"
           />
           <p
-            className="text typography-8 neutral-3 p undefined type-b-8-bold type-b-8-medium type-b-8-regular"
+            className="text typography-8 neutral-3 p undefined type-b-8-medium"
             onClick={undefined}
           >
             subheader
@@ -51,7 +51,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       >
         <div>
           <p
-            className="text typography-5 p undefined type-a-5-bold type-a-5-medium type-a-5-regular"
+            className="text typography-5 primary-3 p undefined type-a-5-medium"
             onClick={undefined}
           >
             secondaryHeader
@@ -60,7 +60,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
             className="size-6"
           />
           <p
-            className="text typography-8 neutral-3 p undefined type-b-8-bold type-b-8-medium type-b-8-regular"
+            className="text typography-8 neutral-3 p undefined type-b-8-medium"
             onClick={undefined}
           >
             another subhead
@@ -83,7 +83,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <p
-          className="text typography-10 primary-3 p undefined type-b-10-bold type-b-10-medium type-b-10-regular"
+          className="text typography-10 primary-3 p undefined type-b-10-medium"
           onClick={undefined}
         >
           A link
@@ -100,7 +100,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <p
-          className="text typography-10 primary-3 p undefined type-b-10-bold type-b-10-medium type-b-10-regular"
+          className="text typography-10 primary-3 p undefined type-b-10-medium"
           onClick={undefined}
         >
           second link
