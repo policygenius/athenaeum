@@ -110,9 +110,14 @@ DataRow.propTypes = {
    */
   tooltip: PropTypes.string,
   /**
-   * indents datarow items.
+   * indents datarow items. // Deprecated. Now instead of indenting datarow
+   * items, prefer to pass in 'subitem' prop
    */
   indent: PropTypes.bool,
+  /**
+   * Mark row as supplementary information (ie. Jewelry line under Valuables header)
+   */
+  subitem: PropTypes.bool,
 };
 
 export default DataRow;

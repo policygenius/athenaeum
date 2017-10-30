@@ -16,8 +16,14 @@
   }
 }
 
+
+
 .type-c-7-regular {
   @include typographyC();
+}
+
+.label {
+  @include typography-label();
 }
 
 .fineprint {

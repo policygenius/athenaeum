@@ -4,6 +4,10 @@
   @extend %card;
 }
 
+.select-card span:not( .tooltip-icon ) svg g {
+  fill: color('primary-3');
+}
+
 .footer {
 
   padding: ru(.5) ru(1);

@@ -86,6 +86,18 @@ function Text(props) {
 
 Text.propTypes = {
   /*
+   * This prop provides a shorthand for setting the
+   * font type to 'a'
+   */
+  a: PropTypes.bool,
+
+  /*
+   * This prop provides a shorthand for setting the
+   * font type to 'b'
+   */
+  b: PropTypes.bool,
+
+  /*
    * Text alignment
    */
   align: PropTypes.oneOf([
@@ -125,7 +137,8 @@ Text.propTypes = {
   variant: PropTypes.oneOf([
     'strikethrough',
     'underline',
-    'fineprint'
+    'fineprint',
+    'label'
   ]),
 
   /**
@@ -165,7 +178,8 @@ Text.propTypes = {
 Text.defaultProps = {
   tag: 'p',
   type: 7,
-  font: 'b'
+  font: 'b',
+  color: 'primary-3'
 };
 
 export default Text;

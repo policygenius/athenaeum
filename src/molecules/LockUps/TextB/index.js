@@ -9,7 +9,7 @@ const TextB = (props) => {
   return (
     <Div spacer={spacer}>
       <Text size={5} font='a'>{line1}</Text>
-      <Text size={8} font='b' color='neutral-3'>{line2}</Text>
+      <Text size={8} font='b'>{line2}</Text>
     </Div>
   );
 };
