@@ -5,13 +5,13 @@ import Text from 'atoms/Text';
 
 const CurrencyAmount = (props) => {
   // eslint-disable-next-line
-  const { tag, spacer, curr, amount, unit, ...rest } = props;
+  const { tag, spacer, curr, amount, unit, highlight, ...rest } = props;
 
   return (
     <Span {...rest}>
       <sup>{curr}</sup>
       <strong>{amount}</strong>
-      { unit && <Text tag='span' weight='semibold'>{ unit }</Text> }
+      { unit && <Text tag='span' weight='semibold' color={highlight ? 'secondary-2' : 'primary-3'}>{ unit }</Text> }
     </Span>
   );
 };

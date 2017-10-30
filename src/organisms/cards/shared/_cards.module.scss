@@ -45,7 +45,7 @@ $col-padding: ru(.25) ru(.75);
 }
 
 %label {
-  @include typography-label();
+  @include typography-label;
   color: color('neutral-3');
 }
 

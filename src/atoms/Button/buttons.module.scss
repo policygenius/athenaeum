@@ -13,7 +13,7 @@ $brand-white: color('primary-2');
 }
 
 .button {
-  @include typography-label();
+  @include typography-label;
 
   display: block;
   cursor: pointer;

@@ -29,14 +29,10 @@ $border-style: 1px solid color('neutral-5');
 .checked {
   color: color('primary-3');
 
-  span:after {
-    opacity: 1;
-    left: 19%;
-  }
-
-  svg g {
+  svg path {
     fill: color('primary-3');
   }
+
 }
 
 .content {

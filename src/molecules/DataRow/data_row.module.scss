@@ -68,6 +68,12 @@
   padding-left: ru(.75);
 }
 
+.subitem {
+  .value, .amount {
+    @include typography-regular();
+  }
+}
+
 .highlight {
   .value, .amount {
     color: color('secondary-2');

@@ -8,13 +8,14 @@ import CurrencyAmount from 'molecules/LockUps/CurrencyAmount';
 
 import styles from './data_row.module.scss';
 
-const renderAmount = (amount, unit) => {
+const renderAmount = (amount, unit, highlight) => {
   if (!amount) return null;
 
   const formattedNumber = accounting.formatNumber(amount, { precision: 2 });
 
   return (
     <CurrencyAmount
+      highlight={highlight}
       className={styles['value']}
       amount={formattedNumber.toString()} unit={unit}
     />
@@ -50,7 +51,7 @@ function DataRow(props) {
           <div className={variant !== 'large' && styles['label-text']}>{ label }</div>
           { tooltip && <Tooltip className={styles['tip']}>{ tooltip }</Tooltip> }
         </div>
-        { renderAmount(amount, unit) || <div className={classnames(styles['value'])}>{value}</div> }
+        { renderAmount(amount, unit, highlight) || <div className={classnames(styles['value'])}>{value}</div> }
       </div>
       { description && <p className={styles['description']}>{description}</p> }
     </div>
@@ -74,7 +75,7 @@ DataRow.propTypes = {
    * When passed `highlight`, the datarow wraps its value
    * with a highlight class & accordant styles
    */
-  hightlight: PropTypes.bool,
+  highlight: PropTypes.bool,
   /**
    * label/name for data
    */
@@ -110,9 +111,14 @@ DataRow.propTypes = {
    */
   tooltip: PropTypes.string,
   /**
-   * indents datarow items.
+   * indents datarow items. // Deprecated. Now instead of indenting datarow
+   * items, prefer to pass in 'subitem' prop
    */
   indent: PropTypes.bool,
+  /**
+   * Mark row as supplementary information (ie. Jewelry line under Valuables header)
+   */
+  subitem: PropTypes.bool,
 };
 
 export default DataRow;

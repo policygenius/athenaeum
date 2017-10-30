@@ -22,7 +22,7 @@ $icon-size:        ru(2);
   }
 }
 
-.form svg g {
+.form span:not( .tooltip-icon ) svg g {
   fill: color('primary-3');
 }
 
