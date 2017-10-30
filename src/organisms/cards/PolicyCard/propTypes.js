@@ -10,32 +10,26 @@ export default {
    * The insurance carrier logo node
    */
   carrierLogo: PropTypes.node.isRequired,
+
   /**
-   * The type of policy
+   * Total information to be displayed throughout the card
    */
-  policyType: PropTypes.string.isRequired,
+  information: PropTypes.object.isRequired,
+
   /**
-   * More information about the policy
+   * Value within the `information` object to display in the third section of the card
+   *
+   * All other values will be displayed in the fourth section of the card
    */
-  policyTooltip: PropTypes.node.isRequired,
+  mainInformationValue: PropTypes.string.isRequired,
+
   /**
-   * Details about the policy that show on hover
+   * The selection of values from the `information` object of which to display on mobile
+   *
+   * Any value not contained in this array will not be displayed on mobile
    */
-  policyTypeHoverMessage: PropTypes.node.isRequired,
-  /**
-   * The financial strength of the carrier
-   */
-  financialStrength: PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    hoverMessage: PropTypes.node.isRequired
-  }),
-  /**
-   * The customer service rating of the carrier
-   */
-  customerService: PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    hoverMessage: PropTypes.node.isRequired
-  }),
+  mobileInformationValues: PropTypes.arrayOf(PropTypes.string).isRequired,
+
   /**
    * The total number of customers for the carrier
    */
@@ -59,6 +53,12 @@ export default {
    * Optional array of nodes that will be spaced appropriately in the footer
    */
   footer: PropTypes.array,
+  /**
+   * Optional array of nodes that will be spaced appropriately in the header
+   *
+   * Only displayed on mobile
+   */
+  header: PropTypes.array,
   /**
    * Click handler for continue button
    */

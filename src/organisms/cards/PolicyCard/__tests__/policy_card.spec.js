@@ -11,20 +11,31 @@ describe('<PolicyCard />', () => {
     defaultProps = {
       footer: [],
       carrierLogo: <div></div>,
-      policyType: 'Type',
-      policyTooltip: 'Tooltip',
-      financialStrength: {
-        value: 'A+',
-        hoverMessage: <div></div>
+      information: {
+        policyType: {
+          label: 'label',
+          value: 'Some policy',
+          hoverMessage: <div></div>,
+          tooltip: <div />
+        },
+        financialStrength: {
+          label: 'label',
+          value: 'A+',
+          hoverMessage: <div></div>
+        },
+        customerService: {
+          label: 'label',
+          value: 'A+',
+          hoverMessage: <div></div>
+        },
+        totalCustomers: {
+          label: 'label',
+          value: 16,
+          hoverMessage: <div></div>
+        },
       },
-      customerService: {
-        value: 'A+',
-        hoverMessage: <div></div>
-      },
-      totalCustomers: {
-        value: 16,
-        hoverMessage: <div></div>
-      },
+      mainInformationValue: 'policyType',
+      mobileInformationValues: [ 'policyType', 'financialStrength' ],
       premium: {
         price: 19.8,
         format: 'mo'
@@ -34,7 +45,6 @@ describe('<PolicyCard />', () => {
       compareCheckbox: {
         onCompare: () => {},
       },
-      policyTypeHoverMessage: <div></div>
     };
   });
 

@@ -1,65 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import accounting from 'accounting';
 import Hide from 'wrappers/Hide';
 import Text from 'atoms/Text';
 import Tooltip from 'atoms/Tooltip';
+import formatValue from 'utils/formatValue';
+
 import styles from './policy_card.module.scss';
 
-export const PolicyInformation = ({ financialStrength, customerService, totalCustomers }) =>
+export const PolicyInformation = ({ information }) =>
   <Hide hideOn='small medium' className={styles['policy-info']}>
-    <Tooltip
-      text={
-        <Text type={7} color='neutral-3' semibold>
-          <div className={styles['policy-info-label']}>Financial Strength</div>
-          <Text color='neutral-2' semibold>{financialStrength.value}</Text>
-        </Text>
-      }
-      hoverMessageClassName={styles['policy-type-hover-message']}
-      className={styles['policy-info-tooltip']}
-    >
-      { financialStrength.hoverMessage }
-    </Tooltip>
-    <Tooltip
-      text={
-        <Text type={7} color='neutral-3' semibold>
-          <div className={styles['policy-info-label']}>Customer Service</div>
-          <Text color='neutral-2' semibold>{customerService.value}</Text>
-        </Text>
-      }
-      hoverMessageClassName={styles['policy-type-hover-message']}
-      className={styles['policy-info-tooltip']}
-    >
-      { customerService.hoverMessage }
-    </Tooltip>
-    <Tooltip
-      text={
-        <Text type={7} color='neutral-3' semibold>
-          <div className={styles['policy-info-label']}>Total Customers</div>
-          <Text color='neutral-2' semibold>{accounting.formatNumber(totalCustomers.value)}</Text>
-        </Text>
-      }
-      hoverMessageClassName={styles['policy-type-hover-message']}
-      className={styles['policy-info-tooltip']}
-    >
-      { totalCustomers.hoverMessage }
-    </Tooltip>
+    {
+      information.map((item, idx) =>
+        <Tooltip
+          text={
+            <Text type={7} color='neutral-3' semibold>
+              <div className={styles['policy-info-label']}>{item.label}</div>
+              <Text color='neutral-2' semibold>{formatValue(item.value)}</Text>
+            </Text>
+          }
+          hoverMessageClassName={styles['policy-type-hover-message']}
+          className={styles['policy-info-tooltip']}
+          key={`${item.label}-${idx}`}
+        >
+          { item.hoverMessage }
+        </Tooltip>
+      )
+    }
   </Hide>
 ;
 
 PolicyInformation.propTypes = {
-  totalCustomers: PropTypes.shape({
-    value: PropTypes.number.isRequired,
+  information: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]).isRequired,
     hoverMessage: PropTypes.node.isRequired
-  }),
-  customerService: PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    hoverMessage: PropTypes.node.isRequired
-  }),
-  financialStrength: PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    hoverMessage: PropTypes.node.isRequired
-  }),
+  })),
 };
 
 export default PolicyInformation;

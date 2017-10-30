@@ -2,35 +2,40 @@
 
 ```jsx
     <PolicyCard
-      financialStrength={{
-        value: 'A+',
-        hoverMessage: <Text>Financial Strength Important</Text>
+      information={{
+        policyType: {
+          label: 'Policy Type',
+          value: 'Simplified Issue Whole Life',
+          hoverMessage: <div>hello, world</div>,
+          tooltip:
+            <div>
+              <Icon
+                icon='checkmark'
+                width='12px'
+                height='14px'
+                inline='left'
+              />
+              Requires Medical Exam
+            </div>
+        },
+        financialStrength: {
+          label: 'Financial Strength',
+          value: 'A+',
+          hoverMessage: <Text>Financial Strength Important</Text>
+        },
+        customerService: {
+          label: 'Customer Service',
+          value: 'A+',
+          hoverMessage: <Text>Customer Service Important</Text>
+        },
+        totalCustomers: {
+          label: 'Total Customers',
+          value: 16,
+          hoverMessage: <Text>Crowds Important</Text>
+        },
       }}
-      customerService={{
-        value: 'A+',
-        hoverMessage: <Text>Customer Service Important</Text>
-      }}
-      totalCustomers={{
-        value: 16,
-        hoverMessage: <Text>Crowds Important</Text>
-      }}
-      policyType='Simplified Issue Whole Life'
-      policyTooltip={
-        <div>
-          <Icon
-            icon='checkmark'
-            width='12px'
-            height='14px'
-            inline='left'
-          />
-          Requires Medical Exam
-        </div>
-      }
-      policyTypeHoverMessage={
-        <div>
-          hello, world
-        </div>
-      }
+      mainInformationValue='policyType'
+      mobileInformationValues={[ 'policyType', 'financialStrength', 'totalCustomers' ]}
       carrierLogo={
         <img
           src='#'

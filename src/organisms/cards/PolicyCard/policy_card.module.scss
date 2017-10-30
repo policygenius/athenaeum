@@ -19,6 +19,7 @@ $footer: #f6f6f6;
   border-radius: ru(.25);
   max-width: rem-calc(1200px);
   background-color: color('neutral-8');
+  display: none;
 }
 
 .body {
@@ -166,6 +167,14 @@ $footer: #f6f6f6;
 }
 
 @media #{$medium-up} {
+  .policy-card {
+    display: block;
+  }
+
+  .mobile-card {
+    display: none;
+  }
+
   .compare {
     @include section(0, 10%, true);
     label { margin-left: rem-calc(8px); }
