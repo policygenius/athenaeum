@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 
 import SelectField from 'molecules/formfields/SelectField';
 
-function SelectCard( props ) {
+function SelectCard(props) {
   const {
     className,
     label,

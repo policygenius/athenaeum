@@ -4,7 +4,7 @@
 }
 
 .label {
-  @include typography-label();
+  @include typography-label;
   padding-bottom: rem-calc(6px);
   color: color('neutral-3');
 }

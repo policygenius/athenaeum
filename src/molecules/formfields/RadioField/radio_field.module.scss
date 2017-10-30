@@ -71,9 +71,5 @@ $checked-size: ru(.5);
   + .label {
     cursor: not-allowed;
     color: color('neutral-3');
-
-    &:after {
-      box-shadow: 2px 2px 0 0 color('neutral-3');
-    }
   }
 }

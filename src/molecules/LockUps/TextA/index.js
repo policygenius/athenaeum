@@ -7,7 +7,7 @@ const TextA = (props) => {
 
   return (
     <Div spacer={spacer}>
-      <P typography={4} color='neutral-2'>{line1}</P>
+      <P typography={4}>{line1}</P>
       <P typography={6} color='neutral-4'>{line2}</P>
     </Div>
   );
