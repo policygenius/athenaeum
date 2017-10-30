@@ -9,6 +9,6 @@ in unappetizing ways. A beautiful hacky workaround is to change all
 
 ```jsx
     <Sticky>
-      This does very little at all. 
+      This does very little at all.
     </Sticky>
 ```

@@ -42,6 +42,8 @@ function Text(props) {
   if (!props.children) return null;
 
   const {
+    a,
+    b,
     align,
     children,
     className,
@@ -70,9 +72,9 @@ function Text(props) {
     styles[align],
     spaced && styles['spaced'],
     italic && styles['italic'],
-    styles[`type-${font}-${fontSize}-bold`],
-    styles[`type-${font}-${fontSize}-medium`],
-    styles[`type-${font}-${fontSize}-regular`],
+    !a && styles[`type-${font}-${fontSize}-medium`],
+    a && styles[`type-a-${fontSize}-bold`],
+    b && styles[`type-b-${fontSize}-medium`],
     className,
   ];
 

@@ -23,7 +23,7 @@
 }
 
 .label {
-  @include typography-label();
+  @include typography-label;
 }
 
 .fineprint {
