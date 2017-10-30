@@ -15,8 +15,7 @@
   }
 
   .header {
-    @include typography-6(false);
-    font-size: rem-calc(16px);
+    @include typography-b-7(true);
     font-weight: 400;
   }
 
@@ -38,6 +37,10 @@
   .icon {
     width: rem-calc(45);
     height: rem-calc(45);
+
+    svg path {
+      fill: color('primary-3');
+    }
   }
 
   .header {
@@ -69,7 +72,7 @@
   flex-grow: 1;
   flex-shrink: 0;
   width: 50%;
-
+  color: color('primary-3');
   + .icon {
     margin-left: ru(.75);
   }

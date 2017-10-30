@@ -1,0 +1,42 @@
+@import '../shared/cards.module.scss';
+
+.partner-card {
+  width: 100%;
+  border: 1px solid color('neutral-4');
+}
+
+.cell {
+  padding: ru(.75);
+  text-align: center;
+}
+
+.label {
+  @extend %label;
+}
+
+.a5 {
+  @include typography-a-5-bold();
+}
+
+@media #{$tablet} {
+  .partner-card {
+    display: table;
+    table-layout: fixed;
+    border: 1px solid color('neutral-4');
+  }
+
+  .cell {
+    display: table-cell;
+    padding: ru(1.5) ru(.75);
+    vertical-align: middle;
+  }
+
+  .cell:first-of-type {
+    padding-left: ru(1.5);
+    text-align: left;
+  }
+
+  .cell:last-of-type {
+    padding-right: ru(1.5);
+  }
+}

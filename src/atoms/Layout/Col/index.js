@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
+import colors from 'atoms/Color/colors.scss';
 import styles from '../layout.module.scss';
 
 function Col(props) {
@@ -19,6 +19,7 @@ function Col(props) {
     style,
     bottomSpacing,
     onClick,
+    borderColor
   } = props;
 
   const classes = [
@@ -30,9 +31,10 @@ function Col(props) {
     xxLargeCols && styles[`col-xxlg-${xxLargeCols}`],
     fullwidth && styles['fullwidth'],
     flex && styles['flex'],
-    styles[`bottom-spacing-${bottomSpacing}`],
+    bottomSpacing && styles[`bottom-spacing-${bottomSpacing}`],
     padding && styles['padding'],
-    className,
+    colors[`border-${borderColor}`],
+    className
   ];
 
   return (
@@ -120,7 +122,15 @@ Col.propTypes = {
    * onClick handler
    */
   onClick: PropTypes.func,
+  /**
+   * Sets the border color for the Col. To see a border, give the border a width and a style directly.
+   * Can only be one of the named brand colors.
+   */
+  borderColor: PropTypes.string
 };
 
+Col.defaultProps = {
+  borderColor: 'neutral-6'
+};
 
 export default Col;

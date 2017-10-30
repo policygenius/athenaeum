@@ -19,12 +19,13 @@ const getTag = (props) => {
   return tag;
 };
 
-const getWeight = ({ semibold, light, weight }) => {
+const getWeight = ({ semibold, light, weight, bold }) => {
   if (weight) return weight;
   if (semibold) return 'semibold';
   if (light) return 'light';
+  if (bold) return 'bold';
 
-  return 'regular';
+  return '';
 };
 
 const convertChild = (child) => {
@@ -41,31 +42,44 @@ function Text(props) {
   if (!props.children) return null;
 
   const {
+    a,
+    b,
     align,
     children,
     className,
     color,
     type,
-    variant
+    variant,
+    font,
+    spaced,
+    italic,
+    size,
+    onClick,
   } = props;
 
   const tag = getTag(props);
   const weight = getWeight(props);
+  const fontSize = size || type;
 
   const Element = `${tag}`;
   const classes = [
     styles['text'],
-    styles[`typography-${type}`],
+    styles[`typography-${fontSize}`],
     styles[weight],
-    colors[color],
-    styles[variant],
+    color && colors[color],
+    variant && styles[variant],
     styles[tag],
     styles[align],
+    spaced && styles['spaced'],
+    italic && styles['italic'],
+    !a && styles[`type-${font}-${fontSize}-medium`],
+    a && styles[`type-a-${fontSize}-bold`],
+    b && styles[`type-b-${fontSize}-medium`],
     className,
   ];
 
   return (
-    <Element className={classnames(...classes)}>
+    <Element className={classnames(...classes)} onClick={onClick}>
       { React.Children.map(children, convertChild) }
     </Element>
   );
@@ -73,6 +87,18 @@ function Text(props) {
 
 
 Text.propTypes = {
+  /*
+   * This prop provides a shorthand for setting the
+   * font type to 'a'
+   */
+  a: PropTypes.bool,
+
+  /*
+   * This prop provides a shorthand for setting the
+   * font type to 'b'
+   */
+  b: PropTypes.bool,
+
   /*
    * Text alignment
    */
@@ -93,6 +119,17 @@ Text.propTypes = {
 
   /**
    * Determines typography class
+   *
+   * Types for `a`: `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11`
+   *
+   * Types for `b`: `5, 6, 7, 8, 10, 12`
+   *
+   * Types fo `c`: `1`
+   */
+  size: PropTypes.number,
+
+  /**
+   * Deprecated. Use 'size' instead
    */
   type: PropTypes.number,
 
@@ -102,7 +139,8 @@ Text.propTypes = {
   variant: PropTypes.oneOf([
     'strikethrough',
     'underline',
-    'fineprint'
+    'fineprint',
+    'label'
   ]),
 
   /**
@@ -121,11 +159,29 @@ Text.propTypes = {
 
   light: PropTypes.bool,
   semibold: PropTypes.bool,
+  /**
+   * Possible font types are `a`, `b`, and `c`
+   */
+  font: PropTypes.string,
+  /**
+   * Adds letter spacing. Use with `A9` and `A11` font
+   */
+  spaced: PropTypes.bool,
+  /**
+   * Adds italic
+   */
+  italic: PropTypes.bool,
+  /**
+   * onClick callback
+   */
+  onClick: PropTypes.func,
 };
 
 Text.defaultProps = {
   tag: 'p',
-  type: 6
+  type: 7,
+  font: 'b',
+  color: 'primary-3'
 };
 
 export default Text;

@@ -1,16 +1,33 @@
 @import 'colors';
 
-$font-family-serif:           'adelle', Georgia, serif;
-$font-family-sans-serif:      'adelle-sans', Helvetica, Arial, sans-serif;
+$font-family-serif:           'PolicyGenius', Georgia, serif;
+$font-family-sans-serif:      'PolicyGenius', Arial, sans-serif;
+$font-family-sans-serif-bold: 'PolicyGenius', Arial, sans-serif;
+$font-family-c: Georgia;
+
 $main-font-color:             color('neutral-2');
 $label-font-color:            color('neutral-4');
 
 $lightweight:                 300;
-$regularweight:               400;
+$regularweight:               normal;
 $semiboldweight:              600;
+$mediumweight:                bold;
+$boldweight:                  900;
 
 @mixin base-font-family() {
   font-family: $font-family-sans-serif;
+  font-weight: $boldweight;
+  margin: 0;
+}
+
+@mixin font-family-medium() {
+  font-family: $font-family-serif;
+  font-weight: $regularweight;
+  margin: 0;
+}
+
+@mixin font-family-c() {
+  font-family: $font-family-c;
   margin: 0;
 }
 
@@ -28,6 +45,7 @@ $semiboldweight:              600;
   @include base-font-family;
   font-size: rem-calc(42px);
   line-height: ru(2);
+  font-weight: 900;
 
   @if $margin {
     margin-bottom: ru(1);
@@ -94,6 +112,148 @@ $semiboldweight:              600;
   }
 }
 
+@mixin typography-a-1-bold() {
+  @include base-font-family;
+  font-size: rem-calc(68px);
+  line-height: rem-calc(85px);
+  letter-spacing: 0.9px;
+}
+
+@mixin typography-a-2-bold() {
+  @include base-font-family;
+  font-size: rem-calc(54px);
+  line-height: rem-calc(67px);
+  letter-spacing: 0.9px;
+}
+
+@mixin typography-a-3-bold() {
+  @include base-font-family;
+  font-size: rem-calc(42px);
+  line-height: rem-calc(52px);
+  letter-spacing: 0.9px;
+}
+
+@mixin typography-a-4-bold() {
+  @include base-font-family;
+  font-size: rem-calc(32px);
+  line-height: rem-calc(40px);
+  letter-spacing: 0.9px;
+}
+
+
+@mixin typography-a-5-bold() {
+  @include base-font-family;
+  font-size: rem-calc(26px);
+  line-height: rem-calc(34px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-a-6-bold() {
+  @include base-font-family;
+  font-size: rem-calc(22px);
+  line-height: rem-calc(29px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-a-7-bold() {
+  @include base-font-family;
+  font-size: rem-calc(19px);
+  line-height: rem-calc(25px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-a-8-bold() {
+  @include base-font-family;
+  font-size: rem-calc(16px);
+  line-height: rem-calc(21px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-a-9-bold() {
+  @include base-font-family;
+  font-size: rem-calc(15px);
+  line-height: rem-calc(19px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-a-10-bold() {
+  @include base-font-family;
+  font-size: rem-calc(13px);
+  line-height: rem-calc(17px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-a-11-bold() {
+  @include base-font-family;
+  font-size: rem-calc(12px);
+  line-height: rem-calc(16px);
+  letter-spacing: 0.7px;
+}
+
+@mixin typography-b-5($bold: false) {
+  @include font-family-medium;
+  font-size: rem-calc(26px);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(42px);
+  letter-spacing: 0.1px;
+}
+
+@mixin typography-b-6($bold: false) {
+  @include font-family-medium;
+  font-size: rem-calc(22px);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(35px);
+  letter-spacing: 0.1px;
+}
+
+@mixin typography-b-7($bold: false) {
+  @include font-family-medium;
+  font-size: rem-calc(19px);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(30px);
+  letter-spacing: 0.1px;
+}
+
+@mixin typography-b-8($bold: false) {
+  @include font-family-medium;
+  font-size: rem-calc(16px);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(26px);
+  letter-spacing: 0.1px;
+}
+
+@mixin typography-b-10($bold: false) {
+  @include font-family-medium;
+  font-size: rem-calc(13px);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(21px);
+  letter-spacing: 0.1px;
+}
+
+@mixin typography-b-12($bold: false) {
+  @include font-family-medium;
+  font-size: rem-calc(10px);
+  font-weight: typography-b-weight($bold);
+  line-height: rem-calc(16px);
+  letter-spacing: 0.1px;
+}
+
+@mixin typography-c-7-regular() {
+  @include font-family-c;
+  font-size: rem-calc(19px);
+  line-height: rem-calc(35px);
+  font-weight: $regularweight;
+}
+
+@function typography-b-weight($bold: false) {
+  @if $bold {
+    @return #{$mediumweight};
+  }
+
+  @return #{$regularweight};
+}
+
+
 @mixin typography($number) {
   @if $number == 0 {
     @include typography-0(false);
@@ -121,6 +281,73 @@ $semiboldweight:              600;
   }
 }
 
+@mixin typographyA($number) {
+  @if $number == 1 {
+    @include typography-a-1-bold();
+  }
+  @if $number == 2 {
+    @include typography-a-2-bold();
+  }
+  @if $number == 3 {
+    @include typography-a-3-bold();
+  }
+  @if $number == 4 {
+    @include typography-a-4-bold();
+  }
+  @if $number == 5 {
+    @include typography-a-5-bold();
+  }
+  @if $number == 6 {
+    @include typography-a-6-bold();
+  }
+  @if $number == 7 {
+    @include typography-a-7-bold();
+  }
+  @if $number == 8 {
+    @include typography-a-8-bold();
+  }
+  @if $number == 9 {
+    @include typography-a-9-bold();
+  }
+  @if $number == 10 {
+    @include typography-a-10-bold();
+  }
+  @if $number == 11 {
+    @include typography-a-11-bold();
+  }
+}
+
+@mixin typographyB($number) {
+  @if $number == 5 {
+    @include typography-b-5();
+  }
+  @if $number == 6 {
+    @include typography-b-6();
+  }
+  @if $number == 7 {
+    @include typography-b-7();
+  }
+  @if $number == 8 {
+    @include typography-b-8();
+  }
+  @if $number == 9 {
+    @include typography-b-8();
+  }
+  @if $number == 10 {
+    @include typography-b-10();
+  }
+  @if $number == 11 {
+    @include typography-b-10();
+  }
+  @if $number == 12 {
+    @include typography-b-12();
+  }
+}
+
+@mixin typographyC() {
+  @include typography-c-7-regular();
+}
+
 @mixin typography-light() {
   font-weight: $lightweight;
 }
@@ -131,6 +358,12 @@ $semiboldweight:              600;
 
 @mixin typography-semibold() {
   font-weight: $semiboldweight;
+}
+
+@mixin typography-label {
+  @include typography-a-10-bold();
+  letter-spacing: rem-calc(1.8px);
+  text-transform: uppercase;
 }
 
 @mixin fineprint {

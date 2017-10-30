@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 47 (45392) - http://www.bohemiancoding.com/sketch -->
+    <title>3x/Life/Color</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="Products" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3x/Life/Color">
+            <g id="Life" transform="translate(25.000000, 0.000000)">
+                <rect id="Rectangle-Copy" x="0" y="0" width="150" height="200"></rect>
+                <path d="M94.9,104.1 C90.9,104.1 87.1,103.6 83.9,102.6 C82.5,102.2 81.6,100.9 81.6,99.5 C81.5,89.8 86.5,76 95,69.7 C103.5,63.3 118.1,62.4 127.4,65.1 C128.8,65.5 129.7,66.8 129.7,68.2 C129.8,77.9 124.8,91.7 116.3,98 C110.7,102.3 102.5,104.1 94.9,104.1 Z M88.2,97 C95.8,98.4 106.5,97.3 112.4,92.9 C118.3,88.5 122.3,78.5 123.1,70.8 C114.8,69.3 102.4,70.4 96.6,77 C92.6,81.6 89.1,88.1 88.2,97 Z" id="Shape" fill="#FF700A" fill-rule="nonzero"></path>
+                <path d="M73.8,155.8 C72,155.8 70.6,154.3 70.6,152.6 L70.6,89 C70.6,73.9 66,62.8 57,56.1 C49.7,50.7 36.3,49.3 27.1,51.1 C28,60.5 33.2,72.9 40.5,78.3 C45.5,82 53.8,84.2 62.2,84.1 C64,84.1 65.5,85.5 65.5,87.3 C65.5,89.1 64.1,90.6 62.3,90.6 C52.4,90.7 42.8,88.1 36.7,83.5 C26.7,76.1 20.6,59.9 20.5,48.6 C20.5,47.2 21.4,45.9 22.8,45.5 C33.7,42.3 50.9,43.4 60.9,50.9 C71.6,58.9 77.1,71.7 77.1,89 L77.1,152.5 C77.1,154.4 75.6,155.8 73.8,155.8 Z" id="Shape" fill="#2B2727" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

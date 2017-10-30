@@ -60,6 +60,7 @@ module.exports = {
             'src/molecules/StepProgress/index.js',
             'src/molecules/StepIndicator/index.js',
             'src/molecules/AgentCallout/index.js',
+            'src/molecules/FeatureSquare/index.js',
           ]
         }
       ]

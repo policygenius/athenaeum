@@ -4,6 +4,28 @@
   }
 }
 
+@for $i from 1 through 11 {
+  .type-a-#{$i}-bold {
+    @include typographyA($i);
+  }
+}
+
+@for $i from 5 through 12 {
+  .type-b-#{$i}-medium {
+    @include typographyB($i);
+  }
+}
+
+
+
+.type-c-7-regular {
+  @include typographyC();
+}
+
+.label {
+  @include typography-label;
+}
+
 .fineprint {
   @include fineprint;
 }
@@ -53,4 +75,16 @@
     width: 110%;
     border-bottom: 2px solid;
   }
+}
+
+.spaced {
+  letter-spacing: 1.8px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
 }

@@ -1,0 +1,34 @@
+@import '../shared/formfields.module.scss';
+
+.field-group {
+  border: 1px solid color('neutral-4');
+}
+
+.label-wrapper {
+  padding: ru(.5) 0;
+  border-bottom: 1px solid color('neutral-4');
+}
+
+.label {
+  @extend %label;
+  padding: 0 ru(.75);
+}
+
+.field {
+  padding: 0;
+  border-right: 1px solid color('neutral-4');
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+/* --  state:focus  -- */
+.focused {
+  border: 1px solid color('secondary-2');
+}
+
+/* --  state:error  -- */
+.hasError {
+  border: 1px solid color('primary-1');
+}

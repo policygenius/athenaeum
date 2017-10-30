@@ -21,8 +21,8 @@ $gap: ru(.5);
     left: 0;
     width: $size;
     height: $size;
-    border: 1px solid color('neutral-5');
-    background-color: color('neutral-8');
+    border: 1px solid color('neutral-3');
+    background-color: color('primary-2');
     overflow: hidden;
     border-radius: 2px;
   }
@@ -39,7 +39,6 @@ $gap: ru(.5);
   cursor: pointer;
 
   &:checked {
-    + .light { color: color('neutral-2'); }
     + .checkbox-label:after { opacity: 1; }
   }
 
@@ -50,15 +49,14 @@ $gap: ru(.5);
     }
 
     + .checkbox-label:after {
-      box-shadow: 2px 2px 0 0 color('neutral-3');
+      box-shadow: 3px 3px 0 0 color('secondary-2');
     }
   }
 }
 
 .checkbox-label {
-  @include typography-7(false);
-  @include typography-semibold();
-
+  @include typography-b-8;
+  color: color('primary-3');
   cursor: pointer;
 }
 
@@ -75,28 +73,16 @@ $gap: ru(.5);
 
   transform: rotate(45deg);
   transform-origin: right;
-  box-shadow: 2px 2px 0 0 color('neutral-2');
+  box-shadow: 3px 3px 0 0 color('secondary-2');
+  border-radius: 20%;
 
   opacity: 0;
   content: '';
 }
 
-.light {
-  color: color('neutral-3');
-}
-
-.semibold {
-  color: color('neutral-2');
-}
-
-
-@media #{$medium-up} {
+@media #{$tablet} {
   .checkbox {
     line-height: ru(.75);
     margin: 0;
-  }
-
-  .checkbox-label {
-    margin-top: rem-calc(3);
   }
 }

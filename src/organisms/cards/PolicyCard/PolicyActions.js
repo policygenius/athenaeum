@@ -48,8 +48,6 @@ export const PolicyActions = (props) => {
       <Spacer spacer={3} />
       <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]} style={{ width: '100%' }}>
         <Button
-          variant='action'
-          slim
           onClick={onContinue}
           className={classnames(styles['continue'])}
         >
@@ -61,7 +59,7 @@ export const PolicyActions = (props) => {
             Continue
           </Hide>
         </Button>
-        <Button slim onClick={onDetails}>
+        <Button onClick={onDetails}>
           <Hide hideOn='small medium xLarge xxLarge'>
             <ResponsiveText text='Details' offset={-10} size={75} />
           </Hide>
@@ -72,7 +70,6 @@ export const PolicyActions = (props) => {
         <Hide hideOn='medium large xLarge xxLarge'>
           <Button
             onClick={onCompare}
-            slim
           >
             Compare
           </Button>
