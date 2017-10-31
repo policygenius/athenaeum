@@ -56,7 +56,11 @@ class Resource extends Component {
           </Text>
         </div>
         <Spacer size={12} />
-        <List bottomSpacing={18} noBullets className={classnames(...resourceClasses)}>
+        <List
+          bottomSpacing={13}
+          noBullets
+          className={classnames(...resourceClasses)}
+        >
           {
             resources.items.map(resource =>
               <LinkWrapper

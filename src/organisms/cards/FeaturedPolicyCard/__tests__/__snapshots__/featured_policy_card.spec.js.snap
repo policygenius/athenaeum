@@ -14,13 +14,13 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       className="premium"
     >
       <strong
-        className="text typography-2 semibold neutral-1 strong undefined type-b-2-medium"
+        className="semibold neutral-1 type-b-2-medium"
         onClick={undefined}
       >
         $19.80
          
         <strong
-          className="text typography-7 semibold neutral-2 strong undefined type-b-7-medium"
+          className="semibold neutral-2 type-b-7-medium"
           onClick={undefined}
         >
           /MO
@@ -61,7 +61,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <p
-                className="text typography-7 primary-3 p undefined type-b-7-medium"
+                className="primary-3 type-b-7-medium"
                 onClick={undefined}
               >
                 Financial Strength
@@ -102,7 +102,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="text typography-6 semibold primary-3 strong undefined type-b-6-medium"
+              className="semibold primary-3 type-b-6-medium"
               onClick={undefined}
             >
               A+
@@ -129,7 +129,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <p
-                className="text typography-7 primary-3 p undefined type-b-7-medium"
+                className="primary-3 type-b-7-medium"
                 onClick={undefined}
               >
                 Total Customers
@@ -170,7 +170,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="text typography-6 semibold primary-3 strong undefined type-b-6-medium"
+              className="semibold primary-3 type-b-6-medium"
               onClick={undefined}
             >
               16,000,000
@@ -197,7 +197,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <p
-                className="text typography-7 primary-3 p undefined type-b-7-medium"
+                className="primary-3 type-b-7-medium"
                 onClick={undefined}
               >
                 Policy Type
@@ -238,7 +238,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="text typography-6 semibold primary-3 strong undefined type-b-6-medium"
+              className="semibold primary-3 type-b-6-medium"
               onClick={undefined}
             >
               Level Term

@@ -1,13 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-// import {
-  // Icon,
-  // StyledWrapper
-// } from 'athenaeum';
-
-import Icon from 'atoms/Icon';
-import StyledWrapper from 'atoms/StyledWrapper';
 
 import styles from './search.module.scss';
 import HamburgerClose from './HamburgerClose';
@@ -18,8 +11,6 @@ function Search(props) {
   const {
     searching,
     toggleSearching,
-    toggleMobileMenu,
-    showMobileMenu,
     setActivePrimaryTab,
   } = props;
 

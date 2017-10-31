@@ -24,8 +24,19 @@ const getWeight = ({ semibold, light, weight, bold }) => {
   if (semibold) return 'semibold';
   if (light) return 'light';
   if (bold) return 'bold';
+};
 
-  return '';
+const getFont = ({ size, type, font, a }) => {
+  const fontSize = type || size;
+
+  if (a || font === 'a') {
+    return styles[`type-a-${fontSize}-bold`];
+  } else if (font === 'c') {
+    return styles['type-c-7-regular'];
+  }
+
+  return styles[`type-b-${fontSize}-medium`];
+
 };
 
 const convertChild = (child) => {
@@ -42,46 +53,39 @@ function Text(props) {
   if (!props.children) return null;
 
   const {
-    a,
-    b,
     align,
     children,
     className,
     color,
-    type,
-    variant,
-    font,
-    spaced,
     italic,
-    size,
     onClick,
+    spaced,
+    variant,
   } = props;
 
   const tag = getTag(props);
   const weight = getWeight(props);
-  const fontSize = size || type;
+  const font = getFont(props);
 
   const Element = `${tag}`;
   const classes = [
-    styles['text'],
-    styles[`typography-${fontSize}`],
-    styles[weight],
+    weight && weight,
     color && colors[color],
     variant && styles[variant],
-    styles[tag],
-    styles[align],
+    align && styles[align],
     spaced && styles['spaced'],
     italic && styles['italic'],
-    !a && styles[`type-${font}-${fontSize}-medium`],
-    a && styles[`type-a-${fontSize}-bold`],
-    b && styles[`type-b-${fontSize}-medium`],
     className,
+    font && font
   ];
 
-  return (
-    <Element className={classnames(...classes)} onClick={onClick}>
-      { React.Children.map(children, convertChild) }
-    </Element>
+  return React.createElement(
+    tag,
+    {
+      className: classnames(classes),
+      onClick
+    },
+    React.Children.map(children, convertChild)
   );
 }
 
@@ -179,7 +183,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   tag: 'p',
-  type: 7,
+  size: 7,
   font: 'b',
   color: 'primary-3'
 };

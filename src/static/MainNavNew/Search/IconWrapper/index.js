@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import {
-  // StyledWrapper,
-  // Icon,
-// } from 'athenaeum';
-
 import StyledWrapper from 'atoms/StyledWrapper';
 import Icon from 'atoms/Icon';
 
@@ -13,7 +8,7 @@ const getDimensions = ({ icon }) => {
   let height = '1.125rem';
   let width = height;
 
-  if (icon === 'closeRebrand') {
+  if (icon === 'close') {
     height = '1rem';
     width = height;
   }

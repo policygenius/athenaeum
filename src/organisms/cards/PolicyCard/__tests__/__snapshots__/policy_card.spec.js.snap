@@ -15,13 +15,13 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="premium"
         >
           <strong
-            className="text typography-2 semibold neutral-1 strong undefined type-b-2-medium"
+            className="semibold neutral-1 type-b-2-medium"
             onClick={undefined}
           >
             $19.80
              
             <strong
-              className="text typography-7 semibold neutral-2 strong undefined type-b-7-medium"
+              className="semibold neutral-2 type-b-7-medium"
               onClick={undefined}
             >
               /MO
@@ -61,7 +61,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                   style={undefined}
                 >
                   <p
-                    className="text typography-7 primary-3 p undefined type-b-7-medium"
+                    className="primary-3 type-b-7-medium"
                     onClick={undefined}
                   >
                     label
@@ -102,7 +102,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <strong
-                  className="text typography-6 semibold primary-3 strong undefined type-b-6-medium"
+                  className="semibold primary-3 type-b-6-medium"
                   onClick={undefined}
                 >
                   Some policy
@@ -129,7 +129,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                   style={undefined}
                 >
                   <p
-                    className="text typography-7 primary-3 p undefined type-b-7-medium"
+                    className="primary-3 type-b-7-medium"
                     onClick={undefined}
                   >
                     label
@@ -170,7 +170,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <strong
-                  className="text typography-6 semibold primary-3 strong undefined type-b-6-medium"
+                  className="semibold primary-3 type-b-6-medium"
                   onClick={undefined}
                 >
                   A+
@@ -269,7 +269,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <p
-            className="text typography-7 light neutral-3 p undefined type-b-7-medium"
+            className="light neutral-3 type-b-7-medium"
             onClick={undefined}
           >
             Compare
@@ -318,20 +318,20 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small"
             >
               <strong
-                className="text typography-7 semibold neutral-3 strong undefined type-b-7-medium"
+                className="semibold neutral-3 type-b-7-medium"
                 onClick={undefined}
               >
                 label
               </strong>
             </div>
             <strong
-              className="text typography-5 semibold neutral-2 strong undefined type-b-5-medium policy-name"
+              className="semibold neutral-2 policy-name type-b-5-medium"
               onClick={undefined}
             >
               Some policy
             </strong>
             <strong
-              className="text typography-7 semibold neutral-2 strong undefined type-b-7-medium policy-tooltip"
+              className="semibold neutral-2 policy-tooltip type-b-7-medium"
               onClick={undefined}
             >
               <div />
@@ -356,7 +356,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="text typography-7 semibold neutral-3 strong undefined type-b-7-medium"
+            className="semibold neutral-3 type-b-7-medium"
             onClick={undefined}
           >
             <div
@@ -365,7 +365,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="text typography-7 semibold neutral-2 strong undefined type-b-7-medium"
+              className="semibold neutral-2 type-b-7-medium"
               onClick={undefined}
             >
               A+
@@ -383,7 +383,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="text typography-7 semibold neutral-3 strong undefined type-b-7-medium"
+            className="semibold neutral-3 type-b-7-medium"
             onClick={undefined}
           >
             <div
@@ -392,7 +392,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="text typography-7 semibold neutral-2 strong undefined type-b-7-medium"
+              className="semibold neutral-2 type-b-7-medium"
               onClick={undefined}
             >
               A+
@@ -410,7 +410,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="text typography-7 semibold neutral-3 strong undefined type-b-7-medium"
+            className="semibold neutral-3 type-b-7-medium"
             onClick={undefined}
           >
             <div
@@ -419,7 +419,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="text typography-7 semibold neutral-2 strong undefined type-b-7-medium"
+              className="semibold neutral-2 type-b-7-medium"
               onClick={undefined}
             >
               16
@@ -441,11 +441,11 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <div>
           <strong
-            className="text typography-5 semibold neutral-2 strong undefined type-b-5-medium"
+            className="semibold neutral-2 type-b-5-medium"
             onClick={undefined}
           >
             <strong
-              className="text typography-3 semibold primary-3 strong undefined type-b-3-medium"
+              className="semibold primary-3 type-b-3-medium"
               onClick={undefined}
             >
               $19.80

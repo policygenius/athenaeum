@@ -13,7 +13,7 @@ export const searchIcon = ({ searching }) => ({ breakpoints, spacing }) => `
   }
 `;
 
-export const searchIconMobile = ({ searching }) => ({ breakpoints }) => `
+export const searchIconMobile = () => ({ breakpoints }) => `
   display: flex;
   flex-direction: column;
   justify-content: center;

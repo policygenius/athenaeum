@@ -1,10 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {
-  // Text,
-  // LinkWrapper,
-  // StyledWrapper,
-// } from 'athenaeum';
 
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
@@ -28,7 +23,7 @@ function MenuLink(props) {
         css={primaryHeader(props)}
         component={Text}
         font='a'
-        type={10}
+        size={10}
       >
         { header }
       </StyledWrapper>
