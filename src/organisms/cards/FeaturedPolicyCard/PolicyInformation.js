@@ -14,6 +14,7 @@ const renderPolicyInformation = (info, idx) =>
   <div key={`policy-info-${idx}`}>
     <Layout
       smallCols={[ 4, 2, 6 ]}
+      mediumCols={[ 5, 1, 6 ]}
       className={styles['policy-info-item']}
     >
       <Col
@@ -22,7 +23,6 @@ const renderPolicyInformation = (info, idx) =>
       >
         <Text
           type={7}
-          className={styles['policy-info-label']}
         >
           {info.label}
         </Text>
