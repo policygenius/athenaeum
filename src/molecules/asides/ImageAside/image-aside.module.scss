@@ -37,10 +37,6 @@
   .icon {
     width: rem-calc(45);
     height: rem-calc(45);
-
-    svg path {
-      fill: color('primary-3');
-    }
   }
 
   .header {
@@ -56,6 +52,10 @@
   flex-shrink: 1;
   width: rem-calc(100);
   height: rem-calc(100);
+
+    svg path {
+      fill: color('primary-3');
+    }
 
   + .aside { margin-left: ru(.75); }
 }
