@@ -43,7 +43,7 @@ function FeaturedPolicyCard(props) {
               color='neutral-1'
               semibold
             >
-              {formattedPremium} <Text tag='span' type={7} color='neutral-4' semibold>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium} <Text tag='span' type={7} color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
 
             <Spacer spacer={1} />
