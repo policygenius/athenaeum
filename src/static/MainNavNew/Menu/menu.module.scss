@@ -19,7 +19,7 @@
     top: 3rem;
     background: #fff;
     height: calc(100% - 73px);
-    transition: height 1s ease,transform .5s,-webkit-transform .5s;
+    transition: height 1s ease, transform .5s, -webkit-transform .5s;
 
     &.mobile-collapsed {
       transform: translateX(-100%);
@@ -37,12 +37,14 @@
   }
 
   .primary-menu {
+    /* stylelint-disable declaration-no-important */
     display: block !important;
     padding: 0 !important;
 
     > li {
       padding: 0 !important;
     }
+    /* stylelint-enable declaration-no-important */
   }
 }
 
@@ -60,7 +62,7 @@
     flex-basis: 100%;
     position: static;
     transition: flex-basis .3s ease;
-    transition: flex-basis .3s ease,-ms-flex-preferred-size .3s ease;
+    transition: flex-basis .3s ease, -ms-flex-preferred-size .3s ease;
 
     &.searching {
       flex-basis: 0;

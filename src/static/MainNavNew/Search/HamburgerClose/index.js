@@ -15,7 +15,7 @@ function HamburgerClose(props) {
     searching
   } = props;
 
-  const icon = showMobileMenu || searching ? 'closeRebrand' : 'hamburgerRebrand';
+  const icon = showMobileMenu || searching ? 'close' : 'hamburgerRebrand';
   const onClick = getOnClick(props);
 
   return (

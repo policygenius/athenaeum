@@ -1,9 +1,3 @@
-@for $i from 0 through 7 {
-  .typography-#{$i} {
-    @include typography($i);
-  }
-}
-
 @for $i from 1 through 11 {
   .type-a-#{$i}-bold {
     @include typographyA($i);
@@ -15,8 +9,6 @@
     @include typographyB($i);
   }
 }
-
-
 
 .type-c-7-regular {
   @include typographyC();
