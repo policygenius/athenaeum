@@ -1,5 +1,4 @@
 export const resourcesStyle = ({ breakpoints }) => `
-
   .resource-group {
     flex-basis: 0;
     flex-grow: 1;
@@ -14,18 +13,19 @@ export const resourcesStyle = ({ breakpoints }) => `
     }
   }
 
-  .collapsed-resources {
-    display: none;
-  }
-
   @media ${breakpoints.smallOnly} {
     padding-left: 24px;
     padding-right: 24px;
+
     .resource-group {
       padding: 0;
       p span {
         margin-left: 12px;
       }
+    }
+
+    .collapsed-resources {
+      display: none;
     }
   }
   @media ${breakpoints.mediumUp} {
@@ -35,7 +35,8 @@ export const resourcesStyle = ({ breakpoints }) => `
       display: none;
     }
   }
-    @media ${breakpoints.largeUp} {
+
+  @media ${breakpoints.largeUp} {
   .resource-group {
     min-height: 312px;
   }
