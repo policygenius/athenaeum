@@ -19,7 +19,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
         $19.80
          
         <strong
-          className="text typography-7 semibold neutral-4 undefined strong undefined"
+          className="text typography-7 semibold neutral-2 undefined strong undefined"
         >
           /MO
         </strong>
@@ -49,7 +49,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 fullwidth bottom-spacing-undefined"
+            className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
@@ -59,7 +59,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <p
-                className="text typography-7 regular undefined undefined p undefined policy-info-label"
+                className="text typography-7 regular undefined undefined p undefined"
               >
                 Financial Strength
               </p>
@@ -87,14 +87,14 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             </div>
           </div>
           <div
-            className="col col-sm-2 bottom-spacing-undefined"
+            className="col col-sm-2 col-md-1 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
             <div />
           </div>
           <div
-            className="col col-sm-6 bottom-spacing-undefined"
+            className="col col-sm-6 col-md-6 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
@@ -115,7 +115,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 fullwidth bottom-spacing-undefined"
+            className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
@@ -125,7 +125,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <p
-                className="text typography-7 regular undefined undefined p undefined policy-info-label"
+                className="text typography-7 regular undefined undefined p undefined"
               >
                 Total Customers
               </p>
@@ -153,14 +153,14 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             </div>
           </div>
           <div
-            className="col col-sm-2 bottom-spacing-undefined"
+            className="col col-sm-2 col-md-1 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
             <div />
           </div>
           <div
-            className="col col-sm-6 bottom-spacing-undefined"
+            className="col col-sm-6 col-md-6 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
@@ -181,7 +181,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 fullwidth bottom-spacing-undefined"
+            className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
@@ -191,7 +191,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <p
-                className="text typography-7 regular undefined undefined p undefined policy-info-label"
+                className="text typography-7 regular undefined undefined p undefined"
               >
                 Policy Type
               </p>
@@ -219,14 +219,14 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             </div>
           </div>
           <div
-            className="col col-sm-2 bottom-spacing-undefined"
+            className="col col-sm-2 col-md-1 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
             <div />
           </div>
           <div
-            className="col col-sm-6 bottom-spacing-undefined"
+            className="col col-sm-6 col-md-6 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >

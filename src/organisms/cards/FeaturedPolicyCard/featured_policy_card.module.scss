@@ -113,13 +113,6 @@ $details-link-border: 1px solid #b2b2b2;
       max-width: rem-calc(150px);
     }
   }
-
-  .policy-info {
-    &-label {
-      flex-basis: 0%;
-      flex-grow: 1;
-    }
-  }
 }
 
 @media #{$medium-up} {
