@@ -42,8 +42,8 @@ function MobileMenu(props) {
             className={styles['tag-text']}
             tag='span'
             type={5}
-            color={tab.active ? 'neutral-2' : 'neutral-3'}
-            weight='semibold'
+            color={tab.active ? 'primary-1' : 'primary-3'}
+            a
           >
             {tab.text}
           </Text>
