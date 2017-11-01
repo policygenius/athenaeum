@@ -17,14 +17,9 @@ $checkout-header-height: rem-calc(77);
 
 .head {
   z-index: 1;
-  background-color: color('brand-2');
-  background-image: linear-gradient(
-    to top,
-    color('brand-1') 0,
-    color('brand-2') 100%
-  );
+  background-color: color('primary-2');
 
-  color: color('neutral-8');
+  color: color('primary-3');
   flex-basis: auto;
 
   &-main,
