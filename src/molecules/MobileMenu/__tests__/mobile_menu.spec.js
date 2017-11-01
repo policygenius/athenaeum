@@ -37,11 +37,11 @@ describe('<MobileMenu />', () => {
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
     const activeText = wrapper.find(Text).first();
 
-    expect(activeText.prop('color')).toEqual('neutral-2');
+    expect(activeText.prop('color')).toEqual('primary-1');
 
     const inactiveText = wrapper.find(Text).last();
 
-    expect(inactiveText.prop('color')).toEqual('neutral-3');
+    expect(inactiveText.prop('color')).toEqual('primary-3');
   });
 
   it('gives the correct className to Icon component', () => {

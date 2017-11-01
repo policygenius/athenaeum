@@ -72,7 +72,7 @@ $border-style: 1px solid color('neutral-5');
   display: flex;
 
   border-top: $border-style;
-  color: color('neutral-2');
+  color: color('primary-3');
 
   line-height: ru(.75);
   text-align: center;
@@ -86,10 +86,11 @@ $border-style: 1px solid color('neutral-5');
     text-align: left;
   }
 
-  &-value {
-    @include typography-4;
-    @include typography-semibold;
+  &-label {
+    @include typography-label;
+  }
 
+  &-value {
     margin: 0;
   }
 
