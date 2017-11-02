@@ -25,7 +25,7 @@ const renderSection = (section, idx) => {
 
   return (
     <div key={`sec-item-${idx}`} className={styles['sections-item']}>
-      <span>{label}</span>
+      <span className={styles['sections-label']}>{label}</span>
       <div className={styles['sections-value']}>{value}</div>
       { sublabel ? <span>{sublabel}</span> : null }
     </div>

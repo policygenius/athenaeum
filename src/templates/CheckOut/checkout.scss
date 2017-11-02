@@ -5,7 +5,7 @@ $checkout-header-height: rem-calc(77);
 .checkout {
   width: 100%;
   min-height: 100vh;
-  background-color: color('neutral-7');
+  background-color: color('primary-2');
   display: flex;
 
   &-layout {
@@ -79,7 +79,7 @@ $checkout-header-height: rem-calc(77);
   height: ru(.75);
 
   path {
-    fill: color('neutral-8');
+    fill: color('primary-3');
   }
 }
 
@@ -141,7 +141,7 @@ $checkout-header-height: rem-calc(77);
   }
 
   .cost {
-    background: color('brand-1');
+    background: color('primary-3');
     width: 100%;
     padding: ru(.75) $mobile-layout-padding;
 

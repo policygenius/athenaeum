@@ -32,6 +32,7 @@ function DataRow(props) {
     amount,
     unit,
     tooltip,
+    subitem,
     indent,
     description,
   } = props;
@@ -41,6 +42,7 @@ function DataRow(props) {
     highlight && styles['highlight'],
     variant && styles[variant],
     indent && styles['indent'],
+    subitem && styles['subitem'],
     className,
   ];
 
