@@ -1,4 +1,4 @@
-export const footer = ({ breakpoints, spacing }) => `
+export const footer = ({ breakpoints }) => `
   background-color: #ffffff;
   margin: 0 auto;
   padding: 36px 0;
@@ -34,14 +34,14 @@ export const divider = ({ breakpoints }) => `
 
 `;
 
-export const rightColumn = ({ breakpoints, spacing }) => `
+export const rightColumn = ({ breakpoints }) => `
 
   @media ${breakpoints.smallOnly} {
     flex-direction: column-reverse;
   }
 `;
 
-export const socialMediaWrapper = ({ breakpoints, spacing }) => `
+export const socialMediaWrapper = ({ breakpoints }) => `
     display: flex;
     align-items: center;
     justify-content: center;

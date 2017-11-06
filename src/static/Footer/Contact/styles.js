@@ -1,4 +1,4 @@
-export const contactWrapper = ({ breakpoints, spacing }) => `
+export const contactWrapper = ({ breakpoints }) => `
   @media ${breakpoints.smallOnly} {
     padding-left: 24px;
     padding-right: 24px;
@@ -6,7 +6,7 @@ export const contactWrapper = ({ breakpoints, spacing }) => `
     border-bottom: 1px solid #d6d6d6;
   }
 `;
-export const header = ({ breakpoints, spacing }) => `
+export const header = ({ breakpoints }) => `
   height: 36px;
   width: 193px;
   margin: 0 auto 36px;
@@ -53,7 +53,7 @@ export const contactItem = ({ breakpoints, spacing }) => `
   }
 `;
 
-export const contactItemHeader = ({ breakpoints, spacing }) => `
+export const contactItemHeader = () => `
   &:hover {
     color: #ff700a;
   }

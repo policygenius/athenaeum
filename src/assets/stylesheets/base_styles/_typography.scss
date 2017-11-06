@@ -361,7 +361,7 @@ $boldweight:                  900;
 }
 
 @mixin typography-label {
-  @include typography-a-10-bold();
+  @include typography-a-11-bold();
   letter-spacing: rem-calc(1.8px);
   text-transform: uppercase;
 }

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Spacer from 'atoms/Spacer';
 import StyledWrapper from 'atoms/StyledWrapper';
 
 import { resourcesStyle, resourcesBottom } from './styles';

@@ -39,7 +39,6 @@ class BlogIntro extends Component {
   render() {
     const {
       intro,
-      headerText
     } = this.props;
 
     return (

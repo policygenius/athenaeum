@@ -24,6 +24,8 @@ const getWeight = ({ semibold, light, weight, bold }) => {
   if (semibold) return 'semibold';
   if (light) return 'light';
   if (bold) return 'bold';
+
+  return false;
 };
 
 const getFont = ({ size, type, font, a }) => {
@@ -67,7 +69,6 @@ function Text(props) {
   const weight = getWeight(props);
   const font = getFont(props);
 
-  const Element = `${tag}`;
   const classes = [
     weight && weight,
     color && colors[color],

@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { generate } from 'shortid';
 
-import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
-import StyledWrapper from 'atoms/StyledWrapper';
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
 import Spacer from 'atoms/Spacer';

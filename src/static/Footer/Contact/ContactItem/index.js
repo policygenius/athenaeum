@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { generate } from 'shortid';
 
-import { contactItem, contactItemHeader } from '../styles';
-
 import Button from 'atoms/Button';
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
 import Hide from 'wrappers/Hide';
 import Spacer from 'atoms/Spacer';
 import StyledWrapper from 'atoms/StyledWrapper';
+
+import { contactItem, contactItemHeader } from '../styles';
 
 const ContactItem = (props) => {
   const { item } = props;

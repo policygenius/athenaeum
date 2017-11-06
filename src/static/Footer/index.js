@@ -3,7 +3,6 @@ import React from 'react';
 import Col from 'atoms/Layout/Col';
 import Layout from 'atoms/Layout';
 import StyledWrapper from 'atoms/StyledWrapper';
-import Text from 'atoms/Text';
 
 import Contact from './Contact';
 import ResourceList from './ResourceList';
@@ -15,8 +14,6 @@ import Legal from './Legal';
 
 import { contactItems } from './data/contact';
 import { footer, divider, socialMediaWrapper, rightColumn } from './styles';
-
-import { footerLinkItems, legalLinkItems } from './data/links';
 
 const Footer = () =>
   <div style={{ borderTop: '1px solid #b2b2b2' }}>
