@@ -9,7 +9,7 @@ import insuranceProducts from '../../data/products';
 import magazineItems from '../../data/magazineItems';
 import aboutItems from '../../data/aboutItems';
 
-const PrimaryMenu = (props) =>
+const PrimaryMenu = props =>
   <List
     horizontal={{}}
     className={styles['primary-menu']}
