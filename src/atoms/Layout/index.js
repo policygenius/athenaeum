@@ -21,12 +21,12 @@ function Layout( props ) {
     <div
       style={style}
       className={classnames(
-        className,
         styles['layout'],
         padding && styles['padding'],
         nested && styles['nested'],
         variant && styles[variant],
         column && styles['column'],
+        className,
       )}
     >
       { kids }

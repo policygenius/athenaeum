@@ -1,13 +1,10 @@
 import React from 'react';
 
-import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 import Button from 'atoms/Button';
 import Text from 'atoms/Text';
-import Hide from 'wrappers/Hide';
 import Spacer from 'atoms/Spacer';
 import StyledWrapper from 'atoms/StyledWrapper';
-import List from 'atoms/List';
 
 import { selectProduct } from './styles';
 

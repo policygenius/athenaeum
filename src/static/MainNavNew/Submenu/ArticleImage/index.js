@@ -1,11 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {
-  // Text,
-  // LinkWrapper,
-  // Spacer,
-  // StyledWrapper,
-// } from 'athenaeum';
 
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
@@ -19,7 +13,6 @@ function ArticleImage(props) {
     link,
     imgProps,
     header,
-    subHeader,
   } = props;
 
   return (
@@ -56,7 +49,6 @@ ArticleImage.propTypes = {
   link: PropTypes.string,
   imgProps: PropTypes.object,
   header: PropTypes.string,
-  subHeader: PropTypes.string,
 };
 
 export default ArticleImage;

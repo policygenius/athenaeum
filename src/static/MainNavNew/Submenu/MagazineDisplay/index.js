@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-// import {
-  // Layout,
-  // Col,
-  // Spacer,
-  // StyledWrapper,
-// } from 'athenaeum';
 
-import Text from 'atoms/Text';
 import Spacer from 'atoms/Spacer';
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
@@ -120,7 +113,7 @@ class MagazineDisplay extends Component {
     const data = this.state[activeName].data;
 
     return (
-      data.map((item, idx) => {
+      data.map((item) => {
         if (item.type === 'list') {
           return (
             <Col

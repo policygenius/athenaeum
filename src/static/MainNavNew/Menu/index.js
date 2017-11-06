@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -6,36 +6,34 @@ import styles from './menu.module.scss';
 import PrimaryMenu from './PrimaryMenu';
 import SecondaryMenu from './SecondaryMenu';
 
-class Menu extends Component {
-  render() {
-    const {
-      searching,
-      active,
-      showMobileMenu,
-      mobileCollapsedMenu,
-    } = this.props;
+const Menu = (props) => {
+  const {
+    searching,
+    active,
+    showMobileMenu,
+    mobileCollapsedMenu,
+  } = props;
 
-    const wrapperClasses = [
-      styles.wrapper,
-      searching && styles.searching,
-      !!mobileCollapsedMenu && styles['mobile-collapsed'],
-    ];
+  const wrapperClasses = [
+    styles.wrapper,
+    searching && styles.searching,
+    !!mobileCollapsedMenu && styles['mobile-collapsed'],
+  ];
 
-    return (
-      <div className={classnames(...wrapperClasses)}>
-        <div className={styles.container}>
-          <PrimaryMenu
-            {...this.props}
-          />
-          <SecondaryMenu
-            active={active}
-            showMobileMenu={showMobileMenu}
-          />
-        </div>
+  return (
+    <div className={classnames(...wrapperClasses)}>
+      <div className={styles.container}>
+        <PrimaryMenu
+          {...props}
+        />
+        <SecondaryMenu
+          active={active}
+          showMobileMenu={showMobileMenu}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Menu.propTypes = {
   searching: PropTypes.bool,

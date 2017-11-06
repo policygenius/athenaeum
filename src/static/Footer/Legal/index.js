@@ -12,7 +12,7 @@ import StyledWrapper from 'atoms/StyledWrapper';
 import { legalLinkItems } from '../data/links';
 import { legalWrapper, links, linksList } from './styles';
 
-const Legal = props =>
+const Legal = () =>
   <Hide hideOn='small'>
     <StyledWrapper
       css={legalWrapper}

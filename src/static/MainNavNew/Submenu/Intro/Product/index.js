@@ -1,16 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {
-  // Icon,
-  // Text,
-  // Button,
-  // LinkWrapper,
-  // Layout,
-  // Col,
-  // Spacer,
-  // Hide,
-  // StyledWrapper
-// } from 'athenaeum';
 
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
@@ -19,7 +8,6 @@ import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 import Spacer from 'atoms/Spacer';
-import Hide from 'wrappers/Hide';
 import StyledWrapper from 'atoms/StyledWrapper';
 
 import styles from '../intro.module.scss';

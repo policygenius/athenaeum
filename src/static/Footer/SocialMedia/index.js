@@ -5,7 +5,7 @@ import List from 'atoms/List';
 import LinkWrapper from 'atoms/LinkWrapper';
 import StyledWrapper from 'atoms/StyledWrapper';
 
-import { iconList } from './styles.js';
+import { iconList } from './styles';
 import { socialMediaData } from '../data/socialMediaData';
 
 const SocialMedia = () =>

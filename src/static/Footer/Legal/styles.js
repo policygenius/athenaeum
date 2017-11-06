@@ -1,4 +1,4 @@
-export const legalWrapper = ({ breakpoints, spacing }) => `
+export const legalWrapper = ({ breakpoints }) => `
   background-color: #edeeed;
 
   .legal-content {
@@ -15,7 +15,7 @@ export const legalWrapper = ({ breakpoints, spacing }) => `
   }
 `;
 
-export const links = ({ breakpoints, spacing }) => `
+export const links = ({ spacing }) => `
   display: flex;
   position: relative;
 
@@ -26,7 +26,7 @@ export const links = ({ breakpoints, spacing }) => `
   }
 `;
 
-export const linksList = ({ breakpoints, spacing }) => `
+export const linksList = () => `
 
   align-items: center;
 

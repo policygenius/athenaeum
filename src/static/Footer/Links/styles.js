@@ -1,4 +1,4 @@
-export const links = ({ breakpoints, spacing }) => `
+export const links = ({ spacing }) => `
   display: flex;
   align-items: center;
   position: relative;
@@ -8,7 +8,7 @@ export const links = ({ breakpoints, spacing }) => `
   }
 `;
 
-export const linksList = ({ breakpoints, spacing }) => `
+export const linksList = ({ spacing }) => `
   .link-wrapper {
     line-height: ${spacing[36]};
     a:hover {

@@ -44,7 +44,7 @@ function LinkList(props) {
         linkList
       >
         {
-          list.map((i, id) =>
+          list.map(i =>
             <LinkWrapper
               href={i.url}
               color='neutral-1'
