@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import ImageAside from 'molecules/asides/ImageAside';
 import Layout, { Col } from 'atoms/Layout';
 import LinkWrapper from 'atoms/LinkWrapper';
+import Text from 'atoms/Text';
 
 import styles from './playback_card.module.scss';
 
@@ -30,7 +31,12 @@ function PlaybackCard(props) {
             onClick={onClick}
             className={styles['edit']}
           >
-            { editLinkText }
+            <Text
+              tag='span'
+              type={7}
+            >
+              { editLinkText }
+            </Text>
           </LinkWrapper>
         </Col>
       </Layout>
