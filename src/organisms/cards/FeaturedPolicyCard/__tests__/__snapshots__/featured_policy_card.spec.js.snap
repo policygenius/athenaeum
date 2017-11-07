@@ -257,7 +257,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       className="button-group"
     >
       <button
-        className="button action"
+        className="button"
         disabled={undefined}
         onClick={[Function]}
         type="button"
@@ -273,51 +273,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       >
         Details & Review
       </a>
-      <div
-        className="layout secondary-actions-wrapper"
-        style={undefined}
-      >
-        <div
-          className="col col-sm-6 fullwidth border-neutral-6"
-          onClick={undefined}
-          style={undefined}
-        >
-          <div
-            className="col border-neutral-6 secondary-action"
-            onClick={undefined}
-            style={undefined}
-          >
-            <button
-              className="button"
-              disabled={undefined}
-              onClick={[Function]}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="col col-sm-6 fullwidth border-neutral-6"
-          onClick={undefined}
-          style={undefined}
-        >
-          <div
-            className="col border-neutral-6 secondary-action"
-            onClick={undefined}
-            style={undefined}
-          >
-            <button
-              className="button"
-              disabled={undefined}
-              onClick={undefined}
-              type="button"
-            >
-              Compare
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

@@ -189,7 +189,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="button-group"
         >
           <button
-            className="button action"
+            className="button"
             disabled={undefined}
             onClick={[Function]}
             type="button"
