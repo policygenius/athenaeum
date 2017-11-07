@@ -2,6 +2,10 @@
 
 exports[`<StepIndicator /> renders correctly 1`] = `
 <div
-  className="step-indicator"
-/>
+  className=""
+>
+  <div
+    className="step-indicator"
+  />
+</div>
 `;
