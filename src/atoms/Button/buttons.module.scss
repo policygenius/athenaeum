@@ -15,6 +15,7 @@ $brand-white: color('primary-2');
 .button {
   @include typography-label;
 
+  line-height: rem-calc(8px);
   display: block;
   cursor: pointer;
   text-align: center;

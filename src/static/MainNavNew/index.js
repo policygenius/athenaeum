@@ -101,7 +101,7 @@ class MainNavNew extends Component {
 
     return (
       <nav className={styles.wrapper}>
-        <div className={classnames(...mainPanelClasses)}>
+        <div className={classnames(...mainPanelClasses)} style={{ zIndex: '100' }}>
           <div className={styles.container}>
             <Logo />
 
