@@ -22,6 +22,7 @@ function FeaturedPolicyCard(props) {
     onDetails,
     information,
     onCompare,
+    continueCTAText,
   } = props;
 
   const classes = [
@@ -68,6 +69,7 @@ function FeaturedPolicyCard(props) {
           onDetails={onDetails}
           onContinue={onContinue}
           onCompare={onCompare}
+          continueCTAText={continueCTAText}
         />
       </div>
     </div>
@@ -117,14 +119,19 @@ FeaturedPolicyCard.propTypes = {
   onContinue: PropTypes.func.isRequired,
 
   /**
+   * Text displayed for the main action button
+   */
+  continueCTAText: PropTypes.string,
+
+  /**
    * Function supplied to details link below CTA
    */
-  onDetails: PropTypes.func.isRequired,
+  onDetails: PropTypes.func,
 
   /**
    * Function supplied to compare CTA on mobile only
    */
-  onCompare: PropTypes.func.isRequired,
+  onCompare: PropTypes.func,
 
   /**
    * Supplies information about policy to card. Examples would include type, financial strength or total customers
@@ -137,6 +144,10 @@ FeaturedPolicyCard.propTypes = {
     ]).isRequired,
     hoverMessage: PropTypes.node.isRequired,
   })),
+};
+
+FeaturedPolicyCard.defaultProps = {
+  continueCTAText: 'Continue',
 };
 
 export default FeaturedPolicyCard;
