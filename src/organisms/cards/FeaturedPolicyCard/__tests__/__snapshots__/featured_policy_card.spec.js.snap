@@ -14,14 +14,12 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       className="premium"
     >
       <strong
-        className="semibold neutral-1 type-b-2-medium"
-        onClick={undefined}
+        className="bold neutral-1 type-b-2-medium"
       >
         $19.80
          
         <strong
-          className="semibold neutral-2 type-b-7-medium"
-          onClick={undefined}
+          className="bold neutral-2 type-b-7-medium"
         >
           /MO
         </strong>
@@ -62,7 +60,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             >
               <p
                 className="primary-3 type-b-7-medium"
-                onClick={undefined}
               >
                 Financial Strength
               </p>
@@ -102,8 +99,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="semibold primary-3 type-b-6-medium"
-              onClick={undefined}
+              className="bold primary-3 type-b-6-medium"
             >
               A+
             </strong>
@@ -130,7 +126,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             >
               <p
                 className="primary-3 type-b-7-medium"
-                onClick={undefined}
               >
                 Total Customers
               </p>
@@ -170,8 +165,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="semibold primary-3 type-b-6-medium"
-              onClick={undefined}
+              className="bold primary-3 type-b-6-medium"
             >
               16,000,000
             </strong>
@@ -198,7 +192,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             >
               <p
                 className="primary-3 type-b-7-medium"
-                onClick={undefined}
               >
                 Policy Type
               </p>
@@ -238,8 +231,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="semibold primary-3 type-b-6-medium"
-              onClick={undefined}
+              className="bold primary-3 type-b-6-medium"
             >
               Level Term
             </strong>

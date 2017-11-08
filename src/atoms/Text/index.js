@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import isUndefined from 'lodash/isUndefined';
+import omitBy from 'lodash/omitBy';
 
 import colors from 'atoms/Color/colors.scss';
 import styles from './text.module.scss';
@@ -19,18 +21,10 @@ const getTag = (props) => {
   return tag;
 };
 
-const getWeight = ({ semibold, light, weight, bold }) => {
-  if (weight) return weight;
-  if (semibold) return 'semibold';
-  if (light) return 'light';
-  if (bold) return 'bold';
-
-  return false;
-};
-
 const getFont = ({ size, type, font, a }) => {
   const fontSize = type || size;
 
+  // TODO: Remove 'a' prop as an option from component
   if (a || font === 'a') {
     return styles[`type-a-${fontSize}-bold`];
   } else if (font === 'c') {
@@ -38,7 +32,6 @@ const getFont = ({ size, type, font, a }) => {
   }
 
   return styles[`type-b-${fontSize}-medium`];
-
 };
 
 const convertChild = (child) => {
@@ -49,6 +42,13 @@ const convertChild = (child) => {
   }
 
   return child;
+};
+
+const getWeight = ({ font, bold, semibold }) => {
+  if (font !== 'b') { return false; }
+  if (bold || semibold ) { return styles.bold; }
+
+  return false;
 };
 
 function Text(props) {
@@ -63,11 +63,12 @@ function Text(props) {
     onClick,
     spaced,
     variant,
+    style
   } = props;
 
-  const tag = getTag(props);
-  const weight = getWeight(props);
   const font = getFont(props);
+  const weight = getWeight(props);
+  const tag = getTag(props);
 
   const classes = [
     weight && weight,
@@ -76,37 +77,23 @@ function Text(props) {
     align && styles[align],
     spaced && styles['spaced'],
     italic && styles['italic'],
-    className,
+    className && className,
     font && font
   ];
 
   return React.createElement(
     tag,
-    {
+    omitBy({
       className: classnames(classes),
+      style,
       onClick
-    },
+    }, isUndefined),
     React.Children.map(children, convertChild)
   );
 }
 
 
 Text.propTypes = {
-  /*
-   * This prop provides a shorthand for setting the
-   * font type to 'a'
-   */
-  a: PropTypes.bool,
-
-  /*
-   * This prop provides a shorthand for setting the
-   * font type to 'b'
-   */
-  b: PropTypes.bool,
-
-  /*
-   * Text alignment
-   */
   align: PropTypes.oneOf([
     'left',
     'right',
@@ -117,6 +104,11 @@ Text.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
+  /**
+   * Add custom inline style
+   */
+  style: PropTypes.object,
   /**
    * You can use any html element text tag
    */
@@ -133,10 +125,6 @@ Text.propTypes = {
    */
   size: PropTypes.number,
 
-  /**
-   * Deprecated. Use 'size' instead
-   */
-  type: PropTypes.number,
 
   /**
    * Text decoration
@@ -154,17 +142,6 @@ Text.propTypes = {
   color: PropTypes.string,
 
   /**
-   * - light = 300
-   * - semibold = 500
-   */
-  weight: PropTypes.oneOf([
-    'light',
-    'semibold',
-  ]),
-
-  light: PropTypes.bool,
-  semibold: PropTypes.bool,
-  /**
    * Possible font types are `a`, `b`, and `c`
    */
   font: PropTypes.string,
@@ -173,6 +150,10 @@ Text.propTypes = {
    */
   spaced: PropTypes.bool,
   /**
+   * Makes text bold
+   */
+  bold: PropTypes.bool,
+  /**
    * Adds italic
    */
   italic: PropTypes.bool,
@@ -180,6 +161,36 @@ Text.propTypes = {
    * onClick callback
    */
   onClick: PropTypes.func,
+
+  /**
+   * Deprecated. Use 'size' instead
+   */
+  type: PropTypes.number,
+  /**
+   * Deprecated
+   */
+  weight: PropTypes.oneOf([]),
+  /**
+   * Deprecated
+   */
+  light: PropTypes.bool,
+  /**
+   * Deprecated
+   */
+  semibold: PropTypes.bool,
+  /**
+   * Deprecated
+   */
+  a: PropTypes.bool,
+
+  /**
+   * Deprecated
+   */
+  b: PropTypes.bool,
+
+  /*
+   * Text alignment
+   */
 };
 
 Text.defaultProps = {

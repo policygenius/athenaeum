@@ -29,7 +29,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
         <div>
           <p
             className="primary-3 type-a-5-bold"
-            onClick={undefined}
           >
             header
           </p>
@@ -38,7 +37,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
           />
           <p
             className="neutral-3 type-b-8-medium"
-            onClick={undefined}
           >
             subheader
           </p>
@@ -52,7 +50,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
         <div>
           <p
             className="primary-3 type-a-5-bold"
-            onClick={undefined}
           >
             secondaryHeader
           </p>
@@ -61,7 +58,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
           />
           <p
             className="neutral-3 type-b-8-medium"
-            onClick={undefined}
           >
             another subhead
           </p>
@@ -84,7 +80,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       >
         <p
           className="primary-3 type-b-10-medium"
-          onClick={undefined}
         >
           A link
         </p>
@@ -101,7 +96,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       >
         <p
           className="primary-3 type-b-10-medium"
-          onClick={undefined}
         >
           second link
         </p>
