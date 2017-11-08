@@ -5,6 +5,21 @@ import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
 import styles from './add_card.module.scss';
 
+function getCardText(cardText) {
+  if (typeof cardText === 'string') {
+    return (
+      <Text size={11} className={styles['text']}>{ cardText }</Text>
+    );
+  }
+
+  return React.cloneElement(
+    cardText,
+    {
+      className: styles['text'],
+    }
+  );
+}
+
 function AddCard( props ) {
   const {
     className,
@@ -29,7 +44,7 @@ function AddCard( props ) {
   return (
     <div className={classnames(...classes)} onClick={wrappedOnClick}>
       <Icon icon={icon} className={styles['icon']} />
-      <Text size={11} className={styles['text']}>{ cardText }</Text>
+      { getCardText(cardText) }
     </div>
   );
 }
@@ -38,7 +53,10 @@ AddCard.propTypes = {
   /**
    * text to be displayed on card
    */
-  cardText: PropTypes.string,
+  cardText: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
 
   /**
    * class name to be added to class set

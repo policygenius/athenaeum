@@ -20,7 +20,7 @@ describe('<AddCard />', () => {
   });
 
   it('adds .disabled class if props.disabled is true', () => {
-    const wrapper = shallow(<AddCard disabled {...props} />);
+    const wrapper = shallow(<AddCard {...props} disabled />);
 
     expect(wrapper.hasClass('disabled')).to.be.true;
   });
