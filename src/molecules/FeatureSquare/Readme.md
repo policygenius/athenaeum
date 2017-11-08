@@ -1,6 +1,6 @@
 ### FeatureSquare Example:
 
-```example
+```jsx
     <FeatureSquare
       header='Header'
       subheader='Subheader'
