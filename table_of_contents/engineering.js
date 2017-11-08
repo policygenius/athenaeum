@@ -79,6 +79,12 @@ module.exports = {
         {
           name: 'Tables',
           components: 'src/organisms/tables/**/index.js'
+        },
+        {
+          name: 'Other',
+          components: () => [
+            'src/organisms/Accordion/index.js',
+          ]
         }
       ]
     },
