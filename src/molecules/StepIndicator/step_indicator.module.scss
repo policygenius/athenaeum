@@ -2,6 +2,12 @@
   display: flex;
 }
 
+.active-step {
+  width: 100%;
+  text-align: center;
+  line-height: 1.5;
+}
+
 .breadcrumb {
   flex: 1;
 
@@ -76,5 +82,19 @@
     &-inactive {
      opacity: 0;
     }
+  }
+
+  .step-title {
+    display: none;
+  }
+
+  .circle-wrapper {
+    margin-left: 40%;
+  }
+}
+
+@media #{$medium-up} {
+  .active-step {
+    display: none;
   }
 }
