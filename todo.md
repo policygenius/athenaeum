@@ -1,0 +1,4 @@
+- [ ] **TODO: Remove this old typography file** : ./src/assets/stylesheets/base_styles/_typography.scss
+- [ ] **TODO: Make this less confusing** : ./src/assets/stylesheets/base_styles/_typography.scss
+- [ ] **TODO: Write better tests** : ./src/atoms/StyledWrapper/__tests__/styled_wrapper.spec.js
+- [ ] **TODO: Remove 'a' prop as an option from component** : ./src/atoms/Text/index.js

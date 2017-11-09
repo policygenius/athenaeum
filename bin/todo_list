@@ -1,0 +1,12 @@
+#!/bin/bash
+
+grep -or  'TODO.*' \
+  --exclude-dir=node_modules \
+  --exclude-dir=public \
+  --exclude-dir=main_nav \
+  --exclude-dir=footer \
+  --exclude-dir=docs \
+  --exclude-dir=lib \
+  --exclude-dir=bin \
+  --exclude-dir=.cache . \
+  | awk -F":" {'print "- [ ] **" substr($0,index($0,$2))"** : "$1'} > todo.md
