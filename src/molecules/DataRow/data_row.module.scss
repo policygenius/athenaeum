@@ -9,7 +9,7 @@
 }
 
 .label {
-  @include typographyA(10);
+  @include typography-a(10);
 
   display: flex;
   position: relative;

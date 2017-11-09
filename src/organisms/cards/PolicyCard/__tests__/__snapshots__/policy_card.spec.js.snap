@@ -15,14 +15,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="premium"
         >
           <strong
-            className="semibold neutral-1 type-b-2-medium"
-            onClick={undefined}
+            className="bold neutral-1 type-b-2-medium"
           >
             $19.80
              
             <strong
-              className="semibold neutral-2 type-b-7-medium"
-              onClick={undefined}
+              className="bold neutral-2 type-b-7-medium"
             >
               /MO
             </strong>
@@ -62,7 +60,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 >
                   <p
                     className="primary-3 type-b-7-medium"
-                    onClick={undefined}
                   >
                     label
                   </p>
@@ -102,8 +99,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <strong
-                  className="semibold primary-3 type-b-6-medium"
-                  onClick={undefined}
+                  className="bold primary-3 type-b-6-medium"
                 >
                   Some policy
                 </strong>
@@ -130,7 +126,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 >
                   <p
                     className="primary-3 type-b-7-medium"
-                    onClick={undefined}
                   >
                     label
                   </p>
@@ -170,8 +165,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <strong
-                  className="semibold primary-3 type-b-6-medium"
-                  onClick={undefined}
+                  className="bold primary-3 type-b-6-medium"
                 >
                   A+
                 </strong>
@@ -269,8 +263,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <p
-            className="light neutral-3 type-b-7-medium"
-            onClick={undefined}
+            className="neutral-3 type-b-7-medium"
           >
             Compare
           </p>
@@ -318,21 +311,18 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small"
             >
               <strong
-                className="semibold neutral-3 type-b-7-medium"
-                onClick={undefined}
+                className="bold neutral-3 type-b-7-medium"
               >
                 label
               </strong>
             </div>
             <strong
-              className="semibold neutral-2 policy-name type-b-5-medium"
-              onClick={undefined}
+              className="bold neutral-2 policy-name type-b-5-medium"
             >
               Some policy
             </strong>
             <strong
-              className="semibold neutral-2 policy-tooltip type-b-7-medium"
-              onClick={undefined}
+              className="bold neutral-2 policy-tooltip type-b-7-medium"
             >
               <div />
             </strong>
@@ -356,8 +346,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="semibold neutral-3 type-b-7-medium"
-            onClick={undefined}
+            className="bold neutral-3 type-b-7-medium"
           >
             <div
               className="policy-info-label"
@@ -365,8 +354,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="semibold neutral-2 type-b-7-medium"
-              onClick={undefined}
+              className="bold neutral-2 type-b-7-medium"
             >
               A+
             </strong>
@@ -383,8 +371,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="semibold neutral-3 type-b-7-medium"
-            onClick={undefined}
+            className="bold neutral-3 type-b-7-medium"
           >
             <div
               className="policy-info-label"
@@ -392,8 +379,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="semibold neutral-2 type-b-7-medium"
-              onClick={undefined}
+              className="bold neutral-2 type-b-7-medium"
             >
               A+
             </strong>
@@ -410,8 +396,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="semibold neutral-3 type-b-7-medium"
-            onClick={undefined}
+            className="bold neutral-3 type-b-7-medium"
           >
             <div
               className="policy-info-label"
@@ -419,8 +404,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="semibold neutral-2 type-b-7-medium"
-              onClick={undefined}
+              className="bold neutral-2 type-b-7-medium"
             >
               16
             </strong>
@@ -441,12 +425,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <div>
           <strong
-            className="semibold neutral-2 type-b-5-medium"
-            onClick={undefined}
+            className="bold neutral-2 type-b-5-medium"
           >
             <strong
-              className="semibold primary-3 type-b-3-medium"
-              onClick={undefined}
+              className="bold primary-3 type-b-3-medium"
             >
               $19.80
             </strong>

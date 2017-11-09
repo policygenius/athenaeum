@@ -11,6 +11,7 @@
     "reset": "rm -rf node_modules && yarn",
     "open": "open http://localhost:6060",
     "prepush": "yarn lint && yarn test",
+    "precommit": "bin/todo_list",
     "cc": "yarn plop create-component",
     "build:publish": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors",
     "build:publish:watch": "NODE_ENV='production' ./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors --watch",

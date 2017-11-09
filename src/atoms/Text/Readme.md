@@ -1,3 +1,6 @@
+Note: Text is responsive - it will automatically change font-size based on screen size.
+(This is confusing, we know. You can refer to this for more context)[https://app.zeplin.io/project/59cd15548a18a8bb0bc48b4d/screen/59d67373e9f6f5ad28c9fd38]
+
 Text A Example:
 
 ```jsx

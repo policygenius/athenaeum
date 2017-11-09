@@ -1,17 +1,17 @@
 @for $i from 1 through 11 {
   .type-a-#{$i}-bold {
-    @include typographyA($i);
+    @include typography-a($i);
   }
 }
 
 @for $i from 5 through 12 {
   .type-b-#{$i}-medium {
-    @include typographyB($i);
+    @include typography-b($i);
   }
 }
 
 .type-c-7-regular {
-  @include typographyC();
+  @include typography-c();
 }
 
 .label {
@@ -20,18 +20,6 @@
 
 .fineprint {
   @include fineprint;
-}
-
-.regular {
-  @include typography-regular;
-}
-
-.light {
-  @include typography-light;
-}
-
-.semibold {
-  @include typography-semibold;
 }
 
 .underline {
