@@ -22,9 +22,15 @@ Outline Info Button Example:
       <Button variant='info' outline>Info</Button>
 ```
 
+Disabled Unflexed Button Example:
+
+```jsx
+      <Button disabled unflex>Disabled</Button>
+```
+
 Disabled Unflexed Outline Button Example:
 
 ```jsx
-      <Button variant='disabled' unflex>Disabled</Button>
+      <Button disabled unflex outline>Disabled</Button>
 ```
 

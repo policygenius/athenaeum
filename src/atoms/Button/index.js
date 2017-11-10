@@ -23,6 +23,7 @@ function Button( props ) {
   const classes = [
     styles['button'],
     variant && styles[variant],
+    disabled && styles['disabled'],
     outline && styles['outline'],
     className,
     unflex && styles['unflex'],
@@ -65,7 +66,7 @@ Button.propTypes = {
    * Toggle buttons are either `toggle` or `toggle-selected`
    */
   variant: PropTypes.oneOf([
-    'info', 'disabled', 'outline', 'toggle', 'toggle-selected'
+    'info', 'toggle', 'toggle-selected'
   ]),
 
   /**
