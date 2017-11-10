@@ -27,6 +27,12 @@ $brand-white: color('primary-2');
   border: 2px solid $action-color;
   transition: all 100ms;
   width: 100%;
+  outline: none;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
 
   .icon {
     path {
@@ -47,7 +53,6 @@ $brand-white: color('primary-2');
   border: 2px solid color('neutral-4');
   cursor: not-allowed;
   user-select: none;
-  outline: none;
 
   &.outline {
     background-color: transparent;
