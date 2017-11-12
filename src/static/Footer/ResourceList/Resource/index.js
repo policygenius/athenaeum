@@ -16,7 +16,7 @@ class Resource extends Component {
     super();
 
     this.state = {
-      collapsed: false,
+      collapsed: true,
     };
   }
 

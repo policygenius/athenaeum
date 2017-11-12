@@ -20,8 +20,12 @@ const Footer = () =>
     <StyledWrapper
       css={footer}
     >
-      <Layout mediumCols={[ 3, 1, 8, 3, 1, 8 ]}>
-        <Col fullwidth>
+      <Layout
+        mediumCols={[ 3, 1, 8 ]}
+        style={{ width: '100%' }}
+        fullwidth
+      >
+        <Col>
           <Contact
             contactItems={contactItems}
           />
@@ -29,13 +33,11 @@ const Footer = () =>
         <StyledWrapper
           css={divider}
           component={Col}
-          fullwidth
         />
         <Col fullwidth>
           <StyledWrapper
             css={rightColumn}
             component={Layout}
-            fullwidth
             mediumCols={[ 12 ]}
             largeCols={[ 4, 8 ]}
           >
@@ -44,16 +46,23 @@ const Footer = () =>
           </StyledWrapper>
         </Col>
         <Col
-          fullwidth
+          style={{
+            position: 'relative',
+            top: '50%',
+            transform: 'translateY(-50%)'
+
+          }}
         >
-          <StyledWrapper
-            css={socialMediaWrapper}
-          >
-            <SocialMedia />
-          </StyledWrapper>
+          <div style={{ alignSelf: 'center' }}>
+            <StyledWrapper
+              css={socialMediaWrapper}
+            >
+              <SocialMedia />
+            </StyledWrapper>
+          </div>
         </Col>
         <Col />
-        <Col fullwidth>
+        <Col>
           <Links />
           <Copyright />
         </Col>

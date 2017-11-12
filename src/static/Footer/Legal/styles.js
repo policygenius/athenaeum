@@ -21,7 +21,6 @@ export const links = ({ spacing }) => `
 
   .icon {
     position: relative;
-    top: -5px;
     margin-right: ${spacing[18]};
   }
 `;
