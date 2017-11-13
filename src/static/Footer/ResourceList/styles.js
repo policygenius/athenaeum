@@ -35,11 +35,6 @@ export const resourcesStyle = ({ breakpoints }) => `
       display: none;
     }
   }
-
-  @media ${breakpoints.largeUp} {
-  .resource-group {
-    min-height: 312px;
-  }
 }
 `;
 

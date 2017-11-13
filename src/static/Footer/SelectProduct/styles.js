@@ -27,7 +27,7 @@ export const selectProduct = ({ breakpoints, spacing }) => `
   }
 
   @media ${breakpoints.largeUp} {
-    .column {
+    .first-column {
       min-height: 312px;
     }
   }

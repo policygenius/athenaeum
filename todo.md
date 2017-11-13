@@ -2,3 +2,4 @@
 - [ ] **TODO: Make this less confusing** : ./src/assets/stylesheets/base_styles/_typography.scss
 - [ ] **TODO: Write better tests** : ./src/atoms/StyledWrapper/__tests__/styled_wrapper.spec.js
 - [ ] **TODO: Remove 'a' prop as an option from component** : ./src/atoms/Text/index.js
+- [ ] **TODO: This is a hack because Layout isn't correctly passing props** : ./src/static/Footer/styles.js
