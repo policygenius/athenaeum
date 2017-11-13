@@ -63,7 +63,8 @@ function Text(props) {
     onClick,
     spaced,
     variant,
-    style
+    style,
+    inherit
   } = props;
 
   const font = getFont(props);
@@ -78,7 +79,8 @@ function Text(props) {
     spaced && styles['spaced'],
     italic && styles['italic'],
     className && className,
-    font && font
+    font && font,
+    inherit && styles['inherit']
   ];
 
   return React.createElement(
@@ -94,11 +96,16 @@ function Text(props) {
 
 
 Text.propTypes = {
+
+  /*
+   * Text alignment
+   */
   align: PropTypes.oneOf([
     'left',
     'right',
     'center'
   ]),
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -109,6 +116,7 @@ Text.propTypes = {
    * Add custom inline style
    */
   style: PropTypes.object,
+
   /**
    * You can use any html element text tag
    */
@@ -124,7 +132,6 @@ Text.propTypes = {
    * Types fo `c`: `1`
    */
   size: PropTypes.number,
-
 
   /**
    * Text decoration
@@ -145,18 +152,22 @@ Text.propTypes = {
    * Possible font types are `a`, `b`, and `c`
    */
   font: PropTypes.string,
+
   /**
    * Adds letter spacing. Use with `A9` and `A11` font
    */
   spaced: PropTypes.bool,
+
   /**
    * Makes text bold
    */
   bold: PropTypes.bool,
+
   /**
    * Adds italic
    */
   italic: PropTypes.bool,
+
   /**
    * onClick callback
    */
@@ -166,18 +177,22 @@ Text.propTypes = {
    * Deprecated. Use 'size' instead
    */
   type: PropTypes.number,
+
   /**
    * Deprecated
    */
   weight: PropTypes.oneOf([]),
+
   /**
    * Deprecated
    */
   light: PropTypes.bool,
+
   /**
    * Deprecated
    */
   semibold: PropTypes.bool,
+
   /**
    * Deprecated
    */
@@ -188,9 +203,10 @@ Text.propTypes = {
    */
   b: PropTypes.bool,
 
-  /*
-   * Text alignment
+  /**
+   * Inherit font-size and color from parent
    */
+  inherit: PropTypes.bool,
 };
 
 Text.defaultProps = {

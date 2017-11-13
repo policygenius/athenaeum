@@ -20,7 +20,7 @@ exports[`<AccordionPanel /> renders correctly 1`] = `
       className="toggleSwitch"
     >
       <a
-        className="link neutral-1 undefined secondary"
+        className="link neutral-1 secondary"
       />
     </span>
   </header>

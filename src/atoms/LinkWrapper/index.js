@@ -18,11 +18,11 @@ function LinkWrapper( props ) {
 
   const classes = [
     styles['link'],
-    colors[color],
-    styles[variant],
+    color && colors[color],
+    variant && styles[variant],
     type && styles[type],
     hover && styles[hover],
-    className,
+    className && className,
   ];
 
   return (

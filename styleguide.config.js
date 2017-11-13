@@ -8,15 +8,13 @@ const webpackConfig = isProd ?
 const engineering = require('./table_of_contents/engineering');
 const documentation = require('./table_of_contents/documentation');
 const branding = require('./table_of_contents/branding');
-const design = require('./table_of_contents/design');
 
 module.exports = {
   title: 'PolicyGenius React Component Library',
   sections: [
+    branding,
     engineering,
     documentation,
-    branding,
-    design,
   ],
   // Use this to change the theme for the live code editor
   // Themes here: http://codemirror.net/demo/theme.html#
