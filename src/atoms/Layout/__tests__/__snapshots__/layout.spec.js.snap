@@ -107,6 +107,247 @@ ShallowWrapper {
 }
 `;
 
+exports[`<Layout /> doesn't wrap Cols in \`<Col>\` 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="layout"
+    style={undefined}
+>
+    <Col
+        borderColor="neutral-6"
+        bottomSpacing={undefined}
+        flex={undefined}
+        fullwidth={undefined}
+        largeCols={undefined}
+        mediumCols={undefined}
+        smallCols={1}
+        xLargeCols={undefined}
+        xxLargeCols={undefined}
+    >
+        <div
+            className="child"
+        />
+    </Col>
+    <Col
+        borderColor="neutral-6"
+        bottomSpacing={undefined}
+        className="child"
+        flex={undefined}
+        fullwidth={undefined}
+        largeCols={undefined}
+        mediumCols={undefined}
+        smallCols={1}
+        xLargeCols={undefined}
+        xxLargeCols={undefined}
+    />
+</div>,
+  "nodes": Array [
+    <div
+      className="layout"
+      style={undefined}
+>
+      <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+      >
+            <div
+                  className="child"
+            />
+      </Col>
+      <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            className="child"
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+      />
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <Layout
+        largeCols={Array []}
+        mediumCols={Array []}
+        smallCols={
+                Array [
+                        1,
+                      ]
+        }
+        xLargeCols={Array []}
+        xxLargeCols={Array []}
+>
+        <div
+                className="child"
+        />
+        <Col
+                borderColor="neutral-6"
+                className="child"
+        />
+</Layout>,
+      "_debugID": 12,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": Array [
+            <div
+              className="child"
+/>,
+            <Col
+              borderColor="neutral-6"
+              className="child"
+/>,
+          ],
+          "largeCols": Array [],
+          "mediumCols": Array [],
+          "smallCols": Array [
+            1,
+          ],
+          "xLargeCols": Array [],
+          "xxLargeCols": Array [],
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 4,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="layout"
+          style={undefined}
+>
+          <Col
+                    borderColor="neutral-6"
+                    bottomSpacing={undefined}
+                    flex={undefined}
+                    fullwidth={undefined}
+                    largeCols={undefined}
+                    mediumCols={undefined}
+                    smallCols={1}
+                    xLargeCols={undefined}
+                    xxLargeCols={undefined}
+          >
+                    <div
+                              className="child"
+                    />
+          </Col>
+          <Col
+                    borderColor="neutral-6"
+                    bottomSpacing={undefined}
+                    className="child"
+                    flex={undefined}
+                    fullwidth={undefined}
+                    largeCols={undefined}
+                    mediumCols={undefined}
+                    smallCols={1}
+                    xLargeCols={undefined}
+                    xxLargeCols={undefined}
+          />
+</div>,
+        "_debugID": 13,
+        "_renderedOutput": <div
+          className="layout"
+          style={undefined}
+>
+          <Col
+                    borderColor="neutral-6"
+                    bottomSpacing={undefined}
+                    flex={undefined}
+                    fullwidth={undefined}
+                    largeCols={undefined}
+                    mediumCols={undefined}
+                    smallCols={1}
+                    xLargeCols={undefined}
+                    xxLargeCols={undefined}
+          >
+                    <div
+                              className="child"
+                    />
+          </Col>
+          <Col
+                    borderColor="neutral-6"
+                    bottomSpacing={undefined}
+                    className="child"
+                    flex={undefined}
+                    fullwidth={undefined}
+                    largeCols={undefined}
+                    mediumCols={undefined}
+                    smallCols={1}
+                    xLargeCols={undefined}
+                    xxLargeCols={undefined}
+          />
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Layout
+    largeCols={Array []}
+    mediumCols={Array []}
+    smallCols={
+        Array [
+            1,
+          ]
+    }
+    xLargeCols={Array []}
+    xxLargeCols={Array []}
+>
+    <div
+        className="child"
+    />
+    <Col
+        borderColor="neutral-6"
+        className="child"
+    />
+</Layout>,
+}
+`;
+
 exports[`<Layout /> passes its \`col\` props down to its \`<Col>\` correctly 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
@@ -223,7 +464,7 @@ ShallowWrapper {
                 className="child"
         />
 </Layout>,
-      "_debugID": 12,
+      "_debugID": 14,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -267,7 +508,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 4,
+      "_mountOrder": 5,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -309,7 +550,7 @@ ShallowWrapper {
                     />
           </Col>
 </div>,
-        "_debugID": 13,
+        "_debugID": 15,
         "_renderedOutput": <div
           className="layout padding"
           style={undefined}
@@ -824,7 +1065,7 @@ ShallowWrapper {
                 className="child"
         />
 </Layout>,
-      "_debugID": 14,
+      "_debugID": 16,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -863,7 +1104,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 5,
+      "_mountOrder": 6,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -905,7 +1146,7 @@ ShallowWrapper {
                     />
           </Col>
 </div>,
-        "_debugID": 15,
+        "_debugID": 17,
         "_renderedOutput": <div
           className="layout"
           style={undefined}
@@ -1016,14 +1257,9 @@ ShallowWrapper {
         xLargeCols={undefined}
         xxLargeCols={undefined}
     >
-        <Col
-            borderColor="neutral-6"
-            smallCols={3}
-        >
-            <div
-                className="one-off"
-            />
-        </Col>
+        <div
+            className="one-off"
+        />
     </Col>
     <Col
         borderColor="neutral-6"
@@ -1072,14 +1308,9 @@ ShallowWrapper {
             xLargeCols={undefined}
             xxLargeCols={undefined}
       >
-            <Col
-                  borderColor="neutral-6"
-                  smallCols={3}
-            >
-                  <div
-                        className="one-off"
-                  />
-            </Col>
+            <div
+                  className="one-off"
+            />
       </Col>
       <Col
             borderColor="neutral-6"
@@ -1130,7 +1361,7 @@ ShallowWrapper {
                 className="child"
         />
 </Layout>,
-      "_debugID": 16,
+      "_debugID": 18,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -1174,7 +1405,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 6,
+      "_mountOrder": 7,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -1211,14 +1442,9 @@ ShallowWrapper {
                     xLargeCols={undefined}
                     xxLargeCols={undefined}
           >
-                    <Col
-                              borderColor="neutral-6"
-                              smallCols={3}
-                    >
-                              <div
-                                        className="one-off"
-                              />
-                    </Col>
+                    <div
+                              className="one-off"
+                    />
           </Col>
           <Col
                     borderColor="neutral-6"
@@ -1236,7 +1462,7 @@ ShallowWrapper {
                     />
           </Col>
 </div>,
-        "_debugID": 17,
+        "_debugID": 19,
         "_renderedOutput": <div
           className="layout"
           style={undefined}
@@ -1267,14 +1493,9 @@ ShallowWrapper {
                     xLargeCols={undefined}
                     xxLargeCols={undefined}
           >
-                    <Col
-                              borderColor="neutral-6"
-                              smallCols={3}
-                    >
-                              <div
-                                        className="one-off"
-                              />
-                    </Col>
+                    <div
+                              className="one-off"
+                    />
           </Col>
           <Col
                     borderColor="neutral-6"

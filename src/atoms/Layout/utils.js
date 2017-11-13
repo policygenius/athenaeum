@@ -1,10 +1,19 @@
 import React from 'react';
 import omit from 'lodash/omit';
+import get from 'lodash/get';
 import Col from './Col';
 
 export function processChild(child, layoutProps) {
 
-  if (child.type === Col) {
+  // TODO: Find a better way to type check here.
+  // I believe the first now fails because of Preact
+  if (
+    child.type === Col ||
+    get(child, 'nodeName.name') === 'cl' ||
+    get(child, 'type.name') === 'cl' ||
+    get(child, 'type.name') === 'Col' ||
+    get(child, 'type.rclName') === 'Col'
+  ) {
     const colProps = Object.assign(
       {},
       omit(layoutProps, [ 'padding' ]),

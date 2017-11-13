@@ -44,6 +44,8 @@ function Col(props) {
   );
 }
 
+Col.rclName = 'COL';
+
 Col.propTypes = {
   /**
    * Supply any additional class names.
