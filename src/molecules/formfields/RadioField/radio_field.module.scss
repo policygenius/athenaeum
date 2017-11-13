@@ -11,10 +11,6 @@ $checked-size: ru(.5);
   min-height: $size;
   padding-left: $size + $gap;
   user-select: none;
-
-  + .radio-field {
-    margin-top: ru(.75);
-  }
 }
 
 // pseudo radio button
@@ -35,7 +31,7 @@ $checked-size: ru(.5);
 
 .label {
   display: inline-block;
-  color: color('neutral-3');
+  color: color('neutral-2');
   cursor: pointer;
 
   &:after {
@@ -49,7 +45,15 @@ $checked-size: ru(.5);
     margin-top: (ru(1) - $size) / 2 + ($size - $checked-size) / 2;
     margin-left: ($size - $checked-size) / 2;
     border-radius: 50%;
-    background-color: color('brand-3');
+    background-color: color('brand-2');
+  }
+
+  &.checked {
+    &:after { opacity: 1; }
+  }
+
+  &.not-selected {
+    color: color('neutral-3');
   }
 }
 
@@ -62,12 +66,6 @@ $checked-size: ru(.5);
   opacity: 0;
   margin: 0;
   cursor: pointer;
-}
-
-.checked {
-    color: color('neutral-2');
-
-    &:after { opacity: 1; }
 }
 
 .radio:disabled {

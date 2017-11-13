@@ -9,7 +9,14 @@ function RadioField(props) {
   const {
     label,
     input,
+    radioValue
   } = props;
+
+  const labelClasses = [
+    styles['label'],
+    input.value === radioValue && styles['checked'],
+    input.value && input.value !== radioValue && styles['not-selected'],
+  ];
 
   return (
     <label
@@ -23,7 +30,7 @@ function RadioField(props) {
         className={classnames(styles['radio'])}
         {...input}
       />
-      <span className={styles['label']}>{ label }</span>
+      <span className={classnames(...labelClasses)}>{ label }</span>
     </label>
   );
 }
@@ -34,6 +41,7 @@ RadioField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+  radioValue: PropTypes.string.isRequired,
   /**
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
