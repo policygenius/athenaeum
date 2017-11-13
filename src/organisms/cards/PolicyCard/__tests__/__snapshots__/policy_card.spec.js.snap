@@ -182,7 +182,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             className="top-2"
           />
           <a
-            className="link neutral-1 undefined details-link"
+            className="link neutral-1 details-link"
             onClick={[Function]}
           >
             Details & Review

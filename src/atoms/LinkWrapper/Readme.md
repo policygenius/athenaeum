@@ -10,7 +10,7 @@ Primary Link:
 
 ```jsx
   <LinkWrapper type='primary' href='#'>
-    <Text type={8} font='b' bold>This is a link!</Text>
+    <Text type={8} font='b' bold inherit>This is a link!</Text>
   </LinkWrapper>
 ```
 

@@ -1,3 +1,4 @@
+
 @for $i from 1 through 11 {
   .type-a-#{$i}-bold {
     @include typography-a($i);
@@ -67,4 +68,9 @@
 
 .italic {
   font-style: italic;
+}
+
+.inherit {
+  font-size: inherit;
+  color: inherit;
 }

@@ -75,7 +75,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       style={undefined}
     >
       <a
-        className="link neutral-1 undefined secondary"
+        className="link neutral-1 secondary"
         onClick={[Function]}
       >
         <p
@@ -91,7 +91,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       style={undefined}
     >
       <a
-        className="link neutral-1 undefined secondary"
+        className="link neutral-1 secondary"
         onClick={[Function]}
       >
         <p
