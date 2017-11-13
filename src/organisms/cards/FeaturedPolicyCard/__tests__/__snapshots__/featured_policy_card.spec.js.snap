@@ -49,42 +49,36 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth border-neutral-6"
+            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <div
-              className="col fullwidth border-neutral-6 policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
+            <p
+              className="primary-3 type-b-7-medium"
             >
-              <p
-                className="primary-3 type-b-7-medium"
-              >
-                Financial Strength
-              </p>
+              Financial Strength
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
               <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
                   }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
               </span>
-            </div>
+              <noscript />
+            </span>
           </div>
           <div
             className="col col-sm-2 col-md-1 border-neutral-6"
@@ -115,42 +109,36 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth border-neutral-6"
+            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <div
-              className="col fullwidth border-neutral-6 policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
+            <p
+              className="primary-3 type-b-7-medium"
             >
-              <p
-                className="primary-3 type-b-7-medium"
-              >
-                Total Customers
-              </p>
+              Total Customers
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
               <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
                   }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
               </span>
-            </div>
+              <noscript />
+            </span>
           </div>
           <div
             className="col col-sm-2 col-md-1 border-neutral-6"
@@ -181,42 +169,36 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth border-neutral-6"
+            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <div
-              className="col fullwidth border-neutral-6 policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
+            <p
+              className="primary-3 type-b-7-medium"
             >
-              <p
-                className="primary-3 type-b-7-medium"
-              >
-                Policy Type
-              </p>
+              Policy Type
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
               <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
                   }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
               </span>
-            </div>
+              <noscript />
+            </span>
           </div>
           <div
             className="col col-sm-2 col-md-1 border-neutral-6"
