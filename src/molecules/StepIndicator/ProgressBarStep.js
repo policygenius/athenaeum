@@ -71,14 +71,12 @@ export default class ProgressBarStep extends Component {
   }
 
   render() {
-    const {
-      step
-    } = this.props;
+    const { step } = this.props;
 
     return (
       <div className={styles['breadcrumb']} onClick={this.handleClick}>
         <div className={classnames(this.textClasses())}>
-          <Text tag='span' type={7} {...this.textProps()}>{ step.text }</Text>
+          <Text tag='span' type={7} className={styles['step-title']} {...this.textProps()}>{ step.text }</Text>
         </div>
         <div className={classnames(...this.circleWrapperClasses())}>
           <div className={classnames(...this.circleClasses())} />
