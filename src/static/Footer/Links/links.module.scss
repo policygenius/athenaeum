@@ -1,29 +1,35 @@
-export const links = ({ spacing }) => `
+.links {
   display: flex;
   align-items: center;
   position: relative;
 
   .icon {
-    margin-right: ${spacing[24]};
+    margin-right: rem-calc(24);
   }
-`;
 
-export const linksList = ({ spacing }) => `
+  @media #{$mobile-only} {
+    display: none;
+  }
+}
+
+.link-list {
   .link-wrapper {
-    line-height: ${spacing[36]};
+    line-height: rem-calc(36);
+
     a:hover {
-      color: #2b2727;
+      color: color('primary-3');
     }
+
     &:after {
       content: '';
       position: relative;
       left: 18px;
-      border-right: 1px solid #b2b2b2;
+      border-right: 1px solid color('neutral-3');
     }
   }
 
   li:first-child {
-    padding-left: ${spacing[18]};
+    padding-left: rem-calc(18);
   }
 
   li:last-child {
@@ -33,5 +39,4 @@ export const linksList = ({ spacing }) => `
       }
     }
   }
-
-`;
+}
