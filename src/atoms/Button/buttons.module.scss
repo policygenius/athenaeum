@@ -42,7 +42,7 @@ $brand-white: color('primary-2');
   }
 
   &.outline {
-    background-color: $brand-white;
+    background-color: transparent;
     color: $action-color;
     border: 2px solid inherit;
   }
@@ -105,7 +105,7 @@ $brand-white: color('primary-2');
   color: $brand-white;
 
   &.outline {
-    background-color: $brand-white;
+    background-color: transparent;
     color: $info-color;
     border: 2px solid inherit;
   }
