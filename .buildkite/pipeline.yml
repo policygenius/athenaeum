@@ -21,6 +21,9 @@ steps:
 
   - wait
 
+  - block: 'Trigger deploy/publish MainNav/Footer'
+    branches: 'rebrand'
+
   - trigger: "athenaeum-main-nav"
     label: ':roller_coaster: Trigger MainNav and Footer Build/Deploy'
     async: true
