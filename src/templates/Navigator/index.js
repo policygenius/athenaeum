@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Sticky from 'react-stickynode';
+import assign from 'lodash/assign';
 
 import { Layout, Col } from 'atoms/Layout';
 import Icon from 'atoms/Icon';
@@ -16,7 +17,7 @@ import UserAlert from 'atoms/UserAlert';
 import styles from './navigator.module.scss';
 
 function renderContactCard(contactProps, inverted) {
-  const newProps = Object.assign({}, contactProps, { inverted });
+  const newProps = assign({}, contactProps, { inverted });
 
   return <ContactCard {...newProps} />;
 }

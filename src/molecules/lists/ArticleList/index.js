@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import reduce from 'lodash/reduce';
+import assign from 'lodash/assign';
 import styles from './article_list.module.scss';
 
 function ArticleList( props ) {
@@ -11,7 +12,7 @@ function ArticleList( props ) {
   } = props;
 
   const defaultItemProps = [ 'id', 'link', 'imageSrc', 'header', 'subHeader' ];
-  const itemProps = reduce(defaultItemProps, (res, val) => Object.assign( {}, res, {
+  const itemProps = reduce(defaultItemProps, (res, val) => assign( {}, res, {
     [val]: mapProps[val] || val
   }), {});
 
