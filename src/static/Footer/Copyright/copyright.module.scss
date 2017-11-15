@@ -1,0 +1,17 @@
+.copyright {
+  text-align: center;
+
+  .icon-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .made-in-ny {
+    margin-right: rem-calc(18);
+  }
+
+  @media #{$tablet} {
+    display: none;
+  }
+}
