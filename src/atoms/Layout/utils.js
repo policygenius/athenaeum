@@ -1,6 +1,7 @@
 import React from 'react';
 import omit from 'lodash/omit';
 import get from 'lodash/get';
+import assign from 'lodash/assign';
 import Col from './Col';
 
 export function processChild(child, layoutProps) {
@@ -24,7 +25,7 @@ export function processChild(child, layoutProps) {
     return React.cloneElement(child, colProps);
   }
 
-  const colProps = Object.assign(
+  const colProps = assign(
     {},
     layoutProps,
     omit(child.props, [ 'className', 'style', 'onClick', 'onChange' ])
