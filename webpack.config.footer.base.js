@@ -1,6 +1,7 @@
 /* eslint-disable */
 const webpack = require('webpack');
 const path = require('path');
+const compact = require('lodash').compact;
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 
@@ -38,7 +39,7 @@ module.exports = (options) => baseConfig({
     // ]
   // },
 
-  plugins: options.plugins.concat([
+  plugins: compact(options.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -47,7 +48,7 @@ module.exports = (options) => baseConfig({
       },
     }),
     new OptimizeCSSAssetsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
+    isProd && new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       mangle: false,
       compress: {
@@ -63,5 +64,5 @@ module.exports = (options) => baseConfig({
       threshold: 10240,
       minRatio: 0.8
     }),
-  ]),
+  ])),
 });

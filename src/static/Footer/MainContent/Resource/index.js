@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import cx from 'classnames';
 import { generate } from 'shortid';
 
-import Col from 'atoms/Layout/Col';
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
 import Spacer from 'atoms/Spacer';
 import List from 'atoms/List';
-import Hide from 'wrappers/Hide';
 import LinkWrapper from 'atoms/LinkWrapper';
+
+import styles from './resource.module.scss';
 
 class Resource extends Component {
   constructor() {
@@ -29,15 +29,11 @@ class Resource extends Component {
   render() {
     const {
       resources,
+      className
     } = this.props;
 
-    const resourceClasses = [
-      'resources-list',
-      this.state.collapsed && 'collapsed-resources',
-    ];
-
     return (
-      <Col className='resource-group'>
+      <div className={cx(className, styles.resource)}>
         <div onClick={this.handleClick} role='presentation'>
           <Text
             type={7}
@@ -49,7 +45,7 @@ class Resource extends Component {
               height='8px'
               width='24px'
               inline='right'
-              className='icon'
+              className={styles.icon}
             />
           </Text>
         </div>
@@ -57,18 +53,21 @@ class Resource extends Component {
         <List
           bottomSpacing={13}
           noBullets
-          className={classnames(...resourceClasses)}
+          className={cx(
+            styles['resource-list'],
+            this.state.collapsed && styles['collapsed-resources']
+          )}
         >
           {
             resources.items.map(resource =>
               <LinkWrapper
                 key={`resource-${generate()}`}
-                color='neutral-1'
                 href={resource.href}
               >
                 <Text
                   type={10}
                   font='b'
+                  inheritColor
                 >
                   { resource.title }
                 </Text>
@@ -76,9 +75,7 @@ class Resource extends Component {
             )
           }
         </List>
-        <Spacer size={18} />
-        <Hide hideOn='small'><Spacer size={60} /></Hide>
-      </Col>
+      </div>
     );
 
   }
@@ -88,7 +85,8 @@ Resource.propTypes = {
   collapsed: PropTypes.bool,
   icon: PropTypes.string,
   onClick: PropTypes.func,
-  resources: PropTypes.object
+  resources: PropTypes.object,
+  className: PropTypes.string
 };
 
 export default Resource;

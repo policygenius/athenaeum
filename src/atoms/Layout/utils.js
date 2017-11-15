@@ -9,11 +9,12 @@ export function processChild(child, layoutProps) {
   // I believe the first now fails because of Preact
   if (
     child.type === Col ||
-    get(child, 'nodeName.name') === 'cl' ||
-    get(child, 'type.name') === 'cl' ||
+    get(child, 'nodeName.prototype.displayName') === 'Col' ||
+    get(child, 'type.prototype.displayName') === 'Col' ||
     get(child, 'type.name') === 'Col' ||
     get(child, 'type.rclName') === 'Col'
   ) {
+
     const colProps = Object.assign(
       {},
       omit(layoutProps, [ 'padding' ]),

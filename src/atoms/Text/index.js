@@ -64,7 +64,9 @@ function Text(props) {
     spaced,
     variant,
     style,
-    inherit
+    inherit,
+    inheritSize,
+    inheritColor
   } = props;
 
   const font = getFont(props);
@@ -80,7 +82,9 @@ function Text(props) {
     italic && styles['italic'],
     className && className,
     font && font,
-    inherit && styles['inherit']
+    inherit && styles['inherit'],
+    inheritSize && styles['inherit-size'],
+    inheritColor && styles['inherit-color']
   ];
 
   return React.createElement(
@@ -204,9 +208,19 @@ Text.propTypes = {
   b: PropTypes.bool,
 
   /**
-   * Inherit font-size and color from parent
+   * Inherit font-size, line-height, and color from parent
    */
   inherit: PropTypes.bool,
+
+  /**
+   * Inherit font-size from parent
+   */
+  inheritSize: PropTypes.bool,
+
+  /**
+   * Inherit color from parent
+   */
+  inheritColor: PropTypes.bool,
 };
 
 Text.defaultProps = {

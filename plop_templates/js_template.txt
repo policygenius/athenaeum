@@ -10,13 +10,13 @@ function {{properCase name}}(props) {
     ...rest
   } = props;
 
-  const classes = [
+  const classes = classnames(
     styles['{{dashCase name}}'],
     className,
-  ];
+  );
 
   return (
-    <div className={classnames(...classes)} {...rest}>
+    <div className={classes} {...rest}>
       { children }
     </div>
   );

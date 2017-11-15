@@ -53,6 +53,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  align-items: center;
 }
 
 @each $type, $size in $size-map {

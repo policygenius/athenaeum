@@ -3,7 +3,6 @@ export const contactWrapper = ({ breakpoints }) => `
     padding-left: 24px;
     padding-right: 24px;
     margin-bottom: 32px;
-    border-bottom: 1px solid #d6d6d6;
   }
 `;
 export const header = ({ breakpoints }) => `
