@@ -1,4 +1,5 @@
 import kebabCase from 'lodash/kebabCase';
+import assign from 'lodash/assign';
 
 export function dataAttrName(key) {
   return `data-${kebabCase(key.toLowerCase())}`;
@@ -10,7 +11,7 @@ export function dataAttributes(data) {
 
     const attr = { [dataAttrName(key)]: data[key] };
 
-    return Object.assign({}, res, attr);
+    return assign({}, res, attr);
   };
 
   return Object.keys(data).reduce(exportAttr, {});

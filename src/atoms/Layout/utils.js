@@ -16,7 +16,7 @@ export function processChild(child, layoutProps) {
     get(child, 'type.rclName') === 'Col'
   ) {
 
-    const colProps = Object.assign(
+    const colProps = assign(
       {},
       omit(layoutProps, [ 'padding' ]),
       child.props,

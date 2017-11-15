@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import assign from 'lodash/assign';
 
 import Intro from '../';
 import IntroText from '../IntroText';
@@ -49,7 +50,7 @@ describe('<Intro />', () => {
 
       expect(wrapper.find('img').props().src).toEqual(undefined);
 
-      wrapper.setProps(Object.assign({}, props, { active: true }));
+      wrapper.setProps(assign({}, props, { active: true }));
 
       expect(wrapper.find('img').props().src).toEqual(props.imgSrc);
     });

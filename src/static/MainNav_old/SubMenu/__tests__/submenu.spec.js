@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import assign from 'lodash/assign';
 
 import SubMenu from '../';
 import ProductDisplay from '../ProductDisplay';
@@ -56,7 +57,7 @@ describe('<SubMenu />', () => {
       });
 
       it('does not add has-content class to top level li', () => {
-        const productProps = Object.assign({}, props, {
+        const productProps = assign({}, props, {
           list: {},
           product: true
         });
@@ -71,7 +72,7 @@ describe('<SubMenu />', () => {
       });
 
       it('renders <ProductDisplay if props.product', () => {
-        const productProps = Object.assign({}, props, {
+        const productProps = assign({}, props, {
           list: {},
           product: true
         });
@@ -86,7 +87,7 @@ describe('<SubMenu />', () => {
       });
 
       it('renders <MagazineDisplay /> if props.magazine', () => {
-        const magazineProps = Object.assign({}, props, {
+        const magazineProps = assign({}, props, {
           tag: 'test-tag',
           magazine: true
         });
