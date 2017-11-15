@@ -28,6 +28,7 @@ $brand-white: color('primary-2');
   transition: all 100ms;
   width: 100%;
   outline: none;
+  white-space: normal;
 
   &:active,
   &:focus {

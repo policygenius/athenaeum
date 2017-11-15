@@ -5,15 +5,14 @@ import Layout from 'atoms/Layout';
 import StyledWrapper from 'atoms/StyledWrapper';
 
 import Contact from './Contact';
-import ResourceList from './ResourceList';
-import SelectProduct from './SelectProduct';
+import MainContent from './MainContent';
 import SocialMedia from './SocialMedia';
 import Links from './Links';
 import Copyright from './Copyright';
 import Legal from './Legal';
 
 import { contactItems } from './data/contact';
-import { footer, divider, socialMediaWrapper, rightColumn } from './styles';
+import { footer, divider, socialMediaWrapper } from './styles';
 
 const Footer = () =>
   <div style={{ borderTop: '1px solid #b2b2b2' }}>
@@ -23,34 +22,25 @@ const Footer = () =>
       <Layout
         mediumCols={[ 3, 1, 8 ]}
         style={{ width: '100%' }}
-        fullwidth
       >
-        <Col>
+        <Col fullwidth>
           <Contact
             contactItems={contactItems}
           />
         </Col>
-        <StyledWrapper
-          css={divider}
-          component={Col}
-        />
-        <Col fullwidth>
+        <Col style={{ display: 'flex' }}>
           <StyledWrapper
-            css={rightColumn}
-            component={Layout}
-            mediumCols={[ 12 ]}
-            largeCols={[ 4, 8 ]}
-          >
-            <SelectProduct />
-            <ResourceList />
-          </StyledWrapper>
+            css={divider}
+            component={Col}
+          />
+        </Col>
+        <Col>
+          <MainContent />
         </Col>
         <Col
+          fullwidth
           style={{
-            position: 'relative',
-            top: '50%',
-            transform: 'translateY(-50%)'
-
+            alignSelf: 'center'
           }}
         >
           <div style={{ alignSelf: 'center' }}>

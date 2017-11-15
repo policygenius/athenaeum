@@ -18,8 +18,8 @@ const Links = () =>
     >
       <Icon
         icon='madeInNy'
-        height='48px'
-        width='48px'
+        height='35px'
+        width='35px'
         className='made-in-ny-icon'
       />
       <StyledWrapper

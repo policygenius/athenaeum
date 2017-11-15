@@ -7,6 +7,7 @@ import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
 import Hide from 'wrappers/Hide';
 import Spacer from 'atoms/Spacer';
+import LinkWrapper from 'atoms/LinkWrapper';
 import StyledWrapper from 'atoms/StyledWrapper';
 
 import { contactItem, contactItemHeader } from '../styles';
@@ -25,8 +26,10 @@ const ContactItem = (props) => {
       <Hide hideOn='small'>
         <StyledWrapper
           css={contactItemHeader}
+          component={LinkWrapper}
+          href={item.href}
         >
-          <Text type={8} font='a'>
+          <Text type={8} font='a' inheritColor>
             <Icon
               icon={item.icon}
               height='24px'
