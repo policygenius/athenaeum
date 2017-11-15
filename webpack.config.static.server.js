@@ -1,14 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const navBaseConfig = require('./webpack.config.nav.base.js');
+const staticBaseConfig = require('./webpack.config.static.base.js');
 
-module.exports = navBaseConfig({
+const entryFiles = {
+  'main_nav': 'MainNavNew',
+  'footer': 'Footer',
+}
+
+module.exports = ({ static }) => staticBaseConfig({
   entry: [
-    './static/MainNavNew/index.js',
+    `./static/${entryFiles[static]}/index.js`,
   ],
   output: {
-    path: path.resolve(__dirname, './main_nav/static/'),
+    path: path.resolve(__dirname, `./${static}/static/`),
     filename: 'static.js',
     libraryTarget: 'umd'
   },

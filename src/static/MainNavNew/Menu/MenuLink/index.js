@@ -1,32 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
-import StyledWrapper from 'atoms/StyledWrapper';
 
-import styles from '../menu.module.scss';
-import { primaryHeader } from '../PrimaryMenuHeader/styles';
+import sharedStyles from '../menu.module.scss';
+import styles from '../PrimaryMenuHeader/primary_menu_header.module.scss';
 
 function MenuLink(props) {
   const {
     header,
     href,
+    activePrimaryTab,
+    activeName,
+    showMobileMenu
   } = props;
+
+  const isActive = activePrimaryTab === activeName;
+
+  const headerClasses = classnames(
+    styles['primary-menu-header'],
+    (isActive || showMobileMenu) && styles['primary-menu-header-dark'],
+  );
 
   return (
     <LinkWrapper
       href={href}
-      className={styles['menu-link']}
+      className={sharedStyles['menu-link']}
     >
-      <StyledWrapper
-        css={primaryHeader(props)}
-        component={Text}
+      <Text
         font='a'
         size={10}
+        className={headerClasses}
       >
         { header }
-      </StyledWrapper>
+      </Text>
     </LinkWrapper>
   );
 }
@@ -34,6 +43,9 @@ function MenuLink(props) {
 MenuLink.propTypes = {
   header: PropTypes.string,
   href: PropTypes.string,
+  activePrimaryTab: PropTypes.string,
+  activeName: PropTypes.string,
+  showMobileMenu: PropTypes.bool,
 };
 
 export default MenuLink;

@@ -61,8 +61,9 @@
     border-top: 0;
     flex-basis: 100%;
     position: static;
-    transition: flex-basis .3s ease;
-    transition: flex-basis .3s ease, -ms-flex-preferred-size .3s ease;
+    // TODO: put transition back
+    // transition: flex-basis .3s ease;
+    // transition: flex-basis .3s ease, -ms-flex-preferred-size .3s ease;
 
     &.searching {
       flex-basis: 0;

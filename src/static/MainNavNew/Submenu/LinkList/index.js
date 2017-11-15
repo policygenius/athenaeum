@@ -1,20 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {
-  // List,
-  // Text,
-  // LinkWrapper,
-  // StyledWrapper,
-// } from 'athenaeum';
 
 import Text from 'atoms/Text';
-import List from 'atoms/List';
 import LinkWrapper from 'atoms/LinkWrapper';
-import StyledWrapper from 'atoms/StyledWrapper';
 
-import { generate } from 'shortid';
-
-import { mainList } from './styles';
+import styles from './link_list.module.scss';
 
 function LinkList(props) {
   const {
@@ -25,42 +15,40 @@ function LinkList(props) {
   const list = item.items ? item.items : item.posts;
 
   return (
-    <StyledWrapper
-      css={mainList}
-      component={List}
-      bottomSpacing={12}
-      noPadding
-    >
-      <Text
-        type={7}
-        font='a'
-        semibold
-      >
-        {item.header}
-      </Text>
-      <List
-        bottomSpacing={12}
-        noPadding
-        linkList
-      >
-        {
-          list.map(i =>
-            <LinkWrapper
-              href={i.url}
-              color='neutral-1'
-            >
-              <Text
-                key={generate()}
-                type={10}
-                font='b'
-              >
-                {i.title}
-              </Text>
-            </LinkWrapper>
-          )
-        }
-      </List>
-    </StyledWrapper>
+    <ul className={styles['main-list']}>
+      <li>
+        <Text
+          type={7}
+          font='a'
+          semibold
+        >
+          {item.header}
+        </Text>
+      </li>
+      <li>
+        <ul className={styles['sub-list']}>
+          {
+            list.map(i =>
+              <li>
+                <LinkWrapper
+                  href={i.url}
+                  color='neutral-1'
+                >
+                  <Text
+                    key={i.title}
+                    type={10}
+                    font='b'
+                    inheritColor
+                  >
+                    {i.title}
+                  </Text>
+                </LinkWrapper>
+              </li>
+            )
+          }
+        </ul>
+      </li>
+    </ul>
   );
 }
 

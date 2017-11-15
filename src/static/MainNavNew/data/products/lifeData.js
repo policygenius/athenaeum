@@ -36,6 +36,7 @@ export default {
     header: 'Life Insurance',
     link: '/life-insurance/',
     activeName: 'life-insurance',
+    columns: 3,
   },
   intro: {
     cta: 'Start Shopping Now',

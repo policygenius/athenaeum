@@ -29,7 +29,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       >
         <div>
           <p
-            className="primary-3 type-a-5-bold"
+            className="primary-3 type-a-5-bold inherit"
           >
             header
           </p>
@@ -37,7 +37,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
             className="size-6"
           />
           <p
-            className="neutral-3 type-b-8-medium"
+            className="neutral-3 type-b-8-medium inherit"
           >
             subheader
           </p>
@@ -50,7 +50,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       >
         <div>
           <p
-            className="primary-3 type-a-5-bold"
+            className="primary-3 type-a-5-bold inherit"
           >
             secondaryHeader
           </p>
@@ -58,7 +58,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
             className="size-6"
           />
           <p
-            className="neutral-3 type-b-8-medium"
+            className="neutral-3 type-b-8-medium inherit"
           >
             another subhead
           </p>
@@ -81,7 +81,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <p
-          className="primary-3 type-b-10-medium"
+          className="primary-3 type-b-10-medium inherit"
         >
           A link
         </p>
@@ -97,7 +97,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
         onClick={[Function]}
       >
         <p
-          className="primary-3 type-b-10-medium"
+          className="primary-3 type-b-10-medium inherit"
         >
           second link
         </p>

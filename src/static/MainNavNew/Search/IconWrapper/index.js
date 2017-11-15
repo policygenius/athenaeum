@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import StyledWrapper from 'atoms/StyledWrapper';
 import Icon from 'atoms/Icon';
 
 const getDimensions = ({ icon }) => {
@@ -20,19 +19,22 @@ const getDimensions = ({ icon }) => {
 };
 
 const IconWrapper = props =>
-  <StyledWrapper
-    {...props}
+  <div
+    onClick={props.onClick}
+    className={props.className}
   >
     <Icon
       icon={props.icon}
       {...getDimensions(props)}
     />
-  </StyledWrapper>
+  </div>
 
 ;
 
 IconWrapper.propTypes = {
   icon: PropTypes.string,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default IconWrapper;

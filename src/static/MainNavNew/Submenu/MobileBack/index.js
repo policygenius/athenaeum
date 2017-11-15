@@ -1,34 +1,23 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {
-  // Col,
-  // Layout,
-  // Icon,
-  // Text,
-  // StyledWrapper,
-// } from 'athenaeum';
 
 import Col from 'atoms/Layout/Col';
 import Layout from 'atoms/Layout';
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
-import StyledWrapper from 'atoms/StyledWrapper';
 
 import styles from './mobile_back.module.scss';
-import { mobileBackWrapper, mobileBack } from './styles';
 
 const MobileBack = props =>
-  <StyledWrapper
-    component={Col}
+  <Col
     fullwidth
-    css={mobileBackWrapper}
+    className={styles['mobile-back-wrapper']}
   >
-    <StyledWrapper
-      component={Layout}
+    <Layout
       smallCols={[ 1, 11 ]}
       fullwidth
-      css={mobileBack}
+      className={styles['mobile-back']}
     >
       <div
         onClick={() => props.setMobileCollapsedMenu(null)}
@@ -52,8 +41,8 @@ const MobileBack = props =>
           { props.text }
         </Text>
       </div>
-    </StyledWrapper>
-  </StyledWrapper>
+    </Layout>
+  </Col>
 
 ;
 

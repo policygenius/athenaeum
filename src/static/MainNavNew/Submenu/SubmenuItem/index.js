@@ -2,10 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-// import {
-  // Text,
-  // LinkWrapper,
-// } from 'athenaeum';
 
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
@@ -15,6 +11,24 @@ import ProductDisplay from '../ProductDisplay';
 import MagazineDisplay from '../MagazineDisplay';
 
 class SubmenuItem extends React.Component {
+  getMobileClick = (activeName) => {
+    const {
+      showMobileMenu,
+      setMobileCollapsedMenu,
+    } = this.props;
+
+    if (showMobileMenu) {
+      return (e) => {
+        e.stopPropagation();
+        setMobileCollapsedMenu(activeName);
+
+        return false;
+      };
+    }
+
+    return () => true;
+  }
+
   get submenuDisplayType() {
     const {
       displayType,
@@ -46,6 +60,7 @@ class SubmenuItem extends React.Component {
           headerText={item.menu.header}
           isActive={activeSubTab === item.menu.activeName}
           activeName={item.menu.activeName}
+          columns={item.menu.columns}
           mobileCollapsedMenu={mobileCollapsedMenu}
           setMobileCollapsedMenu={setMobileCollapsedMenu}
         />
@@ -53,21 +68,6 @@ class SubmenuItem extends React.Component {
     }
 
     return null;
-  }
-
-  get itemHover() {
-    const {
-      showMobileMenu,
-      setActiveSubTab,
-      item,
-    } = this.props;
-
-    if (showMobileMenu) return {};
-
-    return {
-      onMouseEnter: () => setActiveSubTab(item.menu.activeName),
-      onMouseLeave: () => setActiveSubTab(null)
-    };
   }
 
   // onClick needed for tablet devices to open display menu
@@ -87,44 +87,49 @@ class SubmenuItem extends React.Component {
 
   render() {
     const {
-      item,
+      item: {
+        menu
+      },
       showMobileMenu,
-      setMobileCollapsedMenu,
       displayType,
-      activeSubTab
+      activeSubTab,
+      activeName,
+      setActiveSubTab,
     } = this.props;
 
-    const headerClasses = [
+    const headerClasses = classnames(
       styles['item-header-text'],
-      activeSubTab === item.menu.activeName && styles.active,
-    ];
+      activeSubTab === menu.activeName && styles.active,
+    );
 
-    // need to add special padding to More link on Tablet
-    const linkClasses = [
+    const linkClasses = classnames(
       styles['item-header-link'],
-      item.menu.activeName === 'more' && styles['item-more-link'],
-    ];
+      // need to add special padding to More link on Tablet
+      menu.activeName === 'more' && styles['item-more-link'],
+      // need to remove pointer events on tablet for all submenu items
+      // except those for 'about', which should still be clickable
+      activeName !== 'about' && styles['tablet-no-pointer'],
+    );
 
     return (
       <div
         className={styles.item}
         onClick={this.tabletOnClick()}
-        {...this.itemHover}
+        onMouseEnter={() => setActiveSubTab(menu.activeName)}
+        onMouseLeave={() => setActiveSubTab(null)}
       >
         <LinkWrapper
-          className={classnames(...linkClasses)}
-          href={showMobileMenu && displayType ? null : item.menu.link}
-          onClick={
-            showMobileMenu ? () => setMobileCollapsedMenu(item.menu.activeName) : () => true
-          }
+          className={linkClasses}
+          href={showMobileMenu && displayType ? null : menu.link}
+          onClick={this.getMobileClick(menu.activeName)}
         >
           <Text
             type={10}
             font='b'
             color='neutral-1'
-            className={classnames(...headerClasses)}
+            className={headerClasses}
           >
-            {item.menu.header}
+            {menu.header}
           </Text>
         </LinkWrapper>
 
@@ -143,6 +148,7 @@ SubmenuItem.propTypes = {
   setActiveSubTab: PropTypes.func,
   activeSubTab: PropTypes.string,
   mobileCollapsedMenu: PropTypes.string,
+  activeName: PropTypes.string,
 };
 
 export default SubmenuItem;

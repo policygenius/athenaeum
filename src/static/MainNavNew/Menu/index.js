@@ -14,14 +14,14 @@ const Menu = (props) => {
     mobileCollapsedMenu,
   } = props;
 
-  const wrapperClasses = [
+  const wrapperClasses = classnames(
     styles.wrapper,
     searching && styles.searching,
     !!mobileCollapsedMenu && styles['mobile-collapsed'],
-  ];
+  );
 
   return (
-    <div className={classnames(...wrapperClasses)}>
+    <div className={wrapperClasses}>
       <div className={styles.container}>
         <PrimaryMenu
           {...props}

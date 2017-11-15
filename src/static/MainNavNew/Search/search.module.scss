@@ -1,4 +1,5 @@
 .search {
+  align-items: center;
   display: flex;
   height: rem-calc(48px);
   justify-content: flex-end;
@@ -12,19 +13,74 @@ input.input {
   overflow: auto;
   border: 0;
   width: 0;
-}
+  transition: none;
 
-@media #{$small-only} {
-  .search {
-    width: 100%;
+  &::placeholder {
+    @include typography-b(8);
+
+    color: transparent;
+  }
+
+  &::-moz-placeholder {
+    @include typography-b(8);
+
+    color: transparent;
   }
 }
 
-@media #{$medium-up} {
+.search-icon,
+.search-icon-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.overflow-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  padding-left: ru(1);
+}
+
+
+.searching {
+  .search-icon {
+    cursor: auto;
+  }
+}
+
+@media #{$mobile-only} {
+  .search {
+    width: 100%;
+  }
+
+  .search-icon,
+  .overflow-icon {
+    display: none;
+  }
+  .hamburger-close-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    padding-left: ru(1);
+    // min-width needed to prevent sizing issue when switching from hamburger to close
+    min-width: rem-calc(42px);
+  }
+}
+
+@media #{$tablet} {
   .search {
     padding: 0;
     border: 0;
     height: rem-calc(70px);
+  }
+
+  .search-icon-mobile,
+  .hamburger-close-icon {
+    display: none;
   }
 
   .searching {
@@ -32,19 +88,62 @@ input.input {
     .input {
       width: 100%;
       max-width: 100%;
-      height: 100%;
     }
 
     &.search {
+      height: 100%;
       flex-basis: 96%;
     }
 
     .input {
       flex-basis: 100%;
+      color: color('primary-3');
       display: inline;
+      height: ru(1);
       margin-bottom: 0;
       padding: 0 ru(1);
-      transition: flex-basis .3s, padding 0s .1s, margin 0s .1s;
+
+      // TODO: put transition back
+      // transition: flex-basis .3s, padding 0s .1s, margin 0s .1s;
+
+      &::placeholder {
+        color: color('primary-3');
+        // TODO: put transition back
+        // transition: color .3s;
+      }
     }
+
+    .overflow-icon {
+      display: none;
+    }
+
+    .hamburger-close-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}
+
+@media #{$tablet-only} {
+  .searching {
+    .hamburger-close-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      padding-right: rem-calc(42px);
+    }
+  }
+}
+
+@media #{$desktop} {
+  .search-icon {
+    padding-left: ru(1);
+  }
+
+  .overflow-icon {
+    display: none;
   }
 }

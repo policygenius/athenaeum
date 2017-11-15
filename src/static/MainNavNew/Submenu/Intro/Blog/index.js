@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
-import StyledWrapper from 'atoms/StyledWrapper';
 import Spacer from 'atoms/Spacer';
-import Layout from 'atoms/Layout';
+
+import styles from './blog_intro.module.scss';
 
 class BlogIntro extends Component {
   get introText() {
@@ -14,8 +14,8 @@ class BlogIntro extends Component {
 
     if (intro.textType === 'latest') {
       return (
-        <StyledWrapper
-          css={() => 'min-height: 42px'}
+        <div
+          className={styles['latest-text']}
         >
           <Text
             type={4}
@@ -23,7 +23,7 @@ class BlogIntro extends Component {
           >
             {headerText}
           </Text>
-        </StyledWrapper>
+        </div>
       );
     }
 
@@ -42,11 +42,9 @@ class BlogIntro extends Component {
     } = this.props;
 
     return (
-      <Layout
+      <div
         fullwidth
-        style={{
-          textAlign: 'center'
-        }}
+        className={styles['blog-intro']}
       >
         { this.introText }
 
@@ -57,7 +55,7 @@ class BlogIntro extends Component {
             View All
           </Text>
         </LinkWrapper>
-      </Layout>
+      </div>
     );
   }
 }

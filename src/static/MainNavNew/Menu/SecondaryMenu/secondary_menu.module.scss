@@ -1,0 +1,47 @@
+@media #{$mobile-only} {
+  .list {
+    display: block;
+    padding: 0;
+    /* stylelint-disable-next-line declaration-no-important */
+    margin-left: 0 !important;
+
+    &-overflow {
+      display: none;
+    }
+
+    > li {
+      /* stylelint-disable-next-line declaration-no-important */
+      padding: 0 !important;
+    }
+  }
+}
+
+@media #{$tablet-only} {
+  .list {
+    display: none;
+    padding-right: 0;
+
+    &-overflow {
+      display: flex;
+      padding-right: ru(2);
+    }
+  }
+}
+
+@media #{$tablet} {
+  .list {
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin: 0;
+  }
+}
+
+@media #{$desktop} {
+  .list {
+    display: flex;
+
+    &-overflow {
+      display: none;
+    }
+  }
+}

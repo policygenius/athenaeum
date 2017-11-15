@@ -3,14 +3,14 @@ const webpack = require('webpack');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 
-const navBaseConfig = require('./webpack.config.nav.base.js');
+const staticBaseConfig = require('./webpack.config.static.base.js');
 
-module.exports = navBaseConfig({
+module.exports = ({ static }) => staticBaseConfig({
   entry: [
-    './main_nav_entry.js',
+    `./${static}_entry.js`,
   ],
   output: {
-    path: path.resolve(__dirname, './main_nav/build/'),
+    path: path.resolve(__dirname, `./${static}/build/`),
     filename: 'bundle.js',
     libraryTarget: 'umd'
   },
@@ -39,4 +39,5 @@ module.exports = navBaseConfig({
       minRatio: 0.8
     }),
   ],
+  modulesName: static,
 });

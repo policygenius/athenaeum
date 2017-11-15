@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import Text from 'atoms/Text';
-import StyledWrapper from 'atoms/StyledWrapper';
 
-import { primaryHeader } from './styles';
+import styles from './primary_menu_header.module.scss';
 import Submenu from '../../Submenu';
 
 function PrimaryMenuHeader(props) {
@@ -18,18 +18,26 @@ function PrimaryMenuHeader(props) {
     ...otherProps
   } = props;
 
+  const isActive = activePrimaryTab === activeName;
+  const aboutHeader = activeName === 'about';
+
+  const headerClasses = classnames(
+    styles['primary-menu-header'],
+    (isActive || otherProps.showMobileMenu) && styles['primary-menu-header-dark'],
+    aboutHeader && styles['primary-menu-header-about'],
+  );
+
   return (
     <div
       onClick={() => setActivePrimaryTab(activeName)}
     >
-      <StyledWrapper
-        css={primaryHeader(props)}
-        component={Text}
+      <Text
         font='a'
         type={10}
+        className={headerClasses}
       >
         { header }
-      </StyledWrapper>
+      </Text>
 
       {
         submenu &&

@@ -24,6 +24,7 @@ export default {
     header: 'Pet Insurance',
     link: '/pet-insurance/',
     activeName: 'pet-insurance',
+    columns: 3,
   },
   intro: {
     cta: 'Start Shopping Now',

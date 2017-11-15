@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import styles from './search.module.scss';
 import HamburgerClose from './HamburgerClose';
 import IconWrapper from './IconWrapper';
-import { searchIcon, searchIconMobile, overflowIcon } from './styles';
 
 function Search(props) {
   const {
@@ -14,17 +13,17 @@ function Search(props) {
     setActivePrimaryTab,
   } = props;
 
-  const classes = [
+  const classes = classnames(
     styles.search,
     searching && styles.searching
-  ];
+  );
 
   return (
-    <div className={classnames(...classes)}>
+    <div className={classes}>
       <IconWrapper
-        css={searchIcon(props)}
         onClick={() => toggleSearching(true)}
         icon='searchRebrand'
+        className={styles['search-icon']}
       />
 
       <input
@@ -37,17 +36,16 @@ function Search(props) {
       />
 
       <IconWrapper
-        css={searchIconMobile(props)}
-        className='st-search-show-outputs'
         icon='searchRebrand'
+        className={classnames(styles['search-icon-mobile'], 'st-search-show-outputs')}
       />
 
       <HamburgerClose {...props} />
 
       <IconWrapper
-        css={overflowIcon(props)}
         onClick={() => setActivePrimaryTab('about')}
         icon='overflow'
+        className={styles['overflow-icon']}
       />
     </div>
   );

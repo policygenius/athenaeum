@@ -39,7 +39,7 @@ exports[`<RadioGroup /> renders correctly 1`] = `
         </span>
       </div>
       <p
-        className="primary-3 type-b-10-medium"
+        className="primary-3 type-b-10-medium inherit"
       >
         Sublabel action
       </p>
