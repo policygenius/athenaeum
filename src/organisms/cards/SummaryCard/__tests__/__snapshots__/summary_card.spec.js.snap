@@ -19,6 +19,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
   >
     <div
       className="layout"
+      id={undefined}
       style={undefined}
     >
       <div
@@ -67,6 +68,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
   </div>
   <div
     className="layout footer"
+    id={undefined}
     style={undefined}
   >
     <div

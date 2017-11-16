@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import cx from 'classnames';
 import { processChildren } from './utils';
 import styles from './layout.module.scss';
 import Col from './Col';
@@ -8,6 +8,7 @@ import Col from './Col';
 function Layout( props ) {
   const {
     className,
+    id,
     padding,
     style,
     variant,
@@ -15,19 +16,22 @@ function Layout( props ) {
     nested
   } = props;
 
+  const classes = cx(
+    styles['layout'],
+    padding && styles['padding'],
+    nested && styles['nested'],
+    variant && styles[variant],
+    column && styles['column'],
+    className,
+  );
+
   const kids = processChildren(props);
 
   return (
     <div
+      id={id}
       style={style}
-      className={classnames(
-        styles['layout'],
-        padding && styles['padding'],
-        nested && styles['nested'],
-        variant && styles[variant],
-        column && styles['column'],
-        className,
-      )}
+      className={classes}
     >
       { kids }
     </div>
@@ -40,6 +44,10 @@ Layout.propTypes = {
    */
   className: PropTypes.string,
 
+  /**
+   * Supply an id
+   */
+  id: PropTypes.string,
   /**
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values

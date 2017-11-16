@@ -10,11 +10,13 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout bordered-buckets"
+    id={undefined}
     style={undefined}
 />,
   "nodes": Array [
     <div
       className="layout bordered-buckets"
+      id={undefined}
       style={undefined}
 />,
   ],
@@ -74,11 +76,13 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout bordered-buckets"
+          id={undefined}
           style={undefined}
 />,
         "_debugID": 7,
         "_renderedOutput": <div
           className="layout bordered-buckets"
+          id={undefined}
           style={undefined}
 />,
       },
@@ -117,6 +121,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout"
+    id={undefined}
     style={undefined}
 >
     <Col
@@ -150,6 +155,7 @@ ShallowWrapper {
   "nodes": Array [
     <div
       className="layout"
+      id={undefined}
       style={undefined}
 >
       <Col
@@ -252,6 +258,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -285,6 +292,7 @@ ShallowWrapper {
         "_debugID": 13,
         "_renderedOutput": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -358,6 +366,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout padding"
+    id={undefined}
     style={undefined}
 >
     <Col
@@ -394,6 +403,7 @@ ShallowWrapper {
   "nodes": Array [
     <div
       className="layout padding"
+      id={undefined}
       style={undefined}
 >
       <Col
@@ -517,6 +527,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout padding"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -553,6 +564,7 @@ ShallowWrapper {
         "_debugID": 15,
         "_renderedOutput": <div
           className="layout padding"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -633,6 +645,7 @@ ShallowWrapper {
 exports[`<Layout /> renders correctly 1`] = `
 <div
   className="layout"
+  id={undefined}
   style={undefined}
 />
 `;
@@ -647,6 +660,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout"
+    id={undefined}
     style={undefined}
 >
     <Col
@@ -698,6 +712,7 @@ ShallowWrapper {
   "nodes": Array [
     <div
       className="layout"
+      id={undefined}
       style={undefined}
 >
       <Col
@@ -822,6 +837,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -873,6 +889,7 @@ ShallowWrapper {
         "_debugID": 9,
         "_renderedOutput": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -966,6 +983,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout"
+    id={undefined}
     style={undefined}
 >
     <Col
@@ -1002,6 +1020,7 @@ ShallowWrapper {
   "nodes": Array [
     <div
       className="layout"
+      id={undefined}
       style={undefined}
 >
       <Col
@@ -1113,6 +1132,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -1149,6 +1169,7 @@ ShallowWrapper {
         "_debugID": 17,
         "_renderedOutput": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -1229,6 +1250,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout"
+    id={undefined}
     style={undefined}
 >
     <Col
@@ -1280,6 +1302,7 @@ ShallowWrapper {
   "nodes": Array [
     <div
       className="layout"
+      id={undefined}
       style={undefined}
 >
       <Col
@@ -1414,6 +1437,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -1465,6 +1489,7 @@ ShallowWrapper {
         "_debugID": 19,
         "_renderedOutput": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -1563,6 +1588,7 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="layout"
+    id={undefined}
     style={undefined}
 >
     <Col
@@ -1614,6 +1640,7 @@ ShallowWrapper {
   "nodes": Array [
     <div
       className="layout"
+      id={undefined}
       style={undefined}
 >
       <Col
@@ -1738,6 +1765,7 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col
@@ -1789,6 +1817,7 @@ ShallowWrapper {
         "_debugID": 11,
         "_renderedOutput": <div
           className="layout"
+          id={undefined}
           style={undefined}
 >
           <Col

@@ -46,6 +46,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div>
             <div
               className="layout policy-info-item"
+              id={undefined}
               style={undefined}
             >
               <div
@@ -106,6 +107,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div>
             <div
               className="layout policy-info-item"
+              id={undefined}
               style={undefined}
             >
               <div
@@ -189,6 +191,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </a>
           <div
             className="layout secondary-actions-wrapper"
+            id={undefined}
             style={undefined}
           >
             <div
@@ -417,6 +420,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         />
         <div
           className="layout"
+          id={undefined}
           style={
             Object {
               "width": "100%",
