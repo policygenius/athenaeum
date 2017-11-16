@@ -28,6 +28,7 @@ function Layout( props ) {
         column && styles['column'],
         className,
       )}
+      id={id}
     >
       { kids }
     </div>
@@ -40,6 +41,10 @@ Layout.propTypes = {
    */
   className: PropTypes.string,
 
+  /**
+   * Supply an id
+   */
+  id: PropTypes.string,
   /**
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values
