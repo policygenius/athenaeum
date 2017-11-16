@@ -14,6 +14,7 @@ Label Example:
       label='Hi Friend'
       selectOptions={selection}
       tooltip={"I'm a tooltip"}
+      subLabel='Optional subheader'
     />
 ```
 
@@ -53,6 +54,29 @@ Focused Example:
       tooltip={"I'm a tooltip"}
       selectOptions={selection}
       meta={{ active: true }}
+    />
+```
+
+Error Example:
+```jsx
+    const selection = [
+      { label: 'Option 1',
+        value: 1 },
+      { label: 'Option 2',
+        value: 2 },
+      { label: 'Option 3',
+        value: 3 }
+    ];
+
+    <SelectField
+      placeholder='Placeholder'
+      label='Select Field'
+      tooltip={"I'm a tooltip"}
+      selectOptions={selection}
+      meta={{
+        error: 'Some error',
+        touched: true
+      }}
     />
 ```
 

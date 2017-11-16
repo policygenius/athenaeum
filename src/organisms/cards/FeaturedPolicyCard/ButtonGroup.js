@@ -20,7 +20,6 @@ function ButtonGroup(props) {
   return (
     <div className={styles['button-group']}>
       <Button
-        variant='action'
         onClick={onContinue}
       >
         {continueCTAText}

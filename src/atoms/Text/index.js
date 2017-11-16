@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import isUndefined from 'lodash/isUndefined';
+import omitBy from 'lodash/omitBy';
 
 import colors from 'atoms/Color/colors.scss';
 import styles from './text.module.scss';
@@ -19,12 +21,17 @@ const getTag = (props) => {
   return tag;
 };
 
-const getWeight = ({ semibold, light, weight }) => {
-  if (weight) return weight;
-  if (semibold) return 'semibold';
-  if (light) return 'light';
+const getFont = ({ size, type, font, a }) => {
+  const fontSize = type || size;
 
-  return 'regular';
+  // TODO: Remove 'a' prop as an option from component
+  if (a || font === 'a') {
+    return styles[`type-a-${fontSize}-bold`];
+  } else if (font === 'c') {
+    return styles['type-c-7-regular'];
+  }
+
+  return styles[`type-b-${fontSize}-medium`];
 };
 
 const convertChild = (child) => {
@@ -37,6 +44,13 @@ const convertChild = (child) => {
   return child;
 };
 
+const getWeight = ({ font, bold, semibold }) => {
+  if (font !== 'b') { return false; }
+  if (bold || semibold ) { return styles.bold; }
+
+  return false;
+};
+
 function Text(props) {
   if (!props.children) return null;
 
@@ -45,34 +59,48 @@ function Text(props) {
     children,
     className,
     color,
-    type,
-    variant
+    italic,
+    onClick,
+    spaced,
+    variant,
+    style,
+    inherit,
+    inheritSize,
+    inheritColor
   } = props;
 
-  const tag = getTag(props);
+  const font = getFont(props);
   const weight = getWeight(props);
+  const tag = getTag(props);
 
-  const Element = `${tag}`;
   const classes = [
-    styles['text'],
-    styles[`typography-${type}`],
-    styles[weight],
-    colors[color],
-    styles[variant],
-    styles[tag],
-    styles[align],
-    className,
+    weight && weight,
+    color && colors[color],
+    variant && styles[variant],
+    align && styles[align],
+    spaced && styles['spaced'],
+    italic && styles['italic'],
+    className && className,
+    font && font,
+    inherit && styles['inherit'],
+    inheritSize && styles['inherit-size'],
+    inheritColor && styles['inherit-color']
   ];
 
-  return (
-    <Element className={classnames(...classes)}>
-      { React.Children.map(children, convertChild) }
-    </Element>
+  return React.createElement(
+    tag,
+    omitBy({
+      className: classnames(classes),
+      style,
+      onClick
+    }, isUndefined),
+    React.Children.map(children, convertChild)
   );
 }
 
 
 Text.propTypes = {
+
   /*
    * Text alignment
    */
@@ -81,11 +109,18 @@ Text.propTypes = {
     'right',
     'center'
   ]),
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
+  /**
+   * Add custom inline style
+   */
+  style: PropTypes.object,
+
   /**
    * You can use any html element text tag
    */
@@ -93,8 +128,14 @@ Text.propTypes = {
 
   /**
    * Determines typography class
+   *
+   * Types for `a`: `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11`
+   *
+   * Types for `b`: `5, 6, 7, 8, 10, 12`
+   *
+   * Types fo `c`: `1`
    */
-  type: PropTypes.number,
+  size: PropTypes.number,
 
   /**
    * Text decoration
@@ -102,7 +143,8 @@ Text.propTypes = {
   variant: PropTypes.oneOf([
     'strikethrough',
     'underline',
-    'fineprint'
+    'fineprint',
+    'label'
   ]),
 
   /**
@@ -111,21 +153,81 @@ Text.propTypes = {
   color: PropTypes.string,
 
   /**
-   * - light = 300
-   * - semibold = 500
+   * Possible font types are `a`, `b`, and `c`
    */
-  weight: PropTypes.oneOf([
-    'light',
-    'semibold',
-  ]),
+  font: PropTypes.string,
 
+  /**
+   * Adds letter spacing. Use with `A9` and `A11` font
+   */
+  spaced: PropTypes.bool,
+
+  /**
+   * Makes text bold
+   */
+  bold: PropTypes.bool,
+
+  /**
+   * Adds italic
+   */
+  italic: PropTypes.bool,
+
+  /**
+   * onClick callback
+   */
+  onClick: PropTypes.func,
+
+  /**
+   * Deprecated. Use 'size' instead
+   */
+  type: PropTypes.number,
+
+  /**
+   * Deprecated
+   */
+  weight: PropTypes.oneOf([]),
+
+  /**
+   * Deprecated
+   */
   light: PropTypes.bool,
+
+  /**
+   * Deprecated
+   */
   semibold: PropTypes.bool,
+
+  /**
+   * Deprecated
+   */
+  a: PropTypes.bool,
+
+  /**
+   * Deprecated
+   */
+  b: PropTypes.bool,
+
+  /**
+   * Inherit font-size, line-height, and color from parent
+   */
+  inherit: PropTypes.bool,
+
+  /**
+   * Inherit font-size from parent
+   */
+  inheritSize: PropTypes.bool,
+
+  /**
+   * Inherit color from parent
+   */
+  inheritColor: PropTypes.bool,
 };
 
 Text.defaultProps = {
   tag: 'p',
-  type: 6
+  size: 7,
+  font: 'b',
+  color: 'primary-3'
 };
 
 export default Text;

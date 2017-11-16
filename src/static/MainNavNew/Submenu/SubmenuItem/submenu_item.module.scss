@@ -1,0 +1,31 @@
+@media #{$medium-up} {
+  .item {
+    margin-bottom: -12px;
+    padding-bottom: 13px;
+  }
+
+  .item-header-link {
+    border-right: 1px solid #dedede;
+    padding: 0 18px;
+
+    .item-header-text {
+      padding-bottom: 12px;
+      margin-bottom: -12px;
+      border-bottom: 2px solid transparent;
+
+      &.active {
+        border-bottom: 2px solid #000;
+      }
+    }
+  }
+}
+
+@media #{$medium-only} {
+  .item-header-link {
+    pointer-events: none;
+  }
+
+  .item-more-link {
+    padding-right: 48px;
+  }
+}

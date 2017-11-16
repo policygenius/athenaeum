@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccordionPanel /> renders correctly 1`] = `
+<section
+  className="panel"
+>
+  <header
+    className="header"
+    onClick={[Function]}
+  >
+    <span
+      className="ordinal"
+    >
+      .
+    </span>
+    <h1
+      className="title"
+    />
+    <span
+      className="toggleSwitch"
+    >
+      <a
+        className="link neutral-1 secondary"
+      />
+    </span>
+  </header>
+  <section
+    className="content"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": undefined,
+      }
+    }
+  />
+</section>
+`;

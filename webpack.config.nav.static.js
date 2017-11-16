@@ -5,7 +5,7 @@ const navBaseConfig = require('./webpack.config.nav.base.js');
 
 module.exports = navBaseConfig({
   entry: [
-    './static/MainNav/index.js',
+    './static/MainNavNew/index.js',
   ],
   output: {
     path: path.resolve(__dirname, './main_nav/static/'),

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 
 import styles from './checkbox_field.module.scss';
 
@@ -8,7 +7,6 @@ function CheckBoxField( props ) {
   const {
     label,
     input,
-    fontStyle,
   } = props;
 
   return (
@@ -24,7 +22,7 @@ function CheckBoxField( props ) {
         {...input}
       />
       <span
-        className={classnames(styles['checkbox-label'], styles[fontStyle])}
+        className={styles['checkbox-label']}
       >
         { label }
       </span>
@@ -47,16 +45,9 @@ CheckBoxField.propTypes = {
   input: PropTypes.object,
 
   /**
-   * determines font style of label (weight and size)
+   * Makes field disabled
    */
-  fontStyle: PropTypes.oneOf([
-    'light',
-    'semibold'
-  ]),
-};
-
-CheckBoxField.defaultProps = {
-  fontStyle: 'light',
+  disabled: PropTypes.bool,
 };
 
 export default CheckBoxField;

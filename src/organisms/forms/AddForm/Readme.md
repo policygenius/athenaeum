@@ -12,7 +12,7 @@ Add Jewelry item Example:
       <Layout>
         <ImageAside
           simple
-          icon='jewelry'
+          icon='rentersColor3X'
           header='Jewelry item'
         />
 

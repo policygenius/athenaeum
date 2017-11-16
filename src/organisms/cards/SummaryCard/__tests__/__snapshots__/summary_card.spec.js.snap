@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SummaryCard /> renders correctly 1`] = `
+<div
+  className="summary-card"
+>
+  <span
+    className="icon-wrapper clickable icon icon-click"
+    onClick={[Function]}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+  <div
+    className="content"
+  >
+    <div
+      className="layout"
+      style={undefined}
+    >
+      <div
+        className="col col-sm-8 border-neutral-6"
+        onClick={undefined}
+        style={undefined}
+      >
+        <div>
+          <p
+            className="primary-3 type-a-5-bold"
+          >
+            header
+          </p>
+          <div
+            className="size-6"
+          />
+          <p
+            className="neutral-3 type-b-8-medium"
+          >
+            subheader
+          </p>
+        </div>
+      </div>
+      <div
+        className="col col-sm-4 border-neutral-6"
+        onClick={undefined}
+        style={undefined}
+      >
+        <div>
+          <p
+            className="primary-3 type-a-5-bold"
+          >
+            secondaryHeader
+          </p>
+          <div
+            className="size-6"
+          />
+          <p
+            className="neutral-3 type-b-8-medium"
+          >
+            another subhead
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="layout footer"
+    style={undefined}
+  >
+    <div
+      className="col col-sm-8 border-neutral-6"
+      onClick={undefined}
+      style={undefined}
+    >
+      <a
+        className="link neutral-1 secondary"
+        onClick={[Function]}
+      >
+        <p
+          className="primary-3 type-b-10-medium"
+        >
+          A link
+        </p>
+      </a>
+    </div>
+    <div
+      className="col col-sm-4 border-neutral-6"
+      onClick={undefined}
+      style={undefined}
+    >
+      <a
+        className="link neutral-1 secondary"
+        onClick={[Function]}
+      >
+        <p
+          className="primary-3 type-b-10-medium"
+        >
+          second link
+        </p>
+      </a>
+    </div>
+  </div>
+</div>
+`;

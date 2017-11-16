@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldGroup /> renders correctly 1`] = `
+<div>
+  <div
+    className="field-group"
+    onBlur={[Function]}
+    onFocus={undefined}
+  >
+    <div
+      className="layout label-wrapper"
+      style={undefined}
+    >
+      <div
+        className="col col-sm-6 fullwidth border-neutral-6"
+        onClick={undefined}
+        style={undefined}
+      >
+        <div
+          className="label"
+        >
+          <label />
+        </div>
+      </div>
+      <div
+        className="col col-sm-6 fullwidth border-neutral-6"
+        onClick={undefined}
+        style={undefined}
+      >
+        <div
+          className="label"
+        >
+          <label />
+        </div>
+      </div>
+    </div>
+    <div
+      className="layout"
+      style={undefined}
+    >
+      <div
+        className="col col-sm-6 fullwidth border-neutral-6 field"
+        onClick={undefined}
+        style={undefined}
+      >
+        <div>
+          <div
+            className=""
+          >
+            <span
+              className="input-wrapper"
+              data-postfix={undefined}
+              data-prefix={undefined}
+            >
+              <input
+                className="input"
+                id={undefined}
+                placeholder="mm"
+                type="text"
+                value={undefined}
+              />
+            </span>
+          </div>
+          <span />
+        </div>
+      </div>
+      <div
+        className="col col-sm-6 fullwidth border-neutral-6 field"
+        onClick={undefined}
+        style={undefined}
+      >
+        <div>
+          <div
+            className=""
+          >
+            <span
+              className="input-wrapper"
+              data-postfix={undefined}
+              data-prefix={undefined}
+            >
+              <input
+                className="input"
+                id={undefined}
+                placeholder="yyyy"
+                type="text"
+                value={undefined}
+              />
+            </span>
+          </div>
+          <span />
+        </div>
+      </div>
+    </div>
+  </div>
+  <span />
+</div>
+`;

@@ -1,0 +1,24 @@
+@import '../shared/cards.module.scss';
+
+.summary-card {
+  @extend %card;
+}
+
+.content {
+  padding: ru(.75) ru(.5);
+}
+
+.icon {
+  @extend %icon;
+
+  cursor: initial;
+}
+
+.icon-click {
+  cursor: pointer;
+}
+
+.footer {
+  @extend %footer;
+  padding: ru(.5) ru(.5);
+}

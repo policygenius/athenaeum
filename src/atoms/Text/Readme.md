@@ -1,15 +1,54 @@
-Text Example:
+Note: Text is responsive - it will automatically change font-size based on screen size.
+(This is confusing, we know. You can refer to this for more context)[https://app.zeplin.io/project/59cd15548a18a8bb0bc48b4d/screen/59d67373e9f6f5ad28c9fd38]
+
+Text A Example:
 
 ```jsx
 
     <div>
-      <Text type={0}>Type 0</Text>
-      <Text type={1}>Type 1</Text>
-      <Text type={2}>Type 2</Text>
-      <Text type={3}>Type 3</Text>
-      <Text type={4}>Type 4</Text>
-      <Text type={5}>Type 5</Text>
-      <Text type={6}>Type 6</Text>
-      <Text type={7}>Type 7</Text>
+      <Text type={1} font='a'>Type A1</Text>
+      <Text type={2} font='a'>Type A2</Text>
+      <Text type={3} font='a'>Type A3</Text>
+      <Text type={4} font='a'>Type A4</Text>
+      <Text type={5} font='a'>Type A5</Text>
+      <Text type={6} font='a'>Type A6</Text>
+      <Text type={7} font='a'>Type A7</Text>
+      <Text type={8} font='a'>Type A8</Text>
+      <Text type={9} font='a'>Type A9</Text>
+      <Text type={10} font='a'>Type A10</Text>
+      <Text type={11} font='a'>Type A11</Text>
+    </div>
+```
+
+Text A Spaced Example:
+
+```jsx
+
+    <div>
+      <Text type={9} font='a' spaced>Type A9</Text>
+      <Text type={11} font='a' spaced>Type A11</Text>
+    </div>
+```
+
+Text B Example:
+
+```jsx
+
+    <div>
+      <Text type={5} font='b'>Type B5</Text>
+      <Text type={6} font='b'>Type B6</Text>
+      <Text type={7} font='b'>Type B7</Text>
+      <Text type={8} font='b'>Type B8</Text>
+      <Text type={10} font='b'>Type B10</Text>
+      <Text type={12} font='b'>Type B11</Text>
+    </div>
+```
+
+Text C Example:
+
+```jsx
+
+    <div>
+      <Text type={7} font='c'>Type C7</Text>
     </div>
 ```

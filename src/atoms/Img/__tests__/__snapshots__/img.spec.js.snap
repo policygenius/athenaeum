@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Img /> renders correctly 1`] = `
+<img
+  alt=""
+  className="img"
+  src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=768&auto=format&q=40"
+  srcSet="
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=320w&auto=format 320w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=768w&auto=format 768w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=1025&auto=format 1025w
+"
+/>
+`;

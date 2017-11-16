@@ -32,8 +32,6 @@
 /* --  state:focus  -- */
 .focused {
   @extend %focused;
-
-  .input { border-color: $focused-border-color; }
 }
 
 /* --  state:error  -- */

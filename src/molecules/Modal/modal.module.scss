@@ -2,6 +2,7 @@ $border: 1px solid color('neutral-5');
 
 .modal {
   margin: ru(4.25) auto ru(4.25);
+  background-color: color('primary-2');
 
   &:focus,
   &:active {
@@ -32,25 +33,17 @@ $border: 1px solid color('neutral-5');
 }
 
 .dialog {
-  @include base-font-family;
+  @include font-family-b;
   position: relative;
   z-index: 9999;
   max-width: 100vw;
   margin: auto;
-  border-radius: ru(.25);
   border: $border;
   overflow: hidden;
 }
 
-.header {
-  padding: ru(1.25) ru(2);
-  background-color: color('neutral-6');
-  border-bottom: $border;
-  color: color('neutral-2');
-}
-
 .close-col {
-  align-self: center;
+  align-self: top;
   text-align: right;
 }
 
@@ -61,12 +54,13 @@ $border: 1px solid color('neutral-5');
 }
 
 .body {
-  font-family: $font-family-sans-serif;
   background-color: color('neutral-8');
+  padding: ru(1) ru(1);
 }
 
 .section {
-  padding: ru(1) ru(2) 0;
+  padding-top: ru(1);
+  padding-right: ru(1);
   border-bottom: 1px solid color('neutral-6');
 
   &:last-child {

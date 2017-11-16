@@ -1,23 +1,26 @@
-@for $i from 0 through 7 {
-  .typography-#{$i} {
-    @include typography($i);
+
+@for $i from 1 through 11 {
+  .type-a-#{$i}-bold {
+    @include typography-a($i);
   }
+}
+
+@for $i from 5 through 12 {
+  .type-b-#{$i}-medium {
+    @include typography-b($i);
+  }
+}
+
+.type-c-7-regular {
+  @include typography-c();
+}
+
+.label {
+  @include typography-label;
 }
 
 .fineprint {
   @include fineprint;
-}
-
-.regular {
-  @include typography-regular;
-}
-
-.light {
-  @include typography-light;
-}
-
-.semibold {
-  @include typography-semibold;
 }
 
 .underline {
@@ -53,4 +56,29 @@
     width: 110%;
     border-bottom: 2px solid;
   }
+}
+
+.spaced {
+  letter-spacing: 1.8px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.inherit {
+  font-size: inherit;
+  color: inherit;
+}
+
+.inherit-size {
+  font-size: inherit;
+}
+
+.inherit-color {
+  color: inherit;
 }

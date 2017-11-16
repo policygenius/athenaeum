@@ -2,16 +2,22 @@
 const fs = require('fs');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const MainNav = require('./static/static.js');
+const MainNavNew = require('./static/static.js');
+const ServerStyleSheet = require('styled-components').ServerStyleSheet;
 
-const html = ReactDOMServer.renderToStaticMarkup(React.createElement(MainNav.default));
+const sheet = new ServerStyleSheet();
 
-fs.writeFile('./main_nav/build/static-index.html', html, (err) => {
+const html = ReactDOMServer.renderToStaticMarkup(
+  sheet.collectStyles(React.createElement(MainNavNew.default))
+);
+
+const css = sheet.getStyleTags();
+
+fs.writeFile('./main_nav/build/static-index.html', css + html, (err) => {
   if (err) {
     console.log('ERR:', err);
     return;
   }
 
-  console.log('Successfully wrote MainNav component to static-index.html');
+  console.log('Successfully wrote MainNavNew component to static-index.html');
 });
-

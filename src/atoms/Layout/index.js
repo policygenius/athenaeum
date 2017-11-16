@@ -11,7 +11,8 @@ function Layout( props ) {
     padding,
     style,
     variant,
-    column
+    column,
+    nested
   } = props;
 
   const kids = processChildren(props);
@@ -22,10 +23,12 @@ function Layout( props ) {
       className={classnames(
         styles['layout'],
         padding && styles['padding'],
-        className,
+        nested && styles['nested'],
         variant && styles[variant],
         column && styles['column'],
+        className,
       )}
+      id={id}
     >
       { kids }
     </div>
@@ -38,6 +41,10 @@ Layout.propTypes = {
    */
   className: PropTypes.string,
 
+  /**
+   * Supply an id
+   */
+  id: PropTypes.string,
   /**
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values
@@ -106,6 +113,12 @@ Layout.propTypes = {
    * Adds standard (~6px) left/right padding to the `Layout`
    */
   padding: PropTypes.bool,
+
+  /**
+   * When true, Adds negative (~6px) left/right margin to the `Layout`
+   * Use when nested `Layouts` have an unwanted second padding
+   */
+  nested: PropTypes.bool,
 
   /**
    * prevents Layout from automatically passing left and right padding to all of its direct children (`<Cols />`).

@@ -1,0 +1,111 @@
+.main-content {
+  @media #{$mobile-only} {
+    border-top: 1px solid #d6d6d6;
+    padding-top: 32px;
+    padding-left: rem-calc(12);
+    padding-right: rem-calc(12);
+
+    .select-product-1 {
+      padding-top: rem-calc(36);
+      margin-bottom: rem-calc(36);
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .select-product-2 {
+      margin-bottom: rem-calc(60);
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .last-resource {
+      padding-bottom: rem-calc(36);
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100vw;
+        border-top: 1px solid #d6d6d6;
+        left: rem-calc(-24);
+        bottom: 12px;
+      }
+    }
+
+    // TODO: Make the flexbox ordering mobile-first
+    // First select product
+    div:nth-of-type( 1 ) {
+      order: 5;
+    }
+
+    // 1st resource - Insurance Product Guides
+    div:nth-of-type( 2 ) {
+      order: 1;
+    }
+
+    // 2nd resource - Genius Center
+    div:nth-of-type( 3 ) {
+      order: 3;
+    }
+
+    // 2nd select product - Get our Newsletter
+    div:nth-of-type( 4 ) {
+      order: 6;
+    }
+
+    // 3rd Resource - Helpful Resources
+    div:nth-of-type( 5 ) {
+      order: 2;
+    }
+
+    // 4th Resource - Reviews
+    div:nth-of-type( 6 ) {
+      order: 4;
+    }
+  }
+
+  @media #{$tablet-only} {
+    display: flex;
+
+    > div {
+      margin-bottom: rem-calc(60);
+    }
+
+    div:nth-of-type( 1 ) {
+      order: 1;
+    }
+
+    div:nth-of-type( 2 ) {
+      order: 3;
+    }
+
+    div:nth-of-type( 3 ) {
+      order: 5;
+    }
+
+    div:nth-of-type( 4 ) {
+      order: 2;
+    }
+
+    div:nth-of-type( 5 ) {
+      order: 4;
+    }
+
+    div:nth-of-type( 6 ) {
+      order: 6;
+    }
+  }
+
+  @media #{$desktop} {
+    display: flex;
+
+    > div {
+      margin-bottom: rem-calc(60);
+    }
+  }
+}

@@ -4,18 +4,24 @@
   @extend %card;
 }
 
-.icon-close {
-  @extend %icon-close;
+.icon {
+  @extend %icon;
+
+  cursor: initial;
+}
+
+.icon-click {
+  cursor: pointer;
 }
 
 .col {
-  padding: ru(.75);
+  padding: ru(.75) ru(1);
 }
 
 .footer {
   @extend %footer;
 
-  padding: $col-padding;
+  padding: ru(.5) ru(1);
 }
 
 .link {
@@ -37,7 +43,7 @@
   border-bottom: 3px solid color('neutral-5');
 }
 
-@media #{$small-only} {
+@media #{$mobile-only} {
   .checkout {
     border-radius: 0;
     border: none;

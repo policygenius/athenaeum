@@ -1,6 +1,6 @@
 ### SliderField Example:
 
-```example
+```jsx
     class SliderTest extends React.Component {
     constructor() {
       super()

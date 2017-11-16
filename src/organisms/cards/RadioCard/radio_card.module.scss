@@ -4,9 +4,13 @@ $border-style: 1px solid color('neutral-5');
 
 .radio-card {
   display: block;
-  opacity: .6;
   width: 100%;
   height: 100%;
+  color: color('neutral-4');
+
+  svg path {
+    fill: color('neutral-4');
+  }
 }
 
 .card {
@@ -19,19 +23,15 @@ $border-style: 1px solid color('neutral-5');
   height: 100%;
   cursor: pointer;
   text-align: center;
+  padding-bottom: ru(1);
 }
 
 .checked {
-  opacity: 1;
+  color: color('primary-3');
 
-  span:after {
-    opacity: 1;
-    left: 19%;
+  svg path {
+    fill: color('primary-3');
   }
-}
-
-.not-selected {
-  opacity: .4;
 }
 
 .content {
@@ -72,8 +72,8 @@ $border-style: 1px solid color('neutral-5');
   display: flex;
 
   border-top: $border-style;
-  color: color('neutral-2');
-  
+  color: color('primary-3');
+
   line-height: ru(.75);
   text-align: center;
 
@@ -86,10 +86,11 @@ $border-style: 1px solid color('neutral-5');
     text-align: left;
   }
 
-  &-value {
-    @include typography-4;
-    @include typography-semibold;
+  &-label {
+    @include typography-label;
+  }
 
+  &-value {
     margin: 0;
   }
 

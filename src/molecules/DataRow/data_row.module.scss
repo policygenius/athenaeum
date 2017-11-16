@@ -1,17 +1,15 @@
 .data-row {
   margin-bottom: ru(.25);
-  color: color('neutral-2');
+  color: color('primary-3');
 }
 
 .row {
-  @include typography-light;
-
   display: flex;
   margin: 0;
 }
 
 .label {
-  @include typography(6);
+  @include typography-a(10);
 
   display: flex;
   position: relative;
@@ -26,9 +24,7 @@
 }
 
 .description {
-  @include typography(7);
-
-  color: color('neutral-3');
+  @include typography-b-10();
 }
 
 .value {
@@ -70,4 +66,16 @@
 // Can be applied in addition to a variant
 .indent {
   padding-left: ru(.75);
+}
+
+.subitem {
+  .value, .amount {
+    @include typography-regular();
+  }
+}
+
+.highlight {
+  .value, .amount {
+    color: color('secondary-2');
+  }
 }

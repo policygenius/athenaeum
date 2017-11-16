@@ -1,0 +1,50 @@
+@import '../shared/formfields.module.scss';
+
+.radio-group {
+  @extend %form-field;
+}
+
+.label-wrapper {
+  padding: ru(.5) ru(.75);
+
+  border-bottom: 1px solid color('neutral-4');
+}
+
+.label {
+  @include typography-b-10(true);
+
+  display: flex;
+}
+
+.field {
+  border-bottom: 1px solid color('neutral-4');
+  padding: ru(.5) ru(.75);
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+.tooltip {
+  margin-left: auto;
+}
+
+.tooltip-icon {
+  @extend %tooltip-icon;
+}
+
+/* --  state:focus  -- */
+.focused {
+  border: 1px solid color('secondary-2');
+}
+
+/* --  state:error  -- */
+.hasError {
+  border: 1px solid color('primary-1');
+}
+
+@media #{$tablet} {
+  .label {
+    @include typography-b-8(true);
+  }
+}

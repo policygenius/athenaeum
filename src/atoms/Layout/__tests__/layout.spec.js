@@ -53,6 +53,18 @@ describe('<Layout />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('doesn\'t wrap Cols in `<Col>`', () => {
+    const wrapper = shallow(
+      <Layout smallCols={[ 1 ]}>
+        <div className='child' />
+        <Col className='child' />
+      </Layout>
+    );
+
+    expect(wrapper.find('Col > Col')).toHaveLength(0);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('passes its `col` props down to its `<Col>` correctly', () => {
     const wrapper = shallow(
       <Layout

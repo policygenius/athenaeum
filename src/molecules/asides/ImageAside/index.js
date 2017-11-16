@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
-import TextComponent from 'atoms/TextComponent';
+import Text from 'atoms/Text';
 import * as icons from 'assets/images';
 import styles from './image-aside.module.scss';
 
@@ -54,9 +54,9 @@ function ImageAside( props ) {
     if (!subheader) return null;
 
     return (
-      <TextComponent className={styles['subheader']}>
+      <Text className={styles['subheader']}>
         { subheader }
-      </TextComponent>
+      </Text>
     );
   };
 
@@ -64,9 +64,12 @@ function ImageAside( props ) {
     <div className={classnames(...classes)}>
       { renderIconImage() }
       <aside className={styles['aside']}>
-        <TextComponent className={styles['header']}>
+        <Text
+          font='a'
+          size={5}
+        >
           { header }
-        </TextComponent>
+        </Text>
 
         { renderSubHeader() }
       </aside>

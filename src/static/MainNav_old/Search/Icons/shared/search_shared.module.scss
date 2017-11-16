@@ -1,0 +1,18 @@
+@mixin icon-cursor {
+  pointer-events: all;
+  cursor: pointer;
+  height: 100%;
+
+  &:hover {
+    opacity: .7;
+    transition: opacity .15s linear;
+  }
+}
+
+@mixin icon-base {
+  width: 24px;
+  height: 3px;
+  display: block;
+  background-color: #000;
+  position: absolute;
+}

@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
-import { P } from 'atoms/Elementals';
+import Text from 'atoms/Text';
 import styles from './add_card.module.scss';
 
 function getCardText(cardText) {
   if (typeof cardText === 'string') {
     return (
-      <P typography={5} className={styles['text']}>{ cardText }</P>
+      <Text size={11} className={styles['text']}>{ cardText }</Text>
     );
   }
 
@@ -24,9 +24,9 @@ function AddCard( props ) {
   const {
     className,
     cardText,
-    icon,
     onClick,
     disabled,
+    icon = 'plus'
   } = props;
 
   const classes = [

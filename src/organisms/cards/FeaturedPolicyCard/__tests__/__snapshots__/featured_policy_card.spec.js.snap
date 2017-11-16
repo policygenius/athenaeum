@@ -14,12 +14,12 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       className="premium"
     >
       <strong
-        className="text typography-2 semibold neutral-1 undefined strong undefined"
+        className="bold neutral-1 type-b-2-medium"
       >
         $19.80
          
         <strong
-          className="text typography-7 semibold neutral-2 undefined strong undefined"
+          className="bold neutral-2 type-b-7-medium"
         >
           /MO
         </strong>
@@ -49,57 +49,51 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
+            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <div
-              className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
+            <p
+              className="primary-3 type-b-7-medium"
             >
-              <p
-                className="text typography-7 regular undefined undefined p undefined"
-              >
-                Financial Strength
-              </p>
+              Financial Strength
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
               <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
                   }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
               </span>
-            </div>
+              <noscript />
+            </span>
           </div>
           <div
-            className="col col-sm-2 col-md-1 bottom-spacing-undefined"
+            className="col col-sm-2 col-md-1 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <div />
           </div>
           <div
-            className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+            className="col col-sm-6 col-md-6 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <strong
-              className="text typography-6 semibold undefined undefined strong undefined"
+              className="bold primary-3 type-b-6-medium"
             >
               A+
             </strong>
@@ -115,57 +109,51 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
+            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <div
-              className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
+            <p
+              className="primary-3 type-b-7-medium"
             >
-              <p
-                className="text typography-7 regular undefined undefined p undefined"
-              >
-                Total Customers
-              </p>
+              Total Customers
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
               <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
                   }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
               </span>
-            </div>
+              <noscript />
+            </span>
           </div>
           <div
-            className="col col-sm-2 col-md-1 bottom-spacing-undefined"
+            className="col col-sm-2 col-md-1 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <div />
           </div>
           <div
-            className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+            className="col col-sm-6 col-md-6 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <strong
-              className="text typography-6 semibold undefined undefined strong undefined"
+              className="bold primary-3 type-b-6-medium"
             >
               16,000,000
             </strong>
@@ -181,57 +169,51 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
+            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <div
-              className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
+            <p
+              className="primary-3 type-b-7-medium"
             >
-              <p
-                className="text typography-7 regular undefined undefined p undefined"
-              >
-                Policy Type
-              </p>
+              Policy Type
+            </p>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
               <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
                   }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
               </span>
-            </div>
+              <noscript />
+            </span>
           </div>
           <div
-            className="col col-sm-2 col-md-1 bottom-spacing-undefined"
+            className="col col-sm-2 col-md-1 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <div />
           </div>
           <div
-            className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+            className="col col-sm-6 col-md-6 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <strong
-              className="text typography-6 semibold undefined undefined strong undefined"
+              className="bold primary-3 type-b-6-medium"
             >
               Level Term
             </strong>
@@ -249,7 +231,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       className="button-group"
     >
       <button
-        className="button action"
+        className="button"
         disabled={undefined}
         onClick={[Function]}
         type="button"
@@ -260,7 +242,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
         className="top-2"
       />
       <a
-        className="link neutral-4 undefined details-link"
+        className="link neutral-1 details-link"
         onClick={[Function]}
       >
         Details & Review

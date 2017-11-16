@@ -11,14 +11,18 @@ function LinkWrapper( props ) {
     children,
     color,
     variant,
+    type,
+    hover,
     ...rest
   } = props;
 
   const classes = [
     styles['link'],
-    colors[color],
-    styles[variant],
-    className,
+    color && colors[color],
+    variant && styles[variant],
+    type && styles[type],
+    hover && styles[hover],
+    className && className,
   ];
 
   return (
@@ -48,10 +52,18 @@ LinkWrapper.propTypes = {
    * Possible variants are: `no-text-decoration`
    */
   variant: PropTypes.string,
+  /**
+   * Possible type attributes are: `primary` and `secondary`
+   */
+  type: PropTypes.string,
+  /**
+   * Possible type attributes are: `float`, `underline`
+   */
+  hover: PropTypes.string,
 };
 
 LinkWrapper.defaultProps = {
-  color: 'neutral-4',
+  color: 'neutral-1',
 };
 
 export default LinkWrapper;

@@ -1,13 +1,27 @@
+ $size-map: (
+  6: ru(.25),
+  12: ru(.5),
+  13: rem-calc(13px),
+  16: rem-calc(16px),
+  18: ru(.75),
+  24: ru(1),
+  36: ru(1.5),
+  60: ru(2.5),
+  84: ru(3.5),
+  120: ru(5),
+  162: ru(6.75),
+ );
+
 .list {
   padding-left: 1rem;
 
-  li {
-    margin-bottom: ru(1.25);
+  &.no-padding {
+    padding: 0;
   }
 }
 
 .mini {
-  li {
+  .list-item {
     @include typography-7;
     line-height: ru(.75);
     margin: 0;
@@ -21,7 +35,7 @@
 }
 
 .condensed {
-  li {
+  .list-item {
     margin-bottom: 0;
   }
 }
@@ -30,7 +44,50 @@
   padding-left: 0;
   list-style: none;
 
-  li {
+  .list-item {
     margin-left: 0;
+  }
+}
+
+.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+}
+
+@each $type, $size in $size-map {
+  .horizontal-space-#{$type} {
+    // Add negative margin to cancel the padding and
+    // make the left most edge of horizontal list flush.
+    margin-left: -$size;
+
+    > li {
+      padding: 0 $size;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@each $type, $size in $size-map {
+  .bottom-spacing-#{$type} {
+    > li {
+      margin-bottom: $size;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.link-list {
+  > .list-item {
+    a:hover {
+      color: color('accent-2');
+    }
   }
 }
