@@ -19,7 +19,6 @@ module.exports = {
   // Use this to change the theme for the live code editor
   // Themes here: http://codemirror.net/demo/theme.html#
   highlightTheme: 'base16-light',
-  verbose: true,
   template: 'styleguide_assets/index.html',
   webpackConfig,
   serverPort: parseInt(process.env.PORT, 10) || 6060,
