@@ -58,12 +58,12 @@
 
 @each $type, $size in $size-map {
   .horizontal-space-#{$type} {
+    // Add negative margin to cancel the padding and
+    // make the left most edge of horizontal list flush.
+    margin-left: -$size;
+
     > li {
       padding: 0 $size;
-
-      &:first-child {
-        padding-left: 0;
-      }
 
       &:last-child {
         padding-right: 0;

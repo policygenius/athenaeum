@@ -17,7 +17,7 @@ const Links = () =>
       icon='madeInNy'
       height='35px'
       width='35px'
-      className={styles['made-in-ny-icon']}
+      className={styles.icon}
     />
     <List
       className={styles['link-list']}

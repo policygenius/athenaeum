@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Checking for new todos.."
+
 grep -or  'TODO.*' \
   --exclude-dir=node_modules \
   --exclude-dir=public \

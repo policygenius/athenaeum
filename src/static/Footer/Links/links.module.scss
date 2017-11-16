@@ -4,7 +4,7 @@
   position: relative;
 
   .icon {
-    margin-right: rem-calc(24);
+    margin-right: rem-calc(18);
   }
 
   @media #{$mobile-only} {
@@ -26,10 +26,6 @@
       left: 18px;
       border-right: 1px solid color('neutral-3');
     }
-  }
-
-  li:first-child {
-    padding-left: rem-calc(18);
   }
 
   li:last-child {

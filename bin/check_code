@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo +++ Linting:
+git diff --name-only HEAD | \
+  grep '\.jsx\|\.js\?$' | xargs -n 1 yarn eslint
+
+git diff --name-only HEAD | \
+    grep '\.scss$' | xargs -n 1 yarn stylelint
