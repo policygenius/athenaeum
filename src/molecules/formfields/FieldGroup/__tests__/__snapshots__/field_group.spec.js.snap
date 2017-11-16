@@ -9,6 +9,7 @@ exports[`<FieldGroup /> renders correctly 1`] = `
   >
     <div
       className="layout label-wrapper"
+      id={undefined}
       style={undefined}
     >
       <div
@@ -36,6 +37,7 @@ exports[`<FieldGroup /> renders correctly 1`] = `
     </div>
     <div
       className="layout"
+      id={undefined}
       style={undefined}
     >
       <div

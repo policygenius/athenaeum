@@ -16,6 +16,7 @@ exports[`<FeatureSquare /> renders correctly 1`] = `
   />
   <div
     className="layout button-wrapper"
+    id={undefined}
     style={undefined}
   >
     <div
