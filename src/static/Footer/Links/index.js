@@ -4,53 +4,48 @@ import { generate } from 'shortid';
 import Icon from 'atoms/Icon';
 import List from 'atoms/List';
 import Text from 'atoms/Text';
-import Hide from 'wrappers/Hide';
 import LinkWrapper from 'atoms/LinkWrapper';
-import StyledWrapper from 'atoms/StyledWrapper';
 
-import { links, linksList } from './styles';
+import styles from './links.module.scss';
 import { footerLinkItems } from '../data/links';
 
 const Links = () =>
-  <Hide hideOn='small' >
-    <StyledWrapper
-      css={links}
+  <div
+    className={styles.links}
+  >
+    <Icon
+      icon='madeInNy'
+      height='35px'
+      width='35px'
+      className={styles['made-in-ny-icon']}
+    />
+    <List
+      className={styles['link-list']}
+      noBullets
+      horizontal={{ spaceBetween: 18 }}
     >
-      <Icon
-        icon='madeInNy'
-        height='35px'
-        width='35px'
-        className='made-in-ny-icon'
-      />
-      <StyledWrapper
-        css={linksList}
-        component={List}
-        noBullets
-        horizontal={{ spaceBetween: 18 }}
-      >
-        {
-              footerLinkItems.map(link =>
-                <div
-                  key={`link-item-${generate()}`}
-                  className='link-wrapper'
-                >
-                  <LinkWrapper
-                    hover='float'
-                    href={link.href}
-                    color='primary-3'
-                  >
-                    <Text
-                      type={10}
-                      font='b'
-                    >{ link.title }
-                    </Text>
-                  </LinkWrapper>
-                </div>
-              )
-            }
-      </StyledWrapper>
-    </StyledWrapper>
-  </Hide>
+      {
+        footerLinkItems.map(link =>
+          <div
+            key={`link-item-${generate()}`}
+            className={styles['link-wrapper']}
+          >
+            <LinkWrapper
+              hover='float'
+              href={link.href}
+              color='primary-3'
+            >
+              <Text
+                type={10}
+                font='b'
+              >{ link.title }
+              </Text>
+            </LinkWrapper>
+          </div>
+        )
+      }
+    </List>
+  </div>
 
   ;
 
