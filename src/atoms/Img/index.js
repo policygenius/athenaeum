@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import cx from 'classnames';
 import styles from './img.module.scss';
 
-const imgixSrcset = src => `
-  ${src}?fit=crop&w=320w&auto=format 320w,
-  ${src}?fit=crop&w=768w&auto=format 768w,
-  ${src}?fit=crop&w=1025&auto=format 1025w
+const imgixSrcset = ( src, maxWidth = Infinity ) => `
+  https://policygenius-images.imgix.net/${src}?fit=clip&w=${Math.min(maxWidth, 1025)}&auto=format&q=50&ch=Width,DPR,Save-Data 1026w,
+  https://policygenius-images.imgix.net/${src}?fit=clip&w=${Math.min(maxWidth, 768)}&auto=format&q=50&ch=Width,DPR,Save-Data 769w,
+  https://policygenius-images.imgix.net/${src}?fit=clip&w=${Math.min(maxWidth, 320)}&auto=format&q=50&ch=Width,DPR,Save-Data 321w
 `;
+
+const createName = str => str.replace(/\..+/, '').replace(/\W/g, ' ').trim();
 
 function Img(props) {
   const {
@@ -16,20 +18,31 @@ function Img(props) {
     srcSet,
     imgixSrc,
     alt,
+    title,
+    maxWidth = Infinity,
     ...rest
   } = props;
 
-  const classes = [
+  const classes = cx(
     styles['img'],
     className,
-  ];
+  );
+
+  const srcset = (() => {
+    if (srcSet) { return srcSet; }
+    if (src) { return undefined; }
+
+    return imgixSrcset(`${imgixSrc}`, maxWidth);
+  })();
 
   return (
     <img
-      className={classnames(...classes)}
-      alt={alt}
-      src={src || `https://policygenius-images.imgix.net/${imgixSrc}?fit=crop&w=768&auto=format&q=40`}
-      srcSet={srcSet || imgixSrcset(`https://policygenius-images.imgix.net/${imgixSrc}`)}
+      className={classes}
+      alt={alt || createName(imgixSrc || src)}
+      title={title || createName(imgixSrc || src)}
+      src={src || `https://policygenius-images.imgix.net/${imgixSrc}?fit=clip&w=${Math.min(maxWidth, 768)}&auto=format&q=40`}
+      srcSet={srcset}
+      sizes='100vw'
       {...rest}
     />
   );
@@ -60,9 +73,19 @@ Img.propTypes = {
   srcSet: PropTypes.string,
 
   /**
-   * The img alt for the image. Defaults to an empty string.
+   * The img alt for the image. Defaults to an improved version of the filename.
    */
   alt: PropTypes.string,
+
+  /**
+   * The img title for the image. Defaults to an improved version of the filename.
+   */
+  title: PropTypes.string,
+
+  /**
+   * Used with imgixSrc to prevent larger than necessary images from loading
+   */
+  maxWidth: PropTypes.string,
 };
 
 Img.defaultProps = {
