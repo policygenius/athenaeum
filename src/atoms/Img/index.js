@@ -15,6 +15,7 @@ function Img(props) {
     src,
     srcSet,
     imgixSrc,
+    alt,
     ...rest
   } = props;
 
@@ -26,9 +27,9 @@ function Img(props) {
   return (
     <img
       className={classnames(...classes)}
-      alt=''
-      src={src || `http://policygenius-images.imgix.net/${imgixSrc}?fit=crop&w=768&auto=format&q=40`}
-      srcSet={srcSet || imgixSrcset(`http://policygenius-images.imgix.net/${imgixSrc}`)}
+      alt={alt}
+      src={src || `https://policygenius-images.imgix.net/${imgixSrc}?fit=crop&w=768&auto=format&q=40`}
+      srcSet={srcSet || imgixSrcset(`https://policygenius-images.imgix.net/${imgixSrc}`)}
       {...rest}
     />
   );

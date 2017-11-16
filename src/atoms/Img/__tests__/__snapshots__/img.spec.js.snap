@@ -4,11 +4,11 @@ exports[`<Img /> renders correctly 1`] = `
 <img
   alt=""
   className="img"
-  src="http://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=768&auto=format&q=40"
+  src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=768&auto=format&q=40"
   srcSet="
-  http://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=320w&auto=format 320w,
-  http://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=768w&auto=format 768w,
-  http://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=1025&auto=format 1025w
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=320w&auto=format 320w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=768w&auto=format 768w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=crop&w=1025&auto=format 1025w
 "
 />
 `;
