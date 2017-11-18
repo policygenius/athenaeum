@@ -15,7 +15,9 @@ describe('<RadioGroup />', () => {
         label='Test label'
         subLabel='Sublabel action'
         meta={{}}
-        input={{}}
+        input={{
+          value: 'test',
+        }}
         tooltip='Hello friend'
       >
         <RadioField
@@ -23,7 +25,7 @@ describe('<RadioGroup />', () => {
           radioValue='burgers'
           input={{
             name: 'food',
-            value: null,
+            value: 'dogs',
             onChange: () => {},
           }}
         />
@@ -32,7 +34,7 @@ describe('<RadioGroup />', () => {
           radioValue='dogs'
           input={{
             name: 'food',
-            value: null,
+            value: 'dogs',
             onChange: () => {},
           }}
         />

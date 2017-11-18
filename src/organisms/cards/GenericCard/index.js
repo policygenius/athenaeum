@@ -93,6 +93,7 @@ GenericCard.propTypes = {
     'checkout',
     'box',
     'mobile',
+    'calculator',
   ]),
 };
 

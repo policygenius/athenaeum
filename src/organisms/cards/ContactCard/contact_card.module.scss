@@ -1,21 +1,21 @@
 @import '../shared/cards.module.scss';
 
 .link-row {
-  @include typography-7(false);
+  @include typography-b-10;
   @include typography-semibold;
 
   display: flex;
   align-items: center;
   padding: ru(.25) ru(.75);
 
-  color: color('neutral-2');
+  color: color('neutral-1');
   text-decoration: none;
 
   &:hover {
-    color: color('brand-2');
+    color: color('primary-3');
 
     .icon path {
-      fill: color('brand-2');
+      fill: color('primary-3');
     }
   }
 }

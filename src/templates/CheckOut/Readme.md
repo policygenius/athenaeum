@@ -8,9 +8,19 @@ Checkout Example:
       sidebar={<div>This is sidebar</div>}
       footer={
         <Footer
-          links={[ { text: 'Footer link', href: '#' } ]}
-          emailAddress='help@policygenius.com'
-          onClickChat={() => alert('clicked')}
+          phoneNumber='1 (855) 695-2255'
+          links={[
+            { text: 'Security & Trust', href: '#trust' },
+            { text: 'Privacy', href: '#privacy' },
+            { text: 'Terms of Services', href: '#terms' },
+          ]}
+          onClickChat={() => alert('hi')}
+          hours={
+            [
+              'Monday-Thursday | 9am-8pm EST',
+              'Friday | 9am-6pm EST'
+            ]
+          }
         />
       }
       contactProps={{

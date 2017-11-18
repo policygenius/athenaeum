@@ -5,42 +5,23 @@ import omit from 'lodash/omit';
 
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
-import Tooltip from 'atoms/Tooltip';
 import ErrorMessage from 'atoms/ErrorMessage';
 
-import { renderSelectOptions, renderPlaceholder } from 'utils/fieldUtils';
+import { renderSelectOptions, renderPlaceholder, renderTooltip } from 'utils/fieldUtils';
 import styles from './select_field.module.scss';
 
 const renderAdditionalInfo = (func) => {
   if (!func) return null;
 
   return (
-    <Icon
-      icon='questionMark'
-      height='15px'
-      width='15px'
-      inline='right'
-      onClick={func}
-    />
-  );
-};
-
-const renderToolTip = (message) => {
-  if (!message) return null;
-
-  return (
     <div className={styles['tooltip-wrapper']}>
-      <Tooltip
-        right
-        text={
-          <Icon
-            icon='tooltip'
-            className={styles['tooltip-icon']}
-          />
-        }
-      >
-        { message }
-      </Tooltip>
+      <Icon
+        icon='tooltip'
+        height='18px'
+        width='18px'
+        inline='right'
+        onClick={func}
+      />
     </div>
   );
 };
@@ -82,7 +63,12 @@ function SelectField( props ) {
           <label className={styles['label']} htmlFor={forProp}>
             { label }
             { renderAdditionalInfo(onAdditionalInfoClick) }
-            { renderToolTip(tooltip) }
+            {
+              tooltip &&
+                <div className={styles['tooltip-wrapper']}>
+                  { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+                </div>
+            }
             {
               subLabel &&
                 <Text size={10} font='b'>

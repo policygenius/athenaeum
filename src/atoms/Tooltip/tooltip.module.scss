@@ -15,10 +15,10 @@ $hover-message-shift: calc(50% - 3.06rem);
 }
 
 .hover-message {
-  @include typography-7;
-  background: color('neutral-8');
-  border: 1px solid color('neutral-5');
-  color: color('neutral-2');
+  @include typography-b-10;
+  background: color('primary-2');
+  border: 1px solid color('neutral-2');
+  color: color('primary-3');
   font-weight: 400;
   opacity: 0;
   padding: $tooltip-width;
@@ -46,12 +46,12 @@ $hover-message-shift: calc(50% - 3.06rem);
   }
 
   &:before {
-    border-bottom-color: color('neutral-5');
+    border-bottom-color: color('neutral-2');
     border-width: 10px;
   }
 
   &:after {
-    border-bottom-color: color('neutral-8');
+    border-bottom-color: color('primary-2');
     border-width: 8px;
   }
 }
@@ -76,6 +76,16 @@ $hover-message-shift: calc(50% - 3.06rem);
   &:after {
     right: $tooltip-shift-amount;
   }
+}
+
+.inline-left {
+  vertical-align: middle;
+  margin-right: ru(.25);
+}
+
+.inline-right {
+  vertical-align: middle;
+  margin-left: ru(.25);
 }
 
 @media #{$medium-up} {

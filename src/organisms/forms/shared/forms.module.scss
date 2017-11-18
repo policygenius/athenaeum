@@ -14,21 +14,10 @@ $icon-size:        ru(2);
     stroke: color('primary-1');
     transition: stroke 150ms ease-out;
   }
-
-  &:hover {
-    circle, line, path {
-    stroke: color('primary-3');
-    }
-  }
-}
-
-.form span:not( .tooltip-icon ) svg g {
-  fill: color('primary-3');
 }
 
 .form-wrapper {
   position: relative;
-  padding: 0 ru(.75);
 }
 
 .form-border {

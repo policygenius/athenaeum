@@ -8,9 +8,12 @@
   @extend %tooltip-wrapper;
 }
 
+.tooltip {
+  margin-left: auto;
+}
+
 .tooltip-icon {
   @extend %tooltip-icon;
-  fill: color('primary-3');
 }
 
 .label {

@@ -55,7 +55,7 @@ export const PolicyActions = (props) => {
             <ResponsiveText text='Continue' offset={-3} size={75} />
           </Hide>
 
-          <Hide hideOn='large'>
+          <Hide hideOn='desktop'>
             Continue
           </Hide>
         </Button>
@@ -63,11 +63,11 @@ export const PolicyActions = (props) => {
           <Hide hideOn='small medium xLarge xxLarge'>
             <ResponsiveText text='Details' offset={-10} size={75} />
           </Hide>
-          <Hide hideOn='large'>
+          <Hide hideOn='desktop'>
             Details
           </Hide>
         </Button>
-        <Hide hideOn='medium large xLarge xxLarge'>
+        <Hide hideOn='tablet desktop'>
           <Button
             onClick={onCompare}
           >

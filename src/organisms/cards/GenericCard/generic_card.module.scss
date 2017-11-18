@@ -43,6 +43,12 @@
   border-bottom: 3px solid color('neutral-5');
 }
 
+.calculator {
+  .col {
+    padding: ru(.75) ru(.5);
+  }
+}
+
 @media #{$mobile-only} {
   .checkout {
     border-radius: 0;

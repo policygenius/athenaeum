@@ -8,7 +8,7 @@ import formatValue from 'utils/formatValue';
 import styles from './policy_card.module.scss';
 
 export const PolicyInformation = ({ information }) =>
-  <Hide hideOn='small medium' className={styles['policy-info']}>
+  <Hide hideOn='mobile tablet' className={styles['policy-info']}>
     {
       information.map((item, idx) =>
         <Tooltip

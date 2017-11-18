@@ -57,10 +57,10 @@ exports[`<RadioGroup /> renders correctly 1`] = `
           name="food"
           onChange={[Function]}
           type="radio"
-          value={null}
+          value="dogs"
         />
         <span
-          className="label"
+          className="label not-selected"
         >
           Burgers
         </span>
@@ -79,10 +79,10 @@ exports[`<RadioGroup /> renders correctly 1`] = `
           name="food"
           onChange={[Function]}
           type="radio"
-          value={null}
+          value="dogs"
         />
         <span
-          className="label"
+          className="label checked"
         >
           Hot Dogs
         </span>

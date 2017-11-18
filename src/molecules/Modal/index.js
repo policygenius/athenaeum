@@ -5,7 +5,6 @@ import ReactModal from 'react-modal';
 
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
-import { Layout, Col } from 'atoms/Layout';
 import MobileMenu from 'molecules/MobileMenu';
 import styles from './modal.module.scss';
 
@@ -47,8 +46,8 @@ function Modal(props) {
     >
       <div className={styles['dialog']}>
         <div className={styles['body']}>
-          <Layout
-            smallCols={[ 11, 1 ]}
+          <div
+            className={styles['header']}
           >
             <Text
               type={4}
@@ -57,7 +56,7 @@ function Modal(props) {
               {header}
             </Text>
 
-            <Col
+            <div
               className={styles['close-col']}
             >
               {
@@ -68,8 +67,8 @@ function Modal(props) {
                     onClick={onRequestClose}
                   />
               }
-            </Col>
-          </Layout>
+            </div>
+          </div>
 
           {React.Children.map(children, wrapChild)}
         </div>

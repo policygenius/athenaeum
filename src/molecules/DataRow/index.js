@@ -17,7 +17,9 @@ const renderAmount = (amount, unit, highlight) => {
     <CurrencyAmount
       highlight={highlight}
       className={styles['value']}
-      amount={formattedNumber.toString()} unit={unit}
+      amount={formattedNumber.toString()}
+      unit={unit}
+      unitClassName={styles['unit']}
     />
   );
 };
@@ -53,7 +55,7 @@ function DataRow(props) {
           <div className={variant !== 'large' && styles['label-text']}>{ label }</div>
           { tooltip && <Tooltip className={styles['tip']}>{ tooltip }</Tooltip> }
         </div>
-        { renderAmount(amount, unit, highlight) || <div className={classnames(styles['value'])}>{value}</div> }
+        { renderAmount(amount, unit, highlight, variant) || <div className={classnames(styles['value'])}>{value}</div> }
       </div>
       { description && <p className={styles['description']}>{description}</p> }
     </div>

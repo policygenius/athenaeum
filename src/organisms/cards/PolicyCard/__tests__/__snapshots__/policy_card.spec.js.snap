@@ -234,7 +234,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       className="body"
     >
       <div
-        className="hide compare small"
+        className="hide compare mobile"
       >
         <div
           className="checkbox-wrapper"
@@ -287,7 +287,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         >
           <div>
             <div
-              className="hide small"
+              className="hide mobile"
             >
               <strong
                 className="bold neutral-3 type-b-7-medium inherit"
@@ -318,7 +318,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         className="divider"
       />
       <div
-        className="hide policy-info small medium"
+        className="hide policy-info mobile tablet"
       >
         <span
           className="tooltip-wrapper policy-info-tooltip"
@@ -455,7 +455,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </svg>
               </div>
               <div
-                className="hide large"
+                className="hide desktop"
               >
                 Continue
               </div>
@@ -489,7 +489,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </svg>
               </div>
               <div
-                className="hide large"
+                className="hide desktop"
               >
                 Details
               </div>
@@ -501,7 +501,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <div
-              className="hide medium large xLarge xxLarge"
+              className="hide tablet desktop"
             >
               <button
                 className="button"

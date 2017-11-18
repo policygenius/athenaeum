@@ -12,13 +12,13 @@
   padding: 0;
   .tab:first-child {
     &.active {
-      border-right: 1px solid color('neutral-5');
+      border-right: 1px solid color('neutral-4');
     }
   }
 
   .tab:last-child {
     &.active {
-      border-left: 1px solid color('neutral-5');
+      border-left: 1px solid color('neutral-4');
     }
   }
 }
@@ -29,21 +29,21 @@
 
 .active {
   margin-top: ru(-0.25);
-  border-top: 1px solid color('neutral-5');
+  border-top: 1px solid color('neutral-4');
   background: color('neutral-8');
 }
 
 .inactive {
-  background: color('neutral-7');
-  border-bottom: 1px solid color('neutral-5');
+  background: color('neutral-5');
+  border-bottom: 1px solid color('neutral-4');
 
   &:hover {
     span {
-      color: color('neutral-2');
+      color: color('primary-3');
     }
 
     g {
-      fill: color('neutral-2');
+      fill: color('primary-3');
     }
   }
 }

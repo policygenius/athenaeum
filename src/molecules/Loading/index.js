@@ -90,7 +90,7 @@ class Loading extends Component {
               />
             </div>
             <Animate animations={this.state.animations}>
-              <Text type={3} weight='semibold' color='neutral-2' className={styles['message']}>
+              <Text color='neutral-2' className={styles['message']}>
                 {this.state.message}
               </Text>
             </Animate>

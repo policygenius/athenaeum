@@ -2,7 +2,7 @@
 
 exports[`<Hide /> renders correctly 1`] = `
 <div
-  className="hide small"
+  className="hide mobile"
 >
   hello
 </div>

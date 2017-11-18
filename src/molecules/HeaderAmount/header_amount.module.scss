@@ -1,18 +1,17 @@
 .header-amount {
   padding: ru(.5) ru(1);
 
-  background: color('brand-1');
-  color: color('neutral-8');
+  background: color('primary-2');
+  color: color('primary-3');
   box-shadow: 0 ru(1) ru(1.5) ru(-0.5) rgba(77, 77, 77, 0.25);
 }
 
 .label {
-  @include typography(7);
+  @include typography-b-8;
 }
 
 .amount {
-  @include typography(2);
-  @include typography-semibold;
+  @include typography-a-4-bold;
 }
 
 .unit,
