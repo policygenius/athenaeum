@@ -15,7 +15,7 @@ export const PolicyInformation = ({ information }) =>
           text={
             <Text type={7} color='neutral-3' semibold>
               <div className={styles['policy-info-label']}>{item.label}</div>
-              <Text color='neutral-2' semibold>{formatValue(item.value)}</Text>
+              <Text type={7} color='neutral-2' semibold>{formatValue(item.value)}</Text>
             </Text>
           }
           hoverMessageClassName={styles['policy-type-hover-message']}

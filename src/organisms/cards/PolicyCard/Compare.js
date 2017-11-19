@@ -16,6 +16,7 @@ const Compare = ({ compareSelected, onCompare, name }) =>
     >
       <Text
         color='neutral-3'
+        size={7}
         light
         className={classnames(compareSelected && styles['checked'])}
       >
