@@ -225,7 +225,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   tag: 'p',
-  size: 7,
+  size: 8,
   font: 'b',
   color: 'primary-3'
 };
