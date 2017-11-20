@@ -24,26 +24,35 @@ export default class AccordionPanel extends Component {
   }
 
   render() {
+    const {
+      number,
+      title,
+      type,
+      closeText,
+      openText
+    } = this.props;
+
+    const sectionClasses = cx(styles['panel'], styles[type]);
     const contentClasses = cx({
       [styles['content']]: true,
       [styles['content-open']]: this.state.open
     });
 
     return (
-      <section className={styles['panel']}>
+      <section className={sectionClasses}>
         <header
           className={styles['header']}
           onClick={this.handleClick}
         >
           <span className={styles['ordinal']}>
-            {this.props.number}.
+            {number}.
           </span>
           <h1 className={styles['title']}>
-            {this.props.title}
+            {title}
           </h1>
           <span className={styles['toggleSwitch']}>
             <LinkWrapper type='secondary'>
-              {this.state.open ? this.props.closeText : this.props.openText}
+              {this.state.open ? closeText : openText}
             </LinkWrapper>
           </span>
         </header>
@@ -66,9 +75,10 @@ AccordionPanel.propTypes = {
   title: PropTypes.string,
   openText: PropTypes.string,
   closeText: PropTypes.string,
-  number: PropTypes.number
+  number: PropTypes.number,
+  type: PropTypes.oneOf([ 'basic' ])
 };
 
 AccordionPanel.defaultProps = {
-  // Place any default props here.
+  type: 'basic',
 };
