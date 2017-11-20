@@ -2,7 +2,7 @@
 
 exports[`<AccordionPanel /> renders correctly 1`] = `
 <section
-  className="panel"
+  className="panel basic"
 >
   <header
     className="header"

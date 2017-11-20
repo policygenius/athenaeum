@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import cx from 'classnames';
 import styles from './accordion.module.scss';
 import AccordionPanel from './AccordionPanel';
 
@@ -16,14 +16,22 @@ const sections = ({ panels, openText, closeText }) =>
   );
 
 function Accordion(props) {
-  const { openText, closeText, panels, className } = props;
+  const {
+    openText,
+    closeText,
+    panels,
+    className,
+    } = props;
 
-  const classes = [ styles['accordion'], className ];
+  const classes = cx(
+    className,
+    styles['accordion'],
+  );
 
   if (!panels) return null;
 
   return (
-    <section className={classnames(...classes)}>
+    <section className={classes}>
       {sections({
         panels,
         openText,

@@ -1,3 +1,23 @@
+.basic {
+  background-color: color('primary-2');
+  margin: auto;
+  p, ul {
+    max-width: 50em;
+  }
+  p a {
+    color: color('primary-1');
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media #{$desktop} {
+    max-width: 50em;
+  }
+}
+
 .panel {
   @include typography-b-8();
   position: relative;
@@ -18,13 +38,17 @@
 .header {
   display: flex;
   cursor: pointer;
-  align-items: center;
+  align-items: baseline;
 }
 
 .ordinal {
   position: absolute;
   font-weight: typography-b-weight(true);
   align-self: start;
+
+  @media all and ( -ms-high-contrast: none ), ( -ms-high-contrast: active ) {
+    display: none;
+  }
 }
 
 .content, .title {
