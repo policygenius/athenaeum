@@ -2,23 +2,21 @@ import React from 'react';
 
 import Icon from 'atoms/Icon';
 import LinkWrapper from 'atoms/LinkWrapper';
-import StyledWrapper from 'atoms/StyledWrapper';
 
-import { logo } from './styles';
+import styles from './logo.module.scss';
 
 const Logo = () =>
-  <StyledWrapper
-    css={logo}
-    component={LinkWrapper}
+  <LinkWrapper
+    className={styles['main-nav-icon-wrapper']}
     href='/'
   >
     <Icon
       icon='pgLogoBlack'
       height='22px'
       width='122px'
-      className='main-nav-icon'
+      className={styles['main-nav-icon']}
     />
-  </StyledWrapper>
+  </LinkWrapper>
 
 ;
 

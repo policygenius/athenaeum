@@ -1,6 +1,11 @@
 .wrapper {
   height: rem-calc(47px);
 
+  * {
+    font-size: rem-calc(16);
+    line-height: ru(1);
+  }
+
   .main-panel {
     left: 0;
     position: fixed;
@@ -12,9 +17,9 @@
 // End Helper
 
 .main-panel {
-  background-color: #fff;
+  background-color: color('primary-2');
   height: rem-calc(47px);
-  transition: all .5s ease;
+  transition: height .5s ease;
   position: relative;
 
   // This is webkit/Safari specific to enhance performance for intensive transitions/rendering

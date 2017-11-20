@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import IconWrapper from '../IconWrapper';
-import { hamburgerCloseIcon } from '../styles';
+import styles from '../search.module.scss';
 
 const getOnClick = props =>
   props.searching ? () => props.toggleSearching(false) : () => props.toggleMobileMenu(!props.showMobileMenu)
@@ -21,8 +21,8 @@ function HamburgerClose(props) {
   return (
     <IconWrapper
       icon={icon}
-      css={hamburgerCloseIcon(props)}
       onClick={onClick}
+      className={styles['hamburger-close-icon']}
     />
   );
 }

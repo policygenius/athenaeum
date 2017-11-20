@@ -227,7 +227,8 @@ Text.defaultProps = {
   tag: 'p',
   size: 8,
   font: 'b',
-  color: 'primary-3'
+  color: 'primary-3',
+  inherit: {},
 };
 
 export default Text;

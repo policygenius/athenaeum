@@ -1,3 +1,12 @@
+.mobile-back-wrapper {
+  border-bottom: 1px solid color('neutral-5');
+}
+
+.mobile-back {
+  padding: ru(1);
+  align-items: center;
+}
+
 .mobile-back-click {
   cursor: pointer;
 }
@@ -5,4 +14,10 @@
 .mobile-back-icon {
   /* stylelint-disable declaration-no-important */
   display: block !important;
+}
+
+@media #{$tablet} {
+  .mobile-back-wrapper {
+    display: none;
+  }
 }

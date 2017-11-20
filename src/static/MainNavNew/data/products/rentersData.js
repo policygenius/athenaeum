@@ -38,6 +38,7 @@ export default {
     header: 'Renters Insurance',
     link: '/renters-insurance/',
     activeName: 'renters-insurance',
+    columns: 3,
   },
   intro: {
     cta: 'Start Shopping Now',

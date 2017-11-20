@@ -45,4 +45,5 @@ module.exports = (options) => baseConfig({
       },
     }),
   ]),
+  modulesName: options.modulesName,
 });

@@ -23,6 +23,7 @@ export default {
   menu: {
     header: 'More Products',
     activeName: 'more',
+    columns: 2,
   },
   intro: {
     icon: 'policygeniusSymbolCenter',

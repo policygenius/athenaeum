@@ -14,12 +14,12 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       className="premium"
     >
       <strong
-        className="bold neutral-1 type-b-2-medium"
+        className="bold neutral-1 type-b-2-medium inherit"
       >
         $19.80
          
         <strong
-          className="bold neutral-2 type-b-7-medium"
+          className="bold neutral-2 type-b-7-medium inherit"
         >
           /MO
         </strong>
@@ -55,7 +55,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <p
-              className="primary-3 type-b-7-medium"
+              className="primary-3 type-b-7-medium inherit"
             >
               Financial Strength
             </p>
@@ -94,7 +94,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="bold primary-3 type-b-6-medium"
+              className="bold primary-3 type-b-6-medium inherit"
             >
               A+
             </strong>
@@ -116,7 +116,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <p
-              className="primary-3 type-b-7-medium"
+              className="primary-3 type-b-7-medium inherit"
             >
               Total Customers
             </p>
@@ -155,7 +155,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="bold primary-3 type-b-6-medium"
+              className="bold primary-3 type-b-6-medium inherit"
             >
               16,000,000
             </strong>
@@ -177,7 +177,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <p
-              className="primary-3 type-b-7-medium"
+              className="primary-3 type-b-7-medium inherit"
             >
               Policy Type
             </p>
@@ -216,7 +216,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <strong
-              className="bold primary-3 type-b-6-medium"
+              className="bold primary-3 type-b-6-medium inherit"
             >
               Level Term
             </strong>

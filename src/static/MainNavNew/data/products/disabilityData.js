@@ -37,6 +37,7 @@ export default {
     header: 'Disability Insurance',
     link: '/long-term-disability-insurance/',
     activeName: 'disability-insurance',
+    columns: 3,
   },
   intro: {
     cta: 'Start Shopping Now',

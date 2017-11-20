@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import Text from 'atoms/Text';
 import LinkWrapper from 'atoms/LinkWrapper';
 import Spacer from 'atoms/Spacer';
-import StyledWrapper from 'atoms/StyledWrapper';
 
-import { wrapper, image } from './styles';
+import styles from './article_image.module.scss';
 
 function ArticleImage(props) {
   const {
@@ -16,32 +15,30 @@ function ArticleImage(props) {
   } = props;
 
   return (
-    <StyledWrapper
-      css={wrapper}
-      component={LinkWrapper}
+    <LinkWrapper
       href={link}
       variant='no-text-decoration'
+      className={styles['article-image-wrapper']}
     >
-      <figure>
-        <StyledWrapper
-          css={image}
-          component='img'
+      <div
+        className={styles['article-image-figure']}
+      >
+        <img
+          className={styles['article-image']}
+          role='presentation'
           {...imgProps}
         />
 
-        <Spacer size={18} />
-
-        <figcaption>
-          <Text
-            type={8}
-            font='a'
-            color='neutral-1'
-          >
-            { header }
-          </Text>
-        </figcaption>
-      </figure>
-    </StyledWrapper>
+      </div>
+      <Spacer size={18} />
+      <Text
+        type={8}
+        font='a'
+        color='neutral-1'
+      >
+        { header }
+      </Text>
+    </LinkWrapper>
   );
 }
 

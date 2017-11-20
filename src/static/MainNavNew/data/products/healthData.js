@@ -35,6 +35,7 @@ export default {
     header: 'Health Insurance',
     link: '/health-insurance/',
     activeName: 'health-insurance',
+    columns: 3,
   },
   intro: {
     cta: 'Start Shopping Now',

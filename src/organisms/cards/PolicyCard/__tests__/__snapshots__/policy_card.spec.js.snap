@@ -15,12 +15,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="premium"
         >
           <strong
-            className="bold neutral-1 type-b-2-medium"
+            className="bold neutral-1 type-b-2-medium inherit"
           >
             $19.80
              
             <strong
-              className="bold neutral-2 type-b-7-medium"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               /MO
             </strong>
@@ -55,7 +55,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <p
-                  className="primary-3 type-b-7-medium"
+                  className="primary-3 type-b-7-medium inherit"
                 >
                   label
                 </p>
@@ -94,7 +94,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <strong
-                  className="bold primary-3 type-b-6-medium"
+                  className="bold primary-3 type-b-6-medium inherit"
                 >
                   Some policy
                 </strong>
@@ -116,7 +116,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <p
-                  className="primary-3 type-b-7-medium"
+                  className="primary-3 type-b-7-medium inherit"
                 >
                   label
                 </p>
@@ -155,7 +155,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <strong
-                  className="bold primary-3 type-b-6-medium"
+                  className="bold primary-3 type-b-6-medium inherit"
                 >
                   A+
                 </strong>
@@ -242,7 +242,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <p
-            className="neutral-3 type-b-7-medium"
+            className="neutral-3 type-b-7-medium inherit"
           >
             Compare
           </p>
@@ -290,18 +290,18 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="hide small"
             >
               <strong
-                className="bold neutral-3 type-b-7-medium"
+                className="bold neutral-3 type-b-7-medium inherit"
               >
                 label
               </strong>
             </div>
             <strong
-              className="bold neutral-2 policy-name type-b-5-medium"
+              className="bold neutral-2 policy-name type-b-5-medium inherit"
             >
               Some policy
             </strong>
             <strong
-              className="bold neutral-2 policy-tooltip type-b-7-medium"
+              className="bold neutral-2 policy-tooltip type-b-7-medium inherit"
             >
               <div />
             </strong>
@@ -325,7 +325,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="bold neutral-3 type-b-7-medium"
+            className="bold neutral-3 type-b-7-medium inherit"
           >
             <div
               className="policy-info-label"
@@ -333,7 +333,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="bold neutral-2 type-b-7-medium"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               A+
             </strong>
@@ -350,7 +350,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="bold neutral-3 type-b-7-medium"
+            className="bold neutral-3 type-b-7-medium inherit"
           >
             <div
               className="policy-info-label"
@@ -358,7 +358,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="bold neutral-2 type-b-7-medium"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               A+
             </strong>
@@ -375,7 +375,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="bold neutral-3 type-b-7-medium"
+            className="bold neutral-3 type-b-7-medium inherit"
           >
             <div
               className="policy-info-label"
@@ -383,7 +383,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="bold neutral-2 type-b-7-medium"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               16
             </strong>
@@ -404,10 +404,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <div>
           <strong
-            className="bold neutral-2 type-b-5-medium"
+            className="bold neutral-2 type-b-5-medium inherit"
           >
             <strong
-              className="bold primary-3 type-b-3-medium"
+              className="bold primary-3 type-b-3-medium inherit"
             >
               $19.80
             </strong>

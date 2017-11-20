@@ -27,6 +27,7 @@ export default {
     header: 'Auto Insurance',
     link: '/auto-insurance/',
     activeName: 'auto-insurance',
+    columns: 2,
   },
   intro: {
     cta: 'Start Shopping Now',

@@ -5,17 +5,13 @@ import classnames from 'classnames';
 import Spacer from 'atoms/Spacer';
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
-import StyledWrapper from 'atoms/StyledWrapper';
-
-import { generate } from 'shortid';
+import Hide from 'wrappers/Hide';
 
 import BlogIntro from '../Intro/Blog';
 import LinkList from '../LinkList';
 import ArticleImage from '../ArticleImage';
 import MobileBack from '../MobileBack';
 import { fetchPosts } from '../../utils/fetchMagazinePosts';
-
-import { introTextTopSpacer, introTextBottomSpacer } from './styles';
 
 import styles from '../ProductDisplay/product_display.module.scss';
 
@@ -118,7 +114,7 @@ class MagazineDisplay extends Component {
           return (
             <Col
               fullwidth
-              key={generate()}
+              key={item.header}
               className={styles['display-list']}
             >
               <LinkList
@@ -131,7 +127,7 @@ class MagazineDisplay extends Component {
         if (item.type === 'featured') {
           return (
             <Col
-              key={generate()}
+              key={item.post.url}
               fullwidth={mobileCollapsedMenu}
             >
               <ArticleImage
@@ -160,14 +156,14 @@ class MagazineDisplay extends Component {
       mobileCollapsedMenu,
     } = this.props;
 
-    const displayClasses = [
+    const displayClasses = classnames(
       styles['submenu-display'],
       isActive && styles['submenu-display-active'],
       mobileCollapsedMenu === activeName && styles['mobile-collapsed'],
-    ];
+    );
 
     return (
-      <div className={classnames(...displayClasses)}>
+      <div className={displayClasses}>
         <MobileBack
           setMobileCollapsedMenu={setMobileCollapsedMenu}
           text='Magazine'
@@ -184,14 +180,22 @@ class MagazineDisplay extends Component {
           <Col
             className={styles.intro}
           >
-            <StyledWrapper css={introTextTopSpacer} />
+            <Hide hideOn='tablet desktop'>
+              <Spacer size={24} />
+            </Hide>
+            <Hide hideOn='mobile tablet'>
+              <Spacer size={36} />
+              <Spacer size={12} />
+            </Hide>
 
             <BlogIntro
               intro={intro}
               headerText={headerText}
             />
 
-            <StyledWrapper css={introTextBottomSpacer} />
+            <Hide hideOn='desktop'>
+              <Spacer size={60} />
+            </Hide>
           </Col>
 
           <Col

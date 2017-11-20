@@ -28,21 +28,21 @@ class Submenu extends Component {
       ...otherProps
     } = this.props;
 
-    const classes = [
+    const classes = classnames(
       styles['submenu-wrapper'],
       isActive && styles['submenu-wrapper-active'],
-    ];
+    );
 
-    const submenuClasses = [
+    const submenuClasses = classnames(
       styles.submenu,
       this.props.activeName === 'about' && styles['tablet-about'],
-    ];
+    );
 
     return (
-      <div className={classnames(...classes)}>
+      <div className={classes}>
         <List
           horizontal={{}}
-          className={classnames(...submenuClasses)}
+          className={submenuClasses}
         >
           {
             submenuItems.map(item =>

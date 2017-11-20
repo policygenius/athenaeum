@@ -1,15 +1,15 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const footerBaseConfig = require('./webpack.config.footer.base.js');
+const staticBaseConfig = require('./webpack.config.static.base.js');
 
-module.exports = footerBaseConfig({
+module.exports = ({ static }) => staticBaseConfig({
   entry: [
-    'babel-polyfill',
-    './footer_entry.js',
+    // 'babel-polyfill',
+    `./${static}_entry.js`,
   ],
   output: {
-    path: path.resolve(__dirname, './styleguide/footer/build/'),
+    path: path.resolve(__dirname, `./styleguide/${static}/build/`),
     filename: 'styleguide_bundle.js',
   },
   resolve: {
@@ -20,9 +20,10 @@ module.exports = footerBaseConfig({
   },
   plugins:[
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, './footer/index.ejs'),
+      template: path.resolve(__dirname, `./${static}/index.ejs`),
       filename: 'index.html',
       inject: 'body',
     })
   ],
+  modulesName: static,
 });

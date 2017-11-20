@@ -8,16 +8,9 @@ import LinkWrapper from 'atoms/LinkWrapper';
 import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 import Spacer from 'atoms/Spacer';
-import StyledWrapper from 'atoms/StyledWrapper';
+import Hide from 'wrappers/Hide';
 
-import styles from '../intro.module.scss';
-import {
-  productIntroWrapper,
-  productIntroLockup,
-  productIntroButtonWrapper,
-  buttonSpacer,
-  introSpacer
-} from './styles';
+import styles from './product_intro.module.scss';
 
 function ProductIntro(props) {
   const {
@@ -28,39 +21,43 @@ function ProductIntro(props) {
   const mediumCols = intro.cta ? [ 7, 5 ] : [ 12 ];
 
   return (
-    <StyledWrapper
-      css={productIntroWrapper}
-      component={Layout}
+    <Layout
       smallCols={[ 12 ]}
       mediumCols={mediumCols}
       largeCols={[ 12 ]}
       fullwidth
+      className={styles['product-intro-wrapper']}
     >
-      <StyledWrapper css={productIntroLockup}>
+      <div className={styles['product-intro-lockup']}>
         <Icon
           icon={intro.icon}
           height='100px'
           width='100px'
-          className='product-intro-icon'
+          className={styles['product-intro-icon']}
         />
         <Text
           type={4}
           font='a'
-          className='header-text'
+          className={styles['header-text']}
         >
           { headerText }
         </Text>
-      </StyledWrapper>
+      </div>
 
       { intro.cta &&
-      <StyledWrapper css={productIntroButtonWrapper}>
-        <StyledWrapper css={buttonSpacer} />
+      <div className={styles['product-intro-button-wrapper']}>
+        <Hide hideOn='tablet desktop'>
+          <Spacer size={18} />
+        </Hide>
+        <Hide hideOn='mobile tablet'>
+          <Spacer size={12} />
+        </Hide>
 
         <LinkWrapper
           href={intro.linkHref}
-          className='product-intro-button'
+          className={styles['product-intro-button']}
         >
-          <Button variant='solid-orange'>{ intro.cta }</Button>
+          <Button>{ intro.cta }</Button>
         </LinkWrapper>
 
         <Spacer size={18} />
@@ -75,15 +72,20 @@ function ProductIntro(props) {
             Read Our Guide
           </Text>
         </LinkWrapper>
-      </StyledWrapper>
+      </div>
       }
 
       <Col
         smallCol={12}
       >
-        <StyledWrapper css={introSpacer} />
+        <Hide hideOn='tablet desktop'>
+          <Spacer size={24} />
+        </Hide>
+        <Hide hideOn='mobile desktop'>
+          <Spacer size={60} />
+        </Hide>
       </Col>
-    </StyledWrapper>
+    </Layout>
   );
 }
 

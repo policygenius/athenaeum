@@ -1,0 +1,16 @@
+.main-nav-icon-wrapper {
+  display: flex;
+}
+
+@media #{$mobile-only} {
+  .main-nav-icon-wrapper {
+    display: flex;
+    left: ru(1);
+    position: absolute;
+    top: rem-calc(14px);
+  }
+
+  .main-nav-icon {
+    display: block;
+  }
+}

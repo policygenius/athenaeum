@@ -93,15 +93,15 @@ class MainNavNew extends Component {
   }
 
   render() {
-    const mainPanelClasses = [
+    const mainPanelClasses = classnames(
       styles['main-panel'],
       this.state.searching && styles.searching,
       this.state.showMobileMenu && styles['show-mobile-menu']
-    ];
+    );
 
     return (
       <nav className={styles.wrapper}>
-        <div className={classnames(...mainPanelClasses)} style={{ zIndex: '100' }}>
+        <div className={mainPanelClasses} style={{ zIndex: '100' }}>
           <div className={styles.container}>
             <Logo />
 

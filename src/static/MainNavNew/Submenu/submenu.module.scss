@@ -28,6 +28,7 @@
   .submenu-wrapper {
     .submenu {
       display: block;
+      height: auto;
 
       > li {
         padding: 0 0 0 18px;
@@ -73,7 +74,7 @@
 @media #{$medium-up} {
   .submenu-wrapper {
     position: absolute;
-    height: 48px;
+    height: 49px;
     left: 0;
     top: 100%;
     display: none;
@@ -85,7 +86,9 @@
     .submenu {
       flex-flow: row;
       overflow-x: scroll;
+      overflow-y: hidden;
       padding: 0 48px;
+      -ms-overflow-style: none;
 
       > li {
         &:first-child {
