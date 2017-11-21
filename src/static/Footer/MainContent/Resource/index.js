@@ -5,7 +5,6 @@ import { generate } from 'shortid';
 
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
-import Spacer from 'atoms/Spacer';
 import List from 'atoms/List';
 import LinkWrapper from 'atoms/LinkWrapper';
 
