@@ -28,4 +28,5 @@ module.exports = ({ static }) => staticBaseConfig({
       sourceMap: true
     }),
   ],
+  modulesName: static,
 });
