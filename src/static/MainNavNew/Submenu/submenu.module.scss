@@ -85,10 +85,7 @@
 
     .submenu {
       flex-flow: row;
-      overflow-x: scroll;
-      overflow-y: hidden;
       padding: 0 48px;
-      -ms-overflow-style: none;
 
       > li {
         &:first-child {

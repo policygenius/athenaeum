@@ -1,3 +1,7 @@
+.item-short-header {
+  display: none;
+}
+
 @media #{$tablet} {
   .item {
     margin-bottom: ru(-.5);
@@ -6,7 +10,7 @@
 
   .item-header-link {
     border-right: 1px solid #dedede;
-    padding: 0 ru(.75);
+    padding: 0 rem-calc(16px);
   }
 
   .item-header-text {
@@ -34,5 +38,13 @@
 
   .item-more-link {
     padding-right: ru(2);
+  }
+
+  .item-long-header {
+    display: none;
+  }
+
+  .item-short-header {
+    display: block;
   }
 }

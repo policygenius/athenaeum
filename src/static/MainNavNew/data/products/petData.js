@@ -22,6 +22,7 @@ const submenuItems = [
 export default {
   menu: {
     header: 'Pet Insurance',
+    shortHeader: 'Pet',
     link: '/pet-insurance/',
     activeName: 'pet-insurance',
     columns: 3,

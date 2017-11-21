@@ -127,10 +127,22 @@ class SubmenuItem extends React.Component {
             type={10}
             font='b'
             color='neutral-1'
-            className={headerClasses}
+            className={classnames(headerClasses, styles['item-long-header'])}
           >
             {menu.header}
           </Text>
+
+          {
+            menu.shortHeader &&
+              <Text
+                type={10}
+                font='b'
+                color='neutral-1'
+                className={classnames(headerClasses, styles['item-short-header'])}
+              >
+                {menu.shortHeader}
+              </Text>
+          }
         </LinkWrapper>
 
         { this.submenuDisplayType }
@@ -144,7 +156,6 @@ SubmenuItem.propTypes = {
   showMobileMenu: PropTypes.bool,
   setMobileCollapsedMenu: PropTypes.func,
   displayType: PropTypes.string,
-  showMobileCollpased: PropTypes.string,
   setActiveSubTab: PropTypes.func,
   activeSubTab: PropTypes.string,
   mobileCollapsedMenu: PropTypes.string,

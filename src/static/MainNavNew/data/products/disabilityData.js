@@ -35,6 +35,7 @@ const submenuItems = [
 export default {
   menu: {
     header: 'Disability Insurance',
+    shortHeader: 'Disability',
     link: '/long-term-disability-insurance/',
     activeName: 'disability-insurance',
     columns: 3,

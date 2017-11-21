@@ -25,6 +25,7 @@ const submenuItems = [
 export default {
   menu: {
     header: 'Auto Insurance',
+    shortHeader: 'Auto',
     link: '/auto-insurance/',
     activeName: 'auto-insurance',
     columns: 2,
