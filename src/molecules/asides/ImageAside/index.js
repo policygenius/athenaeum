@@ -66,7 +66,7 @@ function ImageAside( props ) {
       <aside className={styles['aside']}>
         <Text
           font='a'
-          size={5}
+          size={7}
         >
           { header }
         </Text>

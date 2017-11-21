@@ -1,6 +1,6 @@
 %card-base {
   background: color('neutral-8');
-  border: 1px solid color('neutral-5');
+  border: 1px solid color('neutral-4');
   padding: ru(.75) ru(1);
 }
 
@@ -22,7 +22,7 @@
 
     padding-bottom: ru(1);
     align-items: center;
-    border-bottom: 1px solid color('neutral-5');
+    border-bottom: 1px solid color('neutral-4');
   }
 
   &-foot {
@@ -38,7 +38,7 @@
     padding-right: 0;
 
     &:last-child {
-      border-bottom: 1px solid color('neutral-5');
+      border-bottom: 1px solid color('neutral-4');
     }
   }
 }
@@ -80,9 +80,7 @@
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 1px solid color('neutral-5');
-    padding-left: 0;
-    padding-right: 0;
+    border-bottom: 1px solid color('neutral-4');
   }
 
   .playback-wrapper {

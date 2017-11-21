@@ -3,17 +3,17 @@ $inactive-color:                    color('neutral-4');
 $icon-size:                         rem-calc(20);
 $item-size:                         rem-calc(40);
 $item-border-width:                 rem-calc(2);
-$item-border-color:                 color('secondary-2');
+$item-border-color:                 color('neutral-4');
 $item-background-color:             color('neutral-8');
 $active-item-border-color:          color('secondary-2');
 $inactive-item-border-color:        color('neutral-4');
 
 $mobile-color:                      color('neutral-8');
-$mobile-item-background-color:      color('brand-1');
-$mobile-item-border-color:          color('action-2');
-$mobile-active-item-border-color:   color('brand-2');
-$mobile-inactive-color:             color('brand-2');
-$mobile-inactive-item-border-color: color('brand-2');
+$mobile-item-background-color:      color('primary-2');
+$mobile-item-border-color:          color('secondary-2');
+$mobile-active-item-border-color:   color('secondary-2');
+$mobile-inactive-color:             color('primary-3');
+$mobile-inactive-item-border-color: color('neutral-4');
 
 .step-progress {
   display: flex;
@@ -68,12 +68,16 @@ $mobile-inactive-item-border-color: color('brand-2');
     }
   }
 
+  .icon-wrapper {
+    border-color: $active-item-border-color;
+  }
+
   // State
   &-current {
     pointer-events: none;
 
     .icon-wrapper {
-      border-color: $active-item-border-color;
+      border-color: color('primary-1');
     }
 
     &.clickable {
@@ -158,10 +162,6 @@ $mobile-inactive-item-border-color: color('brand-2');
   .step {
     color: $mobile-color;
 
-    &-current {
-      .icon-wrapper { background-color: $mobile-active-item-border-color; }
-    }
-
     &-inactive {
       color: $mobile-inactive-color;
 
@@ -172,22 +172,21 @@ $mobile-inactive-item-border-color: color('brand-2');
       }
 
       .icon-wrapper { border-color: $mobile-inactive-item-border-color; }
-      .icon { opacity: 0.2; }
     }
   }
 
   .wrapper {
     width: auto;
 
-    &:before { background-color: $mobile-item-border-color; }
+    &:before { background-color: $mobile-item-background-color; }
   }
 
   .icon-wrapper {
     background-color: $mobile-item-background-color;
-    border-color: $mobile-item-border-color;
+    border-color: $mobile-active-item-border-color;
   }
 
-  .icon path { fill: color('neutral-8'); }
+  .icon path { fill: color('primary-3'); }
 
   .label { display: none; }
 }

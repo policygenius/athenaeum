@@ -12,7 +12,7 @@ export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
     <Tooltip
       text={
         <div>
-          <Hide hideOn='small'>
+          <Hide hideOn='mobile'>
             <Text
               type={7}
               color='neutral-3'

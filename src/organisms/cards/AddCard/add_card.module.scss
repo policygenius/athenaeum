@@ -1,9 +1,9 @@
 @import '../shared/cards.module.scss';
 
-$hover-color: color('secondary-2');
+$hover-color: color('primary-2');
 
 .text {
-  @include typography-label;
+  @include typography-b-8;
 }
 
 .add-card {
@@ -14,7 +14,7 @@ $hover-color: color('secondary-2');
   text-align: center;
   text-decoration: none;
   color: color('primary-3');
-  background-color: color('primary-2');
+  background-color: transparent;
   border: 2px solid color('primary-3');
   cursor: pointer;
   transition: color 150ms ease-out,
@@ -23,14 +23,7 @@ $hover-color: color('secondary-2');
 
   &:hover,
   &:active {
-    border-color: $hover-color;
-    color: $hover-color;
-
-    .icon {
-      path {
-        fill: color('secondary-2');
-      }
-    }
+    background-color: $hover-color;
   }
 }
 

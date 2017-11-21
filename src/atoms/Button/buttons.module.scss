@@ -1,7 +1,7 @@
 $info-color: color('primary-3');
 $action-color: color('primary-1');
-$selected-color: color('secondary-2');
-$unselected-color: color('neutral-2');
+$selected-color: color('primary-3');
+$unselected-color: color('neutral-4');
 $brand-white: color('primary-2');
 
 .icon {
@@ -66,30 +66,11 @@ $brand-white: color('primary-2');
 .toggle, .toggle-unselected, .toggle-selected {
   display: block;
   background-color: $brand-white;
-  transition: color 300ms ease-out,
-  border 300ms ease-out;
-
-  &:hover {
-    color: $selected-color;
-  }
 }
 
-.toggle {
-  color: $info-color;
-  border: 2px solid $info-color;
-  &:hover {
-    color: $selected-color;
-    border: 2px solid $selected-color;
-  }
-}
-
-.toggle-unselected {
-  color: $unselected-color;
+.toggle, .toggle-unselected {
+  color: color('neutral-2');
   border: 2px solid $unselected-color;
-  &:hover {
-    color: $selected-color;
-    border: 2px solid $selected-color;
-  }
 }
 
 .toggle-selected {

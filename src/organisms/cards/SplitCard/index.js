@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from 'atoms/Icon';
+import LinkWrapper from 'atoms/LinkWrapper';
+import Text from 'atoms/Text';
 
 import styles from './split_card.module.scss';
 
@@ -36,11 +38,11 @@ function SplitCard( props ) {
       { hasFooter() &&
         <footer className={styles['footer']}>
           <div className={styles['col']}>
-            <a className={styles['link']} onClick={onClick}>{ footerLeft }</a>
+            <LinkWrapper variant='secondary' onClick={onClick}><Text size={10} font='b'>{ footerLeft }</Text></LinkWrapper>
           </div>
 
           <div className={classnames(styles['col'], styles['col-r'])}>
-            <a className={styles['link']} onClick={onClick2}>{ footerRight }</a>
+            <LinkWrapper variant='secondary' onClick={onClick2}><Text size={10} font='b'>{ footerRight }</Text></LinkWrapper>
           </div>
         </footer>
       }

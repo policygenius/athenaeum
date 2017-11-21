@@ -9410,7 +9410,7 @@ react-modal@^1.7.7:
     prop-types "^15.5.7"
     react-dom-factories "^1.0.0"
 
-react-stickynode@^1.3.1:
+react-stickynode@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-1.4.0.tgz#8ddbc64e2e6174d9836aac58c81efe5493dafc37"
   dependencies:

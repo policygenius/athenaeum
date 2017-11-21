@@ -93,9 +93,9 @@ function RadioCard(props) {
         className={styles['card']}
         htmlFor={`radio-${camelCase(radioValue)}`}
       >
-        <div className={classnames(styles['radio-field'], radioStyles['radio-field'])}>
+        <div className={classnames(radioStyles['radio-field'], styles['radio-field'])}>
           <span
-            className={classnames(radioStyles['label'], { [radioStyles.checked]: input.value === radioValue })}
+            className={classnames(radioStyles['label'], { [radioStyles.checked]: input.value === radioValue }, styles['label'])}
           />
 
         </div>
@@ -111,7 +111,12 @@ function RadioCard(props) {
           { renderSections(sections)}
         </div>
 
-        { renderImage({ img: { image, label }, iconProps }) }
+        {
+          (image || iconProps) &&
+            <div className={styles['image-wrapper']}>
+              { renderImage({ img: { image, label }, iconProps }) }
+            </div>
+        }
       </label>
     </div>
   );

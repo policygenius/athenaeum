@@ -17,7 +17,7 @@ function StepIndicator(props) {
 
   return (
     <div className={classnames(className)}>
-      <Text tag='div' type={7} color='neutral-2' weight='semibold' className={styles['active-step']}>
+      <Text tag='div' type={10} color='neutral-2' font='a' className={styles['active-step']}>
         {get(activeStep, 'text', '')}
       </Text>
       <div className={styles['step-indicator']}>

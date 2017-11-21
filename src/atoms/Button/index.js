@@ -66,7 +66,7 @@ Button.propTypes = {
    * Toggle buttons are either `toggle` or `toggle-selected`
    */
   variant: PropTypes.oneOf([
-    'info', 'toggle', 'toggle-selected'
+    'info', 'toggle', 'toggle-selected', 'disabled'
   ]),
 
   /**

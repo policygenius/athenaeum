@@ -10,7 +10,7 @@ exports[`<FeatureSquare /> renders correctly 1`] = `
     style={
       Object {
         "height": undefined,
-        "width": "100",
+        "width": "100px",
       }
     }
   />

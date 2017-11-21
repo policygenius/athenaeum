@@ -37,7 +37,7 @@ describe('<MobileMenu />', () => {
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
     const activeText = wrapper.find(Text).first();
 
-    expect(activeText.prop('color')).toEqual('primary-1');
+    expect(activeText.prop('color')).toEqual('primary-3');
 
     const inactiveText = wrapper.find(Text).last();
 

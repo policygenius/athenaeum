@@ -4,6 +4,7 @@
 }
 
 .row {
+  align-items: center;
   display: flex;
   margin: 0;
 }
@@ -37,6 +38,8 @@
   margin: 0 0 0 ru(.25);
 }
 
+
+
 /* -- Variants -- */
 .large {
   .label {
@@ -45,11 +48,14 @@
   }
 
   .value {
-    @include typography(3);
-    @include typography-semibold;
+    @include typography-a-6-bold;
 
     line-height: 1em;
-    color: color('brand-2');
+    color: color('seoncary-2');
+
+    .unit {
+      font-weight: 900;
+    }
   }
 }
 
@@ -69,6 +75,10 @@
 }
 
 .subitem {
+  .label {
+    @include typography-b-10;
+  }
+
   .value, .amount {
     @include typography-regular();
   }

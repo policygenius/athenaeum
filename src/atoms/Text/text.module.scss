@@ -1,4 +1,3 @@
-
 @for $i from 1 through 11 {
   .type-a-#{$i}-bold {
     @include typography-a($i);
@@ -54,7 +53,7 @@
     left: -5%;
     top: 50%;
     width: 110%;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid color('neutral-4');
   }
 }
 

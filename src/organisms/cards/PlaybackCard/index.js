@@ -30,10 +30,12 @@ function PlaybackCard(props) {
           <LinkWrapper
             onClick={onClick}
             className={styles['edit']}
+            variant='secondary'
           >
             <Text
               tag='span'
-              type={7}
+              type={10}
+              font='b'
             >
               { editLinkText }
             </Text>

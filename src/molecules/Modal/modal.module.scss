@@ -16,11 +16,13 @@ $border: 1px solid color('neutral-5');
   &.large,
   &.mobile-large {
     max-width: rem-calc(940);
+    z-index: 10;
   }
 
   &.mobile {
     margin-top: 0;
     max-width: rem-calc(604);
+    z-index: 10;
 
     .section {
       padding: ru(1.25);
@@ -43,34 +45,40 @@ $border: 1px solid color('neutral-5');
 }
 
 .close-col {
-  align-self: top;
   text-align: right;
 }
 
 .close {
   margin: 0 auto;
-  width: rem-calc(30px);
-  height: rem-calc(30px);
+  width: ru(1);
+  height: ru(1);
 }
 
 .body {
-  background-color: color('neutral-8');
-  padding: ru(1) ru(1);
+  background-color: color('primary-2');
+}
+
+.header {
+  align-items: center;
+  background-color: color('neutral-5');
+  border-bottom: 1px solid color('neutral-4');
+  display: flex;
+  justify-content: space-between;
+  padding: ru(1.25) ru(1);
 }
 
 .section {
-  padding-top: ru(1);
-  padding-right: ru(1);
+  padding: ru(1);
   border-bottom: 1px solid color('neutral-6');
 
   &:last-child {
-    padding-bottom: ru(1);
+    border-bottom: 0;
   }
 }
 
 .overlay {
   background-color: color('transparent-neutral-2');
-  z-index: 1;
+  z-index: 20;
   transition: opacity 0.25s ease-in-out, background 0.25s ease-out;
   background: color('transparent-neutral-2');
   bottom: 0;
@@ -86,16 +94,6 @@ $border: 1px solid color('neutral-5');
 }
 
 @media #{$small-only} {
-  .modal, .section, .header {
-    padding: ru(1);
-  }
-
-  .section {
-    &:last-child {
-      padding-bottom: ru(1);
-    }
-  }
-
   .header {
     p {
       @include typography-4(false);
@@ -106,5 +104,13 @@ $border: 1px solid color('neutral-5');
   .mobile-large {
     padding: 0;
     margin: 0;
+  }
+}
+
+@media #{$tablet} {
+  .header,
+  .section {
+    padding-left: ru(2);
+    padding-right: ru(2);
   }
 }

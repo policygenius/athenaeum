@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Sticky from 'react-stickynode';
-import assign from 'lodash/assign';
 
 import { Layout, Col } from 'atoms/Layout';
 import Icon from 'atoms/Icon';
@@ -15,12 +14,6 @@ import Hide from 'wrappers/Hide';
 import UserAlert from 'atoms/UserAlert';
 
 import styles from './navigator.module.scss';
-
-function renderContactCard(contactProps, inverted) {
-  const newProps = assign({}, contactProps, { inverted });
-
-  return <ContactCard {...newProps} />;
-}
 
 function renderButton(buttonProps) {
   return (
@@ -41,15 +34,13 @@ const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
     className={styles[className]}
   >
     <Text
-      size={6}
+      size={9}
       color={userAlert.textColor}
       font='a'
     >
       {userAlert.text}
     </Text>
-  </UserAlert>
-
-;
+  </UserAlert>;
 
 function Navigator(props) {
   const {
@@ -82,57 +73,57 @@ function Navigator(props) {
             <Col
               className={styles['logo-panel-col']}
             >
-              <div className={styles['logo-wrapper']}>
-                <Sticky
-                  enabled
-                  top={36}
-                  bottomBoundary={'#sticky-bottom'}
-                  activeClass={styles['sticky']}
-                >
-                  <Icon icon='pgLogo' className={styles['logo']} />
-
-                  <Hide hideOn='small medium'>
-                    <Text className={styles['logo-panel-text']} type={6} font='b'>
-                      { leftRailText }
-                    </Text>
-                  </Hide>
-                </Sticky>
-
-                <Icon
-                  icon='hamburger'
-                  className={styles['icon-hamburger']}
-                  height='24px'
-                  width='24px'
-                  onClick={onMenuClick}
-                />
-              </div>
 
               <div className={styles['mobile-header-wrapper']}>
+                <div className={styles['logo-wrapper']}>
+                  <Sticky
+                    enabled
+                    top={36}
+                    bottomBoundary={'#sticky-bottom'}
+                    activeClass={styles['sticky']}
+                  >
+                    <Icon icon='pgLogoBlack' className={styles['logo']} />
+
+                    <Hide hideOn='mobile tablet'>
+                      <Text className={styles['logo-panel-text']} type={6} font='b'>
+                        { leftRailText }
+                      </Text>
+                    </Hide>
+                  </Sticky>
+
+                  <Icon
+                    icon='hamburgerRebrand'
+                    className={styles['icon-hamburger']}
+                    height='24px'
+                    width='24px'
+                    onClick={onMenuClick}
+                  />
+                </div>
                 <div className={styles['mobile-nav']}>
                   <StepProgress
                     className={styles['step-progress']}
                     steps={stepProgressData}
                   />
 
-                  <Hide hideOn='large xLarge xxLarge'>
-                    <Text className={styles['logo-panel-text']} type={3} light>
+                  <Hide hideOn='mobile desktop'>
+                    <Text className={styles['logo-panel-text']} type={6} font='b'>
                       { leftRailText }
                     </Text>
                   </Hide>
                 </div>
+              </div>
 
-                <div className={styles['mobile-header']}>
-                  <Sticky
-                    enabled
-                    bottomBoundary='#mobile-bottom'
-                  >
-                    { mobileHeader }
-                  </Sticky>
-                </div>
+              <div className={styles['mobile-header']}>
+                <Sticky
+                  enabled
+                  bottomBoundary='#mobile-bottom'
+                >
+                  { mobileHeader }
+                </Sticky>
               </div>
             </Col>
             <div className={styles['contact-card']}>
-              { renderContactCard(contactProps, true) }
+              <ContactCard {...contactProps} />
             </div>
           </Layout>
         </Col>
@@ -175,7 +166,7 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               <div className={styles['contact-card']}>
-                { renderContactCard(contactProps) }
+                <ContactCard {...contactProps} />
               </div>
 
               <Sticky

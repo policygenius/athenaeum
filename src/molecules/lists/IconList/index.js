@@ -11,7 +11,7 @@ function IconList(props) {
     className,
     data,
     type,
-    weight
+    font,
   } = props;
 
   return (
@@ -30,7 +30,7 @@ function IconList(props) {
             <Text
               className={styles['text']}
               type={type}
-              weight={weight}
+              font={font}
             >
               {item.text}
             </Text>
@@ -53,9 +53,9 @@ IconList.propTypes = {
    */
   type: PropTypes.number,
   /**
-   * Text weight prop -- see [Text](#text) for appropriate values
+   * Font type prop -- see [Text](#text) for appropriate values
    */
-  weight: PropTypes.string,
+  font: PropTypes.string,
   /**
    * List of items to map over to create list
    */
@@ -66,8 +66,8 @@ IconList.propTypes = {
 };
 
 IconList.defaultProps = {
-  type: 6,
-  weight: 'semibold'
+  type: 8,
+  font: 'a',
 };
 
 export default IconList;

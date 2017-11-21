@@ -6,11 +6,7 @@ $border-style: 1px solid color('neutral-5');
   display: block;
   width: 100%;
   height: 100%;
-  color: color('neutral-4');
-
-  svg path {
-    fill: color('neutral-4');
-  }
+  color: color('primary-3');
 }
 
 .card {
@@ -20,10 +16,10 @@ $border-style: 1px solid color('neutral-5');
   flex-direction: column;
   align-items: center;
   padding-top: ru(1);
+  padding-bottom: ru(1);
   height: 100%;
   cursor: pointer;
   text-align: center;
-  padding-bottom: ru(1);
 }
 
 .checked {
@@ -32,34 +28,68 @@ $border-style: 1px solid color('neutral-5');
   svg path {
     fill: color('primary-3');
   }
+
+  .sections {
+    color: color('primary-3');
+  }
+}
+
+.not-selected {
+  color: color('neutral-4');
+
+  svg path {
+    fill: color('neutral-4');
+  }
+
+  .sections {
+    color: color('neutral-4');
+  }
 }
 
 .content {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   width: 100%;
 }
 
 .radio-field {
   margin-bottom: ru(.75);
+
   &:before {
-    left: 19%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.label {
+  &:after {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
   }
 }
 
 .title {
-  @include typography-5(false);
+  @include typography-a-7-bold;
   font-weight: 600;
   margin: 0 0 ru(.75);
   color: inherit;
 }
 
 .description {
+  @include typography-b-10;
+
   color: inherit;
   margin-top: 0;
   margin-bottom: ru(.25);
+}
+
+.image-wrapper {
+  margin-top: ru(.5);
+  margin-bottom: ru(-1);
 }
 
 .image {
@@ -67,7 +97,7 @@ $border-style: 1px solid color('neutral-5');
 }
 
 .sections {
-  @include typography-7(false);
+  @include typography-b-10;
 
   display: flex;
 
@@ -76,6 +106,9 @@ $border-style: 1px solid color('neutral-5');
 
   line-height: ru(.75);
   text-align: center;
+
+  margin-top: ru(.5);
+  margin-bottom: ru(-1);
 
   &-item {
     flex: 1 1;
@@ -91,6 +124,8 @@ $border-style: 1px solid color('neutral-5');
   }
 
   &-value {
+    @include typography-b-8;
+
     margin: 0;
   }
 
@@ -122,6 +157,7 @@ $border-style: 1px solid color('neutral-5');
     flex-direction: row;
     padding: ru(.5);
     text-align: left;
+    flex-wrap: nowrap;
 
     &:last-child {
       margin-bottom: 0;
@@ -130,27 +166,18 @@ $border-style: 1px solid color('neutral-5');
 
   .radio-field {
     margin: 0;
-    &:before {
-      left: 5%;
-    }
-  }
-
-  .checked {
-    span:after {
-      left: 5%;
-    }
   }
 
   .content {
     margin-left: ru(.5);
     margin-right: ru(.5);
+    width: auto;
   }
 
   .title {
-    @include typography-6;
-    @include typography-semibold;
+    @include typography-a-8-bold;
 
-    margin: 0 0 rem-calc(3);
+    margin: 0;
     color: inherit;
   }
 
@@ -164,6 +191,11 @@ $border-style: 1px solid color('neutral-5');
 
   .icon {
     margin: auto;
+  }
+
+  .image-wrapper {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .image {
