@@ -5,11 +5,11 @@ exports[`<Img /> renders correctly 1`] = `
   alt="photos alexander dummer 150646"
   className="img"
   sizes="100vw"
-  src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=clip&w=768&auto=format&q=40"
+  src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg&w=768&h=768?fit=clip&auto=format&auto=compress"
   srcSet="
-  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=clip&w=1025&auto=format&q=50&ch=Width,DPR,Save-Data 1026w,
-  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=clip&w=768&auto=format&q=50&ch=Width,DPR,Save-Data 769w,
-  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=clip&w=320&auto=format&q=50&ch=Width,DPR,Save-Data 321w
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=1025&h=1025&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 1026w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=768&h=768&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 769w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=320&h=320&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 321w
 "
   title="photos alexander dummer 150646"
 />

@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './img.module.scss';
 
-const imgixSrcset = ( src, maxWidth = Infinity ) => `
-  https://policygenius-images.imgix.net/${src}?fit=clip&w=${Math.min(maxWidth, 1025)}&auto=format&q=50&ch=Width,DPR,Save-Data 1026w,
-  https://policygenius-images.imgix.net/${src}?fit=clip&w=${Math.min(maxWidth, 768)}&auto=format&q=50&ch=Width,DPR,Save-Data 769w,
-  https://policygenius-images.imgix.net/${src}?fit=clip&w=${Math.min(maxWidth, 320)}&auto=format&q=50&ch=Width,DPR,Save-Data 321w
+const strParams = '&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data';
+
+const imgixSrcset = ( src, maxWidth = Infinity, maxHeight = Infinity ) => `
+  https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 1025)}&h=${Math.min(maxHeight, 1025)}${strParams} 1026w,
+  https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 768)}&h=${Math.min(maxHeight, 768)}${strParams} 769w,
+  https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 320)}&h=${Math.min(maxHeight, 320)}${strParams} 321w
 `;
 
-const createName = str => str.replace(/\..+/, '').replace(/\W/g, ' ').trim();
+const createName = str => typeof str === 'string'
+  ? str.replace(/\..+/, '').replace(/\W/g, ' ').trim()
+  : 'PolicyGenius';
 
 function Img(props) {
   const {
@@ -20,6 +24,7 @@ function Img(props) {
     alt,
     title,
     maxWidth = Infinity,
+    maxHeight = Infinity,
     ...rest
   } = props;
 
@@ -35,12 +40,17 @@ function Img(props) {
     return imgixSrcset(`${imgixSrc}`, maxWidth);
   })();
 
+  const imgixSrcStr = `https://policygenius-images.imgix.net/${imgixSrc}` +
+    `&w=${Math.min(maxWidth, 768)}` +
+    `&h=${Math.min(maxHeight, 768)}` +
+    '?fit=clip&auto=format&auto=compress';
+
   return (
     <img
       className={classes}
       alt={alt || createName(imgixSrc || src)}
       title={title || createName(imgixSrc || src)}
-      src={src || `https://policygenius-images.imgix.net/${imgixSrc}?fit=clip&w=${Math.min(maxWidth, 768)}&auto=format&q=40`}
+      src={src || imgixSrcStr}
       srcSet={srcset}
       sizes='100vw'
       {...rest}
@@ -86,6 +96,11 @@ Img.propTypes = {
    * Used with imgixSrc to prevent larger than necessary images from loading
    */
   maxWidth: PropTypes.string,
+
+  /**
+   * Used with imgixSrc to prevent larger than necessary images from loading
+   */
+  maxHeight: PropTypes.string,
 };
 
 Img.defaultProps = {
