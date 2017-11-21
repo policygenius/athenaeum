@@ -22,7 +22,7 @@ function PlaybackCard(props) {
     <div className={classnames(styles['playback-card'])}>
       <Layout
         smallCols={[ 9, 3 ]}
-        bottomSpacing='xSmall'
+        bottomSpacing='medium'
         fullwidth
       >
         <ImageAside bold icon={icon} header={header} />
