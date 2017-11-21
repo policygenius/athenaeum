@@ -47,9 +47,10 @@ const baseRules = modulesName => [
       fallback: 'style-loader',
       use: [
         {
-          loader: 'css-loader?importLoaders=3',
+          loader: 'css-loader',
           options: {
             modules: true,
+            importLoaders: 3,
             localIdentName: cssModulesName(modulesName),
             sourceMap: !isProd,
             minimize: !!isProd
