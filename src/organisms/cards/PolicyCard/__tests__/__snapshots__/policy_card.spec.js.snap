@@ -188,61 +188,20 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             onClick={[Function]}
             type="button"
           >
-            Continue
+            View Policy
           </button>
-          <div
-            className="top-2"
-          />
-          <a
-            className="link neutral-4 undefined details-link"
-            onClick={[Function]}
-          >
-            Details & Review
-          </a>
-          <div
-            className="layout secondary-actions-wrapper"
-            style={undefined}
-          >
+          <div>
             <div
-              className="col col-sm-6 fullwidth bottom-spacing-undefined"
-              onClick={undefined}
-              style={undefined}
+              className="top-2"
+            />
+            <button
+              className="button button"
+              disabled={undefined}
+              onClick={[Function]}
+              type="button"
             >
-              <div
-                className="col bottom-spacing-undefined secondary-action"
-                onClick={undefined}
-                style={undefined}
-              >
-                <button
-                  className="button button"
-                  disabled={undefined}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Details
-                </button>
-              </div>
-            </div>
-            <div
-              className="col col-sm-6 fullwidth bottom-spacing-undefined"
-              onClick={undefined}
-              style={undefined}
-            >
-              <div
-                className="col bottom-spacing-undefined secondary-action"
-                onClick={undefined}
-                style={undefined}
-              >
-                <button
-                  className="button button"
-                  disabled={undefined}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Compare
-                </button>
-              </div>
-            </div>
+              Compare
+            </button>
           </div>
         </div>
       </div>
@@ -448,12 +407,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           }
         >
           <div
-            className="col col-sm-12 col-md-12 col-lg-6 bottom-spacing-undefined"
+            className="col col-sm-12 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
             <button
-              className="button action continue slim"
+              className="button action slim"
               disabled={undefined}
               onClick={[Function]}
               type="button"
@@ -461,62 +420,21 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               <div
                 className="hide small medium xLarge xxLarge"
               >
-                <svg
-                  className="svg-text"
-                  viewBox="-3 0 75 15"
-                  width="100%"
+                <strong
+                  className="text typography-6 semibold undefined undefined strong undefined"
                 >
-                  <text
-                    x="0"
-                    y="12"
-                  >
-                    Continue
-                  </text>
-                </svg>
+                  View Policy
+                </strong>
               </div>
               <div
                 className="hide large"
               >
-                Continue
+                View Policy
               </div>
             </button>
           </div>
           <div
-            className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
-            onClick={undefined}
-            style={undefined}
-          >
-            <button
-              className="button button slim"
-              disabled={undefined}
-              onClick={[Function]}
-              type="button"
-            >
-              <div
-                className="hide small medium xLarge xxLarge"
-              >
-                <svg
-                  className="svg-text"
-                  viewBox="-10 0 75 15"
-                  width="100%"
-                >
-                  <text
-                    x="0"
-                    y="12"
-                  >
-                    Details
-                  </text>
-                </svg>
-              </div>
-              <div
-                className="hide large"
-              >
-                Details
-              </div>
-            </button>
-          </div>
-          <div
-            className="col col-sm-6 col-md-12 col-lg-6 bottom-spacing-undefined"
+            className="col col-sm-12 bottom-spacing-undefined"
             onClick={undefined}
             style={undefined}
           >
