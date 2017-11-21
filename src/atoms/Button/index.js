@@ -17,6 +17,7 @@ function Button( props ) {
     unflex,
     outline,
     href,
+    linkAttrs,
     ...rest
   } = props;
 
@@ -29,12 +30,13 @@ function Button( props ) {
     unflex && styles['unflex'],
   ];
 
-  if (href) {
+  if (href || linkAttrs) {
     return (
       <a
         className={classnames(...classes)}
         disabled={disabled}
         href={href}
+        {...linkAttrs}
       >
         { icon && <Icon icon={icon} className={styles['icon']} /> }
         { children || text }
@@ -98,6 +100,10 @@ Button.propTypes = {
    * Will prevent the button from flexing to fill its parent container
    */
   unflex: PropTypes.bool,
+  /**
+   * Passes any link attributes onto the a tag.
+   */
+  linkAttrs: PropTypes.object,
 };
 
 Button.defaultProps = {
