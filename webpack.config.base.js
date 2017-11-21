@@ -15,90 +15,98 @@ const includePaths = [
   path.resolve(__dirname, 'styleguide_assets'),
 ];
 
-const baseRules = (modulesName) => {
-  const cssModulesName = `${modulesName ? modulesName : 'rcl'}-[name]__[local]--[hash:base64:5]`;
+const isProd = process.env.NODE_ENV === 'production';
 
-  return [
-    {
-      test: /\.js$/,
-      include: includePaths,
-      use: [
-        {
-          // babel-loader will throw a deprecation warning
-          // waiting for stable v7.0.0 to upgrade
-          loader: 'babel-loader',
-          options: {
-            presets: [ 'env', 'react', 'stage-2' ]
-          }
-        }
-      ]
-    },
-    {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [
-          {
-            loader: 'css-loader?importLoaders=3',
-            options: {
-              modules: true,
-              localIdentName: cssModulesName,
-              sourceMap: true,
-            }
-          },
-          {
-            loader: 'postcss-loader?parser=postcss-scss',
-            options: {
-              postCSSConfig
-            }
-          },
-          {
-            loader: 'resolve-url-loader'
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-              sourceComments: true,
-              includePaths: [ baseDir ],
-              data: "@import 'assets/stylesheets/global';"
-            }
-          }
-        ]
-      })
-    },
-    {
-      test: /\.(jpe?g|png|gif)$/i,
-      include: includePaths,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'assets/images/',
-            publicPath: '/'
-          }
-        }
-      ]
-    },
-    {
-      test: /\.(ttf|eot|woff|woff2)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'assets/fonts/',
-            publicPath: '/'
-          }
-        }
-      ]
-    }
-  ]
+const cssModulesName = (modulesName) => {
+  if (!isProd) {
+    return 'rcl-[name]__[local]--[hash:base64:5]';
+  }
+
+  return `${modulesName || 'rcl'}_[local]-[hash:base64:3]`;
+
 };
 
-module.exports = options => {
-  let rules = get(options, 'module.rules', []).concat(baseRules(options.modulesName));
+const baseRules = modulesName => [
+  {
+    test: /\.js$/,
+    include: includePaths,
+    use: [
+      {
+          // babel-loader will throw a deprecation warning
+          // waiting for stable v7.0.0 to upgrade
+        loader: 'babel-loader',
+        options: {
+          presets: [ 'env', 'react', 'stage-2' ]
+        }
+      }
+    ]
+  },
+  {
+    test: /\.scss$/,
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: [
+        {
+          loader: 'css-loader?importLoaders=3',
+          options: {
+            modules: true,
+            localIdentName: cssModulesName(modulesName),
+            sourceMap: !isProd,
+            minimize: !!isProd
+          }
+        },
+        {
+          loader: 'postcss-loader?parser=postcss-scss',
+          options: {
+            postCSSConfig
+          }
+        },
+        {
+          loader: 'resolve-url-loader'
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: !isProd,
+            sourceComments: !isProd,
+            includePaths: [ baseDir ],
+            data: "@import 'assets/stylesheets/global';"
+          }
+        }
+      ]
+    })
+  },
+  {
+    test: /\.(jpe?g|png|gif)$/i,
+    include: includePaths,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'assets/images/',
+          publicPath: '/'
+        }
+      }
+    ]
+  },
+  {
+    test: /\.(ttf|eot|woff|woff2)$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'assets/fonts/',
+          publicPath: '/'
+        }
+      }
+    ]
+  }
+];
+
+module.exports = (options) => {
+  const rules = get(options, 'module.rules', []).concat(baseRules(options.modulesName));
 
   if (!options.entry || !options.entry.includes('main_nav')) {
     rules.push(
@@ -115,7 +123,7 @@ module.exports = options => {
         }
       }
     );
-  };
+  }
 
   return {
     entry: options.entry,
@@ -138,5 +146,5 @@ module.exports = options => {
         allChunks: true
       })
     ])
-  }
+  };
 };
