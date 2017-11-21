@@ -1,0 +1,211 @@
+$border: #dfdfdf;
+$footer: #f6f6f6;
+
+@mixin section($grow, $basis, $centered) {
+  flex: #{$grow} 1 #{$basis};
+  padding: 0 ru(1.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  @if $centered {
+    align-items: center;
+  }
+}
+
+.policy-card {
+  border: 1px solid $border;
+  border-radius: ru(.25);
+  background-color: color('neutral-8');
+  display: none;
+}
+
+.body {
+  padding: rem-calc(20px) 0 ru(1);
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  height: ru(3.25);
+  border-left: 1px solid $border;
+}
+
+.node {
+  display: inline-block;
+  @include typography(7);
+  color: color('neutral-3');
+  padding-right: ru(.5);
+}
+
+.checkbox-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: rem-calc(8px) 0;
+
+  &:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    content: '';
+    cursor: pointer;
+  }
+}
+
+.checked {
+  color: color('neutral-2');
+  font-weight: 600;
+}
+
+.carrier-logo {
+  img {
+    width: 100%;
+    max-width: rem-calc(125px);
+  }
+}
+
+.premium {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.policy-tooltip {
+  > * {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.policy-type-hover-message {
+  left: 50%;
+  top: calc(100% + 18px);
+  width: ru(11.5);
+}
+
+.policy-type-tooltip {
+  cursor: help;
+}
+
+/* IE 11 hack to make sure svg does not take up 100% height */
+.svg-text {
+  max-height: ru(1);
+}
+
+.actions p {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+@media #{$small-only} {
+  .policy-tooltip {
+    > * {
+      justify-content: center;
+    }
+  }
+
+  .body {
+    flex-direction: column;
+  }
+
+  .footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .actions {
+    padding: ru(1);
+    text-align: center;
+    border-top: 1px solid $border;
+    width: 100%;
+  }
+
+  .policy-type {
+    padding: ru(1);
+    text-align: center;
+  }
+
+  .carrier-logo {
+    text-align: center;
+  }
+
+  .policy-name {
+    max-width: 140px;
+    margin: auto;
+    margin-bottom: ru(.5);
+    line-height: ru(1);
+  }
+
+  .node {
+    &:first-child {
+      padding-right: ru(.25);
+    }
+  }
+}
+
+@media #{$small-and-medium-only} {
+  .continue {
+    margin-bottom: ru(.75);
+  }
+}
+
+@media #{$medium-only} {
+  .premium-text {
+    font-size: rem-calc(19px);
+  }
+}
+
+@media #{$medium-up} {
+  .policy-card {
+    display: block;
+  }
+
+  .mobile-card {
+    display: none;
+  }
+
+  .compare {
+    @include section(0, 17.5%, true);
+    label { margin-left: rem-calc(8px); }
+    padding: 0px rem-calc(12px);
+  }
+
+  .carrier-logo {
+    @include section(1, 30%, true);
+    padding: 0px rem-calc(12px);
+  }
+
+  .premium {
+    @include section(1, 30%, false);
+    padding: 0px rem-calc(12px);
+  }
+
+  .actions {
+    @include section(1, 20%, true);
+    text-align: center;
+    padding: 0px rem-calc(6px);
+  }
+}
+
+@media #{$large-up} {
+  .compare {
+    min-width: ru(5.25);
+  }
+
+  .carrier-logo {
+    padding: 0px rem-calc(18px);
+  }
+
+  .actions {
+    padding: 0px rem-calc(18px);
+  }
+
+  .info-divider {
+    display: block;
+  }
+}
