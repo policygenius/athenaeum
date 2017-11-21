@@ -6,7 +6,6 @@
 - [ ] **TODO: Remove 'a' prop as an option from component** : ./src/atoms/Text/index.js
 - [ ] **TODO: Make the flexbox ordering mobile-first** : ./src/static/Footer/MainContent/main-content.module.scss
 - [ ] **TODO: Remove important** : ./src/static/Footer/MainContent/Resource/resource.module.scss
-- [ ] **TODO: This is a hack because Layout isn't correctly passing props** : ./src/static/Footer/styles.js
 - [ ] **TODO: put transition back** : ./src/static/MainNavNew/Menu/menu.module.scss
 - [ ] **TODO: put transition back** : ./src/static/MainNavNew/Search/search.module.scss
 - [ ] **TODO: put transition back** : ./src/static/MainNavNew/Search/search.module.scss

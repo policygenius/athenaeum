@@ -110,7 +110,7 @@ $boldweight:                  900;
 @mixin typography-a-11-bold() {
   @include font-family-a;
   font-size: rem-calc(12px);
-  line-height: rem-calc(16px);
+  line-height: rem-calc(18px);
   letter-spacing: 0.7px;
 }
 

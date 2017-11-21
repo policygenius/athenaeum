@@ -46,10 +46,9 @@ $field-error-color: color('primary-1');
 }
 
 %field {
-  @include typography-regular();
-  @include typography-6(false);
+  @include typography-b(8);
 
-  padding: ru(.5) ru(.75);
+  padding: rem-calc(12px) rem-calc(18px);
   border: 0;
   -webkit-appearance: none;
 
