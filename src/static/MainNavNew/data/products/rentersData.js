@@ -36,6 +36,7 @@ const submenuItems = [
 export default {
   menu: {
     header: 'Renters Insurance',
+    shortHeader: 'Renters',
     link: '/renters-insurance/',
     activeName: 'renters-insurance',
     columns: 3,

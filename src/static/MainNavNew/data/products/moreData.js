@@ -22,6 +22,7 @@ const submenuItems = [
 export default {
   menu: {
     header: 'More Products',
+    shortHeader: 'More',
     activeName: 'more',
     columns: 2,
   },

@@ -33,6 +33,7 @@ const submenuItems = [
 export default {
   menu: {
     header: 'Health Insurance',
+    shortHeader: 'Health',
     link: '/health-insurance/',
     activeName: 'health-insurance',
     columns: 3,
