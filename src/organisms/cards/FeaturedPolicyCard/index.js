@@ -18,7 +18,6 @@ function FeaturedPolicyCard(props) {
     premium,
     discount,
     carrierLogo,
-    onContinue,
     onDetails,
     information,
     onCompare,
@@ -67,7 +66,6 @@ function FeaturedPolicyCard(props) {
 
         <ButtonGroup
           onDetails={onDetails}
-          onContinue={onContinue}
           onCompare={onCompare}
           continueCTAText={continueCTAText}
         />
@@ -112,11 +110,6 @@ FeaturedPolicyCard.propTypes = {
    * Image for carrier logo
    */
   carrierLogo: PropTypes.node,
-
-  /**
-   * Function supplied to main action button
-   */
-  onContinue: PropTypes.func.isRequired,
 
   /**
    * Text displayed for the main action button

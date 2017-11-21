@@ -254,17 +254,8 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Continue
+        View Policy
       </button>
-      <div
-        className="top-2"
-      />
-      <a
-        className="link neutral-4 undefined details-link"
-        onClick={[Function]}
-      >
-        Details & Review
-      </a>
     </div>
   </div>
 </div>
