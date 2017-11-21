@@ -38,6 +38,7 @@ class Resource extends Component {
           <Text
             type={7}
             font='a'
+            className={styles.header}
           >
             { resources.header }
             <Icon
@@ -49,7 +50,6 @@ class Resource extends Component {
             />
           </Text>
         </div>
-        <Spacer size={12} />
         <List
           bottomSpacing={13}
           noBullets

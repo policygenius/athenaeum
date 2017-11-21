@@ -1,4 +1,8 @@
 @media #{$small-only} {
+  .header {
+    margin-bottom: rem-calc(18);
+  }
+
   .resource-list {
     > li:last-child {
       // TODO: Remove important
@@ -14,6 +18,10 @@
 }
 
 @media #{$tablet} {
+  .header {
+    margin-bottom: rem-calc(12);
+  }
+
   .resource .icon {
     display: none;
   }
