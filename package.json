@@ -1,6 +1,6 @@
 {
   "name": "athenaeum",
-  "version": "7.3.9",
+  "version": "7.3.10",
   "description": "PolicyGenius React Component Library (RCL)",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "prepush": "if [ \"$ENABLE_COMMIT_HOOKS\" == 'true' ]; then yarn lint && yarn test; fi",
     "precommit": "if [ \"$ENABLE_COMMIT_HOOKS\" == 'true' ]; then bin/check_code && bin/todo_list; fi",
     "cc": "yarn plop create-component",
-    "build:publish": "NODE_ENV='production' ./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors",
+    "build:publish": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors",
     "build:publish:watch": "NODE_ENV='production' ./node_modules/webpack/bin/webpack.js --config ./webpack.config.publish.js --progress --colors --watch",
     "build:publish:nav": "yarn clean:nav && yarn build:nav:bundle && yarn build:nav:static && yarn build:nav:html",
     "build:publish:footer": "yarn clean:footer && yarn build:footer:bundle && yarn build:footer:static && yarn build:footer:html",
