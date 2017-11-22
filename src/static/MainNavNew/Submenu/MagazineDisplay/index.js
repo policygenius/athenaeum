@@ -12,6 +12,7 @@ import LinkList from '../LinkList';
 import ArticleImage from '../ArticleImage';
 import MobileBack from '../MobileBack';
 import { fetchPosts } from '../../utils/fetchMagazinePosts';
+import fullBlogUrl from '../../utils/fullBlogUrl';
 
 import styles from '../ProductDisplay/product_display.module.scss';
 
@@ -71,7 +72,7 @@ class MagazineDisplay extends Component {
           const recommendedPosts = data[0].posts.map((p) => {
             const post = p;
 
-            post.url = p.url;
+            post.url = fullBlogUrl(p.url);
 
             return post;
           });
