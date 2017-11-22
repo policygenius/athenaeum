@@ -69,13 +69,15 @@ class MagazineDisplay extends Component {
         })
       ])
         .then((data) => {
-          const recommendedPosts = data[0].posts.map((p) => {
+          const formattedPosts = (idx) => data[idx].posts.map((p) => {
             const post = p;
 
             post.url = fullBlogUrl(p.url);
 
             return post;
           });
+
+          const featuredPosts = formattedPosts(1);
 
           this.setState({
             [this.props.activeName]: {
@@ -84,15 +86,15 @@ class MagazineDisplay extends Component {
                 {
                   type: 'list',
                   header: 'Recommended',
-                  posts: recommendedPosts,
+                  posts: formattedPosts(0),
                 },
                 {
                   type: 'featured',
-                  post: data[1].posts[0],
+                  post: featuredPosts[0],
                 },
                 {
                   type: 'featured',
-                  post: data[1].posts[1],
+                  post: featuredPosts[1],
                 }
               ]
             }
