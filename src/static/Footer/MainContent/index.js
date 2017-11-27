@@ -10,49 +10,91 @@ import Layout from 'atoms/Layout';
 
 import styles from './main-content.module.scss';
 import Resource from './Resource';
-import { resourcesList } from '../data/resources';
+import { resourcesList, buttons } from '../data/resources';
 import { RESOURCES } from '../constants';
+import SelectProductModal from './SelectProductModal';
 
-const SelectProduct = ({ className }) =>
-  <Layout
-    className={cx(styles['main-content'], className)}
-    mediumCols={[ 6 ]}
-    largeCols={[ 4, 5, 3 ]}
-    nested
-  >
-    <Col className={styles['select-product-1']} >
-      <Text type={7} font='a'>What kind of insurance are you looking for?</Text>
-      <Spacer size={6} />
-      <Text type={10} font='b' italic>Get your free quote</Text>
-      <Spacer size={18} />
-      <Button variant='info' outline unflex>SELECT A PRODUCT </Button>
-    </Col>
+class SelectProduct extends React.Component {
+  constructor(props) {
+    super(props);
 
-    <Resource
-      resources={resourcesList[RESOURCES.INSURANCE_GUIDES]}
-    />
+    this.state = {
+      modalIsOpen: false
+    };
+  }
 
-    <Resource
-      resources={resourcesList[RESOURCES.GENIUS_CENTER]}
-    />
+  openModal = () => {
+    this.setState({
+      modalIsOpen: true
+    });
+  }
 
-    <Col className={styles['select-product-2']} >
-      <Text type={7} font='a'>Want to receive weekly life hacks & personal finance advice?</Text>
-      <Spacer size={18} />
-      <Button variant='info' outline unflex>Get our newsletter</Button>
-    </Col>
+  closeModal = () => {
+    this.setState({
+      modalIsOpen: false
+    });
+  }
 
-    <Resource
-      resources={resourcesList[RESOURCES.HELPFUL_RESOURCES]}
-    />
+  render() {
+    const { className } = this.props;
 
-    <Resource
-      className={styles['last-resource']}
-      resources={resourcesList[RESOURCES.REVIEWS]}
-    />
-  </Layout>
+    const modalProps = {
+      header: 'Get a Quote',
+      onRequestClose: this.closeModal,
+      isOpen: this.state.modalIsOpen
+    };
 
-  ;
+    return (
+      <Layout
+        className={cx(styles['main-content'], className)}
+        mediumCols={[ 6 ]}
+        largeCols={[ 4, 5, 3 ]}
+        nested
+      >
+        <Col className={styles['select-product-1']} >
+          <Text type={7} font='a'>What kind of insurance are you looking for?</Text>
+          <Spacer size={6} />
+          <Text type={10} font='b' italic>Get your free quote</Text>
+          <Spacer size={18} />
+          <Button
+            variant='info'
+            outline
+            unflex
+            onClick={this.openModal}
+          >
+            { buttons.selectProductButton.text }
+          </Button>
+          <SelectProductModal modalProps={modalProps} />
+        </Col>
+        <Resource
+          resources={resourcesList[RESOURCES.INSURANCE_GUIDES]}
+        />
+        <Resource
+          resources={resourcesList[RESOURCES.GENIUS_CENTER]}
+        />
+        <Col className={styles['select-product-2']} >
+          <Text type={7} font='a'>Want to receive weekly life hacks & personal finance advice?</Text>
+          <Spacer size={18} />
+          <Button
+            variant='info'
+            outline
+            unflex
+            linkAttrs={{ ...buttons.newsletterButton.attr }}
+          >
+            { buttons.newsletterButton.text }
+          </Button>
+        </Col>
+        <Resource
+          resources={resourcesList[RESOURCES.HELPFUL_RESOURCES]}
+        />
+        <Resource
+          className={styles['last-resource']}
+          resources={resourcesList[RESOURCES.REVIEWS]}
+        />
+      </Layout>
+    );
+  }
+}
 
 SelectProduct.propTypes = {
   className: PropTypes.string
