@@ -20,20 +20,17 @@ exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
   className={undefined}
 >
   <source
-    media="(max-width: 320px)"
-    srcSet="https://policygenius-images.imgix.net/small?w=320&h=768&fit=clip&auto=format&auto=compress"
+    media="(max-width: 767px)"
+    srcSet="https://policygenius-images.imgix.net/small?w=767&h=768&fit=clip&auto=format&auto=compress"
   />
   <source
-    media="(max-width: 768px)"
-    srcSet="https://policygenius-images.imgix.net/medium?w=768&h=768&fit=clip&auto=format&auto=compress"
-  />
-  <source
-    media="(min-width: 768px)"
-    srcSet="https://policygenius-images.imgix.net/large?w=1025&h=768&fit=clip&auto=format&auto=compress"
+    media="(max-width: 1024px)"
+    srcSet="https://policygenius-images.imgix.net/medium?w=1024&h=768&fit=clip&auto=format&auto=compress"
   />
   <img
     alt="default"
     className="img"
+    desktopImgixSrc="large"
     src="https://policygenius-images.imgix.net/default?w=768&h=768&fit=clip&auto=format&auto=compress"
     title="default"
   />
@@ -60,20 +57,17 @@ exports[`<Img /> renders correctly with given regular picture source props 1`] =
   className={undefined}
 >
   <source
-    media="(max-width: 320px)"
+    media="(max-width: 767px)"
     srcSet="small"
   />
   <source
-    media="(max-width: 768px)"
+    media="(max-width: 1024px)"
     srcSet="medium"
-  />
-  <source
-    media="(min-width: 768px)"
-    srcSet="large"
   />
   <img
     alt="default"
     className="img"
+    desktopSrc="large"
     src="default"
     title="default"
   />
