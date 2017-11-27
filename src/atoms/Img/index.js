@@ -37,13 +37,19 @@ function Img(props) {
     ...rest
   } = props;
 
-  const isPicture = mobileSrc ||
-    tabletSrc ||
-    mobileImgixSrc ||
-    tabletImgixSrc;
+  const isPicture = mobileSrc === undefined ||
+    tabletSrc === undefined ||
+    mobileImgixSrc === undefined ||
+    tabletImgixSrc === undefined;
 
   const classes = cx(
     styles['img'],
+    className,
+  );
+
+  const pictureClasses = cx(
+    (mobileImgixSrc === null || mobileSrc === null) && styles['hide-mobile-image'],
+    (tabletImgixSrc === null || tabletSrc === null) && styles['hide-tablet-image'],
     className,
   );
 
@@ -58,7 +64,7 @@ function Img(props) {
     const defaultSrc = src || imgixSrcStr(imgixSrc);
 
     return (
-      <picture className={className}>
+      <picture className={pictureClasses}>
         { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc, 767)} media='(max-width: 767px)' />}
         { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc, 1024)} media='(max-width: 1024px)' />}
         <img
@@ -130,19 +136,23 @@ Img.propTypes = {
   maxHeight: PropTypes.string,
 
   /**
-   * When used, will create a <source> for a <picture> element for mobile
+   * When used, will create a <source> for a <picture> element for mobile.
+   * If null, the image will not display on mobile
    */
   mobileSrc: PropTypes.string,
   /**
    * When used, will create a <source> for a <picture> element for tablet
+   * If null, the image will not display on tablet
    */
   tabletSrc: PropTypes.string,
   /**
    * Alternate image for mobile. When used, will create a <source> for a <picture> element for mobile. Will use imgix custom string.
+   * If null, the image will not display on mobile
    */
   mobileImgixSrc: PropTypes.string,
   /**
    * Alternate image for tablet. When used, will create a <source> for a <picture> element for tablet. Will use imgix. Will use imgix custom string.
+   * If null, the image will not display on tablet
    */
   tabletImgixSrc: PropTypes.string,
 };
