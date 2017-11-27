@@ -1,39 +1,40 @@
 const submenuItems = [
-  {
-    header: 'Advice',
-    subHeader: 'What Does Pet Insurance Cover?',
-    link: '/pet-insurance/learn/pet-insurance-101/',
-    imageSrc: 'https://res-4.cloudinary.com/policygenius/image/upload/v1/general/pet-guide-opt',
+ {
+    header: 'Compare Pet Insurance Policies',
+    items: [
+      { title: 'What’s Does Pet Insurance Cover?', url: '/pet-insurance/learn/what-does-pet-insurance-cover/', },
+      { title: 'Pet Insurance Policy Features', url: '/pet-insurance/learn/pet-insurance-policy-features/', },
+      { title: 'Pet Insurance Exclusions', url: '/pet-insurance/learn/what-doesnt-pet-insurance-cover/', },
+      { title: 'Pet Insurance FAQs', url: '/pet-insurance/learn/pet-insurance-faqs/', },
+    ]
   },
   {
-    header: 'Advice',
-    subHeader: 'Pet Insurance FAQ',
-    link: '/pet-insurance/learn/pet-insurance-faqs/',
-    imageSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/pet-faq-opt',
-  },
-  {
-    header: 'Advice',
-    subHeader: 'Typical Pet Insurance Policy',
-    link: '/pet-insurance/learn/pet-insurance-policy-features/',
-    imageSrc: 'https://res-4.cloudinary.com/policygenius/image/upload/v1/general/pet-policy-opt',
+    header: 'Helpful Resources',
+    items: [
+      { title: 'Pet Insurance Learn Center', url: '/pet-insurance/learn/', },
+      { title: 'Pet Insurance 101', url: '/pet-insurance/learn/pet-insurance-101/', },
+      { title: 'Who Needs Pet Insurance? ', url: '/pet-insurance/learn/who-needs-pet-insurance/', },
+      { title: 'Understanding Pet Insurance Expenses & Risks', url: '/pet-insurance/learn/understanding-pet-insurance-expenses-and-risks/', },
+    ]
   },
 ];
 
 export default {
   menu: {
     header: 'Pet Insurance',
+    shortHeader: 'Pet',
     link: '/pet-insurance/',
     activeName: 'pet-insurance',
+    columns: 2,
   },
   intro: {
-    cta: 'Get A Free Quote',
-
-    imgSrc: 'https://res-4.cloudinary.com/policygenius/image/upload/v1/general/pet',
+    cta: 'Start Shopping Now',
+    icon: 'petColor3X',
     linkHref: '/pet-insurance/',
   },
   list: {
     alt: 'Pet Insurance',
     items: submenuItems,
-    type: 'articles',
+    type: 'links',
   }
 };
