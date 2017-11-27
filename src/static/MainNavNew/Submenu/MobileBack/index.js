@@ -25,8 +25,8 @@ const MobileBack = props =>
       >
         <Icon
           icon='backRebrand'
-          height='25px'
-          width='20px'
+          height='20px'
+          width='15px'
           className={styles['mobile-back-icon']}
         />
       </div>

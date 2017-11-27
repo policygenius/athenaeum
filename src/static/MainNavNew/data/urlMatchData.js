@@ -1,18 +1,14 @@
 const urlMatchData = [
   {
-    path: 'insurance-checkup-and-advice',
-    active: 'insurance-checkup',
-  },
-  {
-    path: 'blog',
+    regex: new RegExp(/^\/blog/),
     active: 'magazine',
   },
   {
-    path: 'about',
+    regex: new RegExp(/^\/about/),
     active: 'about',
   },
   {
-    path: 'careers',
+    regex: new RegExp(/^\/careers/),
     active: 'about',
   },
 ];
