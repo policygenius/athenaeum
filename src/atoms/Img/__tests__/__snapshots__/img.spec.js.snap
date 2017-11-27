@@ -1,16 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Img /> renders correctly with default props 1`] = `
-<picture
-  className=""
->
-  <img
-    alt="photos alexander dummer 150646"
-    className="img"
-    src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=768&h=768&fit=clip&auto=format&auto=compress"
-    title="photos alexander dummer 150646"
-  />
-</picture>
+<img
+  alt="photos alexander dummer 150646"
+  className="img"
+  sizes="100vw"
+  src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=768&h=768&fit=clip&auto=format&auto=compress"
+  srcSet="
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=1025&h=1025&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 1026w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=768&h=768&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 769w,
+  https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?w=320&h=320&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 321w
+"
+  title="photos alexander dummer 150646"
+/>
 `;
 
 exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
@@ -36,16 +38,18 @@ exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
 `;
 
 exports[`<Img /> renders correctly with given imgix props 1`] = `
-<picture
-  className="cool-class"
->
-  <img
-    alt="photos are cool"
-    className="img"
-    src="https://policygenius-images.imgix.net/photos/are-cool.jpg?w=768&h=768&fit=clip&auto=format&auto=compress"
-    title="photos are cool"
-  />
-</picture>
+<img
+  alt="photos are cool"
+  className="img cool-class"
+  sizes="100vw"
+  src="https://policygenius-images.imgix.net/photos/are-cool.jpg?w=768&h=768&fit=clip&auto=format&auto=compress"
+  srcSet="
+  https://policygenius-images.imgix.net/photos/are-cool.jpg?w=10&h=20&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 1026w,
+  https://policygenius-images.imgix.net/photos/are-cool.jpg?w=10&h=20&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 769w,
+  https://policygenius-images.imgix.net/photos/are-cool.jpg?w=10&h=20&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data 321w
+"
+  title="photos are cool"
+/>
 `;
 
 exports[`<Img /> renders correctly with given regular picture source props 1`] = `
@@ -71,16 +75,14 @@ exports[`<Img /> renders correctly with given regular picture source props 1`] =
 `;
 
 exports[`<Img /> renders correctly with given regular props 1`] = `
-<picture
-  className="cool-class"
->
-  <img
-    alt="alt"
-    className="img"
-    src="some-url"
-    title="title"
-  />
-</picture>
+<img
+  alt="alt"
+  className="img cool-class"
+  sizes="100vw"
+  src="some-url"
+  srcSet="some-url"
+  title="title"
+/>
 `;
 
 exports[`<Img /> renders with hide classes when null src props are provided 1`] = `
@@ -90,7 +92,6 @@ exports[`<Img /> renders with hide classes when null src props are provided 1`] 
   <img
     alt="default"
     className="img"
-    desktopImgixSrc="large"
     src="https://policygenius-images.imgix.net/default?w=768&h=768&fit=clip&auto=format&auto=compress"
     title="default"
   />
