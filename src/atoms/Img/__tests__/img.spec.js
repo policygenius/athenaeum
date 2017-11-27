@@ -77,7 +77,6 @@ describe('<Img />', () => {
     const props = {
       mobileImgixSrc: null,
       tabletImgixSrc: null,
-      desktopImgixSrc: 'large',
       imgixSrc: 'default'
     };
 

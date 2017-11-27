@@ -37,10 +37,10 @@ function Img(props) {
     ...rest
   } = props;
 
-  const isPicture = mobileSrc === undefined ||
-    tabletSrc === undefined ||
-    mobileImgixSrc === undefined ||
-    tabletImgixSrc === undefined;
+  const isPicture = mobileSrc !== undefined ||
+    tabletSrc !== undefined ||
+    mobileImgixSrc !== undefined ||
+    tabletImgixSrc !== undefined;
 
   const classes = cx(
     styles['img'],
