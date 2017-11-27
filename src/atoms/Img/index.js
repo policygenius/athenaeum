@@ -32,19 +32,15 @@ function Img(props) {
     maxHeight = Infinity,
     mobileSrc,
     tabletSrc,
-    desktopSrc,
     mobileImgixSrc,
     tabletImgixSrc,
-    desktopImgixSrc,
     ...rest
   } = props;
 
   const isPicture = mobileSrc ||
     tabletSrc ||
-    desktopSrc ||
     mobileImgixSrc ||
-    tabletImgixSrc ||
-    desktopImgixSrc;
+    tabletImgixSrc;
 
   const classes = cx(
     styles['img'],
@@ -63,9 +59,8 @@ function Img(props) {
 
     return (
       <picture className={className}>
-        { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc, 320)} media='(max-width: 320px)' />}
-        { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc, 768)} media='(max-width: 768px)' />}
-        { ( desktopImgixSrc || desktopSrc ) && <source srcSet={desktopSrc || imgixSrcStr(desktopImgixSrc, 1025)} media='(min-width: 768px)' />}
+        { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc, 767)} media='(max-width: 767px)' />}
+        { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc, 1024)} media='(max-width: 1024px)' />}
         <img
           className={styles.img}
           alt={alt || createName(src || imgixSrc)}
@@ -143,21 +138,13 @@ Img.propTypes = {
    */
   tabletSrc: PropTypes.string,
   /**
-   * When used, will create a <source> for a <picture> element for desktop
-   */
-  desktopSrc: PropTypes.string,
-  /**
-   * When used, will create a <source> for a <picture> element for mobile. Will use imgix custom string.
+   * Alternate image for mobile. When used, will create a <source> for a <picture> element for mobile. Will use imgix custom string.
    */
   mobileImgixSrc: PropTypes.string,
   /**
-   * When used, will create a <source> for a <picture> element for tablet. Will use imgix. Will use imgix custom string.
+   * Alternate image for tablet. When used, will create a <source> for a <picture> element for tablet. Will use imgix. Will use imgix custom string.
    */
   tabletImgixSrc: PropTypes.string,
-  /**
-   * When used, will create a <source> for a <picture> element for desktop. Will use imgix. Will use imgix custom string.
-   */
-  desktopImgixSrc: PropTypes.string,
 };
 
 Img.defaultProps = {
