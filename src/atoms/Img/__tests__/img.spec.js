@@ -72,4 +72,17 @@ describe('<Img />', () => {
 
     expect(actual).toMatchSnapshot();
   });
+
+  it('renders with hide classes when null src props are provided', () => {
+    const props = {
+      mobileImgixSrc: null,
+      tabletImgixSrc: null,
+      desktopImgixSrc: 'large',
+      imgixSrc: 'default'
+    };
+
+    const actual = renderer.create(<Img {...props} />).toJSON();
+
+    expect(actual).toMatchSnapshot();
+  });
 });
