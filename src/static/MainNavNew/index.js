@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import reduce from 'lodash/reduce';
 
 import styles from './main_nav.module.scss';
 
@@ -8,6 +9,8 @@ import Logo from './Logo';
 import Menu from './Menu';
 import Search from './Search';
 import SimpleNav from './SimpleNav';
+
+import urlMatchData from './data/urlMatchData';
 
 class MainNavNew extends Component {
   constructor() {
@@ -22,7 +25,19 @@ class MainNavNew extends Component {
   }
 
   componentDidMount() {
-    this.setActivePrimaryTab('insurance');
+    const currentPath = window.location.pathname;
+
+    const activeTab = reduce(urlMatchData, (res, data) => {
+      let active = res;
+
+      if (data.regex.test(currentPath)) {
+        active = data.active;
+      }
+
+      return active;
+    }, 'insurance');
+
+    this.setActivePrimaryTab(activeTab);
   }
 
   setActivePrimaryTab = (activePrimaryTab) => {

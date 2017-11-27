@@ -69,7 +69,7 @@ class MagazineDisplay extends Component {
         })
       ])
         .then((data) => {
-          const formattedPosts = (idx) => data[idx].posts.map((p) => {
+          const formattedPosts = idx => data[idx].posts.map((p) => {
             const post = p;
 
             post.url = fullBlogUrl(p.url);

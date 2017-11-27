@@ -35,6 +35,7 @@ function ArticleImage(props) {
         type={8}
         font='a'
         color='neutral-1'
+        className={styles['article-image-header']}
       >
         { header }
       </Text>

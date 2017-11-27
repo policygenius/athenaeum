@@ -100,6 +100,7 @@ class SubmenuItem extends React.Component {
     const headerClasses = classnames(
       styles['item-header-text'],
       activeSubTab === menu.activeName && styles.active,
+      menu.shortHeader && styles['item-long-header'],
     );
 
     const linkClasses = classnames(
@@ -127,7 +128,7 @@ class SubmenuItem extends React.Component {
             type={10}
             font='b'
             color='neutral-1'
-            className={classnames(headerClasses, styles['item-long-header'])}
+            className={headerClasses}
           >
             {menu.header}
           </Text>

@@ -2,6 +2,12 @@
   width: 100%;
   padding: ru(1);
   border-bottom: 1px solid color('neutral-6');
+
+  &:hover {
+    .article-image-header {
+      color: color('primary-1');
+    }
+  }
 }
 
 .article-image-figure {
