@@ -12,12 +12,7 @@ function getCardText(cardText) {
     );
   }
 
-  return React.cloneElement(
-    cardText,
-    {
-      className: styles['text'],
-    }
-  );
+  return cardText;
 }
 
 function AddCard( props ) {
