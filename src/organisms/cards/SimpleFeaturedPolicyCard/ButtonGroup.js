@@ -15,28 +15,24 @@ function ButtonGroup(props) {
   return (
     <div className={styles['button-group']}>
       <Button
+        variant='action'
         onClick={onDetails}
       >
         View Policy
       </Button>
-      {
-        onCompare &&
-        <div>
-          <Spacer spacer={2} />
-          <Button
-            onClick={onCompare}
-          >
-            Compare
-          </Button>
-        </div>
-      }
+
+      <Spacer spacer={2} />
+
+      <Button onClick={onCompare} >
+        Compare
+      </Button>
     </div>
   );
 }
 
 ButtonGroup.propTypes = {
-  onDetails: PropTypes.func.isRequired,
-  onCompare: PropTypes.func
+  onDetails: PropTypes.func,
+  onCompare: PropTypes.func,
 };
 
 export default ButtonGroup;

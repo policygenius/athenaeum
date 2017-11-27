@@ -2,19 +2,19 @@ const submenuItems = [
   {
     header: 'Advice',
     subHeader: 'What Does Pet Insurance Cover?',
-    link: '/pet-insurance/guide/',
+    link: '/pet-insurance/learn/pet-insurance-101/',
     imageSrc: 'https://res-4.cloudinary.com/policygenius/image/upload/v1/general/pet-guide-opt',
   },
   {
     header: 'Advice',
     subHeader: 'Pet Insurance FAQ',
-    link: '/pet-insurance/guide/faqs',
+    link: '/pet-insurance/learn/pet-insurance-faqs/',
     imageSrc: 'https://res-2.cloudinary.com/policygenius/image/upload/v1/general/pet-faq-opt',
   },
   {
     header: 'Advice',
     subHeader: 'Typical Pet Insurance Policy',
-    link: '/pet-insurance/guide/common-policy-features',
+    link: '/pet-insurance/learn/pet-insurance-policy-features/',
     imageSrc: 'https://res-4.cloudinary.com/policygenius/image/upload/v1/general/pet-policy-opt',
   },
 ];
