@@ -29,7 +29,7 @@ const items = [
   },
   {
     menu: {
-      header: 'Legal',
+      header: 'FAQ',
       link: '/about/faq',
       activeName: 'legal',
     }

@@ -70,19 +70,31 @@ class SubmenuItem extends React.Component {
     return null;
   }
 
-  // onClick needed for tablet devices to open display menu
-  tabletOnClick = () => {
+  getMouseEvent = (value) => {
+    if (window.ontouchstart) return false;
     const {
+      setActiveSubTab,
+    } = this.props;
+
+    return setActiveSubTab(value)
+  }
+
+  // onClick needed for tablet devices to open display menu
+  tabletOnClick = (e) => {
+    const {
+      activeSubTab,
       setActiveSubTab,
       item
     } = this.props;
 
-    return (e) => {
-      e.stopPropagation();
-      setActiveSubTab(item.menu.activeName);
-
+    e.stopPropagation();
+    if (!!activeSubTab) {
+      setActiveSubTab(null);
       return false;
-    };
+    }
+
+    setActiveSubTab(item.menu.activeName);
+    return false;
   };
 
   render() {
@@ -115,9 +127,9 @@ class SubmenuItem extends React.Component {
     return (
       <div
         className={styles.item}
-        onClick={this.tabletOnClick()}
-        onMouseEnter={() => setActiveSubTab(menu.activeName)}
-        onMouseLeave={() => setActiveSubTab(null)}
+        onClick={this.tabletOnClick}
+        onMouseEnter={() => this.getMouseEvent(menu.activeName)}
+        onMouseLeave={() => this.getMouseEvent(null)}
       >
         <LinkWrapper
           className={linkClasses}

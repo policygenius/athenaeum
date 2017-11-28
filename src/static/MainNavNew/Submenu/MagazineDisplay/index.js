@@ -116,9 +116,9 @@ class MagazineDisplay extends Component {
         if (item.type === 'list') {
           return (
             <Col
-              fullwidth
               key={item.header}
               className={styles['display-list']}
+              fullwidth={mobileCollapsedMenu}
             >
               <LinkList
                 item={item}
