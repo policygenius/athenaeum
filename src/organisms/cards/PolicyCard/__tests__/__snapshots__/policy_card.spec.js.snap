@@ -5,179 +5,183 @@ exports[`<PolicyCard /> renders correctly 1`] = `
   <div
     className="mobile-card"
   >
-    <div
-      className="featured-policy-card"
-    >
+    <div>
       <div
-        className="content"
+        className="featured-policy-card"
       >
         <div
-          className="top-2 top-4"
-        />
-        <div
-          className="premium"
+          className="content"
         >
-          <strong
-            className="primary-3 type-a-3-bold inherit"
+          <div
+            className="top-2 top-4"
+          />
+          <div
+            className="premium"
           >
-            $19.80
             <strong
-              className="primary-3 type-a-11-bold inherit"
+              className="primary-3 type-a-3-bold inherit"
             >
-              /MO
+              $19.80
+              <strong
+                className="primary-3 type-a-11-bold inherit"
+              >
+                /MO
+              </strong>
             </strong>
-          </strong>
-          <div
-            className="top-1"
-          />
-        </div>
-        <div
-          className="top-6"
-        />
-        <div
-          className="carrier-logo"
-        >
-          <div />
-        </div>
-        <div
-          className="top-6"
-        />
-        <div
-          className="policy-info"
-        >
-          <div>
             <div
-              className="layout policy-info-item"
-              id={undefined}
-              style={undefined}
-            >
-              <div
-                className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-                onClick={undefined}
-                style={undefined}
-              >
-                <span
-                  className="primary-3 type-b-10-medium inherit"
-                >
-                  label
-                </span>
-                <span
-                  className="tooltip-wrapper policy-info-tooltip-icon"
-                  onClick={[Function]}
-                >
-                  <span
-                    className="icon-wrapper tooltip"
-                    onClick={undefined}
-                    style={
-                      Object {
-                        "height": undefined,
-                        "width": undefined,
-                      }
-                    }
-                  />
-                  <span
-                    className="hover-message"
-                  >
-                    <div />
-                  </span>
-                </span>
-              </div>
-              <div
-                className="col col-sm-6 border-neutral-6"
-                onClick={undefined}
-                style={undefined}
-              >
-                <strong
-                  className="primary-3 type-a-8-bold inherit"
-                >
-                  Some policy
-                </strong>
-              </div>
-            </div>
-            <div
-              className="top-2"
-            />
-          </div>
-          <div>
-            <div
-              className="layout policy-info-item"
-              id={undefined}
-              style={undefined}
-            >
-              <div
-                className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-                onClick={undefined}
-                style={undefined}
-              >
-                <span
-                  className="primary-3 type-b-10-medium inherit"
-                >
-                  label
-                </span>
-                <span
-                  className="tooltip-wrapper policy-info-tooltip-icon"
-                  onClick={[Function]}
-                >
-                  <span
-                    className="icon-wrapper tooltip"
-                    onClick={undefined}
-                    style={
-                      Object {
-                        "height": undefined,
-                        "width": undefined,
-                      }
-                    }
-                  />
-                  <span
-                    className="hover-message"
-                  >
-                    <div />
-                  </span>
-                </span>
-              </div>
-              <div
-                className="col col-sm-6 border-neutral-6"
-                onClick={undefined}
-                style={undefined}
-              >
-                <strong
-                  className="primary-3 type-a-8-bold inherit"
-                >
-                  A+
-                </strong>
-              </div>
-            </div>
-            <div
-              className="top-2"
+              className="top-1"
             />
           </div>
           <div
-            className="top-4"
+            className="top-6"
           />
-        </div>
-        <div
-          className="button-group"
-        >
-          <button
-            className="button"
-            disabled={undefined}
-            onClick={[Function]}
-            type="button"
+          <div
+            className="carrier-logo"
           >
-            View Policy
-          </button>
-          <div>
+            <div />
+          </div>
+          <div
+            className="top-6"
+          />
+          <div
+            className="policy-info"
+          >
+            <div>
+              <div
+                className="layout policy-info-item"
+                id={undefined}
+                style={undefined}
+              >
+                <div
+                  className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+                  onClick={undefined}
+                  style={undefined}
+                >
+                  <span
+                    className="primary-3 type-b-10-medium inherit"
+                  >
+                    label
+                  </span>
+                  <span
+                    className="tooltip-wrapper policy-info-tooltip-icon"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="icon-wrapper tooltip"
+                      onClick={undefined}
+                      style={
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        }
+                      }
+                    />
+                    <span
+                      className="hover-message"
+                    >
+                      <div />
+                    </span>
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  className="col col-sm-6 border-neutral-6"
+                  onClick={undefined}
+                  style={undefined}
+                >
+                  <strong
+                    className="primary-3 type-a-8-bold inherit"
+                  >
+                    Some policy
+                  </strong>
+                </div>
+              </div>
+              <div
+                className="top-2"
+              />
+            </div>
+            <div>
+              <div
+                className="layout policy-info-item"
+                id={undefined}
+                style={undefined}
+              >
+                <div
+                  className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+                  onClick={undefined}
+                  style={undefined}
+                >
+                  <span
+                    className="primary-3 type-b-10-medium inherit"
+                  >
+                    label
+                  </span>
+                  <span
+                    className="tooltip-wrapper policy-info-tooltip-icon"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="icon-wrapper tooltip"
+                      onClick={undefined}
+                      style={
+                        Object {
+                          "height": undefined,
+                          "width": undefined,
+                        }
+                      }
+                    />
+                    <span
+                      className="hover-message"
+                    >
+                      <div />
+                    </span>
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  className="col col-sm-6 border-neutral-6"
+                  onClick={undefined}
+                  style={undefined}
+                >
+                  <strong
+                    className="primary-3 type-a-8-bold inherit"
+                  >
+                    A+
+                  </strong>
+                </div>
+              </div>
+              <div
+                className="top-2"
+              />
+            </div>
             <div
-              className="top-2"
+              className="top-4"
             />
+          </div>
+          <div
+            className="button-group"
+          >
             <button
               className="button outline"
               disabled={undefined}
               onClick={[Function]}
               type="button"
             >
-              Compare
+              View Policy
             </button>
+            <div>
+              <div
+                className="top-2"
+              />
+              <button
+                className="button outline"
+                disabled={undefined}
+                onClick={[Function]}
+                type="button"
+              >
+                Compare
+              </button>
+            </div>
           </div>
         </div>
       </div>

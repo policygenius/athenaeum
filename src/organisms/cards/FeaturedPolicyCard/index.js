@@ -37,43 +37,46 @@ function FeaturedPolicyCard(props) {
   const formattedPremium = accounting.formatMoney(premium.price);
 
   return (
-    <div className={classnames(...classes)}>
-      <div className={contentClasses}>
-        { header && header }
-        <Spacer small />
-        { premium.price ?
-          <div className={styles['premium']}>
-            <Text
-              type={3}
-              font='a'
-              semibold
-            >
-              {formattedPremium}<Text tag='span' type={11} font='a' semibold>{`/${premium.format.toUpperCase()}`}</Text>
-            </Text>
+    <div>
+      { policyHat && <div className={styles['policy-hat']} /> }
+      <div className={classnames(...classes)}>
+        <div className={styles['content']}>
+          { header && header }
+          <Spacer small />
+          { premium.price ?
+            <div className={styles['premium']}>
+              <Text
+                type={3}
+                font='a'
+                semibold
+              >
+                {formattedPremium}<Text tag='span' type={11} font='a' semibold>{`/${premium.format.toUpperCase()}`}</Text>
+              </Text>
 
-            <Spacer spacer={1} />
+              <Spacer spacer={1} />
 
-            {discount && discount}
-          </div>
+              {discount && discount}
+            </div>
             :
-          <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
+            <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
           }
 
-        <Spacer spacer={6} />
+          <Spacer spacer={6} />
 
-        <div className={styles['carrier-logo']}>
-          { carrierLogo }
+          <div className={styles['carrier-logo']}>
+            { carrierLogo }
+          </div>
+
+          <Spacer spacer={6} />
+
+          { information && <PolicyInformation information={information} /> }
+
+          <ButtonGroup
+            onDetails={onDetails}
+            onCompare={onCompare}
+            continueCTAText={continueCTAText}
+          />
         </div>
-
-        <Spacer spacer={6} />
-
-        { information && <PolicyInformation information={information} /> }
-
-        <ButtonGroup
-          onDetails={onDetails}
-          onCompare={onCompare}
-          continueCTAText={continueCTAText}
-        />
       </div>
     </div>
   );
