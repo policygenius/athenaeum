@@ -31,7 +31,7 @@ function PlaybackCardWrapper(props) {
         mediumCols={[ 6 ]}
         fullwidth
       >
-        <div className={styles['logo-wrapper']}>{logo}</div>
+        <div className={classnames(styles['logo-wrapper'], styles['playback-wrapper-logo'])}>{logo}</div>
         <Col className={styles['amount']}>
           <CurrencyAmount
             color='secondary-2'

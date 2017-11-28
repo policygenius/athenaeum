@@ -85,6 +85,10 @@
 
   .playback-wrapper {
     padding: ru(1);
+
+     &-logo {
+       text-align: center;
+     }
   }
 
   .amount {
