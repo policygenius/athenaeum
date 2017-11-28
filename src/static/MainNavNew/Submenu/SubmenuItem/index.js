@@ -29,6 +29,15 @@ class SubmenuItem extends React.Component {
     return () => true;
   }
 
+  getMouseEvent = (value) => {
+    if (window.ontouchstart) return false;
+    const {
+      setActiveSubTab,
+    } = this.props;
+
+    return setActiveSubTab(value);
+  }
+
   get submenuDisplayType() {
     const {
       displayType,
@@ -70,15 +79,6 @@ class SubmenuItem extends React.Component {
     return null;
   }
 
-  getMouseEvent = (value) => {
-    if (window.ontouchstart) return false;
-    const {
-      setActiveSubTab,
-    } = this.props;
-
-    return setActiveSubTab(value)
-  }
-
   // onClick needed for tablet devices to open display menu
   tabletOnClick = (e) => {
     const {
@@ -88,12 +88,14 @@ class SubmenuItem extends React.Component {
     } = this.props;
 
     e.stopPropagation();
-    if (!!activeSubTab) {
+    if (activeSubTab) {
       setActiveSubTab(null);
+
       return false;
     }
 
     setActiveSubTab(item.menu.activeName);
+
     return false;
   };
 
@@ -106,7 +108,6 @@ class SubmenuItem extends React.Component {
       displayType,
       activeSubTab,
       activeName,
-      setActiveSubTab,
     } = this.props;
 
     const headerClasses = classnames(
