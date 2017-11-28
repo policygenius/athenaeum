@@ -31,6 +31,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'petColor3X',
     linkHref: '/pet-insurance/',
+    secondaryLinkHref: '/pet-insurance/learn',
   },
   list: {
     alt: 'Pet Insurance',

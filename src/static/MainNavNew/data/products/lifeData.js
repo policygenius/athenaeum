@@ -43,6 +43,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'lifeColor3X',
     linkHref: '/life-insurance/',
+    secondaryLinkHref: '/life-insurance/learn',
   },
   list: {
     key: 'life-submenu-list-',

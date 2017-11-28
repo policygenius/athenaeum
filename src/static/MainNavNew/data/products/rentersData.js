@@ -45,6 +45,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'rentersColor3X',
     linkHref: '/renters-insurance/',
+    secondaryLinkHref: '/renters-insurance/learn',
   },
   list: {
     alt: 'Renters Insurance',
