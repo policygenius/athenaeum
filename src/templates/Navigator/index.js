@@ -117,6 +117,7 @@ function Navigator(props) {
                 <Sticky
                   enabled
                   bottomBoundary='#mobile-bottom'
+                  innerZ={10}
                 >
                   { mobileHeader }
                 </Sticky>
