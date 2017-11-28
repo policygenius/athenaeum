@@ -44,6 +44,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'disabilityColor3X',
     linkHref: '/long-term-disability-insurance/',
+    secondaryLinkHref: '/long-term-disability-insurance/learn',
   },
   list: {
     key: 'disability-submenu-list-',

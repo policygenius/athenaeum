@@ -42,6 +42,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'healthColor3X',
     linkHref: '/health-insurance/',
+    secondaryLinkHref: '/health-insurance/learn',
   },
   list: {
     key: 'health-submenu-list-',

@@ -65,7 +65,7 @@ function ProductIntro(props) {
         {/* Need correct link for the Guide */}
         <LinkWrapper
           type='secondary'
-          href={intro.linkHref}
+          href={intro.secondaryLinkHref}
           className={styles['product-intro-link']}
         >
           <Text type={10} font='b'>
