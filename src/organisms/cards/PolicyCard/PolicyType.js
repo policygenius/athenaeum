@@ -14,16 +14,18 @@ export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
         <div>
           <Hide hideOn='mobile'>
             <Text
-              type={7}
-              color='neutral-3'
-              semibold
+              color='neutral-2'
+              size={11}
+              font='a'
+              bold
+              spaced
             >
-              { label }
+              { label.toUpperCase() }
             </Text>
           </Hide>
           <Text
-            color='neutral-2'
-            type={5}
+            type={7}
+            font='a'
             semibold
             className={styles['policy-name']}
           >

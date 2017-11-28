@@ -3,7 +3,7 @@ $footer: #f6f6f6;
 
 @mixin section($grow, $basis, $centered) {
   flex: #{$grow} 1 #{$basis};
-  padding: 0 ru(1.25);
+  padding: 0 ru(1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +104,11 @@ $footer: #f6f6f6;
   cursor: help;
 }
 
+.view-policy {
+  width: rem-calc(160px);
+  margin: auto;
+}
+
 /* IE 11 hack to make sure svg does not take up 100% height */
 .svg-text {
   max-height: ru(1);
@@ -185,11 +190,11 @@ $footer: #f6f6f6;
   }
 
   .policy-type {
-    @include section(1, 25%, false);
+    @include section(1, 18%, false);
   }
 
   .policy-info {
-    @include section(1, 25%, false);
+    @include section(1, 32%, false);
   }
 
   .policy-info > strong {
@@ -201,8 +206,7 @@ $footer: #f6f6f6;
   }
 
   .policy-info-label {
-    display: inline-block;
-    width: ru(5);
+    margin-bottom: ru(.5);
   }
 
   .actions {

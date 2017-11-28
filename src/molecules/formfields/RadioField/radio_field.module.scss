@@ -1,6 +1,6 @@
-$size: ru(.75);
+$size: ru(1);
 $gap: ru(.5);
-$checked-size: ru(.5);
+$checked-size: rem-calc(14px);
 
 .radio-field {
   @include typography-b-8;
@@ -20,7 +20,6 @@ $checked-size: ru(.5);
     height: $size;
     overflow: hidden;
     border: 1px solid color('neutral-3');
-    background-color: color('primary-2');
     border-radius: 50%;
     content: '';
   }

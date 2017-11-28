@@ -1,11 +1,11 @@
 $card-border: 1px solid #dfdfdf;
-$header-fill: #f5f5f5;
 $radius: rem-calc(8px);
 $details-link-color: #4a4a4a;
 $details-link-border: 1px solid #b2b2b2;
+$policy-hat-height: ru(.25);
+$content-margin: ru(1);
 
 .featured-policy-card {
-  border-radius: $radius;
   border: $card-border;
   background-color: color('neutral-8');
   display: flex;
@@ -27,27 +27,8 @@ $details-link-border: 1px solid #b2b2b2;
   }
 }
 
-.header {
-  padding: ru(.5) ru(1);
-  background-color: $header-fill;
-  display: flex;
-  align-items: center;
-  border-bottom: $card-border;
-  border-radius: $radius $radius 0 0;
-}
-
-.header-item {
-  display: flex;
-  flex-wrap: wrap;
-  padding-right: ru(.5);
-
-  &:last-child {
-    padding-right: 0;
-  }
-}
-
 .content {
-  padding: ru(1);
+  margin: $content-margin;
   background-color: color('neutral-8');
   border-radius: $radius;
   display: flex;
@@ -55,6 +36,21 @@ $details-link-border: 1px solid #b2b2b2;
   align-items: center;
   justify-content: flex-start;
   flex-grow: 1;
+
+  &.policy-hat {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      height: $policy-hat-height;
+      background: color('secondary-4');
+      width: 100%;
+      top: calc(-#{$policy-hat-height} + -#{$content-margin});
+      left: 0;
+    }
+  }
 }
 
 .premium {
@@ -63,11 +59,13 @@ $details-link-border: 1px solid #b2b2b2;
 
 .carrier-logo {
   max-width: rem-calc(150px);
-  max-height: rem-calc(44px);
+  height: rem-calc(44px);
+  display: flex;
+  align-items: center;
 
   img {
     max-width: rem-calc(150px);
-    max-height: rem-calc(44px);
+    max-height: 100%;
   }
 }
 
@@ -79,7 +77,7 @@ $details-link-border: 1px solid #b2b2b2;
   }
 
   &-tooltip-group {
-    display: flex;
+    text-align: right;
     align-items: center;
   }
 
