@@ -1,10 +1,10 @@
 const mobileRange = {
   lower: '0em',
-  upper: '47.9375em',
+  upper: '48em',
 };
 
 const tabletRange = {
-  lower: '48em',
+  lower: '48.0625em',
   upper: '64em',
 };
 
@@ -14,7 +14,7 @@ const desktopRange = {
 };
 
 const xLargeRange = {
-  lower: '80.026em',
+  lower: '80.0625em',
   upper: '90em',
 };
 
