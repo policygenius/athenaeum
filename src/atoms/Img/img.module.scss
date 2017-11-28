@@ -14,3 +14,19 @@
   }
 }
 
+
+// For lazyload
+// https://github.com/aFarkas/lazysizes
+/* fade image in after load */
+/* stylelint-disable selector-pseudo-class-no-unknown */
+:global {
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+  }
+
+  .lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+}

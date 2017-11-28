@@ -49,10 +49,11 @@ describe('<Img />', () => {
 
   it('renders correctly with given regular picture source props', () => {
     const props = {
+      alt: 'Alternative',
       mobileSrc: 'small',
       tabletSrc: 'medium',
       desktopSrc: 'large',
-      src: 'default'
+      src: 'default.jpg'
     };
 
     const actual = renderer.create(<Img {...props} />).toJSON();
@@ -65,7 +66,7 @@ describe('<Img />', () => {
       mobileImgixSrc: 'small',
       tabletImgixSrc: 'medium',
       desktopImgixSrc: 'large',
-      imgixSrc: 'default'
+      imgixSrc: 'default.jpg'
     };
 
     const actual = renderer.create(<Img {...props} />).toJSON();
@@ -77,7 +78,7 @@ describe('<Img />', () => {
     const props = {
       mobileImgixSrc: null,
       tabletImgixSrc: null,
-      imgixSrc: 'default'
+      imgixSrc: 'default.jpg'
     };
 
     const actual = renderer.create(<Img {...props} />).toJSON();

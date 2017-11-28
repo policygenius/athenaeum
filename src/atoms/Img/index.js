@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import 'lazysizes/lazysizes.min';
 import styles from './img.module.scss';
 
 const strParams = '&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data';
@@ -16,9 +17,15 @@ const imgixSrcset = ( src, maxWidth = Infinity, maxHeight = Infinity ) => `
   https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 320)}&h=${Math.min(maxHeight, 320)}${strParams} 321w
 `;
 
-const createName = str => typeof str === 'string'
-  ? str.replace(/\..+/, '').replace(/\W/g, ' ').trim()
-  : 'PolicyGenius';
+const createName = (str) => {
+  let filename = '';
+
+  if (typeof str === 'string') {
+    filename = str.match(/([^/]*)(?=\.)/);
+  }
+
+  return filename ? filename[0].replace(/(\W+|_)/g, ' ').trim() : 'PolicyGenius';
+};
 
 function Img(props) {
   const {
@@ -44,6 +51,7 @@ function Img(props) {
 
   const classes = cx(
     styles['img'],
+    'lazyload',
     className,
   );
 
@@ -60,6 +68,7 @@ function Img(props) {
     return imgixSrcset(`${imgixSrc}`, maxWidth, maxHeight);
   })();
 
+  // TODO: Consider adding a noscript tag to handle a situation where lazysizes doesn't work.
   if (isPicture) {
     const defaultSrc = src || imgixSrcStr(imgixSrc);
 
@@ -68,10 +77,10 @@ function Img(props) {
         { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc, 767)} media='(max-width: 767px)' />}
         { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc, 1024)} media='(max-width: 1024px)' />}
         <img
-          className={styles.img}
+          className={cx(styles.img, 'lazyload')}
           alt={alt || createName(src || imgixSrc)}
           title={title || createName(src || imgixSrc)}
-          src={defaultSrc}
+          data-src={defaultSrc}
           {...rest}
         />
       </picture>
@@ -83,9 +92,9 @@ function Img(props) {
       className={classes}
       alt={alt || createName(src || imgixSrc)}
       title={title || createName(src || imgixSrc)}
-      src={src || imgixSrcStr(imgixSrc)}
-      srcSet={srcset}
-      sizes='100vw'
+      data-src={src || imgixSrcStr(imgixSrc)}
+      data-srcset={srcset}
+      data-sizes='auto'
       {...rest}
     />
   );
