@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
+<div
+  className="featured-policy-card"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="premium"
+    >
+      <strong
+        className="bold neutral-1 type-b-2-medium inherit"
+      >
+        $19.80
+         
+        <strong
+          className="bold neutral-2 type-b-7-medium inherit"
+        >
+          /MO
+        </strong>
+      </strong>
+      <div
+        className="top-1"
+      />
+    </div>
+    <div
+      className="top-6"
+    />
+    <div
+      className="carrier-logo"
+    >
+      <div />
+    </div>
+    <div
+      className="top-6"
+    />
+    <div
+      className="button-group"
+    >
+      <button
+        className="button action"
+        disabled={undefined}
+        onClick={[Function]}
+        type="button"
+      >
+        View Policy
+      </button>
+      <div
+        className="top-2"
+      />
+      <button
+        className="button"
+        disabled={undefined}
+        onClick={undefined}
+        type="button"
+      >
+        Compare
+      </button>
+    </div>
+  </div>
+</div>
+`;

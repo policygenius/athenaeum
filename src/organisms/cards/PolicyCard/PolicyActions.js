@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import accounting from 'accounting';
-import classnames from 'classnames';
 import Text from 'atoms/Text';
 import Layout from 'atoms/Layout';
 import Button from 'atoms/Button';
@@ -24,7 +23,6 @@ export const PolicyActions = (props) => {
   const {
     premium,
     discount,
-    onContinue,
     onDetails,
     onCompare
   } = props;
@@ -46,26 +44,9 @@ export const PolicyActions = (props) => {
         <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
       }
       <Spacer spacer={3} />
-      <Layout largeCols={[ 6 ]} mediumCols={[ 12 ]} smallCols={[ 12, 6, 6 ]} style={{ width: '100%' }}>
-        <Button
-          onClick={onContinue}
-          className={classnames(styles['continue'])}
-        >
-          <Hide hideOn='small medium xLarge xxLarge'>
-            <ResponsiveText text='Continue' offset={-3} size={75} />
-          </Hide>
-
-          <Hide hideOn='desktop'>
-            Continue
-          </Hide>
-        </Button>
+      <Layout smallCols={[ 12 ]} style={{ width: '100%' }}>
         <Button onClick={onDetails}>
-          <Hide hideOn='small medium xLarge xxLarge'>
-            <ResponsiveText text='Details' offset={-10} size={75} />
-          </Hide>
-          <Hide hideOn='desktop'>
-            Details
-          </Hide>
+          View Policy
         </Button>
         <Hide hideOn='tablet desktop'>
           <Button
@@ -86,7 +67,6 @@ PolicyActions.propTypes = {
     defaultText: PropTypes.string,
   }),
   discount: PropTypes.node,
-  onContinue: PropTypes.func,
   onDetails: PropTypes.func,
   onCompare: PropTypes.func,
 };

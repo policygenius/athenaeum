@@ -7,21 +7,15 @@ import Text from 'atoms/Text';
 import Spacer from 'atoms/Spacer';
 
 import styles from './featured_policy_card.module.scss';
-import Header from './Header';
 import ButtonGroup from './ButtonGroup';
-import PolicyInformation from './PolicyInformation';
 
-function FeaturedPolicyCard(props) {
+function SimpleFeaturedPolicyCard(props) {
   const {
     className,
-    header,
     premium,
-    discount,
     carrierLogo,
     onDetails,
-    information,
     onCompare,
-    continueCTAText,
   } = props;
 
   const classes = [
@@ -33,8 +27,6 @@ function FeaturedPolicyCard(props) {
 
   return (
     <div className={classnames(...classes)}>
-      { header && <Header header={header} /> }
-
       <div className={styles['content']}>
         { premium.price ?
           <div className={styles['premium']}>
@@ -47,8 +39,6 @@ function FeaturedPolicyCard(props) {
             </Text>
 
             <Spacer spacer={1} />
-
-            {discount && discount}
           </div>
           :
           <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
@@ -62,12 +52,9 @@ function FeaturedPolicyCard(props) {
 
         <Spacer spacer={6} />
 
-        { information && <PolicyInformation information={information} /> }
-
         <ButtonGroup
           onDetails={onDetails}
           onCompare={onCompare}
-          continueCTAText={continueCTAText}
         />
       </div>
     </div>
@@ -75,7 +62,7 @@ function FeaturedPolicyCard(props) {
 }
 
 
-FeaturedPolicyCard.propTypes = {
+SimpleFeaturedPolicyCard.propTypes = {
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -139,8 +126,8 @@ FeaturedPolicyCard.propTypes = {
   })),
 };
 
-FeaturedPolicyCard.defaultProps = {
+SimpleFeaturedPolicyCard.defaultProps = {
   continueCTAText: 'Continue',
 };
 
-export default FeaturedPolicyCard;
+export default SimpleFeaturedPolicyCard;

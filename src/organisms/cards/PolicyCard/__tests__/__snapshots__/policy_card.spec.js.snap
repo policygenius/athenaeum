@@ -178,50 +178,20 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             onClick={[Function]}
             type="button"
           >
-            Continue
+            View Policy
           </button>
-          <div
-            className="top-2"
-          />
-          <a
-            className="link neutral-1 details-link"
-            onClick={[Function]}
-          >
-            Details & Review
-          </a>
-          <div
-            className="layout secondary-actions-wrapper"
-            id={undefined}
-            style={undefined}
-          >
+          <div>
             <div
-              className="col col-sm-6 fullwidth border-neutral-6 secondary-action"
-              onClick={undefined}
-              style={undefined}
+              className="top-2"
+            />
+            <button
+              className="button"
+              disabled={undefined}
+              onClick={[Function]}
+              type="button"
             >
-              <button
-                className="button"
-                disabled={undefined}
-                onClick={[Function]}
-                type="button"
-              >
-                Details
-              </button>
-            </div>
-            <div
-              className="col col-sm-6 fullwidth border-neutral-6 secondary-action"
-              onClick={undefined}
-              style={undefined}
-            >
-              <button
-                className="button"
-                disabled={undefined}
-                onClick={[Function]}
-                type="button"
-              >
-                Compare
-              </button>
-            </div>
+              Compare
+            </button>
           </div>
         </div>
       </div>
@@ -428,41 +398,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           }
         >
           <div
-            className="col col-sm-12 col-md-12 col-lg-6 border-neutral-6"
-            onClick={undefined}
-            style={undefined}
-          >
-            <button
-              className="button continue"
-              disabled={undefined}
-              onClick={[Function]}
-              type="button"
-            >
-              <div
-                className="hide small medium xLarge xxLarge"
-              >
-                <svg
-                  className="svg-text"
-                  viewBox="-3 0 75 15"
-                  width="100%"
-                >
-                  <text
-                    x="0"
-                    y="12"
-                  >
-                    Continue
-                  </text>
-                </svg>
-              </div>
-              <div
-                className="hide desktop"
-              >
-                Continue
-              </div>
-            </button>
-          </div>
-          <div
-            className="col col-sm-6 col-md-12 col-lg-6 border-neutral-6"
+            className="col col-sm-12 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
@@ -472,31 +408,11 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               onClick={[Function]}
               type="button"
             >
-              <div
-                className="hide small medium xLarge xxLarge"
-              >
-                <svg
-                  className="svg-text"
-                  viewBox="-10 0 75 15"
-                  width="100%"
-                >
-                  <text
-                    x="0"
-                    y="12"
-                  >
-                    Details
-                  </text>
-                </svg>
-              </div>
-              <div
-                className="hide desktop"
-              >
-                Details
-              </div>
+              View Policy
             </button>
           </div>
           <div
-            className="col col-sm-6 col-md-12 col-lg-6 border-neutral-6"
+            className="col col-sm-12 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
