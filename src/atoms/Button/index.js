@@ -13,23 +13,41 @@ function Button( props ) {
     variant,
     icon,
     disabled,
-    shake,
-    slim,
+    text,
+    unflex,
+    outline,
+    href,
+    linkAttrs,
     ...rest
   } = props;
 
   const classes = [
     styles['button'],
-    shake && styles['shaking'],
-    styles[variant],
+    variant && styles[variant],
+    disabled && styles['disabled'],
+    outline && styles['outline'],
     className,
-    slim && styles['slim'],
+    unflex && styles['unflex'],
   ];
+
+  if (href || linkAttrs) {
+    return (
+      <a
+        className={classnames(...classes)}
+        disabled={disabled}
+        href={href}
+        {...linkAttrs}
+      >
+        { icon && <Icon icon={icon} className={styles['icon']} /> }
+        { children || text }
+      </a>
+    );
+  }
 
   return (
     <button className={classnames(...classes)} type={type} disabled={disabled} {...rest}>
       { icon && <Icon icon={icon} className={styles['icon']} /> }
-      { children }
+      { children || text }
     </button>
   );
 }
@@ -46,11 +64,22 @@ Button.propTypes = {
   type: PropTypes.string,
 
   /**
-   * Possible button variants are: `info`, `disabled`, `toggle`, `action`, `actionDisabled`, `lowlight`, `outline`, or `button` (default)
+   * Possible button variants are: `info`, `disabled`, `outline` (deprecated).
+   * Toggle buttons are either `toggle` or `toggle-selected`
    */
   variant: PropTypes.oneOf([
-    'info', 'disabled', 'toggle', 'action', 'actionDisabled', 'lowlight', 'outline', 'button', 'toggle-active'
+    'info', 'toggle', 'toggle-selected', 'disabled'
   ]),
+
+  /**
+   * If Button is passed an `href`, outputs as an `a` tag
+   */
+  href: PropTypes.string,
+
+  /**
+   * Turns button into the outlined version
+   */
+  outline: PropTypes.bool,
 
   /**
    * Optional icon. Choices can be found here: [Icons](/#icon)
@@ -62,20 +91,23 @@ Button.propTypes = {
    */
   disabled: PropTypes.bool,
 
-  /**
-   * Triggers shake animation if true
-   */
-  shake: PropTypes.bool,
-  /**
-   * Reduces vertical padding if true
-   */
-  slim: PropTypes.bool,
   onClick: PropTypes.func,
+  /**
+   * Passes text into the button. Works the same way as passing children
+   */
+  text: PropTypes.string,
+  /**
+   * Will prevent the button from flexing to fill its parent container
+   */
+  unflex: PropTypes.bool,
+  /**
+   * Passes any link attributes onto the a tag.
+   */
+  linkAttrs: PropTypes.object,
 };
 
 Button.defaultProps = {
-  type: 'button',
-  variant: 'button',
+  type: 'button'
 };
 
 export default Button;

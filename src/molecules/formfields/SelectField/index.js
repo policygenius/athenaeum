@@ -3,19 +3,25 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
-import Tooltip from 'atoms/Tooltip';
+import Icon from 'atoms/Icon';
+import Text from 'atoms/Text';
 import ErrorMessage from 'atoms/ErrorMessage';
 
-import { renderSelectOptions, renderPlaceholder } from 'utils/fieldUtils';
+import { renderSelectOptions, renderPlaceholder, renderTooltip } from 'utils/fieldUtils';
 import styles from './select_field.module.scss';
 
-
-const renderToolTip = (message) => {
-  if (!message) return null;
+const renderAdditionalInfo = (func) => {
+  if (!func) return null;
 
   return (
     <div className={styles['tooltip-wrapper']}>
-      <Tooltip right>{ message }</Tooltip>
+      <Icon
+        icon='tooltip'
+        height='18px'
+        width='18px'
+        inline='right'
+        onClick={func}
+      />
     </div>
   );
 };
@@ -28,15 +34,18 @@ function SelectField( props ) {
     input,
     label,
     meta,
+    onAdditionalInfoClick,
     placeholder,
     selectOptions,
     tooltip,
     variant,
-    required
+    required,
+    subLabel,
+    noBaseStyle,
   } = props;
 
   const classes = [
-    styles['select-field'],
+    !noBaseStyle && styles['select-field'],
     variant && styles[variant],
     meta && meta.active && styles['focused'],
     meta && meta.touched && meta.error && !meta.active && styles['hasError'],
@@ -53,7 +62,19 @@ function SelectField( props ) {
         { label &&
           <label className={styles['label']} htmlFor={forProp}>
             { label }
-            { renderToolTip(tooltip) }
+            { renderAdditionalInfo(onAdditionalInfoClick) }
+            {
+              tooltip &&
+                <div className={styles['tooltip-wrapper']}>
+                  { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+                </div>
+            }
+            {
+              subLabel &&
+                <Text size={10} font='b'>
+                  { subLabel }
+                </Text>
+            }
           </label>
         }
 
@@ -67,7 +88,7 @@ function SelectField( props ) {
               {...requiredAttr()}
               {...(omit(input, 'onClick'))}
             >
-              { placeholder && renderPlaceholder(placeholder, styles['option'] ) }
+              { placeholder && renderPlaceholder(placeholder, styles['placeholder'] ) }
               { renderSelectOptions(selectOptions) }
             </select>
           </div>
@@ -107,6 +128,15 @@ SelectField.propTypes = {
   ]),
 
   /**
+   * Removes base field style, including border, from SelectField. Best for use in a group of fields.
+   */
+  noBaseStyle: PropTypes.bool,
+  /**
+   * To add an (i) icon to the label, pass in a function
+   * (called when icon is clicked)
+   */
+  onAdditionalInfoClick: PropTypes.func,
+  /**
    * placeholder text for select box
    */
   placeholder: PropTypes.string,
@@ -118,6 +148,14 @@ SelectField.propTypes = {
     label: PropTypes.string,
     value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
   })),
+
+  /**
+   * Optional text displayed directly under the label
+   */
+  subLabel: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
 
   /**
    * defines type of select field

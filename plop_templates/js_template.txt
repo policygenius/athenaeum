@@ -7,15 +7,16 @@ function {{properCase name}}(props) {
   const {
     children,
     className,
+    ...rest
   } = props;
 
-  const classes = [
+  const classes = classnames(
     styles['{{dashCase name}}'],
     className,
-  ];
+  );
 
   return (
-    <div className={classnames(...classes)}>
+    <div className={classes} {...rest}>
       { children }
     </div>
   );
@@ -28,6 +29,11 @@ function {{properCase name}}(props) {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
+  /**
+   * Add custom inline style
+   */
+  style: PropTypes.object,
 };
 
 {{properCase name}}.defaultProps = {

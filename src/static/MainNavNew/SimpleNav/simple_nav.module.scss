@@ -1,0 +1,30 @@
+.simple-nav {
+  display: flex;
+  flex-basis: 100%;
+  height: 100%;
+  position: static;
+}
+
+.simple-nav-content {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: ru(2.5);
+  width: 100%;
+}
+
+.secondary-text-wrapper {
+  display: none;
+}
+
+@media #{$tablet} {
+  .simple-nav-content {
+    display: flex;
+  }
+}
+
+@media #{$desktop} {
+  .secondary-text-wrapper {
+    display: block;
+  }
+}

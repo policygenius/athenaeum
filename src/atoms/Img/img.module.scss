@@ -1,0 +1,42 @@
+.img {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+@media #{$mobile-only} {
+  .hide-mobile-image {
+    display: none;
+  }
+}
+
+@media #{$tablet-only} {
+  .hide-tablet-image {
+    display: none;
+  }
+}
+
+
+// For lazyload
+// https://github.com/aFarkas/lazysizes
+/* fade image in after load */
+/* stylelint-disable selector-pseudo-class-no-unknown */
+:global {
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+    width: 100%;
+    display: block;
+  }
+
+  .unlazy {
+    opacity: 1;
+  }
+
+  .lazyloaded {
+    opacity: 1;
+    width: 100%;
+    display: block;
+    transition: opacity 300ms;
+  }
+}

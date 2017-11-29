@@ -31,9 +31,16 @@ function PlaybackCardWrapper(props) {
         mediumCols={[ 6 ]}
         fullwidth
       >
-        <div className={styles['logo-wrapper']}>{logo}</div>
+        <div className={classnames(styles['logo-wrapper'], styles['playback-wrapper-logo'])}>{logo}</div>
         <Col className={styles['amount']}>
-          <CurrencyAmount color='brand-2' amount={formattedNumber.toString()} unit={unit} />
+          <CurrencyAmount
+            color='secondary-2'
+            amount={formattedNumber.toString()}
+            unit={unit}
+            size={5}
+            font='a'
+            highlight
+          />
         </Col>
       </Layout>
     );
@@ -48,7 +55,7 @@ function PlaybackCardWrapper(props) {
       </div>
 
       <div className={styles['playback-wrapper-foot']}>
-        <LinkWrapper onClick={footerOnClick}>{ footer }</LinkWrapper>
+        <LinkWrapper variant='secondary' onClick={footerOnClick}>{ footer }</LinkWrapper>
       </div>
     </div>
   );

@@ -1,0 +1,39 @@
+ $base: .25;
+
+.section {
+  width: 100%;
+
+  .wrapper {
+    max-width: $page-max-width;
+    margin: auto;
+  }
+
+  &.fullwidth {
+    .wrapper {
+      max-width: 100%;
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+}
+
+@for $i from 1 through 10 {
+  .top-#{$i} { padding-top: ru($base * $i); }
+  .bot-#{$i} { padding-bottom: ru($base * $i); }
+}
+
+.top-0 { padding-top: 0; }
+.bot-0 { padding-bottom: 0; }
+
+.top-11 { padding-top: ru(3); }
+.bot-11 { padding-bottom: ru(3); }
+
+.top-12 { padding-top: ru(6); }
+.bot-12 { padding-bottom: ru(6); }
+
+.padding {
+  padding-left: ru(8);
+  padding-right: ru(8);
+}

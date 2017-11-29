@@ -1,5 +1,5 @@
-$gutter-width: ru(.25);
-$border: 1px solid color('neutral-6');
+$gutter-width: ru(.5);
+$border: 1px solid;
 $spacer-base: .25;
 
 @mixin g-unit($cols: 1, $total-col-count: 12) {
@@ -82,6 +82,7 @@ $spacer-base: .25;
 
 @media #{$large-up} {
   @include createCols( 'lg' );
+
   .bordered-buckets {
     [class*='col-'] {
       flex: 1 0 auto;
@@ -153,4 +154,9 @@ $spacer-base: .25;
 
 .flex {
   flex-grow: 1;
+}
+
+.nested {
+  margin-left: -$gutter-width;
+  margin-right: -$gutter-width;
 }

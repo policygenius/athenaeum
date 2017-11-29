@@ -14,20 +14,18 @@
 }
 
 .head {
-  padding: ru(.5) ru(.75);
+  padding: ru(.75);
 }
 
 .title {
-  @include typography(5);
-
-  line-height: 1.37em;
-  color: color('neutral-2');
+  @include typography-b-7(true);
+  color: color('primary-3');
+  line-height: rem-calc(24px);
 }
 
 .label {
-  @include typography(7);
-
+  @extend %label;
+  line-height: rem-calc(18px);
+  padding-bottom: rem-calc(6px);
   display: block;
-  color: color('neutral-3');
-  font-weight: normal;
 }

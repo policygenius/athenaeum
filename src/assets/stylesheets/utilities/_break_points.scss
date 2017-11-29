@@ -2,26 +2,36 @@
 
 $page-max-width: 80.5rem;
 
-$small-range: (0, 48em);
-$medium-range: (48.0625em, 64em);
-$large-range: (64.0625em, 80em);
-$xlarge-range: (80.0625em, 90em);
-$xxlarge-range: (90.0625em);
+$mobile-range: (0, 47.9375em);  // 0px - 767px
+$tablet-range: (48em, 64em);  // 768px - 1024px
+$desktop-range: (64.0625em, 80em); // 1025px - 1280px
+
+$xlarge-range: (80.0625em, 90em); // 1281px - 1440px
+$xxlarge-range: (90.0625em);      // 1441px+
 
 $screen: 'only screen';
 
 $landscape: '#{$screen} and (orientation: landscape)';
 $portrait: '#{$screen} and (orientation: portrait)';
 
-$small-up: $screen;
-$small-only: '#{$screen} and (max-width: #{upper-bound($small-range)})';
+$mobile: $screen;
+$mobile-only: '#{$screen} and (max-width: #{upper-bound($mobile-range)})';
+$tablet: '#{$screen} and (min-width:#{lower-bound($tablet-range)})';
+$tablet-only: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($tablet-range)})';
+$desktop: '#{$screen} and (min-width:#{lower-bound($desktop-range)})';
 
-$medium-bottom: '#{$screen} and (max-width:#{upper-bound($medium-range)})';
-$medium-up: '#{$screen} and (min-width:#{lower-bound($medium-range)})';
-$medium-only: '#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})';
 
-$large-up: '#{$screen} and (min-width:#{lower-bound($large-range)})';
-$large-only: '#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})';
+// previous breakpoint names left for backwards compatability
+
+$small-up: $mobile;
+$small-only: $mobile-only;
+
+$medium-bottom: '#{$screen} and (max-width:#{upper-bound($tablet-range)})';
+$medium-up: $tablet;
+$medium-only: $tablet-only;
+
+$large-up: $desktop;
+$large-only: '#{$screen} and (min-width:#{lower-bound($desktop-range)}) and (max-width:#{upper-bound($desktop-range)})';
 
 $xlarge-up: '#{$screen} and (min-width:#{lower-bound($xlarge-range)})';
 $xlarge-only: '#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})';
@@ -29,6 +39,6 @@ $xlarge-only: '#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 $xxlarge-up: '#{$screen} and (min-width:#{lower-bound($xxlarge-range)})';
 $xxlarge-only: '#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})';
 
-$small-and-medium-only: '#{$screen} and (max-width: #{upper-bound($medium-range)})';
-$medium-up-to-large: '#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($large-range)})';
-$medium-up-to-xxlarge: '#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($xlarge-range)})';
+$small-and-medium-only: '#{$screen} and (max-width: #{upper-bound($tablet-range)})';
+$medium-up-to-large: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($desktop-range)})';
+$medium-up-to-xxlarge: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($xlarge-range)})';

@@ -1,0 +1,28 @@
+@media #{$small-only} {
+  .header {
+    margin-bottom: rem-calc(18);
+  }
+
+  .resource-list {
+    > li:last-child {
+      // TODO: Remove important
+      // stylelint-disable declaration-no-important
+      margin-bottom: rem-calc(18) !important;
+      // stylelint-enable declaration-no-important
+    }
+  }
+
+  .collapsed-resources {
+    display: none;
+  }
+}
+
+@media #{$tablet} {
+  .header {
+    margin-bottom: rem-calc(12);
+  }
+
+  .resource .icon {
+    display: none;
+  }
+}

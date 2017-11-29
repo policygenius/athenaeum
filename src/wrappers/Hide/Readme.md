@@ -3,7 +3,7 @@
 ```jsx
     <div>
       <Text>hello, </Text>
-      <Hide hideOn='small medium'>
+      <Hide hideOn='mobile tablet'>
         <Spacer small />
       </Hide>
       <Text>world</Text>

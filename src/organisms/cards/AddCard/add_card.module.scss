@@ -1,48 +1,39 @@
 @import '../shared/cards.module.scss';
 
-$hover-color: color('neutral-2');
-$transition: border-color 150ms ease-out, color 150ms ease-out;
+$hover-color: color('primary-2');
+
+.text {
+  @include typography-b-8;
+}
 
 .add-card {
   @extend %card;
 
   height: 100%;
-  padding: ru(1.25) ru(1.5);
+  padding: ru(1.5);
   text-align: center;
   text-decoration: none;
-  color: color('neutral-4');
-  background-color: color('neutral-8');
-  border-style: dashed;
-  border-color: color('neutral-4');
+  color: color('primary-3');
+  background-color: transparent;
+  border: 2px solid color('primary-3');
   cursor: pointer;
-  transition: $transition;
+  transition: color 150ms ease-out,
+    border-color 150ms ease-out;
 
 
   &:hover,
   &:active {
-    border-color: $hover-color;
-    color: $hover-color;
-
-    .icon {
-      path {
-        fill: $hover-color;
-      }
-    }
+    background-color: $hover-color;
   }
 }
 
-.text {
-  color: inherit;
-}
-
 .icon {
-  margin: 0 auto ru(.25);
+  margin: 0 auto ru(1);
   height: ru(1.25);
   max-width: ru(1.25);
 
   path {
-    transition: fill $transition;
-    fill: color('neutral-4');
+    fill: color('primary-3');
   }
 }
 

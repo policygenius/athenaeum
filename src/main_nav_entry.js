@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MainNav from 'static/MainNav';
+import MainNavNew from 'static/MainNavNew';
 import './assets/stylesheets/base.scss';
 
-ReactDOM.render(<MainNav />, document.getElementById('nav'));
+ReactDOM.render(<MainNavNew />, document.getElementById('nav'));

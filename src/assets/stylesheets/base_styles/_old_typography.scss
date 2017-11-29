@@ -1,0 +1,119 @@
+@mixin typography-0($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(68px);
+  line-height: ru(3);
+
+  @if $margin {
+    margin-bottom: ru(2);
+  }
+}
+
+@mixin typography-1($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(42px);
+  line-height: ru(2);
+  font-weight: 900;
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-2($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(32px);
+  line-height: ru(1.75);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-3($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(26px);
+  line-height: ru(1.5);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-4($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(22px);
+  line-height: ru(1.25);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-5($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(19px);
+  line-height: ru(1.25);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography-6($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(16px);
+  line-height: ru(1);
+
+  @if $margin {
+    margin-bottom: ru(.5);
+  }
+}
+
+@mixin typography-7($margin: true) {
+  @include font-family-a;
+  font-size: rem-calc(13px);
+  line-height: ru(.75);
+
+  @if $margin {
+    margin-bottom: ru(1);
+  }
+}
+
+@mixin typography($number) {
+  @if $number == 0 {
+    @include typography-0(false);
+  }
+  @if $number == 1 {
+    @include typography-1(false);
+  }
+  @if $number == 2 {
+    @include typography-2(false);
+  }
+  @if $number == 3 {
+    @include typography-3(false);
+  }
+  @if $number == 4 {
+    @include typography-4(false);
+  }
+  @if $number == 5 {
+    @include typography-5(false);
+  }
+  @if $number == 6 {
+    @include typography-6(false);
+  }
+  @if $number == 7 {
+    @include typography-7(false);
+  }
+}
+
+@mixin typography-light() {
+  font-weight: $lightweight;
+}
+
+@mixin typography-regular() {
+  font-weight: $regularweight;
+}
+
+@mixin typography-semibold() {
+  font-weight: $semiboldweight;
+}

@@ -38,6 +38,7 @@ class Tooltip extends React.Component {
       onClick,
       text,
       hoverMessageClassName,
+      inline,
     } = this.props;
 
     return (
@@ -45,6 +46,7 @@ class Tooltip extends React.Component {
         onClick={onClick || this.openModal}
         className={classnames(
           styles['tooltip-wrapper'],
+          inline && styles[`inline-${inline}`],
           className
         )}
       >
@@ -102,10 +104,17 @@ Tooltip.propTypes = {
    * className for the hover message
    */
   hoverMessageClassName: PropTypes.string,
+
+  /**
+   * adds margin to left or right when Tooltip is inline
+   */
+  inline: PropTypes.oneOf([
+    'left', 'right',
+  ]),
 };
 
 Tooltip.defaultProps = {
-  text: <Icon icon='questionMarkWhite' className={styles['tooltip']} />
+  text: <Icon icon='tooltip' className={styles['tooltip']} />
 };
 
 export default Tooltip;

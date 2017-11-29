@@ -11,12 +11,12 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
       className="premium"
     >
       <strong
-        className="text typography-2 semibold neutral-1 undefined strong undefined"
+        className="bold neutral-1 type-b-2-medium inherit"
       >
         $19.80
          
         <strong
-          className="text typography-7 semibold neutral-2 undefined strong undefined"
+          className="bold neutral-2 type-b-7-medium inherit"
         >
           /MO
         </strong>
@@ -51,7 +51,7 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
         className="top-2"
       />
       <button
-        className="button button"
+        className="button"
         disabled={undefined}
         onClick={undefined}
         type="button"

@@ -1,3 +1,7 @@
+### This component is deprecated
+#### Use [SummaryCard](#summarycard) instead
+
+
 Split Card Example:
 
 ```jsx

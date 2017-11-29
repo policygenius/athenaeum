@@ -4,8 +4,8 @@ Our brand colors:
     const styles = require('atoms/Color/colors_map.module.scss');
 
     function getColorArray() {
-      let all_colors = [[],[],[],[]];
-      let types = ['neutral', 'brand', 'accent', 'action'];
+      let all_colors = [[],[],[]];
+      let types = ['neutral', 'primary', 'secondary'];
 
       for (style in styles) {
         types.forEach( (type, idx) => {
@@ -22,7 +22,7 @@ Our brand colors:
 
     function DisplayExampleColors ( props ) {
       return (
-        <div className={ styles['color-wrapper'] }>
+        <div>
           {
             getColorArray().map(( set, idx ) => {
               return (

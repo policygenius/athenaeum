@@ -6,13 +6,13 @@ import StepIndicator from 'molecules/StepIndicator';
 
 describe('<StepIndicator />', () => {
   it('renders correctly', () => {
-    const wrapper = mount(<StepIndicator steps={[]} />);
+    const wrapper = mount(<StepIndicator steps={[]} navigateToPath={() => {}} />);
 
     expect(wrapper.type()).toEqual(StepIndicator);
   });
 
   it('renders correctly', () => {
-    const actual = renderer.create(<StepIndicator steps={[]} />).toJSON();
+    const actual = renderer.create(<StepIndicator steps={[]} navigateToPath={() => {}} />).toJSON();
 
     expect(actual).toMatchSnapshot();
   });

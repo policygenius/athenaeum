@@ -15,14 +15,25 @@ const includePaths = [
   path.resolve(__dirname, 'styleguide_assets'),
 ];
 
-const baseRules = [
+const isProd = process.env.NODE_ENV === 'production';
+
+const cssModulesName = (modulesName) => {
+  if (!isProd) {
+    return 'rcl-[name]__[local]--[hash:base64:5]';
+  }
+
+  return `${modulesName || 'rcl'}_[local]-[hash:base64:3]`;
+
+};
+
+const baseRules = modulesName => [
   {
     test: /\.js$/,
     include: includePaths,
     use: [
       {
-        // babel-loader will throw a deprecation warning
-        // waiting for stable v7.0.0 to upgrade
+          // babel-loader will throw a deprecation warning
+          // waiting for stable v7.0.0 to upgrade
         loader: 'babel-loader',
         options: {
           presets: [ 'env', 'react', 'stage-2' ]
@@ -36,11 +47,13 @@ const baseRules = [
       fallback: 'style-loader',
       use: [
         {
-          loader: 'css-loader?importLoaders=3',
+          loader: 'css-loader',
           options: {
             modules: true,
-            localIdentName: 'rcl-[name]__[local]--[hash:base64:5]',
-            sourceMap: true,
+            importLoaders: 3,
+            localIdentName: cssModulesName(modulesName),
+            sourceMap: !isProd,
+            minimize: !!isProd
           }
         },
         {
@@ -55,8 +68,8 @@ const baseRules = [
         {
           loader: 'sass-loader',
           options: {
-            sourceMap: true,
-            sourceComments: true,
+            sourceMap: !isProd,
+            sourceComments: !isProd,
             includePaths: [ baseDir ],
             data: "@import 'assets/stylesheets/global';"
           }
@@ -93,8 +106,8 @@ const baseRules = [
   }
 ];
 
-module.exports = options => {
-  let rules = get(options, 'module.rules', []).concat(baseRules);
+module.exports = (options) => {
+  const rules = get(options, 'module.rules', []).concat(baseRules(options.modulesName));
 
   if (!options.entry || !options.entry.includes('main_nav')) {
     rules.push(
@@ -111,7 +124,7 @@ module.exports = options => {
         }
       }
     );
-  };
+  }
 
   return {
     entry: options.entry,
@@ -134,5 +147,5 @@ module.exports = options => {
         allChunks: true
       })
     ])
-  }
+  };
 };

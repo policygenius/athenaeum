@@ -15,7 +15,7 @@ const renderList = (item, idx) => {
     );
   }
 
-  return <li key={`list-item-${idx}`}>{item}</li>;
+  return <li key={`list-item-${idx}`} className={styles['list-item']}>{item}</li>;
 };
 
 function List(props) {
@@ -27,7 +27,11 @@ function List(props) {
     mini,
     noBullets,
     listItems,
-    numberedList
+    numberedList,
+    horizontal,
+    bottomSpacing,
+    noPadding,
+    linkList
   } = props;
 
   return React.createElement(
@@ -38,6 +42,11 @@ function List(props) {
         condensed && styles['condensed'],
         mini && styles['mini'],
         noBullets && styles['no-bullets'],
+        horizontal && styles['horizontal'],
+        horizontal && horizontal.spaceBetween && styles[`horizontal-space-${horizontal.spaceBetween}`],
+        bottomSpacing && styles[`bottom-spacing-${bottomSpacing}`],
+        noPadding && styles['no-padding'],
+        linkList && styles['link-list'],
         className
       ),
       style: {
@@ -87,6 +96,27 @@ List.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
+  /**
+   * Makes the list horizontal and adds additional props
+   */
+  horizontal: PropTypes.shape({
+    spaceBetween: PropTypes.oneOf([ 6, 12, 18, 24, 36 ]),
+  }),
+  /**
+   * Adds bottomSpacing to each child `li`. See `Spacer` for size details
+   */
+  bottomSpacing: PropTypes.oneOf([ 6, 12, 13, 16, 18, 24, 36, 60, 84, 120, 162 ]),
+
+  /**
+   * Removes 1rem left padding on `ul` or `ol`
+   */
+  noPadding: PropTypes.bool,
+
+  /**
+   * Adds hover effect to all children `a` tags within `li` element
+   */
+  linkList: PropTypes.bool,
 };
 
 List.defaultProps = {

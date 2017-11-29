@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
-import Tooltip from 'atoms/Tooltip';
 import Button from 'atoms/Button';
 import Layout, { Col } from 'atoms/Layout';
 import ErrorMessage from 'atoms/ErrorMessage';
+
+import { renderTooltip } from 'utils/fieldUtils';
 
 import styles from './toggle_field.module.scss';
 
@@ -14,12 +15,18 @@ const renderChoices = (choices, input) => {
   if (!choices) return null;
 
   const renderChoice = (choice, idx) => {
-    const variantName = input.value == choice.value ? 'toggle-active' : 'toggle'; // eslint-disable-line
+    const variantName = () => {
+      if (input.value) {
+        return input.value == choice.value ? 'toggle-selected' : 'toggle';  // eslint-disable-line
+      }
+
+      return 'toggle';
+    };
 
     return (
       <Button
         className={styles['button']}
-        variant={variantName}
+        variant={variantName()}
         key={`toggle-${idx}`}
         onClick={e => input.onChange(e.target.value)}
         value={choice.value}
@@ -61,7 +68,7 @@ function ToggleField( props ) {
             <Col className={styles['header']}>
               { tooltip &&
                 <div className={styles['tooltip-wrapper']}>
-                  <Tooltip right>{ tooltip }</Tooltip>
+                  { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
                 </div>
               }
               { label }

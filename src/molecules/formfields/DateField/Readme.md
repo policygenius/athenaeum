@@ -10,17 +10,17 @@ DateField (Month/Day/Year):
       meta={{ touched: true, error: 'hello' }}
     >
       <TextField
-        placeholder='MM'
+        placeholder='mm'
         noBaseStyle
         input={{}}
       />
       <TextField
-        placeholder='DD'
+        placeholder='dd'
         noBaseStyle
         input={{}}
       />
       <TextField
-        placeholder='YYYY'
+        placeholder='yyyy'
         noBaseStyle
         input={{}}
       />
@@ -37,14 +37,15 @@ DateField (Month/Year):
         onFocus: () => true
       }}
       meta={{ touched: true, error: 'hello' }}
+      subLabel='Please enter an approximate date.'
     >
       <TextField
-        placeholder='MM'
+        placeholder='mm'
         noBaseStyle
         input={{}}
       />
       <TextField
-        placeholder='YYYY'
+        placeholder='yyyy'
         noBaseStyle
         input={{}}
       />

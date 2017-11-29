@@ -8,14 +8,14 @@ import formatValue from 'utils/formatValue';
 import styles from './policy_card.module.scss';
 
 export const PolicyInformation = ({ information }) =>
-  <Hide hideOn='small medium' className={styles['policy-info']}>
+  <Hide hideOn='mobile tablet' className={styles['policy-info']}>
     {
       information.map((item, idx) =>
         <Tooltip
           text={
             <Text type={7} color='neutral-3' semibold>
               <div className={styles['policy-info-label']}>{item.label}</div>
-              <Text color='neutral-2' semibold>{formatValue(item.value)}</Text>
+              <Text type={7} color='neutral-2' semibold>{formatValue(item.value)}</Text>
             </Text>
           }
           hoverMessageClassName={styles['policy-type-hover-message']}

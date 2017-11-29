@@ -15,12 +15,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="premium"
         >
           <strong
-            className="text typography-2 semibold neutral-1 undefined strong undefined"
+            className="bold neutral-1 type-b-2-medium inherit"
           >
             $19.80
              
             <strong
-              className="text typography-7 semibold neutral-2 undefined strong undefined"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               /MO
             </strong>
@@ -46,60 +46,55 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div>
             <div
               className="layout policy-info-item"
+              id={undefined}
               style={undefined}
             >
               <div
-                className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
+                className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
                 onClick={undefined}
                 style={undefined}
               >
-                <div
-                  className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
-                  onClick={undefined}
-                  style={undefined}
+                <p
+                  className="primary-3 type-b-7-medium inherit"
                 >
-                  <p
-                    className="text typography-7 regular undefined undefined p undefined"
-                  >
-                    label
-                  </p>
+                  label
+                </p>
+                <span
+                  className="tooltip-wrapper policy-info-tooltip-icon"
+                  onClick={[Function]}
+                >
                   <span
-                    className="tooltip-wrapper policy-info-tooltip-icon"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="icon-wrapper tooltip"
-                      onClick={undefined}
-                      style={
-                        Object {
-                          "height": undefined,
-                          "width": undefined,
-                        }
+                    className="icon-wrapper tooltip"
+                    onClick={undefined}
+                    style={
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
                       }
-                    />
-                    <span
-                      className="hover-message"
-                    >
-                      <div />
-                    </span>
-                    <noscript />
+                    }
+                  />
+                  <span
+                    className="hover-message"
+                  >
+                    <div />
                   </span>
-                </div>
+                  <noscript />
+                </span>
               </div>
               <div
-                className="col col-sm-2 col-md-1 bottom-spacing-undefined"
+                className="col col-sm-2 col-md-1 border-neutral-6"
                 onClick={undefined}
                 style={undefined}
               >
                 <div />
               </div>
               <div
-                className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+                className="col col-sm-6 col-md-6 border-neutral-6"
                 onClick={undefined}
                 style={undefined}
               >
                 <strong
-                  className="text typography-6 semibold undefined undefined strong undefined"
+                  className="bold primary-3 type-b-6-medium inherit"
                 >
                   Some policy
                 </strong>
@@ -112,60 +107,55 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div>
             <div
               className="layout policy-info-item"
+              id={undefined}
               style={undefined}
             >
               <div
-                className="col col-sm-4 col-md-5 fullwidth bottom-spacing-undefined"
+                className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
                 onClick={undefined}
                 style={undefined}
               >
-                <div
-                  className="col fullwidth bottom-spacing-undefined policy-info-tooltip-group"
-                  onClick={undefined}
-                  style={undefined}
+                <p
+                  className="primary-3 type-b-7-medium inherit"
                 >
-                  <p
-                    className="text typography-7 regular undefined undefined p undefined"
-                  >
-                    label
-                  </p>
+                  label
+                </p>
+                <span
+                  className="tooltip-wrapper policy-info-tooltip-icon"
+                  onClick={[Function]}
+                >
                   <span
-                    className="tooltip-wrapper policy-info-tooltip-icon"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="icon-wrapper tooltip"
-                      onClick={undefined}
-                      style={
-                        Object {
-                          "height": undefined,
-                          "width": undefined,
-                        }
+                    className="icon-wrapper tooltip"
+                    onClick={undefined}
+                    style={
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
                       }
-                    />
-                    <span
-                      className="hover-message"
-                    >
-                      <div />
-                    </span>
-                    <noscript />
+                    }
+                  />
+                  <span
+                    className="hover-message"
+                  >
+                    <div />
                   </span>
-                </div>
+                  <noscript />
+                </span>
               </div>
               <div
-                className="col col-sm-2 col-md-1 bottom-spacing-undefined"
+                className="col col-sm-2 col-md-1 border-neutral-6"
                 onClick={undefined}
                 style={undefined}
               >
                 <div />
               </div>
               <div
-                className="col col-sm-6 col-md-6 bottom-spacing-undefined"
+                className="col col-sm-6 col-md-6 border-neutral-6"
                 onClick={undefined}
                 style={undefined}
               >
                 <strong
-                  className="text typography-6 semibold undefined undefined strong undefined"
+                  className="bold primary-3 type-b-6-medium inherit"
                 >
                   A+
                 </strong>
@@ -183,7 +173,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="button-group"
         >
           <button
-            className="button action"
+            className="button"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -195,7 +185,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="top-2"
             />
             <button
-              className="button button"
+              className="button"
               disabled={undefined}
               onClick={[Function]}
               type="button"
@@ -214,7 +204,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       className="body"
     >
       <div
-        className="hide compare small"
+        className="hide compare mobile"
       >
         <div
           className="checkbox-wrapper"
@@ -222,7 +212,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <p
-            className="text typography-6 light neutral-3 undefined p undefined"
+            className="neutral-3 type-b-7-medium inherit"
           >
             Compare
           </p>
@@ -242,7 +232,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               value={undefined}
             />
             <span
-              className="checkbox-label light"
+              className="checkbox-label"
             />
           </label>
         </div>
@@ -267,21 +257,21 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         >
           <div>
             <div
-              className="hide small"
+              className="hide mobile"
             >
               <strong
-                className="text typography-7 semibold neutral-3 undefined strong undefined"
+                className="bold neutral-3 type-b-7-medium inherit"
               >
                 label
               </strong>
             </div>
             <strong
-              className="text typography-5 semibold neutral-2 undefined strong undefined policy-name"
+              className="bold neutral-2 policy-name type-b-5-medium inherit"
             >
               Some policy
             </strong>
             <strong
-              className="text typography-7 semibold neutral-2 undefined strong undefined policy-tooltip"
+              className="bold neutral-2 policy-tooltip type-b-7-medium inherit"
             >
               <div />
             </strong>
@@ -298,14 +288,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         className="divider"
       />
       <div
-        className="hide policy-info small medium"
+        className="hide policy-info mobile tablet"
       >
         <span
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
         >
           <strong
-            className="text typography-7 semibold neutral-3 undefined strong undefined"
+            className="bold neutral-3 type-b-7-medium inherit"
           >
             <div
               className="policy-info-label"
@@ -313,7 +303,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="text typography-6 semibold neutral-2 undefined strong undefined"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               A+
             </strong>
@@ -330,7 +320,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="text typography-7 semibold neutral-3 undefined strong undefined"
+            className="bold neutral-3 type-b-7-medium inherit"
           >
             <div
               className="policy-info-label"
@@ -338,7 +328,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="text typography-6 semibold neutral-2 undefined strong undefined"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               A+
             </strong>
@@ -355,7 +345,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <strong
-            className="text typography-7 semibold neutral-3 undefined strong undefined"
+            className="bold neutral-3 type-b-7-medium inherit"
           >
             <div
               className="policy-info-label"
@@ -363,7 +353,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               label
             </div>
             <strong
-              className="text typography-6 semibold neutral-2 undefined strong undefined"
+              className="bold neutral-2 type-b-7-medium inherit"
             >
               16
             </strong>
@@ -384,10 +374,10 @@ exports[`<PolicyCard /> renders correctly 1`] = `
       >
         <div>
           <strong
-            className="text typography-5 semibold neutral-2 undefined strong undefined"
+            className="bold neutral-2 type-b-5-medium inherit"
           >
             <strong
-              className="text typography-3 semibold undefined undefined strong undefined"
+              className="bold primary-3 type-b-3-medium inherit"
             >
               $19.80
             </strong>
@@ -400,6 +390,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         />
         <div
           className="layout"
+          id={undefined}
           style={
             Object {
               "width": "100%",
@@ -407,42 +398,29 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           }
         >
           <div
-            className="col col-sm-12 bottom-spacing-undefined"
+            className="col col-sm-12 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <button
-              className="button action slim"
+              className="button"
               disabled={undefined}
               onClick={[Function]}
               type="button"
             >
-              <div
-                className="hide small medium xLarge xxLarge"
-              >
-                <strong
-                  className="text typography-6 semibold undefined undefined strong undefined"
-                >
-                  View Policy
-                </strong>
-              </div>
-              <div
-                className="hide large"
-              >
-                View Policy
-              </div>
+              View Policy
             </button>
           </div>
           <div
-            className="col col-sm-12 bottom-spacing-undefined"
+            className="col col-sm-12 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <div
-              className="hide medium large xLarge xxLarge"
+              className="hide tablet desktop"
             >
               <button
-                className="button button slim"
+                className="button"
                 disabled={undefined}
                 onClick={[Function]}
                 type="button"

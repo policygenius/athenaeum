@@ -1,0 +1,22 @@
+.feature-square {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.icon {
+  margin-bottom: ru(.25);
+}
+
+.button-wrapper {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.button {
+  text-transform: uppercase;
+}

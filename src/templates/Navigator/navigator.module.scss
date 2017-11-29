@@ -9,8 +9,8 @@ $main-section-padding: ru(1.5);
   width: 100%;
   display: flex;
 
-  background-color: color('neutral-7');
-  color: color('neutral-2');
+  background-color: color('neutral-5');
+  color: color('primary-3');
 }
 
 .layout {
@@ -28,22 +28,12 @@ $main-section-padding: ru(1.5);
   z-index: 0;
 }
 
-.main-layout,
-.footer-container {
+.main-layout {
   flex: 1 0 auto;
 }
 
 .logo-panel {
-  z-index: 1;
-  background-color: color('brand-2');
-  background-image: linear-gradient(
-  to top,
-  color('brand-1') 0,
-  color('brand-2') 100%
-  );
-  flex-basis: auto;
-
-  color: color('neutral-8');
+  background-color: color('primary-2');
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,7 +42,7 @@ $main-section-padding: ru(1.5);
 }
 
 .logo-panel-text {
-  color: color('neutral-8');
+  color: color('primary-3');
 }
 
 .logo {
@@ -62,25 +52,11 @@ $main-section-padding: ru(1.5);
   margin-left: 2px;
 }
 
-.footer-container {
-  background-color: color('neutral-6');
-  border-top: 1px solid color('neutral-5');
-}
-
-.footer-wrapper {
-  max-width: $main-section-width;
-  padding: $main-section-padding;
-}
-
 .icon-hamburger {
   display: none;
 }
 
 @media #{$small-only} {
-  .navigator {
-    display: initial;
-  }
-
   .logo-panel {
     position: relative;
     padding-left: 0;
@@ -89,6 +65,10 @@ $main-section-padding: ru(1.5);
 
   .logo-panel-col {
     padding: 0;
+  }
+
+  .mobile-header-wrapper {
+    border-bottom: 1px solid color('neutral-5');
   }
 
   .logo {
@@ -102,7 +82,6 @@ $main-section-padding: ru(1.5);
     left: 0;
     right: 0;
     height: ru(2);
-    background-color: color('brand-2');
     padding: ru(.5) ru(1);
     margin-bottom: ru(1);
     display: flex;
@@ -128,6 +107,10 @@ $main-section-padding: ru(1.5);
     display: none;
   }
 
+  .mobile-header {
+    z-index: 2;
+  }
+
   .mobile-nav {
     padding-left: ru(1);
     padding-right: ru(1);
@@ -137,8 +120,7 @@ $main-section-padding: ru(1.5);
     display: block;
   }
 
-  .main-layout,
-  .footer-container {
+  .main-layout {
     padding-left: ru(.75);
     padding-right: ru(.75);
   }
@@ -182,8 +164,7 @@ $main-section-padding: ru(1.5);
 }
 
 @media #{$medium-only} {
-  .main-layout,
-  .footer-wrapper {
+  .main-layout {
     padding-left: $main-section-padding;
     padding-right: $main-section-padding;
   }
@@ -206,12 +187,7 @@ $main-section-padding: ru(1.5);
   }
 
   .logo-panel {
-    background-image: linear-gradient(
-    to bottom,
-    color('brand-1') 0,
-    color('brand-2') 100%
-    );
-
+    flex: auto;
     padding: $main-section-padding;
 
     .mobile-header,

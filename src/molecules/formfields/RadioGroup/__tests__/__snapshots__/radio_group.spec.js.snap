@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioGroup /> renders correctly 1`] = `
+<div>
+  <div
+    className="radio-group"
+    onBlur={[Function]}
+    onFocus={undefined}
+  >
+    <div
+      className="label-wrapper"
+    >
+      <div
+        className="label"
+      >
+        <span>
+          Test label
+        </span>
+        <span
+          className="tooltip-wrapper tooltip"
+          onClick={[Function]}
+        >
+          <span
+            className="icon-wrapper tooltip-icon"
+            onClick={undefined}
+            style={
+              Object {
+                "height": undefined,
+                "width": undefined,
+              }
+            }
+          />
+          <span
+            className="hover-message right"
+          >
+            Hello friend
+          </span>
+          <noscript />
+        </span>
+      </div>
+      <p
+        className="primary-3 type-b-10-medium inherit"
+      >
+        Sublabel action
+      </p>
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        className="radio-field"
+        htmlFor="radio-burgers"
+      >
+        <input
+          className="radio"
+          id="radio-burgers"
+          name="food"
+          onChange={[Function]}
+          type="radio"
+          value="dogs"
+        />
+        <span
+          className="label not-selected"
+        >
+          Burgers
+        </span>
+      </label>
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        className="radio-field"
+        htmlFor="radio-dogs"
+      >
+        <input
+          className="radio"
+          id="radio-dogs"
+          name="food"
+          onChange={[Function]}
+          type="radio"
+          value="dogs"
+        />
+        <span
+          className="label checked"
+        >
+          Hot Dogs
+        </span>
+      </label>
+    </div>
+  </div>
+  <span />
+</div>
+`;

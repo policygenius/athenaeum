@@ -45,18 +45,12 @@ export const PolicyActions = (props) => {
       }
       <Spacer spacer={3} />
       <Layout smallCols={[ 12 ]} style={{ width: '100%' }}>
-        <Button variant='action' slim onClick={onDetails}>
-          <Hide hideOn='small medium xLarge xxLarge'>
-            <Text semibold>View Policy</Text>
-          </Hide>
-          <Hide hideOn='large'>
-            View Policy
-          </Hide>
+        <Button onClick={onDetails}>
+          View Policy
         </Button>
-        <Hide hideOn='medium large xLarge xxLarge'>
+        <Hide hideOn='tablet desktop'>
           <Button
             onClick={onCompare}
-            slim
           >
             Compare
           </Button>

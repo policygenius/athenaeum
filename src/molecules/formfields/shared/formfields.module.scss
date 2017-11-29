@@ -10,9 +10,9 @@
  *
  */
 
-$border: 1px solid color('neutral-5');
-$focused-border-color: color('brand-3');
-$field-error-color: color('accent-2');
+$border: 1px solid color('neutral-4');
+$focused-border-color: color('secondary-2');
+$field-error-color: color('primary-1');
 
 // -- Base Style
 %form-field {
@@ -20,35 +20,35 @@ $field-error-color: color('accent-2');
   flex-direction: column;
   align-content: center;
 
-  border-radius: ru(.25);
   border: $border;
-  background-color: color('neutral-8');
+  background-color: color('primary-2');
 }
 
 // -- Mixins
 @mixin placeholder() {
   &::placeholder {
-    color: color('neutral-5');
+    color: color('neutral-3');
     font-weight: 400;
   }
 }
 
 /* -- Shared Field Elements -- */
 %label {
-  @include typography-7(false);
-  @include typography-semibold;
+  @include typography-b-10(true);
 
-  color: color('neutral-2');
+  color: color('primary-3');
   position: relative;
   padding: ru(.5) ru(.75);
-  line-height: ru(.75);
+
+  @media #{$tablet} {
+    @include typography-b-8(true);
+  }
 }
 
 %field {
-  @include typography-regular();
-  @include typography-6(false);
+  @include typography-b(8);
 
-  padding: ru(.5) ru(.75);
+  padding: rem-calc(12px) rem-calc(18px);
   border: 0;
   -webkit-appearance: none;
 
@@ -64,15 +64,17 @@ $field-error-color: color('accent-2');
   right: ru(.75);
 }
 
+%tooltip-icon {
+  position: relative;
+  width: ru(.75);
+  height: ru(.75);
+  cursor: help;
+  display: inline-block;
+}
+
 /* --  state:focus  -- */
 %focused {
-  border-color: color('brand-3');
-  background-color: color('brand-6');
-
-  .header,
-  .label {
-    border-bottom-color: color('brand-3');
-  }
+  border-color: $focused-border-color;
 }
 
 /* --  state:error  -- */

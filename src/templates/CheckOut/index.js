@@ -21,7 +21,8 @@ const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
     className={styles[className]}
   >
     <Text
-      type={6}
+      size={9}
+      font='a'
       color={userAlert.textColor}
       semibold
     >
@@ -68,17 +69,13 @@ function CheckOut(props) {
             fullwidth
           >
             <Col className={styles['head-main']}>
-              <Layout
-                className={styles['logo-wrapper']}
-                smallCols={[ 7, 5 ]}
-                mediumCols={[ 12 ]}
-              >
-                <Col
+              <div className={styles['logo-wrapper']}>
+                <div
                   className={styles['logo-icon-wrapper']}
                 >
-                  <Icon icon='pgLogo' className={styles['logo-pg']} />
-                </Col>
-                <Col className={styles['logo-chat']} onClick={onMenuClick}>
+                  <Icon icon='pgLogoBlack' className={styles['logo-pg']} />
+                </div>
+                <div className={styles['logo-chat']} onClick={onMenuClick}>
                   <Icon
                     className={styles['icon']}
                     icon='chat'
@@ -86,8 +83,8 @@ function CheckOut(props) {
                   <div className={styles['logo-text']}>
                     Live Chat
                   </div>
-                </Col>
-              </Layout>
+                </div>
+              </div>
             </Col>
 
             <Col
@@ -96,8 +93,8 @@ function CheckOut(props) {
               <Sticky
                 className={styles['sticky']}
                 activeClass={styles['sticky']}
-                bottomBoundary='#sticky-bottom'
                 enabled
+                bottomBoundary='#sticky-bottom'
               >
                 <Col
                   className={styles['head-body']}
@@ -116,22 +113,23 @@ function CheckOut(props) {
                     <Col fullwidth className={styles['cost-price']}>
                       { curr && <sup>{curr}</sup> }
                       { value }
-                      { unit && <Text type={7} tag='span'>{unit}</Text> }
+                      { unit && <Text type={10} font='b' tag='span'>{unit}</Text> }
                     </Col>
                   </Layout>
                 </Col>
-                { userAlert.condition &&
-                <CheckoutUserAlert
-                  enabled={false}
-                  userAlert={userAlert}
-                  className='user-alert-mobile'
-                />
+                {
+                  userAlert.condition &&
+                    <CheckoutUserAlert
+                      enabled={false}
+                      userAlert={userAlert}
+                      className='user-alert-mobile'
+                    />
                 }
               </Sticky>
             </Col>
 
             <Col className={styles['head-foot']}>
-              <Icon icon='nortonW' className={styles['secure-logo']} />
+              <Icon icon='norton' className={styles['secure-logo']} />
             </Col>
           </Layout>
           { userAlert.condition &&

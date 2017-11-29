@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section /> renders correctly 1`] = `
+<div
+  className="section background-undefined"
+  style={
+    Object {
+      "backgroundImage": "url(undefined)",
+    }
+  }
+>
+  <div
+    className="wrapper"
+  />
+</div>
+`;

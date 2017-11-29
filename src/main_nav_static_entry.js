@@ -1,3 +1,3 @@
-import MainNav from 'static/MainNav';
+import MainNavNew from 'static/MainNavNew';
 
-export default MainNav;
+export default MainNavNew;

@@ -15,7 +15,6 @@ function ButtonGroup(props) {
   return (
     <div className={styles['button-group']}>
       <Button
-        variant='action'
         onClick={onDetails}
       >
         View Policy
@@ -37,8 +36,7 @@ function ButtonGroup(props) {
 
 ButtonGroup.propTypes = {
   onDetails: PropTypes.func.isRequired,
-  onCompare: PropTypes.func,
-  continueCTAText: PropTypes.string,
+  onCompare: PropTypes.func
 };
 
 export default ButtonGroup;

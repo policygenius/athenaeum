@@ -8,12 +8,21 @@
 }
 
 .header {
+  @include typography-b-8;
   margin-bottom: ru(.5);
 }
 
 .tooltip-wrapper {
   float: right;
   margin-left: 1.5rem;
+}
+
+.tooltip {
+  margin-left: auto;
+}
+
+.tooltip-icon {
+  @extend %tooltip-icon;
 }
 
 .body {

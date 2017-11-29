@@ -60,6 +60,7 @@ module.exports = {
             'src/molecules/StepProgress/index.js',
             'src/molecules/StepIndicator/index.js',
             'src/molecules/AgentCallout/index.js',
+            'src/molecules/FeatureSquare/index.js',
           ]
         }
       ]
@@ -78,6 +79,12 @@ module.exports = {
         {
           name: 'Tables',
           components: 'src/organisms/tables/**/index.js'
+        },
+        {
+          name: 'Other',
+          components: () => [
+            'src/organisms/Accordion/index.js',
+          ]
         }
       ]
     },

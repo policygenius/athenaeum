@@ -1,17 +1,16 @@
 .data-row {
   margin-bottom: ru(.25);
-  color: color('neutral-2');
+  color: color('primary-3');
 }
 
 .row {
-  @include typography-light;
-
+  align-items: center;
   display: flex;
   margin: 0;
 }
 
 .label {
-  @include typography(6);
+  @include typography-a(10);
 
   display: flex;
   position: relative;
@@ -26,9 +25,7 @@
 }
 
 .description {
-  @include typography(7);
-
-  color: color('neutral-3');
+  @include typography-b-10();
 }
 
 .value {
@@ -41,6 +38,8 @@
   margin: 0 0 0 ru(.25);
 }
 
+
+
 /* -- Variants -- */
 .large {
   .label {
@@ -49,11 +48,14 @@
   }
 
   .value {
-    @include typography(3);
-    @include typography-semibold;
+    @include typography-a-6-bold;
 
     line-height: 1em;
-    color: color('brand-2');
+    color: color('seoncary-2');
+
+    .unit {
+      font-weight: 900;
+    }
   }
 }
 
@@ -70,4 +72,20 @@
 // Can be applied in addition to a variant
 .indent {
   padding-left: ru(.75);
+}
+
+.subitem {
+  .label {
+    @include typography-b-10;
+  }
+
+  .value, .amount {
+    @include typography-regular();
+  }
+}
+
+.highlight {
+  .value, .amount {
+    color: color('secondary-2');
+  }
 }

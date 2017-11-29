@@ -65,8 +65,8 @@
     "selector-list-comma-newline-after": "always-multi-line",
     "selector-list-comma-newline-before": "never-multi-line",
     "selector-list-comma-space-after": "always-single-line",
-    "selector-no-id": true,
-    "selector-no-type": [ true, {
+    "selector-max-id": 0,
+    "selector-max-type": [ 0, {
       ignore: [ 'compounded', 'descendant']
     }],
     "selector-pseudo-class-case": "lower",

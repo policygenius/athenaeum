@@ -5,7 +5,6 @@ import ReactModal from 'react-modal';
 
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
-import { Layout, Col } from 'atoms/Layout';
 import MobileMenu from 'molecules/MobileMenu';
 import styles from './modal.module.scss';
 
@@ -46,18 +45,18 @@ function Modal(props) {
       overlayClassName={styles['overlay']}
     >
       <div className={styles['dialog']}>
-        <div className={styles['header']}>
-          <Layout
-            smallCols={[ 11, 1 ]}
+        <div className={styles['body']}>
+          <div
+            className={styles['header']}
           >
             <Text
-              type={2}
-              light
+              type={4}
+              font='a'
             >
               {header}
             </Text>
 
-            <Col
+            <div
               className={styles['close-col']}
             >
               {
@@ -68,11 +67,9 @@ function Modal(props) {
                     onClick={onRequestClose}
                   />
               }
-            </Col>
-          </Layout>
-        </div>
+            </div>
+          </div>
 
-        <div className={styles['body']}>
           {React.Children.map(children, wrapChild)}
         </div>
       </div>

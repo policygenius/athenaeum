@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeatureSquare /> renders correctly 1`] = `
+<div
+  className="feature-square background-undefined"
+>
+  <span
+    className="icon-wrapper icon"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": "100px",
+      }
+    }
+  />
+  <div
+    className="layout button-wrapper"
+    id={undefined}
+    style={undefined}
+  >
+    <div
+      className="col col-sm-6 border-neutral-6"
+      onClick={undefined}
+      style={undefined}
+    >
+      <button
+        className="button outline button"
+        disabled={undefined}
+        onClick={undefined}
+        type="button"
+      >
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
+`;

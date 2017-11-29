@@ -2,8 +2,9 @@ import React from 'react';
 import capitalize from 'lodash/capitalize';
 import htmlTags from 'html-tag-names'; // eslint-disable-line
 import Element from 'atoms/Element';
+import assign from 'lodash/assign';
 
-const merge = (props, newProps) => Object.assign({}, props, newProps);
+const merge = (props, newProps) => assign({}, props, newProps);
 const styled = tag => props => <Element {...merge(props, { tag })} />;
 const stylize = component => props => <Element {...merge(props, { component })} />;
 
@@ -11,7 +12,7 @@ function HtmlElements() {
   const nodeElements = (res, htmlTag) => {
     const node = { [capitalize(htmlTag)]: styled(htmlTag) };
 
-    return Object.assign({}, res, node);
+    return assign({}, res, node);
   };
 
   return htmlTags.reduce(nodeElements, {});

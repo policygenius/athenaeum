@@ -18,7 +18,7 @@ export default class ProgressBarStep extends Component {
     }
 
     return {
-      color: 'neutral-5',
+      color: 'neutral-4',
       weight: 'semibold'
     };
   }
@@ -76,7 +76,7 @@ export default class ProgressBarStep extends Component {
     return (
       <div className={styles['breadcrumb']} onClick={this.handleClick}>
         <div className={classnames(this.textClasses())}>
-          <Text tag='span' type={7} className={styles['step-title']} {...this.textProps()}>{ step.text }</Text>
+          <Text tag='span' type={11} font='a' className={styles['step-title']} {...this.textProps()}>{ step.text }</Text>
         </div>
         <div className={classnames(...this.circleWrapperClasses())}>
           <div className={classnames(...this.circleClasses())} />

@@ -1,11 +1,22 @@
 import React from 'react';
 import omit from 'lodash/omit';
+import get from 'lodash/get';
+import assign from 'lodash/assign';
 import Col from './Col';
 
 export function processChild(child, layoutProps) {
 
-  if (child.type === Col) {
-    const colProps = Object.assign(
+  // TODO: Find a better way to type check here.
+  // I believe the first now fails because of Preact
+  if (
+    child.type === Col ||
+    get(child, 'nodeName.prototype.displayName') === 'Col' ||
+    get(child, 'type.prototype.displayName') === 'Col' ||
+    get(child, 'type.name') === 'Col' ||
+    get(child, 'type.rclName') === 'Col'
+  ) {
+
+    const colProps = assign(
       {},
       omit(layoutProps, [ 'padding' ]),
       child.props,
@@ -14,7 +25,7 @@ export function processChild(child, layoutProps) {
     return React.cloneElement(child, colProps);
   }
 
-  const colProps = Object.assign(
+  const colProps = assign(
     {},
     layoutProps,
     omit(child.props, [ 'className', 'style', 'onClick', 'onChange' ])
