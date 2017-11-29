@@ -10,6 +10,7 @@ const sections = ({ panels, openText, closeText }) =>
       openText={openText}
       closeText={closeText}
       key={i}
+      open={i === 0}
       number={i + 1}
       {...panel}
     />

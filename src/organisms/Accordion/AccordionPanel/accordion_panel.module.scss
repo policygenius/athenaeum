@@ -13,6 +13,10 @@
     }
   }
 
+  .toggleSwitch {
+    @include typography-b-10();
+  }
+
   @media #{$desktop} {
     max-width: 50em;
   }
@@ -46,6 +50,7 @@
   font-weight: typography-b-weight(true);
   align-self: start;
 
+  // IE 11 displays the ordinal very strangely. Just best to avoid.
   @media all and ( -ms-high-contrast: none ), ( -ms-high-contrast: active ) {
     display: none;
   }
