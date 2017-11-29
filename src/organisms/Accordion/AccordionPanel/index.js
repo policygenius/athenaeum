@@ -10,7 +10,7 @@ export default class AccordionPanel extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      open: false
+      open: props.open,
     };
   }
 
@@ -73,6 +73,7 @@ AccordionPanel.propTypes = {
    */
   className: PropTypes.string,
   body: PropTypes.string,
+  open: PropTypes.bool,
   title: PropTypes.string,
   openText: PropTypes.string,
   closeText: PropTypes.string,
