@@ -1,5 +1,7 @@
 .img {
   max-width: 100%;
+  width: 100%;
+  display: block;
 }
 
 @media #{$mobile-only} {
@@ -23,10 +25,18 @@
   .lazyload,
   .lazyloading {
     opacity: 0;
+    width: 100%;
+    display: block;
+  }
+
+  .unlazy {
+    opacity: 1;
   }
 
   .lazyloaded {
     opacity: 1;
+    width: 100%;
+    display: block;
     transition: opacity 300ms;
   }
 }
