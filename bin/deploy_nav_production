@@ -11,7 +11,7 @@ aws s3 sync \
   --cache-control max-age=0 \
   --exclude '.DS_Store'
 
-echo "Deployed Main Nav to http://rcl.policygenius.com/latest/main_nav/"
+echo "Deployed Main Nav to http://rcl.policygenius.com/latest/main_nav/index.html"
 
 NODE_ENV=production yarn run build:publish:nav
 
@@ -30,4 +30,4 @@ aws s3 sync \
   --content-encoding gzip \
   --exclude '.DS_Store'
 
-echo "Deployed Main Nav to http://rcl.policygenius.com/main_nav/"
+echo "Deployed Main Nav to http://rcl.policygenius.com/main_nav/index.html"

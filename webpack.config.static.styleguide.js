@@ -5,7 +5,7 @@ const staticBaseConfig = require('./webpack.config.static.base.js');
 
 module.exports = ({ static }) => staticBaseConfig({
   entry: [
-    // 'babel-polyfill',
+    'babel-polyfill',
     `./${static}_entry.js`,
   ],
   output: {

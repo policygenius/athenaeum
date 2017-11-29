@@ -21,19 +21,14 @@ steps:
 
   - wait
 
-  - block: 'Trigger deploy/publish MainNav/Footer'
-    branches: '!rebrand'
-
   - trigger: "athenaeum-main-nav"
-    label: ':roller_coaster: Trigger MainNav and Footer Build/Deploy'
+    label: ':roller_coaster: Trigger MainNav and Footer Pipeline'
     async: true
     build:
       branch: ${BUILDKITE_BRANCH}
 
-  - wait
-
   - block: 'Trigger deploy/publish'
-    branches: 'rebrand'
+    branches: 'master'
     prompt: 'Choose a version bump'
     fields:
     - select: 'Increment'
@@ -41,17 +36,15 @@ steps:
       hint: "MAJOR: incompatible API changes // MINOR: add backwards-compatible functionality // PATCH: backwards-compatible bug fixes"
       required: true
       options:
-        # - label: 'Major'
-        #   value: 'major'
+        - label: 'Major -- Please avoid major bumps'
+          value: 'major'
         - label: 'Minor'
           value: 'minor'
         - label: 'Patch'
           value: 'patch'
 
-  - block: 'Trigger custom deploy'
-    branches: '!rebrand'
-
-  - wait
+  - block: "Trigger custom deploy for current version"
+    branches: '!master'
 
   - name: ':rocket: :s3: :npm:'
     command: bin/deploy
@@ -68,3 +61,4 @@ steps:
     branches: rebrand
     agents:
       queue: builder
+
