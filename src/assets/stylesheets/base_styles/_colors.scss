@@ -6,6 +6,12 @@ $colors-map: (
   neutral-2: #808080,
   neutral-3: #b2b2b2,
   neutral-4: #d6d6d6,
+  /*
+    This color is a new addition that came too late in the rebrand
+    In order to preserve neutral-5 across our styles, we are temporarily
+    adding this color as an in between
+   */
+  neutral-4-5: #ededed,
   neutral-5: #f5f5f5,
 
   /* Orange, white, black */

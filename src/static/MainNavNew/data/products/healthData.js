@@ -17,7 +17,7 @@ const submenuItems = [
       { title: 'Blue Cross Blue Shield', url: '/health-insurance/blue-cross-blue-shield/reviews/', },
       { title: 'Humana', url: '/health-insurance/humana/reviews/', },
       { title: 'Kaiser Permanente', url: '/health-insurance/kaiser/reviews/', },
-      { title: 'View All Companies', url: '/health-insurance/companies', },
+      { title: 'View All Companies', url: '/health-insurance/companies/', },
     ],
   },
   {
@@ -42,7 +42,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'healthColor3X',
     linkHref: '/health-insurance/',
-    secondaryLinkHref: '/health-insurance/learn',
+    secondaryLinkHref: '/health-insurance/learn/',
   },
   list: {
     key: 'health-submenu-list-',
