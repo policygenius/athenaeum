@@ -1,12 +1,19 @@
 #!/bin/bash
 set -eo pipefail
 
-NODE_ENV=development yarn
+echo '+++ Build footer'
 NODE_ENV=production yarn run build:footer:styleguide
-NODE_ENV=production yarn run build:publish:footer
 
-cp ./styleguide/footer/build/index.html ./footer/build/index.html
-cp ./styleguide/footer/build/styleguide_bundle.js ./footer/build/styleguide_bundle.js
+echo '+++ Deploying footer styleguide latest to S3'
+aws s3 sync \
+  ./styleguide/footer/build s3://rcl-pg/latest/footer/ \
+  --acl=public-read \
+  --cache-control max-age=0 \
+  --exclude '.DS_Store'
+
+echo "Deployed Main Nav to http://rcl.policygenius.com/latest/footer/index.html"
+
+NODE_ENV=production yarn run build:publish:footer
 
 echo '+++ Compiling & Building Footer'
 

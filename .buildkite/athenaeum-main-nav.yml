@@ -11,6 +11,8 @@ steps:
 
   - wait
 
+  - block: 'Deploy MainNav AND Footer to Staging?'
+
   - name: 'Upload MainNav to Staging :s3:'
     command: bin/deploy_nav_staging
     agents:
@@ -18,19 +20,6 @@ steps:
     plugins:
       docker-compose:
         run: athenaeum
-
-  - wait
-
-  - name: 'Upload MainNav to Rebrand :s3:'
-    command: bin/deploy_nav_rebrand
-    branches: 'rebrand'
-    agents:
-      queue: builder
-    plugins:
-      docker-compose:
-        run: athenaeum
-
-  - wait
 
   - name: 'Upload Footer to Staging :s3:'
     command: bin/deploy_footer_staging
@@ -40,26 +29,24 @@ steps:
       docker-compose:
         run: athenaeum
 
-  - wait
+  - block: 'Deploy MainNav to Production?'
+    branches: 'master'
 
-
-  - name: 'Upload Footer to Rebrand :s3:'
-    command: bin/deploy_footer_rebrand
+  - name: 'Upload MainNav to Production :s3:'
+    branches: 'master'
+    command: bin/deploy_nav_production
     agents:
       queue: builder
     plugins:
       docker-compose:
         run: athenaeum
 
-  - wait
-
-  - block: 'Deploy git:master MainNav to Production?'
-    prompt: "Please review and approve your changes at: http://rcl.policygenius.com/staging/main_nav/index.html"
+  - block: 'Deploy Footer to Production?'
     branches: 'master'
 
-  - name: 'Upload MainNav to Production :s3:'
+  - name: 'Upload Footer to Production :s3:'
     branches: 'master'
-    command: bin/deploy_nav_production
+    command: bin/deploy_footer_production
     agents:
       queue: builder
     plugins:
