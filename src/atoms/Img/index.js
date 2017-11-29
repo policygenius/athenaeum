@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import 'lazysizes/lazysizes.min';
 import styles from './img.module.scss';
+
+if (typeof window !== 'undefined') {
+  require('lazysizes/lazysizes.min');
+}
 
 const strParams = '&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data';
 
@@ -41,6 +44,7 @@ function Img(props) {
     tabletSrc,
     mobileImgixSrc,
     tabletImgixSrc,
+    lazy,
     ...rest
   } = props;
 
@@ -52,6 +56,7 @@ function Img(props) {
   const classes = cx(
     styles['img'],
     'lazyload',
+    !lazy && 'unlazy',
     className,
   );
 
@@ -81,6 +86,8 @@ function Img(props) {
           alt={alt || createName(src || imgixSrc)}
           title={title || createName(src || imgixSrc)}
           data-src={defaultSrc}
+          data-sizes='auto'
+          src={lazy ? undefined : defaultSrc}
           {...rest}
         />
       </picture>
@@ -94,7 +101,8 @@ function Img(props) {
       title={title || createName(src || imgixSrc)}
       data-src={src || imgixSrcStr(imgixSrc)}
       data-srcset={srcset}
-      data-sizes='auto'
+      data-sizes={lazy ? 'auto' : '100vw'}
+      src={lazy ? undefined : src || imgixSrcStr(imgixSrc)}
       {...rest}
     />
   );
@@ -164,11 +172,16 @@ Img.propTypes = {
    * If null, the image will not display on tablet
    */
   tabletImgixSrc: PropTypes.string,
+  /**
+   * Set to false to turn off lazyloading
+   */
+  lazy: PropTypes.bool,
 };
 
 Img.defaultProps = {
   alt: '',
-  imgixSrc: 'photos/alexander-dummer-150646.jpg'
+  imgixSrc: 'photos/alexander-dummer-150646.jpg',
+  lazy: true
 };
 
 export default Img;
