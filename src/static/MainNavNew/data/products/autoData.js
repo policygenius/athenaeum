@@ -34,7 +34,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'autoColor3X',
     linkHref: '/auto-insurance/',
-    secondaryLinkHref: '/auto-insurance/learn',
+    secondaryLinkHref: '/auto-insurance/learn/',
   },
   list: {
     alt: 'Auto Insurance',

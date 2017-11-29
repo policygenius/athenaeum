@@ -3,18 +3,18 @@ const submenuItems = [
     header: 'Types of Disability Insurance',
     items: [
       { title: 'Long-Term Disability Insurance', url: '/long-term-disability-insurance/', },
-      { title: 'Short-Term Disability Insurance', url: '/long-term-disability-insurance/learn/short-term-disability-insurance', },
-      { title: 'Supplemental Disability Insurance', url: '/long-term-disability-insurance/learn/supplemental-disability-insurance', },
-      { title: 'Mortgage Disability Insurance', url: '/long-term-disability-insurance/learn/mortgage-disability-insurance', },
+      { title: 'Short-Term Disability Insurance', url: '/long-term-disability-insurance/learn/short-term-disability-insurance/', },
+      { title: 'Supplemental Disability Insurance', url: '/long-term-disability-insurance/learn/supplemental-disability-insurance/', },
+      { title: 'Mortgage Disability Insurance', url: '/long-term-disability-insurance/learn/mortgage-disability-insurance/', },
     ],
   },
   {
     header: 'Helpful Resources',
     items: [
-      { title: 'Disability Insurance Learn Center', url: '/long-term-disability-insurance/learn', },
-      { title: 'How Does Long-Term Disability Insurance Work?', url: '/long-term-disability-insurance/learn/how-does-long-term-disability-insurance-work', },
-      { title: 'How Much Does Long-Term Disability Insurance Cost?', url: '/long-term-disability-insurance/learn/how-much-does-long-term-disability-insurance-cost', },
-      { title: 'Disability Insurance Features & Riders', url: '/long-term-disability-insurance/learn/disability-insurance-riders', },
+      { title: 'Disability Insurance Learn Center', url: '/long-term-disability-insurance/learn/', },
+      { title: 'How Does Long-Term Disability Insurance Work?', url: '/long-term-disability-insurance/learn/how-does-long-term-disability-insurance-work/', },
+      { title: 'How Much Does Long-Term Disability Insurance Cost?', url: '/long-term-disability-insurance/learn/how-much-does-long-term-disability-insurance-cost/', },
+      { title: 'Disability Insurance Features & Riders', url: '/long-term-disability-insurance/learn/disability-insurance-riders/', },
     ],
   },
   {
@@ -44,7 +44,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'disabilityColor3X',
     linkHref: '/long-term-disability-insurance/',
-    secondaryLinkHref: '/long-term-disability-insurance/learn',
+    secondaryLinkHref: '/long-term-disability-insurance/learn/',
   },
   list: {
     key: 'disability-submenu-list-',

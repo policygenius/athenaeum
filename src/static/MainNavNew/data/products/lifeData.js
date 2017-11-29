@@ -13,7 +13,7 @@ const submenuItems = [
     header: 'Helpful Resources',
     items: [
       { title: 'Life Insurance Advice', url: '/life-insurance/learn/', },
-      { title: 'Life Insurance Calculator', url: '/life-insurance/quotes/basic_info', },
+      { title: 'Life Insurance Calculator', url: '/life-insurance/quotes/basic_info/', },
       { title: 'Best Life Insurance Companies', url: '/life-insurance/best-life-insurance-companies/', },
       { title: 'Term vs. Whole Life Insurance', url: '/life-insurance/learn/whole-life-versus-term-life-insurance/', },
       { title: 'Life Insurance Shopping Guide', url: '/life-insurance/learn/shopping-advice/', },
@@ -43,7 +43,7 @@ export default {
     cta: 'Start Shopping Now',
     icon: 'lifeColor3X',
     linkHref: '/life-insurance/',
-    secondaryLinkHref: '/life-insurance/learn',
+    secondaryLinkHref: '/life-insurance/learn/',
   },
   list: {
     key: 'life-submenu-list-',
