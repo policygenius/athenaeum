@@ -58,7 +58,7 @@ steps:
 
   - name: ':rocket: :octocat:'
     command: bin/commit-tag
-    branches: rebrand
+    branches: master
     agents:
       queue: builder
 
