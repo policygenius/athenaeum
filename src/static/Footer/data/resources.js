@@ -1,5 +1,19 @@
 import { RESOURCES } from '../constants';
 
+export const buttons = {
+  selectProductButton: {
+    text: 'Select a Product',
+  },
+  newsletterButton: {
+    text: 'Get our newsletter',
+    attr: {
+      href: 'https://visit.policygenius.com/ub/newslettersignup/',
+      rel: '',
+      target: '',
+    },
+  }
+};
+
 export const resourcesList = {
   [RESOURCES.INSURANCE_GUIDES]: {
     header: 'Insurance Product Guides',

@@ -78,7 +78,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                   >
                     <div />
                   </span>
-                  <noscript />
                 </span>
               </div>
               <div
@@ -139,7 +138,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                   >
                     <div />
                   </span>
-                  <noscript />
                 </span>
               </div>
               <div
@@ -281,7 +279,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           >
             <div />
           </span>
-          <noscript />
         </span>
       </div>
       <div
@@ -313,7 +310,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           >
             <div />
           </span>
-          <noscript />
         </span>
         <span
           className="tooltip-wrapper policy-info-tooltip"
@@ -338,7 +334,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           >
             <div />
           </span>
-          <noscript />
         </span>
         <span
           className="tooltip-wrapper policy-info-tooltip"
@@ -363,7 +358,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           >
             <div />
           </span>
-          <noscript />
         </span>
       </div>
       <div

@@ -22,59 +22,68 @@ const wrapChild = (child) => {
   );
 };
 
-function Modal(props) {
-  const {
-    children,
-    className,
-    contentLabel,
-    header,
-    hideX,
-    isOpen,
-    onAfterOpen,
-    onRequestClose,
-    variant
-  } = props;
+class Modal extends React.Component {
+  componentWillMount() {
+    if (typeof document !== 'undefined') {
+      ReactModal.setAppElement('body');
+    }
+  }
 
-  return (
-    <ReactModal
-      isOpen={isOpen}
-      onAfterOpen={onAfterOpen}
-      onRequestClose={onRequestClose}
-      contentLabel={contentLabel}
-      className={classnames(styles['modal'], styles[variant], className)}
-      overlayClassName={styles['overlay']}
-    >
-      <div className={styles['dialog']}>
-        <div className={styles['body']}>
-          <div
-            className={styles['header']}
-          >
-            <Text
-              type={4}
-              font='a'
-            >
-              {header}
-            </Text>
+  render() {
+    const {
+      children,
+      className,
+      contentLabel,
+      header,
+      hideX,
+      isOpen,
+      onAfterOpen,
+      onRequestClose,
+      variant
+    } = this.props;
 
+    return (
+      <ReactModal
+        isOpen={isOpen}
+        onAfterOpen={onAfterOpen}
+        onRequestClose={onRequestClose}
+        contentLabel={contentLabel}
+        className={classnames(styles['modal'], styles[variant], className)}
+        overlayClassName={styles['overlay']}
+      >
+        <div className={styles['dialog']}>
+          <div className={styles['body']}>
             <div
-              className={styles['close-col']}
+              className={styles['header']}
             >
-              {
-                !hideX &&
-                  <Icon
-                    icon='close'
-                    className={styles['close']}
-                    onClick={onRequestClose}
-                  />
-              }
-            </div>
-          </div>
+              <Text
+                type={4}
+                font='a'
+              >
+                {header}
+              </Text>
 
-          {React.Children.map(children, wrapChild)}
+              <div
+                className={styles['close-col']}
+              >
+                {
+                  !hideX &&
+                    <Icon
+                      icon='close'
+                      className={styles['close']}
+                      onClick={onRequestClose}
+                    />
+                }
+              </div>
+            </div>
+
+            {React.Children.map(children, wrapChild)}
+          </div>
         </div>
-      </div>
-    </ReactModal>
-  );
+      </ReactModal>
+    );
+
+  }
 }
 
 
