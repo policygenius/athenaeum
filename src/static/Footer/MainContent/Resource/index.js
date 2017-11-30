@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -5,6 +6,7 @@ import { generate } from 'shortid';
 
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
+import Spacer from 'atoms/Spacer';
 import List from 'atoms/List';
 import LinkWrapper from 'atoms/LinkWrapper';
 
@@ -17,9 +19,12 @@ class Resource extends Component {
     this.state = {
       collapsed: true,
     };
+
+    this.setState = this.setState.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = () => {
+  handleClick() {
     this.setState({
       collapsed: !this.state.collapsed
     });
@@ -49,6 +54,7 @@ class Resource extends Component {
             />
           </Text>
         </div>
+        <Spacer size={12} />
         <List
           bottomSpacing={13}
           noBullets
@@ -76,14 +82,10 @@ class Resource extends Component {
         </List>
       </div>
     );
-
   }
 }
 
 Resource.propTypes = {
-  collapsed: PropTypes.bool,
-  icon: PropTypes.string,
-  onClick: PropTypes.func,
   resources: PropTypes.object,
   className: PropTypes.string
 };

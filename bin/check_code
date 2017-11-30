@@ -2,7 +2,7 @@
 
 echo +++ Linting:
 git diff --name-only HEAD | \
-  grep '\.jsx\|\.js\?$' | xargs -n 1 yarn lint:eslint
+  (grep '\.jsx\|\.js\?$' || echo '') | xargs -n 1 yarn eslint
 
 git diff --name-only HEAD | \
-    grep '\.scss$' | xargs -n 1 yarn stylelint
+  (grep '\.scss$' || exit) | xargs -n 1 yarn stylelint
