@@ -103,12 +103,6 @@ $content-margin: ru(1);
   }
 }
 
-.policy-hat {
-  height: ru(.25);
-  background: color('secondary-4');
-  margin: 0 ru(1);
-}
-
 @media #{$small-only} {
   .carrier-logo {
     max-width: rem-calc(150px);
