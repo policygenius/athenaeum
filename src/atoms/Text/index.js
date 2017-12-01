@@ -228,7 +228,7 @@ Text.defaultProps = {
   size: 8,
   font: 'b',
   color: 'primary-3',
-  inherit: {},
+  inherit: true,
 };
 
 export default Text;
