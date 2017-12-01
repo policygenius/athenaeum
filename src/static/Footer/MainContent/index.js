@@ -63,6 +63,7 @@ class SelectProduct extends React.Component {
             outline
             unflex
             onClick={this.openModal}
+            className={styles.button}
           >
             { buttons.selectProductButton.text }
           </Button>
@@ -82,6 +83,7 @@ class SelectProduct extends React.Component {
             outline
             unflex
             linkAttrs={{ ...buttons.newsletterButton.attr }}
+            className={styles.button}
           >
             { buttons.newsletterButton.text }
           </Button>
