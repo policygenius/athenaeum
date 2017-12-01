@@ -1,226 +1,221 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
-<div>
+<div
+  className="featured-policy-card"
+>
   <div
-    className="featured-policy-card"
+    className="content"
   >
     <div
-      className="content"
+      className="top-2 top-4"
+    />
+    <div
+      className="premium"
     >
-      <div
-        className="top-2 top-4"
-      />
-      <div
-        className="premium"
+      <strong
+        className="primary-3 type-a-3-bold inherit"
       >
+        $19.80
         <strong
-          className="primary-3 type-a-3-bold inherit"
+          className="primary-3 type-a-11-bold inherit"
         >
-          $19.80
-          <strong
-            className="primary-3 type-a-11-bold inherit"
-          >
-            /MO
-          </strong>
+          /MO
         </strong>
-        <div
-          className="top-1"
-        />
-        <div />
-      </div>
+      </strong>
       <div
-        className="top-6"
+        className="top-1"
       />
-      <div
-        className="carrier-logo"
-      >
-        <div />
-      </div>
-      <div
-        className="top-6"
-      />
-      <div
-        className="policy-info"
-      >
-        <div>
-          <div
-            className="layout policy-info-item"
-            id={undefined}
-            style={undefined}
-          >
-            <div
-              className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
-            >
-              <span
-                className="primary-3 type-b-10-medium inherit"
-              >
-                Financial Strength
-              </span>
-              <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
-                  }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
-              </span>
-            </div>
-            <div
-              className="col col-sm-6 border-neutral-6"
-              onClick={undefined}
-              style={undefined}
-            >
-              <strong
-                className="primary-3 type-a-8-bold inherit"
-              >
-                A+
-              </strong>
-            </div>
-          </div>
-          <div
-            className="top-2"
-          />
-        </div>
-        <div>
-          <div
-            className="layout policy-info-item"
-            id={undefined}
-            style={undefined}
-          >
-            <div
-              className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
-            >
-              <span
-                className="primary-3 type-b-10-medium inherit"
-              >
-                Total Customers
-              </span>
-              <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
-                  }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
-              </span>
-            </div>
-            <div
-              className="col col-sm-6 border-neutral-6"
-              onClick={undefined}
-              style={undefined}
-            >
-              <strong
-                className="primary-3 type-a-8-bold inherit"
-              >
-                16,000,000
-              </strong>
-            </div>
-          </div>
-          <div
-            className="top-2"
-          />
-        </div>
-        <div>
-          <div
-            className="layout policy-info-item"
-            id={undefined}
-            style={undefined}
-          >
-            <div
-              className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-              onClick={undefined}
-              style={undefined}
-            >
-              <span
-                className="primary-3 type-b-10-medium inherit"
-              >
-                Policy Type
-              </span>
-              <span
-                className="tooltip-wrapper policy-info-tooltip-icon"
-                onClick={[Function]}
-              >
-                <span
-                  className="icon-wrapper tooltip"
-                  onClick={undefined}
-                  style={
-                    Object {
-                      "height": undefined,
-                      "width": undefined,
-                    }
-                  }
-                />
-                <span
-                  className="hover-message"
-                >
-                  <div />
-                </span>
-                <noscript />
-              </span>
-            </div>
-            <div
-              className="col col-sm-6 border-neutral-6"
-              onClick={undefined}
-              style={undefined}
-            >
-              <strong
-                className="primary-3 type-a-8-bold inherit"
-              >
-                Level Term
-              </strong>
-            </div>
-          </div>
-          <div
-            className="top-2"
-          />
-        </div>
+      <div />
+    </div>
+    <div
+      className="top-6"
+    />
+    <div
+      className="carrier-logo"
+    >
+      <div />
+    </div>
+    <div
+      className="top-6"
+    />
+    <div
+      className="policy-info"
+    >
+      <div>
         <div
-          className="top-4"
-        />
-      </div>
-      <div
-        className="button-group"
-      >
-        <button
-          className="button"
-          disabled={undefined}
-          onClick={[Function]}
-          type="button"
+          className="layout policy-info-item"
+          id={undefined}
+          style={undefined}
         >
-          View Policy
-        </button>
+          <div
+            className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+            onClick={undefined}
+            style={undefined}
+          >
+            <span
+              className="primary-3 type-b-10-medium inherit"
+            >
+              Financial Strength
+            </span>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
+              <span
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
+              </span>
+            </span>
+          </div>
+          <div
+            className="col col-sm-6 border-neutral-6"
+            onClick={undefined}
+            style={undefined}
+          >
+            <strong
+              className="primary-3 type-a-8-bold inherit"
+            >
+              A+
+            </strong>
+          </div>
+        </div>
+        <div
+          className="top-2"
+        />
       </div>
+      <div>
+        <div
+          className="layout policy-info-item"
+          id={undefined}
+          style={undefined}
+        >
+          <div
+            className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+            onClick={undefined}
+            style={undefined}
+          >
+            <span
+              className="primary-3 type-b-10-medium inherit"
+            >
+              Total Customers
+            </span>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
+              <span
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
+              </span>
+            </span>
+          </div>
+          <div
+            className="col col-sm-6 border-neutral-6"
+            onClick={undefined}
+            style={undefined}
+          >
+            <strong
+              className="primary-3 type-a-8-bold inherit"
+            >
+              16,000,000
+            </strong>
+          </div>
+        </div>
+        <div
+          className="top-2"
+        />
+      </div>
+      <div>
+        <div
+          className="layout policy-info-item"
+          id={undefined}
+          style={undefined}
+        >
+          <div
+            className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+            onClick={undefined}
+            style={undefined}
+          >
+            <span
+              className="primary-3 type-b-10-medium inherit"
+            >
+              Policy Type
+            </span>
+            <span
+              className="tooltip-wrapper policy-info-tooltip-icon"
+              onClick={[Function]}
+            >
+              <span
+                className="icon-wrapper tooltip"
+                onClick={undefined}
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+              <span
+                className="hover-message"
+              >
+                <div />
+              </span>
+            </span>
+          </div>
+          <div
+            className="col col-sm-6 border-neutral-6"
+            onClick={undefined}
+            style={undefined}
+          >
+            <strong
+              className="primary-3 type-a-8-bold inherit"
+            >
+              Level Term
+            </strong>
+          </div>
+        </div>
+        <div
+          className="top-2"
+        />
+      </div>
+      <div
+        className="top-4"
+      />
+    </div>
+    <div
+      className="button-group"
+    >
+      <button
+        className="button"
+        disabled={undefined}
+        onClick={[Function]}
+        type="button"
+      >
+        View Policy
+      </button>
     </div>
   </div>
 </div>

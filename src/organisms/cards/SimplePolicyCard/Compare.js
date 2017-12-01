@@ -15,8 +15,8 @@ const Compare = ({ compareSelected, onCompare, name }) =>
       onClick={onCompare}
     >
       <Text
-        color='neutral-3'
-        light
+        size={10}
+        font='b'
         className={classnames(compareSelected && styles['checked'])}
       >
         Compare

@@ -16,7 +16,6 @@ $footer: #f6f6f6;
 
 .policy-card {
   border: 1px solid $border;
-  max-width: rem-calc(1200px);
   background-color: color('neutral-8');
   display: none;
 }
@@ -59,14 +58,12 @@ $footer: #f6f6f6;
 }
 
 .checked {
-  color: color('neutral-2');
   font-weight: 600;
 }
 
 .carrier-logo {
   img {
-    width: 100%;
-    max-width: rem-calc(125px);
+    width: rem-calc(105px);
   }
 }
 
@@ -176,7 +173,7 @@ $footer: #f6f6f6;
   }
 
   .carrier-logo {
-    @include section(1, 30%, true);
+    @include section(1, 20%, true);
     padding: 0px rem-calc(12px);
   }
 
@@ -198,10 +195,6 @@ $footer: #f6f6f6;
   }
 
   .carrier-logo {
-    padding: 0px rem-calc(18px);
-  }
-
-  .actions {
     padding: 0px rem-calc(18px);
   }
 

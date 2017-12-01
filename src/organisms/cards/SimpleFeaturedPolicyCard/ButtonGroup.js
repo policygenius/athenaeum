@@ -15,7 +15,6 @@ function ButtonGroup(props) {
   return (
     <div className={styles['button-group']}>
       <Button
-        variant='action'
         onClick={onDetails}
       >
         View Policy
@@ -23,7 +22,7 @@ function ButtonGroup(props) {
 
       <Spacer spacer={2} />
 
-      <Button onClick={onCompare} >
+      <Button outline onClick={onCompare} >
         Compare
       </Button>
     </div>

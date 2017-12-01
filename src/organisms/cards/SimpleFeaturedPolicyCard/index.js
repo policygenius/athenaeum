@@ -31,17 +31,14 @@ function SimpleFeaturedPolicyCard(props) {
         { premium.price ?
           <div className={styles['premium']}>
             <Text
-              type={2}
-              color='neutral-1'
-              semibold
+              type={3}
+              font='a'
             >
               {formattedPremium} <Text tag='span' type={7} color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
-
-            <Spacer spacer={1} />
           </div>
           :
-          <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
+          <Text type={11} font='a' color='neutral-2'>{premium.defaultText}</Text>
         }
 
         <Spacer spacer={6} />

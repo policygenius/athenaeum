@@ -36,7 +36,6 @@ function SimplePolicyCard(props) {
           <CarrierLogo carrierLogo={carrierLogo} />
           <div className={styles['divider']} />
           <Premium premium={premium} />
-          <div className={classnames(styles['divider'], styles['info-divider'])} />
           <PolicyActions
             onDetails={onDetails}
             onCompare={compareCheckbox.onCompare}
