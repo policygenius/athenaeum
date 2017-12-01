@@ -12,6 +12,10 @@
   flex: 1;
 
   &:last-child {
+    .circle-wrapper {
+      width: 0;
+    }
+
     .circle-wrapper:after {
       display: none;
     }

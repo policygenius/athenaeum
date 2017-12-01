@@ -15,15 +15,15 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
       >
         $19.80
          
-        <strong
-          className="bold neutral-2 type-b-7-medium inherit"
+        <span
+          className="neutral-2 spaced type-a-11-bold inherit"
         >
           /MO
-        </strong>
+        </span>
       </p>
     </div>
     <div
-      className="top-6"
+      className="size-24"
     />
     <div
       className="carrier-logo"
@@ -31,7 +31,7 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
       <div />
     </div>
     <div
-      className="top-6"
+      className="size-36"
     />
     <div
       className="button-group"
