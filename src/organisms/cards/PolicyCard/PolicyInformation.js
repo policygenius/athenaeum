@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hide from 'wrappers/Hide';
 import Text from 'atoms/Text';
+import Layout from 'atoms/Layout';
 import Tooltip from 'atoms/Tooltip';
 import formatValue from 'utils/formatValue';
 
@@ -13,9 +14,11 @@ export const PolicyInformation = ({ information }) =>
       information.map((item, idx) =>
         <Tooltip
           text={
-            <Text type={7} color='neutral-3' semibold>
-              <div className={styles['policy-info-label']}>{item.label}</div>
-              <Text type={7} color='neutral-2' semibold>{formatValue(item.value)}</Text>
+            <Text type={11} bold spaced color='neutral-2' font='a'>
+              <Layout smallCols={[ 7, 5 ]} fullwidth>
+                <div className={styles['policy-info-label']}>{item.label.toUpperCase()}</div>
+                <Text type={8} font='a' semibold>{formatValue(item.value)}</Text>
+              </Layout>
             </Text>
           }
           hoverMessageClassName={styles['policy-type-hover-message']}

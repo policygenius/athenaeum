@@ -94,6 +94,10 @@ $border: 1px solid color('neutral-5');
 }
 
 @media #{$small-only} {
+  .modal {
+    margin: ru(4.25) ru(1) ru(4.25);
+  }
+
   .header {
     p {
       @include typography-4(false);

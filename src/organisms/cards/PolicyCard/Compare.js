@@ -15,12 +15,14 @@ const Compare = ({ compareSelected, onCompare, name }) =>
       onClick={onCompare}
     >
       <Text
-        color='neutral-3'
-        size={7}
-        light
+        color='neutral-2'
+        size={11}
+        font='a'
+        bold
+        spaced
         className={classnames(compareSelected && styles['checked'])}
       >
-        Compare
+        COMPARE
       </Text>
       <Spacer spacer={1} />
       <CheckBoxField

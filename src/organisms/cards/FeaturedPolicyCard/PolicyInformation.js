@@ -13,8 +13,7 @@ import styles from './featured_policy_card.module.scss';
 const renderPolicyInformation = (info, idx) =>
   <div key={`policy-info-${idx}`}>
     <Layout
-      smallCols={[ 4, 2, 6 ]}
-      mediumCols={[ 5, 1, 6 ]}
+      smallCols={[ 6 ]}
       className={styles['policy-info-item']}
     >
       <Col
@@ -22,7 +21,9 @@ const renderPolicyInformation = (info, idx) =>
         className={styles['policy-info-tooltip-group']}
       >
         <Text
-          type={7}
+          type={10}
+          font='b'
+          tag='span'
         >
           {info.label}
         </Text>
@@ -32,8 +33,7 @@ const renderPolicyInformation = (info, idx) =>
           {info.hoverMessage}
         </Tooltip>
       </Col>
-      <div />
-      <Text type={6} semibold>{formatValue(info.value)}</Text>
+      <Text type={8} font='a' semibold>{formatValue(info.value)}</Text>
     </Layout>
     <Spacer spacer={2} />
   </div>

@@ -24,6 +24,7 @@ function ButtonGroup(props) {
         <div>
           <Spacer spacer={2} />
           <Button
+            outline
             onClick={onCompare}
           >
             Compare

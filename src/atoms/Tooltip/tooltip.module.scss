@@ -23,6 +23,7 @@ $hover-message-shift: calc(50% - 3.06rem);
   opacity: 0;
   padding: $tooltip-width;
   position: absolute;
+  text-align: left;
   top: calc(100% + 10px);
   transform: translateX(-50%);
   left: 50%;

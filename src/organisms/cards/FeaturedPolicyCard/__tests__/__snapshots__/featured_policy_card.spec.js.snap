@@ -5,21 +5,20 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
   className="featured-policy-card"
 >
   <div
-    className="header"
-  />
-  <div
     className="content"
   >
+    <div
+      className="top-2 top-4"
+    />
     <div
       className="premium"
     >
       <strong
-        className="bold neutral-1 type-b-2-medium inherit"
+        className="primary-3 type-a-3-bold inherit"
       >
         $19.80
-         
         <strong
-          className="bold neutral-2 type-b-7-medium inherit"
+          className="primary-3 type-a-11-bold inherit"
         >
           /MO
         </strong>
@@ -50,15 +49,15 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
+            className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <p
-              className="primary-3 type-b-7-medium inherit"
+            <span
+              className="primary-3 type-b-10-medium inherit"
             >
               Financial Strength
-            </p>
+            </span>
             <span
               className="tooltip-wrapper policy-info-tooltip-icon"
               onClick={[Function]}
@@ -81,19 +80,12 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             </span>
           </div>
           <div
-            className="col col-sm-2 col-md-1 border-neutral-6"
-            onClick={undefined}
-            style={undefined}
-          >
-            <div />
-          </div>
-          <div
-            className="col col-sm-6 col-md-6 border-neutral-6"
+            className="col col-sm-6 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <strong
-              className="bold primary-3 type-b-6-medium inherit"
+              className="primary-3 type-a-8-bold inherit"
             >
               A+
             </strong>
@@ -110,15 +102,15 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
+            className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <p
-              className="primary-3 type-b-7-medium inherit"
+            <span
+              className="primary-3 type-b-10-medium inherit"
             >
               Total Customers
-            </p>
+            </span>
             <span
               className="tooltip-wrapper policy-info-tooltip-icon"
               onClick={[Function]}
@@ -141,19 +133,12 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             </span>
           </div>
           <div
-            className="col col-sm-2 col-md-1 border-neutral-6"
-            onClick={undefined}
-            style={undefined}
-          >
-            <div />
-          </div>
-          <div
-            className="col col-sm-6 col-md-6 border-neutral-6"
+            className="col col-sm-6 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <strong
-              className="bold primary-3 type-b-6-medium inherit"
+              className="primary-3 type-a-8-bold inherit"
             >
               16,000,000
             </strong>
@@ -170,15 +155,15 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           style={undefined}
         >
           <div
-            className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
+            className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
             onClick={undefined}
             style={undefined}
           >
-            <p
-              className="primary-3 type-b-7-medium inherit"
+            <span
+              className="primary-3 type-b-10-medium inherit"
             >
               Policy Type
-            </p>
+            </span>
             <span
               className="tooltip-wrapper policy-info-tooltip-icon"
               onClick={[Function]}
@@ -201,19 +186,12 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             </span>
           </div>
           <div
-            className="col col-sm-2 col-md-1 border-neutral-6"
-            onClick={undefined}
-            style={undefined}
-          >
-            <div />
-          </div>
-          <div
-            className="col col-sm-6 col-md-6 border-neutral-6"
+            className="col col-sm-6 border-neutral-6"
             onClick={undefined}
             style={undefined}
           >
             <strong
-              className="bold primary-3 type-b-6-medium inherit"
+              className="primary-3 type-a-8-bold inherit"
             >
               Level Term
             </strong>

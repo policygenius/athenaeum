@@ -7,7 +7,6 @@ import Text from 'atoms/Text';
 import Spacer from 'atoms/Spacer';
 
 import styles from './featured_policy_card.module.scss';
-import Header from './Header';
 import ButtonGroup from './ButtonGroup';
 import PolicyInformation from './PolicyInformation';
 
@@ -22,6 +21,7 @@ function FeaturedPolicyCard(props) {
     information,
     onCompare,
     continueCTAText,
+    policyHat,
   } = props;
 
   const classes = [
@@ -29,30 +29,35 @@ function FeaturedPolicyCard(props) {
     className,
   ];
 
+  const contentClasses = classnames(
+    styles['content'],
+    policyHat && styles['policy-hat'],
+  );
+
   const formattedPremium = accounting.formatMoney(premium.price);
 
   return (
     <div className={classnames(...classes)}>
-      { header && <Header header={header} /> }
-
-      <div className={styles['content']}>
+      <div className={contentClasses}>
+        { header && header }
+        <Spacer small />
         { premium.price ?
           <div className={styles['premium']}>
             <Text
-              type={2}
-              color='neutral-1'
+              type={3}
+              font='a'
               semibold
             >
-              {formattedPremium} <Text tag='span' type={7} color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium}<Text tag='span' type={11} font='a' semibold>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
 
             <Spacer spacer={1} />
 
             {discount && discount}
           </div>
-          :
+            :
           <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
-        }
+          }
 
         <Spacer spacer={6} />
 
@@ -137,10 +142,15 @@ FeaturedPolicyCard.propTypes = {
     ]).isRequired,
     hoverMessage: PropTypes.node.isRequired,
   })),
+  /**
+   * Setting this to true will add a 'hat' to the policy card
+   */
+  policyHat: PropTypes.bool,
 };
 
 FeaturedPolicyCard.defaultProps = {
   continueCTAText: 'Continue',
+  policyHat: false
 };
 
 export default FeaturedPolicyCard;

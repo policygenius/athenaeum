@@ -12,15 +12,17 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         className="content"
       >
         <div
+          className="top-2 top-4"
+        />
+        <div
           className="premium"
         >
           <strong
-            className="bold neutral-1 type-b-2-medium inherit"
+            className="primary-3 type-a-3-bold inherit"
           >
             $19.80
-             
             <strong
-              className="bold neutral-2 type-b-7-medium inherit"
+              className="primary-3 type-a-11-bold inherit"
             >
               /MO
             </strong>
@@ -50,15 +52,15 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <div
-                className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
+                className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
                 onClick={undefined}
                 style={undefined}
               >
-                <p
-                  className="primary-3 type-b-7-medium inherit"
+                <span
+                  className="primary-3 type-b-10-medium inherit"
                 >
                   label
-                </p>
+                </span>
                 <span
                   className="tooltip-wrapper policy-info-tooltip-icon"
                   onClick={[Function]}
@@ -81,19 +83,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </span>
               </div>
               <div
-                className="col col-sm-2 col-md-1 border-neutral-6"
-                onClick={undefined}
-                style={undefined}
-              >
-                <div />
-              </div>
-              <div
-                className="col col-sm-6 col-md-6 border-neutral-6"
+                className="col col-sm-6 border-neutral-6"
                 onClick={undefined}
                 style={undefined}
               >
                 <strong
-                  className="bold primary-3 type-b-6-medium inherit"
+                  className="primary-3 type-a-8-bold inherit"
                 >
                   Some policy
                 </strong>
@@ -110,15 +105,15 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               style={undefined}
             >
               <div
-                className="col col-sm-4 col-md-5 fullwidth border-neutral-6 policy-info-tooltip-group"
+                className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
                 onClick={undefined}
                 style={undefined}
               >
-                <p
-                  className="primary-3 type-b-7-medium inherit"
+                <span
+                  className="primary-3 type-b-10-medium inherit"
                 >
                   label
-                </p>
+                </span>
                 <span
                   className="tooltip-wrapper policy-info-tooltip-icon"
                   onClick={[Function]}
@@ -141,19 +136,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </span>
               </div>
               <div
-                className="col col-sm-2 col-md-1 border-neutral-6"
-                onClick={undefined}
-                style={undefined}
-              >
-                <div />
-              </div>
-              <div
-                className="col col-sm-6 col-md-6 border-neutral-6"
+                className="col col-sm-6 border-neutral-6"
                 onClick={undefined}
                 style={undefined}
               >
                 <strong
-                  className="bold primary-3 type-b-6-medium inherit"
+                  className="primary-3 type-a-8-bold inherit"
                 >
                   A+
                 </strong>
@@ -183,7 +171,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               className="top-2"
             />
             <button
-              className="button"
+              className="button outline"
               disabled={undefined}
               onClick={[Function]}
               type="button"
@@ -210,9 +198,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <p
-            className="neutral-3 type-b-7-medium inherit"
+            className="neutral-2 spaced type-a-11-bold inherit"
           >
-            Compare
+            COMPARE
           </p>
           <div
             className="top-1"
@@ -257,14 +245,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             <div
               className="hide mobile"
             >
-              <strong
-                className="bold neutral-3 type-b-7-medium inherit"
+              <p
+                className="neutral-2 spaced type-a-11-bold inherit"
               >
-                label
-              </strong>
+                LABEL
+              </p>
             </div>
             <strong
-              className="bold neutral-2 policy-name type-b-5-medium inherit"
+              className="primary-3 policy-name type-a-7-bold inherit"
             >
               Some policy
             </strong>
@@ -291,20 +279,38 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
         >
-          <strong
-            className="bold neutral-3 type-b-7-medium inherit"
+          <p
+            className="neutral-2 spaced type-a-11-bold inherit"
           >
             <div
-              className="policy-info-label"
+              className="layout"
+              id={undefined}
+              style={undefined}
             >
-              label
+              <div
+                className="col col-sm-7 fullwidth border-neutral-6"
+                onClick={undefined}
+                style={undefined}
+              >
+                <div
+                  className="policy-info-label"
+                >
+                  LABEL
+                </div>
+              </div>
+              <div
+                className="col col-sm-5 fullwidth border-neutral-6"
+                onClick={undefined}
+                style={undefined}
+              >
+                <strong
+                  className="primary-3 type-a-8-bold inherit"
+                >
+                  A+
+                </strong>
+              </div>
             </div>
-            <strong
-              className="bold neutral-2 type-b-7-medium inherit"
-            >
-              A+
-            </strong>
-          </strong>
+          </p>
           <span
             className="hover-message policy-type-hover-message"
           >
@@ -315,20 +321,38 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
         >
-          <strong
-            className="bold neutral-3 type-b-7-medium inherit"
+          <p
+            className="neutral-2 spaced type-a-11-bold inherit"
           >
             <div
-              className="policy-info-label"
+              className="layout"
+              id={undefined}
+              style={undefined}
             >
-              label
+              <div
+                className="col col-sm-7 fullwidth border-neutral-6"
+                onClick={undefined}
+                style={undefined}
+              >
+                <div
+                  className="policy-info-label"
+                >
+                  LABEL
+                </div>
+              </div>
+              <div
+                className="col col-sm-5 fullwidth border-neutral-6"
+                onClick={undefined}
+                style={undefined}
+              >
+                <strong
+                  className="primary-3 type-a-8-bold inherit"
+                >
+                  A+
+                </strong>
+              </div>
             </div>
-            <strong
-              className="bold neutral-2 type-b-7-medium inherit"
-            >
-              A+
-            </strong>
-          </strong>
+          </p>
           <span
             className="hover-message policy-type-hover-message"
           >
@@ -339,20 +363,38 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           className="tooltip-wrapper policy-info-tooltip"
           onClick={[Function]}
         >
-          <strong
-            className="bold neutral-3 type-b-7-medium inherit"
+          <p
+            className="neutral-2 spaced type-a-11-bold inherit"
           >
             <div
-              className="policy-info-label"
+              className="layout"
+              id={undefined}
+              style={undefined}
             >
-              label
+              <div
+                className="col col-sm-7 fullwidth border-neutral-6"
+                onClick={undefined}
+                style={undefined}
+              >
+                <div
+                  className="policy-info-label"
+                >
+                  LABEL
+                </div>
+              </div>
+              <div
+                className="col col-sm-5 fullwidth border-neutral-6"
+                onClick={undefined}
+                style={undefined}
+              >
+                <strong
+                  className="primary-3 type-a-8-bold inherit"
+                >
+                  16
+                </strong>
+              </div>
             </div>
-            <strong
-              className="bold neutral-2 type-b-7-medium inherit"
-            >
-              16
-            </strong>
-          </strong>
+          </p>
           <span
             className="hover-message policy-type-hover-message"
           >
@@ -367,17 +409,17 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         className="actions"
       >
         <div>
-          <strong
-            className="bold neutral-2 type-b-5-medium inherit"
+          <p
+            className="neutral-2 type-a-11-bold inherit"
           >
-            <strong
-              className="bold primary-3 type-b-3-medium inherit"
+            <span
+              className="primary-3 type-a-4-bold inherit"
             >
               $19.80
-            </strong>
-             
-            mo
-          </strong>
+            </span>
+            /
+            MO
+          </p>
         </div>
         <div
           className="top-3"
@@ -397,7 +439,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             style={undefined}
           >
             <button
-              className="button"
+              className="button view-policy"
               disabled={undefined}
               onClick={[Function]}
               type="button"
