@@ -3,8 +3,8 @@
 }
 
 .label {
-  @include typography-6(false);
-  color: color('neutral-3');
+  @include typography-b-8;
+  color: color('primary-3');
   padding-right: rem-calc(8px);
   white-space: nowrap;
 }
@@ -19,7 +19,7 @@
     height: 0;
     border-left: rem-calc(4px) solid transparent;
     border-right: rem-calc(4px) solid transparent;
-    border-top: ru(.25) solid color('neutral-2');
+    border-top: ru(.25) solid color('primary-3');
     content: '';
     position: absolute;
     top: 50%;
@@ -34,24 +34,25 @@
     select {
       -moz-appearance: none;
     }
-    
+
     select:-moz-focusring {
       color: transparent;
-      text-shadow: 0 0 0 color('neutral-2');
+      text-shadow: 0 0 0 color('primary-3');
     }
   }
 }
 
 .select {
-  @include typography-6(false);
+  @include typography-b-8;
   width: 100%;
-  color: color('neutral-2');
+  color: color('primary-3');
   border: 0;
   -webkit-appearance: none;
   font-weight: 600;
   z-index: 1;
   padding: 0;
   padding-right: ru(1);
+  background-image: none;
 
   &:focus {
     outline: none;

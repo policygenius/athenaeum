@@ -11,12 +11,11 @@ export const Premium = ({ premium }) => {
   return premium.price ?
     <div className={styles['premium']}>
       <Text
-        type={3}
-        color='neutral-1'
-        semibold
+        type={4}
+        font='a'
         className={styles['premium-text']}
       >
-        {formattedPremium} <Text tag='span' type={7} color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
+        {formattedPremium} <Text tag='span' type={11} font='b' color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
       </Text>
     </div>
     :

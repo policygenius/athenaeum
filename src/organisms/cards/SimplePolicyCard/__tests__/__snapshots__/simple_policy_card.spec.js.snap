@@ -14,8 +14,8 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
         <div
           className="premium"
         >
-          <strong
-            className="bold neutral-1 type-b-2-medium inherit"
+          <p
+            className="primary-3 type-a-3-bold inherit"
           >
             $19.80
              
@@ -24,10 +24,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             >
               /MO
             </strong>
-          </strong>
-          <div
-            className="top-1"
-          />
+          </p>
         </div>
         <div
           className="top-6"
@@ -44,7 +41,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           className="button-group"
         >
           <button
-            className="button action"
+            className="button"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -55,7 +52,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             className="top-2"
           />
           <button
-            className="button"
+            className="button outline"
             disabled={undefined}
             onClick={[Function]}
             type="button"
@@ -81,7 +78,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           onClick={[Function]}
         >
           <p
-            className="neutral-3 type-b-8-medium inherit"
+            className="primary-3 type-b-10-medium inherit"
           >
             Compare
           </p>
@@ -120,21 +117,18 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
       <div
         className="premium"
       >
-        <strong
-          className="bold neutral-1 premium-text type-b-3-medium inherit"
+        <p
+          className="primary-3 premium-text type-a-4-bold inherit"
         >
           $19.80
            
           <strong
-            className="bold neutral-2 type-b-7-medium inherit"
+            className="bold neutral-2 type-b-11-medium inherit"
           >
             /MO
           </strong>
-        </strong>
+        </p>
       </div>
-      <div
-        className="divider info-divider"
-      />
       <div
         className="actions"
       >

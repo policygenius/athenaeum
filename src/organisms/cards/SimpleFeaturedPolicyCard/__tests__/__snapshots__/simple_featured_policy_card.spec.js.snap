@@ -10,8 +10,8 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
     <div
       className="premium"
     >
-      <strong
-        className="bold neutral-1 type-b-2-medium inherit"
+      <p
+        className="primary-3 type-a-3-bold inherit"
       >
         $19.80
          
@@ -20,10 +20,7 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
         >
           /MO
         </strong>
-      </strong>
-      <div
-        className="top-1"
-      />
+      </p>
     </div>
     <div
       className="top-6"
@@ -40,7 +37,7 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
       className="button-group"
     >
       <button
-        className="button action"
+        className="button"
         disabled={undefined}
         onClick={[Function]}
         type="button"
@@ -51,7 +48,7 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
         className="top-2"
       />
       <button
-        className="button"
+        className="button outline"
         disabled={undefined}
         onClick={undefined}
         type="button"

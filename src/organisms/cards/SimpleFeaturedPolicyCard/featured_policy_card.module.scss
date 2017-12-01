@@ -1,13 +1,12 @@
 $card-border: 1px solid #dfdfdf;
-$header-fill: #f5f5f5;
+$header-fill: color('neutral-5');
 $radius: rem-calc(8px);
 $details-link-color: #4a4a4a;
 $details-link-border: 1px solid #b2b2b2;
 
 .featured-policy-card {
-  border-radius: $radius;
   border: $card-border;
-  background-color: color('neutral-8');
+  background-color: color('primary-2');
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -29,7 +28,7 @@ $details-link-border: 1px solid #b2b2b2;
 
 .content {
   padding: ru(1);
-  background-color: color('neutral-8');
+  background-color: color('primary-2');
   border-radius: $radius;
   display: flex;
   flex-direction: column;
