@@ -10,6 +10,7 @@ exports[`<SliderField /> renders correctly 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
+    onMouseUp={[Function]}
     onTouchStart={[Function]}
     style={undefined}
   >
