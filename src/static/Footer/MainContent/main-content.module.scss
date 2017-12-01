@@ -5,21 +5,17 @@
     padding-left: rem-calc(12);
     padding-right: rem-calc(12);
 
+    .button {
+      width: 100%;
+    }
+
     .select-product-1 {
       padding-top: rem-calc(36);
       margin-bottom: rem-calc(36);
-
-      button {
-        width: 100%;
-      }
     }
 
     .select-product-2 {
       margin-bottom: rem-calc(60);
-
-      button {
-        width: 100%;
-      }
     }
 
     .last-resource {
