@@ -48,7 +48,7 @@ function FeaturedPolicyCard(props) {
               font='a'
               semibold
             >
-              {formattedPremium}<Text tag='span' type={11} font='a' semibold>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium}<Text tag='span' type={11} font='a' spaced semibold>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
 
             <Spacer spacer={1} />

@@ -81,9 +81,11 @@ $footer: #f6f6f6;
 }
 
 .carrier-logo {
+  height: ru(1.75);
+
   img {
-    width: 105px;
     max-width: 105px;
+    max-height: 100%;
   }
 }
 
@@ -206,6 +208,7 @@ $footer: #f6f6f6;
   }
 
   .policy-info-label {
+    padding-right: ru(.5);
     margin-bottom: ru(.5);
   }
 
