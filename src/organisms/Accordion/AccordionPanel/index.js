@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import LinkWrapper from 'atoms/LinkWrapper';
+import Text from 'atoms/Text';
 import styles from './accordion_panel.module.scss';
 
 export default class AccordionPanel extends Component {
@@ -48,9 +49,11 @@ export default class AccordionPanel extends Component {
           <span className={styles['ordinal']}>
             {number}.
           </span>
-          <h1 className={styles['title']}>
+          <Text
+            className={styles['title']}
+          >
             {title}
-          </h1>
+          </Text>
           <span className={styles['toggleSwitch']}>
             <LinkWrapper type='secondary'>
               {this.state.open ? closeText : openText}
