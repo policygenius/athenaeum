@@ -13,9 +13,6 @@ exports[`<AccordionPanel /> renders correctly 1`] = `
     >
       .
     </span>
-    <h1
-      className="title"
-    />
     <span
       className="toggleSwitch"
     >
