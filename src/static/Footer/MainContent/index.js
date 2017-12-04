@@ -92,8 +92,11 @@ class SelectProduct extends React.Component {
           resources={resourcesList[RESOURCES.HELPFUL_RESOURCES]}
         />
         <Resource
-          className={styles['last-resource']}
           resources={resourcesList[RESOURCES.REVIEWS]}
+        />
+        <Resource
+          className={styles['last-resource']}
+          resources={resourcesList[RESOURCES.ABOUT]}
         />
       </Layout>
     );
