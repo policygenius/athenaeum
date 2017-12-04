@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import isUndefined from 'lodash/isUndefined';
-import omitBy from 'lodash/omitBy';
+import omit from 'lodash/omit'
 
 import colors from 'atoms/Color/colors.scss';
 import styles from './text.module.scss';
@@ -52,7 +51,8 @@ const getWeight = ({ font, bold, semibold }) => {
 };
 
 function Text(props) {
-  if (!props.children) return null;
+  //TODO: Consider adding an html sanitizer
+  if (!props.children && !props.dangerouslySetInnerHTML) return null;
 
   const {
     align,
@@ -60,13 +60,12 @@ function Text(props) {
     className,
     color,
     italic,
-    onClick,
     spaced,
     variant,
-    style,
     inherit,
     inheritSize,
-    inheritColor
+    inheritColor,
+    ...rest
   } = props;
 
   const font = getFont(props);
@@ -89,17 +88,25 @@ function Text(props) {
 
   return React.createElement(
     tag,
-    omitBy({
+    {
       className: classnames(classes),
-      style,
-      onClick
-    }, isUndefined),
+      ...omit(
+        rest,
+        ['font', 'semibold', 'size', 'tag', 'type', 'bold']
+      )
+    },
     React.Children.map(children, convertChild)
   );
 }
 
 
 Text.propTypes = {
+  /*
+   * If neither children nor dangerouslySetInnerHTML is set, this component will return null
+   */
+  dangerouslySetInnerHTML: PropTypes.shape({
+    __html: PropTypes.string
+  }),
 
   /*
    * Text alignment
@@ -115,11 +122,6 @@ Text.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
-
-  /**
-   * Add custom inline style
-   */
-  style: PropTypes.object,
 
   /**
    * You can use any html element text tag
@@ -171,11 +173,6 @@ Text.propTypes = {
    * Adds italic
    */
   italic: PropTypes.bool,
-
-  /**
-   * onClick callback
-   */
-  onClick: PropTypes.func,
 
   /**
    * Deprecated. Use 'size' instead
