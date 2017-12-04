@@ -11,8 +11,16 @@ steps:
 
   - wait
 
-  - name: ':jest: :scsslint:'
-    command: bin/test
+  - name: ':scsslint:'
+    command: yarn lint
+    agents:
+      queue: runner
+    plugins:
+      docker-compose:
+        run: athenaeum
+
+  - name: ':jest:'
+    command: yarn test
     agents:
       queue: runner
     plugins:

@@ -5,6 +5,7 @@
 - [ ] **TODO: Find a better way to type check here.** : ./src/atoms/Layout/utils.js
 - [ ] **TODO: Write better tests** : ./src/atoms/StyledWrapper/__tests__/styled_wrapper.spec.js
 - [ ] **TODO: Remove 'a' prop as an option from component** : ./src/atoms/Text/index.js
+- [ ] **TODO: Consider adding an html sanitizer** : ./src/atoms/Text/index.js
 - [ ] **TODO: Make the flexbox ordering mobile-first** : ./src/static/Footer/MainContent/main-content.module.scss
 - [ ] **TODO: Remove important** : ./src/static/Footer/MainContent/Resource/resource.module.scss
 - [ ] **TODO: put transition back** : ./src/static/MainNavNew/Menu/menu.module.scss
