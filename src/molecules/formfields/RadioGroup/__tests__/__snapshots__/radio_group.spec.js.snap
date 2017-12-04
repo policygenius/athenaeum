@@ -88,6 +88,6 @@ exports[`<RadioGroup /> renders correctly 1`] = `
       </label>
     </div>
   </div>
-  <span />
+  <div />
 </div>
 `;

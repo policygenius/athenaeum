@@ -63,7 +63,7 @@ exports[`<FieldGroup /> renders correctly 1`] = `
               />
             </span>
           </div>
-          <span />
+          <div />
         </div>
       </div>
       <div
@@ -89,11 +89,11 @@ exports[`<FieldGroup /> renders correctly 1`] = `
               />
             </span>
           </div>
-          <span />
+          <div />
         </div>
       </div>
     </div>
   </div>
-  <span />
+  <div />
 </div>
 `;
