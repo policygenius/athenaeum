@@ -95,5 +95,38 @@ export const resourcesList = {
       }
     ]
   },
+  [RESOURCES.ABOUT]: {
+    header: 'About',
+    items: [
+      {
+        title: 'Our Story',
+        href: 'https://www.policygenius.com/about',
+      },
+      {
+        title: 'Values',
+        href: 'https://www.policygenius.com/about/values',
+      },
+      {
+        title: 'Team',
+        href: 'https://www.policygenius.com/about/team',
+      },
+      {
+        title: 'Careers',
+        href: 'https://www.policygenius.com/careers',
+      },
+      {
+        title: 'Press',
+        href: 'https://www.policygenius.com/about/press',
+      },
+      {
+        title: 'FAQ',
+        href: 'https://www.policygenius.com/about/faq',
+      },
+      {
+        title: 'Partnerships',
+        href: 'https://www.policygenius.com/about/partnerships',
+      },
+    ]
+  },
 
 };

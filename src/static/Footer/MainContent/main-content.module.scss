@@ -36,7 +36,7 @@
     // TODO: Make the flexbox ordering mobile-first
     // First select product
     div:nth-of-type( 1 ) {
-      order: 5;
+      order: 6;
     }
 
     // 1st resource - Insurance Product Guides
@@ -51,7 +51,7 @@
 
     // 2nd select product - Get our Newsletter
     div:nth-of-type( 4 ) {
-      order: 6;
+      order: 7;
     }
 
     // 3rd Resource - Helpful Resources
@@ -62,6 +62,12 @@
     // 4th Resource - Reviews
     div:nth-of-type( 6 ) {
       order: 4;
+    }
+
+    // 5th Resource - About
+    div:nth-of-type( 7 ) {
+      order: 5;
+      display: block;
     }
   }
 
@@ -94,6 +100,13 @@
 
     div:nth-of-type( 6 ) {
       order: 6;
+    }
+  }
+
+  @media #{$tablet} {
+    // 5th Resource - About
+    div:nth-of-type( 7 ) {
+      display: none;
     }
   }
 
