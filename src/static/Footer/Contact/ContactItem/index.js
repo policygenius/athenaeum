@@ -12,6 +12,16 @@ import StyledWrapper from 'atoms/StyledWrapper';
 
 import { contactItem, contactItemHeader } from '../styles';
 
+const openChat = () => {
+  if (window.$zopim) {
+    return window.$zopim.livechat.window.show();
+  }
+
+  /* eslint-disable no-console */
+  return console.warn('Zopim chat not loaded.');
+  /* eslint-enable no-console */
+};
+
 const ContactItem = (props) => {
   const { item } = props;
 
@@ -28,6 +38,7 @@ const ContactItem = (props) => {
           css={contactItemHeader}
           component={LinkWrapper}
           href={item.href}
+          onClick={() => openChat()}
         >
           <Text type={8} font='a' inheritColor>
             <Icon
@@ -42,18 +53,15 @@ const ContactItem = (props) => {
         </StyledWrapper>
         <Spacer size={6} />
       </Hide>
-      {
-        item.text.map(text =>
-          <Text
-            key={`contact-item-text-${generate()}`}
-            font='b'
-            type={10}
-            className='contact-info'
-          >
-            { text }
-          </Text>
-        )
-      }
+      <Text
+        key={`contact-item-text-${generate()}`}
+        font='b'
+        type={10}
+        className='contact-info'
+        dangerouslySetInnerHTML={{
+          __html: item.text
+        }}
+      />
     </StyledWrapper>
   );
 };
