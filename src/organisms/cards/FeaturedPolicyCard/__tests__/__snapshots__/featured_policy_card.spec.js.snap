@@ -18,7 +18,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       >
         $19.80
         <strong
-          className="primary-3 type-a-11-bold inherit"
+          className="primary-3 spaced type-a-11-bold inherit"
         >
           /MO
         </strong>
