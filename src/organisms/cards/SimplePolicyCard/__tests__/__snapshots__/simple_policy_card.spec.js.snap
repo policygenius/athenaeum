@@ -19,15 +19,15 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           >
             $19.80
              
-            <strong
-              className="bold neutral-2 type-b-7-medium inherit"
+            <span
+              className="neutral-2 spaced type-a-11-bold inherit"
             >
               /MO
-            </strong>
+            </span>
           </p>
         </div>
         <div
-          className="top-6"
+          className="size-24"
         />
         <div
           className="carrier-logo"
@@ -35,7 +35,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           <div />
         </div>
         <div
-          className="top-6"
+          className="size-36"
         />
         <div
           className="button-group"
@@ -109,7 +109,11 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
       <div
         className="carrier-logo"
       >
-        <div />
+        <div
+          className="carrier-img"
+        >
+          <div />
+        </div>
       </div>
       <div
         className="divider"
@@ -122,11 +126,11 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
         >
           $19.80
            
-          <strong
-            className="bold neutral-2 type-b-11-medium inherit"
+          <span
+            className="neutral-2 spaced type-a-11-bold inherit"
           >
             /MO
-          </strong>
+          </span>
         </p>
       </div>
       <div
@@ -142,7 +146,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           }
         >
           <div
-            className="col col-sm-12 border-neutral-6"
+            className="col col-sm-12 fullwidth border-neutral-6"
             onClick={undefined}
             style={undefined}
           >

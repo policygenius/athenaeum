@@ -34,20 +34,20 @@ function SimpleFeaturedPolicyCard(props) {
               type={3}
               font='a'
             >
-              {formattedPremium} <Text tag='span' type={7} color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium} <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
           </div>
           :
-          <Text type={11} font='a' color='neutral-2'>{premium.defaultText}</Text>
+          <Text type={7} font='a'>{premium.defaultText}</Text>
         }
 
-        <Spacer spacer={6} />
+        <Spacer size={24} />
 
         <div className={styles['carrier-logo']}>
           { carrierLogo }
         </div>
 
-        <Spacer spacer={6} />
+        <Spacer size={36} />
 
         <ButtonGroup
           onDetails={onDetails}

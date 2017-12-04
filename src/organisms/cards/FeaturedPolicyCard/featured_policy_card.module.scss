@@ -58,13 +58,14 @@ $content-margin: ru(1);
 }
 
 .carrier-logo {
-  max-width: rem-calc(150px);
-  height: rem-calc(44px);
-  display: flex;
   align-items: center;
+  display: flex;
+  height: rem-calc(60px);
+  justify-content: center;
+  max-width: rem-calc(170px);
 
   img {
-    max-width: rem-calc(150px);
+    max-width: 100%;
     max-height: 100%;
   }
 }
@@ -100,16 +101,6 @@ $content-margin: ru(1);
 
   &:last-child {
     padding-left: ru(.25);
-  }
-}
-
-@media #{$small-only} {
-  .carrier-logo {
-    max-width: rem-calc(150px);
-
-    img {
-      max-width: rem-calc(150px);
-    }
   }
 }
 

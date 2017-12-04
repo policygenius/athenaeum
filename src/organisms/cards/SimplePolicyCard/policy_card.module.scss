@@ -21,7 +21,7 @@ $footer: #f6f6f6;
 }
 
 .body {
-  padding: rem-calc(20px) 0 ru(1);
+  padding: rem-calc(20px) rem-calc(36px) ru(1) rem-calc(12px);
   display: flex;
   align-items: center;
 }
@@ -61,9 +61,16 @@ $footer: #f6f6f6;
   font-weight: 600;
 }
 
-.carrier-logo {
+.carrier-img {
+  align-items: center;
+  display: flex;
+  height: rem-calc(42px);
+  justify-content: center;
+  max-width: rem-calc(127px);
+
   img {
-    width: rem-calc(105px);
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
@@ -151,12 +158,6 @@ $footer: #f6f6f6;
   }
 }
 
-@media #{$medium-only} {
-  .premium-text {
-    font-size: rem-calc(19px);
-  }
-}
-
 @media #{$medium-up} {
   .policy-card {
     display: block;
@@ -169,29 +170,29 @@ $footer: #f6f6f6;
   .compare {
     @include section(0, 17.5%, true);
     label { margin-left: rem-calc(8px); }
-    padding: 0px rem-calc(12px);
+    padding: 0;
   }
 
   .carrier-logo {
     @include section(1, 20%, true);
-    padding: 0px rem-calc(12px);
+    padding: 0 rem-calc(12px);
   }
 
   .premium {
-    @include section(1, 30%, false);
-    padding: 0px rem-calc(12px);
+    @include section(1, 25%, false);
+    padding: 0 rem-calc(12px);
   }
 
   .actions {
-    @include section(1, 20%, true);
+    @include section(1, 25%, true);
     text-align: center;
-    padding: 0px rem-calc(6px);
+    padding: 0 0 0 rem-calc(6px);
   }
 }
 
 @media #{$large-up} {
   .compare {
-    min-width: ru(5.25);
+    max-width: ru(5.25);
   }
 
   .carrier-logo {

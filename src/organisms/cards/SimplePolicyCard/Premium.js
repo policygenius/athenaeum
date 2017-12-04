@@ -8,19 +8,22 @@ export const Premium = ({ premium }) => {
 
   const formattedPremium = accounting.formatMoney(premium.price);
 
-  return premium.price ?
+  return (
     <div className={styles['premium']}>
-      <Text
-        type={4}
-        font='a'
-        className={styles['premium-text']}
-      >
-        {formattedPremium} <Text tag='span' type={11} font='b' color='neutral-2' semibold>{`/${premium.format.toUpperCase()}`}</Text>
-      </Text>
+      {
+        premium.price ?
+          <Text
+            type={4}
+            font='a'
+            className={styles['premium-text']}
+          >
+            {formattedPremium} <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
+          </Text>
+        :
+          <Text type={7} font='a'>{premium.defaultText}</Text>
+      }
     </div>
-    :
-    <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
-    ;
+  );
 };
 
 Premium.propTypes = {

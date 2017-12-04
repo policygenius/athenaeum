@@ -11,7 +11,7 @@ export const PolicyActions = (props) => {
 
   return (
     <div className={styles['actions']}>
-      <Layout smallCols={[ 12 ]} style={{ width: '100%' }}>
+      <Layout smallCols={[ 12 ]} style={{ width: '100%' }} fullwidth>
         <Button
           onClick={onDetails}
         >

@@ -42,12 +42,15 @@ $details-link-border: 1px solid #b2b2b2;
 }
 
 .carrier-logo {
-  max-width: rem-calc(150px);
-  max-height: rem-calc(44px);
+  align-items: center;
+  display: flex;
+  height: rem-calc(60px);
+  justify-content: center;
+  max-width: rem-calc(170px);
 
   img {
-    max-width: rem-calc(150px);
-    max-height: rem-calc(44px);
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 

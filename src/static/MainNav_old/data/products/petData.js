@@ -1,5 +1,5 @@
 const submenuItems = [
- {
+  {
     header: 'Compare Pet Insurance Policies',
     items: [
       { title: 'What’s Does Pet Insurance Cover?', url: '/pet-insurance/learn/what-does-pet-insurance-cover/', },
