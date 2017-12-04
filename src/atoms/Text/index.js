@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import omit from 'lodash/omit'
+import omit from 'lodash/omit';
 
 import colors from 'atoms/Color/colors.scss';
 import styles from './text.module.scss';
@@ -51,7 +51,7 @@ const getWeight = ({ font, bold, semibold }) => {
 };
 
 function Text(props) {
-  //TODO: Consider adding an html sanitizer
+  // TODO: Consider adding an html sanitizer
   if (!props.children && !props.dangerouslySetInnerHTML) return null;
 
   const {
@@ -92,7 +92,7 @@ function Text(props) {
       className: classnames(classes),
       ...omit(
         rest,
-        ['font', 'semibold', 'size', 'tag', 'type', 'bold']
+        [ 'font', 'semibold', 'size', 'tag', 'type', 'bold' ]
       )
     },
     React.Children.map(children, convertChild)
