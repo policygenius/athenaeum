@@ -57,6 +57,7 @@ function Img(props) {
   );
 
   const pictureClasses = cx(
+    styles['picture'],
     (mobileImgixSrc === null || mobileSrc === null) && styles['hide-mobile-image'],
     (tabletImgixSrc === null || tabletSrc === null) && styles['hide-tablet-image'],
     className,

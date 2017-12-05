@@ -22,8 +22,7 @@ const cssModulesName = (modulesName) => {
     return 'rcl-[name]__[local]--[hash:base64:5]';
   }
 
-  return `rcl-${modulesName || ''}_[local]-[hash:base64:3]`;
-
+  return `rcl_${modulesName || ''}_[local]-[hash:base64:3]`;
 };
 
 const baseRules = modulesName => [
