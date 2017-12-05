@@ -4,6 +4,7 @@ $details-link-color: #4a4a4a;
 $details-link-border: 1px solid #b2b2b2;
 $policy-hat-height: ru(.25);
 $content-margin: ru(1);
+$content-margin-top: ru(.5);
 
 .featured-policy-card {
   border: $card-border;
@@ -28,7 +29,7 @@ $content-margin: ru(1);
 }
 
 .content {
-  margin: $content-margin;
+  margin: $content-margin-top $content-margin $content-margin $content-margin;
   background-color: color('neutral-8');
   border-radius: $radius;
   display: flex;
@@ -47,14 +48,33 @@ $content-margin: ru(1);
       height: $policy-hat-height;
       background: color('secondary-4');
       width: 100%;
-      top: calc(-#{$policy-hat-height} + -#{$content-margin});
+      top: calc(-#{$policy-hat-height} + -#{$content-margin-top});
       left: 0;
     }
   }
 }
 
 .premium {
+  margin-top: auto;
   text-align: center;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+
+  &-small {
+    padding-top: rem-calc(8px);
+  }
+
+  &-dollars {
+    @include typography-a-2-bold;
+  }
+
+  &-format {
+    align-self: flex-end;
+    padding-bottom: rem-calc(11px);
+  }
 }
 
 .carrier-logo {
@@ -78,20 +98,27 @@ $content-margin: ru(1);
   }
 
   &-tooltip-group {
-    text-align: right;
     align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  &-tooltip-label {
+    border-bottom: 1px solid color('neutral-3');
+    cursor: help;
+    padding-bottom: 2px;
+    white-space: nowrap;
   }
 
   &-tooltip-icon {
     margin-left: ru(.25);
-    margin-right: auto;
   }
 }
 
 .button-group {
   width: 100%;
   text-align: center;
-  margin-top: auto;
 }
 
 .secondary-action {

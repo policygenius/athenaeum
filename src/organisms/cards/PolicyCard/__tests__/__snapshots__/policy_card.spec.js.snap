@@ -17,16 +17,31 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         <div
           className="premium"
         >
-          <strong
-            className="primary-3 type-a-3-bold inherit"
+          <div
+            className="value"
           >
-            $19.80
-            <strong
-              className="primary-3 spaced type-a-11-bold inherit"
+            <p
+              className="primary-3 value-small type-a-6-bold inherit"
+            >
+              $
+            </p>
+            <p
+              className="primary-3 value-dollars type-a-2-bold inherit"
+            >
+              19
+            </p>
+            <p
+              className="primary-3 value-small type-a-6-bold inherit"
+            >
+              .
+              80
+            </p>
+            <span
+              className="neutral-2 spaced value-format type-a-11-bold inherit"
             >
               /MO
-            </strong>
-          </strong>
+            </span>
+          </div>
           <div
             className="top-1"
           />
@@ -57,24 +72,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <span
-                  className="primary-3 type-b-10-medium inherit"
-                >
-                  label
-                </span>
-                <span
                   className="tooltip-wrapper policy-info-tooltip-icon"
                   onClick={[Function]}
                 >
                   <span
-                    className="icon-wrapper tooltip"
-                    onClick={undefined}
-                    style={
-                      Object {
-                        "height": undefined,
-                        "width": undefined,
-                      }
-                    }
-                  />
+                    className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                  >
+                    label
+                  </span>
                   <span
                     className="hover-message"
                   >
@@ -110,24 +115,14 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 style={undefined}
               >
                 <span
-                  className="primary-3 type-b-10-medium inherit"
-                >
-                  label
-                </span>
-                <span
                   className="tooltip-wrapper policy-info-tooltip-icon"
                   onClick={[Function]}
                 >
                   <span
-                    className="icon-wrapper tooltip"
-                    onClick={undefined}
-                    style={
-                      Object {
-                        "height": undefined,
-                        "width": undefined,
-                      }
-                    }
-                  />
+                    className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                  >
+                    label
+                  </span>
                   <span
                     className="hover-message"
                   >

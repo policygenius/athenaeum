@@ -20,15 +20,18 @@ const renderPolicyInformation = (info, idx) =>
         fullwidth
         className={styles['policy-info-tooltip-group']}
       >
-        <Text
-          type={10}
-          font='b'
-          tag='span'
-        >
-          {info.label}
-        </Text>
         <Tooltip
           className={styles['policy-info-tooltip-icon']}
+          text={
+            <Text
+              type={10}
+              font='b'
+              tag='span'
+              className={styles['policy-info-tooltip-label']}
+            >
+              {info.label}
+            </Text>
+          }
         >
           {info.hoverMessage}
         </Tooltip>
