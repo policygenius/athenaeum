@@ -45,7 +45,10 @@ StepIndicator.propTypes = {
   steps: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
-      route: PropTypes.string,
+      route: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool,
+      ]),
       nextStepAccessible: PropTypes.bool,
       currentStepActive: PropTypes.bool,
       clickable: PropTypes.bool,

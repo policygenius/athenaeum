@@ -24,7 +24,7 @@ export default {
   premium: PropTypes.shape({
     price: PropTypes.number.isRequired,
     format: PropTypes.string.isRequired,
-    defaultText: PropTypes.string,
+    defaultText: PropTypes.node,
   }),
   /**
    * Optional discount percentage

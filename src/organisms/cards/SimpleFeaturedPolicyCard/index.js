@@ -82,7 +82,7 @@ SimpleFeaturedPolicyCard.propTypes = {
       PropTypes.number,
     ]),
     format: PropTypes.string,
-    defaultText: PropTypes.string,
+    defaultText: PropTypes.node,
   }),
 
   /**

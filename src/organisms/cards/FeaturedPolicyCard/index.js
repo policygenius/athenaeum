@@ -35,7 +35,9 @@ function FeaturedPolicyCard(props) {
     policyHat && styles['policy-hat'],
   );
 
-  const formattedPremium = accounting.formatMoney(premium.price);
+  const premiumValues = accounting.toFixed(premium.price, 2).split('.');
+  const dollars = premiumValues[0];
+  const cents = premiumValues[1];
 
   return (
     <div className={classnames(...classes)}>
@@ -44,13 +46,39 @@ function FeaturedPolicyCard(props) {
         <Spacer small />
         { premium.price ?
           <div className={styles['premium']}>
-            <Text
-              type={3}
-              font='a'
-              semibold
-            >
-              {formattedPremium}<Text tag='span' type={11} font='a' spaced semibold>{`/${premium.format.toUpperCase()}`}</Text>
-            </Text>
+            <div className={styles['value']}>
+              <Text
+                size={6}
+                font='a'
+                className={styles['value-small']}
+              >
+                $
+              </Text>
+              <Text
+                size={2}
+                font='a'
+                className={styles['value-dollars']}
+              >
+                {dollars}
+              </Text>
+              <Text
+                size={6}
+                font='a'
+                className={styles['value-small']}
+              >
+                .{cents}
+              </Text>
+              <Text
+                tag='span'
+                type={11}
+                font='a'
+                spaced
+                color='neutral-2'
+                className={styles['value-format']}
+              >
+                {`/${premium.format.toUpperCase()}`}
+              </Text>
+            </div>
 
             <Spacer spacer={1} />
 
