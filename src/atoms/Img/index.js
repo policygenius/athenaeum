@@ -4,20 +4,18 @@ import cx from 'classnames';
 import styles from './img.module.scss';
 
 if (typeof window !== 'undefined') {
+  require('lazysizes/plugins/rias/ls.rias.min');
   require('lazysizes/lazysizes.min');
 }
 
-const strParams = '&fit=clip&auto=compress&auto=format&ch=Width,DPR,Save-Data';
+const strParams = '?fit=max&auto=format&ch=Width,DPR&w={width}';
 
-const imgixSrcStr = (src, width = 768, height = 768) => `https://policygenius-images.imgix.net/${src}` +
-  `?w=${Math.min(width, width)}` +
-  `&h=${Math.min(height, height)}` +
-  '&fit=clip&auto=format&auto=compress';
+const imgixSrcStr = src => `https://policygenius-images.imgix.net/${src}${strParams}`;
 
-const imgixSrcset = ( src, maxWidth = Infinity, maxHeight = Infinity ) => `
-  https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 1025)}&h=${Math.min(maxHeight, 1025)}${strParams} 1026w,
-  https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 768)}&h=${Math.min(maxHeight, 768)}${strParams} 769w,
-  https://policygenius-images.imgix.net/${src}?w=${Math.min(maxWidth, 320)}&h=${Math.min(maxHeight, 320)}${strParams} 321w
+const imgixSrcset = src => `
+  https://policygenius-images.imgix.net/${src}${strParams}&dpr=1 1x,
+  https://policygenius-images.imgix.net/${src}${strParams}&dpr=2 2x,
+  https://policygenius-images.imgix.net/${src}${strParams}&dpr=3 3x,
 `;
 
 const createName = (str) => {
@@ -38,8 +36,6 @@ function Img(props) {
     imgixSrc,
     alt,
     title,
-    maxWidth = Infinity,
-    maxHeight = Infinity,
     mobileSrc,
     tabletSrc,
     mobileImgixSrc,
@@ -70,7 +66,7 @@ function Img(props) {
     if (srcSet) { return srcSet; }
     if (src) { return undefined; }
 
-    return imgixSrcset(`${imgixSrc}`, maxWidth, maxHeight);
+    return imgixSrcset(`${imgixSrc}`);
   })();
 
   // TODO: Consider adding a noscript tag to handle a situation where lazysizes doesn't work.
@@ -79,8 +75,8 @@ function Img(props) {
 
     return (
       <picture className={pictureClasses}>
-        { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc, 767)} media='(max-width: 767px)' />}
-        { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc, 1024)} media='(max-width: 1024px)' />}
+        { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc)} media='(max-width: 767px)' />}
+        { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc)} media='(max-width: 1024px)' />}
         <img
           className={cx(styles.img, 'lazyload')}
           alt={alt || createName(src || imgixSrc)}
@@ -141,16 +137,6 @@ Img.propTypes = {
    * The img title for the image. Defaults to an improved version of the filename.
    */
   title: PropTypes.string,
-
-  /**
-   * Used with imgixSrc to prevent larger than necessary images from loading
-   */
-  maxWidth: PropTypes.string,
-
-  /**
-   * Used with imgixSrc to prevent larger than necessary images from loading
-   */
-  maxHeight: PropTypes.string,
 
   /**
    * When used, will create a <source> for a <picture> element for mobile.
