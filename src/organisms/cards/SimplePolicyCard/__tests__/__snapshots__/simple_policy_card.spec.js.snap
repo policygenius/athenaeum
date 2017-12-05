@@ -51,12 +51,6 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           <div
             className="top-2"
           />
-          <a
-            className="link neutral-1 details-link"
-            onClick={[Function]}
-          >
-            Details
-          </a>
           <button
             className="button outline"
             disabled={undefined}
@@ -159,10 +153,10 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             <button
               className="button"
               disabled={undefined}
-              onClick={[Function]}
+              onClick={undefined}
               type="button"
             >
-              View Policy
+              Continue
             </button>
           </div>
         </div>

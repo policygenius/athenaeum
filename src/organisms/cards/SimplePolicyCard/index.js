@@ -14,7 +14,7 @@ function SimplePolicyCard(props) {
   const {
     carrierLogo,
     premium,
-    onDetails,
+    onContinue,
     compareCheckbox,
     className
   } = props;
@@ -25,7 +25,7 @@ function SimplePolicyCard(props) {
         <SimpleFeaturedPolicyCard
           premium={premium}
           carrierLogo={carrierLogo}
-          onDetails={onDetails}
+          onContinue={onContinue}
           onCompare={compareCheckbox.onCompare}
         />
       </div>
@@ -37,7 +37,7 @@ function SimplePolicyCard(props) {
           <div className={styles['divider']} />
           <Premium premium={premium} />
           <PolicyActions
-            onDetails={onDetails}
+            onContinue={onContinue}
             onCompare={compareCheckbox.onCompare}
             premium={premium}
           />
