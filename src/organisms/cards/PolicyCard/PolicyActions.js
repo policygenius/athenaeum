@@ -23,7 +23,7 @@ export const PolicyActions = (props) => {
   const {
     premium,
     discount,
-    onDetails,
+    onContinue,
     onCompare
   } = props;
 
@@ -45,8 +45,8 @@ export const PolicyActions = (props) => {
       }
       <Spacer spacer={3} />
       <Layout smallCols={[ 12 ]} style={{ width: '100%' }}>
-        <Button onClick={onDetails} className={styles['view-policy']}>
-          View Policy
+        <Button onClick={onContinue} className={styles['view-policy']}>
+          Continue
         </Button>
         <Hide hideOn='tablet desktop'>
           <Button
@@ -67,7 +67,7 @@ PolicyActions.propTypes = {
     defaultText: PropTypes.node,
   }),
   discount: PropTypes.node,
-  onDetails: PropTypes.func,
+  onContinue: PropTypes.func,
   onCompare: PropTypes.func,
 };
 
