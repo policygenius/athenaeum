@@ -12,16 +12,17 @@ import PolicyInformation from './PolicyInformation';
 
 function FeaturedPolicyCard(props) {
   const {
-    className,
-    header,
-    premium,
-    discount,
     carrierLogo,
-    onDetails,
-    information,
-    onCompare,
+    className,
     continueCTAText,
+    discount,
+    header,
+    information,
+    onContinue,
+    onDetails,
+    onCompare,
     policyHat,
+    premium,
   } = props;
 
   const classes = [
@@ -70,6 +71,7 @@ function FeaturedPolicyCard(props) {
         { information && <PolicyInformation information={information} /> }
 
         <ButtonGroup
+          onContinue={onContinue}
           onDetails={onDetails}
           onCompare={onCompare}
           continueCTAText={continueCTAText}
@@ -124,6 +126,11 @@ FeaturedPolicyCard.propTypes = {
   /**
    * Function supplied to details link below CTA
    */
+  onContinue: PropTypes.func.isRequired,
+
+  /**
+   * Function supplied to details link below CTA
+   */
   onDetails: PropTypes.func,
 
   /**
@@ -150,6 +157,7 @@ FeaturedPolicyCard.propTypes = {
 
 FeaturedPolicyCard.defaultProps = {
   continueCTAText: 'Continue',
+  detailsCTAText: 'Details & Review',
   policyHat: false
 };
 

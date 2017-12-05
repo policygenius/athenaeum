@@ -164,8 +164,16 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             onClick={[Function]}
             type="button"
           >
-            View Policy
+            Continue
           </button>
+          <div>
+            <a
+              className="link neutral-1 details-link"
+              onClick={[Function]}
+            >
+              Details
+            </a>
+          </div>
           <div>
             <div
               className="top-2"
@@ -444,7 +452,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               onClick={[Function]}
               type="button"
             >
-              View Policy
+              Continue
             </button>
           </div>
           <div
