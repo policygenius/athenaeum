@@ -4,18 +4,16 @@ import Layout from 'atoms/Layout';
 import Button from 'atoms/Button';
 import styles from './policy_card.module.scss';
 
-const VIEW_POLICY_TEXT = 'View Policy';
-
 export const PolicyActions = (props) => {
-  const { onDetails } = props;
+  const { onContinue, continueCTAText } = props;
 
   return (
     <div className={styles['actions']}>
       <Layout smallCols={[ 12 ]} style={{ width: '100%' }} fullwidth>
         <Button
-          onClick={onDetails}
+          onClick={onContinue}
         >
-          {VIEW_POLICY_TEXT}
+          {continueCTAText}
         </Button>
       </Layout>
     </div>
@@ -23,7 +21,13 @@ export const PolicyActions = (props) => {
 };
 
 PolicyActions.propTypes = {
+  onContinue: PropTypes.func.isRequired,
+  continueCTAText: PropTypes.func,
   onDetails: PropTypes.func
+};
+
+PolicyActions.defaultProps = {
+  continueCTAText: 'Continue'
 };
 
 export default PolicyActions;

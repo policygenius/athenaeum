@@ -14,7 +14,7 @@ function SimpleFeaturedPolicyCard(props) {
     className,
     premium,
     carrierLogo,
-    onDetails,
+    onContinue,
     onCompare,
   } = props;
 
@@ -50,7 +50,7 @@ function SimpleFeaturedPolicyCard(props) {
         <Spacer size={36} />
 
         <ButtonGroup
-          onDetails={onDetails}
+          onContinue={onContinue}
           onCompare={onCompare}
         />
       </div>
@@ -99,6 +99,11 @@ SimpleFeaturedPolicyCard.propTypes = {
    * Text displayed for the main action button
    */
   continueCTAText: PropTypes.string,
+
+  /**
+   * Function supplied to continue CTA button
+   */
+  onContinue: PropTypes.func,
 
   /**
    * Function supplied to details link below CTA
