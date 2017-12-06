@@ -77,7 +77,7 @@ exports[`<Img /> renders correctly with given regular picture source props 1`] =
     data-src="default.jpg"
     desktopSrc="large"
     src={undefined}
-    title="default"
+    title="Alternative"
   />
 </picture>
 `;

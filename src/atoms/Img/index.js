@@ -81,7 +81,7 @@ function Img(props) {
         <img
           className={cx(styles.img, 'lazyload')}
           alt={alt || createName(src || imgixSrc)}
-          title={title || createName(src || imgixSrc)}
+          title={title || alt || createName(src || imgixSrc)}
           data-src={defaultSrc}
           data-sizes='auto'
           src={lazy ? undefined : defaultSrc}
@@ -95,7 +95,7 @@ function Img(props) {
     <img
       className={classes}
       alt={alt || createName(src || imgixSrc)}
-      title={title || createName(src || imgixSrc)}
+      title={title || alt || createName(src || imgixSrc)}
       data-src={src || imgixSrcStr(imgixSrc)}
       data-srcset={srcset}
       data-sizes={lazy ? 'auto' : '100vw'}
@@ -135,7 +135,7 @@ Img.propTypes = {
   alt: PropTypes.string,
 
   /**
-   * The img title for the image. Defaults to an improved version of the filename.
+   * The img title for the image. Defaults to whatever has been set as the alt.
    */
   title: PropTypes.string,
 
