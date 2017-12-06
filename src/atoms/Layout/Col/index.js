@@ -16,10 +16,9 @@ function Col(props) {
     padding,
     fullwidth,
     flex,
-    style,
     bottomSpacing,
-    onClick,
-    borderColor
+    borderColor,
+    ...rest
   } = props;
 
   const classes = [
@@ -38,7 +37,7 @@ function Col(props) {
   ];
 
   return (
-    <div className={classnames(...classes)} style={style} onClick={onClick}>
+    <div {...rest} className={classnames(...classes)}>
       { children }
     </div>
   );
