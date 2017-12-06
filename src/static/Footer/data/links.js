@@ -25,7 +25,11 @@ export const footerLinkItems = [
   },
   {
     title: 'Partnerships',
-    href: 'https://www.policygenius.com/about/partnerships',
+    href: 'http://visit.policygenius.com/affiliate-partners/',
+  },
+  {
+    title: 'Financial Advisors',
+    href: 'http://visit.policygenius.com/financial-advisor-partners/',
   },
 ];
 
