@@ -8,10 +8,10 @@ import moreData from './moreData';
 
 export default [
   lifeData,
+  disabilityData,
   healthData,
   rentersData,
   petData,
-  disabilityData,
   autoData,
   moreData
 ];

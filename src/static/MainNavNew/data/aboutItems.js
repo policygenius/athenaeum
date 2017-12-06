@@ -34,6 +34,13 @@ const items = [
       activeName: 'legal',
     }
   },
+  {
+    menu: {
+      header: 'Partnerships',
+      link: 'http://visit.policygenius.com/affiliate-partners/',
+      activeName: 'partnerships',
+    }
+  },
 ];
 
 export default items;
