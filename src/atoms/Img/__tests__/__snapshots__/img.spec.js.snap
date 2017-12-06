@@ -18,7 +18,7 @@ exports[`<Img /> renders correctly with default props 1`] = `
 
 exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
 <picture
-  className=""
+  className="picture"
 >
   <source
     media="(max-width: 767px)"
@@ -60,7 +60,7 @@ exports[`<Img /> renders correctly with given imgix props 1`] = `
 
 exports[`<Img /> renders correctly with given regular picture source props 1`] = `
 <picture
-  className=""
+  className="picture"
 >
   <source
     media="(max-width: 767px)"
@@ -98,7 +98,7 @@ exports[`<Img /> renders correctly with given regular props 1`] = `
 
 exports[`<Img /> renders with hide classes when null src props are provided 1`] = `
 <picture
-  className="hide-mobile-image hide-tablet-image"
+  className="picture hide-mobile-image hide-tablet-image"
 >
   <img
     alt="default"

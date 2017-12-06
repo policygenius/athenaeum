@@ -4,6 +4,10 @@
   display: block;
 }
 
+.picture {
+  width: 100%;
+}
+
 @media #{$mobile-only} {
   .hide-mobile-image {
     display: none;
