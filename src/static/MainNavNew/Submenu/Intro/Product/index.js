@@ -57,7 +57,7 @@ function ProductIntro(props) {
           href={intro.linkHref}
           className={styles['product-intro-button']}
         >
-          <Button>{ intro.cta }</Button>
+          <Button rel='nofollow'>{ intro.cta }</Button>
         </LinkWrapper>
 
         <Spacer size={18} />
