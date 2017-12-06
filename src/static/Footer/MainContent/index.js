@@ -82,7 +82,7 @@ class SelectProduct extends React.Component {
             variant='info'
             outline
             unflex
-            linkAttrs={{ ...buttons.newsletterButton.attr }}
+            data-sumome-listbuilder-id='b25d109e-ee6c-4d4a-b966-02932ea6df8d'
             className={styles.button}
           >
             { buttons.newsletterButton.text }
