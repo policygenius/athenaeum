@@ -16,27 +16,27 @@ export const buttons = {
 
 export const resourcesList = {
   [RESOURCES.INSURANCE_GUIDES]: {
-    header: 'Insurance Product Guides',
+    header: 'Product Learn Centers',
     items: [
       {
-        title: 'Life Insurance Advice',
+        title: 'Life Insurance Learn Center',
         href: 'https://www.policygenius.com/life-insurance/learn/',
       },
       {
-        title: 'Health Insurance Guide',
+        title: 'Health Insurance Learn Center',
         href: 'https://www.policygenius.com/health-insurance/learn/',
       },
       {
-        title: 'Long Term Disability Insurance Guide',
+        title: 'Disability Insurance Learn Center',
         href: 'https://www.policygenius.com/long-term-disability-insurance/learn/',
       },
       {
-        title: 'Pet Insurance Guide',
-        href: 'https://www.policygenius.com/pet-insurance/guide/',
+        title: 'Pet Insurance Learn Center',
+        href: 'https://www.policygenius.com/pet-insurance/learn/',
       },
       {
-        title: "Renter's Insurance Guide",
-        href: 'https://www.policygenius.com/renters-insurance/guide/',
+        title: "Renter's Insurance Learn Center",
+        href: 'https://www.policygenius.com/renters-insurance/learn/',
       },
     ]
   },
@@ -45,23 +45,23 @@ export const resourcesList = {
     items: [
       {
         title: 'Insurance Advice',
-        href: 'https://www.policygenius.com/blog/category/insurance',
+        href: 'https://www.policygenius.com/blog/category/insurance/',
       },
       {
         title: 'Life Advice',
-        href: 'https://www.policygenius.com/blog/category/life',
+        href: 'https://www.policygenius.com/blog/category/life/',
       },
       {
         title: 'Work Advice',
-        href: 'https://www.policygenius.com/blog/category/work',
+        href: 'https://www.policygenius.com/blog/category/work/',
       },
       {
         title: 'Money Advice',
-        href: 'https://www.policygenius.com/blog/category/money',
+        href: 'https://www.policygenius.com/blog/category/money/',
       },
       {
         title: 'Parenting Advice',
-        href: 'https://www.policygenius.com/blog/category/parenting',
+        href: 'https://www.policygenius.com/blog/category/parenting/',
       },
     ]
   },
@@ -70,7 +70,7 @@ export const resourcesList = {
     items: [
       {
         title: 'Life Insurance Advice',
-        href: 'https://www.policygenius.com/life-insurance/learn',
+        href: 'https://www.policygenius.com/life-insurance/guide/',
       },
       {
         title: 'Health Insurance Marketplace',
@@ -124,7 +124,11 @@ export const resourcesList = {
       },
       {
         title: 'Partnerships',
-        href: 'https://www.policygenius.com/about/partnerships',
+        href: 'http://visit.policygenius.com/affiliate-partners/',
+      },
+      {
+        title: 'Financial Advisors',
+        href: 'http://visit.policygenius.com/financial-advisor-partners/',
       },
     ]
   },
