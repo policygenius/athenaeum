@@ -123,9 +123,12 @@ function Navigator(props) {
                 </Sticky>
               </div>
             </Col>
-            <div className={styles['contact-card']}>
-              <ContactCard {...contactProps} />
-            </div>
+            {
+              contactProps &&
+              <div className={styles['contact-card']}>
+                <ContactCard {...contactProps} />
+              </div>
+            }
           </Layout>
         </Col>
         <Col className={styles['main']}>

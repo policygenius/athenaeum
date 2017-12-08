@@ -37,6 +37,62 @@ function formatPhoneNumber(number) {
   return numberArray.join('-');
 }
 
+function renderPhoneInfo(phoneNumber, hours) {
+  if (!phoneNumber) { return null; }
+
+  return (
+    <div>
+      <Col className={styles['lockup']}>
+        <LinkWrapper
+          href={`tel:${formatPhoneNumber(phoneNumber)}`}
+          className={classnames(styles['icon-text-wrapper'], styles['link'])}
+          type='resource'
+        >
+          <Icon
+            icon='phone'
+            width='24px'
+            height='24px'
+            className={styles['icon']}
+          />
+
+        <Text
+          size={8}
+          font='a'
+        >
+          {phoneNumber}
+        </Text>
+      </LinkWrapper>
+
+      <div className={styles['mobile-questions']}>
+        <Spacer size={36} />
+        <Text
+          size={7}
+          font='a'
+        >
+          Questions?
+        </Text>
+      </div>
+
+      <Spacer size={6} />
+
+      <div className={styles['hours']}>
+        {
+          hours &&
+          hours.map(hour =>
+            <Text
+              size={10}
+              font='b'
+            >
+              {hour}
+            </Text>
+          )
+        }
+      </div>
+    </Col>
+  </div>
+  );
+}
+
 function Footer(props) {
   const {
     className,
@@ -55,142 +111,97 @@ function Footer(props) {
         mediumCols={[ 4 ]}
         fullwidth
       >
-        <Col className={styles['lockup']}>
-          <LinkWrapper
-            href={`tel:${formatPhoneNumber(phoneNumber)}`}
-            className={classnames(styles['icon-text-wrapper'], styles['link'])}
-            type='resource'
+
+      { renderPhoneInfo(phoneNumber, hours) }
+
+      <Col className={styles['actions']}>
+        <LinkWrapper
+          className={classnames(styles['icon-text-wrapper'], styles['link'])}
+          onClick={onClickChat}
+          type='resource'
+        >
+          <Icon
+            icon='chat'
+            width='24px'
+            height='24px'
+            className={styles['icon']}
+          />
+          <Text
+            size={8}
+            font='a'
           >
-            <Icon
-              icon='phone'
-              width='24px'
-              height='24px'
-              className={styles['icon']}
-            />
+            Live chat
+          </Text>
+        </LinkWrapper>
 
-            <Text
-              size={8}
-              font='a'
-            >
-              {phoneNumber}
-            </Text>
-          </LinkWrapper>
+        <Spacer size={24} />
 
-          <div className={styles['mobile-questions']}>
-            <Spacer size={36} />
-            <Text
-              size={7}
-              font='a'
-            >
-              Questions?
-            </Text>
-          </div>
-
-          <Spacer size={6} />
-
-          <div className={styles['hours']}>
-            {
-              hours &&
-                hours.map(hour =>
-                  <Text
-                    size={10}
-                    font='b'
-                  >
-                    {hour}
-                  </Text>
-                )
-            }
-          </div>
-        </Col>
-
-        <Col className={styles['actions']}>
-          <LinkWrapper
-            className={classnames(styles['icon-text-wrapper'], styles['link'])}
-            onClick={onClickChat}
-            type='resource'
+        <LinkWrapper
+          href={`mailto:${emailAddress}`}
+          className={classnames(styles['icon-text-wrapper'], styles['link'])}
+          type='resource'
+        >
+          <Icon
+            icon='email'
+            width='24px'
+            height='24px'
+            className={styles['icon']}
+          />
+          <Text
+            size={8}
+            font='a'
           >
-            <Icon
-              icon='chat'
-              width='24px'
-              height='24px'
-              className={styles['icon']}
-            />
-            <Text
-              size={8}
-              font='a'
-            >
-              Live chat
-            </Text>
-          </LinkWrapper>
+            {emailAddress}
+          </Text>
+        </LinkWrapper>
+      </Col>
 
-          <Spacer size={24} />
+      <Col className={styles['mobile-actions']}>
+        <Spacer size={18} />
 
-          <LinkWrapper
-            href={`mailto:${emailAddress}`}
-            className={classnames(styles['icon-text-wrapper'], styles['link'])}
-            type='resource'
-          >
-            <Icon
-              icon='email'
-              width='24px'
-              height='24px'
-              className={styles['icon']}
-            />
-            <Text
-              size={8}
-              font='a'
-            >
-              {emailAddress}
-            </Text>
-          </LinkWrapper>
-        </Col>
-
-        <Col className={styles['mobile-actions']}>
-          <Spacer size={18} />
-
-          <LinkWrapper
-            href={`tel:${phoneNumber}`}
-          >
-            <Button variant='info' outline>
-              {phoneNumber}
-            </Button>
-          </LinkWrapper>
-
-          <Spacer size={18} />
-
-          <Button
-            variant='info'
-            outline
-            onClick={onClickChat}
-          >
-            Live Chat
+        <LinkWrapper
+          href={`tel:${phoneNumber}`}
+        >
+          <Button variant='info' outline>
+            {phoneNumber}
           </Button>
+        </LinkWrapper>
 
-          <Spacer size={18} />
+        <Spacer size={18} />
 
-          <LinkWrapper
-            href={`mailto:${emailAddress}`}
-          >
-            <Button variant='info' outline>
-              {emailAddress}
-            </Button>
-          </LinkWrapper>
+        <Button
+          variant='info'
+          outline
+          onClick={onClickChat}
+        >
+          Live Chat
+        </Button>
 
-          <Spacer size={36} />
-        </Col>
+        <Spacer size={18} />
 
-        <Col className={styles['trust']}>
-          <div className={styles['trust-logos']}>
-            <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
-            <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
-          </div>
+        <LinkWrapper
+          href={`mailto:${emailAddress}`}
+        >
+          <Button variant='info' outline>
+            {emailAddress}
+          </Button>
+        </LinkWrapper>
 
-          <Spacer size={6} />
+        <Spacer size={36} />
+      </Col>
 
-          { renderLinks(links) }
-        </Col>
-      </Layout>
-    </div>
+      <Col className={styles['trust']}>
+        <div className={styles['trust-logos']}>
+          <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
+          <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
+        </div>
+
+        <Spacer size={6} />
+
+        { renderLinks(links) }
+      </Col>
+    </Layout>
+  </div>
   );
 }
 
@@ -204,7 +215,7 @@ Footer.propTypes = {
   /**
    * Formatted Contact phone number. Can be wrapped in additional markup
    */
-  phoneNumber: PropTypes.node.isRequired,
+  phoneNumber: PropTypes.node,
   /**
    * Function to trigger chat.
    */

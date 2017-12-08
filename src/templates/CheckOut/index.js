@@ -155,9 +155,12 @@ function CheckOut(props) {
               </Col>
             </div>
             <Col className={styles['main-sidebar']}>
-              <div className={styles['contact-card']}>
-                <ContactCard {...contactProps} />
-              </div>
+              {
+                contactProps &&
+                <div className={styles['contact-card']}>
+                  <ContactCard {...contactProps} />
+                </div>
+              }
               <Spacer small />
               <Sticky
                 enabled
