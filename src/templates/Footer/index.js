@@ -55,28 +55,28 @@ function renderPhoneInfo(phoneNumber, hours) {
             className={styles['icon']}
           />
 
-        <Text
-          size={8}
-          font='a'
-        >
-          {phoneNumber}
-        </Text>
-      </LinkWrapper>
+          <Text
+            size={8}
+            font='a'
+          >
+            {phoneNumber}
+          </Text>
+        </LinkWrapper>
 
-      <div className={styles['mobile-questions']}>
-        <Spacer size={36} />
-        <Text
-          size={7}
-          font='a'
-        >
+        <div className={styles['mobile-questions']}>
+          <Spacer size={36} />
+          <Text
+            size={7}
+            font='a'
+          >
           Questions?
         </Text>
-      </div>
+        </div>
 
-      <Spacer size={6} />
+        <Spacer size={6} />
 
-      <div className={styles['hours']}>
-        {
+        <div className={styles['hours']}>
+          {
           hours &&
           hours.map(hour =>
             <Text
@@ -87,9 +87,9 @@ function renderPhoneInfo(phoneNumber, hours) {
             </Text>
           )
         }
-      </div>
-    </Col>
-  </div>
+        </div>
+      </Col>
+    </div>
   );
 }
 
@@ -112,96 +112,96 @@ function Footer(props) {
         fullwidth
       >
 
-      { renderPhoneInfo(phoneNumber, hours) }
+        { renderPhoneInfo(phoneNumber, hours) }
 
-      <Col className={styles['actions']}>
-        <LinkWrapper
-          className={classnames(styles['icon-text-wrapper'], styles['link'])}
-          onClick={onClickChat}
-          type='resource'
-        >
-          <Icon
-            icon='chat'
-            width='24px'
-            height='24px'
-            className={styles['icon']}
-          />
-          <Text
-            size={8}
-            font='a'
+        <Col className={styles['actions']}>
+          <LinkWrapper
+            className={classnames(styles['icon-text-wrapper'], styles['link'])}
+            onClick={onClickChat}
+            type='resource'
           >
+            <Icon
+              icon='chat'
+              width='24px'
+              height='24px'
+              className={styles['icon']}
+            />
+            <Text
+              size={8}
+              font='a'
+            >
             Live chat
           </Text>
-        </LinkWrapper>
+          </LinkWrapper>
 
-        <Spacer size={24} />
+          <Spacer size={24} />
 
-        <LinkWrapper
-          href={`mailto:${emailAddress}`}
-          className={classnames(styles['icon-text-wrapper'], styles['link'])}
-          type='resource'
-        >
-          <Icon
-            icon='email'
-            width='24px'
-            height='24px'
-            className={styles['icon']}
-          />
-          <Text
-            size={8}
-            font='a'
+          <LinkWrapper
+            href={`mailto:${emailAddress}`}
+            className={classnames(styles['icon-text-wrapper'], styles['link'])}
+            type='resource'
           >
-            {emailAddress}
-          </Text>
-        </LinkWrapper>
-      </Col>
+            <Icon
+              icon='email'
+              width='24px'
+              height='24px'
+              className={styles['icon']}
+            />
+            <Text
+              size={8}
+              font='a'
+            >
+              {emailAddress}
+            </Text>
+          </LinkWrapper>
+        </Col>
 
-      <Col className={styles['mobile-actions']}>
-        <Spacer size={18} />
+        <Col className={styles['mobile-actions']}>
+          <Spacer size={18} />
 
-        <LinkWrapper
-          href={`tel:${phoneNumber}`}
-        >
-          <Button variant='info' outline>
-            {phoneNumber}
-          </Button>
-        </LinkWrapper>
+          <LinkWrapper
+            href={`tel:${phoneNumber}`}
+          >
+            <Button variant='info' outline>
+              {phoneNumber}
+            </Button>
+          </LinkWrapper>
 
-        <Spacer size={18} />
+          <Spacer size={18} />
 
-        <Button
-          variant='info'
-          outline
-          onClick={onClickChat}
-        >
+          <Button
+            variant='info'
+            outline
+            onClick={onClickChat}
+          >
           Live Chat
         </Button>
 
-        <Spacer size={18} />
+          <Spacer size={18} />
 
-        <LinkWrapper
-          href={`mailto:${emailAddress}`}
-        >
-          <Button variant='info' outline>
-            {emailAddress}
-          </Button>
-        </LinkWrapper>
+          <LinkWrapper
+            href={`mailto:${emailAddress}`}
+          >
+            <Button variant='info' outline>
+              {emailAddress}
+            </Button>
+          </LinkWrapper>
 
-        <Spacer size={36} />
-      </Col>
+          <Spacer size={36} />
+        </Col>
 
-      <Col className={styles['trust']}>
-        <div className={styles['trust-logos']}>
-          <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
-          <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
-        </div>
+        <Col className={styles['trust']}>
+          <div className={styles['trust-logos']}>
+            <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
+            <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
+          </div>
 
-        <Spacer size={6} />
+          <Spacer size={6} />
 
-        { renderLinks(links) }
-      </Col>
-    </Layout>
-  </div>
+          { renderLinks(links) }
+        </Col>
+      </Layout>
+    </div>
   );
 }
 
@@ -224,11 +224,11 @@ Footer.propTypes = {
    * Array of Links `[ { text: 'link text', href: 'http://link.com' } ]`
    */
   links: PropTypes.arrayOf(
-    PropTypes.shape({
-      text: PropTypes.string,
-      href: PropTypes.string.isRequired,
-    })
-  ),
+      PropTypes.shape({
+        text: PropTypes.string,
+        href: PropTypes.string.isRequired,
+      })
+    ),
   /**
    * Sets the email address
    */
