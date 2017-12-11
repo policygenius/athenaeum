@@ -169,10 +169,12 @@ function Navigator(props) {
               className={styles['right-rail']}
               style={{ marginLeft: 'auto' }}
             >
-              <div className={styles['contact-card']}>
-                <ContactCard {...contactProps} />
-              </div>
-
+              {
+                contactProps &&
+                <div className={styles['contact-card']}>
+                  <ContactCard {...contactProps} />
+                </div>
+              }
               <Sticky
                 enabled
                 top='#sticky-top'
