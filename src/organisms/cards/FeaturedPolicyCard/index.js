@@ -85,7 +85,7 @@ function FeaturedPolicyCard(props) {
             {discount && discount}
           </div>
             :
-          <Text type={7} color='neutral-2'>{premium.defaultText}</Text>
+          <Text type={7} color='neutral-2'className={styles['default-text']}>{premium.defaultText}</Text>
           }
 
         <Spacer spacer={6} />
