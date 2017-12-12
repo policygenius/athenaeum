@@ -147,7 +147,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             />
           </div>
           <div
-            className="top-4"
+            className="size-36"
           />
         </div>
         <div

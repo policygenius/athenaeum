@@ -53,7 +53,7 @@ function PolicyInformation(props) {
       {
         information.map(renderPolicyInformation)
       }
-      <Spacer spacer={4} />
+      <Spacer size={36} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ $radius: rem-calc(8px);
 $details-link-color: #4a4a4a;
 $details-link-border: 1px solid #b2b2b2;
 $policy-hat-height: ru(.25);
-$content-margin: ru(1);
+$content-margin: ru(1.5);
 $content-margin-top: ru(.5);
 
 .featured-policy-card {
@@ -26,6 +26,10 @@ $content-margin-top: ru(.5);
       border-color: $details-link-color;
     }
   }
+}
+
+.default-text {
+  text-align: center;
 }
 
 .content {
