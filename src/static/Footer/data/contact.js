@@ -8,7 +8,7 @@ export const contactItems = [
   {
     header: '1-855-695-2255',
     icon: 'phone',
-    text: 'Monday-Thursday | 9am-9pm EST<br/>Friday | 9am-6pm EST<br/>Saturday-Sunday | 10am-4pm EST',
+    text: 'Monday-Thursday | 9am-9pm EST<br/>Friday | 9am-6pm EST<br/>Saturday-Sunday | 10am-6pm EST',
     href: 'tel:1-855-695-2255'
   },
   {
