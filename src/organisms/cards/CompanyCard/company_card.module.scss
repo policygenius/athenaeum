@@ -1,0 +1,67 @@
+/* stylelint-disable declaration-colon-space-after */
+// Responsible for the fun and fancy pop o' grey
+// On small screens, the background goes full width, put is
+// 24px shy of the top & bottom.
+// The second linear-gradient inserts the white bar at the bottom.
+// 60px =  24px + the margin of the last logo + padding of the section
+
+.company-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid color('neutral-4');
+  margin-bottom: rem-calc(24px);
+  background: color('primary-2');
+  padding: rem-calc(20px);
+  height: rem-calc(193px);
+
+  @media #{$tablet} {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.image-wrapper {
+  margin-bottom: rem-calc(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: rem-calc(100%);
+  max-width: rem-calc(100%);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+}
+
+.small {
+  min-height: rem-calc(172px);
+  min-width: rem-calc(172px);
+
+  .image-wrapper {
+    height: rem-calc(41px);
+    max-width: rem-calc(124px);
+    max-height: rem-calc(41px);
+  }
+  .star-rating {
+    margin-bottom: rem-calc(22px);
+  }
+}
+
+.large {
+  min-height: rem-calc(270px);
+
+  .image-wrapper {
+    max-width: rem-calc(198px);
+    max-height: rem-calc(66px);
+    margin-bottom: rem-calc(18px);
+  }
+    .star-rating {
+    margin-bottom: rem-calc(27px);
+  }
+}
+
