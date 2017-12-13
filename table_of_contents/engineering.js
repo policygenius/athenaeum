@@ -43,6 +43,10 @@ module.exports = {
           components: 'src/molecules/Modal/index.js'
         },
         {
+          name: 'StarRating',
+          components: 'src/molecules/StarRating/index.js'
+        },
+        {
           name: 'Loading',
           components: 'src/molecules/Loading/index.js'
         },
