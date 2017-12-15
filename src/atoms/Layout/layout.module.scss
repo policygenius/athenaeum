@@ -1,16 +1,5 @@
-$gutter-width: ru(.5);
 $border: 1px solid;
 $spacer-base: .25;
-
-@mixin g-unit($cols: 1, $total-col-count: 12) {
-  $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
-
-  width: $width;
-  flex-basis: $width;
-  max-width: $width;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
 
 @mixin createCols( $size ) {
   @for $i from 1 through 12 {

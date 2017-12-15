@@ -2,4 +2,9 @@
   .#{$key} { color: $value; }
   .background-#{$key} { background-color: $value; }
   .border-#{$key} { border-color: $value; }
+  .color-dash-#{$key} {
+    &:after {
+      border-left: rem-calc(3) solid $value;
+    }
+  }
 }

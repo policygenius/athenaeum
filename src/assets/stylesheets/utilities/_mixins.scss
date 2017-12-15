@@ -1,3 +1,13 @@
+@mixin g-unit($cols: 1, $total-col-count: 12) {
+  $width: calc( ( #{$cols} / #{$total-col-count} ) * 100%);
+
+  width: $width;
+  flex-basis: $width;
+  max-width: $width;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
 @mixin hover($background-color, $border-color, $color) {
   &:hover,
   &:active,

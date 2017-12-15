@@ -32,6 +32,7 @@ module.exports = {
           components: () => [
             'src/molecules/HeaderDiscount/index.js',
             'src/molecules/HeaderAmount/index.js',
+            'src/molecules/BlockHeader/index.js',
           ]
         },
         {
