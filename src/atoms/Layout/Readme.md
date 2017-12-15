@@ -6,6 +6,31 @@ Any layout specific props that are meant for the `Col` will be passed to the `Co
 Any props that you explicitly give to a `<Col>` will override any props that it may have inherited by the `Layout` component.
 All child component props will be passed directly to the component itself.
 
+## Background Block
+```jsx
+  const exampleStyles = require('./example.module.scss');
+
+  // Bad (don't pass `<Col>` props directly to children.)
+  // This will work, but it's considered bad practice.
+  <Layout
+    mediumCols={[6]}
+    bbcols={7}
+    bbvariant='right'
+    className={exampleStyles['example']}
+  >
+    <Col style={{
+      marginLeft: 'auto'
+    }}>
+      <Text variant='label'>
+        SuperText
+      </Text>
+      <Text font='a' size={2}>
+        Hey what's up yo
+      </Text>
+    </Col>
+  </Layout>
+
+```
 
 ## How to use Layout
 ```html
@@ -142,3 +167,4 @@ All child component props will be passed directly to the component itself.
   <div>'Child 5'</div>
 </Layout>
 ```
+

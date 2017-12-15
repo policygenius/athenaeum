@@ -42,3 +42,17 @@ $xxlarge-only: '#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 $small-and-medium-only: '#{$screen} and (max-width: #{upper-bound($tablet-range)})';
 $medium-up-to-large: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($desktop-range)})';
 $medium-up-to-xxlarge: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($xlarge-range)})';
+
+$IE: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)';
+
+// Use to compensate for scroll-to offset
+// This is the height of the main nav from mobile up
+$tablet-nav-height: 120px;
+
+// -12px added to take into account gutter that comes with Layout in each section
+$section-padding-mobile: rem-calc(24px - 12px);
+$section-padding-tablet: rem-calc(48px - 12px);
+$section-padding-desktop: rem-calc(64px - 12px);
+
+// TODO: Setup / get this variable from Athenaeum
+$gutter-width: ru(.5);

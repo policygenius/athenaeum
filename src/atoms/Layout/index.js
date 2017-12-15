@@ -13,7 +13,9 @@ function Layout( props ) {
     style,
     variant,
     column,
-    nested
+    nested,
+    bbcols,
+    bbvariant
   } = props;
 
   const classes = cx(
@@ -23,6 +25,9 @@ function Layout( props ) {
     variant && styles[variant],
     column && styles['column'],
     className,
+    styles['background-block'],
+    styles[`background-block-lg-${bbcols}`],
+    bbvariant && styles[bbvariant]
   );
 
   const kids = processChildren(props);
@@ -152,6 +157,8 @@ Layout.propTypes = {
    * `'bordered-buckets'`: Creates borders around `Col` from medium viewports up.
    */
   variant: PropTypes.oneOf([ 'bordered-buckets', 'padding-small' ]),
+  bbcols: PropTypes.number,
+  bbvariant: PropTypes.string
 };
 
 Layout.defaultProps = {
