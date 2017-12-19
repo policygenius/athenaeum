@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StarRating /> renders correctly 1`] = `
+<span
+  className="star-rating stars stars-undefined"
+>
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+</span>
+`;
