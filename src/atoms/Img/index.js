@@ -4,6 +4,9 @@ import cx from 'classnames';
 import styles from './img.module.scss';
 
 if (typeof window !== 'undefined') {
+  window.lazySizesConfig = window.lazySizesConfig || {};
+  window.lazySizesConfig.preloadAfterLoad = true;
+
   require('lazysizes/plugins/rias/ls.rias.min');
   require('lazysizes/lazysizes.min');
 }
