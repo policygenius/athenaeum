@@ -42,3 +42,5 @@ $xxlarge-only: '#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 $small-and-medium-only: '#{$screen} and (max-width: #{upper-bound($tablet-range)})';
 $medium-up-to-large: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($desktop-range)})';
 $medium-up-to-xxlarge: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($xlarge-range)})';
+
+$IE: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)';

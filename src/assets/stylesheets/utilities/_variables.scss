@@ -1,0 +1,10 @@
+// Use to compensate for scroll-to offset
+// This is the height of the main nav from mobile up
+$tablet-nav-height: 120px;
+
+$gutter-width: rem-calc(12);
+
+// -12px added to take into account gutter that comes with Layout in each section
+$section-padding-mobile: rem-calc(24px - 12px);
+$section-padding-tablet: rem-calc(48px - 12px);
+$section-padding-desktop: rem-calc(64px - 12px);
