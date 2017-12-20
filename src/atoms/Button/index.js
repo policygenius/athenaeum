@@ -18,6 +18,7 @@ function Button( props ) {
     outline,
     href,
     linkAttrs,
+    noHover,
     ...rest
   } = props;
 
@@ -26,6 +27,7 @@ function Button( props ) {
     variant && styles[variant],
     disabled && styles['disabled'],
     outline && styles['outline'],
+    noHover && styles['no-hover'],
     className,
     unflex && styles['unflex'],
   ];
@@ -104,6 +106,11 @@ Button.propTypes = {
    * Passes any link attributes onto the a tag.
    */
   linkAttrs: PropTypes.object,
+
+  /**
+   * Removes hover state for Button on tablet and up
+   */
+  noHover: PropTypes.bool,
 };
 
 Button.defaultProps = {
