@@ -30,6 +30,44 @@ $spacer-base: .25;
   flex-wrap: wrap;
 }
 
+// Grey box land
+.background-block {
+  position: relative;
+  padding: rem-calc(36) 0;
+
+  > div {
+    position: relative;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    background-color: color('neutral-3');
+    box-sizing: content-box;
+  }
+
+  &.right:before {
+    padding-right: #{$section-padding-desktop};
+    right: -#{$section-padding-desktop};
+  }
+
+  &.left:before {
+    left: -#{$section-padding-desktop};
+    padding-left: #{$section-padding-desktop};
+  }
+}
+
+@for $i from 1 through 12 {
+  .background-block-lg-#{$i} {
+    &:before {
+      @include g-unit($i);
+    }
+  }
+}
+
 .col {
   padding-left: $gutter-width;
   padding-right: $gutter-width;
