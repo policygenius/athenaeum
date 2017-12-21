@@ -6,6 +6,7 @@
     colorDash='secondary-1'
     supertitle='Super title dawg'
     title='Title dawg'
+    description='Here is a super cool description and it is so cool'
   />
 ```
 
