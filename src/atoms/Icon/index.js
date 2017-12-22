@@ -7,7 +7,11 @@ import * as icons from 'assets/images';
 import styles from './icons.module.scss';
 
 function Icon( props ) {
+
   const icon = icons[props.icon];
+
+  if (!icon) { return null; }
+
   const {
     className,
     onClick,
@@ -17,22 +21,22 @@ function Icon( props ) {
   } = props;
 
   return (
-    <span
+    <SVGInline
       className={
         classnames(
           styles['icon-wrapper'],
-          onClick && styles['clickable'],
-          inline && styles[`inline-${inline}`],
+          onClick && styles.clickable,
+          inline && styles[inline],
+          inline && styles.inline,
           className
         )}
       onClick={onClick}
+      svg={icon}
       style={{
         width,
         height
       }}
-    >
-      { icon && <SVGInline svg={icon} /> }
-    </span>
+    />
   );
 }
 

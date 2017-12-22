@@ -1,13 +1,26 @@
 X-Icon example:
 
 ```jsx
-    <Icon icon='xIcon' />
+    <Icon
+      icon='xIcon'
+      onClick={() => alert('You clicked me!')}
+    />
 ```
 
 Inline Icon example:
 
 ```jsx
-    <TextComponent>
+  <div>
+    <Text>
+      <Icon
+        icon='infinity'
+        height='15px'
+        width='35px'
+        inline='left'
+      />
+      Text with inlined icon
+    </Text>
+    <Text size={7} font='a'>
       <Icon
         icon='checkmark'
         height='15px'
@@ -15,7 +28,42 @@ Inline Icon example:
         inline='left'
       />
       Text with inlined icon
-    </TextComponent>
+    </Text>
+    <Text size={3} font='a'>
+      <Icon
+        icon='checkmark'
+        height='5px'
+        width='5px'
+        inline='left'
+      />
+      Text with inlined icon
+    </Text>
+    <Text size={1} font='a'>
+      <Icon
+        icon='checkmark'
+        height='35px'
+        width='35px'
+        inline='left'
+      />
+      Text with inlined icon
+    </Text>
+  </div>
+```
+
+### Suggested method to resize Icons:
+`<Icon />` returns an `svg` wrapped in a `div`.
+Its default size is `72px`x`72px` or `ru(3)`.
+
+```html
+  <div className='custom-icon-wrapper'>
+    <Icon icon='someLogo' />
+  </div>
+```
+
+```css
+  .custom-icon-wrapper svg{
+    height: 30px;
+  }
 ```
 
 # All Available Icons:
@@ -66,21 +114,4 @@ Inline Icon example:
     }
 
     <DisplayAllIcons />
-```
-
-
-### Suggested method to resize Icons:
-`<Icon />` returns an `svg` wrapped in a `div`.
-Its default size is `72px`x`72px` or `ru(3)`.
-
-```html
-  <div className='custom-icon-wrapper'>
-    <Icon icon='someLogo' />
-  </div>
-```
-
-```css
-  .custom-icon-wrapper svg{
-    height: 30px;
-  }
 ```

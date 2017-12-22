@@ -50,7 +50,14 @@ class Tooltip extends React.Component {
           className
         )}
       >
-        { text }
+        {
+          text ||
+            <Icon
+              icon='tooltip'
+              className={styles['tooltip']}
+              inline={inline}
+            />
+        }
         <span
           className={classnames(
             children && styles['hover-message'],
@@ -111,10 +118,6 @@ Tooltip.propTypes = {
   inline: PropTypes.oneOf([
     'left', 'right',
   ]),
-};
-
-Tooltip.defaultProps = {
-  text: <Icon icon='tooltip' className={styles['tooltip']} />
 };
 
 export default Tooltip;

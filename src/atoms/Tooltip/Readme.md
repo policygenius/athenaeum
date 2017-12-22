@@ -17,7 +17,7 @@ Tooltip Example:
 Tooltip with custom text
 
 ```jsx
-  <Tooltip text='When you hover over me I become a tooltip'>
+  <Tooltip text='When you hover over me I display a tooltip'>
     See!
   </Tooltip>
 ```
