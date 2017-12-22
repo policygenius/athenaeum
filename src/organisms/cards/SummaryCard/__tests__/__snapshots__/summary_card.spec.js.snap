@@ -4,16 +4,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
 <div
   className="summary-card"
 >
-  <span
-    className="icon-wrapper clickable icon icon-click"
-    onClick={[Function]}
-    style={
-      Object {
-        "height": undefined,
-        "width": undefined,
-      }
-    }
-  />
   <div
     className="content"
   >

@@ -4,14 +4,16 @@ import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
+import Tooltip from 'atoms/Tooltip';
 import styles from './icon_list.module.scss';
 
 function IconList(props) {
   const {
     className,
     data,
-    type,
     font,
+    type,
+    itemSpacing
   } = props;
 
   return (
@@ -19,20 +21,36 @@ function IconList(props) {
       {
         data.map( (item, idx) =>
           <li
-            className={styles['item']}
+            className={styles.item}
             key={`iconlist-item-${idx}`}
+            style={{
+              marginBottom: itemSpacing
+            }}
           >
-            <Icon
-              className={styles['icon']}
-              icon={item.icon}
-            />
-
             <Text
-              className={styles['text']}
+              className={styles.text}
               type={type}
               font={font}
             >
+              <Icon
+                className={styles.icon}
+                icon={item.icon}
+                inline
+              />
               {item.text}
+              {
+                item.tooltip ?
+                  <Tooltip
+                    className={styles.tooltip}
+                    left
+                    inline
+                  >
+                    {item.tooltip}
+                  </Tooltip> : ''
+              }
+            </Text>
+            <Text>
+              {item.description}
             </Text>
           </li>
         )
@@ -56,6 +74,10 @@ IconList.propTypes = {
    * Font type prop -- see [Text](#text) for appropriate values
    */
   font: PropTypes.string,
+  /**
+   * Sets the spacing between list items. Will default to 12px.
+   */
+  itemSpacing: PropTypes.string,
   /**
    * List of items to map over to create list
    */

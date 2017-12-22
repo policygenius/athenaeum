@@ -1,32 +1,34 @@
 .icon-wrapper {
   position: relative;
   display: inline-block;
-  width: ru(3);
-  height: ru(3);
+  width: rem-calc(72px);
+  height: rem-calc(72px);
+  display: inline-block;
 
-  .SVGInline-svg {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  /* stylelint-disable selector-pseudo-class-no-unknown */
+  // This class comes from our SVG dependency
+  :global {
+    .SVGInline-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
-
-  svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
+  /* stylelint-enable selector-pseudo-class-no-unknown */
 }
 
-.inline-left {
+.inline {
   vertical-align: middle;
-  margin-right: ru(.25);
+  // This will get the icons to actually be centered inline.
+  transform: translateY(-0.27ex);
 }
 
-.inline-right {
-  vertical-align: middle;
-  margin-left: ru(.25);
+.left {
+  margin-right: rem-calc(12);
+}
+
+.right {
+  margin-left: rem-calc(12);
 }
 
 .clickable {
