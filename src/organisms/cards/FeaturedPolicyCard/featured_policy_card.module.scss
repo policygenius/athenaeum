@@ -146,3 +146,11 @@ $content-margin-top: ru(.5);
     display: none;
   }
 }
+
+@media #{$IE} {
+  .carrier-logo {
+    img {
+      max-width: inherit;
+    }
+  }
+}
