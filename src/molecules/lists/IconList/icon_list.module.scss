@@ -1,26 +1,37 @@
+$icon-width: rem-calc(24px);
+$icon-margin: rem-calc(12px);
+$indent: $icon-width + $icon-margin;
 
 .icon-list {
   list-style: none;
   padding: 0;
+  padding-left: $indent;
+}
 
-  .item {
-    display: flex;
-    align-items: center;
-    margin-bottom: ru(.5);
+.item {
+  margin-bottom: ru(.5);
+  position: relative;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .icon {
-    width: ru(1);
-    height: ru(.75);
-    min-width: ru(1);
-  }
-
-  .text {
-    padding-left: ru(.5);
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
+.icon {
+  width: $icon-width;
+  height: rem-calc(18px);
+  min-width: $icon-width;
+  margin-right: $icon-margin;
+}
+
+.text {
+  // This is how we get the first line to work with the icon + list padding.
+  margin-bottom: rem-calc(6);
+  position: relative;
+  text-indent: -$indent;
+}
+
+.tooltip {
+  margin-left: rem-calc(9px);
+  text-indent: initial;
+}
