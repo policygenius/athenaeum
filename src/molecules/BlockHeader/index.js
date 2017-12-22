@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Text from 'atoms/Text';
 import GrayBox from 'atoms/GrayBox';
 import styles from './block-header.module.scss';
 
@@ -30,7 +31,7 @@ const BlockHeader = ({
     <Text className={styles.description} font='b' size={9}>
       {description}
     </Text>
-    </GrayBox>;
+  </GrayBox>;
 
 BlockHeader.propTypes = {
   /**
