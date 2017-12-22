@@ -13,23 +13,24 @@ const BlockHeader = ({
   colorDash,
   leftOffset,
   verticalPadding
-}) => <GrayBox
-  cols={cols}
-  variant={variant}
-  colorDash={colorDash}
-  leftOffset={leftOffset}
-  verticalPadding={verticalPadding}
->
-  <Text variant='label' className={styles.label}>
-    {supertitle}
-  </Text>
-  <Text font='a' size={2}>
-    {title}
-  </Text>
-  <Text className={styles.description} font='b' size={9}>
-    {description}
-  </Text>
-</GrayBox>;
+}) =>
+  <GrayBox
+    cols={cols}
+    variant={variant}
+    colorDash={colorDash}
+    leftOffset={leftOffset}
+    verticalPadding={verticalPadding}
+  >
+    <Text variant='label' className={styles.label}>
+      {supertitle}
+    </Text>
+    <Text font='a' size={2}>
+      {title}
+    </Text>
+    <Text className={styles.description} font='b' size={9}>
+      {description}
+    </Text>
+    </GrayBox>;
 
 BlockHeader.propTypes = {
   /**
