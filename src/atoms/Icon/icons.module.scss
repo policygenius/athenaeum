@@ -20,6 +20,7 @@
 .inline {
   vertical-align: middle;
   // This will get the icons to actually be centered inline.
+  // SHOUTOUT: @dan.novograd for teaching the frontend team about 'ex' units
   transform: translateY(-0.27ex);
 }
 
