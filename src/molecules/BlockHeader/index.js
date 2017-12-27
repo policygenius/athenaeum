@@ -25,7 +25,7 @@ const BlockHeader = ({
     <Text variant='label' className={styles.label}>
       {supertitle}
     </Text>
-    <Text font='a' size={2}>
+    <Text tag='h2' font='a' size={2}>
       {title}
     </Text>
     <Text className={styles.description} font='b' size={9}>
