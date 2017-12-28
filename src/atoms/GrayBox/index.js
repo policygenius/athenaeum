@@ -52,7 +52,7 @@ const GrayBox = ({
       mediumCols={[ cols - 1 ]}
       className={classes}
     >
-      <StyledWrapper css={styleOverrides} component={Col}>
+      <StyledWrapper css={styleOverrides} component={Col} fullwidth>
         {children}
       </StyledWrapper>
     </Layout>

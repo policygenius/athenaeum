@@ -1,8 +1,12 @@
 .label {
   color: color('neutral-2');
+  margin-bottom: rem-calc(12);
 }
 
 .description {
   padding-right: rem-calc(60);
-  margin-top: rem-calc(12);
+}
+
+.title {
+  margin-bottom: rem-calc(12);
 }
