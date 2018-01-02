@@ -12,25 +12,31 @@ const BlockHeader = ({
   cols,
   variant,
   colorDash,
+  className,
+  children,
   leftOffset,
   verticalPadding
 }) =>
   <GrayBox
     cols={cols}
     variant={variant}
+    className={className}
     colorDash={colorDash}
     leftOffset={leftOffset}
     verticalPadding={verticalPadding}
   >
-    <Text variant='label' className={styles.label}>
-      {supertitle}
-    </Text>
-    <Text tag='h2' className={styles.title} font='a' size={2}>
-      {title}
-    </Text>
-    <Text className={styles.description} font='b' size={9}>
-      {description}
-    </Text>
+    <div>
+      <Text variant='label' className={styles.label}>
+        {supertitle}
+      </Text>
+      <Text tag='h2' className={styles.title} font='a' size={2}>
+        {title}
+      </Text>
+      <Text className={styles.description} font='b' size={9}>
+        {description}
+      </Text>
+      { children }
+    </div>
   </GrayBox>;
 
 BlockHeader.propTypes = {
@@ -44,6 +50,10 @@ BlockHeader.propTypes = {
   title: PropTypes.string,
   /**
    * The description under the title
+   */
+  className: PropTypes.string,
+  /**
+   * The class name to be applied to gray box
    */
   description: PropTypes.string,
   /**

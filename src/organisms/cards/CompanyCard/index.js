@@ -11,12 +11,14 @@ const CompanyCard = (props) => {
     starRating,
     imageAttr,
     linkUrl,
+    className,
     variant
   } = props;
 
   const classes = cx(
     styles['company-card'],
     styles[variant],
+    className
   );
 
   const ReadLink = () =>
@@ -45,6 +47,7 @@ const CompanyCard = (props) => {
 CompanyCard.propTypes = {
   starRating: PropTypes.number,
   linkUrl: PropTypes.string,
+  className: PropTypes.string,
   imageAttr: PropTypes.object,
   variant: PropTypes.string,
 };
