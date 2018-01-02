@@ -41,55 +41,53 @@ function renderPhoneInfo(phoneNumber, hours) {
   if (!phoneNumber) { return null; }
 
   return (
-    <div>
-      <Col className={styles['lockup']}>
-        <LinkWrapper
-          href={`tel:${formatPhoneNumber(phoneNumber)}`}
-          className={classnames(styles['icon-text-wrapper'], styles['link'])}
-          type='resource'
+    <Col className={styles['phone-lockup']}>
+      <LinkWrapper
+        href={`tel:${formatPhoneNumber(phoneNumber)}`}
+        className={classnames(styles['icon-text-wrapper'], styles['link'])}
+        type='resource'
+      >
+        <Icon
+          icon='phone'
+          width='24px'
+          height='24px'
+          className={styles['icon']}
+        />
+
+        <Text
+          size={8}
+          font='a'
         >
-          <Icon
-            icon='phone'
-            width='24px'
-            height='24px'
-            className={styles['icon']}
-          />
-
-          <Text
-            size={8}
-            font='a'
-          >
-            {phoneNumber}
-          </Text>
-        </LinkWrapper>
-
-        <div className={styles['mobile-questions']}>
-          <Spacer size={36} />
-          <Text
-            size={7}
-            font='a'
-          >
-          Questions?
+          {phoneNumber}
         </Text>
-        </div>
+      </LinkWrapper>
 
-        <Spacer size={6} />
+      <div className={styles['mobile-questions']}>
+        <Spacer size={36} />
+        <Text
+          size={7}
+          font='a'
+        >
+        Questions?
+      </Text>
+      </div>
 
-        <div className={styles['hours']}>
-          {
-          hours &&
-          hours.map(hour =>
-            <Text
-              size={10}
-              font='b'
-            >
-              {hour}
-            </Text>
-          )
-        }
-        </div>
-      </Col>
-    </div>
+      <Spacer size={6} />
+
+      <div className={styles['hours']}>
+        {
+        hours &&
+        hours.map(hour =>
+          <Text
+            size={10}
+            font='b'
+          >
+            {hour}
+          </Text>
+        )
+      }
+      </div>
+    </Col>
   );
 }
 
@@ -101,12 +99,18 @@ function Footer(props) {
     links,
     onClickChat,
     hours,
+    constrainWidth
   } = props;
+
+  const layoutClasses = classnames(
+    styles['footer-layout'],
+    constrainWidth && styles['footer-layout-constrain']
+  );
 
   return (
     <div className={classnames(styles['footer'], className)}>
       <Layout
-        className={styles['footer-layout']}
+        className={layoutClasses}
         smallCols={[ 12 ]}
         mediumCols={[ 4 ]}
         fullwidth
@@ -238,6 +242,11 @@ Footer.propTypes = {
    * Sets the Policygenius hours. Each item in the array is displayed as a new line
    */
   hours: PropTypes.array,
+
+  /**
+   * constrains Footer to 1280px and centers content
+   */
+  constrainWidth: PropTypes.bool,
 };
 
 Footer.defaultProps = {

@@ -92,17 +92,7 @@
     }
   }
 
-  .step-title {
-    display: none;
-  }
-
   .circle-wrapper {
     margin-left: 40%;
-  }
-}
-
-@media #{$medium-up} {
-  .active-step {
-    display: none;
   }
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
 import classnames from 'classnames';
-import Text from 'atoms/Text';
 import ProgressBarStep from './ProgressBarStep';
 import styles from './step_indicator.module.scss';
 
@@ -13,13 +11,8 @@ function StepIndicator(props) {
     navigateToPath
   } = props;
 
-  const activeStep = steps.find(step => step.currentStepActive) || steps[0];
-
   return (
     <div className={classnames(className)}>
-      <Text tag='div' type={11} color='primary-3' font='a' spaced className={styles['active-step']}>
-        {get(activeStep, 'text', '')}
-      </Text>
       <div className={styles['step-indicator']}>
         {steps.map((step, idx) =>
           <ProgressBarStep

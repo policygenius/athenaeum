@@ -4,6 +4,16 @@
   &-layout {
     padding: 0 ru(1) ru(1) ru(1);
   }
+
+  &-layout-constrain {
+    margin: 0 auto;
+    max-width: rem-calc(1280px);
+  }
+}
+
+.phone-lockup {
+  padding-left: 0;
+  padding-right: rem-calc(12px);
 }
 
 .actions {
@@ -130,7 +140,7 @@
 
 @media #{$desktop} {
   .footer-layout {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: rem-calc(64px);
+    padding-right: rem-calc(64px);
   }
 }
