@@ -88,10 +88,8 @@
   .gray-box {
     &:before {
       min-width: 100vw;
-      transform: translateX(-50%);
-      left: 50%;
+      left: -$gutter-width;
       content: '';
-      position: absolute;
       display: block;
       top: 0;
       bottom: 0;

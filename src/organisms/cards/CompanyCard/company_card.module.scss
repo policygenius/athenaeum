@@ -14,12 +14,6 @@
   margin-bottom: rem-calc(24px);
   background: color('primary-2');
   height: rem-calc(193px);
-
-  @media #{$tablet} {
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
 }
 
 .image-wrapper {
@@ -38,8 +32,8 @@
 }
 
 .small {
-  min-height: rem-calc(172px);
-  min-width: rem-calc(172px);
+  height: rem-calc(172px);
+  width: rem-calc(172px);
   padding: rem-calc(36px 18px);
 
   .image-wrapper {
@@ -53,8 +47,8 @@
 }
 
 .large {
-  min-height: rem-calc(270px);
-  min-width: rem-calc(172px);
+  height: rem-calc(270px);
+  width: rem-calc(172px);
   padding: (60px 36px);
 
   .image-wrapper {

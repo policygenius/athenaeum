@@ -14,6 +14,7 @@ const GrayBox = ({
   variant,
   colorDash,
   children,
+  className,
   verticalPadding,
   leftOffset
 }) => {
@@ -22,7 +23,8 @@ const GrayBox = ({
     styles[`gray-box-lg-${cols}`],
     variant && styles[variant],
     colorDash && colors[`color-dash-${colorDash}`],
-    leftOffset && styles[`offset-${leftOffset}`]
+    leftOffset && styles[`offset-${leftOffset}`],
+    className
   );
 
   const styleOverrides = ({ breakpoints }) => {
@@ -61,6 +63,7 @@ const GrayBox = ({
 
 GrayBox.propTypes = {
   supertitle: PropTypes.string,
+  className: PropTypes.string,
   title: PropTypes.string,
   cols: PropTypes.number,
   variant: PropTypes.string,

@@ -9,4 +9,8 @@
 
 .title {
   margin-bottom: rem-calc(12);
+
+  @media #{$tablet} {
+    padding-right: rem-calc(120);
+  }
 }
