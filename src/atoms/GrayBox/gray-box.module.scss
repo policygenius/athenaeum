@@ -88,7 +88,7 @@
   .gray-box {
     &:before {
       min-width: 100vw;
-      left: -$gutter-width;
+      left: calc(#{$gutter-width * -2});
       content: '';
       display: block;
       top: 0;
