@@ -36,6 +36,8 @@ const getFont = ({ size, type, font, a }) => {
 const convertChild = (child) => {
   // Check children for other TextComponents
   // and automatically convert them into <spans> if they are <p>.
+  if (!child) { return null; }
+
   if (child.type === Text && child.props.tag === 'p') {
     return React.cloneElement(child, { tag: 'span' });
   }
