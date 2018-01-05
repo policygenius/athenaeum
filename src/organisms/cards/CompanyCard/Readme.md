@@ -1,6 +1,6 @@
 
 ``` 
-    <Layout style={{flexWrap: 'nowrap'}}> 
+    <Layout mediumCols={[3]}> 
     <CompanyCard
       starRating={3}
       linkUrl="https://companycard.com"
@@ -30,7 +30,7 @@
 
 #### Large Variant (`variant='large'`)
 ``` 
-  <Layout style={{flexWrap: 'nowrap'}}>
+  <Layout mediumCols={[4]}>
     <CompanyCard
       starRating={1}
       linkUrl="https://companycard.com"
