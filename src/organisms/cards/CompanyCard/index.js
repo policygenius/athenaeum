@@ -26,7 +26,7 @@ const CompanyCard = (props) => {
       type='secondary'
       variant={variant}
       className={styles.read}
-      linkUrl={linkUrl}
+      href={linkUrl}
     >
       <Text size={10}>Read</Text>
     </LinkWrapper>;
