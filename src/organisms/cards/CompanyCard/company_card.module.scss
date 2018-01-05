@@ -31,7 +31,6 @@
   padding: rem-calc(36px 18px);
 
   .image-wrapper {
-    height: rem-calc(36px);
     max-width: rem-calc(120px);
     width: auto;
   }
@@ -47,8 +46,8 @@
 
   .image-wrapper {
     margin-bottom: rem-calc(18px);
-    max-width: rem-calc(120px);
     width: auto;
+    max-width: rem-calc(120px);
   }
 
   .star-rating {
