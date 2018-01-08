@@ -16,7 +16,6 @@ The RCL relies heavily on the following technologies. If you want to learn more 
 
 We use [Babel](https://babeljs.io/) to compile our JS, which allows us to use the latest features of the language.
 
-
 ## Using the RCL locally
 1. Clone the repo:
 
