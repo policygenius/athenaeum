@@ -35,8 +35,8 @@ const CompanyCard = (props) => {
 
   return (
     <div className={classes}>
-      <div className={styles['image-wrapper']}>
-        <img src={imageAttr.src} role='presentation' />
+      <div>
+        <img className={styles.image} src={imageAttr.src} role='presentation' />
       </div>
       { starRating && <StarRating className={styles['star-rating']} rating={starRating} size={size} /> }
       { linkUrl && <ReadLink linkUrl={linkUrl} /> }

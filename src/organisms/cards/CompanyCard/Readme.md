@@ -5,7 +5,7 @@
       starRating={3}
       linkUrl="https://companycard.com"
       imageAttr={{
-      src: "https://cdn.policygenius.com/assets/insurance-cards-logos/aig-dark-07c1cd0ae0d9476ca93abf9b597e43cb.png"
+        src: "https://cdn.policygenius.com/assets/insurance-cards-logos/aig-dark-07c1cd0ae0d9476ca93abf9b597e43cb.png"
       }}
       variant='small'
     />
