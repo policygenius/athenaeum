@@ -30,7 +30,7 @@ module.exports = baseConfig({
         include: includePaths,
         use: [
           {
-            loader: 'react-hot-loader/webpack'
+            loader: 'react-hot-loader'
           }
         ]
       },

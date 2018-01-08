@@ -22,7 +22,7 @@ describe('<ProductArticleList />', () => {
       const wrapper = shallow(<ProductArticleList {...props} />);
 
       expect(wrapper.find(ArticleImage).length).toEqual(1);
-      expect(wrapper.find(ArticleImage).findWhere(n => n.getElement().props.header === 'test').length).toEqual(1);
+      expect(wrapper.find(ArticleImage).findWhere(n => n.node.props.header === 'test').length).toEqual(1);
     });
   });
 });

@@ -28,17 +28,17 @@ describe('<MainNav />', () => {
 
       expect(menuWrapper.length).toEqual(3);
 
-      expect(menuWrapper.findWhere(n => n.getElement().props.header === 'Insurance Quotes & Guides').length).toEqual(1);
+      expect(menuWrapper.findWhere(n => n.node.props.header === 'Insurance Quotes & Guides').length).toEqual(1);
 
-      expect(menuWrapper.findWhere(n => n.getElement().props.header === 'Magazine').length).toEqual(1);
+      expect(menuWrapper.findWhere(n => n.node.props.header === 'Magazine').length).toEqual(1);
 
-      expect(menuWrapper.findWhere(n => n.getElement().props.header === 'About').length).toEqual(1);
+      expect(menuWrapper.findWhere(n => n.node.props.header === 'About').length).toEqual(1);
     });
 
     it('renders Insurance Checkup <MenuLink />', () => {
       const menuLink = wrapper.find(MenuLink);
 
-      expect(menuLink.findWhere(n => n.getElement().props.header.includes('Insurance Checkup')).length).toEqual(1);
+      expect(menuLink.findWhere(n => n.node.props.header.includes('Insurance Checkup')).length).toEqual(1);
     });
 
     describe('renders <SubMenu />', () => {
@@ -50,19 +50,19 @@ describe('<MainNav />', () => {
 
       it('renders insuranceProducts', () => {
         insuranceProducts.forEach((product) => {
-          expect(submenu.findWhere(n => n.getElement().props.menu === product.menu).length).toEqual(1);
+          expect(submenu.findWhere(n => n.node.props.menu === product.menu).length).toEqual(1);
         });
       });
 
       it('renders magazineItems', () => {
         magazineItems.forEach((item) => {
-          expect(submenu.findWhere(n => n.getElement().props.menu === item.menu).length).toEqual(1);
+          expect(submenu.findWhere(n => n.node.props.menu === item.menu).length).toEqual(1);
         });
       });
 
       it('renders aboutItems', () => {
         aboutItems.forEach((item) => {
-          expect(submenu.findWhere(n => n.getElement().props.menu.header === item.header).length).toEqual(1);
+          expect(submenu.findWhere(n => n.node.props.menu.header === item.header).length).toEqual(1);
         });
       });
     });
@@ -71,9 +71,9 @@ describe('<MainNav />', () => {
       it('renders correct <MenuLink />', () => {
         const menuLink = wrapper.find(MenuLink);
 
-        expect(menuLink.findWhere(n => n.getElement().props.secondary === true).length).toEqual(2);
-        expect(menuLink.findWhere(n => n.getElement().props.header === 'Contact').length).toEqual(1);
-        expect(menuLink.findWhere(n => n.getElement().props.header === 'Account').length).toEqual(1);
+        expect(menuLink.findWhere(n => n.node.props.secondary === true).length).toEqual(2);
+        expect(menuLink.findWhere(n => n.node.props.header === 'Contact').length).toEqual(1);
+        expect(menuLink.findWhere(n => n.node.props.header === 'Account').length).toEqual(1);
       });
     });
   });

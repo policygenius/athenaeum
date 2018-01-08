@@ -22,6 +22,6 @@ describe('<TextComponent />', () => {
   it('mounts nothing if it has no children.', () => {
     const wrapper = render(<TextComponent />);
 
-    expect(wrapper.html()).to.equal(null);
+    expect(wrapper.html()).to.equal('');
   });
 });
