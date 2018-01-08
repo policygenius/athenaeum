@@ -3,29 +3,24 @@ set -eo pipefail
 
 git config --global user.name "Randy the PolicyGenius Robot"
 git config --global user.email "robot@policygenius.com"
+# git add . && git commit
 
 NODE_ENV=development yarn
 NODE_ENV=production yarn run styleguide:build
 
-if [ "$BUILDKITE_BRANCH" == "master" ]; then
-  echo '+++ Publishing the package'
+echo '+++ Publishing the package'
 
-  BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
-  VERSION=$(npm version $BUMP_SIZE)
+BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
+VERSION=$(npm version $BUMP_SIZE)
 
-  npm adduser <<!
+npm adduser <<!
 $NPM_USERNAME
 $NPM_PASSWORD
 $NPM_EMAIL
 !
 
-  bin/build_assets
-  npm publish
-else
-  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
-
-  VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
-fi
+bin/build_assets
+npm publish
 
 echo '+++ Deploying version-specific styleguide to S3'
 aws s3 sync \

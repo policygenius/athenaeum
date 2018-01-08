@@ -11,32 +11,32 @@ steps:
 
   - wait
 
-  - name: ':scsslint:'
-    command: yarn lint
-    agents:
-      queue: runner
-    plugins:
-      docker-compose:
-        run: athenaeum
+  # - name: ':scsslint:'
+    # command: yarn lint
+    # agents:
+      # queue: runner
+    # plugins:
+      # docker-compose:
+        # run: athenaeum
 
-  - name: ':jest:'
-    command: yarn test
-    agents:
-      queue: runner
-    plugins:
-      docker-compose:
-        run: athenaeum
+  # - name: ':jest:'
+    # command: yarn test
+    # agents:
+      # queue: runner
+    # plugins:
+      # docker-compose:
+        # run: athenaeum
 
-  - wait
+  # - wait
 
-  - trigger: "athenaeum-main-nav"
-    label: ':roller_coaster: Trigger MainNav and Footer Pipeline'
-    async: true
-    build:
-      branch: ${BUILDKITE_BRANCH}
+  # - trigger: "athenaeum-main-nav"
+    # label: ':roller_coaster: Trigger MainNav and Footer Pipeline'
+    # async: true
+    # build:
+      # branch: ${BUILDKITE_BRANCH}
 
   - block: 'Trigger deploy/publish'
-    branches: 'master'
+    branches: '!master'
     prompt: 'Choose a version bump'
     fields:
     - select: 'Increment'
@@ -51,8 +51,8 @@ steps:
         - label: 'Patch'
           value: 'patch'
 
-  - block: "Trigger custom deploy for current version"
-    branches: '!master'
+  # - block: "Trigger custom deploy for current version"
+    # branches: '!master'
 
   - name: ':rocket: :s3: :npm:'
     command: bin/deploy
@@ -62,11 +62,11 @@ steps:
       docker-compose:
         run: athenaeum
 
-  - wait
+  # - wait
 
-  - name: ':rocket: :octocat:'
-    command: bin/commit-tag
-    branches: master
-    agents:
-      queue: builder
+  # - name: ':rocket: :octocat:'
+    # command: bin/commit-tag
+    # branches: master
+    # agents:
+      # queue: builder
 
