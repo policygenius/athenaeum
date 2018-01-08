@@ -28,12 +28,12 @@ An atomic element will reset it's styled margins, font-size and color.
   // If you use the Elemental module, you can write familiar semantic Html.
   // The above example would be written as:
   <div>
-    <h1 color='accent-3' typography={3}>h1 tags here.</h1>
-    <p color='neutral-4' spacer={12} typography={7}>custom p tag.</p>
+    <H1 color='accent-3' typography={3}>h1 tags here.</H1>
+    <P color='neutral-4' spacer={12} typography={7}>custom p tag.</P>
 
-    <h3 typography={5} weight='light'>
-      There was a <u>spacer</u> set above me.
-    </h3>
+    <H3 typography={5} weight='light'>
+      There was a <U>spacer</U> set above me.
+    </H3>
   </div>
 ```
 

@@ -12,7 +12,7 @@ describe('<List />', () => {
     const wrapper = mount(<List listItems={[ '' ]} />);
 
     expect(wrapper.type()).to.equal(List);
-    expect(wrapper.find('ul').hasClass('list')).to.be.true;
+    expect(wrapper.hasClass('list')).to.be.true;
   });
 
   it('renders a ul', () => {
