@@ -2,101 +2,9 @@
 
 exports[`<Layout /> can create variant via props 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout bordered-buckets"
-    id={undefined}
-    style={undefined}
-/>,
-  "nodes": Array [
-    <div
-      className="layout bordered-buckets"
-      id={undefined}
-      style={undefined}
-/>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        largeCols={Array []}
-        mediumCols={Array []}
-        smallCols={
-                Array [
-                        12,
-                      ]
-        }
-        variant="bordered-buckets"
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
-/>,
-      "_debugID": 6,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "largeCols": Array [],
-          "mediumCols": Array [],
-          "smallCols": Array [
-            12,
-          ],
-          "variant": "bordered-buckets",
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 1,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout bordered-buckets"
-          id={undefined}
-          style={undefined}
-/>,
-        "_debugID": 7,
-        "_renderedOutput": <div
-          className="layout bordered-buckets"
-          id={undefined}
-          style={undefined}
-/>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Layout
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
@@ -108,233 +16,58 @@ ShallowWrapper {
     xLargeCols={Array []}
     xxLargeCols={Array []}
 />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": undefined,
+      "className": "layout bordered-buckets",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": undefined,
+        "className": "layout bordered-buckets",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
 exports[`<Layout /> doesn't wrap Cols in \`<Col>\` 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout"
-    id={undefined}
-    style={undefined}
->
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        className="child"
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    />
-</div>,
-  "nodes": Array [
-    <div
-      className="layout"
-      id={undefined}
-      style={undefined}
->
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            className="child"
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        largeCols={Array []}
-        mediumCols={Array []}
-        smallCols={
-                Array [
-                        1,
-                      ]
-        }
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
->
-        <div
-                className="child"
-        />
-        <Col
-                borderColor="neutral-6"
-                className="child"
-        />
-</Layout>,
-      "_debugID": 12,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "children": Array [
-            <div
-              className="child"
-/>,
-            <Col
-              borderColor="neutral-6"
-              className="child"
-/>,
-          ],
-          "largeCols": Array [],
-          "mediumCols": Array [],
-          "smallCols": Array [
-            1,
-          ],
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 4,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    className="child"
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          />
-</div>,
-        "_debugID": 13,
-        "_renderedOutput": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    className="child"
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Layout
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
@@ -353,263 +86,220 @@ ShallowWrapper {
         className="child"
     />
 </Layout>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          className="child"
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+/>,
+      ],
+      "className": "layout",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "className": "child",
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            className="child"
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+/>,
+        ],
+        "className": "layout",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "className": "child",
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
 exports[`<Layout /> passes its \`col\` props down to its \`<Col>\` correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout padding"
-    id={undefined}
-    style={undefined}
->
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing="xLarge"
-        flex={undefined}
-        fullwidth={true}
-        largeCols={7}
-        mediumCols={6}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing="xLarge"
-        flex={undefined}
-        fullwidth={true}
-        largeCols={5}
-        mediumCols={6}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-</div>,
-  "nodes": Array [
-    <div
-      className="layout padding"
-      id={undefined}
-      style={undefined}
->
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing="xLarge"
-            flex={undefined}
-            fullwidth={true}
-            largeCols={7}
-            mediumCols={6}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing="xLarge"
-            flex={undefined}
-            fullwidth={true}
-            largeCols={5}
-            mediumCols={6}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        bottomSpacing="xLarge"
-        fullwidth={true}
-        largeCols={
-                Array [
-                        7,
-                        5,
-                      ]
-        }
-        mediumCols={
-                Array [
-                        6,
-                      ]
-        }
-        padding={true}
-        smallCols={
-                Array [
-                        1,
-                      ]
-        }
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
->
-        <div
-                className="child"
-        />
-        <div
-                className="child"
-        />
-</Layout>,
-      "_debugID": 14,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "bottomSpacing": "xLarge",
-          "children": Array [
-            <div
-              className="child"
-/>,
-            <div
-              className="child"
-/>,
-          ],
-          "fullwidth": true,
-          "largeCols": Array [
-            7,
-            5,
-          ],
-          "mediumCols": Array [
-            6,
-          ],
-          "padding": true,
-          "smallCols": Array [
-            1,
-          ],
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 5,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout padding"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing="xLarge"
-                    flex={undefined}
-                    fullwidth={true}
-                    largeCols={7}
-                    mediumCols={6}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing="xLarge"
-                    flex={undefined}
-                    fullwidth={true}
-                    largeCols={5}
-                    mediumCols={6}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-        "_debugID": 15,
-        "_renderedOutput": <div
-          className="layout padding"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing="xLarge"
-                    flex={undefined}
-                    fullwidth={true}
-                    largeCols={7}
-                    mediumCols={6}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing="xLarge"
-                    flex={undefined}
-                    fullwidth={true}
-                    largeCols={5}
-                    mediumCols={6}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Layout
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
     bottomSpacing="xLarge"
     fullwidth={true}
     largeCols={
@@ -639,6 +329,242 @@ ShallowWrapper {
         className="child"
     />
 </Layout>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing="xLarge"
+          flex={undefined}
+          fullwidth={true}
+          largeCols={7}
+          mediumCols={6}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing="xLarge"
+          flex={undefined}
+          fullwidth={true}
+          largeCols={5}
+          mediumCols={6}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+      ],
+      "className": "layout padding",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": "xLarge",
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": true,
+          "largeCols": 7,
+          "mediumCols": 6,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": "xLarge",
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": true,
+          "largeCols": 5,
+          "mediumCols": 6,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing="xLarge"
+            flex={undefined}
+            fullwidth={true}
+            largeCols={7}
+            mediumCols={6}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing="xLarge"
+            flex={undefined}
+            fullwidth={true}
+            largeCols={5}
+            mediumCols={6}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+        ],
+        "className": "layout padding",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": "xLarge",
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": true,
+            "largeCols": 7,
+            "mediumCols": 6,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": "xLarge",
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": true,
+            "largeCols": 5,
+            "mediumCols": 6,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
@@ -652,304 +578,9 @@ exports[`<Layout /> renders correctly 1`] = `
 
 exports[`<Layout /> renders its children 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout"
-    id={undefined}
-    style={undefined}
->
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="some-child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-</div>,
-  "nodes": Array [
-    <div
-      className="layout"
-      id={undefined}
-      style={undefined}
->
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="some-child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        largeCols={Array []}
-        mediumCols={Array []}
-        smallCols={
-                Array [
-                        1,
-                      ]
-        }
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
->
-        <div
-                className="child"
-        />
-        <div
-                className="some-child"
-        />
-        <div
-                className="child"
-        />
-</Layout>,
-      "_debugID": 8,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "children": Array [
-            <div
-              className="child"
-/>,
-            <div
-              className="some-child"
-/>,
-            <div
-              className="child"
-/>,
-          ],
-          "largeCols": Array [],
-          "mediumCols": Array [],
-          "smallCols": Array [
-            1,
-          ],
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 2,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="some-child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-        "_debugID": 9,
-        "_renderedOutput": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="some-child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Layout
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
@@ -970,251 +601,344 @@ ShallowWrapper {
         className="child"
     />
 </Layout>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="some-child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+      ],
+      "className": "layout",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="some-child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "some-child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".2",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="some-child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+        ],
+        "className": "layout",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="some-child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "some-child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".2",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
 exports[`<Layout /> wraps its child \`<Col>\` with column sizes 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout"
-    id={undefined}
-    style={undefined}
->
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={7}
-        mediumCols={undefined}
-        smallCols={12}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={5}
-        mediumCols={undefined}
-        smallCols={12}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-</div>,
-  "nodes": Array [
-    <div
-      className="layout"
-      id={undefined}
-      style={undefined}
->
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={7}
-            mediumCols={undefined}
-            smallCols={12}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={5}
-            mediumCols={undefined}
-            smallCols={12}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        largeCols={
-                Array [
-                        7,
-                        5,
-                      ]
-        }
-        mediumCols={Array []}
-        smallCols={
-                Array [
-                        12,
-                      ]
-        }
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
->
-        <div
-                className="child"
-        />
-        <div
-                className="child"
-        />
-</Layout>,
-      "_debugID": 16,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "children": Array [
-            <div
-              className="child"
-/>,
-            <div
-              className="child"
-/>,
-          ],
-          "largeCols": Array [
-            7,
-            5,
-          ],
-          "mediumCols": Array [],
-          "smallCols": Array [
-            12,
-          ],
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 6,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={7}
-                    mediumCols={undefined}
-                    smallCols={12}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={5}
-                    mediumCols={undefined}
-                    smallCols={12}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-        "_debugID": 17,
-        "_renderedOutput": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={7}
-                    mediumCols={undefined}
-                    smallCols={12}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={5}
-                    mediumCols={undefined}
-                    smallCols={12}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Layout
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
     largeCols={
         Array [
             7,
@@ -1237,75 +961,447 @@ ShallowWrapper {
         className="child"
     />
 </Layout>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={7}
+          mediumCols={undefined}
+          smallCols={12}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={5}
+          mediumCols={undefined}
+          smallCols={12}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+      ],
+      "className": "layout",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": 7,
+          "mediumCols": undefined,
+          "smallCols": 12,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": 5,
+          "mediumCols": undefined,
+          "smallCols": 12,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={7}
+            mediumCols={undefined}
+            smallCols={12}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={5}
+            mediumCols={undefined}
+            smallCols={12}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+        ],
+        "className": "layout",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": 7,
+            "mediumCols": undefined,
+            "smallCols": 12,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": 5,
+            "mediumCols": undefined,
+            "smallCols": 12,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
 exports[`<Layout /> wraps its child \`<Col>\` with column sizes 2`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout"
-    id={undefined}
-    style={undefined}
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
+    largeCols={Array []}
+    mediumCols={Array []}
+    smallCols={
+        Array [
+            1,
+          ]
+    }
+    xLargeCols={Array []}
+    xxLargeCols={Array []}
 >
+    <div
+        className="child"
+    />
     <Col
         borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
         smallCols={3}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
     >
         <div
             className="one-off"
         />
     </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-</div>,
-  "nodes": Array [
     <div
-      className="layout"
-      id={undefined}
-      style={undefined}
+        className="child"
+    />
+</Layout>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
 >
-      <Col
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={3}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="one-off"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+      ],
+      "className": "layout",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="one-off"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 3,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "one-off",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".2",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
             flex={undefined}
@@ -1315,12 +1411,12 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
-      >
+>
             <div
-                  className="child"
+                        className="child"
             />
-      </Col>
-      <Col
+</Col>,
+          <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
             flex={undefined}
@@ -1330,12 +1426,12 @@ ShallowWrapper {
             smallCols={3}
             xLargeCols={undefined}
             xxLargeCols={undefined}
-      >
+>
             <div
-                  className="one-off"
+                        className="one-off"
             />
-      </Col>
-      <Col
+</Col>,
+          <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
             flex={undefined}
@@ -1345,539 +1441,133 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
-      >
+>
             <div
-                  className="child"
+                        className="child"
             />
-      </Col>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        largeCols={Array []}
-        mediumCols={Array []}
-        smallCols={
-                Array [
-                        1,
-                      ]
-        }
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
->
-        <div
-                className="child"
-        />
-        <Col
-                borderColor="neutral-6"
-                smallCols={3}
-        >
-                <div
-                        className="one-off"
-                />
-        </Col>
-        <div
-                className="child"
-        />
-</Layout>,
-      "_debugID": 18,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "children": Array [
-            <div
-              className="child"
-/>,
-            <Col
-              borderColor="neutral-6"
-              smallCols={3}
->
-              <div
-                            className="one-off"
-              />
 </Col>,
-            <div
+        ],
+        "className": "layout",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
               className="child"
 />,
-          ],
-          "largeCols": Array [],
-          "mediumCols": Array [],
-          "smallCols": Array [
-            1,
-          ],
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
         },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="one-off"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 3,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "one-off",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
         },
-      },
-      "_mountOrder": 7,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={3}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="one-off"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-        "_debugID": 19,
-        "_renderedOutput": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={3}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="one-off"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
+        Object {
+          "instance": null,
+          "key": ".2",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
-    "getRenderOutput": [Function],
-    "render": [Function],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
   },
-  "root": [Circular],
-  "unrendered": <Layout
-    largeCols={Array []}
-    mediumCols={Array []}
-    smallCols={
-        Array [
-            1,
-          ]
-    }
-    xLargeCols={Array []}
-    xxLargeCols={Array []}
->
-    <div
-        className="child"
-    />
-    <Col
-        borderColor="neutral-6"
-        smallCols={3}
-    >
-        <div
-            className="one-off"
-        />
-    </Col>
-    <div
-        className="child"
-    />
-</Layout>,
 }
 `;
 
 exports[`<Layout /> wraps its children in \`<Col>\` 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="layout"
-    id={undefined}
-    style={undefined}
->
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-    <Col
-        borderColor="neutral-6"
-        bottomSpacing={undefined}
-        flex={undefined}
-        fullwidth={undefined}
-        largeCols={undefined}
-        mediumCols={undefined}
-        smallCols={1}
-        xLargeCols={undefined}
-        xxLargeCols={undefined}
-    >
-        <div
-            className="child"
-        />
-    </Col>
-</div>,
-  "nodes": Array [
-    <div
-      className="layout"
-      id={undefined}
-      style={undefined}
->
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-      <Col
-            borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
-            smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-      >
-            <div
-                  className="child"
-            />
-      </Col>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Layout
-        largeCols={Array []}
-        mediumCols={Array []}
-        smallCols={
-                Array [
-                        1,
-                      ]
-        }
-        xLargeCols={Array []}
-        xxLargeCols={Array []}
->
-        <div
-                className="child"
-        />
-        <div
-                className="child"
-        />
-        <div
-                className="child"
-        />
-</Layout>,
-      "_debugID": 10,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "children": Array [
-            <div
-              className="child"
-/>,
-            <div
-              className="child"
-/>,
-            <div
-              className="child"
-/>,
-          ],
-          "largeCols": Array [],
-          "mediumCols": Array [],
-          "smallCols": Array [
-            1,
-          ],
-          "xLargeCols": Array [],
-          "xxLargeCols": Array [],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 3,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-        "_debugID": 11,
-        "_renderedOutput": <div
-          className="layout"
-          id={undefined}
-          style={undefined}
->
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-          <Col
-                    borderColor="neutral-6"
-                    bottomSpacing={undefined}
-                    flex={undefined}
-                    fullwidth={undefined}
-                    largeCols={undefined}
-                    mediumCols={undefined}
-                    smallCols={1}
-                    xLargeCols={undefined}
-                    xxLargeCols={undefined}
-          >
-                    <div
-                              className="child"
-                    />
-          </Col>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Layout
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
@@ -1898,5 +1588,335 @@ ShallowWrapper {
         className="child"
     />
 </Layout>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+        <Col
+          borderColor="neutral-6"
+          bottomSpacing={undefined}
+          flex={undefined}
+          fullwidth={undefined}
+          largeCols={undefined}
+          mediumCols={undefined}
+          smallCols={1}
+          xLargeCols={undefined}
+          xxLargeCols={undefined}
+>
+          <div
+                    className="child"
+          />
+</Col>,
+      ],
+      "className": "layout",
+      "id": undefined,
+      "style": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": ".0",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".1",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": ".2",
+        "nodeType": "function",
+        "props": Object {
+          "borderColor": "neutral-6",
+          "bottomSpacing": undefined,
+          "children": <div
+            className="child"
+/>,
+          "flex": undefined,
+          "fullwidth": undefined,
+          "largeCols": undefined,
+          "mediumCols": undefined,
+          "smallCols": 1,
+          "xLargeCols": undefined,
+          "xxLargeCols": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "child",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+          <Col
+            borderColor="neutral-6"
+            bottomSpacing={undefined}
+            flex={undefined}
+            fullwidth={undefined}
+            largeCols={undefined}
+            mediumCols={undefined}
+            smallCols={1}
+            xLargeCols={undefined}
+            xxLargeCols={undefined}
+>
+            <div
+                        className="child"
+            />
+</Col>,
+        ],
+        "className": "layout",
+        "id": undefined,
+        "style": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": ".0",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".1",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": ".2",
+          "nodeType": "function",
+          "props": Object {
+            "borderColor": "neutral-6",
+            "bottomSpacing": undefined,
+            "children": <div
+              className="child"
+/>,
+            "flex": undefined,
+            "fullwidth": undefined,
+            "largeCols": undefined,
+            "mediumCols": undefined,
+            "smallCols": 1,
+            "xLargeCols": undefined,
+            "xxLargeCols": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "child",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
