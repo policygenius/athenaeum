@@ -95,7 +95,6 @@ OR
 
 `yarn test [filepath]`
 
-
 The RCL uses the following for testing. If you want to learn more about them and how to customize/configure the RCL, take a look at the documentation:
 
 * [Jest](https://facebook.github.io/jest/)
