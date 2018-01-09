@@ -23,6 +23,8 @@ module.exports = {
   webpackConfig,
   serverPort: parseInt(process.env.PORT, 10) || 6060,
   require: [
+    'lazysizes/plugins/rias/ls.rias.min',
+    'lazysizes/lazysizes.min',
     'holderjs',
     'assets/stylesheets/base.scss',
     path.join(__dirname, 'styleguide_assets/rcl_styles.module.scss')

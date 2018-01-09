@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './img.module.scss';
 
-if (typeof window !== 'undefined') {
-  window.lazySizesConfig = window.lazySizesConfig || {};
-  window.lazySizesConfig.preloadAfterLoad = true;
+const checkLS = () => {
+  if (typeof window !== 'undefined' && !window.lazySizes) {
+    /* eslint-disable no-console */
+    console.warn('lazysizes not loaded.');
+    /* eslint-enable no-console */
 
-  require('lazysizes/plugins/rias/ls.rias.min');
-  require('lazysizes/lazysizes.min');
-}
+    return false;
+  }
 
+  return true;
+};
 const strParams = '?fit=max&auto=format&ch=Width,DPR&w={width}';
-
 const imgixSrcStr = src => `https://policygenius-images.imgix.net/${src}${strParams}`;
-
 const imgixSrcset = src => `
   https://policygenius-images.imgix.net/${src}${strParams}&dpr=1 1x,
   https://policygenius-images.imgix.net/${src}${strParams}&dpr=2 2x,
@@ -47,6 +48,8 @@ function Img(props) {
     ...rest
   } = props;
 
+  const isLazy = lazy && checkLS();
+
   const isPicture = mobileSrc !== undefined ||
     tabletSrc !== undefined ||
     mobileImgixSrc !== undefined ||
@@ -54,8 +57,7 @@ function Img(props) {
 
   const classes = cx(
     styles['img'],
-    'lazyload',
-    !lazy && 'unlazy',
+    isLazy && 'lazyload',
     className,
   );
 
@@ -82,12 +84,12 @@ function Img(props) {
         { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc)} media='(max-width: 767px)' />}
         { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc)} media='(max-width: 1024px)' />}
         <img
-          className={cx(styles.img, 'lazyload')}
+          className={cx(styles.img, isLazy && 'lazyload')}
           alt={alt || createName(src || imgixSrc)}
           title={title || alt || createName(src || imgixSrc)}
           data-src={defaultSrc}
           data-sizes='auto'
-          src={lazy ? undefined : defaultSrc}
+          src={isLazy ? undefined : defaultSrc}
           {...rest}
         />
       </picture>
@@ -101,13 +103,12 @@ function Img(props) {
       title={title || alt || createName(src || imgixSrc)}
       data-src={src || imgixSrcStr(imgixSrc)}
       data-srcset={srcset}
-      data-sizes={lazy ? 'auto' : '100vw'}
-      src={lazy ? undefined : src || imgixSrcStr(imgixSrc)}
+      data-sizes={isLazy ? 'auto' : '100vw'}
+      src={isLazy ? undefined : src || imgixSrcStr(imgixSrc)}
       {...rest}
     />
   );
 }
-
 
 Img.propTypes = {
   /**
