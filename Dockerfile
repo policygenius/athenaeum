@@ -11,7 +11,7 @@ COPY yarn.lock /app/
 
 WORKDIR /app
 
-RUN yarn
+RUN yarn --frozen-lockfile
 
 COPY . /app/
 
