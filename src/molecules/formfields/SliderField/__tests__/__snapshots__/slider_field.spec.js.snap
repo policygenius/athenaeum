@@ -43,7 +43,7 @@ exports[`<SliderField /> renders correctly 1`] = `
           "left": "25%",
         }
       }
-      tabIndex="0"
+      tabIndex={0}
     />
     <div
       className="rc-slider-mark"
