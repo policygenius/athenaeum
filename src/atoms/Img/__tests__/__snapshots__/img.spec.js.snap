@@ -3,15 +3,15 @@
 exports[`<Img /> renders correctly with default props 1`] = `
 <img
   alt="alexander dummer 150646"
-  className="img lazyload"
-  data-sizes="auto"
+  className="img"
+  data-sizes="100vw"
   data-src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
   data-srcset="
   https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=max&auto=format&ch=Width,DPR&w={width}&dpr=1 1x,
   https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=max&auto=format&ch=Width,DPR&w={width}&dpr=2 2x,
   https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=max&auto=format&ch=Width,DPR&w={width}&dpr=3 3x,
 "
-  src={undefined}
+  src="https://policygenius-images.imgix.net/photos/alexander-dummer-150646.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
   title="alexander dummer 150646"
 />
 `;
@@ -30,11 +30,11 @@ exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
   />
   <img
     alt="default"
-    className="img lazyload"
+    className="img"
     data-sizes="auto"
     data-src="https://policygenius-images.imgix.net/default.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
     desktopImgixSrc="large"
-    src={undefined}
+    src="https://policygenius-images.imgix.net/default.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
     title="default"
   />
 </picture>
@@ -43,8 +43,8 @@ exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
 exports[`<Img /> renders correctly with given imgix props 1`] = `
 <img
   alt="are cool"
-  className="img lazyload cool-class"
-  data-sizes="auto"
+  className="img cool-class"
+  data-sizes="100vw"
   data-src="https://policygenius-images.imgix.net/photos/are-cool.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
   data-srcset="
   https://policygenius-images.imgix.net/photos/are-cool.jpg?fit=max&auto=format&ch=Width,DPR&w={width}&dpr=1 1x,
@@ -53,7 +53,7 @@ exports[`<Img /> renders correctly with given imgix props 1`] = `
 "
   maxHeight="20"
   maxWidth="10"
-  src={undefined}
+  src="https://policygenius-images.imgix.net/photos/are-cool.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
   title="are cool"
 />
 `;
@@ -72,11 +72,11 @@ exports[`<Img /> renders correctly with given regular picture source props 1`] =
   />
   <img
     alt="Alternative"
-    className="img lazyload"
+    className="img"
     data-sizes="auto"
     data-src="default.jpg"
     desktopSrc="large"
-    src={undefined}
+    src="default.jpg"
     title="Alternative"
   />
 </picture>
@@ -85,13 +85,13 @@ exports[`<Img /> renders correctly with given regular picture source props 1`] =
 exports[`<Img /> renders correctly with given regular props 1`] = `
 <img
   alt="alt"
-  className="img lazyload cool-class"
-  data-sizes="auto"
+  className="img cool-class"
+  data-sizes="100vw"
   data-src="some-url"
   data-srcset="some-url"
   maxHeight="20"
   maxWidth="10"
-  src={undefined}
+  src="some-url"
   title="title"
 />
 `;
@@ -102,10 +102,10 @@ exports[`<Img /> renders with hide classes when null src props are provided 1`] 
 >
   <img
     alt="default"
-    className="img lazyload"
+    className="img"
     data-sizes="auto"
     data-src="https://policygenius-images.imgix.net/default.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
-    src={undefined}
+    src="https://policygenius-images.imgix.net/default.jpg?fit=max&auto=format&ch=Width,DPR&w={width}"
     title="default"
   />
 </picture>
