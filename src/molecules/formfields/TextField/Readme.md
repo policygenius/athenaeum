@@ -162,3 +162,15 @@ Text field - secure:
     secure
   />
 ```
+Text field - swiftype:
+
+```jsx
+  <TextField
+    placeholder='Ask a question about life insurance'
+    input={{
+      value: state.value,
+      onChange: event => setState({ value: event.target.value })
+    }}
+    swiftype
+  />
+```

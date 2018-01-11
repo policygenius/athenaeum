@@ -22,6 +22,12 @@
   margin-left: auto;
 }
 
+.icon-search {
+  width: ru(.75);
+  height: ru(.75);
+  margin-left: ru(.75);
+}
+
 .label {
   @extend %label;
   padding: 0;
@@ -33,6 +39,7 @@
   width: 100%;
   color: color('primary-3');
   font-weight: 400;
+  text-overflow: ellipsis;
 }
 
 .tooltip {
@@ -71,6 +78,11 @@
     content: attr(data-prefix);
     border-right: 1px solid color('neutral-4');
   }
+}
+
+.swiftype-prefix {
+  display: flex;
+  align-items: center;
 }
 
 .postfix {

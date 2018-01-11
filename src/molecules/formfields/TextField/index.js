@@ -47,6 +47,7 @@ function TextField( props ) {
     styles['input-wrapper'],
     prefix && styles['prefix'],
     postfix && styles['postfix'],
+    swiftype && styles['swiftype-prefix'],
   ];
 
   let message;
@@ -77,6 +78,7 @@ function TextField( props ) {
           data-postfix={postfix}
           className={classnames(...inputClasses)}
         >
+          { swiftype && <Icon className={styles['icon-search']} icon='searchRebrand' /> }
           { mask ?
             <InputMask
               className={styles['input']}
