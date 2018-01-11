@@ -33,6 +33,7 @@ function TextField( props ) {
     postfix,
     activeValidation,
     subLabel,
+    swiftype,
   } = props;
 
   const classes = [
@@ -88,7 +89,10 @@ function TextField( props ) {
             />
             :
             <input
-              className={styles['input']}
+              className={classnames(
+                styles['input'],
+                swiftype && 'swiftype-search'
+              )}
               type={type}
               placeholder={placeholder}
               id={id}
@@ -215,6 +219,10 @@ TextField.propTypes = {
    * Options text displayed directly underneath label
    */
   subLabel: PropTypes.string,
+  /**
+   * Enables swiftype search
+   */
+  swiftype: PropTypes.bool,
 };
 
 TextField.defaultProps = {
