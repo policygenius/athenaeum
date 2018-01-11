@@ -12,6 +12,7 @@ const BlockHeader = ({
   cols,
   variant,
   colorDash,
+  colorDashPosition,
   className,
   children,
   leftOffset,
@@ -24,6 +25,7 @@ const BlockHeader = ({
     colorDash={colorDash}
     leftOffset={leftOffset}
     verticalPadding={verticalPadding}
+    colorDashPosition={colorDashPosition}
   >
     <div>
       <Text variant='label' className={styles.label}>
@@ -66,6 +68,10 @@ BlockHeader.propTypes = {
   variant: PropTypes.string,
   /**
    * Color of the color dash, e.g. "primary-1" or "secondary-2"
+   */
+  colorDashPosition: PropTypes.string,
+  /**
+   * One of "left" or "right". Determines what side of the box the color dash lives on.
    */
   colorDash: PropTypes.string,
   /**
