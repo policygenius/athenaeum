@@ -13,17 +13,20 @@ const GrayBox = ({
   cols,
   variant,
   colorDash,
+  colorDashPosition,
   children,
   className,
   verticalPadding,
   leftOffset
 }) => {
+
   const classes = cx(
     styles['gray-box'],
     styles[`gray-box-lg-${cols}`],
     variant && styles[variant],
     colorDash && colors[`color-dash-${colorDash}`],
     leftOffset && styles[`offset-${leftOffset}`],
+    (colorDashPosition === 'left' ? styles['left-dash'] : styles['right-dash']),
     className
   );
 
@@ -54,7 +57,11 @@ const GrayBox = ({
       mediumCols={[ cols - 1 ]}
       className={classes}
     >
-      <StyledWrapper css={styleOverrides} component={Col} fullwidth>
+      <StyledWrapper
+        css={styleOverrides}
+        component={Col}
+        fullwidth
+      >
         {children}
       </StyledWrapper>
     </Layout>
@@ -70,7 +77,8 @@ GrayBox.propTypes = {
   colorDash: PropTypes.string,
   children: PropTypes.node,
   verticalPadding: PropTypes.string,
-  leftOffset: PropTypes.number
+  leftOffset: PropTypes.number,
+  colorDashPosition: PropTypes.oneOf(['left', 'right']),
 };
 
 export default GrayBox;

@@ -44,3 +44,14 @@ if the props are expected to change. More advanced usage may require a refactor 
     title='Title dawg'
   />
 ```
+
+## Left color stitch
+```jsx
+  <BlockHeader
+    cols={10}
+    colorDash='primary-3'
+    colorDashPosition='left'
+    supertitle='Super title dawg'
+    title='Title dawg'
+  />
+```

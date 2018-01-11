@@ -2,32 +2,12 @@
   position: relative;
   padding: rem-calc(36) 0;
 
+  // gray box has one child which wraps all the content
   > div {
     position: relative;
   }
 
-  > div:first-child {
-    @media #{$tablet} {
-      margin-left: calc(100% / 12);
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    display: block;
-    height: rem-calc(110);
-    top: rem-calc(-70);
-    margin-bottom: rem-calc(-110);
-    right: calc(100% / 12);
-
-    @media #{$mobile-only} {
-      height: rem-calc(60);
-      top: rem-calc(-40);
-    }
-  }
-
+  // before is the gray box
   &:before {
     content: '';
     position: absolute;
@@ -38,7 +18,41 @@
     box-sizing: content-box;
   }
 
+  // after is the color dash
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    display: block;
+    height: rem-calc(110);
+    top: rem-calc(-70);
+    margin-bottom: rem-calc(-110);
+  }
+
+  @media #{$mobile-only} {
+    // grey box is full width on mobile
+    &:before {
+      min-width: 100vw;
+      left: calc(#{$gutter-width * -2});
+      content: '';
+      display: block;
+      top: 0;
+      bottom: 0;
+      background-color: color('neutral-5');
+    }
+
+    &:after {
+      height: rem-calc(60);
+      top: rem-calc(-40);
+    }
+  }
+
   @media #{$tablet} {
+    > div:first-child {
+      margin-left: calc(100% / 12);
+    }
+
+    // variation where box is fixed right
     &.right {
       div:first-child {
         margin-left: auto;
@@ -48,12 +62,9 @@
         padding-right: #{$section-padding-desktop};
         right: -#{$section-padding-desktop};
       }
-
-      &:after {
-        right: 0;
-      }
     }
 
+    // variation where box is fixed left
     &.left {
       div:first-child {
         margin-left: 0;
@@ -74,26 +85,31 @@
     }
 
     // Make color dash 1 column to the left of grey box right side
-    &:after {
-      right: calc(100% / 12 * (#{12 - $i + 1}));
+    &.right-dash {
+      &:after {
+        right: calc(100% / 12 * (#{12 - $i + 1}));
+      }
 
       @media #{$mobile-only} {
-        right: 100%;
+        &:after {
+          right: 100%;
+        }
+      }
+
+      @media #{$tablet} {
+        &.right:after {
+          right: 0;
+        }
       }
     }
-  }
-}
 
-@media #{$mobile-only} {
-  .gray-box {
-    &:before {
-      min-width: 100vw;
-      left: calc(#{$gutter-width * -2});
-      content: '';
-      display: block;
-      top: 0;
-      bottom: 0;
-      background-color: color('neutral-5');
+    // the color stitch is on the left side, spaced by one column
+    &.left-dash {
+      @media #{$tablet} {
+        &:after {
+          left: calc(100% / 12 - #{$gutter-width});
+        }
+      }
     }
   }
 }
