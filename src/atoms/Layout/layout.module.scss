@@ -6,6 +6,18 @@ $spacer-base: .25;
     .col-#{$size}-#{$i} {
       @include g-unit($i);
     }
+
+    @media #{$small-only} {
+      .col-offset-#{$i} {
+        margin-left: 0;
+      }
+    }
+
+    @media #{$medium-up} {
+      .col-offset-#{$i} {
+        margin-left: calc((100% / 12) * #{$i});
+      }
+    }
   }
 
   .col-#{$size}-auto {
@@ -148,4 +160,13 @@ $spacer-base: .25;
 .nested {
   margin-left: -$gutter-width;
   margin-right: -$gutter-width;
+}
+
+.grey-box {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 72px);
+  top: -36px;
+  background-color: color('neutral-5');
+  z-index: -1;
 }

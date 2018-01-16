@@ -90,6 +90,90 @@ All child component props will be passed directly to the component itself.
     </div>
 ```
 
+## Layout with GreyBox background Example:
+
+
+```jsx
+    <div>
+      <Layout
+        smallCols={[ 6 ]}
+        mediumCols={[ 8, 2 ]}
+        style={{ position: 'relative' }}
+      >
+        <GreyBox
+          offset={2}
+          style={{ zIndex: 1 }}
+        />
+        <Col
+          offset={5}
+          style={{ zIndex: 1 }}
+        >
+          <Text variant='label'>
+            supertitle
+          </Text>
+          <Text tag='h2' font='a' size={2}>
+            title
+          </Text>
+          <Text font='b' size={9}>
+            description
+          </Text>
+        </Col>
+      </Layout>
+    </div>
+```
+
+## Layout with GreyBox background Example 2:
+
+
+```jsx
+    <div>
+      <Layout
+        smallCols={[ 6 ]}
+        mediumCols={[ 3 ]}
+        style={{ position: 'relative' }}
+      >
+        <GreyBox
+          offset={2}
+          mediumCols={9}
+          style={{ zIndex: 1 }}
+        />
+        <Col
+          offset={1}
+          style={{ zIndex: 1 }}
+        >
+          <CompanyCard
+            starRating={5}
+            imageAttr={{
+              src: 'https://policygenius-images.imgix.net/photos/life/lincoln-financial-black-logo.svg?fit=max&auto=format&ch=Width,DPR&w={width}'
+            }}
+            variant='small'
+          />
+        </Col>
+        <Col
+          style={{ zIndex: 1 }}
+        >
+          <CompanyCard
+            starRating={5}
+            imageAttr={{
+              src: 'https://policygenius-images.imgix.net/photos/life/lincoln-financial-black-logo.svg?fit=max&auto=format&ch=Width,DPR&w={width}'
+            }}
+            variant='small'
+          />
+        </Col>
+        <Col
+          style={{ zIndex: 1 }}
+        >
+          <CompanyCard
+            starRating={5}
+            imageAttr={{
+              src: 'https://policygenius-images.imgix.net/photos/life/lincoln-financial-black-logo.svg?fit=max&auto=format&ch=Width,DPR&w={width}'
+            }}
+            variant='small'
+          />
+        </Col>
+      </Layout>
+    </div>
+```
 ## Nested Grid Example:
 
 ```jsx
