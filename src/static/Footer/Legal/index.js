@@ -69,7 +69,7 @@ const Legal = () =>
           </Text>
         <Spacer size={18} />
         <Text type={10} font='b'>
-            Copyright Policygenius © 2014-2017
+            Copyright Policygenius © 2014-2018
           </Text>
       </div>
     </StyledWrapper>
