@@ -11,7 +11,7 @@ const Copyright = () =>
     className={styles.copyright}
   >
     <Text type={10} font='b'>
-      Copyright PolicyGenius © 2014-2017
+      Copyright PolicyGenius © 2014-2018
       <br />
       <br />
       22 West 19th St, Floor 8
