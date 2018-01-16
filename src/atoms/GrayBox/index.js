@@ -26,7 +26,7 @@ const GrayBox = ({
     variant && styles[variant],
     colorDash && colors[`color-dash-${colorDash}`],
     leftOffset && styles[`offset-${leftOffset}`],
-    (colorDashPosition === 'left' ? styles['left-dash'] : styles['right-dash']),
+    colorDashPosition === 'left' ? styles['left-dash'] : styles['right-dash'],
     className
   );
 
@@ -78,7 +78,7 @@ GrayBox.propTypes = {
   children: PropTypes.node,
   verticalPadding: PropTypes.string,
   leftOffset: PropTypes.number,
-  colorDashPosition: PropTypes.oneOf(['left', 'right']),
+  colorDashPosition: PropTypes.oneOf([ 'left', 'right' ]),
 };
 
 export default GrayBox;

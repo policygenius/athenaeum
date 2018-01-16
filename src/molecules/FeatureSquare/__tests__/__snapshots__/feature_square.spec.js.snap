@@ -11,6 +11,7 @@ exports[`<FeatureSquare /> renders correctly 1`] = `
   >
     <div
       className="col col-sm-6 border-neutral-6"
+      id={undefined}
       onClick={undefined}
       style={undefined}
     >
