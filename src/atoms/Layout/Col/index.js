@@ -6,6 +6,7 @@ import styles from '../layout.module.scss';
 
 function Col(props) {
   const {
+    id,
     children,
     className,
     smallCols,
@@ -38,7 +39,12 @@ function Col(props) {
   ];
 
   return (
-    <div className={classnames(...classes)} style={style} onClick={onClick}>
+    <div
+      id={id}
+      className={classnames(...classes)}
+      style={style}
+      onClick={onClick}
+    >
       { children }
     </div>
   );
@@ -47,6 +53,10 @@ function Col(props) {
 Col.rclName = 'COL';
 
 Col.propTypes = {
+  /**
+   * html id attribute
+   */
+  id: PropTypes.string,
   /**
    * Supply any additional class names.
    */

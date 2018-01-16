@@ -68,6 +68,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -89,6 +90,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-6 border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -111,6 +113,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -132,6 +135,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-6 border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -292,6 +296,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="col col-sm-7 fullwidth border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -303,6 +308,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-5 fullwidth border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -334,6 +340,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="col col-sm-7 fullwidth border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -345,6 +352,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-5 fullwidth border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -376,6 +384,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="col col-sm-7 fullwidth border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -387,6 +396,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-5 fullwidth border-neutral-6"
+                id={undefined}
                 onClick={undefined}
                 style={undefined}
               >
@@ -438,6 +448,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         >
           <div
             className="col col-sm-12 border-neutral-6"
+            id={undefined}
             onClick={undefined}
             style={undefined}
           >
@@ -452,6 +463,7 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </div>
           <div
             className="col col-sm-12 border-neutral-6"
+            id={undefined}
             onClick={undefined}
             style={undefined}
           >
