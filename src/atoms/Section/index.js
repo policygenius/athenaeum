@@ -7,6 +7,7 @@ import styles from './section.module.scss';
 
 function Section(props) {
   const {
+    id,
     children,
     className,
     backgroundImageUrl,
@@ -31,6 +32,7 @@ function Section(props) {
 
   return (
     <div
+      id={id}
       className={classnames(...classes)}
       style={{
         ...style,
@@ -46,6 +48,10 @@ function Section(props) {
 
 
 Section.propTypes = {
+  /**
+   * HTML id attribute
+   */
+  id: PropTypes.string,
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

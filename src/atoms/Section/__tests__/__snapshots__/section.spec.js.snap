@@ -3,6 +3,7 @@
 exports[`<Section /> renders correctly 1`] = `
 <div
   className="section background-undefined"
+  id={undefined}
   style={
     Object {
       "backgroundImage": "url(undefined)",
