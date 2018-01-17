@@ -90,7 +90,7 @@ All child component props will be passed directly to the component itself.
     </div>
 ```
 
-## Layout with GreyBox background Example:
+## Layout with GrayBox background Example:
 
 
 ```jsx
@@ -100,7 +100,7 @@ All child component props will be passed directly to the component itself.
         mediumCols={[ 8, 2 ]}
         style={{ position: 'relative' }}
       >
-        <GreyBox
+        <GrayBox
           offset={2}
           style={{ zIndex: 1 }}
         />
@@ -122,7 +122,7 @@ All child component props will be passed directly to the component itself.
     </div>
 ```
 
-## Layout with GreyBox background Example 2:
+## Layout with GrayBox background Example 2:
 
 
 ```jsx
@@ -132,7 +132,7 @@ All child component props will be passed directly to the component itself.
         mediumCols={[ 3 ]}
         style={{ position: 'relative' }}
       >
-        <GreyBox
+        <GrayBox
           offset={2}
           mediumCols={9}
           style={{ zIndex: 1 }}

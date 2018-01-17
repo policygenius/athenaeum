@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Text from 'atoms/Text';
-import GrayBox from 'atoms/GrayBox';
+import GrayBox from './GrayBox/GrayBox';
 import styles from './block-header.module.scss';
 
 const BlockHeader = ({
