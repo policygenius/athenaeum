@@ -69,19 +69,21 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             onClick={undefined}
             style={undefined}
           >
-            <span
-              className="tooltip-wrapper policy-info-tooltip-icon"
-              onClick={[Function]}
-            >
+            <span>
               <span
-                className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                className="tooltip-wrapper policy-info-tooltip-icon"
+                onClick={[Function]}
               >
-                Financial Strength
-              </span>
-              <span
-                className="hover-message"
-              >
-                <div />
+                <span
+                  className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                >
+                  Financial Strength
+                </span>
+                <span
+                  className="hover-message"
+                >
+                  <div />
+                </span>
               </span>
             </span>
           </div>
@@ -114,19 +116,21 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             onClick={undefined}
             style={undefined}
           >
-            <span
-              className="tooltip-wrapper policy-info-tooltip-icon"
-              onClick={[Function]}
-            >
+            <span>
               <span
-                className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                className="tooltip-wrapper policy-info-tooltip-icon"
+                onClick={[Function]}
               >
-                Total Customers
-              </span>
-              <span
-                className="hover-message"
-              >
-                <div />
+                <span
+                  className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                >
+                  Total Customers
+                </span>
+                <span
+                  className="hover-message"
+                >
+                  <div />
+                </span>
               </span>
             </span>
           </div>
@@ -159,19 +163,21 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
             onClick={undefined}
             style={undefined}
           >
-            <span
-              className="tooltip-wrapper policy-info-tooltip-icon"
-              onClick={[Function]}
-            >
+            <span>
               <span
-                className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                className="tooltip-wrapper policy-info-tooltip-icon"
+                onClick={[Function]}
               >
-                Policy Type
-              </span>
-              <span
-                className="hover-message"
-              >
-                <div />
+                <span
+                  className="primary-3 policy-info-tooltip-label type-b-10-medium inherit"
+                >
+                  Policy Type
+                </span>
+                <span
+                  className="hover-message"
+                >
+                  <div />
+                </span>
               </span>
             </span>
           </div>

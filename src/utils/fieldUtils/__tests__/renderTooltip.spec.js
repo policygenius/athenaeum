@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Icon from 'atoms/Icon';
 import Modal from 'molecules/Modal';
@@ -19,11 +19,13 @@ describe('renderTooltip()', () => {
         const tooltip = 'Hello world';
 
         const component = renderTooltip(tooltip, className, iconClassName);
-        const wrapper = shallow(component);
+        const wrapper = mount(component);
+        const tooltipElement = wrapper.children().childAt(0);
+        const modalElement = wrapper.children().childAt(1);
 
-        expect(wrapper.props().className).toContain(className);
-        expect(wrapper.props().children.filter(child => child.props.children === tooltip && child.type !== Modal).length).toEqual(1);
-        expect(wrapper.props().children.filter(child => child.props.children === tooltip && child.type === Modal).length).toEqual(1);
+        expect(tooltipElement.props().className).toContain(className);
+        expect(tooltipElement.props().children.filter(child => child.props.children === tooltip && child.type !== Modal).length).toEqual(1);
+        expect(modalElement.length).toEqual(1);
       });
     });
 
@@ -32,9 +34,10 @@ describe('renderTooltip()', () => {
         const tooltip = jest.fn();
 
         const component = renderTooltip(tooltip, className, iconClassName);
-        const wrapper = shallow(component);
+        const wrapper = mount(component);
+        const tooltipElement = wrapper.children().childAt(0);
 
-        expect(wrapper.props().onClick).toEqual(tooltip);
+        expect(tooltipElement.props().onClick).toEqual(tooltip);
       });
     });
   });
@@ -44,12 +47,12 @@ describe('renderTooltip()', () => {
       const tooltip = 'Hello world';
 
       const component = renderTooltip(tooltip, className, iconClassName);
-      const wrapper = shallow(component);
+      const wrapper = mount(component);
 
-      const icon = wrapper.props().children.find(child => child.type === Icon);
+      const icon = wrapper.findWhere(n => n.type() === Icon);
 
-      expect(icon.props.icon).toEqual('tooltip');
-      expect(icon.props.className).toContain(iconClassName);
+      expect(icon.props().icon).toEqual('tooltip');
+      expect(icon.props().className).toContain(iconClassName);
     });
   });
 });
