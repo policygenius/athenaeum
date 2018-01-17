@@ -4,13 +4,13 @@ import cx from 'classnames';
 import styles from '../layout.module.scss';
 import Col from '../Col';
 
-function GreyBox(props) {
+function GrayBox(props) {
   const {
     className,
   } = props;
 
   const classes = cx(
-    styles['grey-box'],
+    styles['gray-box'],
     className,
   );
 
@@ -22,13 +22,13 @@ function GreyBox(props) {
   );
 }
 
-GreyBox.rclName = 'Col';
+GrayBox.rclName = 'Col';
 
-GreyBox.propTypes = {
+GrayBox.propTypes = {
   /**
    * Supply any additional class names.
    */
   className: PropTypes.string,
 };
 
-export default GreyBox;
+export default GrayBox;

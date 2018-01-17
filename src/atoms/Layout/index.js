@@ -163,4 +163,4 @@ Layout.defaultProps = {
 };
 
 export { Layout as default, Layout, Col };
-export { GreyBox } from './GreyBox';
+export { GrayBox } from './GrayBox';
