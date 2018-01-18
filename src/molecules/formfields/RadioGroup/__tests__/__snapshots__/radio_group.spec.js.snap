@@ -16,14 +16,16 @@ exports[`<RadioGroup /> renders correctly 1`] = `
         <span>
           Test label
         </span>
-        <span
-          className="tooltip-wrapper tooltip"
-          onClick={[Function]}
-        >
+        <span>
           <span
-            className="hover-message right"
+            className="tooltip-wrapper tooltip"
+            onClick={[Function]}
           >
-            Hello friend
+            <span
+              className="hover-message right"
+            >
+              Hello friend
+            </span>
           </span>
         </span>
       </div>

@@ -42,31 +42,33 @@ class Tooltip extends React.Component {
     } = this.props;
 
     return (
-      <span
-        onClick={onClick || this.openModal}
-        className={classnames(
-          styles['tooltip-wrapper'],
-          inline && styles[`inline-${inline}`],
-          className
-        )}
-      >
-        {
-          text ||
-            <Icon
-              icon='tooltip'
-              className={styles['tooltip']}
-              inline={inline}
-            />
-        }
+      <span>
         <span
+          onClick={onClick || this.openModal}
           className={classnames(
-            children && styles['hover-message'],
-            left && styles['left'],
-            right && styles['right'],
-            hoverMessageClassName
+            styles['tooltip-wrapper'],
+            inline && styles[`inline-${inline}`],
+            className
           )}
         >
-          { children }
+          {
+            text ||
+              <Icon
+                icon='tooltip'
+                className={styles['tooltip']}
+                inline={inline}
+              />
+          }
+          <span
+            className={classnames(
+              children && styles['hover-message'],
+              left && styles['left'],
+              right && styles['right'],
+              hoverMessageClassName
+            )}
+          >
+            { children }
+          </span>
         </span>
         <Modal
           header='Learn more'
@@ -77,6 +79,7 @@ class Tooltip extends React.Component {
           {children}
         </Modal>
       </span>
+
     );
   }
 }
