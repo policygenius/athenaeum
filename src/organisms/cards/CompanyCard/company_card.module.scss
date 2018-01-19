@@ -12,6 +12,10 @@
   align-items: center;
   border: 1px solid color('neutral-4');
   background: color('primary-2');
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .image {
@@ -23,7 +27,7 @@
 }
 
 .small {
-  height: rem-calc(135px);
+  height: rem-calc(185px);
   padding: rem-calc(36px) rem-calc(18px);
 
   .image {
@@ -41,7 +45,7 @@
 }
 
 .large {
-  height: rem-calc(180px);
+  height: rem-calc(270px);
   padding: rem-calc(60px) rem-calc(36px);
 
   .image {
@@ -62,6 +66,10 @@
   .company-card {
     margin-bottom: rem-calc(24px);
   }
+
+  .large {
+    height: rem-calc(185px);
+  }
 }
 
 @media #{$tablet-only} {
@@ -70,3 +78,9 @@
   }
 }
 
+@media #{$IE} {
+  .small,
+  .large {
+    height: auto;
+  }
+}
