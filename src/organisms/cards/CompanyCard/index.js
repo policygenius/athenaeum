@@ -34,13 +34,16 @@ const CompanyCard = (props) => {
   const size = variant === 'large' ? '18px' : '12px';
 
   return (
-    <div className={classes}>
+    <LinkWrapper
+      href={linkUrl}
+      className={classes}
+    >
       <div>
         <img className={styles.image} src={imageAttr.src} role='presentation' />
       </div>
       { starRating && <StarRating className={styles['star-rating']} rating={starRating} size={size} /> }
       { linkUrl && <ReadLink linkUrl={linkUrl} /> }
-    </div>
+    </LinkWrapper>
   );
 };
 
