@@ -76,12 +76,21 @@
   &-questions {
     display: block;
     text-align: center;
+    margin-top: rem-calc(36px);
   }
 
   &-actions {
     display: flex;
     flex-direction: column;
   }
+}
+
+.tablet-phone-number {
+  display: none;
+}
+
+.tablet-action {
+  display: none;
 }
 
 @media #{$mobile-only} {
@@ -100,19 +109,6 @@
     padding: ru(1) ru(2);
   }
 
-  .actions {
-    display: block;
-  }
-
-  .icon-text-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    .icon {
-      margin-right: ru(.5);
-    }
-  }
 
   .hours {
     text-align: left;
@@ -129,7 +125,8 @@
 
   .mobile {
     &-questions {
-      display: none;
+      text-align: left;
+      margin-top: 0;
     }
 
     &-actions {
@@ -138,9 +135,74 @@
   }
 }
 
+@media #{$tablet-only} {
+  .tablet-phone-number {
+    display: block;
+  }
+
+  .hours {
+    display: none;
+  }
+
+  .tablet-action {
+    display: block;
+  }
+
+  .trust {
+    align-items: center;
+    display: flex;
+    padding: 0;
+
+    &-links {
+      flex-grow: 1;
+    }
+
+    &-logo {
+      margin-right: rem-calc(36px);
+    }
+  }
+
+  .logo-bbb {
+    display: none;
+  }
+
+  .trust-link {
+    margin-top: 0;
+    margin-right: rem-calc(18px);
+
+    &:first-of-type {
+      display: none;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
 @media #{$desktop} {
   .footer-layout {
     padding-left: rem-calc(64px);
     padding-right: rem-calc(64px);
+  }
+
+  .actions {
+    display: block;
+  }
+
+  .icon-text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .icon {
+      margin-right: rem-calc(12px);
+    }
+  }
+
+  .mobile {
+    &-questions {
+      display: none;
+    }
   }
 }
