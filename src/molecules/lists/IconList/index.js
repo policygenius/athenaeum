@@ -20,7 +20,7 @@ function IconList(props) {
     <ul className={classnames(styles['icon-list'], className)}>
       {
         data.map( (item, idx) =>
-          <li
+          (<li
             className={styles.item}
             key={`iconlist-item-${idx}`}
             style={{
@@ -52,7 +52,7 @@ function IconList(props) {
             <Text>
               {item.description}
             </Text>
-          </li>
+          </li>)
         )
       }
     </ul>

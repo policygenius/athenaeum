@@ -18,7 +18,7 @@ const BlockHeader = ({
   leftOffset,
   verticalPadding
 }) =>
-  <GrayBox
+  (<GrayBox
     cols={cols}
     variant={variant}
     className={className}
@@ -39,7 +39,7 @@ const BlockHeader = ({
       </Text>
       { children }
     </div>
-  </GrayBox>;
+  </GrayBox>);
 
 BlockHeader.propTypes = {
   /**

@@ -21,7 +21,7 @@ const renderLabels = (labels) => {
     >
       {
         labels.map((label, idx) =>
-          <div
+          (<div
             key={`field--label-${idx}`}
             className={styles['label']}
           >
@@ -35,7 +35,7 @@ const renderLabels = (labels) => {
                   {label.subLabel}
                 </Text>
             }
-          </div>
+          </div>)
         )
       }
     </Layout>
@@ -43,7 +43,7 @@ const renderLabels = (labels) => {
 };
 
 const wrapChild = child =>
-  <Col className={styles['field']}>
+  (<Col className={styles['field']}>
     {
       React.cloneElement(
         child,
@@ -52,7 +52,7 @@ const wrapChild = child =>
         }
       )
     }
-  </Col>;
+  </Col>);
 
 function FieldGroup(props) {
   const {

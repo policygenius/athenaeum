@@ -20,7 +20,7 @@ function MobileMenu(props) {
   return (
     <ul className={classnames(...classes)}>
       { tabs.map((tab, idx) =>
-        <li
+        (<li
           className={classnames(
             styles['tab'],
             tab.active && styles['active'],
@@ -47,7 +47,7 @@ function MobileMenu(props) {
           >
             {tab.text}
           </Text>
-        </li>
+        </li>)
       )}
     </ul>
   );

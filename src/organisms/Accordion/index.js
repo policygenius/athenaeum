@@ -6,14 +6,14 @@ import AccordionPanel from './AccordionPanel';
 
 const sections = ({ panels, openText, closeText }) =>
   panels.map((panel, i) =>
-    <AccordionPanel
+    (<AccordionPanel
       openText={openText}
       closeText={closeText}
       key={i}
       open={i === 0}
       number={i + 1}
       {...panel}
-    />
+    />)
   );
 
 function Accordion(props) {

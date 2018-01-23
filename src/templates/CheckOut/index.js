@@ -11,7 +11,7 @@ import Spacer from 'atoms/Spacer';
 import styles from './checkout.scss';
 
 const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
-  <UserAlert
+  (<UserAlert
     enabled={enabled}
     onClick={userAlert.onClick}
     alertBottom='#sticky-bottom'
@@ -28,7 +28,7 @@ const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
     >
       {userAlert.text}
     </Text>
-  </UserAlert>
+  </UserAlert>)
 
 ;
 

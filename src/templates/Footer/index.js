@@ -82,15 +82,16 @@ function renderPhoneInfo(phoneNumber, hours) {
 
       <div className={styles['hours']}>
         {
-          hours && hours.map(hour =>
-            <Text
-              size={10}
-              font='b'
-            >
-              {hour}
-            </Text>
-          )
-        }
+        hours &&
+        hours.map(hour =>
+          (<Text
+            size={10}
+            font='b'
+          >
+            {hour}
+          </Text>)
+        )
+      }
       </div>
     </Col>
   );
@@ -141,7 +142,7 @@ function Footer(props) {
               font='a'
             >
             Live chat
-          </Text>
+            </Text>
           </LinkWrapper>
 
           <Spacer size={24} />
@@ -186,7 +187,7 @@ function Footer(props) {
             onClick={onClickChat}
           >
           Live Chat
-        </Button>
+          </Button>
 
           <Spacer size={18} />
 

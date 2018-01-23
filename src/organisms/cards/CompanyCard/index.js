@@ -25,7 +25,7 @@ const CompanyCard = (props) => {
   );
 
   const ReadLink = () =>
-    <LinkWrapper
+    (<LinkWrapper
       type='secondary'
       variant={variant}
       rel={rel && 'nofollow'}
@@ -34,7 +34,7 @@ const CompanyCard = (props) => {
       href={linkUrl}
     >
       <Text size={10}>{linkText}</Text>
-    </LinkWrapper>;
+    </LinkWrapper>);
 
   const size = variant === 'large' ? '18px' : '12px';
 
