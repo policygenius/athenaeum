@@ -9,8 +9,11 @@ import styles from './company_card.module.scss';
 const CompanyCard = (props) => {
   const {
     starRating,
+    rel,
+    target,
     imageAttr,
     linkUrl,
+    linkText,
     className,
     variant
   } = props;
@@ -25,10 +28,12 @@ const CompanyCard = (props) => {
     <LinkWrapper
       type='secondary'
       variant={variant}
+      rel={rel && 'nofollow'}
+      target={target && '_blank'}
       className={styles.read}
       href={linkUrl}
     >
-      <Text size={10}>Read</Text>
+      <Text size={10}>{linkText}</Text>
     </LinkWrapper>;
 
   const size = variant === 'large' ? '18px' : '12px';
@@ -36,6 +41,8 @@ const CompanyCard = (props) => {
   return (
     <LinkWrapper
       href={linkUrl}
+      rel={rel && 'nofollow'}
+      target={target && '_blank'}
       className={classes}
     >
       <div>
@@ -48,11 +55,49 @@ const CompanyCard = (props) => {
 };
 
 CompanyCard.propTypes = {
+  /**
+   * Will add a star rating
+  */
   starRating: PropTypes.number,
+
+  /**
+   * If true, sets rel=nofollow to <a> tag
+  **/
+  rel: PropTypes.bool,
+
+  /**
+   * If true, sets target=_blank
+  **/
+  target: PropTypes.bool,
+
+  /**
+   * The url for the link
+  **/
   linkUrl: PropTypes.string,
+
+  /**
+   * The text for the link
+  **/
+  linkText: PropTypes.string,
+
+  /**
+   * Will add a new ClassName to any other classNames provided in component's index.js file
+  **/
   className: PropTypes.string,
+
+  /**
+   * Contains all attributes belonging to the image (ie. src)
+  **/
   imageAttr: PropTypes.object,
+
+  /**
+   * Possible card sizes are: 'large' or 'small'
+  **/
   variant: PropTypes.string,
+};
+
+CompanyCard.defaultProps = {
+  linkText: 'Read'
 };
 
 export default CompanyCard;
