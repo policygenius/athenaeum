@@ -12,11 +12,11 @@ function getList({ list, active, activeName }) {
       case 'links':
         return (
         list.items.map((l, idx) =>
-          <SubMenuList
+          (<SubMenuList
             key={`life-submenu-list-${idx}`}
             header={l.header}
             listItems={l.items}
-          />
+          />)
         )
         );
       case 'articles':

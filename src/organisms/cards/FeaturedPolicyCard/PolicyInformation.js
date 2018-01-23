@@ -11,7 +11,7 @@ import formatValue from 'utils/formatValue';
 import styles from './featured_policy_card.module.scss';
 
 const renderPolicyInformation = (info, idx) =>
-  <div key={`policy-info-${idx}`}>
+  (<div key={`policy-info-${idx}`}>
     <Layout
       smallCols={[ 6 ]}
       className={styles['policy-info-item']}
@@ -39,7 +39,7 @@ const renderPolicyInformation = (info, idx) =>
       <Text type={8} font='a' semibold>{formatValue(info.value)}</Text>
     </Layout>
     <Spacer spacer={2} />
-  </div>
+  </div>)
 
 ;
 

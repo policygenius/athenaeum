@@ -33,10 +33,10 @@ const Contact = (props) => {
       </StyledWrapper>
       {
         contactItems.map(item =>
-          <ContactItem
+          (<ContactItem
             key={`contact-item-${generate()}`}
             item={item}
-          />
+          />)
         )
       }
     </StyledWrapper>

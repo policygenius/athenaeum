@@ -23,7 +23,7 @@ function IntroText({ product, link }) {
             color='neutral-2'
           >
           Health insurance plans for <Text type={5} semibold color='neutral-2'>all coverage types</Text> (PPO, HMO, EPO, and POS).
-        </Text>
+          </Text>
         );
       case 'renters-insurance':
         return (
@@ -32,7 +32,7 @@ function IntroText({ product, link }) {
             color='neutral-2'
           >
           Renters insurance for <Text type={5} semibold color='neutral-2'>{'apartment & home coverage'}</Text> in all 50 states.
-        </Text>
+          </Text>
         );
       case 'pet-insurance':
         return (
@@ -50,7 +50,7 @@ function IntroText({ product, link }) {
             color='neutral-2'
           >
           Disability insurance to <Text type={5} semibold color='neutral-2'>protect your income</Text> from accidents and illness.
-        </Text>
+          </Text>
         );
       case 'auto-insurance':
         return (
@@ -59,7 +59,7 @@ function IntroText({ product, link }) {
             color='neutral-2'
           >
           Car insurance that <Text type={5} semibold color='neutral-2'>protects you, your vehicle, and your family,</Text> available in all 50 states.
-        </Text>
+          </Text>
         );
       case 'latest':
         return (
@@ -69,7 +69,7 @@ function IntroText({ product, link }) {
               color='neutral-2'
             >
             Latest Articles
-          </Text>
+            </Text>
 
             <Spacer small />
 
@@ -80,7 +80,7 @@ function IntroText({ product, link }) {
               style={{ textDecoration: 'none' }}
             >
             View all articles →
-          </A>
+            </A>
           </div>
         );
       case 'Money':
@@ -96,7 +96,7 @@ function IntroText({ product, link }) {
               color='neutral-2'
             >
               <Span typography={2} color='neutral-2' weight='semibold'>{ product }</Span>Genius
-          </Text>
+            </Text>
 
             <Spacer small />
 
@@ -126,7 +126,7 @@ function IntroText({ product, link }) {
               color='neutral-2'
             >
             Not sure what you need?
-          </Span>
+            </Span>
           </Text>
         );
   }

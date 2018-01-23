@@ -79,9 +79,9 @@ class MainNav extends Component {
   }
 
   renderMiniNav = () =>
-    <div className={styles['panel-wrapper']}>
+    (<div className={styles['panel-wrapper']}>
       <MiniNav rightText={this.props.miniRightText} leftText={this.props.miniLeftText} />
-    </div>;
+    </div>);
 
   renderFullNav() {
     const primaryPanelClasses = [
@@ -103,7 +103,7 @@ class MainNav extends Component {
               >
                 {
                   insuranceProducts.map((product, idx) =>
-                    <SubMenu
+                    (<SubMenu
                       key={`${product.activeName}-${idx}`}
                       menu={product.menu}
                       intro={product.intro}
@@ -115,7 +115,7 @@ class MainNav extends Component {
                       mobileCollapsedMenu={this.state.mobileCollapsedMenu}
                       hasChildren
                       product
-                    />
+                    />)
                   )
                 }
               </PrimaryMenuWrapper>
@@ -133,7 +133,7 @@ class MainNav extends Component {
               >
                 {
                   magazineItems.map((category, idx) =>
-                    <SubMenu
+                    (<SubMenu
                       key={`${category.activeName}-${idx}`}
                       menu={category.menu}
                       intro={category.intro}
@@ -144,7 +144,7 @@ class MainNav extends Component {
                       mobileCollapsedMenu={this.state.mobileCollapsedMenu}
                       hasChildren
                       magazine
-                    />
+                    />)
                   )
                 }
               </PrimaryMenuWrapper>
@@ -157,7 +157,7 @@ class MainNav extends Component {
               >
                 {
                   aboutItems.map(item =>
-                    <SubMenu
+                    (<SubMenu
                       key={`about-${item.activeName}`}
                       menu={{
                         header: item.header,
@@ -166,7 +166,7 @@ class MainNav extends Component {
                       }}
                       active={this.state.activeSubTab}
                       setActiveSubTab={this.setActiveSubTab}
-                    />
+                    />)
                   )
                 }
               </PrimaryMenuWrapper>

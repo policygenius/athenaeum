@@ -5,7 +5,7 @@ import sharedStyles from '../ArticleImage/main_nav_article_image.module.scss';
 import styles from './main_nav_loading.module.scss';
 
 const LoadingImage = () =>
-  <div
+  (<div
     className={sharedStyles['article-wrapper']}
   >
     <div className={sharedStyles['figure']}>
@@ -13,7 +13,7 @@ const LoadingImage = () =>
 
       <div className={styles['sub-tag-loading']} />
     </div>
-  </div>
+  </div>)
 
 ;
 

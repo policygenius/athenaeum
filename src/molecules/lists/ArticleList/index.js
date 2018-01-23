@@ -19,7 +19,7 @@ function ArticleList( props ) {
   return (
     <ul className={styles[type]} >
       {data.map(item =>
-        <li className={styles['listItem']} key={item[itemProps.id]}>
+        (<li className={styles['listItem']} key={item[itemProps.id]}>
           <a className={styles['link']} href={item[itemProps.link]}>
             <figure className={styles['articleWrapper']}>
               <img
@@ -34,7 +34,7 @@ function ArticleList( props ) {
               </figcaption>
             </figure>
           </a>
-        </li>
+        </li>)
         )}
     </ul>
   );

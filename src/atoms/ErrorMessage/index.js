@@ -9,9 +9,9 @@ import Text from 'atoms/Text';
 import styles from './error_message.module.scss';
 
 const hocErrorMessage = BaseComponent => props =>
-  <TransitionGroup>
+  (<TransitionGroup>
     { props.condition && <BaseComponent {...props} /> }
-  </TransitionGroup>;
+  </TransitionGroup>);
 
 
 class ErrorMessage extends Component {

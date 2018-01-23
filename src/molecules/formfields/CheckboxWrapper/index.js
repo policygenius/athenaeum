@@ -64,9 +64,9 @@ function CheckboxWrapper( props ) {
         >
           {
             React.Children.map(children, child =>
-              <Col className={styles['checkbox']}>
+              (<Col className={styles['checkbox']}>
                 {child}
-              </Col>
+              </Col>)
             )
           }
         </Layout>

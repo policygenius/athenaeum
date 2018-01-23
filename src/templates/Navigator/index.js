@@ -24,7 +24,7 @@ function renderButton(buttonProps) {
 }
 
 const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
-  <UserAlert
+  (<UserAlert
     enabled={enabled}
     onClick={userAlert.onClick}
     alertBottom='#sticky-bottom'
@@ -40,7 +40,7 @@ const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
     >
       {userAlert.text}
     </Text>
-  </UserAlert>;
+  </UserAlert>);
 
 function Navigator(props) {
   const {

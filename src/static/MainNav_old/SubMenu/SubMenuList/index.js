@@ -32,7 +32,7 @@ function SubMenuList(props) {
       <ul className={styles['list']}>
         {
           listItems.map((item, idx) =>
-            <li
+            (<li
               key={`${item.title}-${idx}`}
               className={styles['list-item']}
             >
@@ -45,7 +45,7 @@ function SubMenuList(props) {
               >
                 { item.title }
               </LinkWrapper>
-            </li>
+            </li>)
           )
         }
       </ul>

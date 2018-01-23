@@ -46,13 +46,13 @@ class Submenu extends Component {
         >
           {
             submenuItems.map(item =>
-              <SubmenuItem
+              (<SubmenuItem
                 key={item.menu.activeName}
                 item={item}
                 activeSubTab={this.state.activeSubTab}
                 setActiveSubTab={this.setActiveSubTab}
                 {...otherProps}
-              />
+              />)
             )
           }
         </List>

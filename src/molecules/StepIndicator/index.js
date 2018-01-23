@@ -15,11 +15,11 @@ function StepIndicator(props) {
     <div className={classnames(className)}>
       <div className={styles['step-indicator']}>
         {steps.map((step, idx) =>
-          <ProgressBarStep
+          (<ProgressBarStep
             key={idx}
             step={step}
             navigateToPath={navigateToPath}
-          />
+          />)
         )}
       </div>
     </div>

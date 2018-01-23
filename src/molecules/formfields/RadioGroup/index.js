@@ -56,9 +56,9 @@ function RadioGroup(props) {
         </div>
         {
           React.Children.map(children, child =>
-            <div className={styles['field']}>
+            (<div className={styles['field']}>
               { child }
-            </div>
+            </div>)
           )
         }
       </div>

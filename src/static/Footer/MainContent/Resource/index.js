@@ -65,7 +65,7 @@ class Resource extends Component {
         >
           {
             resources.items.map(resource =>
-              <LinkWrapper
+              (<LinkWrapper
                 key={`resource-${generate()}`}
                 href={resource.href}
               >
@@ -76,7 +76,7 @@ class Resource extends Component {
                 >
                   { resource.title }
                 </Text>
-              </LinkWrapper>
+              </LinkWrapper>)
             )
           }
         </List>

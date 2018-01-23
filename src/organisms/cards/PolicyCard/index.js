@@ -85,9 +85,9 @@ function PolicyCard(props) {
           !!footer.length &&
             <div className={styles['footer']}>
               {footer.map((node, idx) =>
-                <div className={styles['node']} key={`footer-${idx}`}>
+                (<div className={styles['node']} key={`footer-${idx}`}>
                   {node}
-                </div>
+                </div>)
               )}
             </div>
         }

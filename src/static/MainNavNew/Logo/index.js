@@ -6,7 +6,7 @@ import LinkWrapper from 'atoms/LinkWrapper';
 import styles from './logo.module.scss';
 
 const Logo = () =>
-  <LinkWrapper
+  (<LinkWrapper
     className={styles['main-nav-icon-wrapper']}
     href='/'
   >
@@ -16,7 +16,7 @@ const Logo = () =>
       width='122px'
       className={styles['main-nav-icon']}
     />
-  </LinkWrapper>
+  </LinkWrapper>)
 
 ;
 

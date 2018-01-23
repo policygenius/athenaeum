@@ -7,7 +7,7 @@ import Spacer from 'atoms/Spacer';
 import styles from './copyright.module.scss';
 
 const Copyright = () =>
-  <div
+  (<div
     className={styles.copyright}
   >
     <Text type={10} font='b'>
@@ -32,7 +32,7 @@ const Copyright = () =>
         width='75px'
       />
     </div>
-  </div>
+  </div>)
 
   ;
 
