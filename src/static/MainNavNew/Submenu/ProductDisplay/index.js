@@ -43,7 +43,7 @@ class ProductDisplay extends Component {
         case 'links':
           return (
           list.items.map(item =>
-            <Col
+            (<Col
               className={styles['display-list']}
               fullwidth={mobileCollapsedMenu}
               key={item.header}
@@ -51,7 +51,7 @@ class ProductDisplay extends Component {
               <LinkList
                 item={item}
               />
-            </Col>
+            </Col>)
           )
           );
         case 'articles':

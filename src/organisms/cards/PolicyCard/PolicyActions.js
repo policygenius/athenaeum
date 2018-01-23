@@ -9,13 +9,13 @@ import Spacer from 'atoms/Spacer';
 import styles from './policy_card.module.scss';
 
 const ResponsiveText = ({ text, offset, size }) =>
-  <svg
+  (<svg
     width='100%'
     viewBox={`${offset} 0 ${size} 15`}
     className={styles['svg-text']}
   >
     <text x='0' y='12'>{text}</text>
-  </svg>
+  </svg>)
 
 ;
 

@@ -10,7 +10,7 @@ import magazineItems from '../../data/magazineItems';
 import aboutItems from '../../data/aboutItems';
 
 const PrimaryMenu = props =>
-  <List
+  (<List
     horizontal={{}}
     className={styles['primary-menu']}
   >
@@ -40,7 +40,7 @@ const PrimaryMenu = props =>
       submenu={aboutItems}
       {...props}
     />
-  </List>
+  </List>)
 
 ;
 

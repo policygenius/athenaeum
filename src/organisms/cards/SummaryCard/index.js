@@ -24,13 +24,13 @@ function formatText(text) {
     >
       {
         text.map((t, idx) =>
-          <div
+          (<div
             key={`summary-card-lockup-${idx}`}
           >
             <Text size={5} font='a'>{t.header}</Text>
             <Spacer size={6} />
             <Text size={8} font='b' color='neutral-3'>{t.subheader}</Text>
-          </div>
+          </div>)
         )
       }
     </Layout>
@@ -51,7 +51,7 @@ function formatFooter(links) {
     >
       {
         links.map((l, idx) =>
-          <LinkWrapper
+          (<LinkWrapper
             type='secondary'
             onClick={l.onClick}
             key={`summary-card-footer-${idx}`}
@@ -59,7 +59,7 @@ function formatFooter(links) {
             <Text size={10} font='b' color='primary-3'>
               { l.text }
             </Text>
-          </LinkWrapper>
+          </LinkWrapper>)
         )
       }
     </Layout>

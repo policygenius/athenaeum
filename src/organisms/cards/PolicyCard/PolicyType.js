@@ -6,7 +6,7 @@ import Tooltip from 'atoms/Tooltip';
 import styles from './policy_card.module.scss';
 
 export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
-  <div
+  (<div
     className={styles['policy-type']}
   >
     <Tooltip
@@ -46,7 +46,7 @@ export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
     >
       { hoverMessage }
     </Tooltip>
-  </div>
+  </div>)
 ;
 
 PolicyType.propTypes = {

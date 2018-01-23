@@ -15,7 +15,7 @@ import { contactItems } from './data/contact';
 import { footer, divider, socialMediaWrapper } from './styles';
 
 const Footer = () =>
-  <div style={{ borderTop: '1px solid #b2b2b2' }}>
+  (<div style={{ borderTop: '1px solid #b2b2b2' }}>
     <StyledWrapper
       css={footer}
     >
@@ -59,7 +59,7 @@ const Footer = () =>
       </Layout>
     </StyledWrapper>
     <Legal />
-  </div>
+  </div>)
 
   ;
 

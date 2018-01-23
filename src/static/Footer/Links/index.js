@@ -10,7 +10,7 @@ import styles from './links.module.scss';
 import { footerLinkItems } from '../data/links';
 
 const Links = () =>
-  <div
+  (<div
     className={styles.links}
   >
     <Icon
@@ -26,7 +26,7 @@ const Links = () =>
     >
       {
         footerLinkItems.map(link =>
-          <div
+          (<div
             key={`link-item-${generate()}`}
             className={styles['link-wrapper']}
           >
@@ -41,11 +41,11 @@ const Links = () =>
               >{ link.title }
               </Text>
             </LinkWrapper>
-          </div>
+          </div>)
         )
       }
     </List>
-  </div>
+  </div>)
 
   ;
 

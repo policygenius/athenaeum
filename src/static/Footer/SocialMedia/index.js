@@ -8,7 +8,7 @@ import styles from './social-media.module.scss';
 import { socialMediaData } from '../data/socialMediaData';
 
 const SocialMedia = () =>
-  <List
+  (<List
     className={styles['icon-list']}
     noBullets
     condensed
@@ -16,7 +16,7 @@ const SocialMedia = () =>
   >
     {
       socialMediaData.map(company =>
-        <LinkWrapper
+        (<LinkWrapper
           key={`social-media-${company.name}`}
           href={company.href}
         >
@@ -25,10 +25,10 @@ const SocialMedia = () =>
             height='28px'
             width='28px'
           />
-        </LinkWrapper>
+        </LinkWrapper>)
       )
     }
-  </List>
+  </List>)
 
   ;
 

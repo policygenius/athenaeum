@@ -9,10 +9,10 @@ import formatValue from 'utils/formatValue';
 import styles from './policy_card.module.scss';
 
 export const PolicyInformation = ({ information }) =>
-  <Hide hideOn='mobile tablet' className={styles['policy-info']}>
+  (<Hide hideOn='mobile tablet' className={styles['policy-info']}>
     {
       information.map((item, idx) =>
-        <Tooltip
+        (<Tooltip
           text={
             <Text type={11} bold spaced color='neutral-2' font='a'>
               <Layout smallCols={[ 7, 5 ]} fullwidth>
@@ -26,10 +26,10 @@ export const PolicyInformation = ({ information }) =>
           key={`${item.label}-${idx}`}
         >
           { item.hoverMessage }
-        </Tooltip>
+        </Tooltip>)
       )
     }
-  </Hide>
+  </Hide>)
 ;
 
 PolicyInformation.propTypes = {

@@ -10,7 +10,7 @@ import Text from 'atoms/Text';
 import styles from './mobile_back.module.scss';
 
 const MobileBack = props =>
-  <Col
+  (<Col
     fullwidth
     className={styles['mobile-back-wrapper']}
   >
@@ -42,7 +42,7 @@ const MobileBack = props =>
         </Text>
       </div>
     </Layout>
-  </Col>
+  </Col>)
 
 ;
 

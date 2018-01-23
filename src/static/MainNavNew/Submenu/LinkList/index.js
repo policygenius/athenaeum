@@ -29,7 +29,7 @@ function LinkList(props) {
         <ul className={styles['sub-list']}>
           {
             list.map(i =>
-              <li>
+              (<li>
                 <LinkWrapper
                   href={i.url}
                   color='neutral-1'
@@ -43,7 +43,7 @@ function LinkList(props) {
                     {i.title}
                   </Text>
                 </LinkWrapper>
-              </li>
+              </li>)
             )
           }
         </ul>

@@ -1,6 +1,6 @@
 {
   'parser': 'babel-eslint',
-  'extends': 'airbnb',
+  'extends': 'policygenius',
   'plugins': [
      'react',
      'jsx-a11y',
@@ -136,6 +136,7 @@
       }
     ],
     'react/require-extension': 0,
+    'react/require-default-props': 0,
     'react/self-closing-comp': 0,
     'require-yield': 0,
     'space-before-function-paren': 2,

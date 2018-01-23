@@ -19,7 +19,7 @@ const getDimensions = ({ icon }) => {
 };
 
 const IconWrapper = props =>
-  <div
+  (<div
     onClick={props.onClick}
     className={props.className}
   >
@@ -27,7 +27,7 @@ const IconWrapper = props =>
       icon={props.icon}
       {...getDimensions(props)}
     />
-  </div>
+  </div>)
 
 ;
 

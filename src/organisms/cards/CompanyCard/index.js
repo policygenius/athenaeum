@@ -22,14 +22,14 @@ const CompanyCard = (props) => {
   );
 
   const ReadLink = () =>
-    <LinkWrapper
+    (<LinkWrapper
       type='secondary'
       variant={variant}
       className={styles.read}
       href={linkUrl}
     >
       <Text size={10}>Read</Text>
-    </LinkWrapper>;
+    </LinkWrapper>);
 
   const size = variant === 'large' ? '18px' : '12px';
 

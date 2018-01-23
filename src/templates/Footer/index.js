@@ -69,7 +69,7 @@ function renderPhoneInfo(phoneNumber, hours) {
           font='a'
         >
         Questions?
-      </Text>
+        </Text>
       </div>
 
       <Spacer size={6} />
@@ -78,12 +78,12 @@ function renderPhoneInfo(phoneNumber, hours) {
         {
         hours &&
         hours.map(hour =>
-          <Text
+          (<Text
             size={10}
             font='b'
           >
             {hour}
-          </Text>
+          </Text>)
         )
       }
       </div>
@@ -135,7 +135,7 @@ function Footer(props) {
               font='a'
             >
             Live chat
-          </Text>
+            </Text>
           </LinkWrapper>
 
           <Spacer size={24} />
@@ -179,7 +179,7 @@ function Footer(props) {
             onClick={onClickChat}
           >
           Live Chat
-        </Button>
+          </Button>
 
           <Spacer size={18} />
 
