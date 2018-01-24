@@ -2,7 +2,12 @@
 set -eo pipefail
 
 echo '+++ Build main_nav'
+NODE_ENV=development yarn
 NODE_ENV=production yarn run build:nav:styleguide
+NODE_ENV=production yarn run build:publish:nav
+
+cp ./styleguide/main_nav/build/index.html ./main_nav/build/index.html
+cp ./styleguide/main_nav/build/styleguide_bundle.js ./main_nav/build/styleguide_bundle.js
 
 echo '+++ Deploying main_nav styleguide latest to S3'
 aws s3 sync \
@@ -12,8 +17,6 @@ aws s3 sync \
   --exclude '.DS_Store'
 
 echo "Deployed Main Nav to http://rcl.policygenius.com/latest/main_nav/index.html"
-
-NODE_ENV=production yarn run build:publish:nav
 
 echo '+++ Compiling & Building Main Navigation'
 

@@ -33,7 +33,6 @@ steps:
     branches: 'master'
 
   - name: 'Upload MainNav to Production :s3:'
-    branches: 'master'
     command: bin/deploy_nav_production
     agents:
       queue: builder
@@ -45,7 +44,6 @@ steps:
     branches: 'master'
 
   - name: 'Upload Footer to Production :s3:'
-    branches: 'master'
     command: bin/deploy_footer_production
     agents:
       queue: builder
