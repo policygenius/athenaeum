@@ -59,8 +59,8 @@
       }
 
       &:before {
-        padding-right: #{$section-padding-desktop};
-        right: -#{$section-padding-desktop};
+        padding-right: #{$section-padding-desktop + $gutter-width};
+        right: -#{$section-padding-desktop + $gutter-width};
       }
     }
 
@@ -71,8 +71,8 @@
       }
 
       &:before {
-        left: -#{$section-padding-desktop};
-        padding-left: #{$section-padding-desktop};
+        left: -#{$section-padding-desktop + $gutter-width};
+        padding-left: #{$section-padding-desktop + $gutter-width};
       }
     }
   }
