@@ -63,29 +63,34 @@ function renderPhoneInfo(phoneNumber, hours) {
       </LinkWrapper>
 
       <div className={styles['mobile-questions']}>
-        <Spacer size={36} />
         <Text
           size={7}
           font='a'
         >
-        Questions?
-      </Text>
+          Questions?
+        </Text>
+
+        <Text
+          size={10}
+          className={styles['tablet-phone-number']}
+        >
+          {phoneNumber}
+        </Text>
       </div>
 
       <Spacer size={6} />
 
       <div className={styles['hours']}>
         {
-        hours &&
-        hours.map(hour =>
-          <Text
-            size={10}
-            font='b'
-          >
-            {hour}
-          </Text>
-        )
-      }
+          hours && hours.map(hour =>
+            <Text
+              size={10}
+              font='b'
+            >
+              {hour}
+            </Text>
+          )
+        }
       </div>
     </Col>
   );
@@ -112,7 +117,8 @@ function Footer(props) {
       <Layout
         className={layoutClasses}
         smallCols={[ 12 ]}
-        mediumCols={[ 4 ]}
+        mediumCols={[ 3 ]}
+        largeCols={[ 4 ]}
         fullwidth
       >
 
@@ -160,6 +166,7 @@ function Footer(props) {
           </LinkWrapper>
         </Col>
 
+
         <Col className={styles['mobile-actions']}>
           <Spacer size={18} />
 
@@ -194,7 +201,10 @@ function Footer(props) {
           <Spacer size={36} />
         </Col>
 
-        <Col className={styles['trust']}>
+        <Col
+          className={styles['trust']}
+          mediumCols={6}
+        >
           <div className={styles['trust-logos']}>
             <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
             <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
@@ -203,6 +213,16 @@ function Footer(props) {
           <Spacer size={6} />
 
           { renderLinks(links) }
+        </Col>
+
+        <Col className={styles['tablet-action']}>
+          <Button
+            variant='info'
+            outline
+            onClick={onClickChat}
+          >
+            Chat Now
+          </Button>
         </Col>
       </Layout>
     </div>
