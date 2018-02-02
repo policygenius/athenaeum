@@ -37,7 +37,9 @@
     "lint:js": "npm run lint:eslint -- ./src ",
     "lint:css": "stylelint 'src/**/*.scss'",
     "lint:md": "eslint --ext md .",
-    "snapshot": "yarn test -- --updateSnapshot"
+    "snapshot": "yarn test -- --updateSnapshot",
+    "widget": "NODE_ENV=development webpack-dev-server --config ./src/widgets/webpack.config.styleguide.js --hot --inline",
+    "build:publish:widget": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config ./src/widgets/webpack.config.bundle.js --progress --colors"
   },
   "repository": {
     "type": "git",
