@@ -108,7 +108,7 @@ const baseRules = modulesName => [
 module.exports = (options) => {
   const rules = get(options, 'module.rules', []).concat(baseRules(options.modulesName));
 
-  if (!options.entry || !options.entry.includes('main_nav')) {
+  if (!options.entry) {
     rules.push(
       {
         test: /\.svg$/,
