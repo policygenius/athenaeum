@@ -19,6 +19,11 @@ $border: 1px solid color('neutral-5');
     z-index: 10;
   }
 
+  &.x-large {
+    max-width: rem-calc(1040);
+    z-index: 10;
+  }
+
   &.mobile {
     margin-top: 0;
     max-width: rem-calc(604);
@@ -65,6 +70,15 @@ $border: 1px solid color('neutral-5');
   display: flex;
   justify-content: space-between;
   padding: ru(1.25) ru(1);
+
+  &-hide {
+    background-color: none;
+    border-bottom: none;
+
+    .close-col {
+      margin: rem-calc(20px);
+    }
+  }
 }
 
 .section {

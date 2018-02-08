@@ -115,6 +115,104 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
       this.setState({
         modalIsOpen: true
       });
+     }
+
+     closeModal() {
+        this.setState({
+          modalIsOpen: false
+        });
+      }
+
+      render() {
+        return (
+          <div>
+            <Button onClick={this.openModal}>Open No Header Modal</Button>
+
+            <Modal
+              variant='x-large'
+              onRequestClose={this.closeModal}
+              isOpen={this.state.modalIsOpen}
+              contentLabel='Modal'
+              hideHeader
+            >
+              <div>
+                <Layout
+                  mediumCols={[ 9, 3, 6, 3, 3 ]}
+                  bottomSpacing='small'
+                >
+                  <TextField
+                    label='Street address'
+                    placeholder='Enter your street address'
+                    input={{}}
+                  />
+                  <TextField
+                    label='Apt. #'
+                    placeholder='Apt. #'
+                    input={{}}
+                  />
+                  <TextField
+                    label='City'
+                    placeholder='City'
+                    input={{}}
+                  />
+                  <TextField
+                    label='State'
+                    placeholder='State'
+                    input={{}}
+                  />
+                  <TextField
+                    label='Zip code'
+                    placeholder='Zip code'
+                    input={{}}
+                  />
+                </Layout>
+
+                <Spacer small />
+
+                <Layout>
+                  <Button variant='action'>Confirm your address</Button>
+                </Layout>
+                <Spacer medium />
+              </div>
+              <div>
+                <Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex>
+                  <div>'Child 1'</div>
+                  <div>'Child 2'</div>
+                  <div>'Child 3'</div>
+                  <div>'Child 4'</div>
+                  <div>'Child 5'</div>
+                </Layout>
+              </div>
+              <div>
+                This is another section
+              </div>
+            </Modal>
+          </div>
+        )
+      }
+    }
+
+    <ModalExample />
+```
+
+
+```jsx
+  class ModalExample extends React.Component {
+    constructor(props) {
+      super(props)
+
+      this.state = {
+      modalIsOpen: false
+      }
+
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
+    }
+
+    openModal() {
+      this.setState({
+        modalIsOpen: true
+      });
     }
 
      closeModal() {
