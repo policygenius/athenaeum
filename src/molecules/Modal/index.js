@@ -35,6 +35,7 @@ class Modal extends React.Component {
       className,
       contentLabel,
       header,
+      hideHeader,
       hideX,
       isOpen,
       onAfterOpen,
@@ -53,30 +54,31 @@ class Modal extends React.Component {
       >
         <div className={styles['dialog']}>
           <div className={styles['body']}>
-            <div
-              className={styles['header']}
-            >
-              <Text
-                type={4}
-                font='a'
-              >
-                {header}
-              </Text>
-
+            {
               <div
-                className={styles['close-col']}
+                className={hideHeader ? styles['header-hide'] : styles['header']}
               >
-                {
-                  !hideX &&
-                    <Icon
-                      icon='close'
-                      className={styles['close']}
-                      onClick={onRequestClose}
-                    />
-                }
-              </div>
-            </div>
+                <Text
+                  type={4}
+                  font='a'
+                >
+                  {header}
+                </Text>
 
+                <div
+                  className={styles['close-col']}
+                >
+                  {
+                    !hideX &&
+                      <Icon
+                        icon='close'
+                        className={styles['close']}
+                        onClick={onRequestClose}
+                      />
+                  }
+                </div>
+              </div>
+            }
             {React.Children.map(children, wrapChild)}
           </div>
         </div>
@@ -110,6 +112,11 @@ Modal.propTypes = {
   hideX: PropTypes.bool,
 
   /**
+   * Hide the header section for modal
+   */
+  hideHeader: PropTypes.bool,
+
+  /**
    * Boolean to determine modal open/closed
    */
   isOpen: PropTypes.bool,
@@ -127,12 +134,13 @@ Modal.propTypes = {
   /**
    * variant for modal - options are `simple` (default), `large` & `mobile`
    */
-  variant: PropTypes.oneOf([ 'simple', 'large', 'mobile', 'mobile-large' ]),
+  variant: PropTypes.oneOf([ 'simple', 'large', 'x-large', 'mobile', 'mobile-large' ]),
 };
 
 Modal.defaultProps = {
   variant: 'simple',
-  hideX: false
+  hideX: false,
+  hideHeader: false,
 };
 
 export default Modal;
