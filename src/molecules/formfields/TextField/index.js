@@ -82,7 +82,7 @@ function TextField( props ) {
           { mask ?
             <InputMask
               className={styles['input']}
-              type='text'
+              type={type}
               placeholder={placeholder}
               mask={mask}
               maskChar={maskChar}
@@ -203,6 +203,7 @@ TextField.propTypes = {
   type: PropTypes.oneOf([
     'text',
     'password',
+    'tel',
   ]),
 
   /**

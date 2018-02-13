@@ -5,6 +5,14 @@
 
   position: relative;
   padding: ru(.5) ru(.5) ru(.75);
+
+  &.no-border {
+    border: 0;
+  }
+
+  &.no-label {
+    padding: ru(.5);
+  }
 }
 
 .header {

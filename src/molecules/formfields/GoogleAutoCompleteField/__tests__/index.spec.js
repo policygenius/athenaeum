@@ -90,11 +90,9 @@ describe('<GoogleAutoCompleteField />', () => {
 
       const state = {
         autocomplete: {
-          getPlace: jest.fn(() => {
-            return {
-              address_components: addressValues,
-            };
-          })
+          getPlace: jest.fn(() => ({
+            address_components: addressValues,
+          }))
         }
       };
 
