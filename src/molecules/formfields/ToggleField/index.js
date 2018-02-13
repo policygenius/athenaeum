@@ -49,10 +49,13 @@ function ToggleField( props ) {
     toggleChoices,
     input,
     meta,
+    noBorder,
   } = props;
 
   const classes = [
     styles['toggle-field'],
+    noBorder && styles['no-border'],
+    !label && styles['no-label'],
     meta && meta.active && styles['focused'],
     meta && meta.touched && meta.error && !meta.active && styles['hasError'],
     className,
@@ -128,6 +131,11 @@ ToggleField.propTypes = {
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+
+  /**
+   * Removes border surrouding label and buttons
+   */
+  noBorder: PropTypes.bool,
 };
 
 export default ToggleField;
