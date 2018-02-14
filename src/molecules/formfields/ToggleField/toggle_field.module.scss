@@ -6,13 +6,13 @@
   position: relative;
   padding: ru(.5) ru(.5) ru(.75);
 
+  &.no-label {
+    padding: ru(.5);
+  }
+
   &.no-border {
     border: 0;
     padding: ru(.5) 0;
-  }
-
-  &.no-label {
-    padding: ru(.5);
   }
 }
 
