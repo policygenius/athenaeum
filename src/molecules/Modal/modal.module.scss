@@ -16,18 +16,18 @@ $border: 1px solid color('neutral-5');
   &.large,
   &.mobile-large {
     max-width: rem-calc(940);
-    z-index: 100;
+    z-index: 2000;
   }
 
   &.x-large {
     max-width: rem-calc(1152);
-    z-index: 100;
+    z-index: 2000;
   }
 
   &.mobile {
     margin-top: 0;
     max-width: rem-calc(604);
-    z-index: 100;
+    z-index: 2000;
 
     .section {
       padding: ru(1.25);
@@ -83,7 +83,7 @@ $border: 1px solid color('neutral-5');
 
 .overlay {
   background-color: color('transparent-neutral-2');
-  z-index: 110;
+  z-index: 2100;
   transition: opacity 0.25s ease-in-out, background 0.25s ease-out;
   background: color('transparent-neutral-2');
   bottom: 0;
