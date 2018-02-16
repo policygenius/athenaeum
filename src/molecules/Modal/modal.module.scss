@@ -70,15 +70,6 @@ $border: 1px solid color('neutral-5');
   display: flex;
   justify-content: space-between;
   padding: ru(1.25) ru(1);
-
-  &-hide {
-    background-color: none;
-    border-bottom: none;
-
-    .close-col {
-      margin: rem-calc(60px);
-    }
-  }
 }
 
 .section {
