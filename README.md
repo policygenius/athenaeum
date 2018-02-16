@@ -100,62 +100,6 @@ The RCL uses the following for testing. If you want to learn more about them and
 * [Mocha](https://mochajs.org/)
 * [Chai](http://chaijs.com/)
 
-## Static Components
-Static components are ones that are completely self contained, displaying a finite amount of data and will rarely, if ever, take in props. These components are static in the sense that they will never change, no matter the context. They are not dynamic and do not mold to the environment they are placed. They are packaged up and come as is.
-
-While this may seem counterintuitive to what the RCL is trying to achieve, these static components will prove incredible useful as PolicyGenius moves to a full React environment. By utilizing the power of RCL components, Static components can be built with minimal dependency weight and be exported as static assets as well as part of the NPM package, giving PolicyGenius a couple of options to leverage them. In an effort to improve overall page speed for the PolicyGenius blog, the first of these components to be included in the RCL is the MainNav.
-
-### How main nav is being consumed
-![main nav](main_nav.png)
-
-### Serving Static components
-Since the MainNav is the only static component, the command is simply:
-
-1. `yarn nav`
-
-2. Navigate to `localhost:8080`
-
-To fetch blog posts locally, you will need to include the following keys in your `env`:
-- `GHOST_API_URL`
-- `GHOST_API_CLIENT_SECRET`
-
-### Building Static components
-Build bundled JS / assets for MainNav:
-
-`yarn build:nav:bundle`
-
-Build static HTML for MainNav:
-
-`yarn build:nav:static && yarn build:nav:html`
-
-Build MainNav for publishing:
-
-`yarn build:nav:publish`
-
-### Organization
-All Static components should live in `src/static/NameOfStaticComponent`. A typical folder structure would look like:
-
-```html
-/src
-  /static
-    /StaticComponent
-      /index.js
-      /data/
-      /static_component.module.scss
-      /StaticComponentChild1/
-      /StaticComponentChild2/
-```
-
-### Static data
-In order to build up these Static components with all of the data needed to make them self contained, each Static component should have an accompanying `data` folder that will house all of this information. The data should be written in JSON format and included in the entry point for the Static component or whichever child component needs the data/is most appropriate.
-
-For an example, navigate to `src/static/MainNav/data`. As you will see, the data is broken up into subfolders and further into individual files of JSON.
-
-This data section will help to consolidate static information in a place where product managers can easily make changes to copy and see those changes reflected everywhere on deploy. We want to decrease the amount of time engineers spend updating copy in HTML/JSX and offload that to the stakeholders who have the most context on what copy needs to be changed.
-
-### Best Practices
-When developing Static components, follow all of the best practices for the RCL.
-
 
 ## Finding your way around
 
@@ -164,7 +108,6 @@ When developing Static components, follow all of the best practices for the RCL.
 - atoms (Buttons, Icons, Text, etc.)
 - molecules (Form Fields, Lists, Image Asides, etc.)
 - organisms (Forms, Tables, etc.)
-- static (Main Nav)
 - templates (Headers, Navigators, Footers, etc.)
 ```
 
