@@ -1,14 +1,22 @@
 const webpack = require('webpack');
+const glob = require('glob');
 const path = require('path');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const baseConfig = require('./webpack.config.base.js');
 
+const entries = glob.sync("./src/**/index.js").reduce((accum, path) => {
+  const name = path.match(/.*\/(.*)\/index.js/)[1];
+  return Object.assign(accum, { [name]: path.replace('src/', '')  });
+}, {
+  index: 'entry.js'
+});
+
 module.exports = baseConfig({
-  entry: [ './entry.js' ],
+  entry: entries,
   output: {
     path: path.resolve(__dirname, 'lib'),
-    filename: 'index.js',
+    filename: '[name].js',
     libraryTarget: 'umd'
   },
   externals: {
@@ -38,6 +46,6 @@ module.exports = baseConfig({
         warnings: false
       },
       sourceMap: true
-    })
+    }),
   ]
 });

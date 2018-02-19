@@ -2,6 +2,7 @@ process.traceDeprecation = true;
 
 const path = require('path');
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
 const assign = require('lodash/assign');
@@ -18,7 +19,7 @@ const includePaths = [
 const isProd = process.env.NODE_ENV === 'production';
 
 const cssModulesName = (modulesName) => {
-  if (!isProd) {
+  if (true) {
     return 'rcl-[name]__[local]--[hash:base64:5]';
   }
 
@@ -108,7 +109,7 @@ const baseRules = modulesName => [
 module.exports = (options) => {
   const rules = get(options, 'module.rules', []).concat(baseRules(options.modulesName));
 
-  if (!options.entry) {
+  if (true) {
     rules.push(
       {
         test: /\.svg$/,
@@ -142,9 +143,10 @@ module.exports = (options) => {
     },
     plugins: get(options, 'plugins', []).concat([
       new ExtractTextPlugin({
-        filename: variant ? `assets/${variant}_styles.css` : 'assets/styles.css',
+        filename: variant ? `assets/${variant}_styles.css` : 'assets/[name].css',
         allChunks: true
-      })
+      }),
+      new BundleAnalyzerPlugin()
     ])
   };
 };
