@@ -17,8 +17,7 @@ if [ "$BUILDKITE_BRANCH" == "master" ]; then
   bin/build_assets
   npm publish --registry=https://registry.npmjs.org/
 else
-  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
-
+  echo "Not publishing to npm for branch $BUILDKITE_BRANCH" 
   VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
 fi
 
