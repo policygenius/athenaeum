@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import pick from 'lodash/pick';
 import reduce from 'lodash/reduce';
 import keys from 'lodash/keys';
+import assign from 'lodash/assign';
 import TextField from 'molecules/formfields/TextField';
 
 import loadJS from './util/loadJS';
@@ -60,7 +61,7 @@ class GoogleAutoCompleteField extends Component {
     const pickedData = pick(addressData, keys(addressValuesToPick));
 
     // Grab the short or long name from the addressData based on props.addressValuesToPick
-    return reduce(pickedData, (res, names, addressValue) => Object.assign({}, res, {
+    return reduce(pickedData, (res, names, addressValue) => assign({}, res, {
       [addressValue]: names[addressValuesToPick[addressValue]]
     }), {});
   }
@@ -86,7 +87,7 @@ class GoogleAutoCompleteField extends Component {
       const formattedAddressValue = GOOGLE_ADDRESS_VALUES_MAP[addressType];
 
       if (formattedAddressValue) {
-        return Object.assign({}, res, {
+        return assign({}, res, {
           [formattedAddressValue]: {
             shortName: info.short_name,
             longName: info.long_name,
