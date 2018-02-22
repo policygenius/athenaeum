@@ -3,5 +3,86 @@
 exports[`<StarRating /> renders correctly 1`] = `
 <span
   className="star-rating stars stars-undefined"
-/>
+>
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      alt="star"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+    />
+  </span>
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      alt="star"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+    />
+  </span>
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      alt="star"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+    />
+  </span>
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      alt="star"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+    />
+  </span>
+  <span
+    className="icon-wrapper star"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      alt="star"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+    />
+  </span>
+</span>
 `;

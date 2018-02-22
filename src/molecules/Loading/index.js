@@ -111,7 +111,7 @@ Loading.propTypes = {
   /**
    * This prop will set the icon loading image
    */
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
 
   /**
    * `messages` is an array of sentences for the loader

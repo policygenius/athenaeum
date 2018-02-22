@@ -50,13 +50,13 @@ FeatureSquare.propTypes = {
    * Color style, see [Colors](#colors) for appropriate values
    */
   backgroundColor: PropTypes.string,
-  header: PropTypes.string,
-  subheader: PropTypes.string,
-  buttonText: PropTypes.string,
+  header: PropTypes.string.isRequired,
+  subheader: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
   /**
    * Icon name, see [Icon](#icon) for appropriate values
    */
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
   /**
    * Button onClick function
    */

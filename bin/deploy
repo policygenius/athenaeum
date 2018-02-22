@@ -5,7 +5,6 @@ git config --global user.name "Randy the PolicyGenius Robot"
 git config --global user.email "robot@policygenius.com"
 
 NODE_ENV=development yarn --frozen-lockfile
-NODE_ENV=production yarn run styleguide:build
 
 if [ "$BUILDKITE_BRANCH" == "master" ]; then
   echo '+++ Publishing the package'
@@ -21,6 +20,8 @@ else
 
   VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
 fi
+
+NODE_ENV=production yarn run styleguide:build
 
 echo '+++ Deploying version-specific styleguide to S3'
 aws s3 sync \

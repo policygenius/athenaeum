@@ -16,8 +16,7 @@ describe('<StyledWrapper />', () => {
     }
   `;
 
-  xit('renders correctly', () => {
-    // TODO: Write better tests
+  it('renders correctly', () => {
     const actual = renderer.create(<StyledWrapper styles={styles} />).toJSON();
 
     expect(actual).toMatchSnapshot();

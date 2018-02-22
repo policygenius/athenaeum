@@ -5,6 +5,16 @@ import renderer from 'react-test-renderer';
 import Img from 'atoms/Img';
 
 describe('<Img />', () => {
+  const warn = console.warn;
+
+  beforeAll(() => {
+    console.warn = jest.fn();
+  });
+
+  afterAll(() => {
+    console.warn = warn;
+  });
+
   it('renders correctly', () => {
     const wrapper = mount(<Img />);
 

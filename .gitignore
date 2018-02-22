@@ -43,15 +43,8 @@ jspm_packages
 # Ignore styleguideist build
 /styleguide/
 
-# Ignore main nav build
-/main_nav/build/
-/main_nav/static/
-/main_nav/zip/
-
-# Ignore footer build
-/footer/build/
-/footer/static/
-/footer/zip/
+# bundle analyzer
+/webpack-bundle-report/
 
 # Ignore OSX system files
 .DS_Store
@@ -61,3 +54,6 @@ lib/
 .sass-cache
 NERD_tree_*
 tmp/
+
+# Temp svgs.txt file for updating the Icon prop types
+svgs.txt

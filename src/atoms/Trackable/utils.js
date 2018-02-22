@@ -7,7 +7,7 @@ export function dataAttrName(key) {
 
 export function dataAttributes(data) {
   const exportAttr = (res, key) => {
-    if (key === 'children') return res;
+    if (!key || key === 'children') return res;
 
     const attr = { [dataAttrName(key)]: data[key] };
 

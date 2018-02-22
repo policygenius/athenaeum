@@ -1,14 +1,48 @@
-X-Icon example:
+We have a library of icons that are accessible by name, ie `icon='xIcon'`, which can be rendered as an `<img />` (default) or as an inlined SVG with its full DOM by passing the `renderSVGDOM` prop.
+The library exists in our static-asset GCloud bucket. To make new icons available, you have to upload it there. You should also then
+update the ICONS in `Icon/constants.js` -- `bin/refresh_svg_list` will pull down that list for you and print it to a `svgs.txt` file,
+but you will have to manually update the `constants.js` file.
 
+_Regular xIcon example, with onClick and size props:_
 ```jsx
     <Icon
       icon='xIcon'
+      onClick={() => alert('You clicked me!')}
+      width='20px'
+      height='20px'
+    />
+```
+
+_xIcon example with full SVG DOM and css hover:_
+```scss
+// You can't edit this. Sorry.
+.icon-hover-example {
+  svg path {
+    fill: color('secondary-2');
+    transition: all .3s;
+  }
+
+  &:hover {
+    transform: rotate(90deg);
+    border-right: 4px solid color('primary-1');
+    transition: all .3s;
+
+    svg path {
+      fill: color('primary-1');
+    }
+  }
+}
+```
+```jsx
+    <Icon
+      className='icon-hover-example'
+      icon='vandalizism'
+      renderSVGDOM
       onClick={() => alert('You clicked me!')}
     />
 ```
 
 Inline Icon example:
-
 ```jsx
   <div>
     <Text>
@@ -51,24 +85,29 @@ Inline Icon example:
 ```
 
 ### Suggested method to resize Icons:
-`<Icon />` returns an `svg` wrapped in a `div`.
+`<Icon />` returns an `svg` wrapped in a `span`, which will receive any props passed.
+Note that passing a `style` prop will override the width and height props.
 Its default size is `72px`x`72px` or `ru(3)`.
 
 ```html
-  <div className='custom-icon-wrapper'>
-    <Icon icon='someLogo' />
-  </div>
+<Icon
+  icon='someLogo'
+  className='custom-icon-wrapper'>
+/>
 ```
 
-```css
-  .custom-icon-wrapper svg{
+```scss
+  .custom-icon-wrapper svg {
     height: 30px;
   }
 ```
 
 # All Available Icons:
+_Note: this list isn't automatically kept in sync._
+To sync, run `bin/refresh_svg_list`.
+You will need to have access to our gutils
 ```jsx
-    const icons = require('assets/images');
+    const icons = require('./constants').icons;
 
     function DisplayAllIcons() {
       return (
@@ -80,10 +119,10 @@ Its default size is `72px`x`72px` or `ru(3)`.
           }}
         >
           {
-            Object.keys(icons).map( (key, idx) => {
+            icons.map( icon => {
               return (
                 <div
-                  key={`icon-${idx}`}
+                  key={`icon-${icon}`}
                   style={{
                     padding: '10px 10px 20px',
                     margin: '2px',
@@ -101,9 +140,9 @@ Its default size is `72px`x`72px` or `ru(3)`.
                     fontSize: '.8rem'
                   }}
                 >
-                  "{ key }"
+                  "{ icon }"
                   <div>
-                    <Icon icon={key} />
+                    <Icon icon={icon} />
                   </div>
                 </div>
               )

@@ -9,4 +9,5 @@ grep -or  'TODO.*' \
   --exclude-dir=lib \
   --exclude-dir=bin \
   --exclude-dir=.cache . \
+  --exclude-dir=webpack-bundle-report \
   | awk -F":" {'print "- [ ] **" substr($0,index($0,$2))"** : "$1'} > todo.md

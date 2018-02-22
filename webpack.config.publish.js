@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const baseConfig = require('./webpack.config.base.js');
 
@@ -11,33 +13,19 @@ module.exports = baseConfig({
     filename: 'index.js',
     libraryTarget: 'umd'
   },
-  externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react',
-      umd: 'react',
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom',
-      umd: 'react-dom',
-    },
-    lodash: 'lodash',
-    classnames: 'classnames'
-  },
+  externals: [ nodeExternals() ],
   plugins: [
     new OptimizeCSSAssetsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: false,
-      mangle: false,
-      compress: {
-        warnings: false
-      },
-      sourceMap: true
+    new UglifyJsPlugin({
+      sourceMap: false,
+      uglifyOptions: {
+        minimize: true,
+        mangle: false,
+        compress: {
+          warnings: false
+        },
+        keep_classnames: true
+      }
     })
   ]
 });

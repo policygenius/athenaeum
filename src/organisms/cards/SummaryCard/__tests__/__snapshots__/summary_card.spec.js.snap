@@ -4,6 +4,22 @@ exports[`<SummaryCard /> renders correctly 1`] = `
 <div
   className="summary-card"
 >
+  <span
+    className="icon-wrapper clickable icon icon-click"
+    onClick={[Function]}
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <img
+      alt="xIcon"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/xIcon.svg"
+    />
+  </span>
   <div
     className="content"
   >
