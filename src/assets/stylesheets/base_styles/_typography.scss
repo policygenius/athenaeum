@@ -210,17 +210,29 @@ $boldweight:                  900;
     }
   }
   @if $number == 4 {
-    @include typography-a-5-bold();
+    @include typography-a-6-bold();
 
     @media #{$tablet} {
+      @include typography-a-5-bold();
+    }
+
+    @media #{$desktop} {
       @include typography-a-4-bold();
     }
   }
   @if $number == 5 {
-    @include typography-a-5-bold();
+    @include typography-a-6-bold();
+
+    @media #{$tablet} {
+      @include typography-a-5-bold();
+    }
   }
   @if $number == 6 {
-    @include typography-a-6-bold();
+    @include typography-a-7-bold();
+
+    @media #{$tablet} {
+      @include typography-a-6-bold();
+    }
   }
   @if $number == 7 {
     @include typography-a-7-bold();
