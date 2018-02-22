@@ -128,6 +128,10 @@ ajv-keywords@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
 
+ajv-keywords@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.1.0.tgz#ac2b27939c543e95d2c06e7f7f5c27be4aa543be"
+
 ajv@^4.7.0, ajv@^4.9.1:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.11.8.tgz#82ffb02b29e662ae53bdc20af15947706739c536"
@@ -140,6 +144,14 @@ ajv@^5.0.0, ajv@^5.1.0, ajv@^5.2.3:
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
   dependencies:
     co "^4.6.0"
+    fast-deep-equal "^1.0.0"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.3.0"
+
+ajv@^6.1.0:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.1.1.tgz#978d597fbc2b7d0e5a5c3ddeb149a682f2abfa0e"
+  dependencies:
     fast-deep-equal "^1.0.0"
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
@@ -2061,7 +2073,7 @@ class-utils@^0.3.5:
     lazy-cache "^2.0.2"
     static-extend "^0.1.1"
 
-classnames@^2.0.0, classnames@^2.2.1, classnames@^2.2.5:
+classnames@^2.0.0, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -2346,6 +2358,10 @@ commander@2.9.0, commander@~2.9.0:
 commander@~2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.1.0.tgz#d121bbae860d9992a3d517ba96f56588e47c6781"
+
+commander@~2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
 commander@~2.8.1:
   version "2.8.1"
@@ -5450,6 +5466,14 @@ http-signature@~1.2.0:
     assert-plus "^1.0.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+httpplease@^0.16.4:
+  version "0.16.4"
+  resolved "https://registry.yarnpkg.com/httpplease/-/httpplease-0.16.4.tgz#d382ebe230ef5079080b4e9ffebf316a9e75c0da"
+  dependencies:
+    urllite "~0.5.0"
+    xmlhttprequest "*"
+    xtend "~3.0.0"
 
 https-browserify@0.0.1:
   version "0.0.1"
@@ -10059,6 +10083,13 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
+react-inlinesvg@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/react-inlinesvg/-/react-inlinesvg-0.7.5.tgz#091513ee909987e2dfcac56a5854de45ae6e1ba7"
+  dependencies:
+    httpplease "^0.16.4"
+    once "^1.4.0"
+
 react-input-mask@^0.8.0:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/react-input-mask/-/react-input-mask-0.8.2.tgz#faca9ee14078d0c53d6fa03c0a049f57aaac8578"
@@ -10155,13 +10186,6 @@ react-styleguidist@^6.0.26:
     unist-util-visit "^1.3.0"
     webpack-dev-server "^2.9.7"
     webpack-merge "^4.1.1"
-
-react-svg-inline@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-2.0.1.tgz#a8ce9d0c3cc4af8b8cc13cf3f71af1e07c7359e4"
-  dependencies:
-    classnames "^2.2.1"
-    prop-types "^15.5.8"
 
 react-test-renderer@^16.0.0, react-test-renderer@^16.0.0-0:
   version "16.2.0"
@@ -11186,6 +11210,13 @@ schema-utils@^0.3.0:
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
+
+schema-utils@^0.4.2:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
+  dependencies:
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
@@ -12565,6 +12596,13 @@ uglify-es@^3.2.1:
     commander "~2.12.1"
     source-map "~0.6.1"
 
+uglify-es@^3.3.4:
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.9.tgz#0c1c4f0700bed8dbc124cdb304d2592ca203e677"
+  dependencies:
+    commander "~2.13.0"
+    source-map "~0.6.1"
+
 uglify-js@3.3.x, uglify-js@^3.0.23:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.5.tgz#4c4143dfe08e8825746675cc49a6874a933b543e"
@@ -12597,6 +12635,19 @@ uglifyjs-webpack-plugin@1.1.4:
     uglify-es "^3.2.1"
     webpack-sources "^1.0.1"
     worker-farm "^1.4.1"
+
+uglifyjs-webpack-plugin@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.0.tgz#f706fa4c655000a086b4a97c7d835ed0f6e9b0ef"
+  dependencies:
+    cacache "^10.0.1"
+    find-cache-dir "^1.0.0"
+    schema-utils "^0.4.2"
+    serialize-javascript "^1.4.0"
+    source-map "^0.6.1"
+    uglify-es "^3.3.4"
+    webpack-sources "^1.1.0"
+    worker-farm "^1.5.2"
 
 uid-number@0.0.6, uid-number@^0.0.6:
   version "0.0.6"
@@ -12897,6 +12948,12 @@ url@^0.11.0, url@~0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+urllite@~0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/urllite/-/urllite-0.5.0.tgz#1b7bb9ca3fb0db9520de113466bbcf7cc341451a"
+  dependencies:
+    xtend "~4.0.0"
 
 use@^2.0.0:
   version "2.0.2"
@@ -13259,6 +13316,10 @@ webpack-merge@^4.1.1:
   dependencies:
     lodash "^4.17.4"
 
+webpack-node-externals@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/webpack-node-externals/-/webpack-node-externals-1.6.0.tgz#232c62ec6092b100635a3d29d83c1747128df9bd"
+
 webpack-sources@^0.1.0, webpack-sources@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
@@ -13266,7 +13327,7 @@ webpack-sources@^0.1.0, webpack-sources@^0.1.4:
     source-list-map "~0.1.7"
     source-map "~0.5.3"
 
-webpack-sources@^1.0.1:
+webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.1.0.tgz#a101ebae59d6507354d71d8013950a3a8b7a5a54"
   dependencies:
@@ -13386,7 +13447,7 @@ wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
 
-worker-farm@^1.3.1, worker-farm@^1.4.1, worker-farm@~1.5.1:
+worker-farm@^1.3.1, worker-farm@^1.4.1, worker-farm@^1.5.2, worker-farm@~1.5.1:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.5.2.tgz#32b312e5dc3d5d45d79ef44acc2587491cd729ae"
   dependencies:
@@ -13500,9 +13561,17 @@ xmlhttprequest-ssl@1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.3.tgz#185a888c04eca46c3e4070d99f7b49de3528992d"
 
+xmlhttprequest@*:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc"
+
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
+
+xtend@~3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xtend/-/xtend-3.0.0.tgz#5cce7407baf642cba7becda568111c493f59665a"
 
 y18n@^3.2.0, y18n@^3.2.1:
   version "3.2.1"

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
 import Text from 'atoms/Text';
-import * as icons from 'assets/images';
+
 import styles from './image-aside.module.scss';
 
 function ImageAside( props ) {
@@ -36,7 +36,7 @@ function ImageAside( props ) {
 
   const renderIconImage = () => {
     if (!icon && !dataSrc) return null;
-    if (icon && icons[icon]) return <Icon icon={icon} className={styles['icon']} />;
+    if (icon) return <Icon icon={icon} className={styles['icon']} />;
 
     return (
       <div className={styles['image-wrapper']} style={{ maxWidth }}>

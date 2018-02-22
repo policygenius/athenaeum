@@ -1,9 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FeatureSquare /> renders correctly 1`] = `
+exports[`<FeatureSquare /> matches snapshot 1`] = `
 <div
   className="feature-square background-undefined"
 >
+  <span
+    className="icon-wrapper icon"
+    onClick={undefined}
+    style={
+      Object {
+        "height": undefined,
+        "width": "100px",
+      }
+    }
+  >
+    <img
+      alt="xIcon"
+      className="img"
+      src="https://storage.googleapis.com/pg-static-assets/svgs/xIcon.svg"
+    />
+  </span>
+  <p
+    className="primary-3 type-a-5-bold inherit"
+  >
+    Header!
+  </p>
+  <p
+    className="primary-3 subheader type-b-8-medium inherit"
+  >
+    Subheader!!!
+  </p>
   <div
     className="layout button-wrapper"
     id={undefined}
@@ -21,7 +47,7 @@ exports[`<FeatureSquare /> renders correctly 1`] = `
         onClick={undefined}
         type="button"
       >
-        Learn More
+        CLICK SOMETHING ALREADY!
       </button>
     </div>
   </div>

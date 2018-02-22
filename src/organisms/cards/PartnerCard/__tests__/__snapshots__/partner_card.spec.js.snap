@@ -6,7 +6,24 @@ exports[`<PartnerCard /> renders correctly 1`] = `
 >
   <div
     className="cell"
-  />
+  >
+    <span
+      className="icon-wrapper"
+      onClick={undefined}
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <img
+        alt="pencil"
+        className="img"
+        src="https://storage.googleapis.com/pg-static-assets/svgs/pencil.svg"
+      />
+    </span>
+  </div>
   <div
     className="cell"
   >

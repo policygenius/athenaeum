@@ -1,18 +1,18 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import FeatureSquare from 'molecules/FeatureSquare';
 
 describe('<FeatureSquare />', () => {
-  it('renders correctly', () => {
-    const wrapper = mount(<FeatureSquare />);
+  it('matches snapshot', () => {
+    const props = {
+      header: 'Header!',
+      subheader: 'Subheader!!!',
+      buttonText: 'CLICK SOMETHING ALREADY!',
+      icon: 'xIcon'
+    };
 
-    expect(wrapper.type()).toEqual(FeatureSquare);
-  });
-
-  it('renders correctly', () => {
-    const actual = renderer.create(<FeatureSquare />).toJSON();
+    const actual = renderer.create(<FeatureSquare {...props} />).toJSON();
 
     expect(actual).toMatchSnapshot();
   });

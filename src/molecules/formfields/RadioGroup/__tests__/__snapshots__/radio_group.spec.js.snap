@@ -22,6 +22,22 @@ exports[`<RadioGroup /> renders correctly 1`] = `
             onClick={[Function]}
           >
             <span
+              className="icon-wrapper tooltip-icon"
+              onClick={undefined}
+              style={
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <img
+                alt="tooltip"
+                className="img"
+                src="https://storage.googleapis.com/pg-static-assets/svgs/tooltip.svg"
+              />
+            </span>
+            <span
               className="hover-message right"
             >
               Hello friend

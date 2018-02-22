@@ -8,33 +8,40 @@ const includePaths = [
   path.resolve(__dirname, 'styleguide_assets'),
 ];
 
+const rules = [
+  {
+    test: /\.js$/,
+    include: includePaths,
+    use: [
+      {
+        loader: 'react-hot-loader/webpack'
+      }
+    ]
+  }
+];
+
+if (!process.env.IGNORE_LINT) {
+  rules.push({
+    test: /\.js$/,
+    include: includePaths,
+    enforce: 'pre',
+    use: [
+      {
+        loader: 'eslint-loader',
+        options: {
+          configFile: './.eslintrc',
+          emitWarning: true
+        }
+      }
+    ]
+  });
+}
+
+rules.merge;
+
 module.exports = baseConfig({
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: includePaths,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'eslint-loader',
-            options: {
-              configFile: './.eslintrc',
-              emitWarning: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.js$/,
-        include: includePaths,
-        use: [
-          {
-            loader: 'react-hot-loader/webpack'
-          }
-        ]
-      },
-    ]
+    rules
   },
   plugins: [
     new StyleLintPlugin({

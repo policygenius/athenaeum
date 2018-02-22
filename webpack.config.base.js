@@ -2,6 +2,7 @@ process.traceDeprecation = true;
 
 const path = require('path');
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const postCSSConfig = require('./postcss.config.js');
 const get = require('lodash/get');
 const assign = require('lodash/assign');
@@ -108,20 +109,23 @@ const baseRules = modulesName => [
 module.exports = (options) => {
   const rules = get(options, 'module.rules', []).concat(baseRules(options.modulesName));
 
-  if (!options.entry) {
-    rules.push(
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader',
-        options: {
-          classPrefix: 'svg-class-[hash:8]-',
-          idPrefix: 'svg-id-[hash:8]-',
-          removeTags: true,
-          removingTags: [ 'desc', 'defs', 'style' ],
-          removeSVGTagAttrs: true,
-          removingTagAttrs: [ 'xmlns', 'id', 'data-name', 'version', 'xlink', 'class' ]
-        }
-      }
+  const plugins = get(options, 'plugins', []).concat([
+    new ExtractTextPlugin({
+      filename: variant ? `assets/${variant}_styles.css` : 'assets/styles.css',
+      allChunks: true
+    })
+  ]);
+
+  if (process.env.ANALYZE) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        generateStatsFile: true,
+        reportFilename: `../webpack-bundle-report/report-${process.env.ANALYZE}${Date.now()}.html`,
+        statsFilename: `../webpack-bundle-report/stats-${process.env.ANALYZE}${Date.now()}.json`,
+        analyzerPort: 3000,
+        production: true,
+      })
     );
   }
 
@@ -140,11 +144,6 @@ module.exports = (options) => {
     module: {
       rules,
     },
-    plugins: get(options, 'plugins', []).concat([
-      new ExtractTextPlugin({
-        filename: variant ? `assets/${variant}_styles.css` : 'assets/styles.css',
-        allChunks: true
-      })
-    ])
+    plugins
   };
 };

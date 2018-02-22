@@ -5,16 +5,12 @@
   height: rem-calc(72px);
   display: inline-block;
 
-  /* stylelint-disable selector-pseudo-class-no-unknown */
-  // This class comes from our SVG dependency
-  :global {
-    .SVGInline-svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+  .img,
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
-  /* stylelint-enable selector-pseudo-class-no-unknown */
 }
 
 .inline {
@@ -23,6 +19,7 @@
   transform: translateY(-0.27ex);
 }
 
+// TODO: This component shouldn't be positioning itself like this.
 .left {
   margin-right: rem-calc(12);
 }
@@ -33,4 +30,36 @@
 
 .clickable {
   cursor: pointer;
+}
+
+/* stylelint-disable */
+:global(.icon-hover-example) {
+  svg path {
+    fill: color('secondary-2');
+    transition: all .3s;
+  }
+
+  &:hover {
+    transform: rotate(90deg);
+    border-right: 4px solid color('primary-1');
+    transition: all .3s;
+
+    svg path {
+      fill: color('primary-1');
+    }
+  }
+}
+:global(.example-pg-icon) {
+  svg path {
+    transition: all .3s;
+  }
+
+  &:hover {
+    transform: scale(-1, 1);
+    transition: all .3s;
+
+    svg path {
+      fill: color('primary-1');
+    }
+  }
 }

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This will get the names of all of the svgs in our static asset bucket
+# and prints it to svg.txt, which does NOT get checked in to VC.
+# You then have to manually copy them over to src/atoms/Icon/constants.js
+gsutil ls gs://pg-static-assets/svgs | rev | cut -d"/" -f1 | rev | cut -d"." -f1 | awk '{print "\x27"$1"\x27,"}' > svgs.txt

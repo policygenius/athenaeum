@@ -19,7 +19,7 @@ function renderStep(step, idx) {
       <a className={styles['wrapper']} href={step.link} onClick={step.onClick}>
         <span className={styles['icon-wrapper']}>
           <Icon icon={step.icon} className={styles['icon']} />
-          { step.complete && <Icon icon='checkMark' className={styles['check']} /> }
+          { step.complete && <Icon icon='checkMark-1' className={styles['check']} /> }
         </span>
         <TextComponent tag='span' className={styles['label']}>{step.label}</TextComponent>
       </a>

@@ -89,7 +89,9 @@
     'newline-per-chained-call': 0,
     'no-caller': 2,
     'no-confusing-arrow': 0,
-    'no-console': 2,
+    'no-console': [ 2, 
+      { allow: ["warn", "error"] }
+    ],
     'no-dupe-args': 2,
     'no-dupe-keys': 2,
     'no-duplicate-imports': 2,
