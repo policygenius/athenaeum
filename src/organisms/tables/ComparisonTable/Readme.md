@@ -1,76 +1,127 @@
-ComparisonTable Example:
-
 ```jsx
-  // Same content that goes inside the comparison rows.
-  const IconPg = <Icon icon='pgLogoOrange' width='120px' height='24px' />;
-  const IconMetLife = <Icon icon='metlife' width='120px' height='24px' />;
-  const comparePg = <LogoTextA line1='header' logo={IconPg} />;
-  const compareMetLife = <LogoTextA line1='header' logo={IconMetLife} />;
+const Premium = require('organisms/cards/SimplePolicyCard/Premium').Premium;
 
-  // When using this Component use its named imports.
-  // import ComparisonTable, { TableHeader, TableRow } from 'organisms/tables/ComparisonTable';
-  const TableHeader = require('organisms/tables/ComparisonTable').TableHeader;
-  const TableRow = require('organisms/tables/ComparisonTable').TableRow;
-
-  <ComparisonTable>
-    <TableHeader>
-      <Text tag='span' type={3} variant='underline' cols={6}>Why apply with us?</Text>
-
-      <LogoTextA
-        line1='Applying on'
-        logo={<Icon icon='metlife' width='120px' height='24px' />}
-        cols={3}
+<div>
+  <ComparisonTable.Table>
+    <ComparisonTable.Header>
+      <div>
+        <Icon
+          icon='policygeniusSymbol'
+        />
+      </div>
+      <div>
+        <Icon
+          icon='rclLogo'
+        />
+        <Button>Continue</Button>
+      </div>
+    </ComparisonTable.Header>
+    <ComparisonTable.Row
+      tooltip
+      subHeader='These prices are very close! Rates are very competitive right now, especially for people with your profile.'
+    >
+    <Text
+      type={7}
+      font='a'
+    >
+      Cost
+    </Text>
+      <Premium
+        premium={{
+          price: 32.49,
+          format: 'mo'
+        }}
       />
-
-      <LogoTextA
-        line1='Applying on'
-        logo={<Icon icon='pgLogoOrange' width='120px' height='24px' />}
-        cols={3}
+      <Premium
+        premium={{
+          price: 32.49,
+          format: 'mo'
+        }}
       />
-    </TableHeader>
+    </ComparisonTable.Row>
+    <ComparisonTable.Row
+      tooltip
+      subHeader='The amount of money your benficiaries would receive.'
+    >
+      <Text
+        type={7}
+        font='a'
+      >
+        Coverage Amount
+      </Text>
+      <Text
+        type={5}
+        font='a'
+      >
+        $500,000
+      </Text>
+    </ComparisonTable.Row>
+    <ComparisonTable.Row>
+      <Text
+        type={7}
+        font='a'
+      >
+        Term
+      </Text>
+      <Text
+        type={5}
+        font='a'
+      >
+        20 Years
+      </Text>
+    </ComparisonTable.Row>
 
-    <TableRow>
-      <TextC
-        line1='Best price promise'
-        line2='The same no matter where you buy; rates are regulated by the government'
-        cols={6}
-      />
+    <ComparisonTable.Row
+      tooltip
+      subHeader='BBB ratings are based on a companys treatment of its customers'
+    >
+      <Text
+        size={8}
+        font='a'
+      >
+        Customer Service
+      </Text>
+      <StarRating size={18} rating={5} />
+      <StarRating size={18} rating={5} />
+    </ComparisonTable.Row>
+  </ComparisonTable.Table>
 
-      <ComparisonRowItem label={compareMetLife} checked cols={3} />
-      <ComparisonRowItem label={comparePg} checked cols={3} />
-    </TableRow>
-
-    <TableRow>
-      <TextC
-        line1='Compare plans'
-        line2='Compare across multiple carriers to get the best policy at the right price'
-        cols={6}
-      />
-
-      <ComparisonRowItem label={compareMetLife} cols={3} />
-      <ComparisonRowItem label={comparePg} checked cols={3} />
-    </TableRow>
-
-    <TableRow>
-      <TextC
-        line1='Modern technology'
-        line2={"An easier and hassle-free application process so there's less work for you"}
-        cols={6}
-      />
-
-      <ComparisonRowItem label={compareMetLife} cols={3} />
-      <ComparisonRowItem label={comparePg} checked cols={3} />
-    </TableRow>
-
-    <TableRow>
-      <TextC
-        line1='Dedicated support'
-        line2='Our salaried customer support agents will give special attention to your application'
-        cols={6}
-      />
-
-      <ComparisonRowItem label={compareMetLife} cols={3} />
-      <ComparisonRowItem label={comparePg} checked cols={3} />
-    </TableRow>
-  </ComparisonTable>
+  <ComparisonTable.Table>
+    <ComparisonTable.Header>
+      <Text font='a' type={5}>Important Stuff</Text>
+      <div>
+        <Icon
+          icon='policygeniusSymbol'
+        />
+      </div>
+      <div>
+        <Icon
+          icon='rclLogo'
+        />
+        <Button>Continue</Button>
+      </div>
+    </ComparisonTable.Header>
+    <ComparisonTable.Row>
+    <Text
+      type={7}
+      font='a'
+    >
+      Very imporant stuff
+    </Text>
+    <Text>Applies to both of these carriers</Text>
+    </ComparisonTable.Row>
+    <ComparisonTable.Row
+      subHeader='Important to know but not super important'
+    >
+      <Text
+        type={7}
+        font='a'
+      >
+        Some stuff you should know
+      </Text>
+      <Text>Here's stuff you should know here</Text>
+      <Text>That is different from stuff you should know over here</Text>
+    </ComparisonTable.Row>
+  </ComparisonTable.Table>
+</div>
 ```
