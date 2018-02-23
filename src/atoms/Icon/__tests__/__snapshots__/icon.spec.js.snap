@@ -13,9 +13,8 @@ exports[`<Icon /> matches snapshot 1`] = `
 >
   <img
     alt="xIcon"
-    className="img lazyload"
+    className="img"
     data-src={false}
-    lazy={true}
     src="https://static.policygenius.com/svgs/xIcon.svg"
     title="xIcon"
   />

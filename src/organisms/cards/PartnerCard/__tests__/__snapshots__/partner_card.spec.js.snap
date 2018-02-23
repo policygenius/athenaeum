@@ -19,9 +19,8 @@ exports[`<PartnerCard /> renders correctly 1`] = `
     >
       <img
         alt="pencil"
-        className="img lazyload"
+        className="img"
         data-src={false}
-        lazy={true}
         src="https://static.policygenius.com/svgs/pencil.svg"
         title="pencil"
       />

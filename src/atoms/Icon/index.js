@@ -73,10 +73,9 @@ function Icon( props ) {
   return (
     <span {...wrapperProps} >
       <img
-        lazy={lazy}
         className={cx(
           styles.img,
-          lazy && 'lazyload'
+          isLazy && 'lazyload'
         )}
         alt={alt || sanitizedIcon}
         title={title || sanitizedIcon}
