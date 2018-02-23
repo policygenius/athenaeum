@@ -1,11 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SVG from 'react-inlinesvg';
-import classnames from 'classnames';
+import cx from 'classnames';
 import merge from 'lodash/merge';
 import { icons as ICONS } from './constants';
 
 import styles from './icons.module.scss';
+
+const checkLS = () => {
+  if (typeof window !== 'undefined' && !window.lazySizes) {
+    /* eslint-disable no-console */
+    console.warn('lazysizes not loaded.');
+    /* eslint-enable no-console */
+
+    return false;
+  }
+
+  return true;
+};
 
 function Icon( props ) {
   const {
@@ -15,14 +27,17 @@ function Icon( props ) {
     width,
     inline,
     icon,
+    lazy,
     renderSVGDOM,
+    alt,
+    title,
     ...rest
   } = props;
 
   if (!icon) { return null; }
 
   const wrapperProps = {
-    className: classnames(
+    className: cx(
       styles['icon-wrapper'],
       onClick && styles.clickable,
       inline && styles.inline,
@@ -37,9 +52,9 @@ function Icon( props ) {
     ...rest
   };
 
+  const isLazy = lazy && checkLS();
   const sanitizedIcon = icon.replace(/[^a-zA-Z0-9_-]/, '');
-
-  const src = `https://storage.googleapis.com/pg-static-assets/svgs/${sanitizedIcon}.svg`;
+  const src = `https://static.policygenius.com/svgs/${sanitizedIcon}.svg`;
 
   if ( typeof icon === 'string' && renderSVGDOM ) {
     return (
@@ -54,12 +69,20 @@ function Icon( props ) {
     );
   }
 
+  // lazyload css class comes from Img component
   return (
     <span {...wrapperProps} >
       <img
-        alt={sanitizedIcon}
-        className={styles.img}
-        src={src}
+        lazy={lazy}
+        className={cx(
+          styles.img,
+          lazy && 'lazyload'
+        )}
+        alt={alt || sanitizedIcon}
+        title={title || sanitizedIcon}
+        data-src={isLazy && src}
+        src={!isLazy && src}
+        {...rest}
       />
     </span>
   );
@@ -97,7 +120,23 @@ Icon.propTypes = {
   inline: PropTypes.oneOfType([
     PropTypes.oneOf([ 'left', 'right' ]),
     PropTypes.bool
-  ])
+  ]),
+  /**
+   * Set to false to turn off lazyloading.
+   */
+  lazy: PropTypes.bool,
+  /**
+   * Only for img, not for `renderSVGDOM`. Defaults to icon name.
+   */
+  alt: PropTypes.string,
+  /**
+   * Only for img, not for `renderSVGDOM`. Defaults to icon name.
+   */
+  title: PropTypes.string
+};
+
+Icon.defaultProps = {
+  lazy: true
 };
 
 export default Icon;

@@ -33,8 +33,11 @@ exports[`<RadioGroup /> renders correctly 1`] = `
             >
               <img
                 alt="tooltip"
-                className="img"
-                src="https://storage.googleapis.com/pg-static-assets/svgs/tooltip.svg"
+                className="img lazyload"
+                data-src={false}
+                lazy={true}
+                src="https://static.policygenius.com/svgs/tooltip.svg"
+                title="tooltip"
               />
             </span>
             <span
