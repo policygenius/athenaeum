@@ -1,6 +1,6 @@
 {
   "name": "athenaeum",
-  "version": "7.20.7",
+  "version": "8.0.0",
   "description": "PolicyGenius React Component Library (RCL)",
   "main": "lib/index.js",
   "scripts": {
@@ -165,7 +165,9 @@
     ]
   },
   "jest": {
-    "setupFiles":  [ "<rootDir>/jestSetup.js" ],
+    "setupFiles": [
+      "<rootDir>/jestSetup.js"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/jestConfig.js",
     "modulePaths": [
       "src"
