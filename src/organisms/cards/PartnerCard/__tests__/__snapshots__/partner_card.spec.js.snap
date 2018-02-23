@@ -19,8 +19,11 @@ exports[`<PartnerCard /> renders correctly 1`] = `
     >
       <img
         alt="pencil"
-        className="img"
-        src="https://storage.googleapis.com/pg-static-assets/svgs/pencil.svg"
+        className="img lazyload"
+        data-src={false}
+        lazy={true}
+        src="https://static.policygenius.com/svgs/pencil.svg"
+        title="pencil"
       />
     </span>
   </div>

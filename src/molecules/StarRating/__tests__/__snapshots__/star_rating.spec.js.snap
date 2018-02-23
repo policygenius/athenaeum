@@ -16,8 +16,11 @@ exports[`<StarRating /> renders correctly 1`] = `
   >
     <img
       alt="star"
-      className="img"
-      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+      className="img lazyload"
+      data-src={false}
+      lazy={true}
+      src="https://static.policygenius.com/svgs/star.svg"
+      title="star"
     />
   </span>
   <span
@@ -32,8 +35,11 @@ exports[`<StarRating /> renders correctly 1`] = `
   >
     <img
       alt="star"
-      className="img"
-      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+      className="img lazyload"
+      data-src={false}
+      lazy={true}
+      src="https://static.policygenius.com/svgs/star.svg"
+      title="star"
     />
   </span>
   <span
@@ -48,8 +54,11 @@ exports[`<StarRating /> renders correctly 1`] = `
   >
     <img
       alt="star"
-      className="img"
-      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+      className="img lazyload"
+      data-src={false}
+      lazy={true}
+      src="https://static.policygenius.com/svgs/star.svg"
+      title="star"
     />
   </span>
   <span
@@ -64,8 +73,11 @@ exports[`<StarRating /> renders correctly 1`] = `
   >
     <img
       alt="star"
-      className="img"
-      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+      className="img lazyload"
+      data-src={false}
+      lazy={true}
+      src="https://static.policygenius.com/svgs/star.svg"
+      title="star"
     />
   </span>
   <span
@@ -80,8 +92,11 @@ exports[`<StarRating /> renders correctly 1`] = `
   >
     <img
       alt="star"
-      className="img"
-      src="https://storage.googleapis.com/pg-static-assets/svgs/star.svg"
+      className="img lazyload"
+      data-src={false}
+      lazy={true}
+      src="https://static.policygenius.com/svgs/star.svg"
+      title="star"
     />
   </span>
 </span>

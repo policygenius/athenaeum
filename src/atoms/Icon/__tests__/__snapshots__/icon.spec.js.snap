@@ -13,8 +13,11 @@ exports[`<Icon /> matches snapshot 1`] = `
 >
   <img
     alt="xIcon"
-    className="img"
-    src="https://storage.googleapis.com/pg-static-assets/svgs/xIcon.svg"
+    className="img lazyload"
+    data-src={false}
+    lazy={true}
+    src="https://static.policygenius.com/svgs/xIcon.svg"
+    title="xIcon"
   />
 </span>
 `;
