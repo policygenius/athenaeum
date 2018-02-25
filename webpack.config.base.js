@@ -134,7 +134,7 @@ module.exports = (options) => {
     output: options.output,
     externals: options.externals,
     devtool: 'source-map',
-    context: path.resolve(__dirname, baseDir),
+    context: options.context || path.resolve(__dirname, baseDir),
     resolve: assign({
       modules: [
         path.resolve(__dirname, baseDir),
