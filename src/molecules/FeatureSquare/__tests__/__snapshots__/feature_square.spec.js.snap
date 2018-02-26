@@ -17,7 +17,7 @@ exports[`<FeatureSquare /> matches snapshot 1`] = `
     <img
       alt="xIcon"
       className="img"
-      data-src={false}
+      data-src={undefined}
       src="https://static.policygenius.com/svgs/xIcon.svg"
       title="xIcon"
     />
