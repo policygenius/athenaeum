@@ -20,7 +20,7 @@ exports[`<PartnerCard /> renders correctly 1`] = `
       <img
         alt="pencil"
         className="img"
-        data-src={false}
+        data-src={undefined}
         src="https://static.policygenius.com/svgs/pencil.svg"
         title="pencil"
       />

@@ -79,8 +79,8 @@ function Icon( props ) {
         )}
         alt={alt || sanitizedIcon}
         title={title || sanitizedIcon}
-        data-src={isLazy && src}
-        src={!isLazy && src}
+        data-src={isLazy ? src : undefined}
+        src={isLazy ? undefined : src}
         {...rest}
       />
     </span>
