@@ -54,7 +54,7 @@ function Icon( props ) {
 
   const isLazy = lazy && checkLS();
   const sanitizedIcon = icon.replace(/[^a-zA-Z0-9_-]/, '');
-  const src = `https://static.policygenius.com/svgs/${sanitizedIcon}.svg`;
+  const src = `https://static.policygenius.com/svgs/${sanitizedIcon}.svgz`;
 
   if ( typeof icon === 'string' && renderSVGDOM ) {
     return (

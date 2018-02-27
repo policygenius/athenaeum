@@ -18,7 +18,7 @@ exports[`<StarRating /> renders correctly 1`] = `
       alt="star"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svg"
+      src="https://static.policygenius.com/svgs/star.svgz"
       title="star"
     />
   </span>
@@ -36,7 +36,7 @@ exports[`<StarRating /> renders correctly 1`] = `
       alt="star"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svg"
+      src="https://static.policygenius.com/svgs/star.svgz"
       title="star"
     />
   </span>
@@ -54,7 +54,7 @@ exports[`<StarRating /> renders correctly 1`] = `
       alt="star"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svg"
+      src="https://static.policygenius.com/svgs/star.svgz"
       title="star"
     />
   </span>
@@ -72,7 +72,7 @@ exports[`<StarRating /> renders correctly 1`] = `
       alt="star"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svg"
+      src="https://static.policygenius.com/svgs/star.svgz"
       title="star"
     />
   </span>
@@ -90,7 +90,7 @@ exports[`<StarRating /> renders correctly 1`] = `
       alt="star"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svg"
+      src="https://static.policygenius.com/svgs/star.svgz"
       title="star"
     />
   </span>
