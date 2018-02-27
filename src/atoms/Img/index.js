@@ -80,9 +80,23 @@ function Img(props) {
     const defaultSrc = src || imgixSrcStr(imgixSrc);
 
     return (
-      <picture className={pictureClasses}>
-        { ( mobileImgixSrc || mobileSrc ) && <source srcSet={mobileSrc || imgixSrcStr(mobileImgixSrc)} media='(max-width: 767px)' />}
-        { ( tabletImgixSrc || tabletSrc ) && <source srcSet={tabletSrc || imgixSrcStr(tabletImgixSrc)} media='(max-width: 1024px)' />}
+      <picture className={cx(pictureClasses, isLazy && 'lazyload')}>
+        {
+          ( mobileImgixSrc || mobileSrc ) &&
+          <source
+            srcSet={isLazy ? undefined : mobileSrc || imgixSrcStr(mobileImgixSrc)}
+            data-srcset={isLazy ? mobileSrc || imgixSrcStr(mobileImgixSrc) : undefined}
+            media='(max-width: 767px)'
+          />
+        }
+        {
+          ( tabletImgixSrc || tabletSrc ) &&
+            <source
+              srcSet={isLazy ? undefined : tabletSrc || imgixSrcStr(tabletImgixSrc)}
+              data-srcset={isLazy ? tabletSrc || imgixSrcStr(tabletImgixSrc) : undefined}
+              media='(max-width: 1024px)'
+            />
+        }
         <img
           className={cx(styles.img, isLazy && 'lazyload')}
           alt={alt || createName(src || imgixSrc)}
