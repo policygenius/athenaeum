@@ -35,7 +35,7 @@ exports[`<RadioGroup /> renders correctly 1`] = `
                 alt="tooltip"
                 className="img"
                 data-src={undefined}
-                src="https://static.policygenius.com/svgs/tooltip.svg"
+                src="https://static.policygenius.com/svgs/tooltip.svgz"
                 title="tooltip"
               />
             </span>
