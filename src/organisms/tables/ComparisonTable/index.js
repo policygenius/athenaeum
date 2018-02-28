@@ -101,7 +101,7 @@ class TableRow extends React.Component {
       return (
         <Col key={idx} className={colClass}>
           {child}
-          <Tooltip className={styles['tooltip']}>{subHeader}</Tooltip>
+          <Tooltip className={styles['tooltip']} tooltipIconSize={18}>{subHeader}</Tooltip>
         </Col>
       );
     }
