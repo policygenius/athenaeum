@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SVG from 'react-inlinesvg';
 import cx from 'classnames';
-import merge from 'lodash/merge';
 import { icons as ICONS } from './constants';
 
 import styles from './icons.module.scss';
@@ -28,7 +26,6 @@ function Icon( props ) {
     inline,
     icon,
     lazy,
-    renderSVGDOM,
     alt,
     title,
     ...rest
@@ -55,19 +52,6 @@ function Icon( props ) {
   const isLazy = lazy && checkLS();
   const sanitizedIcon = icon.replace(/[^a-zA-Z0-9_-]/, '');
   const src = `https://static.policygenius.com/svgs/${sanitizedIcon}.svgz`;
-
-  if ( typeof icon === 'string' && renderSVGDOM ) {
-    return (
-      <SVG
-        src={src}
-        cacheGetRequests
-        onError={err => console.error(err)}
-        wrapper={svgProps =>
-          <span {...merge(svgProps, wrapperProps)} />
-        }
-      />
-    );
-  }
 
   // lazyload css class comes from Img component
   return (
@@ -98,10 +82,6 @@ Icon.propTypes = {
    */
   icon: PropTypes.oneOf(ICONS).isRequired,
   /**
-   * Render the full SVG DOM instead of an `<img />`
-   */
-  renderSVGDOM: PropTypes.bool,
-  /**
    * Click handler for the wrapper div around the svg
    */
   onClick: PropTypes.func,
@@ -125,11 +105,11 @@ Icon.propTypes = {
    */
   lazy: PropTypes.bool,
   /**
-   * Only for img, not for `renderSVGDOM`. Defaults to icon name.
+   * Defaults to icon name.
    */
   alt: PropTypes.string,
   /**
-   * Only for img, not for `renderSVGDOM`. Defaults to icon name.
+   * Defaults to icon name.
    */
   title: PropTypes.string
 };

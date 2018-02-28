@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import SVG from 'react-inlinesvg';
 import renderer from 'react-test-renderer';
 
 import Icon from 'atoms/Icon';
@@ -33,21 +32,7 @@ describe('<Icon />', () => {
 
       const wrapper = mount(<Icon {...props} />);
 
-      expect(wrapper.find(SVG)).toHaveLength(0);
       expect(wrapper.find('img')).toHaveLength(1);
-    });
-
-    describe('when the inline prop is true', () => {
-      it('renders the SVG component', () => {
-        const props = {
-          icon: 'xIcon',
-          renderSVGDOM: true
-        };
-
-        const wrapper = mount(<Icon {...props} />);
-
-        expect(wrapper.find(SVG)).toHaveLength(1);
-      });
     });
   });
 
