@@ -1,4 +1,3 @@
-$tooltip-width: ru(.5);
 $tooltip-shift-amount: 60%;
 $hover-message-shift: calc(50% - 3.06rem);
 
@@ -8,8 +7,6 @@ $hover-message-shift: calc(50% - 3.06rem);
 
 .tooltip {
   position: relative;
-  width: $tooltip-width;
-  height: $tooltip-width;
   cursor: help;
   display: inline-block;
 }
@@ -21,7 +18,7 @@ $hover-message-shift: calc(50% - 3.06rem);
   color: color('primary-3');
   font-weight: 400;
   opacity: 0;
-  padding: $tooltip-width;
+  padding: rem-calc(12px);
   position: absolute;
   text-align: left;
   top: calc(100% + 10px);

@@ -204,7 +204,7 @@ $border: 1px solid color('neutral-4');
     }
 
     .tooltip {
-      display: block;
+      display: flex;
       margin-left: rem-calc(6px);
     }
 

@@ -39,6 +39,7 @@ class Tooltip extends React.Component {
       text,
       hoverMessageClassName,
       inline,
+      tooltipIconSize,
     } = this.props;
 
     return (
@@ -57,6 +58,8 @@ class Tooltip extends React.Component {
                 icon='tooltip'
                 className={styles['tooltip']}
                 inline={inline}
+                height={`${tooltipIconSize}px`}
+                width={`${tooltipIconSize}px`}
               />
           }
           <span
@@ -121,6 +124,15 @@ Tooltip.propTypes = {
   inline: PropTypes.oneOf([
     'left', 'right',
   ]),
+
+  /**
+   * Changes height and width of default Tooltip icon. Provide a pixel amount as a number (without the units)
+   */
+  tooltipIconSize: PropTypes.number,
+};
+
+Tooltip.defaultProps = {
+  tooltipIconSize: 12,
 };
 
 export default Tooltip;
