@@ -12,17 +12,41 @@ import Tooltip from 'atoms/Tooltip';
 import styles from './comparison_table.module.scss';
 
 const ComparisonTable = (props) => {
-  const { children } = props;
+  const { children, expandable, expanded } = props;
+  const expandableClass = expandable && !expanded ? 'table-expandable' : false;
+  const tableClass = cx(
+    styles['comparison-table'],
+    expandableClass && styles[expandableClass]
+  );
 
   return (
-    <div className={styles['comparison-table']}>
-      { children }
+    <div className={tableClass}>
+      {
+        React.Children.map(children, child =>
+          React.isValidElement(child) ? React.cloneElement(child, { expandable, expanded }) : child
+        )
+      }
     </div>
   );
 };
 
 const TableHeader = (props) => {
-  const { children } = props;
+  const { children, expandable, expanded } = props;
+
+  if (expandable && !expanded) {
+    return (
+      <Layout
+        smallCols={[ 12 ]}
+        mediumCols={[ 8, 4 ]}
+      >
+        {
+          React.Children.map(children, (child, idx) =>
+            <Col key={idx} className={styles['header-expandable']}>{ child }</Col>
+          )
+        }
+      </Layout>
+    );
+  }
 
   if (React.Children.toArray(children).length === 2) {
     return (
@@ -173,6 +197,30 @@ TableRow.propTypes = {
    * Adds styling to TableRow to make it a TableHeader
    */
   header: PropTypes.bool,
+};
+
+ComparisonTable.propTypes = {
+  /**
+   * If true, allows for a header with an expand button. Must be used in conjunction with expanded.
+   */
+  expandable: PropTypes.bool,
+
+  /**
+   * Reference to expanded state. Must be passed in as prop with `expandable`. Used to decide which header to render.
+   */
+  expanded: PropTypes.bool,
+};
+
+TableHeader.propTypes = {
+  /**
+   * If true, allows for a header with an expand button. Must be used in conjunction with expanded.
+   */
+  expandable: PropTypes.bool,
+
+  /**
+   * Reference to expanded state. Must be passed in as prop with `expandable`. Used to decide which header to render.
+   */
+  expanded: PropTypes.bool,
 };
 
 export default {
