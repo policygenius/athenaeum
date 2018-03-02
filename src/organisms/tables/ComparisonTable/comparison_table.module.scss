@@ -6,7 +6,7 @@ $border: 1px solid color('neutral-4');
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
-  
+
   &.table-expandable {
     border-bottom: 0;
     background-color: color('neutral-5');
@@ -98,21 +98,28 @@ $border: 1px solid color('neutral-4');
     padding-top: rem-calc(60px);
 
     div {
+      position: relative;
+      width: 100%;
+
       > :first-of-type {
         margin-bottom: rem-calc(12px);
+
         /* stylelint-disable max-nesting-depth  */
         &:before {
-          box-shadow: -6px 0 color('primary-1');
+          background-color: color('primary-1');
           position: absolute;
           content: ' ';
-          left: rem-calc(6px);
-          padding: rem-calc(18px);
+          height: rem-calc(29px);
+          left: rem-calc(-24px);
+          top: 0;
+          width: rem-calc(6px);
           z-index: 100;
         }
         /* stylelint-enable */
       }
+
       > *:last-child {
-        text-align: left;
+        text-align: center;
       }
     }
   }
@@ -130,13 +137,19 @@ $border: 1px solid color('neutral-4');
     border-bottom: $border;
     position: relative;
     padding-top: rem-calc(60px);
+
     div, > p:first-of-type {
+      position: relative;
+      width: 100%;
+
       &:before {
-        box-shadow: -6px 0 color('primary-1');
+        background-color: color('primary-1');
         position: absolute;
         content: ' ';
-        left: rem-calc(6px);
-        padding: rem-calc(18px);
+        height: rem-calc(29px);
+        left: rem-calc(-18px);
+        top: 0;
+        width: rem-calc(6px);
         z-index: 100;
       }
     }
@@ -164,7 +177,7 @@ $border: 1px solid color('neutral-4');
     background: transparent;
     margin-bottom: rem-calc(36px);
     border-bottom: 0;
-    
+
     &.table-expandable {
       border: $border;
     }
@@ -259,6 +272,13 @@ $border: 1px solid color('neutral-4');
       padding-top: rem-calc(36px);
       justify-content: flex-start;
       text-align: left;
+
+      div, > p:first-of-type {
+        &:before {
+          height: rem-calc(34px);
+          left: rem-calc(-24px);
+        }
+      }
     }
 
     .header-expandable:nth-of-type( 1 ) {
@@ -272,6 +292,18 @@ $border: 1px solid color('neutral-4');
       div {
         :first-of-type {
           margin-bottom: rem-calc(6px);
+        }
+
+        > :first-of-type {
+          /* stylelint-disable max-nesting-depth  */
+          &:before {
+            height: rem-calc(34px);
+          }
+          /* stylelint-enable */
+        }
+
+        > *:last-child {
+          text-align: left;
         }
       }
     }
@@ -298,11 +330,26 @@ $border: 1px solid color('neutral-4');
 }
 
 @media #{$desktop} {
-  .col-header-2-cells {
-    padding: rem-calc(24px 84px);
-  }
+  .comparison-table {
+    .header-expandable:nth-of-type( 1 ) {
+      div {
+        > :first-of-type {
+          /* stylelint-disable max-nesting-depth  */
+          &:before {
+            height: rem-calc(40px);
+          }
+          /* stylelint-enable */
+        }
+      }
+    }
 
-  .no-floating-border {
-    padding: rem-calc(24px 84px);
+    .col-header-3-cells:nth-of-type( 1 ) {
+      div, > p:first-of-type {
+        &:before {
+          height: rem-calc(40px);
+          left: rem-calc(-24px);
+        }
+      }
+    }
   }
 }
