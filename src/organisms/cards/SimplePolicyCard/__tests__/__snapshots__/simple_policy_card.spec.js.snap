@@ -49,16 +49,42 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             Continue
           </button>
           <div
-            className="top-2"
+            className="size-12"
           />
-          <button
-            className="button outline"
-            disabled={undefined}
+          <div
+            className="checkbox-wrapper"
+            id="undefined-checkbox-wrapper"
             onClick={[Function]}
-            type="button"
           >
-            Compare
-          </button>
+            <p
+              className="primary-3 type-b-10-medium inherit"
+            >
+              Compare
+            </p>
+            <div
+              className="top-1"
+            />
+            <div
+              className="checkbox-field"
+            >
+              <label
+                className="checkbox"
+                htmlFor="checkbox-undefined"
+              >
+                <input
+                  checked={undefined}
+                  className="checkbox-input"
+                  id="checkbox-undefined"
+                  name={undefined}
+                  type="checkbox"
+                  value={undefined}
+                />
+                <span
+                  className="checkbox-label"
+                />
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>

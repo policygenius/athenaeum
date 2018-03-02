@@ -53,5 +53,10 @@ export default {
     onCompare: PropTypes.func.isRequired,
     compareSelected: PropTypes.bool,
     name: PropTypes.string,
-  })
+  }),
+
+  /**
+   * Boolean to toggle styling for Continue CTA if any other card in the group is selected
+   */
+  anyCardSelected: PropTypes.bool,
 };
