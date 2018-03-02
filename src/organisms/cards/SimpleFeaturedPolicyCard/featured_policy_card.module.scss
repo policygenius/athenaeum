@@ -11,6 +11,10 @@ $details-link-border: 1px solid #b2b2b2;
   flex-direction: column;
   height: 100%;
 
+  &.selected {
+    border: 1px solid color('secondary-2');
+  }
+
   .details-link {
     @include typography-7(false);
 
@@ -58,6 +62,16 @@ $details-link-border: 1px solid #b2b2b2;
   width: 100%;
   text-align: center;
   margin-top: auto;
+}
+
+.checkbox-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .checkbox-field {
+    margin-left: rem-calc(12px);
+  }
 }
 
 @media #{$small-only} {

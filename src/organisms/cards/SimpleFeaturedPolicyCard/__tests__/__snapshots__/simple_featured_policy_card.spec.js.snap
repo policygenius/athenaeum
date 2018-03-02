@@ -45,16 +45,42 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
         Continue
       </button>
       <div
-        className="top-2"
+        className="size-12"
       />
-      <button
-        className="button outline"
-        disabled={undefined}
-        onClick={undefined}
-        type="button"
+      <div
+        className="checkbox-wrapper"
+        id="a_unique_name-checkbox-wrapper"
+        onClick={[Function]}
       >
-        Compare
-      </button>
+        <p
+          className="primary-3 type-b-10-medium inherit"
+        >
+          Compare
+        </p>
+        <div
+          className="top-1"
+        />
+        <div
+          className="checkbox-field"
+        >
+          <label
+            className="checkbox"
+            htmlFor="checkbox-a_unique_name"
+          >
+            <input
+              checked={false}
+              className="checkbox-input"
+              id="checkbox-a_unique_name"
+              name="a_unique_name"
+              type="checkbox"
+              value={false}
+            />
+            <span
+              className="checkbox-label"
+            />
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </div>

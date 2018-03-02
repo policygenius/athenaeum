@@ -14,7 +14,12 @@ describe('<SimpleFeaturedPolicyCard />', () => {
         price: 19.8,
         format: 'mo'
       },
-      onDetails: jest.fn()
+      onDetails: jest.fn(),
+      compareCheckbox: {
+        onCompare: jest.fn(),
+        compareSelected: false,
+        name: 'a_unique_name',
+      }
     };
   });
 

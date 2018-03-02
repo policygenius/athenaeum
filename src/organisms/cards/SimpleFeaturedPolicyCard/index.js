@@ -15,11 +15,12 @@ function SimpleFeaturedPolicyCard(props) {
     premium,
     carrierLogo,
     onContinue,
-    onCompare,
+    compareCheckbox
   } = props;
 
   const classes = [
     styles['featured-policy-card'],
+    compareCheckbox.compareSelected && styles['selected'],
     className,
   ];
 
@@ -51,7 +52,7 @@ function SimpleFeaturedPolicyCard(props) {
 
         <ButtonGroup
           onContinue={onContinue}
-          onCompare={onCompare}
+          {...compareCheckbox}
         />
       </div>
     </div>
@@ -111,9 +112,15 @@ SimpleFeaturedPolicyCard.propTypes = {
   onDetails: PropTypes.func,
 
   /**
-   * Function supplied to compare CTA on mobile only
+   * Props for the Checkbox to compare
+   *
+   * NOTE: `name` must be unique
    */
-  onCompare: PropTypes.func,
+  compareCheckbox: PropTypes.shape({
+    onCompare: PropTypes.func.isRequired,
+    compareSelected: PropTypes.bool,
+    name: PropTypes.string,
+  }),
 
   /**
    * Supplies information about policy to card. Examples would include type, financial strength or total customers

@@ -18,6 +18,10 @@ $footer: #f6f6f6;
   border: 1px solid $border;
   background-color: color('neutral-8');
   display: none;
+
+  &.selected {
+    border: 1px solid color('secondary-2');
+  }
 }
 
 .body {

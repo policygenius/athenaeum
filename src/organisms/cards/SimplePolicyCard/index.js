@@ -16,8 +16,15 @@ function SimplePolicyCard(props) {
     premium,
     onContinue,
     compareCheckbox,
-    className
+    className,
+    anyCardSelected,
   } = props;
+
+  const policyCardClasses = classnames(
+    styles['policy-card'],
+    compareCheckbox.compareSelected && styles['selected'],
+    className
+  );
 
   return (
     <div>
@@ -26,10 +33,10 @@ function SimplePolicyCard(props) {
           premium={premium}
           carrierLogo={carrierLogo}
           onContinue={onContinue}
-          onCompare={compareCheckbox.onCompare}
+          compareCheckbox={compareCheckbox}
         />
       </div>
-      <div className={classnames(styles['policy-card'], className)}>
+      <div className={policyCardClasses}>
         <div className={styles['body']}>
           <Compare {...compareCheckbox} />
           <div className={styles['divider']} />
@@ -40,6 +47,7 @@ function SimplePolicyCard(props) {
             onContinue={onContinue}
             onCompare={compareCheckbox.onCompare}
             premium={premium}
+            selected={compareCheckbox.compareSelected || anyCardSelected}
           />
         </div>
       </div>
