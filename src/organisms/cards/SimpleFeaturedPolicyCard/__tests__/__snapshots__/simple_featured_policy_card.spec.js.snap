@@ -26,61 +26,9 @@ exports[`<SimpleFeaturedPolicyCard /> renders correctly 1`] = `
       className="size-24"
     />
     <div
-      className="carrier-logo"
+      className="carrier-info"
     >
       <div />
-    </div>
-    <div
-      className="size-36"
-    />
-    <div
-      className="button-group"
-    >
-      <button
-        className="button"
-        disabled={undefined}
-        onClick={undefined}
-        type="button"
-      >
-        Continue
-      </button>
-      <div
-        className="size-12"
-      />
-      <div
-        className="checkbox-wrapper"
-        id="a_unique_name-checkbox-wrapper"
-        onClick={[Function]}
-      >
-        <p
-          className="primary-3 type-b-10-medium inherit"
-        >
-          Compare
-        </p>
-        <div
-          className="top-1"
-        />
-        <div
-          className="checkbox-field"
-        >
-          <label
-            className="checkbox"
-            htmlFor="checkbox-a_unique_name"
-          >
-            <input
-              checked={false}
-              className="checkbox-input"
-              id="checkbox-a_unique_name"
-              name="a_unique_name"
-              type="checkbox"
-              value={false}
-            />
-            <span
-              className="checkbox-label"
-            />
-          </label>
-        </div>
-      </div>
     </div>
   </div>
 </div>

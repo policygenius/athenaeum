@@ -13,7 +13,7 @@
         format: 'mo',
         defaultText: 'Quote available from a PolicyGenius expert'
       }}
-      onDetails={() => alert('details button clicked')}
+      onContinue={() => alert('continue button clicked')}
       compareCheckbox={{
         onCompare: (e) => setState({ compare: e.target.checked }),
         compareSelected: state.compare,

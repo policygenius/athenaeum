@@ -31,7 +31,7 @@ $details-link-border: 1px solid #b2b2b2;
 }
 
 .content {
-  padding: ru(1);
+  padding: rem-calc(36px) rem-calc(24px);
   background-color: color('primary-2');
   border-radius: $radius;
   display: flex;
@@ -42,6 +42,10 @@ $details-link-border: 1px solid #b2b2b2;
 }
 
 .premium {
+  text-align: center;
+}
+
+.carrier-info {
   text-align: center;
 }
 

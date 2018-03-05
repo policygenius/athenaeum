@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
 
 import Button from 'atoms/Button';
 import LinkWrapper from 'atoms/LinkWrapper';
@@ -14,12 +15,28 @@ function ButtonGroup(props) {
   const {
     onContinue,
     onDetails,
-    onCompare,
     continueCTAText,
     detailsCTAText,
-    compareSelected,
-    name
+    compareCheckbox,
   } = props;
+
+  if (isEmpty(compareCheckbox)) {
+    return (
+      <div className={styles['button-group']}>
+        <Button
+          onClick={onContinue}
+        >
+          {continueCTAText}
+        </Button>
+      </div>
+    );
+  }
+
+  const {
+    compareSelected,
+    onCompare,
+    name,
+  } = compareCheckbox;
 
   return (
     <div className={styles['button-group']}>
@@ -71,11 +88,13 @@ function ButtonGroup(props) {
 ButtonGroup.propTypes = {
   onContinue: PropTypes.func.isRequired,
   onDetails: PropTypes.func,
-  onCompare: PropTypes.func,
   continueCTAText: PropTypes.string,
   detailsCTAText: PropTypes.string,
-  compareSelected: PropTypes.bool,
-  name: PropTypes.string,
+  compareCheckbox: PropTypes.shape({
+    onCompare: PropTypes.func.isRequired,
+    compareSelected: PropTypes.bool,
+    name: PropTypes.string,
+  }),
 };
 
 ButtonGroup.defaultProps = {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import accounting from 'accounting';
+import get from 'lodash/get';
 
 import Text from 'atoms/Text';
 import Spacer from 'atoms/Spacer';
@@ -15,12 +16,15 @@ function SimpleFeaturedPolicyCard(props) {
     premium,
     carrierLogo,
     onContinue,
-    compareCheckbox
+    compareCheckbox,
+    continueCTAText
   } = props;
+
+  const selected = get(compareCheckbox, 'compareSelected', null);
 
   const classes = [
     styles['featured-policy-card'],
-    compareCheckbox.compareSelected && styles['selected'],
+    selected && styles['selected'],
     className,
   ];
 
@@ -37,6 +41,8 @@ function SimpleFeaturedPolicyCard(props) {
             >
               {formattedPremium} <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
+
+            {premium.tooltip}
           </div>
           :
           <Text type={7} font='a'>{premium.defaultText}</Text>
@@ -44,16 +50,29 @@ function SimpleFeaturedPolicyCard(props) {
 
         <Spacer size={24} />
 
-        <div className={styles['carrier-logo']}>
-          { carrierLogo }
-        </div>
+        {
+          carrierLogo.type !== 'img' ?
+            <div className={styles['carrier-info']}>
+              { carrierLogo }
+            </div>
+            :
+            <div className={styles['carrier-logo']}>
+              { carrierLogo }
+            </div>
+        }
 
-        <Spacer size={36} />
 
-        <ButtonGroup
-          onContinue={onContinue}
-          {...compareCheckbox}
-        />
+        {
+          onContinue &&
+            [
+              <Spacer size={36} />,
+              <ButtonGroup
+                onContinue={onContinue}
+                compareCheckbox={compareCheckbox}
+                continueCTAText={continueCTAText}
+              />
+            ]
+        }
       </div>
     </div>
   );
