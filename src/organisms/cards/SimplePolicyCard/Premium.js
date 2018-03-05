@@ -22,6 +22,8 @@ export const Premium = ({ premium }) => {
         :
           <Text type={7} font='a'>{premium.defaultText}</Text>
       }
+
+      {premium.tooltip}
     </div>
   );
 };

@@ -1,7 +1,6 @@
 ### SimplePolicyCard Example:
 
 ```jsx
-  <div>
     <SimplePolicyCard
       carrierLogo={
         <img
@@ -22,9 +21,11 @@
         name: 'unique-name'
       }}
     />
+```
 
-    <Spacer size={24} />
+Selected Example:
 
+```jsx
     <SimplePolicyCard
       carrierLogo={
         <img
@@ -45,5 +46,52 @@
         name: 'unique-name-2'
       }}
     />
-  </div>
+```
+
+No Compare Example:
+
+```jsx
+    <SimplePolicyCard
+      carrierLogo={
+        <Text font='a' type={7}>Multiple companies available</Text>
+      }
+      premium={{
+        price: 13,
+        format: 'mo',
+        defaultText: 'Quote available from a PolicyGenius expert',
+        tooltip:
+          <Tooltip text={<LinkWrapper type='secondary'>approx.</LinkWrapper>}>
+            <div>
+              <Text font='a' type={10}>This is a header</Text>
+              <Spacer size={12} />
+              <Text type={10}>And here's more additional text</Text>
+            </div>
+          </Tooltip>
+      }}
+      onContinue={() => alert('continue button clicked')}
+      continueCTAText='Learn more'
+    />
+```
+
+No CTA Example:
+
+```jsx
+    <SimplePolicyCard
+      carrierLogo={
+        <Text font='a' type={7}>Multiple companies available</Text>
+      }
+      premium={{
+        price: 13,
+        format: 'mo',
+        defaultText: 'Quote available from a PolicyGenius expert',
+        tooltip:
+          <Tooltip text={<LinkWrapper type='secondary'>approx.</LinkWrapper>}>
+            <div>
+              <Text font='a' type={10}>This is a header</Text>
+              <Spacer size={12} />
+              <Text type={10}>And here's more additional text</Text>
+            </div>
+          </Tooltip>
+      }}
+    />
 ```

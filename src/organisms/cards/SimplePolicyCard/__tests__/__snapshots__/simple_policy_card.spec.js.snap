@@ -30,27 +30,25 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
           className="size-24"
         />
         <div
-          className="carrier-logo"
+          className="carrier-info"
         >
           <div />
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="policy-card"
+  >
+    <div
+      className="body"
+    >
+      <div
+        className="compare-logo-section"
+      >
         <div
-          className="size-36"
-        />
-        <div
-          className="button-group"
+          className="hide compare small"
         >
-          <button
-            className="button"
-            disabled={undefined}
-            onClick={undefined}
-            type="button"
-          >
-            Continue
-          </button>
-          <div
-            className="size-12"
-          />
           <div
             className="checkbox-wrapper"
             id="undefined-checkbox-wrapper"
@@ -64,79 +62,29 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             <div
               className="top-1"
             />
-            <div
-              className="checkbox-field"
+            <label
+              className="checkbox"
+              htmlFor="checkbox-undefined"
             >
-              <label
-                className="checkbox"
-                htmlFor="checkbox-undefined"
-              >
-                <input
-                  checked={undefined}
-                  className="checkbox-input"
-                  id="checkbox-undefined"
-                  name={undefined}
-                  type="checkbox"
-                  value={undefined}
-                />
-                <span
-                  className="checkbox-label"
-                />
-              </label>
-            </div>
+              <input
+                checked={undefined}
+                className="checkbox-input"
+                id="checkbox-undefined"
+                name={undefined}
+                type="checkbox"
+                value={undefined}
+              />
+              <span
+                className="checkbox-label"
+              />
+            </label>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="policy-card"
-  >
-    <div
-      className="body"
-    >
-      <div
-        className="hide compare small"
-      >
         <div
-          className="checkbox-wrapper"
-          id="undefined-checkbox-wrapper"
-          onClick={[Function]}
-        >
-          <p
-            className="primary-3 type-b-10-medium inherit"
-          >
-            Compare
-          </p>
-          <div
-            className="top-1"
-          />
-          <label
-            className="checkbox"
-            htmlFor="checkbox-undefined"
-          >
-            <input
-              checked={undefined}
-              className="checkbox-input"
-              id="checkbox-undefined"
-              name={undefined}
-              type="checkbox"
-              value={undefined}
-            />
-            <span
-              className="checkbox-label"
-            />
-          </label>
-        </div>
-      </div>
-      <div
-        className="divider"
-      />
-      <div
-        className="carrier-logo"
-      >
+          className="divider"
+        />
         <div
-          className="carrier-img"
+          className="carrier-logo"
         >
           <div />
         </div>
@@ -158,35 +106,6 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             /MO
           </span>
         </p>
-      </div>
-      <div
-        className="actions"
-      >
-        <div
-          className="layout"
-          id={undefined}
-          style={
-            Object {
-              "width": "100%",
-            }
-          }
-        >
-          <div
-            className="col col-sm-12 fullwidth border-neutral-6"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
-          >
-            <button
-              className="button"
-              disabled={undefined}
-              onClick={undefined}
-              type="button"
-            >
-              Continue
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>

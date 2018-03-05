@@ -1,5 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 
 import SimpleFeaturedPolicyCard from 'organisms/cards/SimpleFeaturedPolicyCard';
 
@@ -18,11 +20,14 @@ function SimplePolicyCard(props) {
     compareCheckbox,
     className,
     anyCardSelected,
+    continueCTAText,
   } = props;
+
+  const selected = get(compareCheckbox, 'compareSelected', null);
 
   const policyCardClasses = classnames(
     styles['policy-card'],
-    compareCheckbox.compareSelected && styles['selected'],
+    selected && styles['selected'],
     className
   );
 
@@ -34,21 +39,33 @@ function SimplePolicyCard(props) {
           carrierLogo={carrierLogo}
           onContinue={onContinue}
           compareCheckbox={compareCheckbox}
+          continueCTAText={continueCTAText}
         />
       </div>
       <div className={policyCardClasses}>
         <div className={styles['body']}>
-          <Compare {...compareCheckbox} />
-          <div className={styles['divider']} />
-          <CarrierLogo carrierLogo={carrierLogo} />
+          <div className={styles['compare-logo-section']}>
+            {
+              !isEmpty(compareCheckbox) ?
+              [
+                <Compare {...compareCheckbox} />,
+                <div className={styles['divider']} />
+              ]
+              :
+              null
+            }
+            <CarrierLogo carrierLogo={carrierLogo} />
+          </div>
           <div className={styles['divider']} />
           <Premium premium={premium} />
-          <PolicyActions
-            onContinue={onContinue}
-            onCompare={compareCheckbox.onCompare}
-            premium={premium}
-            selected={compareCheckbox.compareSelected || anyCardSelected}
-          />
+          {
+            onContinue &&
+              <PolicyActions
+                onContinue={onContinue}
+                selected={selected || anyCardSelected}
+                continueCTAText={continueCTAText}
+              />
+          }
         </div>
       </div>
     </div>

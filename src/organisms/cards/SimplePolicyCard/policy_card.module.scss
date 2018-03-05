@@ -30,6 +30,11 @@ $footer: #f6f6f6;
   align-items: center;
 }
 
+.compare-logo-section {
+  display: flex;
+  flex: 1 1 37.5%;
+}
+
 .divider {
   height: ru(3.25);
   border-left: 1px solid $border;
@@ -172,9 +177,8 @@ $footer: #f6f6f6;
   }
 
   .compare {
-    @include section(0, 17.5%, true);
     label { margin-left: rem-calc(8px); }
-    padding: 0;
+    padding: 0 rem-calc(30px);
   }
 
   .carrier-logo {

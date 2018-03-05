@@ -43,7 +43,7 @@ export default {
   /**
    * Click handler for details button
    */
-  onDetails: PropTypes.func.isRequired,
+  onDetails: PropTypes.func,
   /**
    * Props for the Checkbox to compare
    *
