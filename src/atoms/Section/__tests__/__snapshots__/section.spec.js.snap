@@ -6,7 +6,7 @@ exports[`<Section /> renders correctly 1`] = `
   id={undefined}
   style={
     Object {
-      "backgroundImage": "url(undefined)",
+      "backgroundImage": undefined,
     }
   }
 >
