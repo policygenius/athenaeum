@@ -36,7 +36,7 @@ function Section(props) {
       className={classnames(...classes)}
       style={{
         ...style,
-        backgroundImage: `url(${backgroundImageUrl})`
+        backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : undefined
       }}
     >
       <div className={styles.wrapper}>
