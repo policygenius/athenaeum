@@ -22,7 +22,7 @@ const renderChoices = (choices, input) => {
   if (!choices) return null;
 
   const renderChoice = (choice, idx) => {
-    const variantName = () => toBoolean(input.value) == toBoolean(choice.value) ? 'toggle-selected' : 'toggle';  // eslint-disable-line
+    const variantName = () => toBoolean(input.value) === toBoolean(choice.value) ? 'toggle-selected' : 'toggle';  // eslint-disable-line
 
     return (
       <Button
