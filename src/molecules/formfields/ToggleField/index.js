@@ -11,17 +11,18 @@ import { renderTooltip } from 'utils/fieldUtils';
 
 import styles from './toggle_field.module.scss';
 
+export const toBoolean = (value) => {
+  if (value === 'false') { return false; }
+  if (value === 'true') { return true; }
+
+  return value;
+};
+
 const renderChoices = (choices, input) => {
   if (!choices) return null;
 
   const renderChoice = (choice, idx) => {
-    const variantName = () => {
-      if (input.value) {
-        return input.value == choice.value ? 'toggle-selected' : 'toggle';  // eslint-disable-line
-      }
-
-      return 'toggle';
-    };
+    const variantName = () => toBoolean(input.value) == toBoolean(choice.value) ? 'toggle-selected' : 'toggle';  // eslint-disable-line
 
     return (
       <Button
