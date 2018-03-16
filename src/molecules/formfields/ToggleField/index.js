@@ -51,6 +51,8 @@ function ToggleField( props ) {
     input,
     meta,
     noBorder,
+    nested,
+    sideBySide,
   } = props;
 
   const classes = [
@@ -64,10 +66,14 @@ function ToggleField( props ) {
 
   const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
 
+  const buttonStyle = sideBySide ? styles['side-by-side'] : styles['button-wrapper'];
+
   return (
     <div>
       <div className={classnames(...classes)}>
-        <Layout>
+        <Layout
+          nested={nested}
+        >
           { label &&
             <Col className={styles['header']}>
               { tooltip &&
@@ -79,7 +85,7 @@ function ToggleField( props ) {
             </Col>
           }
           { children && <Col className={styles['body']}>{children}</Col> }
-          <Col className={styles['button-wrapper']}>
+          <Col className={buttonStyle}>
             { renderChoices(toggleChoices, input) }
           </Col>
         </Layout>
@@ -137,6 +143,16 @@ ToggleField.propTypes = {
    * Removes border surrouding label and buttons
    */
   noBorder: PropTypes.bool,
+
+  /**
+   * When present, nested is a prop passed directly to the layout component wrapping the ToggleField to remove ~6px left/right margin.
+  **/
+  nested: PropTypes.bool,
+
+  /** When present, sideBySide prop keeps buttons side-by-side on mobile
+   *
+  **/
+  sideBySide: PropTypes.bool,
 };
 
 export default ToggleField;
