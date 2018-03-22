@@ -28,6 +28,7 @@ module.exports = {
     'car',
     'cart',
     'chat',
+    'checkCircle',
     'checkMark-1',
     'checklist',
     'checklistFolded',
