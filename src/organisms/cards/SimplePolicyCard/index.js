@@ -46,13 +46,11 @@ function SimplePolicyCard(props) {
         <div className={styles['body']}>
           <div className={styles['compare-logo-section']}>
             {
-              !isEmpty(compareCheckbox) ?
-              [
-                <Compare {...compareCheckbox} />,
+              !isEmpty(compareCheckbox) &&
+              <React.Fragment>
+                <Compare {...compareCheckbox} />
                 <div className={styles['divider']} />
-              ]
-              :
-              null
+              </React.Fragment>
             }
             <CarrierLogo carrierLogo={carrierLogo} />
           </div>

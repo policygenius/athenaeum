@@ -84,6 +84,7 @@ function renderPhoneInfo(phoneNumber, hours) {
         {
           hours && hours.map(hour =>
             <Text
+              key={hour}
               size={10}
               font='b'
             >

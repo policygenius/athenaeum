@@ -64,14 +64,14 @@ function SimpleFeaturedPolicyCard(props) {
 
         {
           onContinue &&
-            [
-              <Spacer size={36} />,
+            <React.Fragment>
+              <Spacer size={36} />
               <ButtonGroup
                 onContinue={onContinue}
                 compareCheckbox={compareCheckbox}
                 continueCTAText={continueCTAText}
               />
-            ]
+            </React.Fragment>
         }
       </div>
     </div>

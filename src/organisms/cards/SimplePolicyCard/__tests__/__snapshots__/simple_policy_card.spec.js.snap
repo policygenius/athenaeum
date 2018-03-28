@@ -47,7 +47,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
         className="compare-logo-section"
       >
         <div
-          className="hide compare small"
+          className="hide compare mobile"
         >
           <div
             className="checkbox-wrapper"
