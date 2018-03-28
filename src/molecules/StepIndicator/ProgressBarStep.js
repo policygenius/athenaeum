@@ -13,13 +13,13 @@ export default class ProgressBarStep extends Component {
     if (step.currentStepActive) {
       return {
         color: 'primary-3',
-        weight: 'semibold',
+        bold: true,
       };
     }
 
     return {
       color: 'neutral-3',
-      weight: 'semibold'
+      bold: true
     };
   }
 

@@ -23,7 +23,7 @@ export const PolicyActions = (props) => {
 
 PolicyActions.propTypes = {
   onContinue: PropTypes.func.isRequired,
-  continueCTAText: PropTypes.func,
+  continueCTAText: PropTypes.string,
   onDetails: PropTypes.func,
   selected: PropTypes.bool,
 };

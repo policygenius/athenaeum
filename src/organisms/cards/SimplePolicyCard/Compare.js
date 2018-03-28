@@ -8,7 +8,7 @@ import CheckBoxField from 'molecules/formfields/CheckBoxField';
 import styles from './policy_card.module.scss';
 
 const Compare = ({ compareSelected, onCompare, name }) =>
-  <Hide hideOn='small' className={styles['compare']}>
+  <Hide hideOn='mobile' className={styles['compare']}>
     <div
       id={`${name}-checkbox-wrapper`}
       className={styles['checkbox-wrapper']}
