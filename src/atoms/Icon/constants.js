@@ -37,6 +37,7 @@ module.exports = {
     'chevronLeft',
     'chevronRight',
     'chevronUp',
+    'circlePlus',
     'clock',
     'close',
     'closeAccent',
