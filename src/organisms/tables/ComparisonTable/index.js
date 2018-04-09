@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -12,7 +13,7 @@ import Tooltip from 'atoms/Tooltip';
 import styles from './comparison_table.module.scss';
 
 const ComparisonTable = (props) => {
-  const { children, expandable, expanded } = props;
+  const { children, expandable, expanded, tableItems } = props;
   const expandableClass = expandable && !expanded ? 'table-expandable' : false;
   const tableClass = cx(
     styles['comparison-table'],
@@ -23,58 +24,116 @@ const ComparisonTable = (props) => {
     <div className={tableClass}>
       {
         React.Children.map(children, child =>
-          React.isValidElement(child) ? React.cloneElement(child, { expandable, expanded }) : child
+          React.isValidElement(child) ? React.cloneElement(child, { expandable, expanded, tableItems }) : child
         )
       }
     </div>
   );
 };
 
-const TableHeader = (props) => {
-  const { children, expandable, expanded } = props;
+class TableHeader extends React.Component {
+  get headerToRender() {
+    const {
+      children,
+      tableItems,
+      showMissing,
+    } = this.props;
 
-  if (expandable && !expanded) {
-    return (
-      <Layout
-        smallCols={[ 12 ]}
-        mediumCols={[ 8, 4 ]}
-      >
-        {
-          React.Children.map(children, (child, idx) =>
-            <Col key={idx} className={styles['header-expandable']}>{ child }</Col>
-          )
-        }
-      </Layout>
-    );
+    const childrenArray = React.Children.toArray(children);
+
+    if (showMissing && tableItems === 1 && childrenArray.length === 1) {
+      return childrenArray.concat([ <Col /> ]);
+    }
+
+    return childrenArray;
   }
 
-  if (React.Children.toArray(children).length === 2) {
-    return (
-      <Layout
-        className={styles['header-2-row']}
-        smallCols={[ 12, 6, 6 ]}
-        mediumCols={[ 4 ]}
-      >
-        <Col className={styles['col-header-2-cells-offset']} />
+  get offsetLayoutProps() {
+    const {
+      tableItems,
+      showMissing,
+    } = this.props;
 
-        {
-          React.Children.map(children, (child, idx) =>
-            <Col key={idx} className={styles['col-header-2-cells']}>{ child }</Col>
-          )
-        }
-      </Layout>
+    const classes = cx(
+      styles['row-offset-header'],
+      tableItems === 1 && styles['row-single-item-offset-header'],
+      showMissing && tableItems === 1 && styles['row-single-item-offset-header-show']
     );
+
+    if (tableItems === 1) {
+      if (showMissing) {
+        return {
+          className: classes,
+          smallCols: [ 12 ],
+          mediumCols: [ 4 ]
+        };
+      }
+
+      return {
+        className: classes,
+        smallCols: [ 12 ],
+        mediumCols: [ 4, 8 ]
+      };
+    }
+
+    return {
+      className: classes,
+      smallCols: [ 12, 6, 6 ],
+      mediumCols: [ 4 ]
+    };
   }
 
-  return (
-    <TableRow
-      {...props}
-      header
-    >
-      { children }
-    </TableRow>
-  );
-};
+  render() {
+    const { children, expandable, expanded, offset, tableItems, showMissing } = this.props;
+
+    if (expandable && !expanded) {
+      return (
+        <Layout
+          smallCols={[ 12 ]}
+          mediumCols={[ 8, 4 ]}
+        >
+          {
+            React.Children.map(children, (child, idx) =>
+              <Col key={idx} className={styles['header-expandable']}>{ child }</Col>
+            )
+          }
+        </Layout>
+      );
+    }
+
+    if (offset) {
+      const layoutProps = this.offsetLayoutProps;
+
+      return (
+        <Layout
+          {...layoutProps}
+        >
+          <Col className={styles['col-offset-header']} />
+
+          {
+            this.headerToRender.map((child, idx) =>
+              <Col key={idx} className={styles['col-offset-header-cells']}>{ child }</Col>
+            )
+          }
+        </Layout>
+      );
+    }
+
+    return (
+      <TableRow
+        {...this.props}
+        header
+      >
+        { children }
+
+        {
+          showMissing && tableItems === 1 &&
+            <Col />
+        }
+      </TableRow>
+    );
+  }
+}
 
 class TableRow extends React.Component {
   get childrenArray() {
@@ -86,7 +145,7 @@ class TableRow extends React.Component {
   get colClass() {
     const { header } = this.props;
 
-    const className = header ? 'col-header-3-cells' : 'cell';
+    const className = header ? 'col-header-cells' : 'cell';
     const addFloatingBorder = this.childrenArray.length === 3 && !header ? 'floating-border' : 'no-floating-border';
 
     return cx(
@@ -95,12 +154,49 @@ class TableRow extends React.Component {
     );
   }
 
+  get rowClass() {
+    const {
+      header,
+      tableItems,
+      showMissing,
+      highlightMissing,
+      outlineMissing,
+    } = this.props;
+
+    return (
+      cx(
+        styles.row,
+        tableItems === 1 && styles['row-single-item'],
+        (tableItems === 1 && showMissing) && styles['row-single-item-show'],
+        (tableItems === 1 && outlineMissing) && styles['row-single-item-outline'],
+        (tableItems === 1 && highlightMissing) && styles['row-single-item-highlight'],
+        header && styles['row-header']
+      )
+    );
+  }
+
   get layoutProps() {
-    const { header } = this.props;
+    const { tableItems, showMissing } = this.props;
 
-    const className = cx(styles.row, header && styles['header-3-row']);
+    const className = this.rowClass;
 
-    if (this.childrenArray.length === 2) {
+    if (this.childrenArray.length === 2 && tableItems === 2) {
+      return {
+        className,
+        smallCols: [ 12 ],
+        mediumCols: [ 4, 8 ]
+      };
+    }
+
+    if (tableItems === 1) {
+      if (showMissing) {
+        return {
+          className,
+          smallCols: [ 12 ],
+          mediumCols: [ 4 ]
+        };
+      }
+
       return {
         className,
         smallCols: [ 12 ],
@@ -113,6 +209,16 @@ class TableRow extends React.Component {
       smallCols: [ 12, 6, 6 ],
       mediumCols: [ 4 ]
     };
+  }
+
+  get childrenToRender() {
+    const { tableItems, showMissing } = this.props;
+
+    if (showMissing && tableItems === 1 && this.childrenArray.length === 2) {
+      return this.childrenArray.concat([ <Col /> ]);
+    }
+
+    return this.childrenArray;
   }
 
   renderCol = (child, idx, colClass) => {
@@ -151,7 +257,7 @@ class TableRow extends React.Component {
 
   render() {
     const {
-      subHeader
+      subHeader,
     } = this.props;
 
     const colClass = this.colClass;
@@ -160,7 +266,7 @@ class TableRow extends React.Component {
       <Layout
         {...this.layoutProps}
       >
-        { this.childrenArray.map((child, idx) => this.renderCol(child, idx, colClass)) }
+        { this.childrenToRender.map((child, idx) => this.renderCol(child, idx, colClass)) }
 
         {
           subHeader &&
@@ -197,6 +303,26 @@ TableRow.propTypes = {
    * Adds styling to TableRow to make it a TableHeader
    */
   header: PropTypes.bool,
+
+  tableItems: PropTypes.oneOf([
+    1,
+    2
+  ]),
+
+  /**
+   * Displays a blank column space where data could go
+   */
+  showMissing: PropTypes.bool,
+
+  /**
+   * Displays dashed border for final column in row when 1 `tableItem` is present
+   */
+  outlineMissing: PropTypes.bool,
+
+  /**
+   * Displays dashed bottom border for final column in row when 1 `tableItem` is present
+  */
+  highlightMissing: PropTypes.bool,
 };
 
 ComparisonTable.propTypes = {
@@ -209,6 +335,18 @@ ComparisonTable.propTypes = {
    * Reference to expanded state. Must be passed in as prop with `expandable`. Used to decide which header to render.
    */
   expanded: PropTypes.bool,
+
+  /**
+   * Number of items to render in the table. This does not include any information you may want to include in the 'missing` column; for that purpose, please use `1`
+   **/
+  tableItems: PropTypes.oneOf([
+    1,
+    2
+  ]),
+};
+
+ComparisonTable.defaultProps = {
+  tableItems: 2,
 };
 
 TableHeader.propTypes = {
@@ -221,6 +359,25 @@ TableHeader.propTypes = {
    * Reference to expanded state. Must be passed in as prop with `expandable`. Used to decide which header to render.
    */
   expanded: PropTypes.bool,
+
+  tableItems: PropTypes.oneOf([
+    1,
+    2,
+  ]),
+
+  /**
+   * Offsets the header by one, rendering only 2 columns as opposed to 3
+   */
+  offset: PropTypes.bool,
+
+  /**
+   * Displays a blank column space where data could go
+   */
+  showMissing: PropTypes.bool,
+};
+
+TableHeader.defaultProps = {
+  tableItems: 2,
 };
 
 export default {
