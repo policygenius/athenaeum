@@ -3,17 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './img.module.scss';
 
-const checkLS = () => {
-  if (typeof window !== 'undefined' && !window.lazySizes) {
-    /* eslint-disable no-console */
-    console.warn('lazysizes not loaded.');
-    /* eslint-enable no-console */
+const checkLS = () => typeof window === 'undefined' || !!window.lazySizes;
 
-    return false;
-  }
-
-  return true;
-};
 const strParams = '?fit=max&auto=format&ch=Width,DPR&w={width}';
 const imgixSrcStr = src => `https://policygenius-images.imgix.net/${src}${strParams}`;
 const imgixSrcset = src => `

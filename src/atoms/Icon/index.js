@@ -5,17 +5,7 @@ import { icons as ICONS } from './constants';
 
 import styles from './icons.module.scss';
 
-const checkLS = () => {
-  if (typeof window !== 'undefined' && !window.lazySizes) {
-    /* eslint-disable no-console */
-    console.warn('lazysizes not loaded.');
-    /* eslint-enable no-console */
-
-    return false;
-  }
-
-  return true;
-};
+const checkLS = () => typeof window === 'undefined' || !!window.lazySizes;
 
 function Icon( props ) {
   const {
