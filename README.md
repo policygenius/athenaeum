@@ -122,6 +122,10 @@ Upload the icons to our Google Cloud Bucket:
 2. Upload `newIcon.svgz`
   - `gsutil -h "Content-Encoding:gzip" -h "Content-Type:image/svg+xml" -h "Cache-Control:public,max-age=31536000" cp newIcon.svgz gs://pg-static-assets/svgs/newIcon.svgz`
 
+Add icon name to the list of possible icon values:
+
+1. `src/atoms/Icon/constants.js`
+
 
 ## Contributing
 
