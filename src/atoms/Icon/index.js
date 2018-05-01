@@ -1,64 +1,114 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import SVGInline from 'react-svg-inline';
 import { icons as ICONS } from './constants';
 
 import styles from './icons.module.scss';
 
 const checkLS = () => typeof window === 'undefined' || !!window.lazySizes;
 
-function Icon( props ) {
-  const {
-    className,
-    onClick,
-    height,
-    width,
-    inline,
-    icon,
-    lazy,
-    alt,
-    title,
-    ...rest
-  } = props;
+class Icon extends React.Component {
+  constructor() {
+    super();
 
-  if (!icon) { return null; }
+    this.state = {
+      svgString: null,
+    };
+  }
 
-  const wrapperProps = {
-    className: cx(
-      styles['icon-wrapper'],
-      onClick && styles.clickable,
-      inline && styles.inline,
-      inline && styles[inline],
-      className
-    ),
-    onClick,
-    style: {
+  componentDidMount() {
+    const { renderSVGDOM, icon } = this.props;
+
+    if (renderSVGDOM && icon) {
+      this.getSVG();
+    }
+  }
+
+  getSVG = () => {
+    fetch(this.svgSrc)
+      .then(data => data.text())
+      .then((svg) => {
+        this.setState({
+          svgString: svg,
+        });
+      });
+  }
+
+  get svgSrc() {
+    return `https://static.policygenius.com/svgs/${this.sanitizedIcon}.svgz`;
+  }
+
+  get sanitizedIcon() {
+    const { icon } = this.props;
+
+    return icon.replace(/[^a-zA-Z0-9_-]/, '');
+  }
+
+  render() {
+    const {
+      className,
+      onClick,
+      height,
       width,
-      height
-    },
-    ...rest
-  };
+      inline,
+      icon,
+      lazy,
+      alt,
+      title,
+      renderSVGDOM,
+      ...rest
+    } = this.props;
 
-  const isLazy = lazy && checkLS();
-  const sanitizedIcon = icon.replace(/[^a-zA-Z0-9_-]/, '');
-  const src = `https://static.policygenius.com/svgs/${sanitizedIcon}.svgz`;
+    if (!icon) { return null; }
 
-  // lazyload css class comes from Img component
-  return (
-    <span {...wrapperProps} >
-      <img
-        className={cx(
-          styles.img,
-          isLazy && 'lazyload'
-        )}
-        alt={alt || sanitizedIcon}
-        title={title || sanitizedIcon}
-        data-src={isLazy ? src : undefined}
-        src={isLazy ? undefined : src}
-        {...rest}
-      />
-    </span>
-  );
+    const wrapperProps = {
+      className: cx(
+        styles['icon-wrapper'],
+        onClick && styles.clickable,
+        inline && styles.inline,
+        inline && styles[inline],
+        className
+      ),
+      onClick,
+      style: {
+        width,
+        height
+      },
+      ...rest
+    };
+
+    if (renderSVGDOM && this.state.svgString) {
+      return (
+        <span {...wrapperProps} >
+          <SVGInline
+            svg={this.state.svgString}
+          />
+        </span>
+      );
+    }
+
+    const isLazy = lazy && checkLS();
+    const sanitizedIcon = this.sanitizedIcon;
+    const src = this.svgSrc;
+
+    // lazyload css class comes from Img component
+    return (
+      <span {...wrapperProps} >
+        <img
+          className={cx(
+            styles.img,
+            isLazy && 'lazyload'
+          )}
+          alt={alt || sanitizedIcon}
+          title={title || sanitizedIcon}
+          data-src={isLazy ? src : undefined}
+          src={isLazy ? undefined : src}
+          {...rest}
+        />
+      </span>
+    );
+  }
 }
 
 
@@ -101,7 +151,12 @@ Icon.propTypes = {
   /**
    * Defaults to icon name.
    */
-  title: PropTypes.string
+  title: PropTypes.string,
+
+  /**
+   * Renders full SVG DOM element for requested icon
+   */
+  renderSVGDOM: PropTypes.bool,
 };
 
 Icon.defaultProps = {
