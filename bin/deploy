@@ -23,21 +23,17 @@ fi
 
 NODE_ENV=production yarn run styleguide:build
 
-echo '+++ Deploying version-specific styleguide to S3'
-aws s3 sync \
-  ./styleguide s3://rcl-pg/$VERSION/ \
-  --acl=public-read \
-  --cache-control max-age=31536000 \
-  --exclude '.DS_Store'
+echo '+++ Deploying version-specific styleguide to GCS'
+gsutil -m -h "Cache-Control:public,max-age=31536000 " \
+  cp -r -a public-read \
+  ./styleguide gs://rcl/$VERSION/ \
 
 echo "Deployed styleguide to http://rcl.policygenius.com/$VERSION/index.html"
 
-echo '+++ Deploying styleguide latest to S3'
-aws s3 sync \
-  ./styleguide s3://rcl-pg/latest/ \
-  --acl=public-read \
-  --cache-control max-age=0 \
-  --exclude '.DS_Store'
+echo '+++ Deploying styleguide latest to GCS'
+gsutil -m -h "Cache-Control:public,max-age=0" \
+  cp -r -a public-read \
+  ./styleguide gs://rcl/latest/ \
 
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
