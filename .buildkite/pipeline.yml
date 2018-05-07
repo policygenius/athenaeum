@@ -48,7 +48,7 @@ steps:
   - block: "Trigger custom deploy for current version"
     branches: '!master'
 
-  - name: ':rocket: :s3: :npm:'
+  - name: ':rocket: :gcloud: :npm:'
     command: bin/deploy
     agents:
       queue: sandbox

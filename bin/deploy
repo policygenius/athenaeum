@@ -25,15 +25,15 @@ NODE_ENV=production yarn run styleguide:build
 
 echo '+++ Deploying version-specific styleguide to GCS'
 gsutil -m -h "Cache-Control:public,max-age=31536000 " \
-  cp -r -a public-read \
-  ./styleguide gs://rcl/$VERSION/ \
+  cp -r -z html,css,js,gz -a public-read \
+  ./styleguide gs://rcl/$VERSION/
 
 echo "Deployed styleguide to http://rcl.policygenius.com/$VERSION/index.html"
 
 echo '+++ Deploying styleguide latest to GCS'
 gsutil -m -h "Cache-Control:public,max-age=0" \
-  cp -r -a public-read \
-  ./styleguide gs://rcl/latest/ \
+  cp -r -z html,css,js,gz -a public-read \
+  ./styleguide gs://rcl/latest/
 
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
