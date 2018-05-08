@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eo pipefail
 
+VERSION=$(buildkite-agent meta-data get 'new-version')
+
 rm -rf styleguide && mkdir styleguide
 buildkite-agent artifact download "styleguide/**" styleguide
 
@@ -19,4 +21,3 @@ gsutil -m -h "Cache-Control:public,max-age=0" \
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
 buildkite-agent artifact upload package.json
-buildkite-agent meta-data set 'new-version' $VERSION

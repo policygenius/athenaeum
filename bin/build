@@ -18,4 +18,6 @@ else
   VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
 fi
 
+buildkite-agent meta-data set 'new-version' $VERSION
+
 NODE_ENV=production yarn run styleguide:build
