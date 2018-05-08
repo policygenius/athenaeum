@@ -56,7 +56,7 @@ steps:
       docker-compose:
         run: athenaeum
     artifact_paths:
-      - styleguide/**/*
+      - styleguide/*
 
   - wait
 
