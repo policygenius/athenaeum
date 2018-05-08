@@ -52,6 +52,11 @@ steps:
     command: bin/deploy
     agents:
       queue: sandbox
+    plugins:
+      docker-compose:
+        run: athenaeum
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: $GOOGLE_APPLICATION_CREDENTIALS
 
   - wait
 
