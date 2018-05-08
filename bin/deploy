@@ -1,27 +1,8 @@
 #!/bin/bash
 set -eo pipefail
 
-git config --global user.name "Randy the PolicyGenius Robot"
-git config --global user.email "robot@policygenius.com"
-
-NODE_ENV=development yarn --frozen-lockfile
-
-if [ "$BUILDKITE_BRANCH" == "master" ]; then
-  echo '+++ Publishing the package'
-  echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-  npm whoami
-  BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
-  VERSION=$(npm version $BUMP_SIZE)
-
-  bin/build_assets
-  npm publish --registry=https://registry.npmjs.org/
-else
-  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
-
-  VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
-fi
-
-NODE_ENV=production yarn run styleguide:build
+rm -rf styleguide && mkdir styleguide
+buildkite-agent artifact download "styleguide/**" styleguide
 
 echo '+++ Deploying version-specific styleguide to GCS'
 gsutil -m -h "Cache-Control:public,max-age=31536000 " \

@@ -48,15 +48,22 @@ steps:
   - block: "Trigger custom deploy for current version"
     branches: '!master'
 
-  - name: ':rocket: :gcloud: :npm:'
-    command: bin/deploy
+  - name: ':npm:'
+    command: bin/build
     agents:
-      queue: sandbox
+      queue: builder
     plugins:
       docker-compose:
         run: athenaeum
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS: $GOOGLE_APPLICATION_CREDENTIALS
+    artifact_paths:
+      - styleguide/**/*.*
+
+  - wait
+
+  - name: ':rocket: :gcloud:'
+    command: bin/deploy
+    agents:
+      queue: sandbox
 
   - wait
 
