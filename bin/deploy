@@ -9,14 +9,14 @@ buildkite-agent artifact download "styleguide/**" styleguide
 echo '+++ Deploying version-specific styleguide to GCS'
 gsutil -m -h "Cache-Control:public,max-age=31536000 " \
   cp -r -z html,css,js,gz -a public-read \
-  ./styleguide gs://rcl/$VERSION/
+  ./styleguide/. gs://rcl/$VERSION/
 
 echo "Deployed styleguide to http://rcl.policygenius.com/$VERSION/index.html"
 
 echo '+++ Deploying styleguide latest to GCS'
 gsutil -m -h "Cache-Control:public,max-age=0" \
   cp -r -z html,css,js,gz -a public-read \
-  ./styleguide gs://rcl/latest/
+  ./styleguide/. gs://rcl/latest/
 
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
