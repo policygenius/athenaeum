@@ -19,7 +19,3 @@ else
 fi
 
 NODE_ENV=production yarn run styleguide:build
-echo "where are we??"
-pwd
-ls -l
-ls -l /app/styleguide
