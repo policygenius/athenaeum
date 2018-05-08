@@ -11,6 +11,6 @@ and allows for the transition to go in reverse.
 
 ```jsx
     <Animate animations='shake rotate-left slideDown'>
-      <strong>New Component Created!</strong><br /><small>Now go and write some code! -- <em>You code monkey, you ;)</em></small>.
+      <strong>New Component Created!</strong><br /><small>Now go and write some code! -- <em>You fuccboi, you ;)</em></small>.
     </Animate>
 ```
