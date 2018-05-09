@@ -1,45 +1,23 @@
 #!/bin/bash
 set -eo pipefail
 
-git config --global user.name "Randy the PolicyGenius Robot"
-git config --global user.email "robot@policygenius.com"
+VERSION=$(buildkite-agent meta-data get 'new-version')
 
-NODE_ENV=development yarn --frozen-lockfile
+rm -rf styleguide && mkdir styleguide
+buildkite-agent artifact download "styleguide/**" styleguide
 
-if [ "$BUILDKITE_BRANCH" == "master" ]; then
-  echo '+++ Publishing the package'
-  echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-  npm whoami
-  BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
-  VERSION=$(npm version $BUMP_SIZE)
-
-  bin/build_assets
-  npm publish --registry=https://registry.npmjs.org/
-else
-  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
-
-  VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
-fi
-
-NODE_ENV=production yarn run styleguide:build
-
-echo '+++ Deploying version-specific styleguide to S3'
-aws s3 sync \
-  ./styleguide s3://rcl-pg/$VERSION/ \
-  --acl=public-read \
-  --cache-control max-age=31536000 \
-  --exclude '.DS_Store'
+echo '+++ Deploying version-specific styleguide to GCS'
+gsutil -m -h "Cache-Control:public,max-age=31536000 " \
+  cp -r -z html,css,js,gz -a public-read \
+  ./styleguide/. gs://rcl/$VERSION/
 
 echo "Deployed styleguide to http://rcl.policygenius.com/$VERSION/index.html"
 
-echo '+++ Deploying styleguide latest to S3'
-aws s3 sync \
-  ./styleguide s3://rcl-pg/latest/ \
-  --acl=public-read \
-  --cache-control max-age=0 \
-  --exclude '.DS_Store'
+echo '+++ Deploying styleguide latest to GCS'
+gsutil -m -h "Cache-Control:public,max-age=0" \
+  cp -r -z html,css,js,gz -a public-read \
+  ./styleguide/. gs://rcl/latest/
 
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
 
 buildkite-agent artifact upload package.json
-buildkite-agent meta-data set 'new-version' $VERSION

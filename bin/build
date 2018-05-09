@@ -1,0 +1,23 @@
+#!/bin/bash
+set -eo pipefail
+
+NODE_ENV=development yarn --frozen-lockfile
+
+if [ "$BUILDKITE_BRANCH" == "master" ]; then
+  echo '+++ Publishing the package'
+  echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+  npm whoami
+  BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
+  VERSION=$(npm version $BUMP_SIZE)
+
+  bin/build_assets
+  npm publish --registry=https://registry.npmjs.org/
+else
+  echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
+
+  VERSION="$BUILDKITE_BRANCH-$BUILDKITE_BUILD_ID"
+fi
+
+buildkite-agent meta-data set 'new-version' $VERSION
+
+NODE_ENV=production yarn run styleguide:build

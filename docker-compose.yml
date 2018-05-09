@@ -2,10 +2,11 @@ version: '2'
 services:
   athenaeum:
     build: .
-    command: yarn run build
     volumes:
+      - ./styleguide:/app/styleguide
       - .:/go/src/github.com/buildkite/agent
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
+    command: yarn run build
     environment:
       - BUILDKITE
       - BUILDKITE_COMMIT

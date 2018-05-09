@@ -29,12 +29,6 @@ steps:
 
   - wait
 
-  - trigger: "athenaeum-main-nav"
-    label: ':roller_coaster: Trigger MainNav and Footer Pipeline'
-    async: true
-    build:
-      branch: ${BUILDKITE_BRANCH}
-
   - block: 'Trigger deploy/publish'
     branches: 'master'
     prompt: 'Choose a version bump'
@@ -54,13 +48,22 @@ steps:
   - block: "Trigger custom deploy for current version"
     branches: '!master'
 
-  - name: ':rocket: :s3: :npm:'
-    command: bin/deploy
+  - name: ':npm:'
+    command: bin/build
     agents:
       queue: builder
     plugins:
       docker-compose:
         run: athenaeum
+    artifact_paths:
+      - styleguide/**/*
+
+  - wait
+
+  - name: ':rocket: :gcloud:'
+    command: bin/deploy
+    agents:
+      queue: sandbox
 
   - wait
 
