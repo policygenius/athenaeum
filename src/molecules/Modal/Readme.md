@@ -42,6 +42,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
                 <Layout
                   mediumCols={[ 9, 3, 6, 3, 3 ]}
                   bottomSpacing='small'
+                  nested
                 >
                   <TextField
                     label='Street address'
@@ -72,13 +73,13 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
 
                 <Spacer small />
 
-                <Layout>
+                <Layout nested>
                   <Button variant='action'>Confirm your address</Button>
                 </Layout>
                 <Spacer medium />
               </div>
               <div>
-                <Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex>
+                <Layout variant='bordered-buckets' mediumCols={[ 'auto' ]} flex nested>
                   <div>'Child 1'</div>
                   <div>'Child 2'</div>
                   <div>'Child 3'</div>

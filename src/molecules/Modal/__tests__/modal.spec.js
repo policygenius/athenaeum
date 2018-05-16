@@ -26,9 +26,33 @@ describe('<Modal />', () => {
     });
 
     expect(wrapper.props().className).to.contain('simple');
-    expect(wrapper.props().onAfterOpen).to.equal(callback);
-    expect(wrapper.props().onRequestClose).to.equal(callback);
     expect(wrapper.props().isOpen).to.equal(false);
+  });
+
+  it('calls props.onAfterOpen in this.onAfterOpen', () => {
+    wrapper.setProps({
+      onAfterOpen: callback,
+      onRequestClose: callback,
+      isOpen: false,
+      variant: 'simple'
+    });
+
+    wrapper.instance().onAfterOpen();
+
+    expect(callback.called).to.equal(true);
+  });
+
+  it('calls props.onRequestClose in this.onRequestClose', () => {
+    wrapper.setProps({
+      onAfterOpen: callback,
+      onRequestClose: callback,
+      isOpen: false,
+      variant: 'simple'
+    });
+
+    wrapper.instance().onRequestClose();
+
+    expect(callback.called).to.equal(true);
   });
 
   it('sets additional className prop', () => {
