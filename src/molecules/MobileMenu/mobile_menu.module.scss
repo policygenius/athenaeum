@@ -36,6 +36,7 @@
 .inactive {
   background: color('neutral-5');
   border-bottom: 1px solid color('neutral-4');
+  border-top: 1px solid color('neutral-4');
 
   &:hover {
     span {

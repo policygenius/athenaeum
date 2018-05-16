@@ -7,6 +7,7 @@ import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
 import MobileMenu from 'molecules/MobileMenu';
 import styles from './modal.module.scss';
+import mobileScrollToInput from './util/mobileScrollToInput';
 
 const wrapChild = (child) => {
   if (child.type === MobileMenu) return child;
@@ -23,9 +24,47 @@ const wrapChild = (child) => {
 };
 
 class Modal extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      initialBodyOverflow: document.body.style.overflow,
+    };
+  }
+
   componentWillMount() {
     if (typeof document !== 'undefined') {
       ReactModal.setAppElement('body');
+    }
+  }
+
+  componentDidMount() {
+    const { enableMobileScrollToInput } = this.props;
+
+    if (enableMobileScrollToInput) {
+      const { dialogId } = this.props;
+
+      mobileScrollToInput(dialogId);
+    }
+  }
+
+  onAfterOpen = () => {
+    const { onAfterOpen } = this.props;
+
+    document.body.style.overflow = 'hidden';
+
+    if (onAfterOpen) {
+      onAfterOpen();
+    }
+  }
+
+  onRequestClose = () => {
+    const { onRequestClose } = this.props;
+
+    document.body.style.overflow = this.state.initialBodyOverflow;
+
+    if (onRequestClose) {
+      onRequestClose();
     }
   }
 
@@ -38,34 +77,27 @@ class Modal extends React.Component {
       hideHeader,
       hideX,
       isOpen,
-      onAfterOpen,
-      onRequestClose,
-      variant
+      variant,
+      dialogId,
     } = this.props;
 
     return (
       <ReactModal
         isOpen={isOpen}
-        onAfterOpen={onAfterOpen}
-        onRequestClose={onRequestClose}
+        onAfterOpen={this.onAfterOpen}
+        onRequestClose={this.onRequestClose}
         contentLabel={contentLabel}
         className={classnames(styles['modal'], styles[variant], className)}
         overlayClassName={styles['overlay']}
+        shouldFocusAfterRender={false}
       >
-        <div className={styles['dialog']}>
+        <div id={dialogId} className={styles['dialog']}>
           <div className={styles['body']}>
             {
               !hideHeader &&
                 <div
                   className={styles['header']}
                 >
-                  <Text
-                    type={4}
-                    font='a'
-                  >
-                    {header}
-                  </Text>
-
                   <div
                     className={styles['close-col']}
                   >
@@ -74,10 +106,20 @@ class Modal extends React.Component {
                         <Icon
                           icon='close'
                           className={styles['close']}
-                          onClick={onRequestClose}
+                          onClick={this.onRequestClose}
+                          width='18px'
+                          height='18px'
                         />
                     }
                   </div>
+
+                  <Text
+                    type={3}
+                    font='a'
+                  >
+                    {header}
+                  </Text>
+
                 </div>
             }
             {React.Children.map(children, wrapChild)}
@@ -136,6 +178,16 @@ Modal.propTypes = {
    * variant for modal - options are `simple` (default), `large` & `mobile`
    */
   variant: PropTypes.oneOf([ 'simple', 'large', 'x-large', 'mobile', 'mobile-large' ]),
+
+  /**
+   * Adds an `id` to the dialog box surrounding the modal content. Useful for DOM targeting
+   */
+  dialogId: PropTypes.string,
+
+  /**
+   * Enables the ability for the modal to scroll input fields to the center of mobile screen when soft keyboard is activate. MUST provide a `dialogId` prop for targeting inputs correctly
+   */
+  enableMobileScrollToInput: PropTypes.bool,
 };
 
 Modal.defaultProps = {
