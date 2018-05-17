@@ -25,3 +25,5 @@ fi
 buildkite-agent meta-data set 'new-version' $VERSION
 
 NODE_ENV=production yarn run styleguide:build
+
+buildkite-agent artifact upload package.json
