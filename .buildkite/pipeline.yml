@@ -57,6 +57,7 @@ steps:
         run: athenaeum
     artifact_paths:
       - styleguide/**/*
+      - package.json
 
   - wait
 
