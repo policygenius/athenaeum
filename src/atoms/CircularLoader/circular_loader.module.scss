@@ -1,0 +1,30 @@
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circular-loader {
+  animation-duration: .6s;
+  animation-iteration-count: infinite;
+  animation-name: loader;
+  animation-timing-function: linear;
+  border-bottom: 3px solid color('neutral-1');
+  border-left: 3px solid transparent;
+  border-radius: 100%;
+  border-right: 3px solid color('neutral-1');
+  border-top: 3px solid transparent;
+  height: rem-calc(24px);
+  width: rem-calc(24px);
+  left: calc(50% - 12px);
+  position: relative;
+  transform: translateY(-50%);
+}
