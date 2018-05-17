@@ -19,5 +19,3 @@ gsutil -m -h "Cache-Control:public,max-age=0" \
   ./styleguide/. gs://rcl/latest/
 
 echo "Deployed styleguide latest to http://rcl.policygenius.com/latest/index.html"
-
-buildkite-agent artifact upload package.json
