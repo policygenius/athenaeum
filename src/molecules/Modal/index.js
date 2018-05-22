@@ -8,6 +8,7 @@ import Icon from 'atoms/Icon';
 import MobileMenu from 'molecules/MobileMenu';
 import styles from './modal.module.scss';
 import mobileScrollToInput from './util/mobileScrollToInput';
+import checkiOSDevice from './util/checkiOSDevice';
 
 const wrapChild = (child) => {
   if (child.type === MobileMenu) return child;
@@ -53,6 +54,15 @@ class Modal extends React.Component {
 
     document.body.style.overflow = 'hidden';
 
+    if (checkiOSDevice(navigator.userAgent)) {
+      this.setState({
+        windowPosition: window.pageYOffset,
+      });
+
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    }
+
     if (onAfterOpen) {
       onAfterOpen();
     }
@@ -62,6 +72,11 @@ class Modal extends React.Component {
     const { onRequestClose } = this.props;
 
     document.body.style.overflow = this.state.initialBodyOverflow;
+
+    if (checkiOSDevice(navigator.userAgent)) {
+      document.body.style.position = '';
+      window.scrollTo(0, this.state.windowPosition);
+    }
 
     if (onRequestClose) {
       onRequestClose();
