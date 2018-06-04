@@ -7,7 +7,9 @@ const scrollToInput = () => {
 
   const calc = elementDistanceFromTop(parent) - (window.innerHeight / 2);
 
-  modal.scrollTop = calc;
+  if (modal) {
+    modal.scrollTop = calc;
+  }
 };
 
 export default (dialogId) => {
