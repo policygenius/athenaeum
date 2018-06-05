@@ -2,10 +2,10 @@
 
 exports[`<StarRating /> renders correctly 1`] = `
 <span
-  className="star-rating stars stars-undefined"
+  className="star-rating stars stars-4"
 >
   <span
-    className="icon-wrapper star"
+    className="icon-wrapper star filled-in"
     onClick={undefined}
     style={
       Object {
@@ -23,7 +23,7 @@ exports[`<StarRating /> renders correctly 1`] = `
     />
   </span>
   <span
-    className="icon-wrapper star"
+    className="icon-wrapper star filled-in"
     onClick={undefined}
     style={
       Object {
@@ -41,7 +41,7 @@ exports[`<StarRating /> renders correctly 1`] = `
     />
   </span>
   <span
-    className="icon-wrapper star"
+    className="icon-wrapper star filled-in"
     onClick={undefined}
     style={
       Object {
@@ -59,7 +59,7 @@ exports[`<StarRating /> renders correctly 1`] = `
     />
   </span>
   <span
-    className="icon-wrapper star"
+    className="icon-wrapper star filled-in"
     onClick={undefined}
     style={
       Object {
