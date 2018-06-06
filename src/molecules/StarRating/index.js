@@ -21,7 +21,7 @@ function StarRating(props) {
   return (
     <span className={classes}>
       {
-        times(5, (i) => (
+        times(5, i =>
           <Icon
             key={i}
             className={classnames(
@@ -35,7 +35,7 @@ function StarRating(props) {
             height={size}
             renderSVGDOM
           />
-        ))
+        )
       }
     </span>
   );

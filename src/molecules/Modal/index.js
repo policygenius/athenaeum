@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import classnames from 'classnames';
 import ReactModal from 'react-modal';
 
@@ -27,9 +28,10 @@ const wrapChild = (child) => {
 class Modal extends React.Component {
   constructor() {
     super();
+    const initialBodyOverflow = typeof document !== 'undefined' && get(document, 'body.style.overflow');
 
     this.state = {
-      initialBodyOverflow: document.body.style.overflow,
+      initialBodyOverflow,
     };
   }
 

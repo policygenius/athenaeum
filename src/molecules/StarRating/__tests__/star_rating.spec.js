@@ -6,7 +6,7 @@ import StarRating from 'molecules/StarRating';
 
 describe('<StarRating />', () => {
   beforeEach(() => {
-    global.fetch = () => new Promise((resolve) => resolve());
+    global.fetch = () => new Promise(resolve => resolve());
   });
 
   it('renders correctly', () => {
