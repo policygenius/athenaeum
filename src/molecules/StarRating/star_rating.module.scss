@@ -9,40 +9,14 @@
   &:first-of-type {
     margin-left: 0;
   }
-}
 
-span[class*='stars'] {
-  color: color('primary-3');
-}
-// When the stars switch to SVG icons,
-// will want to change this to svg fill.
-
-.stars-1 {
-  span:nth-of-type( 1n + 2 ) svg path {
+  svg path {
     fill: color('neutral-4');
   }
 }
 
-.stars-2 {
-  span:nth-of-type( 1n + 3 ) svg path {
-    fill: color('neutral-4');
+.filled-in {
+  svg path {
+    fill: color('primary-3');
   }
 }
-
-.stars-3 {
-  span:nth-of-type( 1n + 4 ) svg path {
-    fill: color('neutral-4');
-  }
-}
-
-.stars-4 {
-  span:nth-of-type( 1n + 5 ) svg path {
-    fill: color('neutral-4');
-  }
-}
-// hack to get the `*=stars` class to apply
-// to insurance companies with 5 stars
-.stars-5 {
-  color: color('primary-3');
-}
-
