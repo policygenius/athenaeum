@@ -51,6 +51,14 @@ class Modal extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const { maintainDOMState } = this.props;
+
+    if (!prevProps.maintainDOMState && maintainDOMState) {
+      this.closeDOMStyle();
+    }
+  }
+
   onAfterOpen = () => {
     const { onAfterOpen } = this.props;
 
@@ -73,15 +81,19 @@ class Modal extends React.Component {
   onRequestClose = () => {
     const { onRequestClose } = this.props;
 
+    this.closeDOMStyle();
+
+    if (onRequestClose) {
+      onRequestClose();
+    }
+  }
+
+  closeDOMStyle() {
     document.body.style.overflow = this.state.initialBodyOverflow;
 
     if (checkiOSDevice(navigator.userAgent)) {
       document.body.style.position = '';
       window.scrollTo(0, this.state.windowPosition);
-    }
-
-    if (onRequestClose) {
-      onRequestClose();
     }
   }
 
@@ -205,6 +217,11 @@ Modal.propTypes = {
    * Enables the ability for the modal to scroll input fields to the center of mobile screen when soft keyboard is activate. MUST provide a `dialogId` prop for targeting inputs correctly
    */
   enableMobileScrollToInput: PropTypes.bool,
+
+  /**
+   * When set to true, this will fire the internal closeDOMStyle function, which will maintain DOM state from what it was before the modal opened
+   */
+  maintainDOMState: PropTypes.bool,
 };
 
 Modal.defaultProps = {
