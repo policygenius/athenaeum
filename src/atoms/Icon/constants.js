@@ -85,6 +85,7 @@ module.exports = {
     'greenCar',
     'greenCheckWithCircle',
     'greenCheckmark',
+    'greenCirclePlus',
     'guaranteedIssue',
     'hamburger',
     'hamburgerRebrand',
