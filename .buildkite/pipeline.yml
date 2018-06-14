@@ -26,6 +26,19 @@ steps:
     plugins:
       docker-compose:
         run: athenaeum
+    artifact_paths:
+      - "coverage/test-coverage.xml"
+      - "coverage/lcov.info"
+
+  - wait
+
+  - name: ':sonar-scanner:'
+    command: bin/sonar
+    agents:
+      queue: runner
+    plugins:
+      docker-compose:
+        run: athenaeum
 
   - wait
 
