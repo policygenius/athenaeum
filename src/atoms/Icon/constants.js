@@ -1,6 +1,7 @@
 module.exports = {
   icons: [
     'addAccount',
+    'agent',
     'americanExpress',
     'americanExpressSq',
     'americanExpressSquare',
@@ -26,6 +27,7 @@ module.exports = {
     'calendar',
     'camera',
     'car',
+    'carrier',
     'cart',
     'chat',
     'checkCircle',
@@ -33,6 +35,7 @@ module.exports = {
     'checklist',
     'checklistFolded',
     'checkmark',
+    'checkmark-thin',
     'chevronDown',
     'chevronLeft',
     'chevronRight',
@@ -162,6 +165,7 @@ module.exports = {
     'questionMarkWhite',
     'quoteCards',
     'quotes',
+    'quotes2',
     'rclLogo',
     'renters',
     'rentersColor3X',
