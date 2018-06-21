@@ -1,0 +1,4 @@
+[submodule "submodules/sonar_js_generic_coverage"]
+	path = submodules/sonar_js_generic_coverage
+	url = git@github.com:policygenius/sonar_js_generic_coverage.git
+	branch = master

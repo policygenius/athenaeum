@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+buildkite-agent artifact download coverage/test-coverage.xml coverage/ --build ${BUILDKITE_BUILD_ID}
+buildkite-agent artifact download coverage/lcov.info coverage/ --build ${BUILDKITE_BUILD_ID}
+
+git submodule add -b master git@github.com:policygenius/sonar_js_generic_coverage.git
+
+/usr/bin/python submodules/sonar_js_generic_coverage/sonar_js_generic_coverage.py coverage/
+
+sonar-scanner
