@@ -253,3 +253,53 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
     <ModalExample />
 ```
 
+```jsx
+  class ModalExample extends React.Component {
+    constructor(props) {
+      super(props)
+
+      this.state = {
+      modalIsOpen: false
+      }
+
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
+    }
+
+    openModal() {
+      this.setState({
+        modalIsOpen: true
+      });
+     }
+
+     closeModal() {
+        this.setState({
+          modalIsOpen: false
+        });
+      }
+
+      render() {
+        return (
+          <div>
+            <Button onClick={this.openModal}>Open Styled Sections Modal</Button>
+
+            <Modal
+              hideHeader
+              onRequestClose={this.closeModal}
+              isOpen={this.state.modalIsOpen}
+              contentLabel='Modal'
+              sectionClassName='example-section-class'
+            >
+            <div>'Child 1'</div>
+            <div>'Child 2'</div>
+            <div>'Child 3'</div>
+            <div>'Child 4'</div>
+            <div>'Child 5'</div>
+            </Modal>
+            </div>
+        )
+      }
+    }
+
+    <ModalExample />
+```

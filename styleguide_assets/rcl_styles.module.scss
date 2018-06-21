@@ -9,8 +9,11 @@ in the policygenius/react-styleguidist rep
 Complicated css nesting that jss doesn't handle well is best placed here.
 
  */
-
 :global{
+  // src/molecules/Modal/Readme.md
+  .example-section-class {
+    outline: 1px solid red;
+  }
 
   body {
     .RCL-Logo {
