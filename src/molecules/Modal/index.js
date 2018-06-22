@@ -11,20 +11,6 @@ import styles from './modal.module.scss';
 import mobileScrollToInput from './util/mobileScrollToInput';
 import checkiOSDevice from './util/checkiOSDevice';
 
-const wrapChild = (child) => {
-  if (child.type === MobileMenu) return child;
-
-  return React.createElement(
-    'div',
-    {
-      className: classnames(
-        styles['section'],
-      )
-    },
-    child
-  );
-};
-
 class Modal extends React.Component {
   constructor() {
     super();
@@ -101,6 +87,21 @@ class Modal extends React.Component {
     }
   }
 
+  wrapChild = (child) => {
+    if (child.type === MobileMenu) return child;
+
+    return React.createElement(
+      'div',
+      {
+        className: classnames(
+          styles['section'],
+          this.props.sectionClassName
+        )
+      },
+      child
+    );
+  };
+
   render() {
     const {
       children,
@@ -155,7 +156,7 @@ class Modal extends React.Component {
 
                 </div>
             }
-            {React.Children.map(children, wrapChild)}
+            {React.Children.map(children, this.wrapChild)}
           </div>
         </div>
       </ReactModal>
@@ -220,7 +221,12 @@ Modal.propTypes = {
   /**
    * Enables the ability for the modal to scroll input fields to the center of mobile screen when soft keyboard is activate. MUST provide a `dialogId` prop for targeting inputs correctly
    */
-  enableMobileScrollToInput: PropTypes.bool
+  enableMobileScrollToInput: PropTypes.bool,
+
+  /**
+   * Enables the ability to override styling of child sections. Apply className to the Modal component and the corresponding styles in your stylesheet
+   */
+  sectionClassName: PropTypes.string
 };
 
 Modal.defaultProps = {
