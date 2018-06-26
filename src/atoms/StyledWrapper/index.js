@@ -28,7 +28,11 @@ StyledWrapper.propTypes = {
   /**
    * Any component. Will also take an HTML5 tag name as a string.
    */
-  component: PropTypes.node
+  component: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+    PropTypes.string
+  ])
 };
 
 StyledWrapper.defaultProps = {
