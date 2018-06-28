@@ -32,6 +32,7 @@ steps:
   - wait
 
   - name: ':sonar-scanner:'
+    branches: master
     command: bin/sonar
     agents:
       queue: runner
