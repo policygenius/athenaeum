@@ -1,0 +1,1 @@
+- [ ] **SHOUTOUT: @dan.novograd for teaching the frontend team about 'ex' units** : ./src/atoms/Icon/icons.module.scss
