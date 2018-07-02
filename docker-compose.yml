@@ -6,14 +6,15 @@ services:
       - ./styleguide:/app/styleguide
       - .:/go/src/github.com/buildkite/agent
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
+      - ./coverage:/app/coverage
     command: yarn run build
     environment:
       - BUILDKITE
       - BUILDKITE_COMMIT
       - BUILDKITE_BRANCH
       - BUILDKITE_PULL_REQUEST
-      - BUILDKITE_BUILD_ID
-      - BUILDKITE_AGENT_ACCESS_TOKEN
+      - BUILDKITE_BUILD_ID=$BUILDKITE_BUILD_ID
+      - BUILDKITE_AGENT_ACCESS_TOKEN=$BUILDKITE_AGENT_ACCESS_TOKEN
       - BUILDKITE_JOB_ID
       - BUILDKITE_BUILD_NUMBER
       - AWS_ACCESS_KEY_ID
@@ -22,3 +23,4 @@ services:
       - NPM_PASSWORD
       - NPM_TOKEN
       - NPM_EMAIL
+      - SONAR_LOGIN
