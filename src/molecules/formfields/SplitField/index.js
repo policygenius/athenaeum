@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import ErrorMessage from 'atoms/ErrorMessage';
 import Text from 'atoms/Text';
-import styles from './date_field.module.scss';
 
-function DateField(props) {
+import styles from './split_field.module.scss';
+
+function SplitField(props) {
   const {
     className,
     children,
@@ -18,7 +18,8 @@ function DateField(props) {
 
   const wrapChild = (child) => {
     const classes = [
-      styles['input'],
+      styles.input,
+      children.length === 2 && styles['two-fields'],
       meta && meta.active && styles['input-focused'],
     ];
 
@@ -28,9 +29,9 @@ function DateField(props) {
   const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
 
   const classes = [
-    styles['date-field'],
-    meta && meta.active && styles['focused'],
-    meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
+    styles['split-field'],
+    meta && meta.active && styles.focused,
+    meta && showErrorMessage && meta.error && !meta.active && styles.hasError,
     className
   ];
 
@@ -45,8 +46,8 @@ function DateField(props) {
         }}
         onFocus={input && input.onFocus}
       >
-        <div className={styles['label']}>
-          <label htmlFor='date'>{label}</label>
+        <div className={styles.label}>
+          <label htmlFor='split-field'>{label}</label>
           {
             subLabel &&
               <Text
@@ -70,7 +71,7 @@ function DateField(props) {
   );
 }
 
-DateField.propTypes = {
+SplitField.propTypes = {
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -93,9 +94,9 @@ DateField.propTypes = {
    */
   input: PropTypes.object,
   /**
-   * Any children passed to DateField
+   * Any children passed to SplitField
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
-export default DateField;
+export default SplitField;

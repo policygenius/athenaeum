@@ -50,11 +50,14 @@
 .button-wrapper {
   display: flex;
   flex-direction: column;
+  > .toggle-selected {
+    display: none;
+  }
 }
 
 .button {
   position: relative;
-  flex-grow: 1;
+  flex-grow: 50%;
   margin-bottom: ru(.25);
 }
 
@@ -63,7 +66,7 @@
   flex-direction: row;
 
   .button {
-    margin-left: ru(1);
+    margin-left: ru(.75);
     margin-bottom: 0;
 
     &:first-of-type {
@@ -95,4 +98,8 @@
 /* --  state:error  -- */
 .hasError {
   @extend %hasError;
+}
+
+.wrapper {
+  margin-bottom: rem-calc(24px);
 }
