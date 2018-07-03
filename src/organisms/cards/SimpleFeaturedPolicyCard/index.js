@@ -5,7 +5,7 @@ import accounting from 'accounting';
 import get from 'lodash/get';
 
 import Text from 'atoms/Text';
-import Spacer from 'atoms/Spacer';
+import Layout from 'atoms/Layout';
 
 import styles from './featured_policy_card.module.scss';
 import ButtonGroup from './ButtonGroup';
@@ -24,56 +24,99 @@ function SimpleFeaturedPolicyCard(props) {
 
   const classes = [
     styles['featured-policy-card'],
-    selected && styles['selected'],
     className,
   ];
 
+  const selectedStyles = [
+    styles.content,
+    selected && styles.selected,
+  ];
+
   const formattedPremium = accounting.formatMoney(premium.price);
+  const dollars = formattedPremium.slice(1).split('.')[0];
+  const cents = formattedPremium.substring(formattedPremium.indexOf('.'));
 
   return (
     <div className={classnames(...classes)}>
-      <div className={styles['content']}>
-        { premium.price ?
-          <div className={styles['premium']}>
-            <Text
-              type={3}
-              font='a'
-            >
-              {formattedPremium} <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
-            </Text>
-
-            {premium.tooltip}
-          </div>
-          :
-          <Text type={7} font='a'>{premium.defaultText}</Text>
-        }
-
-        <Spacer size={24} />
+      <Layout
+        className={classnames(...selectedStyles)}
+        smallCols={[ 6 ]}
+        fullwidth
+      >
 
         {
           carrierLogo.type !== 'img' ?
-            <div className={styles['carrier-info']}>
-              { carrierLogo }
+            <div className={styles['carrier-logo-wrapper']}>
+              <div className={styles['carrier-info']}>
+                { carrierLogo }
+              </div>
             </div>
             :
-            <div className={styles['carrier-logo']}>
-              { carrierLogo }
+            <div className={styles['carrier-logo-wrapper']}>
+              <div className={styles['carrier-logo']}>
+                { carrierLogo }
+              </div>
             </div>
         }
 
+        { premium.price ?
+          <span className={styles['premium']}>
+            <Text
+              type={9}
+              font='a'
+              tag='span'
+            >
+              {formattedPremium[0]}
+            </Text>
+            <Text
+              type={4}
+              font='a'
+              tag='span'
+              className={styles.dollars}
+            >
+              {dollars}
+            </Text>
+            <Text
+              type={11}
+              font='a'
+              tag='span'
+            >
+              {cents}
+            </Text>
+            <Text
+              tag='span'
+              type={11}
+              font='a'
+              spaced
+              color='neutral-2'
+              className={styles['premium-format']}
+            >
+              {`/${premium.format.toUpperCase()}`}
+            </Text>
 
-        {
-          onContinue &&
-            <React.Fragment>
-              <Spacer size={36} />
-              <ButtonGroup
-                onContinue={onContinue}
-                compareCheckbox={compareCheckbox}
-                continueCTAText={continueCTAText}
-              />
-            </React.Fragment>
+            {premium.tooltip}
+          </span>
+          :
+          <Text
+            type={7}
+            font='a'
+            className={styles['default-premium-text']}
+          >
+            {premium.defaultText}
+          </Text>
         }
-      </div>
+      </Layout>
+
+      {
+        onContinue &&
+          <React.Fragment>
+            <ButtonGroup
+              onContinue={onContinue}
+              compareCheckbox={compareCheckbox}
+              continueCTAText={continueCTAText}
+            />
+          </React.Fragment>
+      }
     </div>
   );
 }

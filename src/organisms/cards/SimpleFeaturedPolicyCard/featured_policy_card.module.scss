@@ -1,8 +1,5 @@
 $card-border: 1px solid #dfdfdf;
-$header-fill: color('neutral-5');
-$radius: rem-calc(8px);
-$details-link-color: #4a4a4a;
-$details-link-border: 1px solid #b2b2b2;
+$selected-border: 2px solid color('secondary-4');
 
 .featured-policy-card {
   border: $card-border;
@@ -10,39 +7,51 @@ $details-link-border: 1px solid #b2b2b2;
   display: flex;
   flex-direction: column;
   height: 100%;
+}
 
-  &.selected {
-    border: 1px solid color('secondary-2');
-  }
-
-  .details-link {
-    @include typography-7(false);
-
-    padding-bottom: 2px;
-    color: $details-link-color;
-    border-bottom: $details-link-border;
-    text-decoration: none;
-    display: none;
-
-    &:hover {
-      border-color: $details-link-color;
-    }
-  }
+.selected {
+  border-top: $selected-border;
+  border-right: $selected-border;
+  border-left: $selected-border;
+  border-bottom: 0;
 }
 
 .content {
-  padding: rem-calc(36px) rem-calc(24px);
+  padding-top: rem-calc(18px);
+  padding-bottom: rem-calc(24px);
   background-color: color('primary-2');
-  border-radius: $radius;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   flex-grow: 1;
 }
 
 .premium {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.premium-format {
+  align-self: flex-end;
+}
+
+.default-premium-text {
+  margin-left: rem-calc(18px);
+}
+
+.carrier-logo-wrapper {
+  width: 100%;
+  height: rem-calc(60px);
+  border-right: $card-border;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dollars {
+  margin-top: rem-calc(-2px);
 }
 
 .carrier-info {
@@ -52,7 +61,7 @@ $details-link-border: 1px solid #b2b2b2;
 .carrier-logo {
   align-items: center;
   display: flex;
-  height: rem-calc(60px);
+  height: rem-calc(42px);
   justify-content: center;
   max-width: rem-calc(170px);
 
@@ -66,16 +75,37 @@ $details-link-border: 1px solid #b2b2b2;
   width: 100%;
   text-align: center;
   margin-top: auto;
+  border-top: $card-border;
+}
+
+.selected-button {
+  border-top: 0;
+}
+
+.continue-cta {
+  padding-top: rem-calc(18px);
+  padding-bottom: rem-calc(18px);
 }
 
 .checkbox-wrapper {
-  align-items: center;
+  justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
 
-  .checkbox-field {
-    margin-left: rem-calc(12px);
-  }
+.checkbox-selected {
+  border: $selected-border;
+}
+
+.icon {
+  margin-right: rem-calc(12px);
+  margin-top: rem-calc(14px);
+  margin-bottom: rem-calc(12px);
+}
+
+.compare-text {
+  display: flex;
+  align-items: center;
 }
 
 @media #{$small-only} {

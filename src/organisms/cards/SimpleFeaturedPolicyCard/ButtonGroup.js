@@ -4,19 +4,15 @@ import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 
 import Button from 'atoms/Button';
-import LinkWrapper from 'atoms/LinkWrapper';
-import Spacer from 'atoms/Spacer';
 import Text from 'atoms/Text';
-import CheckBoxField from 'molecules/formfields/CheckBoxField';
+import Icon from 'atoms/Icon';
 
 import styles from './featured_policy_card.module.scss';
 
 function ButtonGroup(props) {
   const {
     onContinue,
-    onDetails,
     continueCTAText,
-    detailsCTAText,
     compareCheckbox,
   } = props;
 
@@ -38,49 +34,49 @@ function ButtonGroup(props) {
     name,
   } = compareCheckbox;
 
+  const classes = [
+    styles['checkbox-wrapper'],
+    compareSelected && styles['checkbox-selected'],
+  ];
+
+  const buttonGrpClasses = [
+    styles['button-group'],
+    compareSelected && styles['selected-button']
+  ];
+
+  const getIcon = () => compareSelected ? 'checkMark-1' : 'circlePlus';
+  const getTextColor = () => compareSelected ? 'secondary-4' : 'neutral-2';
+
   return (
-    <div className={styles['button-group']}>
+    <div className={classnames(...buttonGrpClasses)}>
+      <div
+        id={`${name}-checkbox-wrapper`}
+        className={classnames(...classes)}
+        onClick={onCompare}
+      >
+        <div className={styles.icon}>
+          <Icon
+            icon={getIcon()}
+            height='26px'
+            width='26px'
+            renderSVGDOM
+          />
+        </div>
+        <Text
+          size={11}
+          font='a'
+          className={styles['compare-text']}
+          color={getTextColor()}
+        >
+          COMPARE
+        </Text>
+      </div>
       <Button
         onClick={onContinue}
-        outline={compareSelected}
+        className={styles['continue-cta']}
       >
         {continueCTAText}
       </Button>
-
-      <Spacer size={12} />
-      {
-        onDetails &&
-          <LinkWrapper
-            onClick={onDetails}
-            className={styles['details-link']}
-          >
-            {detailsCTAText}
-          </LinkWrapper>
-
-      }
-
-      <div
-        id={`${name}-checkbox-wrapper`}
-        className={styles['checkbox-wrapper']}
-        onClick={onCompare}
-      >
-        <Text
-          size={10}
-          font='b'
-          className={classnames(compareSelected && styles['checked'])}
-        >
-          Compare
-        </Text>
-        <Spacer spacer={1} />
-        <div className={styles['checkbox-field']}>
-          <CheckBoxField
-            input={{
-              value: compareSelected,
-              name
-            }}
-          />
-        </div>
-      </div>
     </div>
   );
 }
