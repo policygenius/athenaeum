@@ -16,7 +16,8 @@ const BlockHeader = ({
   className,
   children,
   leftOffset,
-  verticalPadding
+  verticalPadding,
+  tag
 }) =>
   <GrayBox
     cols={cols}
@@ -31,7 +32,7 @@ const BlockHeader = ({
       <Text variant='label' className={styles.label}>
         {supertitle}
       </Text>
-      <Text tag='h2' className={styles.title} font='a' size={2}>
+      <Text tag={tag} className={styles.title} font='a' size={2}>
         {title}
       </Text>
       <Text className={styles.description} font='b' size={9}>
@@ -81,7 +82,15 @@ BlockHeader.propTypes = {
   /**
    * Number of columns to push the title to the right, eg `3`
    */
-  leftOffset: PropTypes.number
+  leftOffset: PropTypes.number,
+  /**
+   * The tag to be used for the header. Defaults to h2
+   */
+  tag: PropTypes.string
+};
+
+BlockHeader.defaultProps = {
+  tag: 'h2'
 };
 
 export default BlockHeader;
