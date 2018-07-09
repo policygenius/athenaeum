@@ -35,6 +35,7 @@ function IconList(props) {
               <Icon
                 className={styles.icon}
                 icon={item.icon}
+                lazy={typeof item.lazy === 'undefined' ? true : item.lazy}
                 inline
               />
               {item.text}
@@ -83,7 +84,8 @@ IconList.propTypes = {
    */
   data: PropTypes.arrayOf(PropTypes.shape({
     item: PropTypes.string,
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    lazy: PropTypes.bool,
   })).isRequired,
 };
 
