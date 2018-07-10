@@ -2,7 +2,7 @@
 
 $border: 1px solid color('neutral-4');
 
-.date-field {
+.split-field {
   @extend %form-field;
 
   .input {
@@ -34,6 +34,7 @@ $border: 1px solid color('neutral-4');
   padding: ru(.5) 0 ru(.5) ru(.75);
 
   input {
+  border: 0;
     border-right: $border;
     width: 100%;
   }
@@ -47,6 +48,16 @@ $border: 1px solid color('neutral-4');
   }
 }
 
+.split-field-child {
+  border: 0;
+}
+
+@media #{$IE} {
+  .two-fields {
+    flex-basis: 50%;
+  }
+}
+
 /* --  state:focus  -- */
 .focused {
   @extend %focused;
@@ -55,8 +66,4 @@ $border: 1px solid color('neutral-4');
 /* --  state:error  -- */
 .hasError {
   @extend %hasError;
-}
-
-.wrapper {
-  margin-bottom: rem-calc(24px);
 }

@@ -1,6 +1,6 @@
 $info-color: color('primary-3');
 $action-color: color('primary-1');
-$selected-color: color('primary-3');
+$selected-color: color('secondary-2');
 $unselected-color: color('neutral-4');
 $brand-white: color('primary-2');
 
@@ -74,8 +74,9 @@ $brand-white: color('primary-2');
 }
 
 .toggle-selected {
-  color: $selected-color;
+  color: $brand-white;
   border: 2px solid $selected-color;
+  background-color: $selected-color;
 
   &:hover {
     cursor: default;

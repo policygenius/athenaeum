@@ -29,9 +29,10 @@ const renderChoices = (choices, input) => {
         className={styles['button']}
         variant={variantName()}
         key={`toggle-${idx}`}
-        onClick={e => input.onChange(e.target.value)}
+        onClick={() => input.onChange(toBoolean(choice.value))}
         value={choice.value}
         {...omit(input, 'value')}
+        onBlur={() => input.onBlur(toBoolean(choice.value))}
       >
         { choice.label }
       </Button>
@@ -53,6 +54,7 @@ function ToggleField( props ) {
     noBorder,
     nested,
     sideBySide,
+    setScrollRef,
   } = props;
 
   const classes = [
@@ -69,7 +71,7 @@ function ToggleField( props ) {
   const buttonStyle = sideBySide ? styles['side-by-side'] : styles['button-wrapper'];
 
   return (
-    <div>
+    <div className={styles.wrapper} ref={setScrollRef && setScrollRef(input.name)}>
       <div className={classnames(...classes)}>
         <Layout
           nested={nested}
@@ -99,6 +101,14 @@ function ToggleField( props ) {
   );
 }
 
+ToggleField.defaultProps = {
+  toggleChoices: [
+    { label: 'Yes', value: true },
+    { label: 'No', value: false }
+  ],
+  sideBySide: true
+};
+
 ToggleField.propTypes = {
   /**
    * Will append new classname to classSet
@@ -112,6 +122,9 @@ ToggleField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+  /**
+   * An array of objects with two key/value pairs: `label` (string value) and `value` (string, number or boolean). Set to `Yes` (true) and `No` (false) by default.
+   */
   toggleChoices: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
@@ -124,10 +137,17 @@ ToggleField.propTypes = {
   ),
 
   /**
-   * The `tooltopMessage` can be anything that can be rendered:
+   * The `tooltipMessage` can be anything that can be rendered:
    * `numbers`, `strings`, `elements` or an `array` (or fragment) containing these types.
    */
-  tooltip: PropTypes.node,
+  tooltip: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.shape({
+      children: PropTypes.string.isRequired,
+      className: PropTypes.string,
+      styles: PropTypes.object
+    })
+  ]),
 
   /**
    * input object contains any props to be passed directly to the button: value, onChange, onBlur etc.
@@ -149,10 +169,22 @@ ToggleField.propTypes = {
   **/
   nested: PropTypes.bool,
 
-  /** When present, sideBySide prop keeps buttons side-by-side on mobile
+  /** Keeps buttons side-by-side; is true by default
    *
   **/
   sideBySide: PropTypes.bool,
+  values: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.string
+      ])
+    )
+  ),
+  children: PropTypes.arrayOf(
+    PropTypes.node
+  ),
+  setScrollRef: PropTypes.func,
 };
 
 export default ToggleField;
