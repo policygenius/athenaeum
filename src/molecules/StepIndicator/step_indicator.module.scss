@@ -25,7 +25,7 @@
 .step-wrapper {
   text-align: center;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: rem-calc(16px);
 
   &-clickable {
     cursor: pointer;
@@ -40,7 +40,7 @@
 
   &:after {
     content: '';
-    height: .125rem;
+    height: rem-calc(2px);
     pointer-events: none;
     position: absolute;
     top: 4px;
@@ -85,6 +85,12 @@
   text-transform: uppercase;
 }
 
+.step-subtitle {
+  margin-top: rem-calc(32px);
+  padding: 0 rem-calc(16px);
+  text-align: center;
+}
+
 @media #{$small-only} {
   .step-wrapper {
     &-inactive {
@@ -94,5 +100,9 @@
 
   .circle-wrapper {
     margin-left: 40%;
+  }
+
+  .step-subtitle {
+    display: none;
   }
 }

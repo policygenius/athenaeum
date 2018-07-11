@@ -5,21 +5,25 @@ import classnames from 'classnames';
 import styles from './step_indicator.module.scss';
 
 export default class ProgressBarStep extends Component {
-  textProps() {
+  titleProps() {
     const {
-      step
+      step: { currentStepActive }
     } = this.props;
 
-    if (step.currentStepActive) {
-      return {
-        color: 'primary-3',
-        bold: true,
-      };
-    }
+    return {
+      color: currentStepActive ? 'primary-3' : 'neutral-3',
+      bold: true
+    };
+  }
+
+  subtitleProps() {
+    const {
+      step: { currentStepActive }
+    } = this.props;
 
     return {
-      color: 'neutral-3',
-      bold: true
+      color: currentStepActive ? 'primary-3' : 'neutral-3',
+      bold: currentStepActive
     };
   }
 
@@ -49,44 +53,57 @@ export default class ProgressBarStep extends Component {
 
   textClasses() {
     const {
+      clickable,
       step
     } = this.props;
 
     return [
       styles['step-wrapper'],
-      step.clickable && styles['step-wrapper-clickable'],
+      clickable && step.clickable && styles['step-wrapper-clickable'],
       !step.currentStepActive && styles['step-wrapper-inactive']
     ];
   }
 
-  handleClick = () => {
+  clickProps() {
     const {
+      clickable,
+      navigateToPath,
       step,
-      navigateToPath
     } = this.props;
 
-    if (step.clickable) {
-      navigateToPath(step.route);
-    }
+    return !clickable ? {
+      onClick: () => {
+        if (step.clickable) {
+          navigateToPath(step.route);
+        }
+      }
+    } : null;
   }
 
   render() {
     const { step } = this.props;
 
     return (
-      <div className={styles['breadcrumb']} onClick={this.handleClick}>
+      <div className={styles['breadcrumb']} {...this.clickProps()}>
         <div className={classnames(this.textClasses())}>
-          <Text tag='span' type={11} font='a' spaced className={styles['step-title']} {...this.textProps()}>{ step.text }</Text>
+          <Text tag='span' type={11} font='a' spaced className={styles['step-title']} {...this.titleProps()}>{ step.text }</Text>
         </div>
         <div className={classnames(...this.circleWrapperClasses())}>
           <div className={classnames(...this.circleClasses())} />
         </div>
+        {
+          step.subtitle &&
+          <div className={styles['step-subtitle']}>
+            <Text tag='span' type={9} font='b' {...this.subtitleProps()}>{step.subtitle}</Text>
+          </div>
+        }
       </div>
     );
   }
 }
 
 ProgressBarStep.propTypes = {
-  step: PropTypes.object,
+  clickable: PropTypes.bool,
   navigateToPath: PropTypes.func,
+  step: PropTypes.object,
 };
