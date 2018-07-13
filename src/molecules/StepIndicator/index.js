@@ -7,8 +7,9 @@ import styles from './step_indicator.module.scss';
 function StepIndicator(props) {
   const {
     className,
+    clickable,
+    navigateToPath,
     steps,
-    navigateToPath
   } = props;
 
   return (
@@ -19,6 +20,7 @@ function StepIndicator(props) {
             key={idx}
             step={step}
             navigateToPath={navigateToPath}
+            clickable={clickable}
           />
         )}
       </div>
@@ -50,7 +52,15 @@ StepIndicator.propTypes = {
   /**
    * Click handler for steps; expects to be called with path name
    */
-  navigateToPath: PropTypes.func.isRequired
+  navigateToPath: PropTypes.func,
+  /**
+   * Bool will determine whether any steps are clickable. Set to `false` for non-functional, presentation-only progress bars
+   */
+  clickable: PropTypes.bool
+};
+
+StepIndicator.defaultProps = {
+  clickable: true
 };
 
 export default StepIndicator;
