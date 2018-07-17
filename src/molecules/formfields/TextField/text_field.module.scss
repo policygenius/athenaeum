@@ -5,7 +5,7 @@
 }
 
 .header {
-  padding: ru(.5) ru(.75);
+  padding: ru(.5) ru(1);
 
   border-bottom: $border;
 }
@@ -38,6 +38,8 @@
   @include placeholder();
   width: 100%;
   color: color('primary-3');
+  padding-left: ru(1);
+  padding-right: ru(1);
   font-weight: 400;
   text-overflow: ellipsis;
 }

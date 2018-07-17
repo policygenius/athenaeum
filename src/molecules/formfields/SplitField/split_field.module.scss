@@ -13,15 +13,15 @@ $border: 1px solid color('neutral-4');
 }
 
 .label {
-  @include typography-b-10(true);
+  @include typography-b-8(true);
 
   color: color('primary-3');
   border-bottom: $border;
   position: relative;
-  padding: ru(.5) ru(.75);
+  padding: ru(.5) ru(1);
 
-  @media #{$tablet} {
-    @include typography-b-8(true);
+  > label {
+    color: color('primary-3');
   }
 }
 
@@ -31,7 +31,7 @@ $border: 1px solid color('neutral-4');
 
 .input {
   flex-shrink: 1.32;
-  padding: ru(.5) 0 ru(.5) ru(.75);
+  padding: ru(.5) 0 ru(.5) ru(1);
 
   input {
   border: 0;
