@@ -34,15 +34,11 @@ $field-error-color: color('primary-1');
 
 /* -- Shared Field Elements -- */
 %label {
-  @include typography-b-10(true);
+  @include typography-b-8(true);
 
   color: color('primary-3');
   position: relative;
   padding: ru(.5) ru(.75);
-
-  @media #{$tablet} {
-    @include typography-b-8(true);
-  }
 }
 
 %field {

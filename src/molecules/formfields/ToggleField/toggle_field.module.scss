@@ -17,7 +17,7 @@
 }
 
 .header {
-  @include typography-b-8;
+  @include typography-b-8(true);
   margin-bottom: ru(.5);
 }
 
