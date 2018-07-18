@@ -53,25 +53,25 @@ export default class ProgressBarStep extends Component {
 
   textClasses() {
     const {
-      clickable,
+      staticBar,
       step
     } = this.props;
 
     return [
       styles['step-wrapper'],
-      clickable && step.clickable && styles['step-wrapper-clickable'],
+      !staticBar && step.clickable && styles['step-wrapper-clickable'],
       !step.currentStepActive && styles['step-wrapper-inactive']
     ];
   }
 
   clickProps() {
     const {
-      clickable,
+      staticBar,
       navigateToPath,
       step,
     } = this.props;
 
-    return !clickable ? {
+    return !staticBar ? {
       onClick: () => {
         if (step.clickable) {
           navigateToPath(step.route);
@@ -103,7 +103,7 @@ export default class ProgressBarStep extends Component {
 }
 
 ProgressBarStep.propTypes = {
-  clickable: PropTypes.bool,
+  staticBar: PropTypes.bool,
   navigateToPath: PropTypes.func,
   step: PropTypes.object,
 };

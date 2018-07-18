@@ -20,7 +20,7 @@ function StepIndicator(props) {
             key={idx}
             step={step}
             navigateToPath={navigateToPath}
-            clickable={clickable}
+            staticBar={!clickable}
           />
         )}
       </div>
