@@ -31,7 +31,8 @@ export default class AccordionPanel extends Component {
       title,
       type,
       closeText,
-      openText
+      openText,
+      disableNumberedList
     } = this.props;
 
     const sectionClasses = cx(styles['panel'], styles[type]);
@@ -46,9 +47,11 @@ export default class AccordionPanel extends Component {
           className={styles['header']}
           onClick={this.handleClick}
         >
-          <span className={styles['ordinal']}>
-            {number}.
-          </span>
+          { !disableNumberedList &&
+            <span className={styles['ordinal']}>
+              {number}.
+            </span>
+          }
           <Text
             className={styles['title']}
           >
@@ -81,7 +84,8 @@ AccordionPanel.propTypes = {
   openText: PropTypes.string,
   closeText: PropTypes.string,
   number: PropTypes.number,
-  type: PropTypes.oneOf([ 'basic' ])
+  type: PropTypes.oneOf([ 'basic' ]),
+  disableNumberedList: PropTypes.bool,
 };
 
 AccordionPanel.defaultProps = {
