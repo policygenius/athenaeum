@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styles from './accordion.module.scss';
 import AccordionPanel from './AccordionPanel';
 
-const sections = ({ panels, openText, closeText }) =>
+const sections = ({ panels, openText, closeText, disableNumberedList }) =>
   panels.map((panel, i) =>
     <AccordionPanel
       openText={openText}
@@ -12,6 +12,7 @@ const sections = ({ panels, openText, closeText }) =>
       key={i}
       open={i === 0}
       number={i + 1}
+      disableNumberedList={disableNumberedList}
       {...panel}
     />
   );
@@ -22,6 +23,7 @@ function Accordion(props) {
     closeText,
     panels,
     className,
+    disableNumberedList,
     } = props;
 
   const classes = cx(
@@ -36,7 +38,8 @@ function Accordion(props) {
       {sections({
         panels,
         openText,
-        closeText
+        closeText,
+        disableNumberedList
       })}
     </section>
   );
@@ -67,12 +70,17 @@ Accordion.propTypes = {
       title: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired
     })
-  )
+  ),
+  /**
+   * Whether or not to number the accordion items. Defaults to `true`.
+   */
+  disableNumberedList: PropTypes.bool
 };
 
 Accordion.defaultProps = {
   openText: 'View',
-  closeText: 'Close'
+  closeText: 'Close',
+  disableNumberedList: false
 };
 
 export default Accordion;
