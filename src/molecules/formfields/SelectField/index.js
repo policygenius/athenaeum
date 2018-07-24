@@ -26,81 +26,84 @@ const renderAdditionalInfo = (func) => {
   );
 };
 
-function SelectField( props ) {
-  const {
-    className,
-    defaultValue,
-    forProp,
-    input,
-    label,
-    meta,
-    onAdditionalInfoClick,
-    placeholder,
-    selectOptions,
-    tooltip,
-    variant,
-    required,
-    subLabel,
-    noBaseStyle,
-  } = props;
+class SelectField extends React.Component {
+  render() {
+    const {
+      className,
+      defaultValue,
+      forProp,
+      input,
+      label,
+      meta,
+      onAdditionalInfoClick,
+      placeholder,
+      selectOptions,
+      tooltip,
+      variant,
+      required,
+      subLabel,
+      noBaseStyle,
+      fieldRef,
+    } = this.props;
 
-  const classes = [
-    !noBaseStyle && styles['select-field'],
-    variant && styles[variant],
-    meta && meta.active && styles['focused'],
-    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
-    className,
-  ];
+    const classes = [
+      !noBaseStyle && styles['select-field'],
+      variant && styles[variant],
+      meta && meta.active && styles['focused'],
+      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
 
-  const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+    const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
 
-  const requiredAttr = () => required ? { required } : {};
+    const requiredAttr = () => required ? { required } : {};
 
-  return (
-    <div>
-      <div className={classnames(...classes)}>
-        { label &&
-          <label className={styles['label']} htmlFor={forProp}>
-            { label }
-            { renderAdditionalInfo(onAdditionalInfoClick) }
-            {
-              tooltip &&
-                <div className={styles['tooltip-wrapper']}>
-                  { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
-                </div>
-            }
-            {
-              subLabel &&
-                <Text size={10} font='b'>
-                  { subLabel }
-                </Text>
-            }
-          </label>
-        }
+    return (
+      <div ref={fieldRef && fieldRef}>
+        <div className={classnames(...classes)}>
+          { label &&
+            <label className={styles['label']} htmlFor={forProp}>
+              { label }
+              { renderAdditionalInfo(onAdditionalInfoClick) }
+              {
+                tooltip &&
+                  <div className={styles['tooltip-wrapper']}>
+                    { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+                  </div>
+              }
+              {
+                subLabel &&
+                  <Text size={10} font='b'>
+                    { subLabel }
+                  </Text>
+              }
+            </label>
+          }
 
-        { defaultValue ?
-          <div className={styles['select']}>{defaultValue}</div>
-          :
-          <div className={styles['select-wrapper']}>
-            <select
-              className={styles['select']}
-              id={forProp}
-              {...requiredAttr()}
-              {...(omit(input, 'onClick'))}
-            >
-              { placeholder && renderPlaceholder(placeholder, styles['placeholder'] ) }
-              { renderSelectOptions(selectOptions) }
-            </select>
-          </div>
-        }
+          { defaultValue ?
+            <div className={styles['select']}>{defaultValue}</div>
+              :
+            <div className={styles['select-wrapper']}>
+              <select
+                className={styles['select']}
+                id={forProp}
+                {...requiredAttr()}
+                {...(omit(input, 'onClick'))}
+              >
+                { placeholder && renderPlaceholder(placeholder) }
+                { renderSelectOptions(selectOptions) }
+              </select>
+            </div>
+          }
+        </div>
+
+        <ErrorMessage
+          condition={!!message}
+          message={message}
+        />
       </div>
-
-      <ErrorMessage
-        condition={!!message}
-        message={message}
-      />
-    </div>
-  );
+    );
+  }
 }
 
 SelectField.propTypes = {
@@ -145,7 +148,7 @@ SelectField.propTypes = {
    * array containing objects for select value
    */
   selectOptions: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
     value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
   })),
 
@@ -183,7 +186,12 @@ SelectField.propTypes = {
   /**
    * Make this field required. Defaults to required
    */
-  required: PropTypes.bool
+  required: PropTypes.bool,
+
+  /**
+   * Applies a React ref to the wrapping node for this field
+   */
+  fieldRef: PropTypes.func,
 };
 
 SelectField.defaultProps = {

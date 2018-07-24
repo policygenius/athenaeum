@@ -228,9 +228,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               type="checkbox"
               value={undefined}
             />
-            <span
-              className="checkbox-label"
-            />
           </label>
         </div>
       </div>

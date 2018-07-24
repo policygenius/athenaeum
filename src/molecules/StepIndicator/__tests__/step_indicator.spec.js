@@ -17,7 +17,7 @@ describe('<StepIndicator />', () => {
 
     expect(actual).toMatchSnapshot();
   });
-  
+
   describe('<ProgressBarStep />', () => {
     const step = {
       currentStepActive: false,
@@ -25,12 +25,14 @@ describe('<StepIndicator />', () => {
     };
 
     it('has an onClick handler when staticBar prop is false and navigateToPath is defined', () => {
-      const wrapper = mount(<ProgressBarStep step={step} navigateToPath={() => {}} />).find('.breadcrumb')
+      const wrapper = mount(<ProgressBarStep step={step} navigateToPath={() => {}} />).find('.breadcrumb');
+
       expect(wrapper.props().onClick).toBeDefined();
     });
 
     it('does not have an onClick handler when staticBar prop is true', () => {
-      const wrapper = mount(<ProgressBarStep step={step} navigateToPath={() => {}} staticBar />).find('.breadcrumb')
+      const wrapper = mount(<ProgressBarStep step={step} navigateToPath={() => {}} staticBar />).find('.breadcrumb');
+
       expect(wrapper.props().onClick).not.toBeDefined();
     });
   });

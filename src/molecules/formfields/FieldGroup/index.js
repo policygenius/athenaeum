@@ -65,7 +65,7 @@ function FieldGroup(props) {
 
   const childCols = 12 / children.length;
 
-  const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
+  const showErrorMessage = (meta.visited && !meta.active) || (meta.submitFailed && !meta.active);
   const message = meta && showErrorMessage && (meta.error || meta.warning);
 
   const classes = [

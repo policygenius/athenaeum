@@ -12,107 +12,110 @@ import { renderTooltip } from 'utils/fieldUtils';
 
 import styles from './text_field.module.scss';
 
-function TextField( props ) {
-  const {
-    className,
-    htmlFor,
-    input,
-    label,
-    mask,
-    maskChar,
-    meta,
-    noBaseStyle,
-    placeholder,
-    secure,
-    id,
-    tooltip,
-    inputTooltip,
-    type,
-    maskVal,
-    prefix,
-    postfix,
-    activeValidation,
-    subLabel,
-    swiftype,
-  } = props;
+class TextField extends React.Component {
+  render() {
+    const {
+      className,
+      htmlFor,
+      input,
+      label,
+      mask,
+      maskChar,
+      meta,
+      noBaseStyle,
+      placeholder,
+      secure,
+      id,
+      tooltip,
+      inputTooltip,
+      type,
+      maskVal,
+      prefix,
+      postfix,
+      activeValidation,
+      subLabel,
+      swiftype,
+      fieldRef,
+    } = this.props;
 
-  const classes = [
-    !noBaseStyle && styles['text-field'],
-    meta && meta.active && !noBaseStyle && styles['focused'],
-    meta && meta.touched && meta.error && !meta.active && styles['hasError'],
-    className,
-  ];
+    const classes = [
+      !noBaseStyle && styles['text-field'],
+      meta && meta.active && !noBaseStyle && styles['focused'],
+      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
 
-  const inputClasses = [
-    styles['input-wrapper'],
-    prefix && styles['prefix'],
-    postfix && styles['postfix'],
-    swiftype && styles['swiftype-prefix'],
-  ];
+    const inputClasses = [
+      styles['input-wrapper'],
+      prefix && styles['prefix'],
+      postfix && styles['postfix'],
+      swiftype && styles['swiftype-prefix'],
+    ];
 
-  let message;
+    let message;
 
-  if (activeValidation) {
-    message = meta && (meta.dirty || meta.touched) && (meta.error || meta.warning);
-  } else {
-    message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
-  }
+    if (activeValidation) {
+      message = meta && (meta.dirty || meta.touched) && (meta.error || meta.warning);
+    } else {
+      message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+    }
 
-  return (
-    <div>
-      <div className={classnames(...classes)}>
-        { label &&
-          <div className={classnames(styles['header'])}>
-            <div className={styles['label-wrapper']}>
-              <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
-              { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
-              { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+    return (
+      <div ref={fieldRef && fieldRef}>
+        <div className={classnames(...classes)}>
+          { label &&
+            <div className={classnames(styles['header'])}>
+              <div className={styles['label-wrapper']}>
+                <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
+                { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
+                { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+              </div>
+              <Text size={10} font='b'>
+                { subLabel }
+              </Text>
             </div>
-            <Text size={10} font='b'>
-              { subLabel }
-            </Text>
-          </div>
-        }
-        <span
-          data-prefix={prefix}
-          data-postfix={postfix}
-          className={classnames(...inputClasses)}
-        >
-          { swiftype && <Icon className={styles['icon-search']} icon='searchRebrand' /> }
-          { mask ?
-            <InputMask
-              className={styles['input']}
-              type={type}
-              placeholder={placeholder}
-              mask={mask}
-              maskChar={maskChar}
-              id={id}
-              {...input}
-            />
-            :
-            <input
-              className={classnames(
-                styles['input'],
-                swiftype && 'swiftype-search'
-              )}
-              type={type}
-              placeholder={placeholder}
-              id={id}
-              value={maskVal(input.value)}
-              {...omit(input, [ 'value' ])}
-            />
           }
-          {inputTooltip && renderTooltip(inputTooltip, styles['input-tooltip'], styles['tooltip-icon'])}
-        </span>
-      </div>
+          <span
+            data-prefix={prefix}
+            data-postfix={postfix}
+            className={classnames(...inputClasses)}
+          >
+            { swiftype && <Icon className={styles['icon-search']} icon='searchRebrand' /> }
+            { mask ?
+              <InputMask
+                className={styles['input']}
+                type={type}
+                placeholder={placeholder}
+                mask={mask}
+                maskChar={maskChar}
+                id={id}
+                {...input}
+              />
+                :
+              <input
+                className={classnames(
+                    styles['input'],
+                    swiftype && 'swiftype-search'
+                  )}
+                type={type}
+                placeholder={placeholder}
+                id={id}
+                value={maskVal(input.value)}
+                {...omit(input, [ 'value' ])}
+              />
+            }
+            {inputTooltip && renderTooltip(inputTooltip, styles['input-tooltip'], styles['tooltip-icon'])}
+          </span>
+        </div>
 
-      <ErrorMessage
-        condition={!!message}
-        message={message}
-        type={meta && meta.warning ? 'warning' : 'error'}
-      />
-    </div>
-  );
+        <ErrorMessage
+          condition={!!message}
+          message={message}
+          type={meta && meta.warning ? 'warning' : 'error'}
+        />
+      </div>
+    );
+  }
 }
 
 TextField.propTypes = {
@@ -226,6 +229,11 @@ TextField.propTypes = {
    * Enables swiftype search
    */
   swiftype: PropTypes.bool,
+
+  /**
+   * Applies a React ref to the wrapping node for this field
+   */
+  fieldRef: PropTypes.func,
 };
 
 TextField.defaultProps = {
