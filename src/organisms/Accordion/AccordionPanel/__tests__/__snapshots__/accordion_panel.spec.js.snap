@@ -23,11 +23,8 @@ exports[`<AccordionPanel /> renders correctly 1`] = `
   </header>
   <section
     className="content"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": undefined,
-      }
-    }
-  />
+  >
+    <div />
+  </section>
 </section>
 `;
