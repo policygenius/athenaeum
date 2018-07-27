@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import LinkWrapper from 'atoms/LinkWrapper';
 import Text from 'atoms/Text';
+import { Markdown } from 'react-showdown';
 import styles from './accordion_panel.module.scss';
 
 export default class AccordionPanel extends Component {
@@ -19,10 +20,6 @@ export default class AccordionPanel extends Component {
     this.setState({
       open: !this.state.open
     });
-  }
-
-  createMarkup() {
-    return { __html: this.props.body };
   }
 
   render() {
@@ -63,10 +60,9 @@ export default class AccordionPanel extends Component {
             </LinkWrapper>
           </span>
         </header>
-        <section
-          dangerouslySetInnerHTML={this.createMarkup()}
-          className={contentClasses}
-        />
+        <section className={contentClasses}>
+          <Markdown markup={this.props.body} />
+        </section>
       </section>
     );
   }
