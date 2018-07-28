@@ -55,8 +55,6 @@ $gap: ru(.5);
 }
 
 .checkbox-label {
-  @include typography-b-8;
-  color: color('primary-3');
   cursor: pointer;
 }
 

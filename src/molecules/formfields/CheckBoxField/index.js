@@ -1,33 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Text from 'atoms/Text';
+
 import styles from './checkbox_field.module.scss';
 
-function CheckBoxField( props ) {
-  const {
-    label,
-    input,
-  } = props;
+class CheckBoxField extends React.Component {
+  render() {
+    const {
+      label,
+      input,
+      textColor,
+      fieldRef,
+    } = this.props;
 
-  return (
-    <label
-      className={styles['checkbox']}
-      htmlFor={`checkbox-${input.name}`}
-    >
-      <input
-        type='checkbox'
-        id={`checkbox-${input.name}`}
-        className={styles['checkbox-input']}
-        checked={input.value}
-        {...input}
-      />
-      <span
-        className={styles['checkbox-label']}
+    return (
+      <label
+        className={styles['checkbox']}
+        htmlFor={`checkbox-${input.name}`}
+        ref={fieldRef && fieldRef}
       >
-        { label }
-      </span>
-    </label>
-  );
+        <input
+          type='checkbox'
+          id={`checkbox-${input.name}`}
+          className={styles['checkbox-input']}
+          checked={input.value}
+          {...input}
+        />
+        <Text
+          tag='span'
+          bold={input.checked}
+          color={input.checked ? 'primary-3' : textColor || 'neutral-2'}
+          className={styles['checkbox-label']}
+        >
+          { label }
+        </Text>
+      </label>
+    );
+  }
 }
 
 CheckBoxField.propTypes = {
@@ -48,6 +58,16 @@ CheckBoxField.propTypes = {
    * Makes field disabled
    */
   disabled: PropTypes.bool,
+
+  /**
+   * Applies color to label text; use Pg brand color names
+   */
+  textColor: PropTypes.string,
+
+  /**
+   * Applies a React ref to the wrapping node for this field
+   */
+  fieldRef: PropTypes.func,
 };
 
 export default CheckBoxField;

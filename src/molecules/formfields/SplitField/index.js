@@ -26,7 +26,7 @@ function SplitField(props) {
     return <div className={classnames(...classes)}>{child}</div>;
   };
 
-  const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
+  const showErrorMessage = !meta.active && (meta.visited || meta.submitFailed);
 
   const classes = [
     styles['split-field'],

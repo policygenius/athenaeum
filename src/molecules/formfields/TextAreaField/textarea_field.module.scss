@@ -8,6 +8,7 @@
   @extend %label;
 
   border-bottom: $border;
+  padding: rem-calc(12px) rem-calc(24px);
 }
 
 .textarea {
@@ -17,7 +18,7 @@
   color: color('neutral-2');
   overflow: auto;
   outline: none;
-  padding: .63rem 1.125rem;
+  padding: .63rem rem-calc(24px);
 }
 
 /* --  state:focus  -- */

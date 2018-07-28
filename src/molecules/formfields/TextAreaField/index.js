@@ -15,7 +15,8 @@ function TextAreaField(props) {
     htmlFor,
     input,
     meta,
-    noBaseStyle
+    noBaseStyle,
+    fieldRef,
   } = props;
 
   const classes = [
@@ -28,7 +29,7 @@ function TextAreaField(props) {
   const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
 
   return (
-    <div>
+    <div ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
         { label &&
           <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
@@ -92,6 +93,11 @@ TextAreaField.propTypes = {
    * Passing `noBaseStyle=true` will omit the base class style
    */
   noBaseStyle: PropTypes.bool,
+
+  /**
+   * Applies a React ref to the wrapping node for this field
+   */
+  fieldRef: PropTypes.func,
 };
 
 TextAreaField.defaultProps = {

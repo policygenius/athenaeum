@@ -27,8 +27,9 @@ $checked-size: rem-calc(14px);
 
 .label {
   display: inline-block;
-  color: color('primary-3');
+  color: color('neutral-2');
   cursor: pointer;
+  font-weight: 600;
 
   &:after {
     content: '';
@@ -43,6 +44,8 @@ $checked-size: rem-calc(14px);
   }
 
   &.checked {
+    color: color('primary-3');
+
     &:after { opacity: 1; }
   }
 

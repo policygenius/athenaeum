@@ -12,7 +12,7 @@ $border: 1px solid color('neutral-4');
   }
 }
 
-.label {
+.label-wrapper {
   @include typography-b-8(true);
   color: color('primary-3');
   border-bottom: $border;
@@ -24,6 +24,20 @@ $border: 1px solid color('neutral-4');
   }
 }
 
+.label {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tooltip {
+  margin-left: auto;
+}
+
+.tooltip-icon {
+  @extend %tooltip-icon;
+}
+
 .line-1 {
   display: flex;
 }
@@ -31,6 +45,10 @@ $border: 1px solid color('neutral-4');
 .input {
   flex-shrink: 1.32;
   padding: ru(.5) 0 ru(.5) ru(1);
+
+  div {
+    border: 0;
+  }
 
   input {
     border-right: $border;

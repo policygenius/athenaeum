@@ -8,67 +8,70 @@ import { renderTooltip } from 'utils/fieldUtils';
 
 import styles from './radio_group.module.scss';
 
-function RadioGroup(props) {
-  const {
-    children,
-    className,
-    label,
-    subLabel,
-    input,
-    meta,
-    tooltip,
-  } = props;
+class RadioGroup extends React.Component {
+  render() {
+    const {
+      children,
+      className,
+      label,
+      subLabel,
+      input,
+      meta,
+      tooltip,
+      fieldRef,
+    } = this.props;
 
-  const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
-  const message = meta && showErrorMessage && (meta.error || meta.warning);
+    const showErrorMessage = !meta.active && (meta.visited || meta.submitFailed);
+    const message = meta && showErrorMessage && (meta.error || meta.warning);
 
-  const classes = [
-    styles['radio-group'],
-    meta && meta.active && styles['focused'],
-    meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
-    className,
-  ];
+    const classes = [
+      styles['radio-group'],
+      meta && meta.active && styles['focused'],
+      meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
 
-  return (
-    <div>
-      <div
-        className={classnames(...classes)}
-        onBlur={(e) => {
-          if (!e.relatedTarget) input.onBlur();
-        }}
-        onFocus={input && input.onFocus}
-      >
-        <div className={styles['label-wrapper']}>
-          <div className={styles['label']}>
-            <span>{label}</span>
-            { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+    return (
+      <div ref={fieldRef && fieldRef}>
+        <div
+          className={classnames(...classes)}
+          onBlur={(e) => {
+            if (!e.relatedTarget) input.onBlur();
+          }}
+          onFocus={input && input.onFocus}
+        >
+          <div className={styles['label-wrapper']}>
+            <div className={styles['label']}>
+              <span>{label}</span>
+              { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+            </div>
+
+            {
+              subLabel &&
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {subLabel}
+                </Text>
+            }
           </div>
-
           {
-            subLabel &&
-              <Text
-                size={10}
-                font='b'
-              >
-                {subLabel}
-              </Text>
+            React.Children.map(children, child =>
+              <div className={styles['field']}>
+                { child }
+              </div>
+            )
           }
         </div>
-        {
-          React.Children.map(children, child =>
-            <div className={styles['field']}>
-              { child }
-            </div>
-          )
-        }
-      </div>
 
-      <ErrorMessage
-        condition={!!message}
-        message={message}
-      />
-    </div>
-  );
+        <ErrorMessage
+          condition={!!message}
+          message={message}
+        />
+      </div>
+    );
+  }
 }
 
 
@@ -106,6 +109,11 @@ RadioGroup.propTypes = {
     PropTypes.func,
     PropTypes.string,
   ]),
+
+  /**
+   * Applies a React ref to the wrapping node for this field
+   */
+  fieldRef: PropTypes.func,
 };
 
 export default RadioGroup;

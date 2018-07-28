@@ -7,83 +7,104 @@ import Layout from 'atoms/Layout';
 import Col from 'atoms/Layout/Col';
 import Text from 'atoms/Text';
 import { renderTooltip } from 'utils/fieldUtils';
+
 import styles from './checkbox_wrapper.module.scss';
+import BaseFieldGroup from '../util/BaseFieldGroup';
 
-function CheckboxWrapper( props ) {
-  const {
-    label,
-    children,
-    tooltip,
-    subLabel,
-    footerBox,
-    meta,
-    input,
-    className,
-  } = props;
+class CheckboxWrapper extends BaseFieldGroup {
+  render() {
+    const {
+      label,
+      children,
+      tooltip,
+      subLabel,
+      footerBox,
+      meta,
+      input,
+      className,
+      fieldRef,
+      noFieldBorders,
+    } = this.props;
 
-  const showErrorMessage = (meta.visited && !meta.active) || meta.submitFailed;
-  const message = meta && showErrorMessage && (meta.error || meta.warning);
+    const showErrorMessage = !meta.active && (meta.visited || meta.submitFailed);
+    const message = meta && showErrorMessage && (meta.error || meta.warning);
 
-  const classes = [
-    styles['checkbox-list'],
-    meta && meta.active && styles['focused'],
-    meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
-    className,
-  ];
+    const classes = [
+      styles['checkbox-list'],
+      meta && meta.active && styles['focused'],
+      meta && showErrorMessage && meta.error && !meta.active && styles['hasError'],
+      noFieldBorders && styles['no-field-borders'],
+      className,
+    ];
 
-  return (
-    <div>
+    return (
       <div
-        className={classnames(...classes)}
-        onBlur={(e) => {
-          if (!e.relatedTarget) input.onBlur();
+        ref={(ref) => {
+          this.wrapperReference = ref;
+          fieldRef;
         }}
-        onFocus={input && input.onFocus}
       >
-        <div className={styles['header']}>
-          <div className={styles['label-wrapper']}>
-            { label && <label htmlFor='checkbox' className={styles['label']}>{label}</label> }
-            { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+        <div
+          className={classnames(...classes)}
+          onMouseDown={this.handleMouseDown}
+          onMouseUp={this.handleMouseUp}
+          onFocus={input && input.onFocus}
+        >
+          <div className={styles['header']}>
+            <div className={styles['label-wrapper']}>
+              { label && <label htmlFor='checkbox' className={styles['label']}>{label}</label> }
+              { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+            </div>
+
+            {
+              subLabel &&
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {subLabel}
+                </Text>
+            }
           </div>
+          <Layout
+            smallCols={[ 12 ]}
+            mediumCols={[ 6 ]}
+            fullwidth
+            className={styles.content}
+          >
+            {
+              React.Children.map(children, child =>
+                <Col className={styles.checkbox}>
+                  {
+                    React.cloneElement(child, {
+                      ...child.props,
+                      onBlur: this.handleBlur,
+                    })
+                  }
+                </Col>
+              )
+            }
+          </Layout>
 
           {
-            subLabel &&
-              <Text
-                size={10}
-                font='b'
-              >
-                {subLabel}
-              </Text>
+            footerBox &&
+              <div className={styles['footer-box']}>
+                {
+                  React.cloneElement(footerBox, {
+                    ...footerBox.props,
+                    onBlur: this.handleBlur,
+                  })
+                }
+              </div>
           }
         </div>
-        <Layout
-          smallCols={[ 12 ]}
-          mediumCols={[ 6 ]}
-          fullwidth
-          className={styles['content']}
-        >
-          {
-            React.Children.map(children, child =>
-              <Col className={styles['checkbox']}>
-                {child}
-              </Col>
-            )
-          }
-        </Layout>
-
-        {
-          footerBox &&
-            <div className={styles['footer-box']}>
-              { footerBox}
-            </div>
-        }
+        <ErrorMessage
+          condition={!!message}
+          message={message}
+        />
       </div>
-      <ErrorMessage
-        condition={!!message}
-        message={message}
-      />
-    </div>
-  );
+    );
+  }
 }
 
 CheckboxWrapper.propTypes = {

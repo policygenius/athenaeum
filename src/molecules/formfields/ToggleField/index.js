@@ -54,7 +54,7 @@ function ToggleField( props ) {
     noBorder,
     nested,
     sideBySide,
-    setScrollRef,
+    fieldRef,
   } = props;
 
   const classes = [
@@ -71,7 +71,7 @@ function ToggleField( props ) {
   const buttonStyle = sideBySide ? styles['side-by-side'] : styles['button-wrapper'];
 
   return (
-    <div className={styles.wrapper} ref={setScrollRef && setScrollRef(input.name)}>
+    <div className={styles.wrapper} ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
         <Layout
           nested={nested}
@@ -184,7 +184,11 @@ ToggleField.propTypes = {
   children: PropTypes.arrayOf(
     PropTypes.node
   ),
-  setScrollRef: PropTypes.func,
+
+  /**
+   * Applies a React ref to the wrapping node for this field
+   */
+  fieldRef: PropTypes.func,
 };
 
 export default ToggleField;
