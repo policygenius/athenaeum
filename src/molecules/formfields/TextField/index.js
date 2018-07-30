@@ -66,7 +66,7 @@ class TextField extends React.Component {
           { label &&
             <div className={classnames(styles['header'])}>
               <div className={styles['label-wrapper']}>
-                <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
+                <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
                 { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
                 { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
               </div>
@@ -132,7 +132,8 @@ TextField.propTypes = {
     PropTypes.object
   ]),
   /**
-   * `for` prop on label
+   * `for` prop on label.
+   * Please use the `id` prop instead
    */
   htmlFor: PropTypes.string,
 
@@ -182,9 +183,11 @@ TextField.propTypes = {
   secure: PropTypes.bool,
 
   /**
-   * id added to the `input` node
+   * id added to the `input` node and used for the `for` HTML attribute on the associated `label`.
+   * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
+
   /**
    * either a handler for clicking the tooltip, or text to go in the tooltip for the label
    */

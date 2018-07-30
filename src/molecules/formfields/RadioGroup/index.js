@@ -42,7 +42,7 @@ class RadioGroup extends React.Component {
         >
           <div className={styles['label-wrapper']}>
             <div className={styles['label']}>
-              <span>{label}</span>
+              <label htmlFor={input.name}>{label}</label>
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
 

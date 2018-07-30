@@ -44,6 +44,7 @@ class SelectField extends React.Component {
       subLabel,
       noBaseStyle,
       fieldRef,
+      id,
     } = this.props;
 
     const classes = [
@@ -62,7 +63,7 @@ class SelectField extends React.Component {
       <div ref={fieldRef && fieldRef}>
         <div className={classnames(...classes)}>
           { label &&
-            <label className={styles['label']} htmlFor={forProp}>
+            <label className={styles['label']} htmlFor={id || forProp}>
               { label }
               { renderAdditionalInfo(onAdditionalInfoClick) }
               {
@@ -86,7 +87,7 @@ class SelectField extends React.Component {
             <div className={styles['select-wrapper']}>
               <select
                 className={styles['select']}
-                id={forProp}
+                id={id || forProp}
                 {...requiredAttr()}
                 {...(omit(input, 'onClick'))}
               >
@@ -192,6 +193,12 @@ SelectField.propTypes = {
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
+
+  /**
+   * id added to the `input` node and used for the `for` HTML attribute on the associated `label`.
+   * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
+   */
+  id: PropTypes.string.isRequired,
 };
 
 SelectField.defaultProps = {

@@ -17,6 +17,7 @@ function TextAreaField(props) {
     meta,
     noBaseStyle,
     fieldRef,
+    id,
   } = props;
 
   const classes = [
@@ -32,13 +33,14 @@ function TextAreaField(props) {
     <div ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
         { label &&
-          <label className={styles['label']} htmlFor={htmlFor}>{ label }</label>
+          <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
         }
 
         <textarea
           className={styles['textarea']}
           placeholder={placeholder}
           rows={rows}
+          id={id}
           {...input}
         />
       </div>
@@ -98,6 +100,12 @@ TextAreaField.propTypes = {
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
+
+  /**
+   * id added to the `input` node and used for the `for` HTML attribute on the associated `label`.
+   * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
+   */
+  id: PropTypes.string.isRequired,
 };
 
 TextAreaField.defaultProps = {

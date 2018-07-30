@@ -13,7 +13,7 @@ exports[`<GoogleAutoCompleteField /> renders correctly 1`] = `
       >
         <label
           className="label"
-          htmlFor={undefined}
+          htmlFor="autocomplete"
         >
           Street address
         </label>
