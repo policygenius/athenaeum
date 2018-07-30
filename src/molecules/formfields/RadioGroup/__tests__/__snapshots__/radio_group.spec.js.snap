@@ -13,9 +13,11 @@ exports[`<RadioGroup /> renders correctly 1`] = `
       <div
         className="label"
       >
-        <span>
+        <label
+          htmlFor={undefined}
+        >
           Test label
-        </span>
+        </label>
         <span>
           <span
             className="tooltip-wrapper tooltip"
