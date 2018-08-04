@@ -106,12 +106,10 @@ DateField.propTypes = {
    * Any children passed to DateField
    */
   children: PropTypes.node,
-
   /**
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
-
   /**
    * Adds a tooltip to the label. Provide string for text to be placed inside tooltip popup
    */

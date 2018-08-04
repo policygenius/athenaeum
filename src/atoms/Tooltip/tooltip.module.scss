@@ -95,7 +95,19 @@ $hover-message-shift: calc(50% - 3.06rem);
         display: block;
         visibility: visible;
         opacity: 1;
+        overflow-wrap: break-word;
       }
+    }
+  }
+
+  .reveal {
+    position: relative;
+
+    .hover-message {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      overflow-wrap: break-word;
     }
   }
 }
