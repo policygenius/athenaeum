@@ -27,14 +27,14 @@ class CheckBoxField extends React.Component {
           checked={input.value}
           {...input}
         />
-        <Text
-          tag='span'
-          bold={input.checked}
-          color={input.checked ? 'primary-3' : textColor || 'neutral-2'}
-          className={styles['checkbox-label']}
-        >
-          { label }
-        </Text>
+        <span className={styles['checkbox-label']}>
+          <Text
+            bold={input.checked}
+            color={input.checked ? 'primary-3' : textColor || 'neutral-2'}
+          >
+            { label }
+          </Text>
+        </span>
       </label>
     );
   }
