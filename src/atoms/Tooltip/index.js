@@ -10,24 +10,49 @@ class Tooltip extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      visible: false
     };
-
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
+  componentDidMount() {
+    document.addEventListener('mousedown', this.hide);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.hide);
+  }
+
+  setWrapperRef = (node) => {
+    this.ref = node;
+  }
+
+  openModal = () => {
     (window.innerWidth <= 768) && this.setState({
       modalIsOpen: true
     });
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({
       modalIsOpen: false
     });
   }
+
+  toggleVisibility = (e) => {
+    e.stopPropagation();
+    this.setState({ visible: !this.state.visible });
+    this.props.onClick && this.props.onClick(e);
+  };
+
+  hide = (e) => {
+    if (this.ref && !this.ref.contains(e.target)) {
+      e.stopPropagation();
+      this.setState({ visible: false });
+    }
+  };
+
+  handleClick = e => window.innerWidth <= 768 ? this.openModal() : this.toggleVisibility(e);
 
   render() {
     const {
@@ -35,22 +60,24 @@ class Tooltip extends React.Component {
       className,
       left,
       right,
-      onClick,
       text,
       hoverMessageClassName,
       inline,
       tooltipIconSize,
+      revealOnClick
     } = this.props;
 
     return (
       <span>
         <span
-          onClick={onClick || this.openModal}
+          onClick={revealOnClick ? this.handleClick : this.openModal}
           className={classnames(
-            styles['tooltip-wrapper'],
+            !revealOnClick && styles['tooltip-wrapper'],
+            this.state.visible && styles.reveal,
             inline && styles[`inline-${inline}`],
             className
           )}
+          ref={this.setWrapperRef}
         >
           {
             text ||
@@ -129,6 +156,11 @@ Tooltip.propTypes = {
    * Changes height and width of default Tooltip icon. Provide a pixel amount as a number (without the units)
    */
   tooltipIconSize: PropTypes.number,
+
+  /**
+   * When viewport is not mobile and revealOnClick prop is present, reveals tooltip message on click only
+   */
+  revealOnClick: PropTypes.bool
 };
 
 Tooltip.defaultProps = {

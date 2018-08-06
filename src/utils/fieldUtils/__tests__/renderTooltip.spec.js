@@ -28,18 +28,6 @@ describe('renderTooltip()', () => {
         expect(modalElement.length).toEqual(1);
       });
     });
-
-    describe('tooltip is a function', () => {
-      it('returns Tooltip with tooltip argument as onClick', () => {
-        const tooltip = jest.fn();
-
-        const component = renderTooltip(tooltip, className, iconClassName);
-        const wrapper = mount(component);
-        const tooltipElement = wrapper.children().childAt(0);
-
-        expect(tooltipElement.props().onClick).toEqual(tooltip);
-      });
-    });
   });
 
   describe('Icon', () => {
