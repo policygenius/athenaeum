@@ -22,13 +22,22 @@ class DateField extends React.Component {
       tooltip,
     } = this.props;
 
+    const numberOfChildren = React.Children.toArray(children).length;
+
     const wrapChild = (child) => {
       const classes = [
         styles['input'],
+        styles[`fields-${numberOfChildren}`],
         meta && meta.active && styles['input-focused'],
       ];
 
-      return <div className={classnames(...classes)}>{child}</div>;
+      return (
+        <div
+          className={classnames(...classes)}
+        >
+          {child}
+        </div>
+      );
     };
 
     const showErrorMessage = !meta.active && (meta.visited || meta.submitFailed);
