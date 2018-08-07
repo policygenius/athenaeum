@@ -194,6 +194,7 @@ TextField.propTypes = {
   tooltip: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,
+    PropTypes.object
   ]),
   /**
    * either a handler for clicking the tooltip, or text to go in the tooltip for the input
