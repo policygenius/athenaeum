@@ -23,7 +23,7 @@ export default function renderTooltip(tooltip, className, iconClassName) {
   return (
     <Tooltip
       className={className}
-      onClick={tooltip}
+      revealOnClick={tooltip.revealOnClick}
       right
       text={
         <Icon
@@ -31,6 +31,8 @@ export default function renderTooltip(tooltip, className, iconClassName) {
           className={iconClassName}
         />
       }
-    />
+    >
+      { tooltip.children }
+    </Tooltip>
   );
 }
