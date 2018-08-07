@@ -12,6 +12,22 @@ import styles from './checkbox_wrapper.module.scss';
 import BaseFieldGroup from '../util/BaseFieldGroup';
 
 class CheckboxWrapper extends BaseFieldGroup {
+  get childCols() {
+    const { children } = this.props;
+
+    const numberOfChildren = React.Children.toArray(children).length;
+
+    const cols = {
+      smallCols: [ 12 ],
+    };
+
+    if (numberOfChildren > 1) {
+      cols.mediumCols = [ 6 ];
+    }
+
+    return cols;
+  }
+
   render() {
     const {
       label,
@@ -67,8 +83,7 @@ class CheckboxWrapper extends BaseFieldGroup {
             }
           </div>
           <Layout
-            smallCols={[ 12 ]}
-            mediumCols={[ 6 ]}
+            {...this.childCols}
             fullwidth
             className={styles.content}
           >
