@@ -16,10 +16,12 @@ function SplitField(props) {
     subLabel,
   } = props;
 
+  const numberOfChildren = React.Children.toArray(children).length;
+
   const wrapChild = (child) => {
     const classes = [
       styles.input,
-      children.length === 2 && styles['two-fields'],
+      styles[`fields-${numberOfChildren}`],
       meta && meta.active && styles['input-focused'],
     ];
 

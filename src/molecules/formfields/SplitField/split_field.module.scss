@@ -53,8 +53,12 @@ $border: 1px solid color('neutral-4');
 }
 
 @media #{$IE} {
-  .two-fields {
+  .fields-2 {
     flex-basis: 50%;
+  }
+
+  .fields-3 {
+    flex-basis: calc(100% / 3);
   }
 }
 
