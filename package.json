@@ -165,6 +165,9 @@
     ]
   },
   "jest": {
+    "collectCoverageFrom": [
+      "**/src/**.{js,jsx}"
+    ],
     "setupFiles": [
       "<rootDir>/jestSetup.js"
     ],
