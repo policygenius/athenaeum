@@ -71,6 +71,7 @@ function RadioCard(props) {
     input,
     radioValue,
     children,
+    renderProp,
   } = props;
 
   const classes = classnames(
@@ -80,6 +81,38 @@ function RadioCard(props) {
     isValid(sections) && styles['sectioned'],
     className,
   );
+
+  if (renderProp) {
+    return (
+      <div
+        className={classes}
+        {...omit(input, [ 'value', 'onClick' ])}
+        onClick={() => input.onChange(radioValue)}
+        id={`radio-${input.name}`}
+        key={`radio-${radioValue}`}
+      >
+        <label
+          className={styles['card']}
+          htmlFor={`radio-${camelCase(radioValue)}`}
+        >
+          {
+            renderProp({
+              radioButton:
+  <div className={classnames(radioStyles['radio-field'], styles['radio-field'])}>
+    <span
+      className={classnames(radioStyles['label'], { [radioStyles.checked]: input.value === radioValue }, styles['label'])}
+    />
+
+  </div>,
+              selected: input.value === radioValue,
+              notSelected: input.value && input.value !== radioValue,
+            })
+          }
+
+        </label>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -132,7 +165,15 @@ RadioCard.propTypes = {
   /**
    * bold label displayed in card
    */
-  label: PropTypes.string.isRequired,
+  label: (props) => {
+    if (!props['label'] && !props['renderProp']) {
+      return new Error(
+        'Label prop is required',
+      );
+    }
+
+    return null;
+  },
 
   /**
    * additional description displayed under label
@@ -179,7 +220,14 @@ RadioCard.propTypes = {
   radioValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
-  ]).isRequired
+  ]).isRequired,
+
+  /**
+   * Provide a function that returns a React component to have great control over the internal look of the card.
+   *
+   * The `renderProp` function will be passed the `radioButton`, with all of its functionality, and `selected`/`notSelected` booleans for styling based on selected state
+   */
+  renderProp: PropTypes.func,
 };
 
 export default RadioCard;
