@@ -15,11 +15,11 @@ exports[`<StarRating /> renders correctly 1`] = `
     }
   >
     <img
-      alt="star"
+      alt="star2"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svgz"
-      title="star"
+      src="https://static.policygenius.com/svgs/star2.svgz"
+      title="star2"
     />
   </span>
   <span
@@ -33,11 +33,11 @@ exports[`<StarRating /> renders correctly 1`] = `
     }
   >
     <img
-      alt="star"
+      alt="star2"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svgz"
-      title="star"
+      src="https://static.policygenius.com/svgs/star2.svgz"
+      title="star2"
     />
   </span>
   <span
@@ -51,11 +51,11 @@ exports[`<StarRating /> renders correctly 1`] = `
     }
   >
     <img
-      alt="star"
+      alt="star2"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svgz"
-      title="star"
+      src="https://static.policygenius.com/svgs/star2.svgz"
+      title="star2"
     />
   </span>
   <span
@@ -69,11 +69,11 @@ exports[`<StarRating /> renders correctly 1`] = `
     }
   >
     <img
-      alt="star"
+      alt="star2"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svgz"
-      title="star"
+      src="https://static.policygenius.com/svgs/star2.svgz"
+      title="star2"
     />
   </span>
   <span
@@ -87,11 +87,11 @@ exports[`<StarRating /> renders correctly 1`] = `
     }
   >
     <img
-      alt="star"
+      alt="star2"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star.svgz"
-      title="star"
+      src="https://static.policygenius.com/svgs/star2.svgz"
+      title="star2"
     />
   </span>
 </span>

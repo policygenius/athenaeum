@@ -30,7 +30,7 @@ function StarRating(props) {
                 [styles['filled-in']]: i < rating
               }
             )}
-            icon='star'
+            icon='star2'
             width={size}
             height={size}
             renderSVGDOM

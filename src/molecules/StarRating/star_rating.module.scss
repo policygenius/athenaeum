@@ -10,13 +10,15 @@
     margin-left: 0;
   }
 
-  svg path {
+  svg polygon {
     fill: color('neutral-4');
+    stroke: color('neutral-4');
   }
 }
 
 .filled-in {
-  svg path {
+  svg polygon {
     fill: color('primary-3');
+    stroke: color('primary-3');
   }
 }

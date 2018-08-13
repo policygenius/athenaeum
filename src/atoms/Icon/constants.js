@@ -181,6 +181,7 @@ module.exports = {
     'silverware',
     'silverwareGray',
     'star',
+    'star2',
     'steeringWheel',
     'stethoscope',
     'stillwaterLogoBlack',
