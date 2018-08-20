@@ -9,7 +9,9 @@ fi
 
 echo "Running automated code review with SonarQube..."
 
-SHORT_REPO_NAME=$(echo ${BUILDKITE_REPO} | sed 's/git@github\.com:\(.*\)\.git/\1/')
+SHORT_REPO_NAME=$(echo ${BUILDKITE_REPO} | \
+  sed 's/git@github\.com:\(.*\)/\1/' | \
+  sed 's/\(.*\)\.git/\1/')
 
 echo "BuildKite Pull Request: ${BUILDKITE_PULL_REQUEST}"
 echo "BuildKite Repo Name: ${SHORT_REPO_NAME}"
