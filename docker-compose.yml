@@ -26,3 +26,4 @@ services:
       - NPM_EMAIL
       - GITHUB_TOKEN
       - SONAR_LOGIN
+
