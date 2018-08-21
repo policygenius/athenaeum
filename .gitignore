@@ -57,3 +57,6 @@ tmp/
 
 # Temp svgs.txt file for updating the Icon prop types
 svgs.txt
+
+# Ignore sonar-scanner results folder
+.scannerwork/
