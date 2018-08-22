@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { camelCase, omit } from 'lodash';
+import camelCase from 'lodash/camelCase';
+import omit from 'lodash/omit';
 
 import Icon from 'atoms/Icon';
 import radioStyles from 'molecules/formfields/RadioField/radio_field.module.scss';
