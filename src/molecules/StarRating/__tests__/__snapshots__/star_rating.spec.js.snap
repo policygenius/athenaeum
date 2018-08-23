@@ -87,11 +87,11 @@ exports[`<StarRating /> renders correctly 1`] = `
     }
   >
     <img
-      alt="star2"
+      alt="starLight"
       className="img"
       data-src={undefined}
-      src="https://static.policygenius.com/svgs/star2.svgz"
-      title="star2"
+      src="https://static.policygenius.com/svgs/starLight.svgz"
+      title="starLight"
     />
   </span>
 </span>
