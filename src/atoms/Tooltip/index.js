@@ -27,10 +27,11 @@ class Tooltip extends React.Component {
     this.ref = node;
   }
 
-  openModal = () => {
+  openModal = (e) => {
     (window.innerWidth <= 768) && this.setState({
       modalIsOpen: true
     });
+    this.props.onClick && this.props.onClick(e, true);
   }
 
   closeModal = () => {
@@ -42,7 +43,7 @@ class Tooltip extends React.Component {
   toggleVisibility = (e) => {
     e.stopPropagation();
     this.setState({ visible: !this.state.visible });
-    this.props.onClick && this.props.onClick(e);
+    this.props.onClick && this.props.onClick(e, !this.state.visible);
   };
 
   hide = (e) => {
@@ -52,7 +53,7 @@ class Tooltip extends React.Component {
     }
   };
 
-  handleClick = e => window.innerWidth <= 768 ? this.openModal() : this.toggleVisibility(e);
+  handleClick = e => window.innerWidth <= 768 ? this.openModal(e) : this.toggleVisibility(e);
 
   render() {
     const {
