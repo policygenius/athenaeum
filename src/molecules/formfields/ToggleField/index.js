@@ -143,7 +143,7 @@ ToggleField.propTypes = {
   tooltip: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.shape({
-      children: PropTypes.string.isRequired,
+      children: PropTypes.node.isRequired,
       className: PropTypes.string,
       styles: PropTypes.object
     })
