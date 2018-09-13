@@ -8,14 +8,14 @@ ShallowWrapper {
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            12,
-          ]
+      Array [
+        12,
+      ]
     }
     variant="bordered-buckets"
     xLargeCols={Array []}
     xxLargeCols={Array []}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -71,21 +71,21 @@ ShallowWrapper {
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <Col
-        borderColor="neutral-6"
-        className="child"
+      borderColor="neutral-6"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -101,31 +101,17 @@ ShallowWrapper {
       "children": Array [
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
           className="child"
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
-/>,
+        />,
       ],
       "className": "layout",
       "id": undefined,
@@ -142,7 +128,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -197,31 +183,17 @@ ShallowWrapper {
         "children": Array [
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
             className="child"
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
-/>,
+          />,
         ],
         "className": "layout",
         "id": undefined,
@@ -238,7 +210,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -303,32 +275,32 @@ ShallowWrapper {
     bottomSpacing="xLarge"
     fullwidth={true}
     largeCols={
-        Array [
-            7,
-            5,
-          ]
+      Array [
+        7,
+        5,
+      ]
     }
     mediumCols={
-        Array [
-            6,
-          ]
+      Array [
+        6,
+      ]
     }
     padding={true}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -345,33 +317,27 @@ ShallowWrapper {
         <Col
           borderColor="neutral-6"
           bottomSpacing="xLarge"
-          flex={undefined}
           fullwidth={true}
           largeCols={7}
           mediumCols={6}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing="xLarge"
-          flex={undefined}
           fullwidth={true}
           largeCols={5}
           mediumCols={6}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout padding",
       "id": undefined,
@@ -388,7 +354,7 @@ ShallowWrapper {
           "bottomSpacing": "xLarge",
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": true,
           "largeCols": 7,
@@ -420,7 +386,7 @@ ShallowWrapper {
           "bottomSpacing": "xLarge",
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": true,
           "largeCols": 5,
@@ -456,33 +422,27 @@ ShallowWrapper {
           <Col
             borderColor="neutral-6"
             bottomSpacing="xLarge"
-            flex={undefined}
             fullwidth={true}
             largeCols={7}
             mediumCols={6}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing="xLarge"
-            flex={undefined}
             fullwidth={true}
             largeCols={5}
             mediumCols={6}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout padding",
         "id": undefined,
@@ -499,7 +459,7 @@ ShallowWrapper {
             "bottomSpacing": "xLarge",
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": true,
             "largeCols": 7,
@@ -531,7 +491,7 @@ ShallowWrapper {
             "bottomSpacing": "xLarge",
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": true,
             "largeCols": 5,
@@ -571,8 +531,6 @@ ShallowWrapper {
 exports[`<Layout /> renders correctly 1`] = `
 <div
   className="layout"
-  id={undefined}
-  style={undefined}
 />
 `;
 
@@ -584,23 +542,23 @@ ShallowWrapper {
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="some-child"
+      className="some-child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -616,49 +574,28 @@ ShallowWrapper {
       "children": Array [
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="some-child"
+            className="some-child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -675,7 +612,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -707,7 +644,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="some-child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -739,7 +676,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -774,49 +711,28 @@ ShallowWrapper {
         "children": Array [
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="some-child"
+              className="some-child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -833,7 +749,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -865,7 +781,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="some-child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -897,7 +813,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -940,27 +856,27 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={
-        Array [
-            7,
-            5,
-          ]
+      Array [
+        7,
+        5,
+      ]
     }
     mediumCols={Array []}
     smallCols={
-        Array [
-            12,
-          ]
+      Array [
+        12,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -976,34 +892,22 @@ ShallowWrapper {
       "children": Array [
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
           largeCols={7}
-          mediumCols={undefined}
           smallCols={12}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
           largeCols={5}
-          mediumCols={undefined}
           smallCols={12}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -1020,7 +924,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": 7,
@@ -1052,7 +956,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": 5,
@@ -1087,34 +991,22 @@ ShallowWrapper {
         "children": Array [
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
             largeCols={7}
-            mediumCols={undefined}
             smallCols={12}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
             largeCols={5}
-            mediumCols={undefined}
             smallCols={12}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -1131,7 +1023,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": 7,
@@ -1163,7 +1055,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": 5,
@@ -1208,28 +1100,28 @@ ShallowWrapper {
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <Col
-        borderColor="neutral-6"
-        smallCols={3}
+      borderColor="neutral-6"
+      smallCols={3}
     >
-        <div
-            className="one-off"
-        />
+      <div
+        className="one-off"
+      />
     </Col>
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -1245,49 +1137,28 @@ ShallowWrapper {
       "children": Array [
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={3}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="one-off"
+            className="one-off"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -1304,7 +1175,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1336,7 +1207,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="one-off"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1368,7 +1239,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1403,49 +1274,28 @@ ShallowWrapper {
         "children": Array [
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={3}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="one-off"
+              className="one-off"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -1462,7 +1312,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1494,7 +1344,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="one-off"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1526,7 +1376,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1571,23 +1421,23 @@ ShallowWrapper {
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -1603,49 +1453,28 @@ ShallowWrapper {
       "children": Array [
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
-          bottomSpacing={undefined}
-          flex={undefined}
-          fullwidth={undefined}
-          largeCols={undefined}
-          mediumCols={undefined}
           smallCols={1}
-          xLargeCols={undefined}
-          xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -1662,7 +1491,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1694,7 +1523,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1726,7 +1555,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1761,49 +1590,28 @@ ShallowWrapper {
         "children": Array [
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
-            bottomSpacing={undefined}
-            flex={undefined}
-            fullwidth={undefined}
-            largeCols={undefined}
-            mediumCols={undefined}
             smallCols={1}
-            xLargeCols={undefined}
-            xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -1820,7 +1628,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1852,7 +1660,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1884,7 +1692,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,

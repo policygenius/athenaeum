@@ -3,7 +3,7 @@
 exports[`<Icon /> matches snapshot 1`] = `
 <span
   className="icon-wrapper clickable inline left some-class"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "height": "100px",
@@ -14,7 +14,6 @@ exports[`<Icon /> matches snapshot 1`] = `
   <img
     alt="xIcon"
     className="img"
-    data-src={undefined}
     src="https://static.policygenius.com/svgs/xIcon.svgz"
     title="xIcon"
   />

@@ -5,18 +5,12 @@ exports[`<FieldGroup /> renders correctly 1`] = `
   <div
     className="field-group"
     onBlur={[Function]}
-    onFocus={undefined}
   >
     <div
       className="layout label-wrapper"
-      id={undefined}
-      style={undefined}
     >
       <div
         className="col col-sm-6 fullwidth border-neutral-6"
-        id={undefined}
-        onClick={undefined}
-        style={undefined}
       >
         <div
           className="label"
@@ -26,9 +20,6 @@ exports[`<FieldGroup /> renders correctly 1`] = `
       </div>
       <div
         className="col col-sm-6 fullwidth border-neutral-6"
-        id={undefined}
-        onClick={undefined}
-        style={undefined}
       >
         <div
           className="label"
@@ -39,14 +30,9 @@ exports[`<FieldGroup /> renders correctly 1`] = `
     </div>
     <div
       className="layout"
-      id={undefined}
-      style={undefined}
     >
       <div
         className="col col-sm-6 fullwidth border-neutral-6 field"
-        id={undefined}
-        onClick={undefined}
-        style={undefined}
       >
         <div>
           <div
@@ -54,15 +40,11 @@ exports[`<FieldGroup /> renders correctly 1`] = `
           >
             <span
               className="input-wrapper"
-              data-postfix={undefined}
-              data-prefix={undefined}
             >
               <input
                 className="input"
-                id={undefined}
                 placeholder="mm"
                 type="text"
-                value={undefined}
               />
             </span>
           </div>
@@ -71,9 +53,6 @@ exports[`<FieldGroup /> renders correctly 1`] = `
       </div>
       <div
         className="col col-sm-6 fullwidth border-neutral-6 field"
-        id={undefined}
-        onClick={undefined}
-        style={undefined}
       >
         <div>
           <div
@@ -81,15 +60,11 @@ exports[`<FieldGroup /> renders correctly 1`] = `
           >
             <span
               className="input-wrapper"
-              data-postfix={undefined}
-              data-prefix={undefined}
             >
               <input
                 className="input"
-                id={undefined}
                 placeholder="yyyy"
                 type="text"
-                value={undefined}
               />
             </span>
           </div>

@@ -168,3 +168,7 @@ Your branch code should always be reviewed before it gets merged to `master`. **
 ***
 
 The RCL and the Athenaeum project is a product by [PolicyGenius](https://www.policygenius.com/).
+
+## Pre-commit and Pre-push Git Hooks
+These git hooks are triggered prior to changes being commited or pushed.
+- [Documentation](https://policygenius.atlassian.net/wiki/spaces/EN/pages/579207169/Git+Hooks) to help understand and navigate any issues which may be encountered.

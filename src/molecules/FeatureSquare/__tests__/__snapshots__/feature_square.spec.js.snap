@@ -6,7 +6,6 @@ exports[`<FeatureSquare /> matches snapshot 1`] = `
 >
   <span
     className="icon-wrapper icon"
-    onClick={undefined}
     style={
       Object {
         "height": undefined,
@@ -17,7 +16,6 @@ exports[`<FeatureSquare /> matches snapshot 1`] = `
     <img
       alt="xIcon"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/xIcon.svgz"
       title="xIcon"
     />
@@ -34,19 +32,12 @@ exports[`<FeatureSquare /> matches snapshot 1`] = `
   </p>
   <div
     className="layout button-wrapper"
-    id={undefined}
-    style={undefined}
   >
     <div
       className="col col-sm-6 border-neutral-6"
-      id={undefined}
-      onClick={undefined}
-      style={undefined}
     >
       <button
         className="button outline button"
-        disabled={undefined}
-        onClick={undefined}
         type="button"
       >
         CLICK SOMETHING ALREADY!

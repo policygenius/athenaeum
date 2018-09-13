@@ -67,12 +67,9 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
               htmlFor="checkbox-undefined"
             >
               <input
-                checked={undefined}
                 className="checkbox-input"
                 id="checkbox-undefined"
-                name={undefined}
                 type="checkbox"
-                value={undefined}
               />
               <span
                 className="checkbox-label"

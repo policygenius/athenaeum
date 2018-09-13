@@ -63,14 +63,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div>
             <div
               className="layout policy-info-item"
-              id={undefined}
-              style={undefined}
             >
               <div
                 className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-                id={undefined}
-                onClick={undefined}
-                style={undefined}
               >
                 <span>
                   <span
@@ -92,9 +87,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-6 border-neutral-6"
-                id={undefined}
-                onClick={undefined}
-                style={undefined}
               >
                 <strong
                   className="primary-3 type-a-8-bold inherit"
@@ -110,14 +102,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           <div>
             <div
               className="layout policy-info-item"
-              id={undefined}
-              style={undefined}
             >
               <div
                 className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-                id={undefined}
-                onClick={undefined}
-                style={undefined}
               >
                 <span>
                   <span
@@ -139,9 +126,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
               </div>
               <div
                 className="col col-sm-6 border-neutral-6"
-                id={undefined}
-                onClick={undefined}
-                style={undefined}
               >
                 <strong
                   className="primary-3 type-a-8-bold inherit"
@@ -163,7 +147,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         >
           <button
             className="button"
-            disabled={undefined}
             onClick={[Function]}
             type="button"
           >
@@ -183,7 +166,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             />
             <button
               className="button outline"
-              disabled={undefined}
               onClick={[Function]}
               type="button"
             >
@@ -221,12 +203,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             htmlFor="checkbox-undefined"
           >
             <input
-              checked={undefined}
               className="checkbox-input"
               id="checkbox-undefined"
-              name={undefined}
               type="checkbox"
-              value={undefined}
             />
             <span
               className="checkbox-label"
@@ -298,14 +277,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="layout"
-                id={undefined}
-                style={undefined}
               >
                 <div
                   className="col col-sm-7 fullwidth border-neutral-6"
-                  id={undefined}
-                  onClick={undefined}
-                  style={undefined}
                 >
                   <div
                     className="policy-info-label"
@@ -315,9 +289,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </div>
                 <div
                   className="col col-sm-5 fullwidth border-neutral-6"
-                  id={undefined}
-                  onClick={undefined}
-                  style={undefined}
                 >
                   <strong
                     className="primary-3 type-a-8-bold inherit"
@@ -344,14 +315,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="layout"
-                id={undefined}
-                style={undefined}
               >
                 <div
                   className="col col-sm-7 fullwidth border-neutral-6"
-                  id={undefined}
-                  onClick={undefined}
-                  style={undefined}
                 >
                   <div
                     className="policy-info-label"
@@ -361,9 +327,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </div>
                 <div
                   className="col col-sm-5 fullwidth border-neutral-6"
-                  id={undefined}
-                  onClick={undefined}
-                  style={undefined}
                 >
                   <strong
                     className="primary-3 type-a-8-bold inherit"
@@ -390,14 +353,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
             >
               <div
                 className="layout"
-                id={undefined}
-                style={undefined}
               >
                 <div
                   className="col col-sm-7 fullwidth border-neutral-6"
-                  id={undefined}
-                  onClick={undefined}
-                  style={undefined}
                 >
                   <div
                     className="policy-info-label"
@@ -407,9 +365,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
                 </div>
                 <div
                   className="col col-sm-5 fullwidth border-neutral-6"
-                  id={undefined}
-                  onClick={undefined}
-                  style={undefined}
                 >
                   <strong
                     className="primary-3 type-a-8-bold inherit"
@@ -451,7 +406,6 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         />
         <div
           className="layout"
-          id={undefined}
           style={
             Object {
               "width": "100%",
@@ -460,13 +414,9 @@ exports[`<PolicyCard /> renders correctly 1`] = `
         >
           <div
             className="col col-sm-12 border-neutral-6"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <button
               className="button view-policy"
-              disabled={undefined}
               onClick={[Function]}
               type="button"
             >
@@ -475,16 +425,12 @@ exports[`<PolicyCard /> renders correctly 1`] = `
           </div>
           <div
             className="col col-sm-12 border-neutral-6"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <div
               className="hide tablet desktop"
             >
               <button
                 className="button"
-                disabled={undefined}
                 onClick={[Function]}
                 type="button"
               >

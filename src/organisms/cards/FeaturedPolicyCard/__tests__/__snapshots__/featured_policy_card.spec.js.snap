@@ -60,14 +60,9 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       <div>
         <div
           className="layout policy-info-item"
-          id={undefined}
-          style={undefined}
         >
           <div
             className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <span>
               <span
@@ -89,9 +84,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           </div>
           <div
             className="col col-sm-6 border-neutral-6"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <strong
               className="primary-3 type-a-8-bold inherit"
@@ -107,14 +99,9 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       <div>
         <div
           className="layout policy-info-item"
-          id={undefined}
-          style={undefined}
         >
           <div
             className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <span>
               <span
@@ -136,9 +123,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           </div>
           <div
             className="col col-sm-6 border-neutral-6"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <strong
               className="primary-3 type-a-8-bold inherit"
@@ -154,14 +138,9 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       <div>
         <div
           className="layout policy-info-item"
-          id={undefined}
-          style={undefined}
         >
           <div
             className="col col-sm-6 fullwidth border-neutral-6 policy-info-tooltip-group"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <span>
               <span
@@ -183,9 +162,6 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
           </div>
           <div
             className="col col-sm-6 border-neutral-6"
-            id={undefined}
-            onClick={undefined}
-            style={undefined}
           >
             <strong
               className="primary-3 type-a-8-bold inherit"
@@ -207,8 +183,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
     >
       <button
         className="button"
-        disabled={undefined}
-        onClick={[Function]}
+        onClick={[MockFunction]}
         type="button"
       >
         Continue
@@ -216,7 +191,7 @@ exports[`<FeaturedPolicyCard /> renders correctly 1`] = `
       <div>
         <a
           className="link neutral-1 details-link"
-          onClick={[Function]}
+          onClick={[MockFunction]}
         >
           Details
         </a>
