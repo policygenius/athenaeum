@@ -83,7 +83,3 @@ $border: 1px solid color('neutral-4');
 .hasError {
   @extend %hasError;
 }
-
-.wrapper {
-  margin-bottom: rem-calc(24px);
-}

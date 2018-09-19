@@ -20,6 +20,8 @@
   @extend %label;
 
   border-bottom: $border;
+  padding-left: ru(1);
+  padding-right: ru(1);
 }
 
 .select-wrapper {
@@ -56,7 +58,7 @@
 
   border: 0;
   width: 100%;
-  padding: ru(.5) ru(.75);
+  padding: ru(.5) ru(1);
   position: relative;
   background: transparent;
   -webkit-appearance: none;
