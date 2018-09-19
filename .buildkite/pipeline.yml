@@ -19,8 +19,10 @@ steps:
       docker-compose:
         run: athenaeum
 
+  # Run tests with coverage if not a hotfix
   - name: ':jest:'
-    command: yarn test --coverage
+    branches: "!hotfix/*"
+    command: bin/test
     agents:
       queue: runner
     plugins:
@@ -28,6 +30,17 @@ steps:
         run: athenaeum
     artifact_paths:
       - "coverage/lcov.info"
+
+  # Run tests without coverage if this is a hotfix
+  # This is necessary for builds triggered by PR mergest to master
+  - name: ':jest:'
+    branches: "hotfix/*"
+    command: bin/test hotfix
+    agents:
+      queue: runner
+    plugins:
+      docker-compose:
+        run: athenaeum
 
   - wait
 

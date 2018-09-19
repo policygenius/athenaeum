@@ -6,7 +6,6 @@ exports[`<Filter /> renders correctly 1`] = `
 >
   <label
     className="label"
-    htmlFor={undefined}
   >
     Test label
   </label>
@@ -15,8 +14,7 @@ exports[`<Filter /> renders correctly 1`] = `
   >
     <select
       className="select"
-      id={undefined}
-      onChange={[Function]}
+      onChange={[MockFunction]}
       value={2}
     >
       <option

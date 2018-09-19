@@ -21,8 +21,6 @@ exports[`<GoogleAutoCompleteField /> renders correctly 1`] = `
     </div>
     <span
       className="input-wrapper"
-      data-postfix={undefined}
-      data-prefix={undefined}
     >
       <input
         className="input"
@@ -30,7 +28,6 @@ exports[`<GoogleAutoCompleteField /> renders correctly 1`] = `
         name="streetAddress"
         placeholder="Enter your street address"
         type="text"
-        value={undefined}
       />
     </span>
   </div>

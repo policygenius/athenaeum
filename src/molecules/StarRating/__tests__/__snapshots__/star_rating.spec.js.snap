@@ -6,7 +6,6 @@ exports[`<StarRating /> renders correctly 1`] = `
 >
   <span
     className="icon-wrapper star filled-in"
-    onClick={undefined}
     style={
       Object {
         "height": undefined,
@@ -17,14 +16,12 @@ exports[`<StarRating /> renders correctly 1`] = `
     <img
       alt="star2"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/star2.svgz"
       title="star2"
     />
   </span>
   <span
     className="icon-wrapper star filled-in"
-    onClick={undefined}
     style={
       Object {
         "height": undefined,
@@ -35,14 +32,12 @@ exports[`<StarRating /> renders correctly 1`] = `
     <img
       alt="star2"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/star2.svgz"
       title="star2"
     />
   </span>
   <span
     className="icon-wrapper star filled-in"
-    onClick={undefined}
     style={
       Object {
         "height": undefined,
@@ -53,14 +48,12 @@ exports[`<StarRating /> renders correctly 1`] = `
     <img
       alt="star2"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/star2.svgz"
       title="star2"
     />
   </span>
   <span
     className="icon-wrapper star filled-in"
-    onClick={undefined}
     style={
       Object {
         "height": undefined,
@@ -71,14 +64,12 @@ exports[`<StarRating /> renders correctly 1`] = `
     <img
       alt="star2"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/star2.svgz"
       title="star2"
     />
   </span>
   <span
     className="icon-wrapper star"
-    onClick={undefined}
     style={
       Object {
         "height": undefined,
@@ -89,7 +80,6 @@ exports[`<StarRating /> renders correctly 1`] = `
     <img
       alt="starLight"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/starLight.svgz"
       title="starLight"
     />

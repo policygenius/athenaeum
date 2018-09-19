@@ -9,7 +9,6 @@ exports[`<PartnerCard /> renders correctly 1`] = `
   >
     <span
       className="icon-wrapper"
-      onClick={undefined}
       style={
         Object {
           "height": undefined,
@@ -20,7 +19,6 @@ exports[`<PartnerCard /> renders correctly 1`] = `
       <img
         alt="pencil"
         className="img"
-        data-src={undefined}
         src="https://static.policygenius.com/svgs/pencil.svgz"
         title="pencil"
       />
@@ -45,8 +43,6 @@ exports[`<PartnerCard /> renders correctly 1`] = `
   >
     <button
       className="button info outline"
-      disabled={undefined}
-      onClick={undefined}
       type="button"
     >
       Shop Now

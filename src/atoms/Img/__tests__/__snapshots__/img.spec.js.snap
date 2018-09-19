@@ -21,12 +21,10 @@ exports[`<Img /> renders correctly with given imgix picture source props 1`] = `
   className="picture"
 >
   <source
-    data-srcset={undefined}
     media="(max-width: 767px)"
     srcSet="https://policygenius-images.imgix.net/small?fit=max&auto=format&ch=Width,DPR&w={width}"
   />
   <source
-    data-srcset={undefined}
     media="(max-width: 1024px)"
     srcSet="https://policygenius-images.imgix.net/medium?fit=max&auto=format&ch=Width,DPR&w={width}"
   />
@@ -65,12 +63,10 @@ exports[`<Img /> renders correctly with given regular picture source props 1`] =
   className="picture"
 >
   <source
-    data-srcset={undefined}
     media="(max-width: 767px)"
     srcSet="small"
   />
   <source
-    data-srcset={undefined}
     media="(max-width: 1024px)"
     srcSet="medium"
   />

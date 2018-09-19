@@ -6,7 +6,7 @@ exports[`<SummaryCard /> renders correctly 1`] = `
 >
   <span
     className="icon-wrapper clickable icon icon-click"
-    onClick={[Function]}
+    onClick={[MockFunction]}
     style={
       Object {
         "height": undefined,
@@ -17,7 +17,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
     <img
       alt="xIcon"
       className="img"
-      data-src={undefined}
       src="https://static.policygenius.com/svgs/xIcon.svgz"
       title="xIcon"
     />
@@ -27,14 +26,9 @@ exports[`<SummaryCard /> renders correctly 1`] = `
   >
     <div
       className="layout"
-      id={undefined}
-      style={undefined}
     >
       <div
         className="col col-sm-8 border-neutral-6"
-        id={undefined}
-        onClick={undefined}
-        style={undefined}
       >
         <div>
           <p
@@ -54,9 +48,6 @@ exports[`<SummaryCard /> renders correctly 1`] = `
       </div>
       <div
         className="col col-sm-4 border-neutral-6"
-        id={undefined}
-        onClick={undefined}
-        style={undefined}
       >
         <div>
           <p
@@ -78,18 +69,13 @@ exports[`<SummaryCard /> renders correctly 1`] = `
   </div>
   <div
     className="layout footer"
-    id={undefined}
-    style={undefined}
   >
     <div
       className="col col-sm-8 border-neutral-6"
-      id={undefined}
-      onClick={undefined}
-      style={undefined}
     >
       <a
         className="link neutral-1 secondary"
-        onClick={[Function]}
+        onClick={[MockFunction]}
       >
         <p
           className="primary-3 type-b-10-medium inherit"
@@ -100,13 +86,10 @@ exports[`<SummaryCard /> renders correctly 1`] = `
     </div>
     <div
       className="col col-sm-4 border-neutral-6"
-      id={undefined}
-      onClick={undefined}
-      style={undefined}
     >
       <a
         className="link neutral-1 secondary"
-        onClick={[Function]}
+        onClick={[MockFunction]}
       >
         <p
           className="primary-3 type-b-10-medium inherit"

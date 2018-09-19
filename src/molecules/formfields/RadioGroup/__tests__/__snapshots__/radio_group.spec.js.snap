@@ -5,7 +5,6 @@ exports[`<RadioGroup /> renders correctly 1`] = `
   <div
     className="radio-group"
     onBlur={[Function]}
-    onFocus={undefined}
   >
     <div
       className="label-wrapper"
@@ -13,9 +12,7 @@ exports[`<RadioGroup /> renders correctly 1`] = `
       <div
         className="label"
       >
-        <label
-          htmlFor={undefined}
-        >
+        <label>
           Test label
         </label>
         <span>
@@ -25,7 +22,6 @@ exports[`<RadioGroup /> renders correctly 1`] = `
           >
             <span
               className="icon-wrapper tooltip-icon"
-              onClick={undefined}
               style={
                 Object {
                   "height": undefined,
@@ -36,7 +32,6 @@ exports[`<RadioGroup /> renders correctly 1`] = `
               <img
                 alt="tooltip"
                 className="img"
-                data-src={undefined}
                 src="https://static.policygenius.com/svgs/tooltip.svgz"
                 title="tooltip"
               />
