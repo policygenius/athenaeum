@@ -1,4 +1,15 @@
 #!/bin/bash
 
+# Run linter on all source code, including markdown and CSS
 yarn run lint
-yarn run test
+
+HOTFIX=${1:-""}
+echo "+++ Running Jest tests for source files"
+if [[ ${HOTFIX} = "hotfix" ]]
+then
+  echo "Test coverage analysis is skipped for hotfix"
+  yarn run test
+else
+  echo "--coverage flag enabled"
+  yarn run test --coverage
+fi

@@ -1,8 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
-echo +++ Linting:
-git diff --name-only HEAD | \
-  (grep '\.jsx\|\.js\?$' || echo '') | xargs -n 1 yarn eslint --fix
+FILES=$(
+  { git diff --name-only HEAD^ && \
+    git ls-files --others --exclude-standard; } | \
+    cat | grep "\.jsx\|\.js\?$"
+  )
 
-git diff --name-only HEAD | \
-  (grep '\.scss$' || exit) | xargs -n 1 yarn stylelint
+echo "----- Files to lint -----"
+if [ -z ${FILES} ]
+then
+  echo "No files to lint. Exiting..."
+  echo
+  exit 0
+fi
+
+printf '%s\n' ${FILES}
+echo
+echo +++ Linting JS:
+echo ${FILES} | xargs yarn lint:eslint --quiet

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# This script runs tests ONLY for new and modified code for commits.
+
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+IS_HOTFIX=0
+
+# Detect if the branch name starts with hotfix/
+if [[ ${BRANCH_NAME} =~ hotfix/.* ]]
+then
+  IS_HOTFIX=1
+fi
+
+echo "Branch: ${BRANCH_NAME}"
+echo "Hotfix: ${IS_HOTFIX}"
+
+# If this is a hotfix, run Jest tests without the --coverage flag
+#  to by-pass the global coverage threshold
+echo "+++ Running Jest tests for added/changed files only"
+if [[ $IS_HOTFIX = 1 ]]
+then
+  echo "Test coverage analysis is skipped for hotfix"
+  jest --changedSince=master
+else
+  echo "--coverage flag enabled"
+  jest --coverage --changedSince=master
+fi
