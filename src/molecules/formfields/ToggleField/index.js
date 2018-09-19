@@ -71,7 +71,7 @@ function ToggleField( props ) {
   const buttonStyle = sideBySide ? styles['side-by-side'] : styles['button-wrapper'];
 
   return (
-    <div className={styles.wrapper} ref={fieldRef && fieldRef}>
+    <div ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
         <Layout
           nested={nested}
