@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'Engineering',
+  name: 'Components',
   sections: [
     {
       name: 'Atoms',

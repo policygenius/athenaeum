@@ -16,7 +16,7 @@ Starts a cli prompt which will create the following component directory and file
 - Readme.md
 ```
 
-## What comes out of the box?
+### What comes out of the box?
 *WIP* - There should be documentation on an ideal Component, standard props, etc.
 
 
