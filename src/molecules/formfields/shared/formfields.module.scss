@@ -27,7 +27,7 @@ $field-error-color: color('primary-1');
 // -- Mixins
 @mixin placeholder() {
   &::placeholder {
-    color: color('neutral-3');
+    color: color('neutral-2');
     font-weight: 400;
   }
 }
@@ -42,7 +42,7 @@ $field-error-color: color('primary-1');
 }
 
 %field {
-  @include typography-b(8);
+  @include typography-b-7;
 
   padding: rem-calc(12px) rem-calc(18px);
   border: 0;
