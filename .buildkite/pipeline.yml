@@ -32,7 +32,7 @@ steps:
       - "coverage/lcov.info"
 
   # Run tests without coverage if this is a hotfix
-  # This is necessary for builds triggered by PR mergest to master
+  # This is necessary for builds triggered by PR merges to master
   - name: ':jest:'
     branches: "hotfix/*"
     command: bin/test hotfix
