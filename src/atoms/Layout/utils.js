@@ -5,7 +5,6 @@ import assign from 'lodash/assign';
 import Col from './Col';
 
 export function processChild(child, layoutProps) {
-
   // TODO: Find a better way to type check here.
   // I believe the first now fails because of Preact
   if (
@@ -13,7 +12,11 @@ export function processChild(child, layoutProps) {
     get(child, 'nodeName.prototype.displayName') === 'Col' ||
     get(child, 'type.prototype.displayName') === 'Col' ||
     get(child, 'type.name') === 'Col' ||
-    get(child, 'type.rclName') === 'Col'
+    get(child, 'type.rclName') === 'Col' ||
+
+    // This final check is to prevent extra div wrappers resulting from 
+    // the way React Hot Loader creates proxied versions of components (as shallow copies)
+    React.cloneElement(child).type === <Col />.type
   ) {
 
     const colProps = assign(
