@@ -18,7 +18,7 @@ RUN yarn --frozen-lockfile
 COPY . /app/
 
 RUN cd /opt \
-  && curl -o sonar-scanner.zip -fSL https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_CLI_VERSION-linux.zip \
+  && curl -o sonar-scanner.zip -fSL https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_CLI_VERSION-linux.zip \
   && unzip sonar-scanner.zip \
   && mv sonar-scanner-$SONAR_SCANNER_CLI_VERSION-linux sonar-scanner \
   && rm sonar-scanner.zip*
