@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FullDateField /> renders correctly 1`] = `
+<div>
+  <div
+    className="date-field"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="label-wrapper"
+    >
+      <div
+        className="label"
+      >
+        <label
+          htmlFor="date"
+        >
+          a label
+        </label>
+        <span>
+          <span
+            className="tooltip-wrapper tooltip"
+            onClick={[Function]}
+          >
+            <span
+              className="icon-wrapper tooltip-icon"
+              onClick={undefined}
+              style={
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <img
+                alt="tooltip"
+                className="img"
+                data-src={undefined}
+                src="https://static.policygenius.com/svgs/tooltip.svgz"
+                title="tooltip"
+              />
+            </span>
+            <span
+              className="hover-message right"
+            >
+              some-tooltip
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="line-1"
+    >
+      <div
+        className="input fields-3"
+      >
+        <div>
+          <div
+            className=""
+          >
+            <span
+              className="input-wrapper"
+              data-postfix={undefined}
+              data-prefix={undefined}
+            >
+              <input
+                className="input"
+                id="aDateMonth"
+                maxLength={2}
+                name="aDateMonth"
+                noValidate={true}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                pattern="[0-9]*"
+                placeholder="mm"
+                type="text"
+                value=""
+              />
+            </span>
+          </div>
+          <span />
+        </div>
+      </div>
+      <div
+        className="input fields-3"
+      >
+        <div>
+          <div
+            className=""
+          >
+            <span
+              className="input-wrapper"
+              data-postfix={undefined}
+              data-prefix={undefined}
+            >
+              <input
+                className="input"
+                id="aDateDay"
+                maxLength={2}
+                name="aDateDay"
+                noValidate={true}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                pattern="[0-9]*"
+                placeholder="dd"
+                type="text"
+                value=""
+              />
+            </span>
+          </div>
+          <span />
+        </div>
+      </div>
+      <div
+        className="input fields-3"
+      >
+        <div>
+          <div
+            className=""
+          >
+            <span
+              className="input-wrapper"
+              data-postfix={undefined}
+              data-prefix={undefined}
+            >
+              <input
+                className="input"
+                id="aDateYear"
+                maxLength={4}
+                name="aDateYear"
+                noValidate={true}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                pattern="[0-9]*"
+                placeholder="yyyy"
+                type="text"
+                value=""
+              />
+            </span>
+          </div>
+          <span />
+        </div>
+      </div>
+    </div>
+  </div>
+  <span />
+</div>
+`;

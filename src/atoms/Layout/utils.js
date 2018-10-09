@@ -14,7 +14,7 @@ export function processChild(child, layoutProps) {
     get(child, 'type.name') === 'Col' ||
     get(child, 'type.rclName') === 'Col' ||
 
-    // This final check is to prevent extra div wrappers resulting from 
+    // This final check is to prevent extra div wrappers resulting from
     // the way React Hot Loader creates proxied versions of components (as shallow copies)
     React.cloneElement(child).type === <Col />.type
   ) {

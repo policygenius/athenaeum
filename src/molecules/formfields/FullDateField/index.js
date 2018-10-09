@@ -1,19 +1,41 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import classnames from 'classnames';
 import BaseDateField from '../util/BaseDateField';
 
-class DateField extends BaseDateField {
+import styles from '../util/BaseDateField/date_field.module.scss';
+
+class FullDateField extends BaseDateField {
+  componentDidUpdate(_prevProps, prevState) {
+    return this.changeFullDate(prevState);
+  }
+
+  get childClasses() {
+    const { meta } = this.props;
+
+    return classnames(...[
+      styles['input'],
+      styles['fields-3'],
+      meta && meta.active && styles['input-focused'],
+    ]);
+  }
+
   render() {
-    const { children } = this.props;
+    const {
+      render,
+    } = this.props;
 
     return (
-      this.wrapper(React.Children.map(children, this.wrapChild))
+      this.wrapper(render({
+        monthField: this.monthField,
+        dayField: this.dayField,
+        yearField: this.yearField,
+      }))
     );
   }
 }
 
-DateField.propTypes = {
+
+FullDateField.propTypes = {
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -47,6 +69,11 @@ DateField.propTypes = {
    * Adds a tooltip to the label. Provide string for text to be placed inside tooltip popup
    */
   tooltip: PropTypes.string,
+
+  /**
+   * Passes dayInputProps, monthInputProps, yearInputProps and fieldClass to provided function
+   */
+  render: PropTypes.func,
 };
 
-export default DateField;
+export default FullDateField;
