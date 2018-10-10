@@ -1,4 +1,3 @@
-## Best Practices
 
 *WIP* - There should be documentation on guiding principles on how to think about and make components
 

@@ -1,4 +1,5 @@
-# What is Atomic Design?
+
+### What is Atomic Design?
 Atomic Design is a methodology for thinking about UIs as thoughtful hierarchies. It details all that goes into creating and maintaining robust design systems, allowing you to roll out higher quality, more consistent User Interfaces (UI) faster.
 
 [Read more about Atomic Design](http://atomicdesign.bradfrost.com/table-of-contents/)
