@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# ========== JS FILES SECTION ========== #
+FILES=$(
+  { git diff --name-only && \
+    git ls-files --others --exclude-standard; } | \
+    grep -E "\.jsx\$|\.js\$"
+  )
+
+echo "----- JS Files to lint -----"
+if [[ -z ${FILES} ]]
+then
+  echo "No JS/JSX files to lint..."
+  echo
+else
+  printf '%s\n' ${FILES}
+  echo
+  echo "----- Linting JS -----"
+  echo ${FILES} | xargs yarn eslint --ignore-path .gitignore --ignore-pattern internals/scripts
+fi
+
+# ========== SCSS FILES SECTION ========== #
+FILES=$(
+  { git diff --name-only HEAD^ && \
+    git ls-files --others --exclude-standard; } | \
+    cat | grep -E "\.scss\$"
+  )
+
+echo "----- SCSS Files to lint -----"
+if [[ -z ${FILES} ]]
+then
+  echo "No SCSS files to lint..."
+  echo
+else
+  printf '%s\n' ${FILES}
+  echo
+  echo "----- Linting SCSS -----"
+  echo ${FILES} | xargs yarn stylelint
+fi
+
+# ========== MARKDOWN FILES SECTION ========== #
+FILES=$(
+  { git diff --name-only HEAD^ && \
+    git ls-files --others --exclude-standard; } | \
+    cat | grep -E "\.md\$"
+  )
+
+echo "----- MD Files to lint -----"
+if [[ -z ${FILES} ]]
+then
+  echo "No MD files to lint. Exiting..."
+  echo
+else
+  printf '%s\n' ${FILES}
+  echo
+  echo "----- Linting MD -----"
+  echo ${FILES} | xargs yarn eslint --ext md
+fi
+

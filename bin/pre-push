@@ -1,6 +1,22 @@
-#!/bin/bash
+#!/bin/sh
 
-# This script runs tests ONLY for new and modified code for commits.
+# Run linter on all files 
+yarn run lint
+
+# Output auto-fixed files to be reviewed before code is pushed
+FILES=$(
+  { git diff --name-only && \
+    git ls-files --others --exclude-standard; } | \
+    grep -E "\.jsx\$|\.js\$|\.scss\$|\.md\$"
+      )
+
+if [[ -n ${FILES} ]]
+then
+  echo "----- PLEASE REVIEW THE FOLLOWING AUTO-FIXED FILES -----"
+  printf '%s\n' ${FILES}
+  echo
+  exit 1
+fi
 
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 IS_HOTFIX=0
