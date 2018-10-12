@@ -130,6 +130,7 @@ module.exports = {
     'linkedin',
     'lock',
     'lockBlue',
+    'lockOrange',
     'luxurySofa',
     'madeInNy',
     'mastercard',
