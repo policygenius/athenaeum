@@ -2,7 +2,7 @@
 
 # ========== JS FILES SECTION ========== #
 FILES=$(
-  { git diff --name-only && \
+  { git diff --name-only HEAD && \
     git ls-files --others --exclude-standard; } | \
     grep -E "\.jsx\$|\.js\$"
   )
@@ -16,14 +16,14 @@ else
   printf '%s\n' ${FILES}
   echo
   echo "----- Linting JS -----"
-  echo ${FILES} | xargs yarn eslint --ignore-path .gitignore --ignore-pattern internals/scripts
+  echo ${FILES} | xargs yarn eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix
 fi
 
 # ========== SCSS FILES SECTION ========== #
 FILES=$(
-  { git diff --name-only HEAD^ && \
+  { git diff --name-only HEAD && \
     git ls-files --others --exclude-standard; } | \
-    cat | grep -E "\.scss\$"
+    cat | grep -E "\.scss\$|\.css\$"
   )
 
 echo "----- SCSS Files to lint -----"
@@ -35,12 +35,12 @@ else
   printf '%s\n' ${FILES}
   echo
   echo "----- Linting SCSS -----"
-  echo ${FILES} | xargs yarn stylelint
+  echo ${FILES} | xargs yarn stylelint --fix
 fi
 
 # ========== MARKDOWN FILES SECTION ========== #
 FILES=$(
-  { git diff --name-only HEAD^ && \
+  { git diff --name-only HEAD && \
     git ls-files --others --exclude-standard; } | \
     cat | grep -E "\.md\$"
   )
@@ -54,6 +54,21 @@ else
   printf '%s\n' ${FILES}
   echo
   echo "----- Linting MD -----"
-  echo ${FILES} | xargs yarn eslint --ext md
+  echo ${FILES} | xargs yarn eslint --ext md --fix
 fi
 
+
+# Output auto-fixed files to be reviewed before code is pushed
+FILES=$(
+  { git diff --name-only HEAD && \
+    git ls-files --others --exclude-standard; } | \
+    grep -E "\.jsx\$|\.js\$|\.scss\$|\.css|\.md\$"
+      )
+
+if [[ -n ${FILES} ]]
+then
+  echo "${RED}----- PLEASE REVIEW THE FOLLOWING AUTO-FIXED FILES -----${NC}"
+  printf '%s\n' ${FILES}
+  echo
+  exit 1
+fi

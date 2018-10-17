@@ -5,7 +5,7 @@ exports[`<FullDateField /> renders correctly 1`] = `
   <div
     className="date-field"
     onBlur={[Function]}
-    onFocus={[Function]}
+    onFocus={[MockFunction]}
   >
     <div
       className="label-wrapper"
@@ -25,7 +25,6 @@ exports[`<FullDateField /> renders correctly 1`] = `
           >
             <span
               className="icon-wrapper tooltip-icon"
-              onClick={undefined}
               style={
                 Object {
                   "height": undefined,
@@ -36,7 +35,6 @@ exports[`<FullDateField /> renders correctly 1`] = `
               <img
                 alt="tooltip"
                 className="img"
-                data-src={undefined}
                 src="https://static.policygenius.com/svgs/tooltip.svgz"
                 title="tooltip"
               />
@@ -62,8 +60,6 @@ exports[`<FullDateField /> renders correctly 1`] = `
           >
             <span
               className="input-wrapper"
-              data-postfix={undefined}
-              data-prefix={undefined}
             >
               <input
                 className="input"
@@ -73,7 +69,7 @@ exports[`<FullDateField /> renders correctly 1`] = `
                 noValidate={true}
                 onBlur={[Function]}
                 onChange={[Function]}
-                onFocus={[Function]}
+                onFocus={[MockFunction]}
                 pattern="[0-9]*"
                 placeholder="mm"
                 type="text"
@@ -93,8 +89,6 @@ exports[`<FullDateField /> renders correctly 1`] = `
           >
             <span
               className="input-wrapper"
-              data-postfix={undefined}
-              data-prefix={undefined}
             >
               <input
                 className="input"
@@ -104,7 +98,7 @@ exports[`<FullDateField /> renders correctly 1`] = `
                 noValidate={true}
                 onBlur={[Function]}
                 onChange={[Function]}
-                onFocus={[Function]}
+                onFocus={[MockFunction]}
                 pattern="[0-9]*"
                 placeholder="dd"
                 type="text"
@@ -124,8 +118,6 @@ exports[`<FullDateField /> renders correctly 1`] = `
           >
             <span
               className="input-wrapper"
-              data-postfix={undefined}
-              data-prefix={undefined}
             >
               <input
                 className="input"
@@ -135,7 +127,7 @@ exports[`<FullDateField /> renders correctly 1`] = `
                 noValidate={true}
                 onBlur={[Function]}
                 onChange={[Function]}
-                onFocus={[Function]}
+                onFocus={[MockFunction]}
                 pattern="[0-9]*"
                 placeholder="yyyy"
                 type="text"
