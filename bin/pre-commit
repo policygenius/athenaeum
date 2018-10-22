@@ -60,8 +60,7 @@ fi
 
 # Output auto-fixed files to be reviewed before code is pushed
 FILES=$(
-  { git diff --name-only HEAD && \
-    git ls-files --others --exclude-standard; } | \
+  git diff --name-only | \
     grep -E "\.jsx\$|\.js\$|\.scss\$|\.css|\.md\$"
       )
 
