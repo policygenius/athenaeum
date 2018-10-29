@@ -21,7 +21,7 @@ class BaseDateField extends React.Component {
   constructor(props) {
     super(props);
 
-    const date = new Date(props.input.value);
+    const date = this.createDate(props.input.value);
 
     if (isValid(date)) {
       this.state = {
@@ -36,6 +36,17 @@ class BaseDateField extends React.Component {
         yearValue: ''
       };
     }
+  }
+
+  createDate = (date) => {
+    /* New dates are in UTC time and default to midnight if not specified.
+     * EST is behind UTC so it'll calculate the date as the previous date.
+     * We need to offset that time correctly assign the date.
+     * See https://stackoverflow.com/questions/45407072/javascript-dates-are-a-day-off
+     */
+    const utcDate = new Date(date);
+
+    return new Date(utcDate.getTime() + (utcDate.getTimezoneOffset() * 60000));
   }
 
   changeFullDate = (prevState) => {
