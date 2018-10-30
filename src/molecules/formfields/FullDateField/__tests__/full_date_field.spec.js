@@ -187,6 +187,30 @@ describe('<FullDateField />', () => {
         expect(year.props().value).toEqual(DATE.getFullYear());
       });
     });
+
+    describe('when the valid date is the first of the month', () => {
+      beforeEach(() => {
+        props = {
+          ...props,
+          input: {
+            ...props.input,
+            value: '2018-01-01T00:00:00Z'
+          }
+        };
+
+        component = mount(<FullDateField {...props} />);
+      });
+
+      it('sets the month/year selects', () => {
+        const month = component.find('[name="aDateMonth"]');
+        const day = component.find('[name="aDateDay"]');
+        const year = component.find('[name="aDateYear"]');
+
+        expect(month.props().value).toEqual(1);
+        expect(day.props().value).toEqual(1);
+        expect(year.props().value).toEqual(2018);
+      });
+    });
   });
 
   describe('isValidDayInput', () => {
