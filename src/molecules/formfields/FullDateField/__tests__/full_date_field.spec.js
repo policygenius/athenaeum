@@ -114,6 +114,42 @@ describe('<FullDateField />', () => {
             [ null ],
           ]);
         });
+
+        it('does not call onChange for 0 month', () => {
+          component.find('[name="aDateMonth"]').simulate('change', {
+            target: { value: 0 }
+          });
+          component.find('[name="aDateDay"]').simulate('change', {
+            target: { value: 15 }
+          });
+          component.find('[name="aDateYear"]').simulate('change', {
+            target: { value: 2016 }
+          });
+
+          expect(onChangeSpy.mock.calls).toEqual([
+            [ null ],
+            [ null ],
+            [ null ],
+          ]);
+        });
+
+        it('does not call onChange for 0 day', () => {
+          component.find('[name="aDateMonth"]').simulate('change', {
+            target: { value: 10 }
+          });
+          component.find('[name="aDateDay"]').simulate('change', {
+            target: { value: 0 }
+          });
+          component.find('[name="aDateYear"]').simulate('change', {
+            target: { value: 2016 }
+          });
+
+          expect(onChangeSpy.mock.calls).toEqual([
+            [ null ],
+            [ null ],
+            [ null ],
+          ]);
+        });
       });
 
       describe('and the fields make up a valid date', () => {
