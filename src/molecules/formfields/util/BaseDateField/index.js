@@ -67,6 +67,10 @@ class BaseDateField extends React.Component {
       return input.onChange(null);
     }
 
+    if (+monthValue === 0 || +dayValue === 0) {
+      return input.onChange(null);
+    }
+
     const date = new Date(Date.UTC(yearValue, monthValue - 1, dayValue));
 
     if (isValid(date)) {
@@ -90,6 +94,10 @@ class BaseDateField extends React.Component {
     }
 
     if (String(yearValue).length < 4) {
+      return input.onChange(null);
+    }
+
+    if (+monthValue === 0) {
       return input.onChange(null);
     }
 
