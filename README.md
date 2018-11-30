@@ -168,3 +168,6 @@ Your branch code should always be reviewed before it gets merged to `master`. **
 ***
 
 The RCL and the Athenaeum project is a product by [PolicyGenius](https://www.policygenius.com/).
+
+## Resources
+- [Frontend Guide](https://github.com/policygenius/frontend-guide)
