@@ -108,6 +108,7 @@ module.exports = {
     'heart',
     'hmoPpo',
     'home',
+    'homeAutoBundleColor',
     'homeBlack',
     'homeownersColor',
     'homeWhite',
