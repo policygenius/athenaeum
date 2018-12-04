@@ -125,6 +125,8 @@ module.exports = {
     'invite',
     'jewelry',
     'largeHome',
+    'lifeAgentsOff',
+    'lifeAgentsOn',
     'life',
     'lifeColor3X',
     'lightbulb',
