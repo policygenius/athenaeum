@@ -8,7 +8,7 @@ class BaseFieldGroup extends React.Component {
     meta: PropTypes.object,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     document.addEventListener('click', this.handleClickOutside, false);
   }
 
@@ -21,10 +21,10 @@ class BaseFieldGroup extends React.Component {
   clickIsLeaving = true;
 
   handleClickOutside = (e) => {
-    const { input, meta: { touched } } = this.props;
+    const { input } = this.props;
 
     if (!this.wrapperReference) { return; }
-    if (touched && !this.wrapperReference.contains(e.target)) {
+    if (!this.wrapperReference.contains(e.target)) {
       input.onBlur();
     }
   }
