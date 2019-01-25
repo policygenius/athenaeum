@@ -70,6 +70,7 @@ module.exports = {
     'earthquake',
     'ellipsis',
     'email',
+    'emailColor',
     'emailLock',
     'excellentFace',
     'excellentFaceGreen',
