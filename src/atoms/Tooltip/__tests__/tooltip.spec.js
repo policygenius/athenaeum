@@ -23,6 +23,24 @@ describe('Tooltip', () => {
     expect(child.text()).toContain('Hello world');
   });
 
+  describe('headerText', () => {
+    describe('when headerText is default', () => {
+      it('returns the default prop value', () => {
+        component = shallow(<Tooltip />);
+        expect(component.find(Modal).props().header).toEqual('Learn More');
+      });
+    });
+
+    describe('when headerText is provided', () => {
+      it('renders the provided headerText prop', () => {
+        const headerText = 'Fear is the mind-killer';
+        props = { headerText: headerText };
+        component = shallow(<Tooltip {...props}/>);
+        expect(component.find(Modal).props().header).toEqual(headerText);
+      });
+    });
+  });
+
   describe('when the window is mobile size', () => {
     it('should display children in a Modal', () => {
       Object.defineProperty(global.window, 'innerWidth', { value: 500 });

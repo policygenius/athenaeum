@@ -59,13 +59,14 @@ class Tooltip extends React.Component {
     const {
       children,
       className,
-      left,
-      right,
-      text,
+      headerText,
       hoverMessageClassName,
       inline,
+      left,
+      revealOnClick,
+      right,
+      text,
       tooltipIconSize,
-      revealOnClick
     } = this.props;
 
     return (
@@ -102,7 +103,7 @@ class Tooltip extends React.Component {
           </span>
         </span>
         <Modal
-          header='Learn more'
+          header={headerText}
           onRequestClose={this.closeModal}
           isOpen={this.state.modalIsOpen}
           contentLabel=''
@@ -161,10 +162,16 @@ Tooltip.propTypes = {
   /**
    * When viewport is not mobile and revealOnClick prop is present, reveals tooltip message on click only
    */
-  revealOnClick: PropTypes.bool
+  revealOnClick: PropTypes.bool,
+
+  /**
+   * The text for the header of the Tooltip
+   */
+  headerText: PropTypes.string,
 };
 
 Tooltip.defaultProps = {
+  headerText: 'Learn More',
   tooltipIconSize: 12,
 };
 
