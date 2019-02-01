@@ -27,7 +27,7 @@ describe('Tooltip', () => {
     describe('when headerText is default', () => {
       it('returns the default prop value', () => {
         component = shallow(<Tooltip />);
-        expect(component.find(Modal).props().header).toEqual('Learn More');
+        expect(component.find(Modal).props().header).toEqual('Learn more');
       });
     });
 

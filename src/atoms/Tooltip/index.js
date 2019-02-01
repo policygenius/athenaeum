@@ -171,7 +171,7 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {
-  headerText: 'Learn More',
+  headerText: 'Learn more',
   tooltipIconSize: 12,
 };
 
