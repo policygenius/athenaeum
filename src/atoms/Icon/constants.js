@@ -60,6 +60,7 @@ module.exports = {
     'discountPill',
     'discover',
     'discoverSquare',
+    'docUploadColor',
     'dog-1',
     'dog',
     'dogBones',
