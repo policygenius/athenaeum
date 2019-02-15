@@ -60,6 +60,7 @@ module.exports = {
     'discountPill',
     'discover',
     'discoverSquare',
+    'documentSmColor',
     'docUploadColor',
     'dog-1',
     'dog',
@@ -233,6 +234,7 @@ module.exports = {
     'visionColor3X',
     'waterDamage',
     'who',
+    'xCircleSmBlack',
     'xIcon',
     'yellowTriangle',
   ]
