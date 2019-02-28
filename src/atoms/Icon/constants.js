@@ -47,6 +47,7 @@ module.exports = {
     'close',
     'closeAccent',
     'computer',
+    'computerColor',
     'dashboard',
     'digicert',
     'disability',
