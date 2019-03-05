@@ -79,7 +79,7 @@
 }
 
 .content.content-open {
-  max-height: 1000px;
+  max-height: 100%;
   transition: max-height 1s ease-out,
               opacity 200ms ease-in;
   opacity: 1;
