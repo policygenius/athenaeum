@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
 import classnames from 'classnames';
 import ReactModal from 'react-modal';
 
@@ -12,14 +11,6 @@ import mobileScrollToInput from './util/mobileScrollToInput';
 import checkiOSDevice from './util/checkiOSDevice';
 
 class Modal extends React.Component {
-  constructor() {
-    super();
-    const initialBodyOverflow = typeof document !== 'undefined' && get(document, 'body.style.overflow');
-
-    this.state = {
-      initialBodyOverflow,
-    };
-  }
 
   componentWillMount() {
     if (typeof document !== 'undefined') {
@@ -79,7 +70,7 @@ class Modal extends React.Component {
   }
 
   closeDOMStyle() {
-    document.body.style.overflow = this.state.initialBodyOverflow;
+    document.body.style.overflow = '';
 
     if (checkiOSDevice(navigator.userAgent)) {
       document.body.style.position = '';
@@ -226,7 +217,7 @@ Modal.propTypes = {
   /**
    * Enables the ability to override styling of child sections. Apply className to the Modal component and the corresponding styles in your stylesheet
    */
-  sectionClassName: PropTypes.string
+  sectionClassName: PropTypes.string,
 };
 
 Modal.defaultProps = {
