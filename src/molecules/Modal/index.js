@@ -12,6 +12,8 @@ import checkiOSDevice from './util/checkiOSDevice';
 
 class Modal extends React.Component {
 
+  state = { windowPosition: 0 };
+
   componentWillMount() {
     if (typeof document !== 'undefined') {
       ReactModal.setAppElement('body');
