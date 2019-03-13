@@ -32,7 +32,7 @@ steps:
   - wait
 
   - name: ':sonar-scanner:'
-    branches: master
+    branches: 'v9.0.0'
     command: bin/sonar
     agents:
       queue: runner
@@ -41,7 +41,7 @@ steps:
         run: athenaeum
 
   - name: ':speaker: :sparkle: Automated Code Review'
-    branches: "!master !hotfix/*"
+    branches: "!v9.0.0 !hotfix/*"
     command: bin/scan-pullrequest
     agents:
       queue: runner
@@ -52,7 +52,7 @@ steps:
   - wait
 
   - block: 'Trigger deploy/publish'
-    branches: 'master'
+    branches: 'v9.0.0'
     prompt: 'Choose a version bump'
     fields:
     - select: 'Increment'
@@ -68,7 +68,7 @@ steps:
           value: 'patch'
 
   - block: "Trigger custom deploy for current version"
-    branches: '!master'
+    branches: '!v9.0.0'
 
   - name: ':npm:'
     command: bin/build
@@ -91,7 +91,7 @@ steps:
 
   - name: ':rocket: :octocat:'
     command: bin/commit-tag
-    branches: master
+    branches: 'v9.0.0'
     agents:
       queue: builder
 
