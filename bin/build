@@ -15,7 +15,7 @@ if [ "$BUILDKITE_BRANCH" == "v9.0.0" ]; then
   VERSION=$(npm version $BUMP_SIZE)
 
   bin/build_assets
-  npm publish --registry=https://registry.npmjs.org/ --tag=slim
+  npm publish --registry=https://registry.npmjs.org/ --tag slim
 else
   echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
 
