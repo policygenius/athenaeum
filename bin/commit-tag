@@ -13,5 +13,5 @@ VERSION=$(buildkite-agent meta-data get 'new-version')
 
 git add package.json
 git commit -m "Bump to $VERSION [ci skip]" 
-git tag -a "v$VERSION" -m "Publish version v$VERSION"
+git tag -a "$VERSION" -m "Publish version $VERSION"
 git push --follow-tags origin $BUILDKITE_BRANCH

@@ -3,7 +3,7 @@ set -eo pipefail
 
 NODE_ENV=development yarn --frozen-lockfile
 
-if [ "$BUILDKITE_BRANCH" == "master" ]; then
+if [ "$BUILDKITE_BRANCH" == "v9.0.0" ]; then
   echo '+++ Publishing the package'
   echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
 
@@ -15,7 +15,7 @@ if [ "$BUILDKITE_BRANCH" == "master" ]; then
   VERSION=$(npm version $BUMP_SIZE)
 
   bin/build_assets
-  npm publish --registry=https://registry.npmjs.org/
+  npm publish --registry=https://registry.npmjs.org/ --tag=slim
 else
   echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
 
