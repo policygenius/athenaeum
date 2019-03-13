@@ -1,4 +1,0 @@
-### CircularLoader Example:
-```jsx
-    <CircularLoader />
-```
