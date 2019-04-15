@@ -32,6 +32,7 @@ module.exports = {
     'carrier',
     'cart',
     'chat',
+    'chatQuestion',
     'checkCircle',
     'checkMark-1',
     'checklist',
