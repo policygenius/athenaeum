@@ -84,6 +84,7 @@ module.exports = {
     'fallingObjects',
     'fastTrack',
     'family',
+    'fastClock',
     'fineArt',
     'fireExtinguisher',
     'firearm',
