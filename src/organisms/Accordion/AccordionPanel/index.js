@@ -17,6 +17,7 @@ export default class AccordionPanel extends Component {
   }
 
   handleClick() {
+    this.props.onClick && this.props.onClick(this.props.title);
     this.setState({
       open: !this.state.open
     });
@@ -82,6 +83,7 @@ AccordionPanel.propTypes = {
   number: PropTypes.number,
   type: PropTypes.oneOf([ 'basic' ]),
   disableNumberedList: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 AccordionPanel.defaultProps = {

@@ -4,9 +4,10 @@ import cx from 'classnames';
 import styles from './accordion.module.scss';
 import AccordionPanel from './AccordionPanel';
 
-const sections = ({ panels, openText, closeText, disableNumberedList }) =>
+const sections = ({ onClick, panels, openText, closeText, disableNumberedList }) =>
   panels.map((panel, i) =>
     <AccordionPanel
+      onClick={onClick}
       openText={openText}
       closeText={closeText}
       key={i}
@@ -19,6 +20,7 @@ const sections = ({ panels, openText, closeText, disableNumberedList }) =>
 
 function Accordion(props) {
   const {
+    onClick,
     openText,
     closeText,
     panels,
@@ -36,6 +38,7 @@ function Accordion(props) {
   return (
     <section className={classes}>
       {sections({
+        onClick,
         panels,
         openText,
         closeText,
@@ -74,7 +77,11 @@ Accordion.propTypes = {
   /**
    * Whether or not to number the accordion items. Defaults to `true`.
    */
-  disableNumberedList: PropTypes.bool
+  disableNumberedList: PropTypes.bool,
+  /**
+   * Use this prop to tack on any extra click functionality.
+   */
+  onClick: PropTypes.func,
 };
 
 Accordion.defaultProps = {
