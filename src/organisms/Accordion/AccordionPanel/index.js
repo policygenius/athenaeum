@@ -17,7 +17,7 @@ export default class AccordionPanel extends Component {
   }
 
   handleClick() {
-    this.props.onClick && this.props.onClick(this.props.title);
+    this.props.onClick && this.props.onClick({ title: this.props.title, open: !this.state.open });
     this.setState({
       open: !this.state.open
     });
