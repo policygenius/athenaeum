@@ -42,7 +42,7 @@ steps:
 
   - name: ':speaker: :sparkle: Automated Code Review'
     branches: "!v9.0.0 !hotfix/*"
-    command: bin/scan-pullrequest
+    command: /usr/bin/scan-pullrequest
     agents:
       queue: runner
     plugins:
