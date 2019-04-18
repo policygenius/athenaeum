@@ -11,13 +11,13 @@ steps:
 
   - wait
 
-  - name: ':scsslint:'
-    command: yarn lint
-    agents:
-      queue: runner
-    plugins:
-      docker-compose:
-        run: athenaeum
+  # - name: ':scsslint:'
+  #   command: yarn lint
+  #   agents:
+  #     queue: runner
+  #   plugins:
+  #     docker-compose:
+  #       run: athenaeum
 
   - name: ':jest:'
     command: yarn test --coverage
@@ -47,7 +47,7 @@ steps:
       queue: runner
     plugins:
       docker-compose:
-        run: athenaeum
+        run: sonar
 
   - wait
 
