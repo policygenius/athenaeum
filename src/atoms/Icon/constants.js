@@ -25,6 +25,7 @@ module.exports = {
     'bookSearch',
     'books',
     'calculator',
+    'calculatorGrey',
     'calculatorOrange',
     'calendar',
     'camera',
