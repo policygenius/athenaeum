@@ -27,7 +27,7 @@ services:
       - GITHUB_TOKEN
       - SONAR_LOGIN
   sonar:
-    image: us.gcr.io/pg-shared-v1/sonar-scanner:latest
+    image: us.gcr.io/pg-shared-v1/sonar-scanner:16
     volumes:
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
       - ./bin/scan-pullrequest:/usr/bin/scan-pullrequest
