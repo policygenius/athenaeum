@@ -32,7 +32,7 @@ services:
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
       - ./bin/scan-pullrequest:/usr/bin/scan-pullrequest
       - ./sonar-project.properties:/opt/sonar-scanner/conf/sonar-scanner.properties
-      - ./src:/app/src
+      - ./src:/app/sonar-source
     command: bin/sonar
     environment:
       - BUILDKITE
