@@ -1,4 +1,3 @@
----
 steps:
   - name: ':docker: Build'
     agents:
@@ -11,13 +10,13 @@ steps:
 
   - wait
 
-  # - name: ':scsslint:'
-  #   command: yarn lint
-  #   agents:
-  #     queue: runner
-  #   plugins:
-  #     docker-compose:
-  #       run: athenaeum
+  - name: ':scsslint:'
+    command: yarn lint
+    agents:
+      queue: runner
+    plugins:
+      docker-compose:
+        run: athenaeum
 
   - name: ':jest:'
     command: yarn test --coverage
@@ -32,13 +31,13 @@ steps:
   - wait
 
   - name: ':sonar-scanner:'
-    branches: 'v9.0.0'
-    command: bin/sonar
+    # branches: 'v9.0.0'
+    command: /usr/bin/scan-sonar
     agents:
       queue: runner
     plugins:
       docker-compose:
-        run: athenaeum
+        run: sonar
 
   - name: ':speaker: :sparkle: Automated Code Review'
     branches: "!v9.0.0 !hotfix/*"
