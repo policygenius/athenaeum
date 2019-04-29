@@ -40,6 +40,7 @@ module.exports = {
     'checklistFolded',
     'checkmark',
     'checkmark-thin',
+    'checkmarkBlack',
     'chevronDown',
     'chevronLeft',
     'chevronRight',
