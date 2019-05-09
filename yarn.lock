@@ -11817,8 +11817,8 @@ webpack-dev-server@^2.4.2, webpack-dev-server@^2.9.7:
     yargs "6.6.0"
 
 webpack-hot-middleware@^2.13.2:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.21.0.tgz#7b3c113a7a4b301c91e0749573c7aab28b414b52"
+  version "2.24.4"
+  resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.24.4.tgz#0ae1eeca000c6ffdcb22eb574d0e6d7717672b0f"
   dependencies:
     ansi-html "0.0.7"
     html-entities "^1.2.0"
