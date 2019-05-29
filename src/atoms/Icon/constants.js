@@ -72,6 +72,7 @@ module.exports = {
     'dogBowl',
     'dogCone',
     'down',
+    'downWhite',
     'earch',
     'earchRebrand',
     'earthquake',
