@@ -3,6 +3,22 @@ import Icon from 'atoms/Icon';
 import Tooltip from 'atoms/Tooltip';
 
 export default function renderTooltip(tooltip, className, iconClassName) {
+  if (typeof tooltip === 'function') {
+    return tooltip({
+      tooltipPropGetter: (overrides = {}) => ({
+        className,
+        right: true,
+        ...overrides
+      }),
+      icon: (
+        <Icon
+          icon='tooltip'
+          className={iconClassName}
+        />
+      )
+    });
+  }
+
   if (typeof tooltip === 'string') {
     return (
       <Tooltip
