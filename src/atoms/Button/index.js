@@ -39,6 +39,7 @@ function Button( props ) {
         disabled={disabled}
         href={href}
         {...linkAttrs}
+        {...rest}
       >
         { icon && <Icon icon={icon} className={styles['icon']} /> }
         { children || text }
