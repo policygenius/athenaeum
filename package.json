@@ -125,7 +125,7 @@
     "webpack-bundle-size-analyzer": "^2.7.0",
     "webpack-combine-loaders": "^2.0.3",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-dev-server": "^2.4.2",
+    "webpack-dev-server": "^3.1.11",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-node-externals": "^1.6.0",
     "webpack-stats-plugin": "^0.1.5",
