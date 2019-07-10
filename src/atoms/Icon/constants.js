@@ -2,6 +2,7 @@ module.exports = {
   icons: [
     'addAccount',
     'agent',
+    'agent2',
     'americanExpress',
     'americanExpressSq',
     'americanExpressSquare',
