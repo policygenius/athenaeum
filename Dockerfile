@@ -1,5 +1,7 @@
 FROM node:8.15.1
 
+RUN sed -i '/jessie-updates/d' /etc/apt/sources.list
+
 ENV SONAR_SCANNER_CLI_VERSION=3.2.0.1227 \
     SONAR_SCANNER_HOME=/opt/sonar-scanner
 
