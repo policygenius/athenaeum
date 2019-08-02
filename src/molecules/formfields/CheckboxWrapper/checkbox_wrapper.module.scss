@@ -1,0 +1,66 @@
+@import '../shared/formfields.module.scss';
+
+.checkbox-list {
+  @extend %form-field;
+}
+
+.no-field-borders {
+  .checkbox {
+    border: 0;
+  }
+}
+
+.header {
+  padding: ru(.5) ru(1);
+  border-bottom: 1px solid color('neutral-4');
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  @extend %label;
+  padding: 0;
+}
+
+.tooltip {
+  margin-left: auto;
+}
+
+.tooltip-icon {
+  @extend %tooltip-icon;
+}
+
+.checkbox {
+  padding: rem-calc(12px) rem-calc(24px);
+  border-bottom: 1px solid color('neutral-4');
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+.footer-box {
+  padding: rem-calc(12px) rem-calc(24px);
+  border-top: 1px solid color('neutral-4');
+}
+
+/* --  state:focus  -- */
+.focused {
+  border: 1px solid color('secondary-2');
+}
+
+/* --  state:error  -- */
+.hasError {
+  border: 1px solid color('primary-1');
+}
+
+@media #{$tablet} {
+  .checkbox {
+    border: 0;
+    padding-right: 0;
+  }
+}
