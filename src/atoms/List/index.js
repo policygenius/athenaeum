@@ -101,7 +101,7 @@ List.propTypes = {
    * Makes the list horizontal and adds additional props
    */
   horizontal: PropTypes.shape({
-    spaceBetween: PropTypes.oneOf([ 6, 12, 18, 24, 36 ]),
+    spaceBetween: PropTypes.oneOf([ 6, 12, 13, 18, 24, 36 ]),
   }),
   /**
    * Adds bottomSpacing to each child `li`. See `Spacer` for size details
