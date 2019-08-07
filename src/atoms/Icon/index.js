@@ -21,17 +21,24 @@ class Icon extends React.Component {
     const { renderSVGDOM, icon } = this.props;
 
     if (renderSVGDOM && icon) {
-      this.getSVG();
+      this.getSVG(5);
     }
   }
 
-  getSVG = () => {
-    fetch(this.svgSrc)
-      .then(data => data.text())
+  getSVG = async (count, option) => {
+    await fetch(this.svgSrc, option)
+      .then((data) => data.text())
       .then((svg) => {
         this.setState({
           svgString: svg,
         });
+      })
+      .catch((error) => {
+        if (count === 1) {
+          throw error;
+        }
+
+        return setTimeout(() => this.getSVG(count - 1, { cache: 'no-cache' }), 1000);
       });
   }
 
