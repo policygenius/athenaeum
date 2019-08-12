@@ -25,9 +25,9 @@ class Icon extends React.Component {
     }
   }
 
-  getSVG = async (count, option) => {
-    await fetch(this.svgSrc, option)
-      .then((data) => data.text())
+  getSVG = (count, option) => {
+    fetch(this.svgSrc, option)
+      .then(data => data.text())
       .then((svg) => {
         this.setState({
           svgString: svg,
