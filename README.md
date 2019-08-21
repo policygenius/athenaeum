@@ -1,6 +1,6 @@
 # Athenaeum - A React Component Library (RCL)
 
-##Table of Contents
+## Table of Contents
 
   - [Purpose](#purpose)
   - [Install the NPM package](#install-the-npm-package)
