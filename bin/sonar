@@ -2,6 +2,4 @@
 
 buildkite-agent artifact download coverage/lcov.info coverage/ --build ${BUILDKITE_BUILD_ID}
 
-/usr/bin/python submodules/sonar_js_generic_coverage/sonar_js_generic_coverage.py coverage/
-
 sonar-scanner
