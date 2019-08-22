@@ -79,6 +79,7 @@ module.exports = {
     'earch',
     'earchRebrand',
     'earthquake',
+    'editPencil',
     'ellipsis',
     'email',
     'emailColor',
