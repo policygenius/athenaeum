@@ -85,6 +85,7 @@ module.exports = {
     'email',
     'emailCircle',
     'emailColor',
+    'emailGray',
     'emailLock',
     'excellentFace',
     'excellentFaceGreen',
