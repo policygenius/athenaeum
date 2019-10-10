@@ -10,12 +10,12 @@ if [ "$BUILDKITE_BRANCH" == "master" ]; then
   git config --global user.name "Randy the PolicyGenius Robot"
   git config --global user.email "robot@policygenius.com"
 
-  npm whoami
+  yarn npm whoami
   BUMP_SIZE=$(buildkite-agent meta-data get bump-size)
   VERSION=$(npm version $BUMP_SIZE)
 
   bin/build_assets
-  npm publish --registry=https://registry.npmjs.org/
+  yarn build:publish --registry=https://registry.npmjs.org/
 else
   echo "Not publishing to npm for branch $BUILDKITE_BRANCH"
 
