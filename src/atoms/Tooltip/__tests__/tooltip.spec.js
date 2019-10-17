@@ -34,8 +34,9 @@ describe('Tooltip', () => {
     describe('when headerText is provided', () => {
       it('renders the provided headerText prop', () => {
         const headerText = 'Fear is the mind-killer';
-        props = { headerText: headerText };
-        component = shallow(<Tooltip {...props}/>);
+
+        props = { headerText };
+        component = shallow(<Tooltip {...props} />);
         expect(component.find(Modal).props().header).toEqual(headerText);
       });
     });
