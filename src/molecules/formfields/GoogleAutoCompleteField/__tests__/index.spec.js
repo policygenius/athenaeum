@@ -1,16 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
+import { omit } from 'lodash';
 import TextField from 'molecules/formfields/TextField';
 
 import GoogleAutoCompleteField from '../';
 
 describe('<GoogleAutoCompleteField />', () => {
-  let props;
+  let baseProps;
   let addressValues;
 
   beforeEach(() => {
-    props = {
+    baseProps = {
       input: {
         name: 'streetAddress',
       },
@@ -59,7 +60,7 @@ describe('<GoogleAutoCompleteField />', () => {
   });
 
   it('renders correctly', () => {
-    const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+    const wrapper = shallow(<GoogleAutoCompleteField {...baseProps} />);
 
     const actual = renderer.create(wrapper).toJSON();
 
@@ -67,27 +68,27 @@ describe('<GoogleAutoCompleteField />', () => {
   });
 
   it('returns a single TextField with appropriate props', () => {
-    const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+    const wrapper = shallow(<GoogleAutoCompleteField {...baseProps} />);
 
     const field = wrapper.find(TextField);
 
     expect(field.length).toEqual(1);
-    expect(field.props().name).toEqual(props.name);
+    expect(field.props().name).toEqual(baseProps.name);
     expect(field.props().label).toEqual('Street address');
     expect(field.props().placeholder).toEqual('Enter your street address');
     expect(field.props().id).toEqual('autocomplete');
   });
 
   describe('updateAddress', () => {
-    it('calls autocomplete.getPlace and props.autocompleteAddressFields', () => {
-      const expectedData = {
-        number: '1',
-        street: 'Broadway',
-        city: 'New York',
-        state: 'New York',
-        zip: '10075',
-      };
+    const expectedData = {
+      number: '1',
+      street: 'Broadway',
+      city: 'New York',
+      state: 'New York',
+      zip: '10075',
+    };
 
+    it('calls autocomplete.getPlace and props.autocompleteAddressFields', () => {
       const state = {
         autocomplete: {
           getPlace: jest.fn(() => ({
@@ -96,6 +97,7 @@ describe('<GoogleAutoCompleteField />', () => {
         }
       };
 
+      const props = { ...baseProps };
       const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
 
       wrapper.setState(state);
@@ -105,6 +107,71 @@ describe('<GoogleAutoCompleteField />', () => {
       expect(state.autocomplete.getPlace.mock.calls.length).toBe(1);
       expect(props.autocompleteAddressFields.mock.calls.length).toBe(1);
       expect(props.autocompleteAddressFields.mock.calls[0][0]).toEqual(expectedData);
+    });
+
+    describe('when google does not provide street_number', () => {
+      let addressValuesWithoutStreetNumber;
+      let state;
+
+      beforeEach(() => {
+        addressValuesWithoutStreetNumber = addressValues
+          .filter(value => !value.types.includes('street_number'));
+
+        state = {
+          autocomplete: {
+            getPlace: jest.fn(() => ({
+              address_components: addressValuesWithoutStreetNumber,
+            }))
+          }
+        };
+      });
+
+      it('should extract the street_number manually', () => {
+        const streetNumber = 1234;
+        const id = 'autocomplete-id';
+        const input = { name: 'address', value: `${streetNumber} Broadw` };
+        const props = { ...baseProps, id, input };
+        const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+
+        wrapper.setState(state);
+        wrapper.instance().updateAddress();
+
+        expect(state.autocomplete.getPlace.mock.calls.length).toBe(1);
+        expect(props.autocompleteAddressFields.mock.calls.length).toBe(1);
+        expect(props.autocompleteAddressFields.mock.calls[0][0])
+          .toEqual({ ...expectedData, number: streetNumber });
+      });
+
+      it('should only extract the first digits as the street_number', () => {
+        const streetNumber = 12;
+        const id = 'autocomplete-id';
+        const input = { name: 'address', value: `${streetNumber} W 50th St` };
+        const props = { ...baseProps, id, input };
+        const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+
+        wrapper.setState(state);
+        wrapper.instance().updateAddress();
+
+        expect(state.autocomplete.getPlace.mock.calls.length).toBe(1);
+        expect(props.autocompleteAddressFields.mock.calls.length).toBe(1);
+        expect(props.autocompleteAddressFields.mock.calls[0][0])
+          .toEqual({ ...expectedData, number: streetNumber });
+      });
+
+      it('should not return a street_number, if extraction fails', () => {
+        const id = 'autocomplete-id';
+        const input = { name: 'address', value: 'Twelve Broadway' };
+        const props = { id, input, ...baseProps };
+        const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+
+        wrapper.setState(state);
+        wrapper.instance().updateAddress();
+
+        expect(state.autocomplete.getPlace.mock.calls.length).toBe(1);
+        expect(props.autocompleteAddressFields.mock.calls.length).toBe(1);
+        expect(props.autocompleteAddressFields.mock.calls[0][0])
+          .toEqual(omit(expectedData, 'number'));
+      });
     });
   });
 
@@ -133,7 +200,7 @@ describe('<GoogleAutoCompleteField />', () => {
         },
       };
 
-      const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+      const wrapper = shallow(<GoogleAutoCompleteField {...baseProps} />);
 
       expect(wrapper.instance().formatAddressInfo(addressValues)).toEqual(expectedData);
     });
@@ -149,7 +216,7 @@ describe('<GoogleAutoCompleteField />', () => {
         zip: '10075',
       };
 
-      const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
+      const wrapper = shallow(<GoogleAutoCompleteField {...baseProps} />);
 
       const data = wrapper.instance().formatAddressInfo(addressValues);
 
