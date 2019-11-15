@@ -51,6 +51,18 @@ class GoogleAutoCompleteField extends Component {
   updateAddress = () => {
     const place = this.state.autocomplete.getPlace();
     const addressData = this.formatAddressInfo(place.address_components);
+
+    if (!addressData.number) {
+      const { value } = this.props.input;
+      const streetNumberMatch = value && value.match(/^(\d+)/);
+
+      if (streetNumberMatch && streetNumberMatch[0]) {
+        const number = parseInt(streetNumberMatch[0], 10);
+
+        addressData.number = { shortName: number, longName: number };
+      }
+    }
+
     const data = this.pickData(addressData);
 
     this.props.autocompleteAddressFields(data);
@@ -119,6 +131,7 @@ GoogleAutoCompleteField.propTypes = {
    */
   input: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    value: PropTypes.string,
   }).isRequired,
 
   /**
