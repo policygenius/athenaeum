@@ -54,10 +54,10 @@ class GoogleAutoCompleteField extends Component {
 
     if (!addressData.number) {
       const { value } = this.props.input;
-      const matches = value && value.match(/^(\d+)/);
+      const streetNumberMatch = value && value.match(/^(\d+)/);
 
-      if (matches && matches[0]) {
-        const number = parseInt(matches[0], 10);
+      if (streetNumberMatch && streetNumberMatch[0]) {
+        const number = parseInt(streetNumberMatch[0], 10);
 
         addressData.number = { shortName: number, longName: number };
       }

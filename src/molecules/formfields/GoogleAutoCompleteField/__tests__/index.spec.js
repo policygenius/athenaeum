@@ -144,9 +144,11 @@ describe('<GoogleAutoCompleteField />', () => {
 
       it('should only extract the first digits as the street_number', () => {
         const streetNumber = 12;
-        const id = 'autocomplete-id';
-        const input = { name: 'address', value: `${streetNumber} W 50th St` };
-        const props = { ...baseProps, id, input };
+        const props = {
+          ...baseProps,
+          id: 'autocomplete-id',
+          input: { name: 'address', value: `${streetNumber} W 50th St` }
+        };
         const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
 
         wrapper.setState(state);
@@ -159,9 +161,11 @@ describe('<GoogleAutoCompleteField />', () => {
       });
 
       it('should not return a street_number, if extraction fails', () => {
-        const id = 'autocomplete-id';
-        const input = { name: 'address', value: 'Twelve Broadway' };
-        const props = { id, input, ...baseProps };
+        const props = {
+          ...baseProps,
+          id: 'autocomplete-id',
+          input: { name: 'address', value: 'Twelve Broadway' },
+        };
         const wrapper = shallow(<GoogleAutoCompleteField {...props} />);
 
         wrapper.setState(state);
