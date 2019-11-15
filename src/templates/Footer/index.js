@@ -208,7 +208,6 @@ function Footer(props) {
         >
           <div className={styles['trust-logos']}>
             <Icon className={classnames(styles['trust-logo'], styles['logo-bbb'])} icon='bbb' />
-            <Icon className={classnames(styles['trust-logo'], styles['logo-norton'])} icon='norton' />
           </div>
 
           <Spacer size={6} />
