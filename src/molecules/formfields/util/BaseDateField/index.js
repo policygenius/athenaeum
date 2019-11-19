@@ -5,7 +5,6 @@ import classnames from 'classnames';
 
 import isValid from 'date-fns/is_valid';
 import inRange from 'lodash/inRange';
-import omit from 'lodash/omit';
 import get from 'lodash/get';
 
 import ErrorMessage from 'atoms/ErrorMessage';
@@ -172,7 +171,7 @@ class BaseDateField extends React.Component {
   get monthField() {
     const { input: dateFieldInput } = this.props;
 
-    return (props = { input: {} }) =>
+    return ({ input = {}, ...props } = {}) =>
       this.wrapChild(
         <TextField
           type='text'
@@ -185,16 +184,16 @@ class BaseDateField extends React.Component {
             maxLength: 2,
             noValidate: true,
             onChange: (e) => {
-              props.input.onChange && props.input.onChange(e);
+              input.onChange && input.onChange(e);
               this.month = e.target.value;
             },
             onFocus: dateFieldInput.onFocus,
             onBlur: this.blurIfLeaving,
             pattern: '[0-9]*',
             value: this.state.monthValue,
-            ...props.input,
+            ...input,
           }}
-          {...omit(props, 'input')}
+          {...props}
         />
       )
     ;
@@ -203,7 +202,7 @@ class BaseDateField extends React.Component {
   get dayField() {
     const { input: dateFieldInput } = this.props;
 
-    return (props = { input: {} }) =>
+    return ({ input = {}, ...props } = {}) =>
       this.wrapChild(
         <TextField
           type='text'
@@ -216,16 +215,16 @@ class BaseDateField extends React.Component {
             maxLength: 2,
             noValidate: true,
             onChange: (e) => {
-              props.input.onChange && props.input.onChange(e);
+              input.onChange && input.onChange(e);
               this.day = e.target.value;
             },
             onFocus: dateFieldInput.onFocus,
             onBlur: this.blurIfLeaving,
             pattern: '[0-9]*',
             value: this.state.dayValue,
-            ...props.input,
+            ...input,
           }}
-          {...omit(props, 'input')}
+          {...props}
         />
       )
     ;
@@ -234,7 +233,7 @@ class BaseDateField extends React.Component {
   get yearField() {
     const { input: dateFieldInput } = this.props;
 
-    return (props = { input: {} }) =>
+    return ({ input = {}, ...props } = {}) =>
       this.wrapChild(
         <TextField
           type='text'
@@ -247,16 +246,16 @@ class BaseDateField extends React.Component {
             maxLength: 4,
             noValidate: true,
             onChange: (e) => {
-              props.input.onChange && props.input.onChange(e);
+              input.onChange && input.onChange(e);
               this.year = e.target.value;
             },
             onFocus: dateFieldInput.onFocus,
             onBlur: this.blurIfLeaving,
             pattern: '[0-9]*',
             value: this.state.yearValue,
-            ...props.input,
+            ...input,
           }}
-          {...omit(props, 'input')}
+          {...props}
         />
       )
     ;
