@@ -9,6 +9,7 @@ module.exports = {
     'animal',
     'application',
     'applicationColor',
+    'applicationColorLarge',
     'armchair',
     'autoColor3X',
     'autogenius',
