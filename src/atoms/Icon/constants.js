@@ -1,6 +1,7 @@
 module.exports = {
   icons: [
     'addAccount',
+    'advice',
     'agent',
     'agent2',
     'americanExpress',
@@ -64,6 +65,7 @@ module.exports = {
     'discountBadge',
     'discountBadge-shadow',
     'discountBlue',
+    'discountColor',
     'discountGreen',
     'discountGreenCircle',
     'discountPill',
@@ -193,6 +195,7 @@ module.exports = {
     'plus',
     'policygeniusSymbol',
     'policygeniusSymbolCenter',
+    'priceRibbon',
     'priceSticker',
     'priceTag',
     'questionBlackGreyCircle',
