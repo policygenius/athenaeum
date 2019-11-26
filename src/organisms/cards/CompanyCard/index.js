@@ -15,7 +15,8 @@ const CompanyCard = (props) => {
     linkUrl,
     linkText,
     className,
-    variant
+    variant,
+    gatsbyStars,
   } = props;
 
   const classes = cx(
@@ -49,6 +50,7 @@ const CompanyCard = (props) => {
         <img className={styles.image} src={imageAttr.src} role='presentation' />
       </div>
       { starRating && <StarRating className={styles['star-rating']} rating={starRating} size={size} /> }
+      { !!gatsbyStars && gatsbyStars }
       { linkUrl && <ReadLink linkUrl={linkUrl} /> }
     </LinkWrapper>
   );
@@ -94,6 +96,12 @@ CompanyCard.propTypes = {
    * Possible card sizes are: 'large' or 'small'
   **/
   variant: PropTypes.string,
+  /**
+   * Can pass in react component
+  **/
+  gatsbyStars: PropTypes.element,
+
+
 };
 
 CompanyCard.defaultProps = {
