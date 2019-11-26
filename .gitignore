@@ -60,3 +60,6 @@ svgs.txt
 
 # Ignore sonar-scanner results folder
 .scannerwork/
+
+# IDE files
+.vscode/
