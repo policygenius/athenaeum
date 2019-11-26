@@ -56,6 +56,7 @@ module.exports = {
     'closeAccent',
     'computer',
     'computerColor',
+    'computerQuotes',
     'concierge',
     'dashboard',
     'digicert',
