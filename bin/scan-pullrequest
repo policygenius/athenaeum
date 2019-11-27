@@ -7,19 +7,14 @@ then
   exit 0
 fi
 
+echo
 echo "Running automated code review with SonarQube..."
-
-SHORT_REPO_NAME=$(echo ${BUILDKITE_REPO} | \
-  sed 's/git@github\.com:\(.*\)/\1/' | \
-  sed 's/\(.*\)\.git/\1/')
-
+echo
 echo "BuildKite Pull Request: ${BUILDKITE_PULL_REQUEST}"
-echo "BuildKite Repo Name: ${SHORT_REPO_NAME}"
+echo "BuildKite Branch: ${BUILDKITE_BRANCH}"
 
 # If the Pull Request exists, perform an analysis, otherwise skip
 sonar-scanner \
-  -Dsonar.github.pullRequest=${BUILDKITE_PULL_REQUEST} \
-  -Dsonar.analysis.mode=preview \
-  -Dsonar.github.oauth=${GITHUB_TOKEN} \
-  -Dsonar.github.repository=${SHORT_REPO_NAME} \
-  -Dsonar.login=${SONAR_LOGIN}
+  -Dsonar.pullrequest.key=${BUILDKITE_PULL_REQUEST} \
+  -Dsonar.pullrequest.branch=${BUILDKITE_BRANCH} \
+  -Dsonar.pullrequest.base=${BUILDKITE_PULL_REQUEST_BASE_BRANCH}
