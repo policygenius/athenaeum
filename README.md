@@ -176,3 +176,6 @@ For more information on Contributing and issues, please view the [`athenaeum` Gi
 ***
 
 The RCL and the Athenaeum project is a product by [PolicyGenius](https://www.policygenius.com/).
+
+## Resources
+- [Frontend Guide](https://github.com/policygenius/frontend-guide)
