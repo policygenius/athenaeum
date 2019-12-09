@@ -7,6 +7,8 @@ then
   exit 0
 fi
 
+buildkite-agent artifact download coverage/lcov.info coverage/ --build ${BUILDKITE_BUILD_ID}
+
 echo
 echo "Running automated code review with SonarQube..."
 echo
