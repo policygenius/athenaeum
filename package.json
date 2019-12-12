@@ -172,6 +172,7 @@
     }
   },
   "resolutions": {
-    "serialize-javascript": "^2.1.1"
+    "serialize-javascript": "^2.1.1",
+    "tar": "^2.2.2"
   }
 }
