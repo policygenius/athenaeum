@@ -62,7 +62,6 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^3.5.0",
-    "compression-webpack-plugin": "^1.0.0",
     "css-loader": "^0.28.0",
     "cssnano": "^3.10.0",
     "enzyme": "^3.0.0",
@@ -171,5 +170,8 @@
       "\\.(svg)$": "<rootDir>/src/utils/fileMock.js",
       "\\.(css|less|scss)$": "identity-obj-proxy"
     }
+  },
+  "resolutions": {
+    "serialize-javascript": "^2.1.1"
   }
 }
