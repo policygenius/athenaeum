@@ -1,5 +1,4 @@
 import React from 'react';
-import sinon from 'sinon';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
@@ -7,7 +6,7 @@ import Modal from 'molecules/Modal';
 
 describe('<Modal />', () => {
   let wrapper;
-  const callback = sinon.spy();
+  const callback = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(<Modal contentLabel='Test Modal' />);
@@ -39,7 +38,7 @@ describe('<Modal />', () => {
 
     wrapper.instance().onAfterOpen();
 
-    expect(callback.called).to.equal(true);
+    expect(callback.mock.calls).to.exist;
   });
 
   it('calls props.onRequestClose in this.onRequestClose', () => {
@@ -52,7 +51,7 @@ describe('<Modal />', () => {
 
     wrapper.instance().onRequestClose();
 
-    expect(callback.called).to.equal(true);
+    expect(callback.mock.calls).to.exist;
   });
 
   it('sets additional className prop', () => {
@@ -70,6 +69,6 @@ describe('<Modal />', () => {
 
     wrapper.find('.close').simulate('click');
 
-    expect(callback.called).to.equal(true);
+    expect(callback.mock.calls).to.exist;
   });
 });
