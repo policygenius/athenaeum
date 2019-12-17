@@ -2,7 +2,6 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
 
-
 import List from 'atoms/List';
 import Icon from 'atoms/Icon';
 
@@ -45,14 +44,16 @@ describe('<List />', () => {
     const wrapper = mount(
       <List>
         <strong>New Component Created!</strong>
-        <small>Now go and write some code! -- <em>You code monkey, you ;).</em></small>
+        <small>
+          Now go and write some code! -- <em>You code monkey, you ;).</em>
+        </small>
         <List>
-          {" I'm nested!! "}
-          <li>{"I'm wrapped in a 'li'"}</li>
-          <em>{"I'm wrapped in a 'em'"}</em>
+          {' I\'m nested!! '}
+          <li>I'm wrapped in a 'li'</li>
+          <em>I'm wrapped in a 'em'</em>
         </List>
       </List>
-  );
+    );
 
     expect(wrapper.find('li')).to.have.length(5);
     expect(wrapper.find('ul')).to.have.length(2);

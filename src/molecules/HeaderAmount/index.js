@@ -32,13 +32,14 @@ function HeaderAmount(props) {
   );
 }
 
-
 HeaderAmount.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    *  amount
    */
@@ -47,18 +48,22 @@ HeaderAmount.propTypes = {
     PropTypes.number,
     PropTypes.node
   ]),
+
   /**
    * string label to denote unit (i.e /mo, per month, yr)
    */
   label: PropTypes.string,
+
   /**
    * denote unit (i.e /mo, per month, yr)
    */
   unit: PropTypes.string,
+
   /**
    * onClick handler for the chevron
    */
   onClick: PropTypes.func,
+
   /**
    * whether or not the menu is active
    */

@@ -22,11 +22,11 @@ function Filter(props) {
 
   return (
     <div className={classnames(...classes)}>
-      { label &&
+      { label && (
         <label className={styles['label']} htmlFor={forProp}>
           { label }
         </label>
-      }
+      )}
 
       <div className={styles['select-wrapper']}>
         <select
@@ -42,8 +42,8 @@ function Filter(props) {
   );
 }
 
-
 Filter.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

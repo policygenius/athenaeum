@@ -29,35 +29,39 @@ function ContactCard( props ) {
 
   return (
     <StackedCard className={classnames(...classes)} inverted={inverted}>
-      { top &&
-        <a className={styles['link-row']} onClick={top.onClick} href={top.href}>
-          <Icon
-            icon={top.icon}
-            className={styles['icon']}
-          />
-          { top.text }
-        </a>
-      }
+      { top
+        && (
+          <a className={styles['link-row']} onClick={top.onClick} href={top.href}>
+            <Icon
+              icon={top.icon}
+              className={styles['icon']}
+            />
+            { top.text }
+          </a>
+        )}
 
-      { bottom &&
-        <a className={styles['link-row']} onClick={bottom.onClick} href={bottom.href}>
-          <Icon
-            icon={bottom.icon}
-            className={styles['icon']}
-          />
-          { bottom.text }
-        </a>
-      }
+      { bottom
+        && (
+          <a className={styles['link-row']} onClick={bottom.onClick} href={bottom.href}>
+            <Icon
+              icon={bottom.icon}
+              className={styles['icon']}
+            />
+            { bottom.text }
+          </a>
+        )}
     </StackedCard>
   );
 }
 
 ContactCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * object for top section of card
    *
@@ -69,6 +73,7 @@ ContactCard.propTypes = {
     onClick: PropTypes.func,
     href: PropTypes.string,
   }),
+
   /**
    * object for bottom section of card
    *
@@ -80,6 +85,7 @@ ContactCard.propTypes = {
     onClick: PropTypes.func,
     href: PropTypes.string,
   }),
+
   /**
    * Inverted color scheme.
    */

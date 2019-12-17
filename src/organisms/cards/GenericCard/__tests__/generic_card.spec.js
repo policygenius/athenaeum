@@ -18,6 +18,6 @@ describe('<GenericCard />', () => {
     const wrapper = shallow(<GenericCard footerText={footerText} />);
 
     expect(wrapper.find('.footer')).to.have.length(1);
-    expect(wrapper.find('.footer').findWhere(n => n.props().children === footerText).length).to.equal(1);
+    expect(wrapper.find('.footer').findWhere((n) => n.props().children === footerText).length).to.equal(1);
   });
 });

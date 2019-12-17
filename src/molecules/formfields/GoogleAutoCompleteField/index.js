@@ -124,6 +124,7 @@ class GoogleAutoCompleteField extends Component {
 }
 
 GoogleAutoCompleteField.propTypes = {
+
   /**
    * Values to be passed down to the TextField rendered by this component.
    * If using `redux-form`, this prop will come from the `Field` wrapper component.
@@ -189,14 +190,14 @@ GoogleAutoCompleteField.propTypes = {
 };
 
 GoogleAutoCompleteField.defaultProps = {
-  id: 'autocomplete',
   addressValuesToPick: {
-    number: 'shortName',
-    street: 'longName',
     city: 'longName',
+    number: 'shortName',
     state: 'longName',
+    street: 'longName',
     zip: 'shortName',
   },
+  id: 'autocomplete',
 };
 
 export default GoogleAutoCompleteField;

@@ -10,7 +10,7 @@ const stackChild = (child) => {
 
   return null;
 };
-const stackChildren = children => React.Children.map(children, stackChild);
+const stackChildren = (children) => React.Children.map(children, stackChild);
 
 function StackedCard(props) {
   const {
@@ -33,11 +33,13 @@ function StackedCard(props) {
 }
 
 StackedCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Inverted color scheme.
    */

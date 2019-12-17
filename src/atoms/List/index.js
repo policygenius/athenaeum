@@ -58,8 +58,8 @@ function List(props) {
   );
 }
 
-
 List.propTypes = {
+
   /*
    * The number of list columns
    */
@@ -103,6 +103,7 @@ List.propTypes = {
   horizontal: PropTypes.shape({
     spaceBetween: PropTypes.oneOf([ 6, 12, 18, 24, 36 ]),
   }),
+
   /**
    * Adds bottomSpacing to each child `li`. See `Spacer` for size details
    */
@@ -120,6 +121,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
+
   // Place any default props here.
 };
 

@@ -24,7 +24,7 @@ const CompanyCard = (props) => {
     className
   );
 
-  const ReadLink = () =>
+  const ReadLink = () => (
     <LinkWrapper
       type='secondary'
       variant={variant}
@@ -34,7 +34,8 @@ const CompanyCard = (props) => {
       href={linkUrl}
     >
       <Text size={10}>{linkText}</Text>
-    </LinkWrapper>;
+    </LinkWrapper>
+  );
 
   const size = variant === 'large' ? '18px' : '12px';
 
@@ -55,6 +56,7 @@ const CompanyCard = (props) => {
 };
 
 CompanyCard.propTypes = {
+
   /**
    * Will add a star rating
   */

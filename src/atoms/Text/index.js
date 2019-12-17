@@ -20,13 +20,15 @@ const getTag = (props) => {
   return tag;
 };
 
-const getFont = ({ size, type, font, a }) => {
+const getFont = ({
+  size, type, font, a
+}) => {
   const fontSize = type || size;
 
   // TODO: Remove 'a' prop as an option from component
   if (a || font === 'a') {
     return styles[`type-a-${fontSize}-bold`];
-  } else if (font === 'c') {
+  } if (font === 'c') {
     return styles['type-c-7-regular'];
   }
 
@@ -101,8 +103,8 @@ function Text(props) {
   );
 }
 
-
 Text.propTypes = {
+
   /*
    * If neither children nor dangerouslySetInnerHTML is set, this component will return null
    */
@@ -223,11 +225,11 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  tag: 'p',
-  size: 8,
-  font: 'b',
   color: 'primary-3',
+  font: 'b',
   inherit: true,
+  size: 8,
+  tag: 'p',
 };
 
 export default Text;

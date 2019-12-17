@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 
 import Footer from 'templates/Footer';
 
-
 describe('<Footer />', () => {
 
   it('renders', () => {

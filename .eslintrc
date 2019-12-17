@@ -1,31 +1,11 @@
 {
-  'parser': 'babel-eslint',
-  'extends': 'airbnb',
-  'plugins': [
-     'react',
-     'jsx-a11y',
-     'markdown'
+  'extends': [
+    'policygenius',
+    'policygenius/react',
+    'policygenius/jsx-a11y',
+    'policygenius/import',
+    'policygenius/jest'
   ],
-  'env': {
-    'mocha': true,
-    'browser': true,
-    'node': true,
-    'es6': true,
-    'jest': true
-  },
-  'globals': {
-        'React': true
-    },
-  'ecmaFeatures': {
-      'jsx': true
-  },
-  'parserOptions': {
-    'ecmaVersion': 6,
-    'sourceType': 'module',
-    'ecmaFeatures': {
-      'jsx': true
-    }
-  },
   'rules': {
     'array-bracket-spacing': [ 2, 'always' ],
     'array-callback-return': 2,
@@ -73,9 +53,9 @@
         'SwitchCase': 2
       }
     ],
+    'jest/valid-expect': 0,
     'jsx-a11y/aria-props': 2,
     'jsx-a11y/heading-has-content': 0,
-    'jsx-a11y/href-no-hash': 2,
     'jsx-a11y/label-has-for': 2,
     'jsx-a11y/mouse-events-have-key-events': 2,
     'jsx-a11y/no-static-element-interactions': 0,
@@ -143,12 +123,17 @@
     'space-before-function-paren': 2,
     'space-in-parens': [ 0, 'always' ],
     'spaced-comment': [ 2, 'always' ],
+    'react/sort-prop-types': 0,
     'vars-on-top': 2,
   },
   'settings': {
     'import/resolver': {
       'webpack': {
-        'config': './webpack.config.dev.js'
+        'path': 'webpack.config.dev.js'
+      },
+      'node':{
+        'extensions': ['.js'],
+        'moduleDirectory': ['node_modules', 'src/'],
       }
     }
   }

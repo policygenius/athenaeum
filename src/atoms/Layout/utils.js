@@ -8,15 +8,15 @@ export function processChild(child, layoutProps) {
   // TODO: Find a better way to type check here.
   // I believe the first now fails because of Preact
   if (
-    child.type === Col ||
-    get(child, 'nodeName.prototype.displayName') === 'Col' ||
-    get(child, 'type.prototype.displayName') === 'Col' ||
-    get(child, 'type.name') === 'Col' ||
-    get(child, 'type.rclName') === 'Col' ||
+    child.type === Col
+    || get(child, 'nodeName.prototype.displayName') === 'Col'
+    || get(child, 'type.prototype.displayName') === 'Col'
+    || get(child, 'type.name') === 'Col'
+    || get(child, 'type.rclName') === 'Col'
 
     // This final check is to prevent extra div wrappers resulting from
     // the way React Hot Loader creates proxied versions of components (as shallow copies)
-    React.cloneElement(child).type === <Col />.type
+    || React.cloneElement(child).type === <Col />.type
   ) {
 
     const colProps = assign(
@@ -35,7 +35,7 @@ export function processChild(child, layoutProps) {
   );
 
   return (
-    <Col {...colProps} >
+    <Col {...colProps}>
       { child }
     </Col>
   );
@@ -56,9 +56,13 @@ export function processChildren(props) {
 
   // start at -1 so can bump to 0 in the conditional below
   let smIdx = -1;
+
   let mdIdx = -1;
+
   let lgIdx = -1;
+
   let xlgIdx = -1;
+
   let xxlgIdx = -1;
 
   return React.Children.map( children, ( child ) => {

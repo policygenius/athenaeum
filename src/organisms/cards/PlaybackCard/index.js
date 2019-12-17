@@ -51,14 +51,17 @@ function PlaybackCard(props) {
 }
 
 PlaybackCard.propTypes = {
+
   /**
    * Text for the header of the playback card
    */
   header: PropTypes.string.isRequired,
+
   /**
    * Callback for edit link
    */
   onClick: PropTypes.func.isRequired,
+
   /**
    * This is the icon name from the [Icon component](/#icon).
    */
@@ -68,6 +71,7 @@ PlaybackCard.propTypes = {
    * Left Panel node
    */
   leftPanel: PropTypes.node,
+
   /**
    * Right Panel node
    */

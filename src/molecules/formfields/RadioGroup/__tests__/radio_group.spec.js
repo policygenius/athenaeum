@@ -10,8 +10,8 @@ describe('<RadioGroup />', () => {
   let component;
 
   beforeEach(() => {
-    component =
-      (<RadioGroup
+    component = (
+      <RadioGroup
         label='Test label'
         subLabel='Sublabel action'
         meta={{}}
@@ -38,8 +38,8 @@ describe('<RadioGroup />', () => {
             onChange: () => {},
           }}
         />
-      </RadioGroup>)
-    ;
+      </RadioGroup>
+    );
   });
 
   it('renders correctly', () => {

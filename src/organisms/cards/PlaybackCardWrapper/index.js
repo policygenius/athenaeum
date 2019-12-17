@@ -61,13 +61,14 @@ function PlaybackCardWrapper(props) {
   );
 }
 
-
 PlaybackCardWrapper.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Logo for the header
    */
@@ -75,18 +76,22 @@ PlaybackCardWrapper.propTypes = {
     PropTypes.object,
     PropTypes.string,
   ]),
+
   /**
    * Amount for the header.
    */
   amount: PropTypes.number,
+
   /**
    * per unit for Amount displayed in header.
    */
   unit: PropTypes.string,
+
   /**
    * Text for the footer of the playback wrapper
    */
   footer: PropTypes.string,
+
   /**
    * Callback for footer link
    */

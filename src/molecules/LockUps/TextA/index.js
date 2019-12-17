@@ -14,7 +14,6 @@ const TextA = (props) => {
   );
 };
 
-
 TextA.propTypes = {
   spacer: PropTypes.number,
   line1: PropTypes.node,

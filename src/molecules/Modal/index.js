@@ -121,33 +121,37 @@ class Modal extends React.Component {
         <div id={dialogId} className={styles['dialog']}>
           <div className={styles['body']}>
             {
-              !hideHeader &&
-                <div
-                  className={styles['header']}
-                >
+              !hideHeader
+                && (
                   <div
-                    className={styles['close-col']}
+                    className={styles['header']}
                   >
-                    {
-                      !hideX &&
-                        <Icon
-                          icon='close'
-                          className={styles['close']}
-                          onClick={this.onRequestClose}
-                          width='18px'
-                          height='18px'
-                        />
-                    }
+                    <div
+                      className={styles['close-col']}
+                    >
+                      {
+                        !hideX
+                        && (
+                          <Icon
+                            icon='close'
+                            className={styles['close']}
+                            onClick={this.onRequestClose}
+                            width='18px'
+                            height='18px'
+                          />
+                        )
+                      }
+                    </div>
+
+                    <Text
+                      type={3}
+                      font='a'
+                    >
+                      {header}
+                    </Text>
+
                   </div>
-
-                  <Text
-                    type={3}
-                    font='a'
-                  >
-                    {header}
-                  </Text>
-
-                </div>
+                )
             }
             {React.Children.map(children, this.wrapChild)}
           </div>
@@ -158,8 +162,8 @@ class Modal extends React.Component {
   }
 }
 
-
 Modal.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -223,9 +227,9 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  variant: 'simple',
-  hideX: false,
   hideHeader: false,
+  hideX: false,
+  variant: 'simple',
 };
 
 export default Modal;

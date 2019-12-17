@@ -73,13 +73,15 @@ class CheckboxWrapper extends BaseFieldGroup {
             </div>
 
             {
-              subLabel &&
-                <Text
-                  size={10}
-                  font='b'
-                >
-                  {subLabel}
-                </Text>
+              subLabel
+                && (
+                  <Text
+                    size={10}
+                    font='b'
+                  >
+                    {subLabel}
+                  </Text>
+                )
             }
           </div>
           <Layout
@@ -88,7 +90,7 @@ class CheckboxWrapper extends BaseFieldGroup {
             className={styles.content}
           >
             {
-              React.Children.map(children, child =>
+              React.Children.map(children, (child) => (
                 <Col className={styles.checkbox}>
                   {
                     React.cloneElement(child, {
@@ -97,20 +99,22 @@ class CheckboxWrapper extends BaseFieldGroup {
                     })
                   }
                 </Col>
-              )
+              ))
             }
           </Layout>
 
           {
-            footerBox &&
-              <div className={styles['footer-box']}>
-                {
-                  React.cloneElement(footerBox, {
-                    ...footerBox.props,
-                    onBlur: this.handleBlur,
-                  })
-                }
-              </div>
+            footerBox
+              && (
+                <div className={styles['footer-box']}>
+                  {
+                    React.cloneElement(footerBox, {
+                      ...footerBox.props,
+                      onBlur: this.handleBlur,
+                    })
+                  }
+                </div>
+              )
           }
         </div>
         <ErrorMessage
@@ -123,6 +127,7 @@ class CheckboxWrapper extends BaseFieldGroup {
 }
 
 CheckboxWrapper.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

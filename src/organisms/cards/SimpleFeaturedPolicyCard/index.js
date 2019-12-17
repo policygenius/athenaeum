@@ -33,53 +33,57 @@ function SimpleFeaturedPolicyCard(props) {
   return (
     <div className={classnames(...classes)}>
       <div className={styles['content']}>
-        { premium.price ?
-          <div className={styles['premium']}>
-            <Text
-              type={3}
-              font='a'
-            >
-              {formattedPremium} <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
-            </Text>
+        { premium.price
+          ? (
+            <div className={styles['premium']}>
+              <Text
+                type={3}
+                font='a'
+              >
+                {formattedPremium}
+                {' '}
+                <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
+              </Text>
 
-            {premium.tooltip}
-          </div>
-          :
-          <Text type={7} font='a'>{premium.defaultText}</Text>
-        }
+              {premium.tooltip}
+            </div>
+          )
+          : <Text type={7} font='a'>{premium.defaultText}</Text>}
 
         <Spacer size={24} />
 
         {
-          carrierLogo.type !== 'img' ?
-            <div className={styles['carrier-info']}>
-              { carrierLogo }
-            </div>
-            :
-            <div className={styles['carrier-logo']}>
-              { carrierLogo }
-            </div>
+          carrierLogo.type !== 'img'
+            ? (
+              <div className={styles['carrier-info']}>
+                { carrierLogo }
+              </div>
+            )
+            : (
+              <div className={styles['carrier-logo']}>
+                { carrierLogo }
+              </div>
+            )
         }
-
 
         {
           onContinue &&
-            <React.Fragment>
-              <Spacer size={36} />
+            [
+              <Spacer size={36} />,
               <ButtonGroup
                 onContinue={onContinue}
                 compareCheckbox={compareCheckbox}
                 continueCTAText={continueCTAText}
               />
-            </React.Fragment>
+            ]
         }
       </div>
     </div>
   );
 }
 
-
 SimpleFeaturedPolicyCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

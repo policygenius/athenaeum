@@ -61,6 +61,7 @@ function GenericCard( props ) {
 }
 
 GenericCard.propTypes = {
+
   /**
    * class name added to class set
    */

@@ -76,16 +76,18 @@ function ToggleField( props ) {
         <Layout
           nested={nested}
         >
-          { label &&
-            <Col className={styles['header']}>
-              { tooltip &&
-                <div className={styles['tooltip-wrapper']}>
-                  { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
-                </div>
-              }
-              { label }
-            </Col>
-          }
+          { label
+            && (
+              <Col className={styles['header']}>
+                { tooltip
+                && (
+                  <div className={styles['tooltip-wrapper']}>
+                    { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+                  </div>
+                )}
+                { label }
+              </Col>
+            )}
           { children && <Col className={styles['body']}>{children}</Col> }
           <Col className={buttonStyle}>
             { renderChoices(toggleChoices, input) }
@@ -102,14 +104,15 @@ function ToggleField( props ) {
 }
 
 ToggleField.defaultProps = {
+  sideBySide: true,
   toggleChoices: [
     { label: 'Yes', value: true },
     { label: 'No', value: false }
   ],
-  sideBySide: true
 };
 
 ToggleField.propTypes = {
+
   /**
    * Will append new classname to classSet
    */
@@ -122,6 +125,7 @@ ToggleField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+
   /**
    * An array of objects with two key/value pairs: `label` (string value) and `value` (string, number or boolean). Set to `Yes` (true) and `No` (false) by default.
    */

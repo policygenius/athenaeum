@@ -2,10 +2,11 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Icon from 'atoms/Icon';
 import Modal from 'molecules/Modal';
-import Tooltip from '../';
+import Tooltip from '..';
 
 describe('Tooltip', () => {
   let component;
+
   let props;
 
   it('defaults to Icon when text is not provided', () => {
@@ -34,8 +35,9 @@ describe('Tooltip', () => {
     describe('when headerText is provided', () => {
       it('renders the provided headerText prop', () => {
         const headerText = 'Fear is the mind-killer';
-        props = { headerText: headerText };
-        component = shallow(<Tooltip {...props}/>);
+
+        props = { headerText };
+        component = shallow(<Tooltip {...props} />);
         expect(component.find(Modal).props().header).toEqual(headerText);
       });
     });

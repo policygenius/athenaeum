@@ -57,9 +57,9 @@ class BaseDateField extends React.Component {
     }
 
     if (
-      prevState.dayValue === dayValue &&
-      prevState.monthValue === monthValue &&
-      prevState.yearValue === yearValue
+      prevState.dayValue === dayValue
+      && prevState.monthValue === monthValue
+      && prevState.yearValue === yearValue
     ) { return null; }
 
     if (String(yearValue).length < 4) {
@@ -111,7 +111,6 @@ class BaseDateField extends React.Component {
 
   isValidMonthInput(monthValue) {
     const monthString = String(monthValue);
-
 
     return !monthString || inRange(+monthValue, 0, 13);
   }
@@ -171,94 +170,88 @@ class BaseDateField extends React.Component {
   get monthField() {
     const { input: dateFieldInput } = this.props;
 
-    return ({ input = {}, ...props } = {}) =>
-      this.wrapChild(
-        <TextField
-          type='text'
-          placeholder='mm'
-          id={`${dateFieldInput.name}Month`}
-          noBaseStyle
-          input={{
-            name: `${dateFieldInput.name}Month`,
-            ref: (ref) => { this.monthInput = ref; },
-            maxLength: 2,
-            noValidate: true,
-            onChange: (e) => {
-              input.onChange && input.onChange(e);
-              this.month = e.target.value;
-            },
-            onFocus: dateFieldInput.onFocus,
-            onBlur: this.blurIfLeaving,
-            pattern: '[0-9]*',
-            value: this.state.monthValue,
-            ...input,
-          }}
-          {...props}
-        />
-      )
-    ;
+    return ({ input = {}, ...props } = {}) => this.wrapChild(
+      <TextField
+        type='text'
+        placeholder='mm'
+        id={`${dateFieldInput.name}Month`}
+        noBaseStyle
+        input={{
+          name: `${dateFieldInput.name}Month`,
+          ref: (ref) => { this.monthInput = ref; },
+          maxLength: 2,
+          noValidate: true,
+          onChange: (e) => {
+            input.onChange && input.onChange(e);
+            this.month = e.target.value;
+          },
+          onFocus: dateFieldInput.onFocus,
+          onBlur: this.blurIfLeaving,
+          pattern: '[0-9]*',
+          value: this.state.monthValue,
+          ...input,
+        }}
+        {...props}
+      />
+    );
   }
 
   get dayField() {
     const { input: dateFieldInput } = this.props;
 
-    return ({ input = {}, ...props } = {}) =>
-      this.wrapChild(
-        <TextField
-          type='text'
-          placeholder='dd'
-          id={`${dateFieldInput.name}Day`}
-          noBaseStyle
-          input={{
-            name: `${dateFieldInput.name}Day`,
-            ref: (ref) => { this.dayInput = ref; },
-            maxLength: 2,
-            noValidate: true,
-            onChange: (e) => {
-              input.onChange && input.onChange(e);
-              this.day = e.target.value;
-            },
-            onFocus: dateFieldInput.onFocus,
-            onBlur: this.blurIfLeaving,
-            pattern: '[0-9]*',
-            value: this.state.dayValue,
-            ...input,
-          }}
-          {...props}
-        />
-      )
-    ;
+    return ({ input = {}, ...props } = {}) => this.wrapChild(
+      <TextField
+        type='text'
+        placeholder='dd'
+        id={`${dateFieldInput.name}Day`}
+        noBaseStyle
+        input={{
+          name: `${dateFieldInput.name}Day`,
+          ref: (ref) => { this.dayInput = ref; },
+          maxLength: 2,
+          noValidate: true,
+          onChange: (e) => {
+            input.onChange && input.onChange(e);
+            this.day = e.target.value;
+          },
+          onFocus: dateFieldInput.onFocus,
+          onBlur: this.blurIfLeaving,
+          pattern: '[0-9]*',
+          value: this.state.dayValue,
+          ...input,
+        }}
+        {...props}
+      />
+    );
   }
 
   get yearField() {
     const { input: dateFieldInput } = this.props;
 
-    return ({ input = {}, ...props } = {}) =>
-      this.wrapChild(
-        <TextField
-          type='text'
-          placeholder='yyyy'
-          id={`${dateFieldInput.name}Year`}
-          noBaseStyle
-          input={{
-            name: `${dateFieldInput.name}Year`,
-            ref: (ref) => { this.yearInput = ref; },
-            maxLength: 4,
-            noValidate: true,
-            onChange: (e) => {
-              input.onChange && input.onChange(e);
-              this.year = e.target.value;
-            },
-            onFocus: dateFieldInput.onFocus,
-            onBlur: this.blurIfLeaving,
-            pattern: '[0-9]*',
-            value: this.state.yearValue,
-            ...input,
-          }}
-          {...props}
-        />
-      )
-    ;
+    return ({ input = {}, ...props } = {}) => this.wrapChild(
+      <TextField
+        type='text'
+        placeholder='yyyy'
+        id={`${dateFieldInput.name}Year`}
+        noBaseStyle
+        input={{
+          name: `${dateFieldInput.name}Year`,
+          ref: (ref) => { this.yearInput = ref; },
+          maxLength: 4,
+          noValidate: true,
+          onChange: (e) => {
+            input.onChange && input.onChange(e);
+            this.year = e.target.value;
+          },
+          onFocus: dateFieldInput.onFocus,
+          onBlur: this.blurIfLeaving,
+          pattern: '[0-9]*',
+          value: this.state.yearValue,
+          ...input,
+        }}
+        {...props}
+      />
+    );
   }
 
   get numberOfChildren() {
@@ -277,13 +270,13 @@ class BaseDateField extends React.Component {
     ]);
   }
 
-  wrapChild = child =>
+  wrapChild = (child) => (
     <div
       className={this.childClasses}
     >
       {child}
     </div>
-    ;
+  );
 
   wrapper = (children) => {
     const {
@@ -327,13 +320,15 @@ class BaseDateField extends React.Component {
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
             {
-              subLabel &&
-                <Text
-                  size={10}
-                  font='b'
-                >
-                  {subLabel}
-                </Text>
+              subLabel
+                && (
+                  <Text
+                    size={10}
+                    font='b'
+                  >
+                    {subLabel}
+                  </Text>
+                )
             }
           </div>
           <div className={styles['line-1']}>
@@ -351,40 +346,49 @@ class BaseDateField extends React.Component {
 
   render() {
     return null;
+
     // throw Error('Child element should have its own call to .render');
   }
 }
 
 BaseDateField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Label.
    */
   label: PropTypes.string,
+
   /**
    * Label text placed underneath label.
    */
   subLabel: PropTypes.string,
+
   /**
    * Meta object is passed from reduxForm
    */
   meta: PropTypes.object,
+
   /**
    * Input object is passed from reduxForm
    */
   input: PropTypes.object,
+
   /**
    * Any children passed to DateField
    */
   children: PropTypes.node,
+
   /**
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
+
   /**
    * Adds a tooltip to the label. Provide string for text to be placed inside tooltip popup
    */

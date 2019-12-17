@@ -13,7 +13,7 @@ const contexts = [
   require.context('./wrappers', true, /.*index\.js/)
 ];
 
-module.exports = contexts.map(context => fromPairs(context.keys().map((component) => {
+module.exports = contexts.map((context) => fromPairs(context.keys().map((component) => {
   const componentName = component.match(/.*\/(.*)\/index.js/)[1];
 
   return [ componentName, context(component).default ];

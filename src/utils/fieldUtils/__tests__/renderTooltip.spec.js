@@ -2,10 +2,11 @@ import { mount } from 'enzyme';
 
 import Icon from 'atoms/Icon';
 import Modal from 'molecules/Modal';
-import { renderTooltip } from '../';
+import { renderTooltip } from '..';
 
 describe('renderTooltip()', () => {
   let className;
+
   let iconClassName;
 
   beforeEach(() => {
@@ -24,7 +25,7 @@ describe('renderTooltip()', () => {
         const modalElement = wrapper.children().childAt(1);
 
         expect(tooltipElement.props().className).toContain(className);
-        expect(tooltipElement.props().children.filter(child => child.props.children === tooltip && child.type !== Modal).length).toEqual(1);
+        expect(tooltipElement.props().children.filter((child) => child.props.children === tooltip && child.type !== Modal).length).toEqual(1);
         expect(modalElement.length).toEqual(1);
       });
     });
@@ -37,7 +38,7 @@ describe('renderTooltip()', () => {
       const component = renderTooltip(tooltip, className, iconClassName);
       const wrapper = mount(component);
 
-      const icon = wrapper.findWhere(n => n.type() === Icon);
+      const icon = wrapper.findWhere((n) => n.type() === Icon);
 
       expect(icon.props().icon).toEqual('tooltip');
       expect(icon.props().className).toContain(iconClassName);

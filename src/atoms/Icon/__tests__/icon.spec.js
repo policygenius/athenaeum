@@ -6,7 +6,7 @@ import Icon from 'atoms/Icon';
 
 describe('<Icon />', () => {
   describe('when no icon is given', () => {
-    const error = console.error;
+    const { error } = console;
 
     beforeEach(() => {
       console.error = jest.fn();

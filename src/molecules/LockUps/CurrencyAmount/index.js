@@ -24,8 +24,8 @@ CurrencyAmount.propTypes = {
 };
 
 CurrencyAmount.defaultProps = {
+  amount: '0.00',
   curr: '$',
-  amount: '0.00'
 };
 
 export default CurrencyAmount;

@@ -47,21 +47,23 @@ class RadioGroup extends React.Component {
             </div>
 
             {
-              subLabel &&
-                <Text
-                  size={10}
-                  font='b'
-                >
-                  {subLabel}
-                </Text>
+              subLabel
+                && (
+                  <Text
+                    size={10}
+                    font='b'
+                  >
+                    {subLabel}
+                  </Text>
+                )
             }
           </div>
           {
-            React.Children.map(children, child =>
+            React.Children.map(children, (child) => (
               <div className={styles['field']}>
                 { child }
               </div>
-            )
+            ))
           }
         </div>
 
@@ -74,8 +76,8 @@ class RadioGroup extends React.Component {
   }
 }
 
-
 RadioGroup.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

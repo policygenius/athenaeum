@@ -19,6 +19,7 @@ function FlashMessage(props) {
 
 FlashMessage.propTypes = {
   children: PropTypes.node.isRequired,
+
   /**
    * Possible `variant` animations are: `fadeInDown`, `fadeIn`, `slideDown`
    */

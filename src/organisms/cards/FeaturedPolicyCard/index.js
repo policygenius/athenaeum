@@ -44,49 +44,50 @@ function FeaturedPolicyCard(props) {
       <div className={contentClasses}>
         { header && header }
         <Spacer small />
-        { premium.price ?
-          <div className={styles['premium']}>
-            <div className={styles['value']}>
-              <Text
-                size={6}
-                font='a'
-                className={styles['value-small']}
-              >
+        { premium.price
+          ? (
+            <div className={styles['premium']}>
+              <div className={styles['value']}>
+                <Text
+                  size={6}
+                  font='a'
+                  className={styles['value-small']}
+                >
                 $
-              </Text>
-              <Text
-                size={2}
-                font='a'
-                className={styles['value-dollars']}
-              >
-                {dollars}
-              </Text>
-              <Text
-                size={6}
-                font='a'
-                className={styles['value-small']}
-              >
-                .{cents}
-              </Text>
-              <Text
-                tag='span'
-                type={11}
-                font='a'
-                spaced
-                color='neutral-2'
-                className={styles['value-format']}
-              >
-                {`/${premium.format.toUpperCase()}`}
-              </Text>
+                </Text>
+                <Text
+                  size={2}
+                  font='a'
+                  className={styles['value-dollars']}
+                >
+                  {dollars}
+                </Text>
+                <Text
+                  size={6}
+                  font='a'
+                  className={styles['value-small']}
+                >
+                .
+                  {cents}
+                </Text>
+                <Text
+                  tag='span'
+                  type={11}
+                  font='a'
+                  spaced
+                  color='neutral-2'
+                  className={styles['value-format']}
+                >
+                  {`/${premium.format.toUpperCase()}`}
+                </Text>
+              </div>
+
+              <Spacer spacer={1} />
+
+              {discount && discount}
             </div>
-
-            <Spacer spacer={1} />
-
-            {discount && discount}
-          </div>
-            :
-          <Text type={7} color='neutral-2'className={styles['default-text']}>{premium.defaultText}</Text>
-          }
+          )
+          : <Text type={7} color='neutral-2' className={styles['default-text']}>{premium.defaultText}</Text>}
 
         <Spacer spacer={6} />
 
@@ -109,8 +110,8 @@ function FeaturedPolicyCard(props) {
   );
 }
 
-
 FeaturedPolicyCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -177,6 +178,7 @@ FeaturedPolicyCard.propTypes = {
     ]).isRequired,
     hoverMessage: PropTypes.node.isRequired,
   })),
+
   /**
    * Setting this to true will add a 'hat' to the policy card
    */

@@ -53,6 +53,7 @@ class Loading extends Component {
     const { messages } = this.props;
 
     const currMessageIdx = messages.indexOf(this.state.message);
+
     let nextMessageIdx;
 
     if (currMessageIdx === (messages.length - 1)) {
@@ -102,6 +103,7 @@ class Loading extends Component {
 }
 
 Loading.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

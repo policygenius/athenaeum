@@ -15,8 +15,12 @@ describe('<StepProgress />', () => {
   it('renders a .step for each step', () => {
     const defaultProps = {
       steps: [
-        { complete: true, icon: 'calculator', label: 'Aenean', link: '#' },
-        { complete: true, icon: 'health', label: 'Phasellus', link: '#' },
+        {
+          complete: true, icon: 'calculator', label: 'Aenean', link: '#'
+        },
+        {
+          complete: true, icon: 'health', label: 'Phasellus', link: '#'
+        },
       ],
     };
 

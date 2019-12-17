@@ -53,6 +53,7 @@ function TextAreaField(props) {
 }
 
 TextAreaField.propTypes = {
+
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
@@ -109,9 +110,9 @@ TextAreaField.propTypes = {
 };
 
 TextAreaField.defaultProps = {
+  errorMessage: false,
   placeholder: '',
   rows: 3,
-  errorMessage: false,
 };
 
 export default TextAreaField;

@@ -53,7 +53,7 @@ class Tooltip extends React.Component {
     }
   };
 
-  handleClick = e => window.innerWidth <= 768 ? this.openModal(e) : this.toggleVisibility(e);
+  handleClick = (e) => window.innerWidth <= 768 ? this.openModal(e) : this.toggleVisibility(e);
 
   render() {
     const {
@@ -82,14 +82,16 @@ class Tooltip extends React.Component {
           ref={this.setWrapperRef}
         >
           {
-            text ||
-              <Icon
-                icon='tooltip'
-                className={styles['tooltip']}
-                inline={inline}
-                height={`${tooltipIconSize}px`}
-                width={`${tooltipIconSize}px`}
-              />
+            text
+              || (
+                <Icon
+                  icon='tooltip'
+                  className={styles['tooltip']}
+                  inline={inline}
+                  height={`${tooltipIconSize}px`}
+                  width={`${tooltipIconSize}px`}
+                />
+              )
           }
           <span
             className={classnames(
@@ -116,7 +118,6 @@ class Tooltip extends React.Component {
   }
 }
 
-
 Tooltip.propTypes = {
 
   /**
@@ -134,14 +135,17 @@ Tooltip.propTypes = {
    * render right-side variant
    */
   right: PropTypes.bool,
+
   /**
    * onClick will override the default `openModal` click handler
    */
   onClick: PropTypes.func,
+
   /**
    * defaults to a question mark Icon
    */
   text: PropTypes.node,
+
   /**
    * className for the hover message
    */

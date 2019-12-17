@@ -1,8 +1,10 @@
 import React from 'react';
+
+// import sinon from 'sinon';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import AccordionPanel from '../';
+import AccordionPanel from '..';
 
 describe('<AccordionPanel />', () => {
   // let defaultProps;

@@ -29,6 +29,7 @@ function SelectCard(props) {
 }
 
 SelectCard.propTypes = {
+
   /**
    * optional additional class name for card
    */
@@ -71,6 +72,7 @@ SelectCard.propTypes = {
    * Redux Form input object; pass any variables necessary for input change here
    */
   input: PropTypes.object,
+
   /**
    * Default / non-changeable value for the select field
    */

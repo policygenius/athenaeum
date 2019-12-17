@@ -13,7 +13,6 @@ const LogoTextA = (props) => {
   );
 };
 
-
 LogoTextA.propTypes = {
   spacer: PropTypes.number,
   line1: PropTypes.node,

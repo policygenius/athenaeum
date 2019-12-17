@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './animate.module.scss';
 
-const createWraps = (prevWrap, animation) =>
-  React.createElement(
-    'span',
-    { className: classnames(
+const createWraps = (prevWrap, animation) => React.createElement(
+  'span',
+  {
+    className: classnames(
       styles[animation],
       styles['animation']
-    ) },
-    prevWrap
-  );
+    )
+  },
+  prevWrap
+);
 
 function getAnimationsList(animations) {
   if (!animations) return null;
@@ -66,6 +67,7 @@ Animate.propTypes = {
 };
 
 Animate.defaultProps = {
+
   // Place any default props here.
 };
 

@@ -36,9 +36,7 @@ class SliderField extends Component {
   }
 
   findClosestAmount(values, value) {
-    return values.reduce((prev, curr) =>
-      Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
-    );
+    return values.reduce((prev, curr) => Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev);
   }
 
   updateSlider = (value) => {
@@ -71,15 +69,15 @@ class SliderField extends Component {
           min={0}
           max={sliderValues.length - 1}
           value={this.state.sliderIndex}
-          onChange={value => this.onChange(value)}
+          onChange={(value) => this.onChange(value)}
         />
       </div>
     );
   }
 }
 
-
 SliderField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

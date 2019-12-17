@@ -7,6 +7,7 @@ import ShortDateField from 'molecules/formfields/ShortDateField';
 
 describe('<ShortDateField />', () => {
   let props;
+
   let component;
 
   beforeEach(() => {
@@ -24,11 +25,12 @@ describe('<ShortDateField />', () => {
       },
       tooltip: 'some-tooltip',
       setScrollRef: jest.fn().mockReturnValue(jest.fn()),
-      render: ({ monthField, yearField }) =>
+      render: ({ monthField, yearField }) => (
         <React.Fragment>
           { monthField() }
           { yearField() }
         </React.Fragment>
+      )
       ,
     };
 

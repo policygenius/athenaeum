@@ -45,11 +45,13 @@ export default class AccordionPanel extends Component {
           className={styles['header']}
           onClick={this.handleClick}
         >
-          { !disableNumberedList &&
-            <span className={styles['ordinal']}>
-              {number}.
-            </span>
-          }
+          { !disableNumberedList
+            && (
+              <span className={styles['ordinal']}>
+                {number}
+.
+              </span>
+            )}
           <Text
             className={styles['title']}
           >
@@ -70,6 +72,7 @@ export default class AccordionPanel extends Component {
 }
 
 AccordionPanel.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

@@ -26,8 +26,8 @@ function Br(props) {
   return <span className={classnames(...classes)} />;
 }
 
-
 Br.propTypes = {
+
   /**
    * small breakpoint
    */
@@ -61,6 +61,7 @@ Br.propTypes = {
 };
 
 Br.defaultProps = {
+
   // Place any default props here.
 };
 

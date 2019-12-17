@@ -34,12 +34,13 @@ function AgentCallout(props) {
             <div className={styles['value']}>{contactValue}</div>
           </Col>
 
-          { caseLabel && caseValue &&
-            <Col className={styles['contact-item']}>
-              <div className={styles['label']}>{caseLabel}</div>
-              <div className={styles['value']}>{caseValue}</div>
-            </Col>
-          }
+          { caseLabel && caseValue
+            && (
+              <Col className={styles['contact-item']}>
+                <div className={styles['label']}>{caseLabel}</div>
+                <div className={styles['value']}>{caseValue}</div>
+              </Col>
+            )}
         </Layout>
       </Col>
     </Layout>
@@ -47,27 +48,33 @@ function AgentCallout(props) {
 }
 
 AgentCallout.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Image src
    */
   imgSrc: PropTypes.string.isRequired,
+
   /**
    * Contact label
    */
   contactLabel: PropTypes.string,
+
   /**
    * Contact method value
    */
   contactValue: PropTypes.string,
+
   /**
    * Case reference label
    */
   caseLabel: PropTypes.string,
+
   /**
    * Case reference value
    */

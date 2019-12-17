@@ -5,8 +5,8 @@ import Element from 'atoms/Element';
 import assign from 'lodash/assign';
 
 const merge = (props, newProps) => assign({}, props, newProps);
-const styled = tag => props => <Element {...merge(props, { tag })} />;
-const stylize = component => props => <Element {...merge(props, { component })} />;
+const styled = (tag) => (props) => <Element {...merge(props, { tag })} />;
+const stylize = (component) => (props) => <Element {...merge(props, { component })} />;
 
 function HtmlElements() {
   const nodeElements = (res, htmlTag) => {

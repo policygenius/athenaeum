@@ -8,11 +8,11 @@ import TransitionGroup from 'react-transition-group/TransitionGroup';
 import Text from 'atoms/Text';
 import styles from './error_message.module.scss';
 
-const hocErrorMessage = BaseComponent => props =>
+const hocErrorMessage = (BaseComponent) => (props) => (
   <TransitionGroup>
     { props.condition && <BaseComponent {...props} /> }
-  </TransitionGroup>;
-
+  </TransitionGroup>
+);
 
 class ErrorMessage extends Component {
   constructor() {
@@ -41,10 +41,12 @@ class ErrorMessage extends Component {
 }
 
 ErrorMessage.propTypes = {
+
   /**
    * the message to be displayed for the error or warning
    */
   message: PropTypes.node,
+
   /**
    * the condition for which the message will be shown or hidden
    */

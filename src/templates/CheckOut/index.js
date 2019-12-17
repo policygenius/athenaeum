@@ -10,7 +10,7 @@ import Text from 'atoms/Text';
 import Spacer from 'atoms/Spacer';
 import styles from './checkout.scss';
 
-const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
+const CheckoutUserAlert = ({ userAlert, enabled, className }) => (
   <UserAlert
     enabled={enabled}
     onClick={userAlert.onClick}
@@ -29,8 +29,7 @@ const CheckoutUserAlert = ({ userAlert, enabled, className }) =>
       {userAlert.text}
     </Text>
   </UserAlert>
-
-;
+);
 
 CheckoutUserAlert.propTypes = {
   userAlert: PropTypes.object,
@@ -118,12 +117,14 @@ function CheckOut(props) {
                   </Layout>
                 </Col>
                 {
-                  userAlert.condition &&
-                    <CheckoutUserAlert
-                      enabled={false}
-                      userAlert={userAlert}
-                      className='user-alert-mobile'
-                    />
+                  userAlert.condition
+                    && (
+                      <CheckoutUserAlert
+                        enabled={false}
+                        userAlert={userAlert}
+                        className='user-alert-mobile'
+                      />
+                    )
                 }
               </Sticky>
             </Col>
@@ -132,13 +133,14 @@ function CheckOut(props) {
               <Icon icon='norton' className={styles['secure-logo']} />
             </Col>
           </Layout>
-          { userAlert.condition &&
-            <CheckoutUserAlert
-              enabled
-              userAlert={userAlert}
-              className='user-alert'
-            />
-          }
+          { userAlert.condition
+            && (
+              <CheckoutUserAlert
+                enabled
+                userAlert={userAlert}
+                className='user-alert'
+              />
+            )}
         </Col>
 
         <Col
@@ -156,10 +158,12 @@ function CheckOut(props) {
             </div>
             <Col className={styles['main-sidebar']}>
               {
-                contactProps &&
-                <div className={styles['contact-card']}>
-                  <ContactCard {...contactProps} />
-                </div>
+                contactProps
+                && (
+                  <div className={styles['contact-card']}>
+                    <ContactCard {...contactProps} />
+                  </div>
+                )
               }
               <Spacer small />
               <Sticky
@@ -183,16 +187,19 @@ function CheckOut(props) {
 }
 
 CheckOut.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   totalCost: PropTypes.shape({
+
     /**
      * currency unit (i.e $)
      */
@@ -218,6 +225,7 @@ CheckOut.propTypes = {
    * Footer node
    */
   footer: PropTypes.node,
+
   /**
    * object to set all properties for user alert
    */
@@ -229,6 +237,7 @@ CheckOut.propTypes = {
     text: PropTypes.string,
     textColor: PropTypes.string,
   }),
+
   /**
    * Click handler for mobile menu hambuger
    */

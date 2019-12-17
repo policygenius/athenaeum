@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import StepIndicator from '../';
+import StepIndicator from '..';
 import ProgressBarStep from '../ProgressBarStep';
 
 describe('<StepIndicator />', () => {

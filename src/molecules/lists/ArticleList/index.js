@@ -17,8 +17,8 @@ function ArticleList( props ) {
   }), {});
 
   return (
-    <ul className={styles[type]} >
-      {data.map(item =>
+    <ul className={styles[type]}>
+      {data.map((item) => (
         <li className={styles['listItem']} key={item[itemProps.id]}>
           <a className={styles['link']} href={item[itemProps.link]}>
             <figure className={styles['articleWrapper']}>
@@ -35,7 +35,7 @@ function ArticleList( props ) {
             </figure>
           </a>
         </li>
-        )}
+      ))}
     </ul>
   );
 }
@@ -43,6 +43,7 @@ function ArticleList( props ) {
 ArticleList.propTypes = {
   data: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
+
   /**
    * Default keys are: id, link, imageSrc, header, subHeader
    */

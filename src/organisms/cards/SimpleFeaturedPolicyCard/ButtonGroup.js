@@ -49,13 +49,15 @@ function ButtonGroup(props) {
 
       <Spacer size={12} />
       {
-        onDetails &&
-          <LinkWrapper
-            onClick={onDetails}
-            className={styles['details-link']}
-          >
-            {detailsCTAText}
-          </LinkWrapper>
+        onDetails
+          && (
+            <LinkWrapper
+              onClick={onDetails}
+              className={styles['details-link']}
+            >
+              {detailsCTAText}
+            </LinkWrapper>
+          )
 
       }
 

@@ -66,11 +66,13 @@ function CreditCardField(props) {
 }
 
 CreditCardField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Label.
    */
@@ -95,10 +97,12 @@ CreditCardField.propTypes = {
    *  Create Logo of credit card. Accepted Cards ['visa', 'americanExpress', 'masterCard', `discover`]
    */
   cardType: PropTypes.string,
+
   /**
    * Redux Form meta prop for touched, error, active
    */
   meta: PropTypes.object,
+
   /**
    * Redux form input object
    */
@@ -106,9 +110,10 @@ CreditCardField.propTypes = {
 };
 
 CreditCardField.defaultProps = {
+
   // Place any default props here.
-  label: 'Credit Card Information',
   cardType: 'visa',
+  label: 'Credit Card Information',
 };
 
 export default CreditCardField;

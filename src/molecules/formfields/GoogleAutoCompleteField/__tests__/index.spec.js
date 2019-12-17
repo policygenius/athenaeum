@@ -4,10 +4,11 @@ import renderer from 'react-test-renderer';
 import { omit } from 'lodash';
 import TextField from 'molecules/formfields/TextField';
 
-import GoogleAutoCompleteField from '../';
+import GoogleAutoCompleteField from '..';
 
 describe('<GoogleAutoCompleteField />', () => {
   let baseProps;
+
   let addressValues;
 
   beforeEach(() => {
@@ -111,11 +112,12 @@ describe('<GoogleAutoCompleteField />', () => {
 
     describe('when google does not provide street_number', () => {
       let addressValuesWithoutStreetNumber;
+
       let state;
 
       beforeEach(() => {
         addressValuesWithoutStreetNumber = addressValues
-          .filter(value => !value.types.includes('street_number'));
+          .filter((value) => !value.types.includes('street_number'));
 
         state = {
           autocomplete: {

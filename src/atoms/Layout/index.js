@@ -39,6 +39,7 @@ function Layout( props ) {
 }
 
 Layout.propTypes = {
+
   /**
    * Supply any additional class names.
    */
@@ -48,6 +49,7 @@ Layout.propTypes = {
    * Supply an id
    */
   id: PropTypes.string,
+
   /**
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values
@@ -155,9 +157,9 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
-  smallCols: [ 12 ],
-  mediumCols: [],
   largeCols: [],
+  mediumCols: [],
+  smallCols: [ 12 ],
   xLargeCols: [],
   xxLargeCols: [],
 };

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './hide.module.scss';
 
 function getHideList(hideOn) {
-  return hideOn.split(' ').map(hide => styles[hide]);
+  return hideOn.split(' ').map((hide) => styles[hide]);
 }
 
 function Hide(props) {
@@ -29,13 +29,14 @@ function Hide(props) {
   );
 }
 
-
 Hide.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * The screen sizes on which to hide the children. Pass in a space separated string
    *

@@ -30,8 +30,12 @@ describe('<MobileMenu />', () => {
 
   it('gives the correct color to Text component', () => {
     const tabs = [
-      { icon: 'phone', text: 'Expert Help', active: true, key: 1 },
-      { icon: 'user', text: 'Save My Progress', active: false, key: 2 }
+      {
+        icon: 'phone', text: 'Expert Help', active: true, key: 1
+      },
+      {
+        icon: 'user', text: 'Save My Progress', active: false, key: 2
+      }
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
@@ -46,8 +50,12 @@ describe('<MobileMenu />', () => {
 
   it('gives the correct className to Icon component', () => {
     const tabs = [
-      { icon: 'phone', text: 'Expert Help', active: true, key: 1 },
-      { icon: 'user', text: 'Save My Progress', active: false, key: 2 }
+      {
+        icon: 'phone', text: 'Expert Help', active: true, key: 1
+      },
+      {
+        icon: 'user', text: 'Save My Progress', active: false, key: 2
+      }
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
@@ -62,8 +70,12 @@ describe('<MobileMenu />', () => {
 
   it('gives the correct classname to tab wrapper', () => {
     const tabs = [
-      { icon: 'phone', text: 'Expert Help', active: true, key: 1 },
-      { icon: 'user', text: 'Save My Progress', active: false, key: 2 }
+      {
+        icon: 'phone', text: 'Expert Help', active: true, key: 1
+      },
+      {
+        icon: 'user', text: 'Save My Progress', active: false, key: 2
+      }
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);

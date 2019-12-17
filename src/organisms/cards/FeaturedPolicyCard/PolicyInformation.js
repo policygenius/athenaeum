@@ -10,7 +10,7 @@ import formatValue from 'utils/formatValue';
 
 import styles from './featured_policy_card.module.scss';
 
-const renderPolicyInformation = (info, idx) =>
+const renderPolicyInformation = (info, idx) => (
   <div key={`policy-info-${idx}`}>
     <Layout
       smallCols={[ 6 ]}
@@ -22,7 +22,7 @@ const renderPolicyInformation = (info, idx) =>
       >
         <Tooltip
           className={styles['policy-info-tooltip-icon']}
-          text={
+          text={(
             <Text
               type={10}
               font='b'
@@ -31,7 +31,7 @@ const renderPolicyInformation = (info, idx) =>
             >
               {info.label}
             </Text>
-          }
+          )}
         >
           {info.hoverMessage}
         </Tooltip>
@@ -40,8 +40,7 @@ const renderPolicyInformation = (info, idx) =>
     </Layout>
     <Spacer spacer={2} />
   </div>
-
-;
+);
 
 function PolicyInformation(props) {
   const {

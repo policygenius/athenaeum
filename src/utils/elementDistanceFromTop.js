@@ -1,5 +1,6 @@
 export default (element) => {
   let pos = 0;
+
   let nextElement = element;
 
   while (nextElement) {

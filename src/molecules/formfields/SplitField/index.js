@@ -51,13 +51,15 @@ function SplitField(props) {
         <div className={styles.label}>
           <label htmlFor='split-field'>{label}</label>
           {
-            subLabel &&
-              <Text
-                size={10}
-                font='b'
-              >
-                {subLabel}
-              </Text>
+            subLabel
+              && (
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {subLabel}
+                </Text>
+              )
           }
         </div>
         <div className={styles['line-1']}>
@@ -74,27 +76,33 @@ function SplitField(props) {
 }
 
 SplitField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Label.
    */
   label: PropTypes.string,
+
   /**
    * Label text placed underneath label.
    */
   subLabel: PropTypes.string,
+
   /**
    * Meta object is passed from reduxForm
    */
   meta: PropTypes.object,
+
   /**
    * Input object is passed from reduxForm
    */
   input: PropTypes.object,
+
   /**
    * Any children passed to SplitField
    */

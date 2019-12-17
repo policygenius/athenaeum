@@ -10,8 +10,8 @@ describe('<FieldGroup />', () => {
   let component;
 
   beforeEach(() => {
-    component =
-      (<FieldGroup
+    component = (
+      <FieldGroup
         labels={[
           {
             label: 'Test',
@@ -31,8 +31,8 @@ describe('<FieldGroup />', () => {
           placeholder='yyyy'
           input={{}}
         />
-      </FieldGroup>)
-    ;
+      </FieldGroup>
+    );
   });
 
   it('renders correctly', () => {

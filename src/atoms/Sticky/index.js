@@ -21,8 +21,8 @@ function Sticky(props) {
   );
 }
 
-
 Sticky.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -31,6 +31,7 @@ Sticky.propTypes = {
 };
 
 Sticky.defaultProps = {
+
   // Place any default props here.
 };
 

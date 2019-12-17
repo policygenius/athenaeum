@@ -15,7 +15,7 @@ function AddForm( props ) {
     closeIcon,
   } = props;
 
-  const kids = React.Children.map(children, child => React.cloneElement(child, {
+  const kids = React.Children.map(children, (child) => React.cloneElement(child, {
     className: styles['form-components'],
     htmlFor: formName
   }));
@@ -25,13 +25,15 @@ function AddForm( props ) {
       <hr className={styles['hr']} />
       <div className={styles['inner-form']}>
         {
-            closeIcon &&
-            <Icon
-              icon='xIcon'
-              onClick={onClose}
-              className={styles['icon-close']}
-            />
-          }
+          closeIcon
+            && (
+              <Icon
+                icon='xIcon'
+                onClick={onClose}
+                className={styles['icon-close']}
+              />
+            )
+        }
 
         <form
           className={styles['form']}
@@ -47,6 +49,7 @@ function AddForm( props ) {
 }
 
 AddForm.propTypes = {
+
   /**
    * class name added to class set
    */
