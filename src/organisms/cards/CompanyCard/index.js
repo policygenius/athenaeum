@@ -47,7 +47,7 @@ const CompanyCard = (props) => {
       className={classes}
     >
       <div>
-        <img className={styles.image} src={imageAttr.src} role='presentation' />
+        <img className={styles.image} src={imageAttr.src} alt='' />
       </div>
       { starRating && <StarRating className={styles['star-rating']} rating={starRating} size={size} /> }
       { linkUrl && <ReadLink linkUrl={linkUrl} /> }

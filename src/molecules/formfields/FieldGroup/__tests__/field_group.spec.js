@@ -1,6 +1,5 @@
 /* eslint-disable no-extra-parens */
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import FieldGroup from 'molecules/formfields/FieldGroup';
@@ -33,12 +32,6 @@ describe('<FieldGroup />', () => {
         />
       </FieldGroup>
     );
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(component);
-
-    expect(wrapper.type()).toEqual(FieldGroup);
   });
 
   it('renders correctly', () => {

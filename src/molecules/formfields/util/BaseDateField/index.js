@@ -116,31 +116,35 @@ class BaseDateField extends React.Component {
   }
 
   isValidDayInput(dayValue) {
+    const { monthValue } = this.state;
+
     const dayString = String(dayValue);
-    const maxDate = get(LAST_DATE_MONTH, `${Number(this.state.monthValue)}`, 32);
+    const maxDate = get(LAST_DATE_MONTH, `${Number(monthValue)}`, 32);
 
     return !dayString || inRange(+dayValue, 0, maxDate);
   }
 
-  set month(monthValue) {
+  set month(value) {
     const { input } = this.props;
+    const { monthValue } = this.state;
 
-    if (this.isValidMonthInput(monthValue)) {
-      this.setState({ monthValue });
-    } else if (this.isValidMonthInput(this.state.monthValue)) {
-      this.setState({ monthValue: this.state.monthValue });
+    if (this.isValidMonthInput(value)) {
+      this.setState({ monthValue: value });
+    } else if (this.isValidMonthInput(monthValue)) {
+      this.setState((prevState) => ({ monthValue: prevState.monthValue }));
     } else {
       input.onChange(null);
     }
   }
 
-  set day(dayValue) {
+  set day(value) {
     const { input } = this.props;
+    const { dayValue } = this.state;
 
-    if (this.isValidDayInput(dayValue)) {
-      this.setState({ dayValue });
-    } else if (this.isValidDayInput(this.state.dayValue)) {
-      this.setState({ dayValue: this.state.dayValue });
+    if (this.isValidDayInput(value)) {
+      this.setState({ dayValue: value });
+    } else if (this.isValidDayInput(dayValue)) {
+      this.setState((prevState) => ({ dayValue: prevState.dayValue }));
     } else {
       input.onChange(null);
     }
@@ -169,6 +173,7 @@ class BaseDateField extends React.Component {
 
   get monthField() {
     const { input: dateFieldInput } = this.props;
+    const { monthValue } = this.state;
 
     return ({ input = {}, ...props } = {}) => this.wrapChild(
       <TextField
@@ -188,7 +193,7 @@ class BaseDateField extends React.Component {
           onFocus: dateFieldInput.onFocus,
           onBlur: this.blurIfLeaving,
           pattern: '[0-9]*',
-          value: this.state.monthValue,
+          value: monthValue,
           ...input,
         }}
         {...props}
@@ -198,6 +203,7 @@ class BaseDateField extends React.Component {
 
   get dayField() {
     const { input: dateFieldInput } = this.props;
+    const { dayValue } = this.state;
 
     return ({ input = {}, ...props } = {}) => this.wrapChild(
       <TextField
@@ -217,7 +223,7 @@ class BaseDateField extends React.Component {
           onFocus: dateFieldInput.onFocus,
           onBlur: this.blurIfLeaving,
           pattern: '[0-9]*',
-          value: this.state.dayValue,
+          value: dayValue,
           ...input,
         }}
         {...props}
@@ -227,6 +233,7 @@ class BaseDateField extends React.Component {
 
   get yearField() {
     const { input: dateFieldInput } = this.props;
+    const { yearValue } = this.state;
 
     return ({ input = {}, ...props } = {}) => this.wrapChild(
       <TextField
@@ -246,7 +253,7 @@ class BaseDateField extends React.Component {
           onFocus: dateFieldInput.onFocus,
           onBlur: this.blurIfLeaving,
           pattern: '[0-9]*',
-          value: this.state.yearValue,
+          value: yearValue,
           ...input,
         }}
         {...props}
@@ -316,7 +323,9 @@ class BaseDateField extends React.Component {
         >
           <div className={styles['label-wrapper']}>
             <div className={styles['label']}>
+              { /* eslint-disable jsx-a11y/label-has-for */ }
               <label htmlFor='date'>{label}</label>
+              { /* eslint-enable jsx-a11y/label-has-for */ }
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
             {

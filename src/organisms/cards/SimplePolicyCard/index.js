@@ -48,8 +48,8 @@ function SimplePolicyCard(props) {
             {
               !isEmpty(compareCheckbox) ?
                 [
-                  <Compare {...compareCheckbox} />,
-                  <div className={styles['divider']} />
+                  <Compare key={1} {...compareCheckbox} />,
+                  <div key={2} className={styles['divider']} />
                 ]
                 :
                 null

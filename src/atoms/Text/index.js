@@ -56,7 +56,6 @@ const getWeight = ({ font, bold, semibold }) => {
 
 function Text(props) {
   // TODO: Consider adding an html sanitizer
-  if (!props.children && !props.dangerouslySetInnerHTML) return null;
 
   const {
     align,
@@ -69,8 +68,11 @@ function Text(props) {
     inherit,
     inheritSize,
     inheritColor,
+    dangerouslySetInnerHTML,
     ...rest
   } = props;
+
+  if (!children && !dangerouslySetInnerHTML) return null;
 
   const font = getFont(props);
   const weight = getWeight(props);

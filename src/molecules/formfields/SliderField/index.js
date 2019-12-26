@@ -15,7 +15,9 @@ class SliderField extends Component {
   }
 
   componentDidMount() {
-    this.updateSlider(this.props.input.value);
+    const { input } = this.props;
+
+    this.updateSlider(input.value);
   }
 
   componentWillReceiveProps(newProps) {
@@ -28,8 +30,10 @@ class SliderField extends Component {
       sliderValues,
     } = this.props;
 
+    const { sliderIndex } = this.state;
+
     this.setState({ sliderIndex: value }, () => {
-      const sliderAmount = sliderValues[this.state.sliderIndex];
+      const sliderAmount = sliderValues[sliderIndex];
 
       return input.onChange(sliderAmount);
     });
@@ -58,6 +62,8 @@ class SliderField extends Component {
       sliderValues,
     } = this.props;
 
+    const { sliderIndex } = this.state;
+
     const classes = [
       styles['slider-field'],
       className,
@@ -68,7 +74,7 @@ class SliderField extends Component {
         <Slider
           min={0}
           max={sliderValues.length - 1}
-          value={this.state.sliderIndex}
+          value={sliderIndex}
           onChange={(value) => this.onChange(value)}
         />
       </div>

@@ -934,7 +934,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`<Layout /> wraps its child \`<Col>\` with column sizes 1`] = `
+exports[`<Layout /> wraps its child \`<Col>\` with large column sizes 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -1200,7 +1200,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`<Layout /> wraps its child \`<Col>\` with column sizes 2`] = `
+exports[`<Layout /> wraps its child \`<Col>\` with small column sizes 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

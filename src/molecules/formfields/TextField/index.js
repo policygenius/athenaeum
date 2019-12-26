@@ -13,16 +13,55 @@ import { renderTooltip } from 'utils/fieldUtils';
 import styles from './text_field.module.scss';
 
 class TextField extends React.Component {
-  render() {
+  getClasses = () => {
     const {
       className,
+      meta,
+      noBaseStyle
+    } = this.props;
+
+    return [
+      !noBaseStyle && styles['text-field'],
+      meta && meta.active && !noBaseStyle && styles['focused'],
+      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
+  };
+
+  getInputClasses = () => {
+    const {
+      prefix,
+      postfix,
+      swiftype
+    } = this.props;
+
+    return [
+      styles['input-wrapper'],
+      prefix && styles['prefix'],
+      postfix && styles['postfix'],
+      swiftype && styles['swiftype-prefix'],
+    ];
+  };
+
+  getMessage = () => {
+    const {
+      meta,
+      activeValidation
+    } = this.props;
+
+    return activeValidation ?
+      meta && (meta.dirty || meta.touched) && (meta.error || meta.warning) :
+      meta && meta.touched && !meta.active && (meta.error || meta.warning);
+  };
+
+  render() {
+    const {
       htmlFor,
       input,
       label,
       mask,
       maskChar,
       meta,
-      noBaseStyle,
       placeholder,
       secure,
       id,
@@ -32,33 +71,16 @@ class TextField extends React.Component {
       maskVal,
       prefix,
       postfix,
-      activeValidation,
       subLabel,
       swiftype,
       fieldRef,
     } = this.props;
 
-    const classes = [
-      !noBaseStyle && styles['text-field'],
-      meta && meta.active && !noBaseStyle && styles['focused'],
-      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
-      className,
-    ];
+    const classes = this.getClasses();
 
-    const inputClasses = [
-      styles['input-wrapper'],
-      prefix && styles['prefix'],
-      postfix && styles['postfix'],
-      swiftype && styles['swiftype-prefix'],
-    ];
+    const inputClasses = this.getInputClasses();
 
-    let message;
-
-    if (activeValidation) {
-      message = meta && (meta.dirty || meta.touched) && (meta.error || meta.warning);
-    } else {
-      message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
-    }
+    const message = this.getMessage();
 
     return (
       <div ref={fieldRef && fieldRef}>
@@ -67,7 +89,9 @@ class TextField extends React.Component {
             && (
               <div className={classnames(styles['header'])}>
                 <div className={styles['label-wrapper']}>
+                  { /* eslint-disable jsx-a11y/label-has-for */ }
                   <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
+                  { /* eslint-enable jsx-a11y/label-has-for */ }
                   { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
                   { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
                 </div>
@@ -248,6 +272,8 @@ TextField.propTypes = {
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
+
+  errorMessage: PropTypes.bool
 };
 
 TextField.defaultProps = {

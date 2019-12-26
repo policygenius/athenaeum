@@ -72,23 +72,27 @@ class Modal extends React.Component {
   }
 
   closeDOMStyle() {
+    const { windowPosition } = this.state;
+
     document.body.style.overflow = '';
 
     if (checkiOSDevice(navigator.userAgent)) {
       document.body.style.position = '';
-      window.scrollTo(0, this.state.windowPosition);
+      window.scrollTo(0, windowPosition);
     }
   }
 
   wrapChild = (child) => {
     if (child.type === MobileMenu) return child;
 
+    const { sectionClassName } = this.props;
+
     return React.createElement(
       'div',
       {
         className: classnames(
           styles['section'],
-          this.props.sectionClassName
+          sectionClassName
         )
       },
       child

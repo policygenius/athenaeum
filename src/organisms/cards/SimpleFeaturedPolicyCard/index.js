@@ -69,8 +69,9 @@ function SimpleFeaturedPolicyCard(props) {
         {
           onContinue &&
             [
-              <Spacer size={36} />,
+              <Spacer key={1} size={36} />,
               <ButtonGroup
+                key={2}
                 onContinue={onContinue}
                 compareCheckbox={compareCheckbox}
                 continueCTAText={continueCTAText}
@@ -107,6 +108,7 @@ SimpleFeaturedPolicyCard.propTypes = {
     ]),
     format: PropTypes.string,
     defaultText: PropTypes.node,
+    tooltip: PropTypes.string
   }),
 
   /**

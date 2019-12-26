@@ -44,7 +44,7 @@ function ImageAside( props ) {
           className={styles['image']}
           src={image}
           data-src={dataSrc}
-          role='presentation'
+          alt=''
         />
       </div>
     );

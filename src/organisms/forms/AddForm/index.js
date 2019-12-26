@@ -63,7 +63,7 @@ AddForm.propTypes = {
   /**
    * determines if the close icon is present
    */
-  closeIcon: PropTypes.bool.isRequired,
+  closeIcon: PropTypes.bool,
 
   /**
    * name given to the `name` prop for the form

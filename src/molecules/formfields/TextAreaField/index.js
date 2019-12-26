@@ -33,7 +33,9 @@ function TextAreaField(props) {
     <div ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
         { label &&
+          /* eslint-disable jsx-a11y/label-has-for */
           <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
+          /* eslint-enable jsx-a11y/label-has-for */
         }
 
         <textarea
@@ -107,6 +109,8 @@ TextAreaField.propTypes = {
    * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
    */
   id: PropTypes.string.isRequired,
+
+  errorMessage: PropTypes.bool
 };
 
 TextAreaField.defaultProps = {

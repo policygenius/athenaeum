@@ -49,8 +49,8 @@ describe('<List />', () => {
         </small>
         <List>
           {' I\'m nested!! '}
-          <li>I'm wrapped in a 'li'</li>
-          <em>I'm wrapped in a 'em'</em>
+          <li>I&apos;m wrapped in a &apos;li&apos;</li>
+          <em>I&apos;m wrapped in a &apos;em&apos;</em>
         </List>
       </List>
     );
@@ -63,10 +63,10 @@ describe('<List />', () => {
     const wrapper = mount(
       <List
         listItems={[
-          <strong>Hope</strong>,
+          <strong key={1}>Hope</strong>,
           'Love',
-          <List><em>Peace</em></List>,
-          <Icon icon='health' height='10px' width='20px' />
+          <List key={2}><em>Peace</em></List>,
+          <Icon key={3} icon='health' height='10px' width='20px' />
         ]}
       />
     );
@@ -79,7 +79,7 @@ describe('<List />', () => {
     const wrapper = shallow(
       <List
         listItems={[
-          <strong>Hope</strong>
+          <strong key={1}>Hope</strong>
         ]}
       >
         Love

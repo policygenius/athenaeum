@@ -17,9 +17,12 @@ export default class AccordionPanel extends Component {
   }
 
   handleClick() {
-    this.props.onClick && this.props.onClick({ title: this.props.title, open: !this.state.open });
+    const { onClick, title } = this.props;
+    const { open } = this.state;
+
+    onClick && onClick({ title, open: !open });
     this.setState({
-      open: !this.state.open
+      open: !open
     });
   }
 
@@ -30,13 +33,16 @@ export default class AccordionPanel extends Component {
       type,
       closeText,
       openText,
-      disableNumberedList
+      disableNumberedList,
+      body
     } = this.props;
+
+    const { open } = this.state;
 
     const sectionClasses = cx(styles['panel'], styles[type]);
     const contentClasses = cx({
       [styles['content']]: true,
-      [styles['content-open']]: this.state.open
+      [styles['content-open']]: open
     });
 
     return (
@@ -59,12 +65,12 @@ export default class AccordionPanel extends Component {
           </Text>
           <span className={styles['toggleSwitch']}>
             <LinkWrapper type='secondary'>
-              {this.state.open ? closeText : openText}
+              {open ? closeText : openText}
             </LinkWrapper>
           </span>
         </header>
         <section className={contentClasses}>
-          <Markdown markup={this.props.body} />
+          <Markdown markup={body} />
         </section>
       </section>
     );

@@ -109,6 +109,9 @@
       'multiline'
     ],
     'react/jsx-filename-extension': 0,
+    'react/jsx-handler-names': 0,
+    'react/jsx-max-depth': 0,
+    'react/no-array-index-key': 0,
     'react/jsx-no-target-blank': 0,
     'react/no-unused-prop-types': 0,
     'react/prop-types': [
@@ -118,6 +121,7 @@
       }
     ],
     'react/require-extension': 0,
+    'react/require-optimization': 0,
     'react/self-closing-comp': 0,
     'require-yield': 0,
     'space-before-function-paren': 2,

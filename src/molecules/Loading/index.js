@@ -28,13 +28,16 @@ class Loading extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.props.isOpen && nextProps.isOpen) {
-      this.setState({ message: this.props.messages[random(0, 4)] });
+    const { isOpen, messages } = this.props;
+    const { animations, message } = this.state;
+
+    if (!isOpen && nextProps.isOpen) {
+      this.setState({ message: messages[random(0, 4)] });
       this.interval = setInterval(() => {
         if (this.mounted) {
           this.setState({
-            animations: this.state.animations === FADE_IN ? FADE_OUT : FADE_IN,
-            message: this.state.animations === FADE_IN ? this.state.message : this.getNextMessage()
+            animations: animations === FADE_IN ? FADE_OUT : FADE_IN,
+            message: animations === FADE_IN ? message : this.getNextMessage()
           });
         }
       }, INTERVAL);
@@ -51,8 +54,9 @@ class Loading extends Component {
 
   getNextMessage() {
     const { messages } = this.props;
+    const { message } = this.state;
 
-    const currMessageIdx = messages.indexOf(this.state.message);
+    const currMessageIdx = messages.indexOf(message);
 
     let nextMessageIdx;
 
@@ -74,6 +78,8 @@ class Loading extends Component {
       onRequestClose,
     } = this.props;
 
+    const { animations, message } = this.state;
+
     return (
       <ReactModal
         isOpen={isOpen}
@@ -90,9 +96,9 @@ class Loading extends Component {
                 icon={icon}
               />
             </div>
-            <Animate animations={this.state.animations}>
+            <Animate animations={animations}>
               <Text color='neutral-2' className={styles['message']}>
-                {this.state.message}
+                {message}
               </Text>
             </Animate>
           </div>

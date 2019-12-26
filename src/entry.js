@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unassigned-import */
 require('./assets/stylesheets/base.scss');
 
 const fromPairs = require('lodash/fromPairs');

@@ -60,6 +60,8 @@ class Icon extends React.Component {
       ...rest
     } = this.props;
 
+    const { svgString } = this.state;
+
     if (!icon) { return null; }
 
     const wrapperProps = {
@@ -78,11 +80,11 @@ class Icon extends React.Component {
       ...rest
     };
 
-    if (renderSVGDOM && this.state.svgString) {
+    if (renderSVGDOM && svgString) {
       return (
         <span {...wrapperProps}>
           <SVGInline
-            svg={this.state.svgString}
+            svg={svgString}
           />
         </span>
       );

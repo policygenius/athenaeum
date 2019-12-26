@@ -42,7 +42,9 @@ class RadioGroup extends React.Component {
         >
           <div className={styles['label-wrapper']}>
             <div className={styles['label']}>
+              { /* eslint-disable jsx-a11y/label-has-for */ }
               <label htmlFor={input.name}>{label}</label>
+              { /* eslint-enable jsx-a11y/label-has-for */ }
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
 

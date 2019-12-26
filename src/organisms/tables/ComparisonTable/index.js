@@ -42,7 +42,7 @@ class TableHeader extends React.Component {
     const childrenArray = React.Children.toArray(children);
 
     if (showMissing && tableItems === 1 && childrenArray.length === 1) {
-      return childrenArray.concat([ <Col /> ]);
+      return childrenArray.concat([ <Col key={1} /> ]);
     }
 
     return childrenArray;
@@ -213,7 +213,7 @@ class TableRow extends React.Component {
     const { tableItems, showMissing } = this.props;
 
     if (showMissing && tableItems === 1 && this.childrenArray.length === 2) {
-      return this.childrenArray.concat([ <Col /> ]);
+      return this.childrenArray.concat([ <Col key={1} /> ]);
     }
 
     return this.childrenArray;

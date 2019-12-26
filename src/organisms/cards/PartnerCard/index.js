@@ -82,7 +82,7 @@ PartnerCard.propTypes = {
   /**
    * Short and snappy center text
    */
-  centerText: PropTypes.string.isRequired
+  centerText: PropTypes.string
 };
 
 PartnerCard.defaultProps = {

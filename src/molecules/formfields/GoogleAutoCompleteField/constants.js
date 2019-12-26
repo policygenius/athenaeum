@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export const GOOGLE_ADDRESS_VALUES_MAP = {
   street_number: 'number',
   route: 'street',

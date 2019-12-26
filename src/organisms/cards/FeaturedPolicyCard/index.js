@@ -183,6 +183,8 @@ FeaturedPolicyCard.propTypes = {
    * Setting this to true will add a 'hat' to the policy card
    */
   policyHat: PropTypes.bool,
+
+  detailsCTAText: PropTypes.string
 };
 
 FeaturedPolicyCard.defaultProps = {

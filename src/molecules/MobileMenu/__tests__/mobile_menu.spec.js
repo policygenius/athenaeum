@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
 import renderer from 'react-test-renderer';
@@ -14,12 +14,6 @@ describe('<MobileMenu />', () => {
       tabs: [],
       onClick: jest.fn(),
     };
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<MobileMenu {...defaultProps} />);
-
-    expect(wrapper.type()).toEqual(MobileMenu);
   });
 
   it('renders correctly', () => {

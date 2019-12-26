@@ -23,16 +23,18 @@ function Filter(props) {
   return (
     <div className={classnames(...classes)}>
       { label && (
+        /* eslint-disable jsx-a11y/label-has-for */
         <label className={styles['label']} htmlFor={forProp}>
           { label }
         </label>
+        /* eslint-enable jsx-a11y/label-has-for */
       )}
 
       <div className={styles['select-wrapper']}>
         <select
           className={styles['select']}
           id={forProp}
-          onChange={onChange}
+          onBlur={onChange}
           value={value}
         >
           { renderSelectOptions(selectOptions) }

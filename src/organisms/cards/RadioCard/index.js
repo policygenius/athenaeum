@@ -91,6 +91,7 @@ function RadioCard(props) {
         id={`radio-${input.name}`}
         key={`radio-${radioValue}`}
       >
+        { /* eslint-disable jsx-a11y/label-has-for */ }
         <label
           className={styles['card']}
           htmlFor={`radio-${camelCase(radioValue)}`}
@@ -110,6 +111,7 @@ function RadioCard(props) {
           }
 
         </label>
+        { /* eslint-enable jsx-a11y/label-has-for */ }
       </div>
     );
   }
@@ -122,6 +124,7 @@ function RadioCard(props) {
       id={`radio-${input.name}`}
       key={`radio-${radioValue}`}
     >
+      { /* eslint-disable jsx-a11y/label-has-for */ }
       <label
         className={styles['card']}
         htmlFor={`radio-${camelCase(radioValue)}`}
@@ -154,6 +157,7 @@ function RadioCard(props) {
             )
         }
       </label>
+      { /* eslint-enable jsx-a11y/label-has-for */ }
     </div>
   );
 }
@@ -170,7 +174,9 @@ RadioCard.propTypes = {
    * bold label displayed in card
    */
   label: (props) => {
-    if (!props['label'] && !props['renderProp']) {
+    const { label, renderProp } = props;
+
+    if (!label && !renderProp) {
       return new Error(
         'Label prop is required',
       );

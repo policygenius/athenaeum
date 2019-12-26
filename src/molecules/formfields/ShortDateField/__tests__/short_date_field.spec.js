@@ -15,7 +15,7 @@ describe('<ShortDateField />', () => {
       label: 'a label',
       input: {
         name: 'aDate',
-        onChange: () => {},
+        onChange: jest.fn(),
         value: '',
         onFocus: jest.fn(),
       },

@@ -21,6 +21,7 @@ describe('<GoogleAutoCompleteField />', () => {
       autocompleteAddressFields: jest.fn(),
     };
 
+    /* eslint-disable camelcase */
     addressValues = [
       {
         types: [
@@ -58,6 +59,7 @@ describe('<GoogleAutoCompleteField />', () => {
         long_name: '10075',
       },
     ];
+    /* eslint-enable camelcase */
   });
 
   it('renders correctly', () => {
@@ -93,7 +95,9 @@ describe('<GoogleAutoCompleteField />', () => {
       const state = {
         autocomplete: {
           getPlace: jest.fn(() => ({
+            /* eslint-disable camelcase */
             address_components: addressValues,
+            /* eslint-enable camelcase */
           }))
         }
       };
@@ -122,7 +126,9 @@ describe('<GoogleAutoCompleteField />', () => {
         state = {
           autocomplete: {
             getPlace: jest.fn(() => ({
+              /* eslint-disable camelcase */
               address_components: addressValuesWithoutStreetNumber,
+              /* eslint-enable camelcase */
             }))
           }
         };

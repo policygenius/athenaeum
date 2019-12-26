@@ -40,9 +40,11 @@ function CreditCardField(props) {
         onFocus={input.onFocus}
       >
         <div className={styles['header']}>
+          { /* eslint-disable jsx-a11y/label-has-for */ }
           <label htmlFor='date' className={styles['label']}>
             { label }
           </label>
+          { /* eslint-enable jsx-a11y/label-has-for */ }
           <Icon className={styles['icon-lock']} icon='lock' />
         </div>
 

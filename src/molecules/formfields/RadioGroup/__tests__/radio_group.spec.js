@@ -1,6 +1,5 @@
 /* eslint-disable no-extra-parens */
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import RadioGroup from 'molecules/formfields/RadioGroup';
@@ -26,7 +25,7 @@ describe('<RadioGroup />', () => {
           input={{
             name: 'food',
             value: 'dogs',
-            onChange: () => {},
+            onChange: jest.fn(),
           }}
         />
         <RadioField
@@ -35,17 +34,11 @@ describe('<RadioGroup />', () => {
           input={{
             name: 'food',
             value: 'dogs',
-            onChange: () => {},
+            onChange: jest.fn(),
           }}
         />
       </RadioGroup>
     );
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(component);
-
-    expect(wrapper.type()).toEqual(RadioGroup);
   });
 
   it('renders correctly', () => {

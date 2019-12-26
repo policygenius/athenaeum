@@ -30,10 +30,13 @@ class ErrorMessage extends Component {
   }
 
   render() {
+    const { type, message } = this.props;
+    const { visible } = this.state;
+
     return (
-      <div className={classnames(styles[this.props.type], this.state.visible && styles['visible'])}>
+      <div className={classnames(styles[type], visible && styles['visible'])}>
         <Text size={10} font='a' inheritColor>
-          { this.props.message }
+          { message }
         </Text>
       </div>
     );

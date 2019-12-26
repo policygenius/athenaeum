@@ -27,9 +27,25 @@ const renderAdditionalInfo = (func) => {
 };
 
 class SelectField extends React.Component {
-  render() {
+  getClasses = () => {
     const {
       className,
+      meta,
+      variant,
+      noBaseStyle
+    } = this.props;
+
+    return [
+      !noBaseStyle && styles['select-field'],
+      variant && styles[variant],
+      meta && meta.active && styles['focused'],
+      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
+  };
+
+  render() {
+    const {
       defaultValue,
       forProp,
       input,
@@ -39,21 +55,13 @@ class SelectField extends React.Component {
       placeholder,
       selectOptions,
       tooltip,
-      variant,
       required,
       subLabel,
-      noBaseStyle,
       fieldRef,
       id,
     } = this.props;
 
-    const classes = [
-      !noBaseStyle && styles['select-field'],
-      variant && styles[variant],
-      meta && meta.active && styles['focused'],
-      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
-      className,
-    ];
+    const classes = this.getClasses();
 
     const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
 
@@ -63,6 +71,7 @@ class SelectField extends React.Component {
       <div ref={fieldRef && fieldRef}>
         <div className={classnames(...classes)}>
           { label && (
+            /* eslint-disable jsx-a11y/label-has-for */
             <label className={styles['label']} htmlFor={id || forProp}>
               { label }
               { renderAdditionalInfo(onAdditionalInfoClick) }
@@ -79,6 +88,7 @@ class SelectField extends React.Component {
                   </Text>
                 )}
             </label>
+            /* eslint-enable jsx-a11y/label-has-for */
           )}
 
           { defaultValue ?
@@ -206,6 +216,8 @@ SelectField.propTypes = {
    * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
    */
   id: PropTypes.string.isRequired,
+
+  errorMessage: PropTypes.bool
 };
 
 SelectField.defaultProps = {

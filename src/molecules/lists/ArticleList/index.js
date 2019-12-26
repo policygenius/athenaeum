@@ -25,7 +25,7 @@ function ArticleList( props ) {
               <img
                 className={styles['articleImg']}
                 src={item[itemProps.imageSrc]}
-                role='presentation'
+                alt=''
               />
 
               <figcaption className={styles['articleInfoWrapper']}>

@@ -63,6 +63,8 @@ StarRating.propTypes = {
    * Number of stars that are filled in.
    */
   rating: PropTypes.number.isRequired,
+
+  height: PropTypes.string
 };
 
 StarRating.defaultProps = {

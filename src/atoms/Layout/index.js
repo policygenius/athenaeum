@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { processChildren } from './utils';
 import styles from './layout.module.scss';
 import Col from './Col';
+import GrayBox from './GrayBox';
 
 function Layout( props ) {
   const {
@@ -164,5 +165,4 @@ Layout.defaultProps = {
   xxLargeCols: [],
 };
 
-export { Layout as default, Layout, Col };
-export { GrayBox } from './GrayBox';
+export { Layout as default, Layout, Col, GrayBox };
