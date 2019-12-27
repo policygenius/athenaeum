@@ -30,7 +30,7 @@ Add Jewelry item Example:
         <SelectField
           label='How much is it worth?'
           placeholder='e.g. $2,000'
-          selectOptions={[ { label: "It's never enough", value: 0 } ]}
+          selectOptions={[ { label: 'It\'s never enough', value: 0 } ]}
         />
 
         <Spacer medium />

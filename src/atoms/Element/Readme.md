@@ -20,7 +20,8 @@ An atomic element will reset it's styled margins, font-size and color.
     <Element tag='p' color='neutral-4' spacer={12} typography={7}>custom p tag.</Element>
 
     <Element tag='h3' typography={5} weight='light'>There was a
-    <Element tag='u'>spacer</Element> set above me</Element>
+      <Element tag='u'>spacer</Element> set above me
+    </Element>
   </div>
 ```
 

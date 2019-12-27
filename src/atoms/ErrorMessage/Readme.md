@@ -16,10 +16,14 @@ Simply use `<ErrorMessage {...props} />`
     }
 
     onClick() {
-      this.setState({ visible: !this.state.visible });
+      const { visible } = this.state;
+
+      this.setState({ visible: !visible });
     }
 
     render() {
+      const { visible } = this.state;
+
       return (
         <div>
           <Button
@@ -28,7 +32,7 @@ Simply use `<ErrorMessage {...props} />`
             Click Me to reveal error message
           </Button>
 
-          <ErrorMessage.default condition={this.state.visible} message={'Error'} type='warning' />
+          <ErrorMessage.default condition={visible} message='Error' type='warning' />
         </div>
       )
     }

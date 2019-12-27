@@ -26,13 +26,15 @@
       }
 
       render() {
+        const { modalIsOpen } = this.state;
+
         return (
           <div>
             <Button onClick={this.openModal}>Open Loading Component</Button>
 
             <Loading
               onRequestClose={this.closeModal}
-              isOpen={this.state.modalIsOpen}
+              isOpen={modalIsOpen}
               icon='ellipsis'
               messages={[
                 'Pinging our insurers',

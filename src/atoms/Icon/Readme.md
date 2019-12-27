@@ -107,7 +107,7 @@ _Note: this list isn't automatically kept in sync._
 To sync, run `bin/refresh_svg_list`.
 You will need to have access to our gutils
 ```jsx
-    const icons = require('./constants').icons;
+    const { icons } = require('./constants');
 
     function DisplayAllIcons() {
       return (

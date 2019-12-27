@@ -22,7 +22,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
     "lint:js": "npm run lint:eslint -- ./src ",
     "lint:css": "stylelint 'src/**/*.scss'",
-    "lint:md": "eslint --ext md .",
+    "lint:md": "eslint --ext md --rule 'react/react-in-jsx-scope : 0' .",
     "snapshot": "yarn test -- --updateSnapshot"
   },
   "repository": {

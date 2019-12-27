@@ -36,24 +36,24 @@
       }}
       mainInformationValue='policyType'
       mobileInformationValues={[ 'policyType', 'financialStrength', 'totalCustomers' ]}
-      carrierLogo={
+      carrierLogo={(
         <img
           src='#'
           alt='hello'
         />
-      }
+      )}
       premium={{
         price: 13,
         format: 'mo',
         defaultText: 'Quote available from a PolicyGenius expert'
       }}
-      discount={
+      discount={(
         <Text color='neutral-3' type={7} light>
           <Text semibold type={7}>Save 5%</Text>
           { ' ' }
           when paying annually
         </Text>
-      }
+      )}
       onContinue={() => alert('continue button clicked')}
       onDetails={() => alert('details button clicked')}
       compareCheckbox={{
@@ -62,8 +62,8 @@
         name: 'unique-name'
       }}
       footer={[
-        <Icon icon='checkmark' height='16px' width='16px' />,
-        <span style={{ color: '#78c07f', fontWeight: 'bold' }}>Excellent rates for diabetics</span>,
+        <Icon key={1} icon='checkmark' height='16px' width='16px' />,
+        <span key={2} style={{ color: '#78c07f', fontWeight: 'bold' }}>Excellent rates for diabetics</span>,
         'Prudential is more flexible with diabetic conditions than other carriers.'
       ]}
     />

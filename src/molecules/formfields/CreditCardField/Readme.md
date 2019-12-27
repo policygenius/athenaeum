@@ -3,15 +3,15 @@ CreditCardField Example:
 ```jsx
     <CreditCardField
       meta={{}}
-      creditCardNumber={
+      creditCardNumber={(
         <TextField
           placeholder='Credit Card Number'
           noBaseStyle
           input={{}}
         />
-      }
+      )}
 
-      expirationDate={
+      expirationDate={(
         <TextField
           placeholder='Expiration Date'
           input={{
@@ -19,16 +19,16 @@ CreditCardField Example:
           }}
           noBaseStyle
         />
-      }
+      )}
 
-      securityCode={
+      securityCode={(
         <TextField
           placeholder='3/4 Digit Security Code'
           inputTooltip={() => alert('input tooltip clicked')}
           noBaseStyle
           input={{}}
         />
-      }
+      )}
 
       input={{
         onBlur: () => true,

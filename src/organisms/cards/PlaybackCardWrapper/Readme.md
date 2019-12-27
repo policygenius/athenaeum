@@ -12,7 +12,7 @@ PlaybackCardWrapper Example:
       <PlaybackCard
         header='Policyholder Details'
         onClick={() => alert('edit clicked')}
-        leftPanel={
+        leftPanel={(
           <div>
             <TextD
               line1='Name'
@@ -24,9 +24,9 @@ PlaybackCardWrapper Example:
               line2='victoriabangladesh19283@gmail.com'
             />
           </div>
-        }
+        )}
 
-        rightPanel={
+        rightPanel={(
           <div>
             <TextD
               line1='Date of Birth'
@@ -37,13 +37,13 @@ PlaybackCardWrapper Example:
               line2='917-887-8424'
             />
           </div>
-        }
+        )}
       />
 
       <PlaybackCard
         header='Another Section of Details'
         onClick={() => alert('edit clicked')}
-        leftPanel={
+        leftPanel={(
           <div>
             <TextD
               line1='Name'
@@ -55,9 +55,9 @@ PlaybackCardWrapper Example:
               line2='victoriabangladesh19283@gmail.com'
             />
           </div>
-        }
+        )}
 
-        rightPanel={
+        rightPanel={(
           <div>
             <TextD
               line1='Date of Birth'
@@ -68,7 +68,7 @@ PlaybackCardWrapper Example:
               line2='917-887-8424'
             />
           </div>
-        }
+        )}
       />
 
     </PlaybackCardWrapper>

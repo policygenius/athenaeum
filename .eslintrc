@@ -6,6 +6,9 @@
     'policygenius/import',
     'policygenius/jest'
   ],
+  'plugins': [
+    'markdown'
+  ],
   'rules': {
     'array-bracket-spacing': [ 2, 'always' ],
     'array-callback-return': 2,

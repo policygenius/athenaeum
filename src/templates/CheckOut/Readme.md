@@ -6,7 +6,7 @@ Checkout Example:
     <CheckOut
       totalCost={{ curr: '$', value: 100, unit: ' due today' }}
       sidebar={<div>This is sidebar</div>}
-      footer={
+      footer={(
         <Footer
           phoneNumber='1 (855) 695-2255'
           links={[
@@ -22,7 +22,7 @@ Checkout Example:
             ]
           }
         />
-      }
+      )}
       contactProps={{
         top: {
           text: 'Save my progress',

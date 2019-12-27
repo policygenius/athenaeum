@@ -20,12 +20,12 @@ NOTES:
       onChange: (value) => value
     }}
     meta={{ touched: true, error: 'hello' }}
-    render={({ dayField, monthField, yearField }) =>
+    render={({ dayField, monthField, yearField }) => (
       <React.Fragment>
       { monthField() }
       { dayField() }
       { yearField() }
       </React.Fragment>
-    }
+    )}
   />
 ```

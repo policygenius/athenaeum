@@ -1,6 +1,6 @@
 Full Table
 ```jsx
-const Premium = require('organisms/cards/SimplePolicyCard/Premium').Premium;
+const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
 
 <div>
   <ComparisonTable.Table>
@@ -127,7 +127,7 @@ const Premium = require('organisms/cards/SimplePolicyCard/Premium').Premium;
 
 Single Table
 ```jsx
-const Premium = require('organisms/cards/SimplePolicyCard/Premium').Premium;
+const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
 
 <div>
   <ComparisonTable.Table tableItems={1}>

@@ -18,13 +18,15 @@
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <SliderField
             sliderValues={
               [ 1000, 5000, 25000, 500000 ]
             }
             input={{
-              value: this.state.value,
+              value,
               onChange: this.onChange
             }}
           />

@@ -29,12 +29,14 @@ Select Card example:
       }
 
       render() {
+        const { value, selectOptions } = this.state;
+
         return (
           <SelectCard
             placeholder='Placeholder'
             label='Personal liability'
-            value={this.state.value}
-            selectOptions={this.state.selectOptions}
+            value={value}
+            selectOptions={selectOptions}
             footerText='What does this cover?'
             onClick={this.handleClick}
             onChange={this.handleChange}

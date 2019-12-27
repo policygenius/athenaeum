@@ -17,12 +17,14 @@ Comment Field:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <TextAreaField
             label='Comment'
             placeholder='How did we do?'
             input={{
-              value: this.state.value,
+              value,
               onChange: this.onChange
             }}
           />

@@ -17,11 +17,13 @@ Text field without label:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <TextField
             placeholder='Enter your first name here'
             input={{
-              value: this.state.value,
+              value,
               onChange: this.onChange
             }}
           />
@@ -50,13 +52,15 @@ Text field:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <TextField
             label='First Name'
             placeholder='Enter your first name here'
-            tooltip={"I'm a tooltip"}
+            tooltip={'I\'m a tooltip'}
             input={{
-              value: this.state.value,
+              value,
               onChange: this.onChange
             }}
             subLabel='Optional subheader'
@@ -74,7 +78,7 @@ Text field with focus:
   <TextField
     label='First Name'
     placeholder='Enter your first name'
-    tooltip={"I'm a tooltip"}
+    tooltip={'I\'m a tooltip'}
     input={{
       value: state.value,
       onChange: (event) => setState({ value: event.target.value })
@@ -91,7 +95,7 @@ Text field with error:
   <TextField
     label='First Name'
     placeholder='Enter your first name'
-    tooltip={"I'm a tooltip"}
+    tooltip={'I\'m a tooltip'}
     input={{
       value: state.value,
       onChange: (event) => setState({ value: event.target.value })
@@ -109,7 +113,7 @@ Text field - phone number example:
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
-    tooltip={() => alert("I'm a tooltip")}
+    tooltip={() => alert('I\'m a tooltip')}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
@@ -124,7 +128,7 @@ Text field - prefix example:
   <TextField
     label='Income'
     placeholder='Eg. 200,000'
-    tooltip={() => alert("I'm a tooltip")}
+    tooltip={() => alert('I\'m a tooltip')}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
@@ -138,7 +142,7 @@ Text field - postfix example:
   <TextField
     label='Weight'
     placeholder='Enter your weight'
-    tooltip={() => alert("I'm a tooltip")}
+    tooltip={() => alert('I\'m a tooltip')}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
