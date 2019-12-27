@@ -67,17 +67,16 @@ function SimpleFeaturedPolicyCard(props) {
         }
 
         {
-          onContinue &&
-            [
-              <Spacer key={1} size={36} />,
+          onContinue && (
+            <React.Fragment>
+              <Spacer size={36} />,
               <ButtonGroup
-                key={2}
                 onContinue={onContinue}
                 compareCheckbox={compareCheckbox}
                 continueCTAText={continueCTAText}
               />
-            ]
-        }
+            </React.Fragment>
+          )}
       </div>
     </div>
   );

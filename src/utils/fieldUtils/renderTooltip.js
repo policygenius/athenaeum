@@ -11,12 +11,7 @@ export default function renderTooltip(tooltip, className, iconClassName) {
         right: true,
         ...overrides
       }),
-      icon:
-  <Icon
-    icon='tooltip'
-    className={iconClassName}
-  />
-
+      icon: <Icon icon='tooltip' className={iconClassName} />
     });
   }
 

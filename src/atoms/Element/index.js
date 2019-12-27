@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 /* eslint-disable import/first */
+import styles from './element.module.scss';
 import colors from 'atoms/Color/colors.scss';
 import spacing from 'atoms/Spacer/spacer.scss';
-import styles from './element.module.scss';
 
 const Element = (props) => {
   const {

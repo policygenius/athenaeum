@@ -1,4 +1,4 @@
-''`jsx
+```jsx
   <div>
     <ToggleField
       htmlFor=''
@@ -55,13 +55,13 @@
       <List
         condensed
         listItems={[
-          <strong>Hope</strong>,
+          <strong key={1}>Hope</strong>,
           'Love',
-          <em>Peace</em>,
-          <Icon icon='health' height='10px' width='20px' />
+          <em key={2}>Peace</em>,
+          <Icon key={3} icon='health' height='10px' width='20px' />
         ]}
       />
       Additional info goes here....
     </ToggleField>
   </div>
-```;
+```
