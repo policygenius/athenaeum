@@ -80,6 +80,7 @@ exports[`<SimplePolicyCard /> renders correctly 1`] = `
             </label>
           </div>
         </div>
+        ,
         <div
           className="divider"
         />
