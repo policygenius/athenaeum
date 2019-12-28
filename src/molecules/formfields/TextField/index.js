@@ -88,9 +88,8 @@ class TextField extends React.Component {
           { label && (
             <div className={classnames(styles['header'])}>
               <div className={styles['label-wrapper']}>
-                { /* eslint-disable jsx-a11y/label-has-for */ }
+                { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
                 <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
-                { /* eslint-enable jsx-a11y/label-has-for */ }
                 { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
                 { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
               </div>

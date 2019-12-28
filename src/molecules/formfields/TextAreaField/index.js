@@ -32,12 +32,8 @@ function TextAreaField(props) {
   return (
     <div ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
-        { label &&
-          /* eslint-disable jsx-a11y/label-has-for */
-          <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
-          /* eslint-enable jsx-a11y/label-has-for */
-        }
-
+        { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
+        { label && <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label> }
         <textarea
           className={styles['textarea']}
           placeholder={placeholder}

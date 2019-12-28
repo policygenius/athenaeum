@@ -91,7 +91,7 @@ function RadioCard(props) {
         id={`radio-${input.name}`}
         key={`radio-${radioValue}`}
       >
-        { /* eslint-disable jsx-a11y/label-has-for */ }
+        { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
         <label
           className={styles['card']}
           htmlFor={`radio-${camelCase(radioValue)}`}
@@ -111,7 +111,6 @@ function RadioCard(props) {
           }
 
         </label>
-        { /* eslint-enable jsx-a11y/label-has-for */ }
       </div>
     );
   }
@@ -124,7 +123,7 @@ function RadioCard(props) {
       id={`radio-${input.name}`}
       key={`radio-${radioValue}`}
     >
-      { /* eslint-disable jsx-a11y/label-has-for */ }
+      { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
       <label
         className={styles['card']}
         htmlFor={`radio-${camelCase(radioValue)}`}
@@ -155,7 +154,6 @@ function RadioCard(props) {
           )
         }
       </label>
-      { /* eslint-enable jsx-a11y/label-has-for */ }
     </div>
   );
 }

@@ -68,11 +68,8 @@ class CheckboxWrapper extends BaseFieldGroup {
         >
           <div className={styles['header']}>
             <div className={styles['label-wrapper']}>
-              {
-                /* eslint-disable jsx-a11y/label-has-for */
-                label &&<label htmlFor='checkbox' className={styles['label']}>{label}</label>
-                /* eslint-enable jsx-a11y/label-has-for */
-              }
+              { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
+              { label &&<label htmlFor='checkbox' className={styles['label']}>{label}</label> }
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
 

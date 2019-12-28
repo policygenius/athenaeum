@@ -15,8 +15,8 @@ describe('<SimplePolicyCard />', () => {
       },
       onDetails: jest.fn(),
       compareCheckbox: {
-        onCompare: jest.fn(),
-      },
+        onCompare: jest.fn()
+      }
     };
   });
 

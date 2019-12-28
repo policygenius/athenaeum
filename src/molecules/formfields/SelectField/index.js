@@ -71,7 +71,7 @@ class SelectField extends React.Component {
       <div ref={fieldRef && fieldRef}>
         <div className={classnames(...classes)}>
           { label && (
-            /* eslint-disable jsx-a11y/label-has-for */
+            /* eslint-disable-next-line jsx-a11y/label-has-for */
             <label className={styles['label']} htmlFor={id || forProp}>
               { label }
               { renderAdditionalInfo(onAdditionalInfoClick) }
@@ -88,7 +88,6 @@ class SelectField extends React.Component {
                   </Text>
                 )}
             </label>
-            /* eslint-enable jsx-a11y/label-has-for */
           )}
 
           { defaultValue ?

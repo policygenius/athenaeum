@@ -49,9 +49,8 @@ function SplitField(props) {
         onFocus={input && input.onFocus}
       >
         <div className={styles.label}>
-          { /* eslint-disable jsx-a11y/label-has-for */ }
+          { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
           <label htmlFor='split-field'>{label}</label>
-          { /* eslint-enable jsx-a11y/label-has-for */ }
           {
             subLabel && (
               <Text
