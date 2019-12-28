@@ -124,8 +124,7 @@ function Navigator(props) {
               </div>
             </Col>
             {
-              contactProps
-              && (
+              contactProps && (
                 <div className={styles['contact-card']}>
                   <ContactCard {...contactProps} />
                 </div>
@@ -135,20 +134,19 @@ function Navigator(props) {
         </Col>
         <Col className={styles['main']}>
           <div className={styles['user-alert']}>
-            { userAlert.condition
-              && (
-                <Sticky
-                  enabled
-                  bottomBoundary='#mobile-bottom'
-                  activeClass={styles['sticky']}
-                >
-                  <NavigatorUserAlert
-                    enabled={false}
-                    userAlert={userAlert}
-                    className='user-alert'
-                  />
-                </Sticky>
-              )}
+            { userAlert.condition && (
+              <Sticky
+                enabled
+                bottomBoundary='#mobile-bottom'
+                activeClass={styles['sticky']}
+              >
+                <NavigatorUserAlert
+                  enabled={false}
+                  userAlert={userAlert}
+                  className='user-alert'
+                />
+              </Sticky>
+            )}
           </div>
           <Layout
             className={styles['main-layout']}
@@ -173,8 +171,7 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               {
-                contactProps
-                && (
+                contactProps && (
                   <div className={styles['contact-card']}>
                     <ContactCard {...contactProps} />
                   </div>

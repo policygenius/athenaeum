@@ -85,39 +85,37 @@ class TextField extends React.Component {
     return (
       <div ref={fieldRef && fieldRef}>
         <div className={classnames(...classes)}>
-          { label
-            && (
-              <div className={classnames(styles['header'])}>
-                <div className={styles['label-wrapper']}>
-                  { /* eslint-disable jsx-a11y/label-has-for */ }
-                  <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
-                  { /* eslint-enable jsx-a11y/label-has-for */ }
-                  { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
-                  { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
-                </div>
-                <Text size={10} font='b'>
-                  { subLabel }
-                </Text>
+          { label && (
+            <div className={classnames(styles['header'])}>
+              <div className={styles['label-wrapper']}>
+                { /* eslint-disable jsx-a11y/label-has-for */ }
+                <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
+                { /* eslint-enable jsx-a11y/label-has-for */ }
+                { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
+                { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
               </div>
-            )}
+              <Text size={10} font='b'>
+                { subLabel }
+              </Text>
+            </div>
+          )}
           <span
             data-prefix={prefix}
             data-postfix={postfix}
             className={classnames(...inputClasses)}
           >
             { swiftype && <Icon className={styles['icon-search']} icon='searchRebrand' /> }
-            { mask
-              ? (
-                <InputMask
-                  className={styles['input']}
-                  type={type}
-                  placeholder={placeholder}
-                  mask={mask}
-                  maskChar={maskChar}
-                  id={id}
-                  {...input}
-                />
-              )
+            { mask ? (
+              <InputMask
+                className={styles['input']}
+                type={type}
+                placeholder={placeholder}
+                mask={mask}
+                maskChar={maskChar}
+                id={id}
+                {...input}
+              />
+            )
               : (
                 <input
                   className={classnames(

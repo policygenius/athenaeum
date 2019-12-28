@@ -34,13 +34,12 @@ function AgentCallout(props) {
             <div className={styles['value']}>{contactValue}</div>
           </Col>
 
-          { caseLabel && caseValue
-            && (
-              <Col className={styles['contact-item']}>
-                <div className={styles['label']}>{caseLabel}</div>
-                <div className={styles['value']}>{caseValue}</div>
-              </Col>
-            )}
+          { caseLabel && caseValue && (
+            <Col className={styles['contact-item']}>
+              <div className={styles['label']}>{caseLabel}</div>
+              <div className={styles['value']}>{caseValue}</div>
+            </Col>
+          )}
         </Layout>
       </Col>
     </Layout>

@@ -138,8 +138,7 @@ function RadioCard(props) {
 
         <div className={styles['content']}>
           <h4 className={styles['title']}>{label}</h4>
-          { description
-          && (
+          { description && (
             <p className={styles['description']}>
               {description}
             </p>
@@ -149,12 +148,11 @@ function RadioCard(props) {
         </div>
 
         {
-          (image || iconProps)
-            && (
-              <div className={styles['image-wrapper']}>
-                { renderImage({ img: { image, label }, iconProps }) }
-              </div>
-            )
+          (image || iconProps) && (
+            <div className={styles['image-wrapper']}>
+              { renderImage({ img: { image, label }, iconProps }) }
+            </div>
+          )
         }
       </label>
       { /* eslint-enable jsx-a11y/label-has-for */ }

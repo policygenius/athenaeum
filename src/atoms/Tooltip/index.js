@@ -89,16 +89,15 @@ class Tooltip extends React.Component {
           ref={this.setWrapperRef}
         >
           {
-            text
-              || (
-                <Icon
-                  icon='tooltip'
-                  className={styles['tooltip']}
-                  inline={inline}
-                  height={`${tooltipIconSize}px`}
-                  width={`${tooltipIconSize}px`}
-                />
-              )
+            text || (
+              <Icon
+                icon='tooltip'
+                className={styles['tooltip']}
+                inline={inline}
+                height={`${tooltipIconSize}px`}
+                width={`${tooltipIconSize}px`}
+              />
+            )
           }
           <span
             className={classnames(

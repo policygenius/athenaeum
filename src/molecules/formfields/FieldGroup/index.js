@@ -27,15 +27,14 @@ const renderLabels = (labels) => {
           >
             <label>{label.header}</label>
             {
-              label.subLabel
-                && (
-                  <Text
-                    size={10}
-                    font='b'
-                  >
-                    {label.subLabel}
-                  </Text>
-                )
+              label.subLabel && (
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {label.subLabel}
+                </Text>
+              )
             }
           </div>
         ))

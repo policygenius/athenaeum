@@ -125,8 +125,8 @@ class TableHeader extends React.Component {
         { children }
 
         {
-          showMissing && tableItems === 1
-            && <Col />
+          showMissing && tableItems === 1 &&
+          <Col />
         }
       </TableRow>
     );
@@ -267,19 +267,18 @@ class TableRow extends React.Component {
         { this.childrenToRender.map((child, idx) => this.renderCol(child, idx, colClass)) }
 
         {
-          subHeader
-            && (
-              <Col
-                className={styles['sub-header-mobile']}
+          subHeader && (
+            <Col
+              className={styles['sub-header-mobile']}
+            >
+              <Text
+                size={10}
+                font='b'
               >
-                <Text
-                  size={10}
-                  font='b'
-                >
-                  {subHeader}
-                </Text>
-              </Col>
-            )
+                {subHeader}
+              </Text>
+            </Col>
+          )
         }
       </Layout>
     );

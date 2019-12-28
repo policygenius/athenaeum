@@ -25,14 +25,13 @@ function AddForm( props ) {
       <hr className={styles['hr']} />
       <div className={styles['inner-form']}>
         {
-          closeIcon
-            && (
-              <Icon
-                icon='xIcon'
-                onClick={onClose}
-                className={styles['icon-close']}
-              />
-            )
+          closeIcon && (
+            <Icon
+              icon='xIcon'
+              onClick={onClose}
+              className={styles['icon-close']}
+            />
+          )
         }
 
         <form

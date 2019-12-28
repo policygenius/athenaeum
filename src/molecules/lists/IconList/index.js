@@ -40,16 +40,15 @@ function IconList(props) {
               />
               {item.text}
               {
-                item.tooltip
-                  ? (
-                    <Tooltip
-                      className={styles.tooltip}
-                      left
-                      inline
-                    >
-                      {item.tooltip}
-                    </Tooltip>
-                  ) : ''
+                item.tooltip ? (
+                  <Tooltip
+                    className={styles.tooltip}
+                    left
+                    inline
+                  >
+                    {item.tooltip}
+                  </Tooltip>
+                ) : ''
               }
             </Text>
             <Text>

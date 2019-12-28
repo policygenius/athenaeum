@@ -35,18 +35,17 @@ function SplitCard( props ) {
         </div>
       </div>
 
-      { hasFooter()
-        && (
-          <footer className={styles['footer']}>
-            <div className={styles['col']}>
-              <LinkWrapper variant='secondary' onClick={onClick}><Text size={10} font='b'>{ footerLeft }</Text></LinkWrapper>
-            </div>
+      { hasFooter() && (
+        <footer className={styles['footer']}>
+          <div className={styles['col']}>
+            <LinkWrapper variant='secondary' onClick={onClick}><Text size={10} font='b'>{ footerLeft }</Text></LinkWrapper>
+          </div>
 
-            <div className={classnames(styles['col'], styles['col-r'])}>
-              <LinkWrapper variant='secondary' onClick={onClick2}><Text size={10} font='b'>{ footerRight }</Text></LinkWrapper>
-            </div>
-          </footer>
-        )}
+          <div className={classnames(styles['col'], styles['col-r'])}>
+            <LinkWrapper variant='secondary' onClick={onClick2}><Text size={10} font='b'>{ footerRight }</Text></LinkWrapper>
+          </div>
+        </footer>
+      )}
 
     </div>
   );

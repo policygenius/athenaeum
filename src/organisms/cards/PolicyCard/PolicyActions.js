@@ -30,18 +30,18 @@ export const PolicyActions = (props) => {
 
   return (
     <div className={styles['actions']}>
-      { premium.price
-        ? (
-          <div>
-            <Text type={11} font='a' color='neutral-2' bold>
-              <Text type={4} font='a' color='primary-3' bold>{formattedPremium}</Text>
-              {'/'}
-              {premium.format.toUpperCase()}
-            </Text>
-            {discount && discount}
-          </div>
-        )
-        : premium.defaultText}
+      { premium.price ? (
+        <div>
+          <Text type={11} font='a' color='neutral-2' bold>
+            <Text type={4} font='a' color='primary-3' bold>{formattedPremium}</Text>
+            {'/'}
+            {premium.format.toUpperCase()}
+          </Text>
+          {discount && discount}
+        </div>
+      )
+        :
+        premium.defaultText}
       <Spacer spacer={3} />
       <Layout smallCols={[ 12 ]} style={{ width: '100%' }}>
         <Button onClick={onContinue} className={styles['view-policy']}>

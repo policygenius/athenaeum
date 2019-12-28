@@ -46,27 +46,24 @@ function SimplePolicyCard(props) {
         <div className={styles['body']}>
           <div className={styles['compare-logo-section']}>
             {
-              !isEmpty(compareCheckbox) ?
-                [
+              !isEmpty(compareCheckbox) && (
+                <React.Fragment>
                   <Compare key={1} {...compareCheckbox} />,
                   <div key={2} className={styles['divider']} />
-                ]
-                :
-                null
-            }
+                </React.Fragment>
+              )}
             <CarrierLogo carrierLogo={carrierLogo} />
           </div>
           <div className={styles['divider']} />
           <Premium premium={premium} />
           {
-            onContinue
-              && (
-                <PolicyActions
-                  onContinue={onContinue}
-                  selected={selected || anyCardSelected}
-                  continueCTAText={continueCTAText}
-                />
-              )
+            onContinue && (
+              <PolicyActions
+                onContinue={onContinue}
+                selected={selected || anyCardSelected}
+                continueCTAText={continueCTAText}
+              />
+            )
           }
         </div>
       </div>

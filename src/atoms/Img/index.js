@@ -32,10 +32,10 @@ const isPicture = (props) => {
   } = props;
 
   return (
-    mobileSrc !== undefined
-    || tabletSrc !== undefined
-    || mobileImgixSrc !== undefined
-    || tabletImgixSrc !== undefined
+    mobileSrc !== undefined ||
+    tabletSrc !== undefined ||
+    mobileImgixSrc !== undefined ||
+    tabletImgixSrc !== undefined
   );
 };
 

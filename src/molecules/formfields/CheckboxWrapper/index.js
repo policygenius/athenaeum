@@ -77,15 +77,14 @@ class CheckboxWrapper extends BaseFieldGroup {
             </div>
 
             {
-              subLabel
-                && (
-                  <Text
-                    size={10}
-                    font='b'
-                  >
-                    {subLabel}
-                  </Text>
-                )
+              subLabel && (
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {subLabel}
+                </Text>
+              )
             }
           </div>
           <Layout
@@ -108,17 +107,16 @@ class CheckboxWrapper extends BaseFieldGroup {
           </Layout>
 
           {
-            footerBox
-              && (
-                <div className={styles['footer-box']}>
-                  {
-                    React.cloneElement(footerBox, {
-                      ...footerBox.props,
-                      onBlur: this.handleBlur,
-                    })
-                  }
-                </div>
-              )
+            footerBox && (
+              <div className={styles['footer-box']}>
+                {
+                  React.cloneElement(footerBox, {
+                    ...footerBox.props,
+                    onBlur: this.handleBlur,
+                  })
+                }
+              </div>
+            )
           }
         </div>
         <ErrorMessage

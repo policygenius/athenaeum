@@ -91,8 +91,7 @@ export default class ProgressBarStep extends Component {
           <div className={classnames(...this.circleClasses())} />
         </div>
         {
-          step.subtitle
-          && (
+          step.subtitle && (
             <div className={styles['step-subtitle']}>
               <Text tag='span' type={9} font='b' {...this.subtitleProps()}>{step.subtitle}</Text>
             </div>

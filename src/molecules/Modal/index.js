@@ -125,37 +125,36 @@ class Modal extends React.Component {
         <div id={dialogId} className={styles['dialog']}>
           <div className={styles['body']}>
             {
-              !hideHeader
-                && (
+              !hideHeader && (
+                <div
+                  className={styles['header']}
+                >
                   <div
-                    className={styles['header']}
+                    className={styles['close-col']}
                   >
-                    <div
-                      className={styles['close-col']}
-                    >
-                      {
-                        !hideX
-                        && (
-                          <Icon
-                            icon='close'
-                            className={styles['close']}
-                            onClick={this.onRequestClose}
-                            width='18px'
-                            height='18px'
-                          />
-                        )
-                      }
-                    </div>
-
-                    <Text
-                      type={3}
-                      font='a'
-                    >
-                      {header}
-                    </Text>
-
+                    {
+                      !hideX
+                      && (
+                        <Icon
+                          icon='close'
+                          className={styles['close']}
+                          onClick={this.onRequestClose}
+                          width='18px'
+                          height='18px'
+                        />
+                      )
+                    }
                   </div>
-                )
+
+                  <Text
+                    type={3}
+                    font='a'
+                  >
+                    {header}
+                  </Text>
+
+                </div>
+              )
             }
             {React.Children.map(children, this.wrapChild)}
           </div>

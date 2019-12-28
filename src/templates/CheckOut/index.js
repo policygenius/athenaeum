@@ -117,14 +117,13 @@ function CheckOut(props) {
                   </Layout>
                 </Col>
                 {
-                  userAlert.condition
-                    && (
-                      <CheckoutUserAlert
-                        enabled={false}
-                        userAlert={userAlert}
-                        className='user-alert-mobile'
-                      />
-                    )
+                  userAlert.condition && (
+                    <CheckoutUserAlert
+                      enabled={false}
+                      userAlert={userAlert}
+                      className='user-alert-mobile'
+                    />
+                  )
                 }
               </Sticky>
             </Col>
@@ -133,14 +132,13 @@ function CheckOut(props) {
               <Icon icon='norton' className={styles['secure-logo']} />
             </Col>
           </Layout>
-          { userAlert.condition
-            && (
-              <CheckoutUserAlert
-                enabled
-                userAlert={userAlert}
-                className='user-alert'
-              />
-            )}
+          { userAlert.condition && (
+            <CheckoutUserAlert
+              enabled
+              userAlert={userAlert}
+              className='user-alert'
+            />
+          )}
         </Col>
 
         <Col
@@ -158,8 +156,7 @@ function CheckOut(props) {
             </div>
             <Col className={styles['main-sidebar']}>
               {
-                contactProps
-                && (
+                contactProps && (
                   <div className={styles['contact-card']}>
                     <ContactCard {...contactProps} />
                   </div>

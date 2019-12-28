@@ -29,27 +29,25 @@ function ContactCard( props ) {
 
   return (
     <StackedCard className={classnames(...classes)} inverted={inverted}>
-      { top
-        && (
-          <a className={styles['link-row']} onClick={top.onClick} href={top.href}>
-            <Icon
-              icon={top.icon}
-              className={styles['icon']}
-            />
-            { top.text }
-          </a>
-        )}
+      { top && (
+        <a className={styles['link-row']} onClick={top.onClick} href={top.href}>
+          <Icon
+            icon={top.icon}
+            className={styles['icon']}
+          />
+          { top.text }
+        </a>
+      )}
 
-      { bottom
-        && (
-          <a className={styles['link-row']} onClick={bottom.onClick} href={bottom.href}>
-            <Icon
-              icon={bottom.icon}
-              className={styles['icon']}
-            />
-            { bottom.text }
-          </a>
-        )}
+      { bottom && (
+        <a className={styles['link-row']} onClick={bottom.onClick} href={bottom.href}>
+          <Icon
+            icon={bottom.icon}
+            className={styles['icon']}
+          />
+          { bottom.text }
+        </a>
+      )}
     </StackedCard>
   );
 }

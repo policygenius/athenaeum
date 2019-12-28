@@ -57,9 +57,9 @@ class BaseDateField extends React.Component {
     }
 
     if (
-      prevState.dayValue === dayValue
-      && prevState.monthValue === monthValue
-      && prevState.yearValue === yearValue
+      prevState.dayValue === dayValue &&
+      prevState.monthValue === monthValue &&
+      prevState.yearValue === yearValue
     ) { return null; }
 
     if (String(yearValue).length < 4) {
@@ -329,15 +329,14 @@ class BaseDateField extends React.Component {
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
             {
-              subLabel
-                && (
-                  <Text
-                    size={10}
-                    font='b'
-                  >
-                    {subLabel}
-                  </Text>
-                )
+              subLabel && (
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {subLabel}
+                </Text>
+              )
             }
           </div>
           <div className={styles['line-1']}>

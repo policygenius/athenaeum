@@ -51,13 +51,12 @@ export default class AccordionPanel extends Component {
           className={styles['header']}
           onClick={this.handleClick}
         >
-          { !disableNumberedList
-            && (
-              <span className={styles['ordinal']}>
-                {number}
+          { !disableNumberedList && (
+            <span className={styles['ordinal']}>
+              {number}
 .
-              </span>
-            )}
+            </span>
+          )}
           <Text
             className={styles['title']}
           >

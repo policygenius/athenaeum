@@ -95,8 +95,7 @@ function SummaryCard( props ) {
         { formatText(text) }
 
         {
-          children
-          && (
+          children && (
             <Col>
               <Spacer size={18} />
               { children }

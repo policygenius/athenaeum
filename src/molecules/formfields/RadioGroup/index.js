@@ -49,15 +49,14 @@ class RadioGroup extends React.Component {
             </div>
 
             {
-              subLabel
-                && (
-                  <Text
-                    size={10}
-                    font='b'
-                  >
-                    {subLabel}
-                  </Text>
-                )
+              subLabel && (
+                <Text
+                  size={10}
+                  font='b'
+                >
+                  {subLabel}
+                </Text>
+              )
             }
           </div>
           {

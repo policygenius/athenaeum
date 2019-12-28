@@ -53,15 +53,14 @@ function SplitField(props) {
           <label htmlFor='split-field'>{label}</label>
           { /* eslint-enable jsx-a11y/label-has-for */ }
           {
-            subLabel
-              && (
-                <Text
-                  size={10}
-                  font='b'
-                >
-                  {subLabel}
-                </Text>
-              )
+            subLabel && (
+              <Text
+                size={10}
+                font='b'
+              >
+                {subLabel}
+              </Text>
+            )
           }
         </div>
         <div className={styles['line-1']}>

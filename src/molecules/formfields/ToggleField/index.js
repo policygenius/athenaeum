@@ -76,18 +76,17 @@ function ToggleField( props ) {
         <Layout
           nested={nested}
         >
-          { label
-            && (
-              <Col className={styles['header']}>
-                { tooltip
-                && (
-                  <div className={styles['tooltip-wrapper']}>
-                    { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
-                  </div>
-                )}
-                { label }
-              </Col>
-            )}
+          { label && (
+            <Col className={styles['header']}>
+              { tooltip
+              && (
+                <div className={styles['tooltip-wrapper']}>
+                  { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
+                </div>
+              )}
+              { label }
+            </Col>
+          )}
           { children && <Col className={styles['body']}>{children}</Col> }
           <Col className={buttonStyle}>
             { renderChoices(toggleChoices, input) }
