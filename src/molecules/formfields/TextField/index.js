@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
@@ -13,55 +14,16 @@ import { renderTooltip } from 'utils/fieldUtils';
 import styles from './text_field.module.scss';
 
 class TextField extends React.Component {
-  getClasses = () => {
-    const {
-      className,
-      meta,
-      noBaseStyle
-    } = this.props;
-
-    return [
-      !noBaseStyle && styles['text-field'],
-      meta && meta.active && !noBaseStyle && styles['focused'],
-      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
-      className,
-    ];
-  };
-
-  getInputClasses = () => {
-    const {
-      prefix,
-      postfix,
-      swiftype
-    } = this.props;
-
-    return [
-      styles['input-wrapper'],
-      prefix && styles['prefix'],
-      postfix && styles['postfix'],
-      swiftype && styles['swiftype-prefix'],
-    ];
-  };
-
-  getMessage = () => {
-    const {
-      meta,
-      activeValidation
-    } = this.props;
-
-    return activeValidation ?
-      meta && (meta.dirty || meta.touched) && (meta.error || meta.warning) :
-      meta && meta.touched && !meta.active && (meta.error || meta.warning);
-  };
-
   render() {
     const {
+      className,
       htmlFor,
       input,
       label,
       mask,
       maskChar,
       meta,
+      noBaseStyle,
       placeholder,
       secure,
       id,
@@ -71,16 +33,33 @@ class TextField extends React.Component {
       maskVal,
       prefix,
       postfix,
+      activeValidation,
       subLabel,
       swiftype,
       fieldRef,
     } = this.props;
 
-    const classes = this.getClasses();
+    const classes = [
+      !noBaseStyle && styles['text-field'],
+      meta && meta.active && !noBaseStyle && styles['focused'],
+      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
 
-    const inputClasses = this.getInputClasses();
+    const inputClasses = [
+      styles['input-wrapper'],
+      prefix && styles['prefix'],
+      postfix && styles['postfix'],
+      swiftype && styles['swiftype-prefix'],
+    ];
 
-    const message = this.getMessage();
+    let message;
+
+    if (activeValidation) {
+      message = meta && (meta.dirty || meta.touched) && (meta.error || meta.warning);
+    } else {
+      message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
+    }
 
     return (
       <div ref={fieldRef && fieldRef}>
@@ -88,7 +67,7 @@ class TextField extends React.Component {
           { label && (
             <div className={classnames(styles['header'])}>
               <div className={styles['label-wrapper']}>
-                { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
+                {/* eslint-disable-next-line jsx-a11y/label-has-for */}
                 <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
                 { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
                 { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
@@ -104,17 +83,18 @@ class TextField extends React.Component {
             className={classnames(...inputClasses)}
           >
             { swiftype && <Icon className={styles['icon-search']} icon='searchRebrand' /> }
-            { mask ? (
-              <InputMask
-                className={styles['input']}
-                type={type}
-                placeholder={placeholder}
-                mask={mask}
-                maskChar={maskChar}
-                id={id}
-                {...input}
-              />
-            )
+            { mask
+              ? (
+                <InputMask
+                  className={styles['input']}
+                  type={type}
+                  placeholder={placeholder}
+                  mask={mask}
+                  maskChar={maskChar}
+                  id={id}
+                  {...input}
+                />
+              )
               : (
                 <input
                   className={classnames(

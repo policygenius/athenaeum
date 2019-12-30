@@ -48,7 +48,7 @@ function SimplePolicyCard(props) {
             {
               !isEmpty(compareCheckbox) && (
                 <React.Fragment>
-                  <Compare key={1} {...compareCheckbox} />,
+                  <Compare key={1} {...compareCheckbox} />
                   <div key={2} className={styles['divider']} />
                 </React.Fragment>
               )}

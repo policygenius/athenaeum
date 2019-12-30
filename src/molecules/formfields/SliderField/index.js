@@ -40,7 +40,9 @@ class SliderField extends Component {
   }
 
   findClosestAmount(values, value) {
-    return values.reduce((prev, curr) => Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev);
+    return values.reduce((prev, curr) => (
+      Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
+    ));
   }
 
   updateSlider = (value) => {

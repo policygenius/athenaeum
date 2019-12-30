@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -27,25 +28,9 @@ const renderAdditionalInfo = (func) => {
 };
 
 class SelectField extends React.Component {
-  getClasses = () => {
-    const {
-      className,
-      meta,
-      variant,
-      noBaseStyle
-    } = this.props;
-
-    return [
-      !noBaseStyle && styles['select-field'],
-      variant && styles[variant],
-      meta && meta.active && styles['focused'],
-      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
-      className,
-    ];
-  };
-
   render() {
     const {
+      className,
       defaultValue,
       forProp,
       input,
@@ -55,13 +40,21 @@ class SelectField extends React.Component {
       placeholder,
       selectOptions,
       tooltip,
+      variant,
       required,
       subLabel,
+      noBaseStyle,
       fieldRef,
       id,
     } = this.props;
 
-    const classes = this.getClasses();
+    const classes = [
+      !noBaseStyle && styles['select-field'],
+      variant && styles[variant],
+      meta && meta.active && styles['focused'],
+      meta && meta.touched && meta.error && !meta.active && styles['hasError'],
+      className,
+    ];
 
     const message = meta && meta.touched && !meta.active && (meta.error || meta.warning);
 
@@ -80,13 +73,15 @@ class SelectField extends React.Component {
                   <div className={styles['tooltip-wrapper']}>
                     { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
                   </div>
-                )}
+                )
+              }
               {
                 subLabel && (
                   <Text size={10} font='b'>
                     { subLabel }
                   </Text>
-                )}
+                )
+              }
             </label>
           )}
 

@@ -6,7 +6,6 @@ import { renderTooltip } from '..';
 
 describe('renderTooltip()', () => {
   let className;
-
   let iconClassName;
 
   beforeEach(() => {

@@ -39,9 +39,7 @@ function SimpleFeaturedPolicyCard(props) {
               type={3}
               font='a'
             >
-              {formattedPremium}
-              {' '}
-              <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
+              {formattedPremium} <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
             </Text>
 
             {premium.tooltip}

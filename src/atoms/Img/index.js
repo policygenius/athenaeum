@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -23,54 +24,6 @@ const createName = (str) => {
   return filename ? filename[0].replace(/(\W+|_)/g, ' ').trim() : 'PolicyGenius';
 };
 
-const isPicture = (props) => {
-  const {
-    mobileSrc,
-    tabletSrc,
-    mobileImgixSrc,
-    tabletImgixSrc
-  } = props;
-
-  return (
-    mobileSrc !== undefined ||
-    tabletSrc !== undefined ||
-    mobileImgixSrc !== undefined ||
-    tabletImgixSrc !== undefined
-  );
-};
-
-const pictureClasses = (props) => {
-  const {
-    className,
-    mobileSrc,
-    tabletSrc,
-    mobileImgixSrc,
-    tabletImgixSrc
-  } = props;
-
-  return cx(
-    styles['picture'],
-    (mobileImgixSrc === null || mobileSrc === null) && styles['hide-mobile-image'],
-    (tabletImgixSrc === null || tabletSrc === null) && styles['hide-tablet-image'],
-    className,
-  );
-};
-
-const getSrcSet = (isLazy, src, imgxSrc) => isLazy ? undefined : src || imgixSrcStr(imgxSrc);
-
-const getDataSrcSet = (isLazy, src, imgxSrc) => isLazy ? src || imgixSrcStr(imgxSrc) : undefined;
-
-const getTitle = (props) => {
-  const {
-    src,
-    imgixSrc,
-    alt,
-    title
-  } = props;
-
-  return title || alt || createName(src || imgixSrc);
-};
-
 function Img(props) {
   const {
     className,
@@ -78,6 +31,7 @@ function Img(props) {
     srcSet,
     imgixSrc,
     alt,
+    title,
     mobileSrc,
     tabletSrc,
     mobileImgixSrc,
@@ -88,9 +42,21 @@ function Img(props) {
 
   const isLazy = lazy && checkLS();
 
+  const isPicture = mobileSrc !== undefined ||
+    tabletSrc !== undefined ||
+    mobileImgixSrc !== undefined ||
+    tabletImgixSrc !== undefined;
+
   const classes = cx(
     styles['img'],
     isLazy && 'lazyload',
+    className,
+  );
+
+  const pictureClasses = cx(
+    styles['picture'],
+    (mobileImgixSrc === null || mobileSrc === null) && styles['hide-mobile-image'],
+    (tabletImgixSrc === null || tabletSrc === null) && styles['hide-tablet-image'],
     className,
   );
 
@@ -102,35 +68,33 @@ function Img(props) {
   })();
 
   // TODO: Consider adding a noscript tag to handle a situation where lazysizes doesn't work.
-  if (isPicture(props)) {
+  if (isPicture) {
     const defaultSrc = src || imgixSrcStr(imgixSrc);
 
     return (
-      <picture className={cx(pictureClasses(props), isLazy && 'lazyload')}>
+      <picture className={cx(pictureClasses, isLazy && 'lazyload')}>
         {
-          ( mobileImgixSrc || mobileSrc )
-          && (
+          ( mobileImgixSrc || mobileSrc ) && (
             <source
-              srcSet={getSrcSet(isLazy, mobileSrc, mobileImgixSrc)}
-              data-srcset={getDataSrcSet(isLazy, mobileSrc, mobileImgixSrc)}
+              srcSet={isLazy ? undefined : mobileSrc || imgixSrcStr(mobileImgixSrc)}
+              data-srcset={isLazy ? mobileSrc || imgixSrcStr(mobileImgixSrc) : undefined}
               media='(max-width: 767px)'
             />
           )
         }
         {
-          ( tabletImgixSrc || tabletSrc )
-            && (
-              <source
-                srcSet={getSrcSet(isLazy, tabletSrc, tabletImgixSrc)}
-                data-srcset={getDataSrcSet(isLazy, tabletSrc, tabletImgixSrc)}
-                media='(max-width: 1024px)'
-              />
-            )
+          ( tabletImgixSrc || tabletSrc ) && (
+            <source
+              srcSet={isLazy ? undefined : tabletSrc || imgixSrcStr(tabletImgixSrc)}
+              data-srcset={isLazy ? tabletSrc || imgixSrcStr(tabletImgixSrc) : undefined}
+              media='(max-width: 1024px)'
+            />
+          )
         }
         <img
           className={cx(styles.img, isLazy && 'lazyload')}
           alt={alt || createName(src || imgixSrc)}
-          title={getTitle(props)}
+          title={title || alt || createName(src || imgixSrc)}
           data-src={defaultSrc}
           data-sizes='auto'
           src={isLazy ? undefined : defaultSrc}
@@ -144,7 +108,7 @@ function Img(props) {
     <img
       className={classes}
       alt={alt || createName(src || imgixSrc)}
-      title={getTitle(props)}
+      title={title || alt || createName(src || imgixSrc)}
       data-src={src || imgixSrcStr(imgixSrc)}
       data-srcset={srcset}
       data-sizes={isLazy ? 'auto' : '100vw'}

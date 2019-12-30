@@ -4,7 +4,6 @@ import DateField from 'molecules/formfields/DateField';
 
 describe('<DateField />', () => {
   let props;
-
   let component;
 
   beforeEach(() => {

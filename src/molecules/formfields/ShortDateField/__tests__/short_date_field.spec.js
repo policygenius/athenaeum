@@ -7,7 +7,6 @@ import ShortDateField from 'molecules/formfields/ShortDateField';
 
 describe('<ShortDateField />', () => {
   let props;
-
   let component;
 
   beforeEach(() => {

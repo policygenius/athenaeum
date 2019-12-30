@@ -25,7 +25,9 @@ const ComparisonTable = (props) => {
   return (
     <div className={tableClass}>
       {
-        React.Children.map(children, (child) => React.isValidElement(child) ? React.cloneElement(child, { expandable, expanded, tableItems }) : child)
+        React.Children.map(children, (child) => (
+          React.isValidElement(child) ? React.cloneElement(child, { expandable, expanded, tableItems }) : child
+        ))
       }
     </div>
   );
@@ -111,7 +113,9 @@ class TableHeader extends React.Component {
           <Col className={styles['col-offset-header']} />
 
           {
-            this.headerToRender.map((child, idx) => <Col key={idx} className={styles['col-offset-header-cells']}>{ child }</Col>)
+            this.headerToRender.map((child, idx) => (
+              <Col key={idx} className={styles['col-offset-header-cells']}>{ child }</Col>
+            ))
           }
         </Layout>
       );

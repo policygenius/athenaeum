@@ -49,8 +49,8 @@ describe('<List />', () => {
         </small>
         <List>
           {' I\'m nested!! '}
-          <li>I&apos;m wrapped in a &apos;li&apos;</li>
-          <em>I&apos;m wrapped in a &apos;em&apos;</em>
+          <li>{"I'm wrapped in a 'li'"}</li>
+          <em>{"I'm wrapped in a 'em'"}</em>
         </List>
       </List>
     );
