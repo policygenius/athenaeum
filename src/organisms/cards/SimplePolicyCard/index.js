@@ -48,8 +48,8 @@ function SimplePolicyCard(props) {
             {
               !isEmpty(compareCheckbox) && (
                 <React.Fragment>
-                  <Compare key={1} {...compareCheckbox} />
-                  <div key={2} className={styles['divider']} />
+                  <Compare {...compareCheckbox} />
+                  <div className={styles['divider']} />
                 </React.Fragment>
               )}
             <CarrierLogo carrierLogo={carrierLogo} />

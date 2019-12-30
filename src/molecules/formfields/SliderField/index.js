@@ -30,9 +30,8 @@ class SliderField extends Component {
       sliderValues,
     } = this.props;
 
-    const { sliderIndex } = this.state;
-
     this.setState({ sliderIndex: value }, () => {
+      const { sliderIndex } = this.state;
       const sliderAmount = sliderValues[sliderIndex];
 
       return input.onChange(sliderAmount);
