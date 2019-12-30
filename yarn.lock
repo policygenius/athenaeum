@@ -3875,9 +3875,9 @@ escope@^3.6.0:
     estraverse "^4.1.1"
 
 eslint-config-policygenius@^0.3.1:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-policygenius/-/eslint-config-policygenius-0.3.0.tgz#f5f25c24d3a613ca3c29751538f60d4275458267"
-  integrity sha512-Ysw7/kXfLC+Fu435FkAWTvYx+XuWjHh3G7V3WAwD2F0bacnqFMR/i1xpWkaDGQd4H2NektcTBmyKnnmPKVm7DQ==
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-policygenius/-/eslint-config-policygenius-0.3.1.tgz#8206cf6d97a67f6802ebe8be035f5fe948efddd0"
+  integrity sha512-Va3us1D7upcoA6sVCxzf7sQ+BcTIH2fcLCGOlmea26l1wWHsWvlr99giAp7KKmnkvGqSbrxWXdiCNmGipnbEqg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.0.0"
     "@typescript-eslint/parser" "^2.0.0"
