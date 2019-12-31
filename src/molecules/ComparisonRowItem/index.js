@@ -8,7 +8,6 @@ import Icon from 'atoms/Icon';
 
 import styles from './comparison_row_item.module.scss';
 
-
 function ComparisonRowItem(props) {
   const {
     className,
@@ -40,13 +39,14 @@ function ComparisonRowItem(props) {
   );
 }
 
-
 ComparisonRowItem.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * label/name for data
    */
@@ -54,10 +54,12 @@ ComparisonRowItem.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]).isRequired,
+
   /**
    * checkmark or x icon
    */
   checked: PropTypes.bool,
+
   /**
    * Standard spacer sizing from 0-12.
    */

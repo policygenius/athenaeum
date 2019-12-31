@@ -2,11 +2,12 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
 
-import { HtmlElements, Span, P, Div, } from 'atoms/Elementals';
+import {
+  HtmlElements, Span, P, Div,
+} from 'atoms/Elementals';
 import Element from 'atoms/Element';
 
 describe('Elementals', () => {
-
 
   it('returns all html-tag Elements', () => {
     const htmlElements = HtmlElements();
@@ -14,7 +15,6 @@ describe('Elementals', () => {
     expect(Object.keys(htmlElements).length).to.equal(148);
     expect(htmlElements.P).to.be.function;
   });
-
 
   describe('Generates <Element />', () => {
     it('<Element />', () => {

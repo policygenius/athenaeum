@@ -19,8 +19,8 @@ function CircularLoader(props) {
   );
 }
 
-
 CircularLoader.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

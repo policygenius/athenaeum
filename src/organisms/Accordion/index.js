@@ -4,19 +4,20 @@ import cx from 'classnames';
 import styles from './accordion.module.scss';
 import AccordionPanel from './AccordionPanel';
 
-const sections = ({ onClick, panels, openText, closeText, disableNumberedList }) =>
-  panels.map((panel, i) =>
-    <AccordionPanel
-      onClick={onClick}
-      openText={openText}
-      closeText={closeText}
-      key={i}
-      open={i === 0}
-      number={i + 1}
-      disableNumberedList={disableNumberedList}
-      {...panel}
-    />
-  );
+const sections = ({
+  onClick, panels, openText, closeText, disableNumberedList
+}) => panels.map((panel, i) => (
+  <AccordionPanel
+    onClick={onClick}
+    openText={openText}
+    closeText={closeText}
+    key={i}
+    open={i === 0}
+    number={i + 1}
+    disableNumberedList={disableNumberedList}
+    {...panel}
+  />
+));
 
 function Accordion(props) {
   const {
@@ -26,7 +27,7 @@ function Accordion(props) {
     panels,
     className,
     disableNumberedList,
-    } = props;
+  } = props;
 
   const classes = cx(
     className,
@@ -49,21 +50,25 @@ function Accordion(props) {
 }
 
 Accordion.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * The text used for the link that will collapse an open accordion section
    * Defaults to 'Close'.
    */
   closeText: PropTypes.string,
+
   /**
    * The text used for the link that will open up the accordion section
    * Defaults to 'View'.
    */
   openText: PropTypes.string,
+
   /**
    * Panels: An array of objects that will blossom to become
    * our accordion sections. Requires a `title` and `body`.
@@ -74,10 +79,12 @@ Accordion.propTypes = {
       body: PropTypes.string.isRequired
     })
   ),
+
   /**
    * Whether or not to number the accordion items. Defaults to `true`.
    */
   disableNumberedList: PropTypes.bool,
+
   /**
    * Use this prop to tack on any extra click functionality.
    */
@@ -85,9 +92,9 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
-  openText: 'View',
   closeText: 'Close',
-  disableNumberedList: false
+  disableNumberedList: false,
+  openText: 'View'
 };
 
 export default Accordion;

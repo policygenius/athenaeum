@@ -18,6 +18,7 @@ function Trackable(props) {
 }
 
 Trackable.propTypes = {
+
   /**
    * Will spread and render dataObj onto Component.
    */

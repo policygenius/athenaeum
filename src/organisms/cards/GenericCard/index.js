@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import Icon from 'atoms/Icon';
 import LinkWrapper from 'atoms/LinkWrapper';
+import Text from 'atoms/Text';
 import styles from './generic_card.module.scss';
 
 function renderFooter(text, onClick) {
@@ -61,6 +62,7 @@ function GenericCard( props ) {
 }
 
 GenericCard.propTypes = {
+
   /**
    * class name added to class set
    */

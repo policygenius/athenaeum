@@ -5,7 +5,7 @@ Playback Card Example:
     header='Policyholder Details'
     icon='greenCheckWithCircle'
     onClick={() => alert('edit clicked')}
-    leftPanel={
+    leftPanel={(
       <Layout
         bottomSpacing='xSmall'
         fullwidth
@@ -21,9 +21,9 @@ Playback Card Example:
           line2='victoriabangladesh19283@gmail.com'
         />
       </Layout>
-    }
+    )}
 
-    rightPanel={
+    rightPanel={(
       <Layout
         smallCols={[ 6 ]}
         mediumCols={[ 12 ]}
@@ -40,6 +40,6 @@ Playback Card Example:
           line2='917-887-8424'
         />
       </Layout>
-    }
+    )}
   />
 ```

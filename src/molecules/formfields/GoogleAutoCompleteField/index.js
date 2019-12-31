@@ -49,11 +49,14 @@ class GoogleAutoCompleteField extends Component {
   }
 
   updateAddress = () => {
-    const place = this.state.autocomplete.getPlace();
+    const { input, autocompleteAddressFields } = this.props;
+    const { autocomplete } = this.state;
+
+    const place = autocomplete.getPlace();
     const addressData = this.formatAddressInfo(place.address_components);
 
     if (!addressData.number) {
-      const { value } = this.props.input;
+      const { value } = input;
       const streetNumberMatch = value && value.match(/^(\d+)/);
 
       if (streetNumberMatch && streetNumberMatch[0]) {
@@ -65,7 +68,7 @@ class GoogleAutoCompleteField extends Component {
 
     const data = this.pickData(addressData);
 
-    this.props.autocompleteAddressFields(data);
+    autocompleteAddressFields(data);
   }
 
   pickData = (addressData) => {
@@ -124,6 +127,7 @@ class GoogleAutoCompleteField extends Component {
 }
 
 GoogleAutoCompleteField.propTypes = {
+
   /**
    * Values to be passed down to the TextField rendered by this component.
    * If using `redux-form`, this prop will come from the `Field` wrapper component.
@@ -143,7 +147,7 @@ GoogleAutoCompleteField.propTypes = {
   /**
    * `id` prop onto which Google will hook the autocomplete functionality
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 
   /**
    * A map of values to pick from the Google autocomplete response.
@@ -189,14 +193,14 @@ GoogleAutoCompleteField.propTypes = {
 };
 
 GoogleAutoCompleteField.defaultProps = {
-  id: 'autocomplete',
   addressValuesToPick: {
-    number: 'shortName',
-    street: 'longName',
     city: 'longName',
+    number: 'shortName',
     state: 'longName',
+    street: 'longName',
     zip: 'shortName',
   },
+  id: 'autocomplete',
 };
 
 export default GoogleAutoCompleteField;

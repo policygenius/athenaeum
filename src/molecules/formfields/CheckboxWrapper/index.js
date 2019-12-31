@@ -68,18 +68,20 @@ class CheckboxWrapper extends BaseFieldGroup {
         >
           <div className={styles['header']}>
             <div className={styles['label-wrapper']}>
-              { label && <label htmlFor='checkbox' className={styles['label']}>{label}</label> }
+              { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
+              { label &&<label htmlFor='checkbox' className={styles['label']}>{label}</label> }
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
 
             {
-              subLabel &&
+              subLabel && (
                 <Text
                   size={10}
                   font='b'
                 >
                   {subLabel}
                 </Text>
+              )
             }
           </div>
           <Layout
@@ -88,7 +90,7 @@ class CheckboxWrapper extends BaseFieldGroup {
             className={styles.content}
           >
             {
-              React.Children.map(children, child =>
+              React.Children.map(children, (child) => (
                 <Col className={styles.checkbox}>
                   {
                     React.cloneElement(child, {
@@ -97,12 +99,12 @@ class CheckboxWrapper extends BaseFieldGroup {
                     })
                   }
                 </Col>
-              )
+              ))
             }
           </Layout>
 
           {
-            footerBox &&
+            footerBox && (
               <div className={styles['footer-box']}>
                 {
                   React.cloneElement(footerBox, {
@@ -111,6 +113,7 @@ class CheckboxWrapper extends BaseFieldGroup {
                   })
                 }
               </div>
+            )
           }
         </div>
         <ErrorMessage
@@ -123,6 +126,7 @@ class CheckboxWrapper extends BaseFieldGroup {
 }
 
 CheckboxWrapper.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

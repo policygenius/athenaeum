@@ -4,10 +4,11 @@ import renderer from 'react-test-renderer';
 import { omit } from 'lodash';
 import TextField from 'molecules/formfields/TextField';
 
-import GoogleAutoCompleteField from '../';
+import GoogleAutoCompleteField from '..';
 
 describe('<GoogleAutoCompleteField />', () => {
   let baseProps;
+
   let addressValues;
 
   beforeEach(() => {
@@ -20,6 +21,7 @@ describe('<GoogleAutoCompleteField />', () => {
       autocompleteAddressFields: jest.fn(),
     };
 
+    /* eslint-disable camelcase */
     addressValues = [
       {
         types: [
@@ -57,6 +59,7 @@ describe('<GoogleAutoCompleteField />', () => {
         long_name: '10075',
       },
     ];
+    /* eslint-enable camelcase */
   });
 
   it('renders correctly', () => {
@@ -92,7 +95,9 @@ describe('<GoogleAutoCompleteField />', () => {
       const state = {
         autocomplete: {
           getPlace: jest.fn(() => ({
+            /* eslint-disable camelcase */
             address_components: addressValues,
+            /* eslint-enable camelcase */
           }))
         }
       };
@@ -111,16 +116,19 @@ describe('<GoogleAutoCompleteField />', () => {
 
     describe('when google does not provide street_number', () => {
       let addressValuesWithoutStreetNumber;
+
       let state;
 
       beforeEach(() => {
         addressValuesWithoutStreetNumber = addressValues
-          .filter(value => !value.types.includes('street_number'));
+          .filter((value) => !value.types.includes('street_number'));
 
         state = {
           autocomplete: {
             getPlace: jest.fn(() => ({
+              /* eslint-disable camelcase */
               address_components: addressValuesWithoutStreetNumber,
+              /* eslint-enable camelcase */
             }))
           }
         };

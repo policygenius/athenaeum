@@ -6,7 +6,6 @@ import HeaderAmount from 'molecules/HeaderAmount';
 
 describe('<HeaderAmount />', () => {
 
-
   it('renders', () => {
     const wrapper = mount(<HeaderAmount />);
 

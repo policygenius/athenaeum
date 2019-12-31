@@ -35,7 +35,7 @@ function SplitCard( props ) {
         </div>
       </div>
 
-      { hasFooter() &&
+      { hasFooter() && (
         <footer className={styles['footer']}>
           <div className={styles['col']}>
             <LinkWrapper variant='secondary' onClick={onClick}><Text size={10} font='b'>{ footerLeft }</Text></LinkWrapper>
@@ -45,13 +45,14 @@ function SplitCard( props ) {
             <LinkWrapper variant='secondary' onClick={onClick2}><Text size={10} font='b'>{ footerRight }</Text></LinkWrapper>
           </div>
         </footer>
-      }
+      )}
 
     </div>
   );
 }
 
 SplitCard.propTypes = {
+
   /**
    * class name added to class set
    */

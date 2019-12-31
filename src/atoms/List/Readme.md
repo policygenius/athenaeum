@@ -19,10 +19,10 @@ Using the listItems prop directly:
 ```jsx
     <List
       listItems={[
-        <strong>Hope</strong>,
+        <strong key={1}>Hope</strong>,
         'Love',
-        <List><em>Peace</em></List>,
-        <Icon icon='health' height='10px' width='20px' />
+        <List key={2}><em>Peace</em></List>,
+        <Icon key={3} icon='health' height='10px' width='20px' />
       ]}
     />
 ```
@@ -32,10 +32,10 @@ Condensed example:
     <List
       condensed
       listItems={[
-        <strong>Hope</strong>,
+        <strong key={1}>Hope</strong>,
         'Love',
-        <em>Peace</em>,
-        <Icon icon='health' height='10px' width='20px' />
+        <em key={2}>Peace</em>,
+        <Icon key={3} icon='health' height='10px' width='20px' />
       ]}
     />
 ```
@@ -46,18 +46,18 @@ Multiple column example:
       condensed
       columns={3}
       listItems={[
-        <strong>Hope</strong>,
+        <strong key={1}>Hope</strong>,
         'Love',
-        <em>Peace</em>,
-        <Icon icon='health' height='10px' width='20px' />,
-        <strong>Hope</strong>,
+        <em key={2}>Peace</em>,
+        <Icon key={3} icon='health' height='10px' width='20px' />,
+        <strong key={4}>Hope</strong>,
         'Love',
-        <em>Peace</em>,
-        <Icon icon='health' height='10px' width='20px' />,
-        <strong>Hope</strong>,
+        <em key={5}>Peace</em>,
+        <Icon key={6} icon='health' height='10px' width='20px' />,
+        <strong key={7}>Hope</strong>,
         'Love',
-        <em>Peace</em>,
-        <Icon icon='health' height='10px' width='20px' />,
+        <em key={8}>Peace</em>,
+        <Icon key={9} icon='health' height='10px' width='20px' />,
       ]}
     />
 ```
@@ -67,10 +67,10 @@ Numbered example:
     <List
       numberedList
       listItems={[
-        <strong>Hope</strong>,
+        <strong key={1}>Hope</strong>,
         'Love',
-        <em>Peace</em>,
-        <Icon icon='health' height='10px' width='20px' />
+        <em key={2}>Peace</em>,
+        <Icon key={3} icon='health' height='10px' width='20px' />
       ]}
     />
 ```

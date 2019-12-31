@@ -1,4 +1,4 @@
-export const ru = num => `${num * 1.5}rem`;
+export const ru = (num) => `${num * 1.5}rem`;
 
 export default {
   ru,

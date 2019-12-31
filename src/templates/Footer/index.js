@@ -82,7 +82,7 @@ function renderPhoneInfo(phoneNumber, hours) {
 
       <div className={styles['hours']}>
         {
-          hours && hours.map(hour =>
+          hours && hours.map((hour) => (
             <Text
               key={hour}
               size={10}
@@ -90,7 +90,7 @@ function renderPhoneInfo(phoneNumber, hours) {
             >
               {hour}
             </Text>
-          )
+          ))
         }
       </div>
     </Col>
@@ -142,7 +142,7 @@ function Footer(props) {
               font='a'
             >
             Live chat
-          </Text>
+            </Text>
           </LinkWrapper>
 
           <Spacer size={24} />
@@ -167,7 +167,6 @@ function Footer(props) {
           </LinkWrapper>
         </Col>
 
-
         <Col className={styles['mobile-actions']}>
           <Spacer size={18} />
 
@@ -187,7 +186,7 @@ function Footer(props) {
             onClick={onClickChat}
           >
           Live Chat
-        </Button>
+          </Button>
 
           <Spacer size={18} />
 
@@ -229,30 +228,34 @@ function Footer(props) {
   );
 }
 
-
 Footer.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Formatted Contact phone number. Can be wrapped in additional markup
    */
   phoneNumber: PropTypes.node,
+
   /**
    * Function to trigger chat.
    */
   onClickChat: PropTypes.func.isRequired,
+
   /**
    * Array of Links `[ { text: 'link text', href: 'http://link.com' } ]`
    */
   links: PropTypes.arrayOf(
-      PropTypes.shape({
-        text: PropTypes.string,
-        href: PropTypes.string.isRequired,
-      })
-    ),
+    PropTypes.shape({
+      text: PropTypes.string,
+      href: PropTypes.string.isRequired,
+    })
+  ),
+
   /**
    * Sets the email address
    */

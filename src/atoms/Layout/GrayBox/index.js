@@ -25,6 +25,7 @@ function GrayBox(props) {
 GrayBox.rclName = 'Col';
 
 GrayBox.propTypes = {
+
   /**
    * Supply any additional class names.
    */

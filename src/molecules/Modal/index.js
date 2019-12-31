@@ -72,23 +72,27 @@ class Modal extends React.Component {
   }
 
   closeDOMStyle() {
+    const { windowPosition } = this.state;
+
     document.body.style.overflow = '';
 
     if (checkiOSDevice(navigator.userAgent)) {
       document.body.style.position = '';
-      window.scrollTo(0, this.state.windowPosition);
+      window.scrollTo(0, windowPosition);
     }
   }
 
   wrapChild = (child) => {
     if (child.type === MobileMenu) return child;
 
+    const { sectionClassName } = this.props;
+
     return React.createElement(
       'div',
       {
         className: classnames(
           styles['section'],
-          this.props.sectionClassName
+          sectionClassName
         )
       },
       child
@@ -121,7 +125,7 @@ class Modal extends React.Component {
         <div id={dialogId} className={styles['dialog']}>
           <div className={styles['body']}>
             {
-              !hideHeader &&
+              !hideHeader && (
                 <div
                   className={styles['header']}
                 >
@@ -129,7 +133,8 @@ class Modal extends React.Component {
                     className={styles['close-col']}
                   >
                     {
-                      !hideX &&
+                      !hideX
+                      && (
                         <Icon
                           icon='close'
                           className={styles['close']}
@@ -137,6 +142,7 @@ class Modal extends React.Component {
                           width='18px'
                           height='18px'
                         />
+                      )
                     }
                   </div>
 
@@ -148,6 +154,7 @@ class Modal extends React.Component {
                   </Text>
 
                 </div>
+              )
             }
             {React.Children.map(children, this.wrapChild)}
           </div>
@@ -158,8 +165,8 @@ class Modal extends React.Component {
   }
 }
 
-
 Modal.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -223,9 +230,9 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  variant: 'simple',
-  hideX: false,
   hideHeader: false,
+  hideX: false,
+  variant: 'simple',
 };
 
 export default Modal;

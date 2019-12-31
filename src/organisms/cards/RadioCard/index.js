@@ -8,8 +8,7 @@ import Icon from 'atoms/Icon';
 import radioStyles from 'molecules/formfields/RadioField/radio_field.module.scss';
 import styles from './radio_card.module.scss';
 
-
-const isValid = collection => collection && collection.length && collection.length > 0;
+const isValid = (collection) => collection && collection.length && collection.length > 0;
 
 const renderSections = (sections) => {
   if (!isValid(sections)) return null;
@@ -92,6 +91,7 @@ function RadioCard(props) {
         id={`radio-${input.name}`}
         key={`radio-${radioValue}`}
       >
+        { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
         <label
           className={styles['card']}
           htmlFor={`radio-${camelCase(radioValue)}`}
@@ -123,6 +123,7 @@ function RadioCard(props) {
       id={`radio-${input.name}`}
       key={`radio-${radioValue}`}
     >
+      { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
       <label
         className={styles['card']}
         htmlFor={`radio-${camelCase(radioValue)}`}
@@ -136,20 +137,21 @@ function RadioCard(props) {
 
         <div className={styles['content']}>
           <h4 className={styles['title']}>{label}</h4>
-          { description &&
-          <p className={styles['description']}>
-            {description}
-          </p>
-          }
+          { description && (
+            <p className={styles['description']}>
+              {description}
+            </p>
+          )}
           { children }
           { renderSections(sections)}
         </div>
 
         {
-          (image || iconProps) &&
+          (image || iconProps) && (
             <div className={styles['image-wrapper']}>
               { renderImage({ img: { image, label }, iconProps }) }
             </div>
+          )
         }
       </label>
     </div>
@@ -157,6 +159,7 @@ function RadioCard(props) {
 }
 
 RadioCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -167,7 +170,9 @@ RadioCard.propTypes = {
    * bold label displayed in card
    */
   label: (props) => {
-    if (!props['label'] && !props['renderProp']) {
+    const { label, renderProp } = props;
+
+    if (!label && !renderProp) {
       return new Error(
         'Label prop is required',
       );

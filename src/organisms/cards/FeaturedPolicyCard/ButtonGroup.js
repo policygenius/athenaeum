@@ -24,7 +24,7 @@ function ButtonGroup(props) {
         {continueCTAText}
       </Button>
       {
-        onDetails &&
+        onDetails && (
           <div>
             <LinkWrapper
               onClick={onDetails}
@@ -33,19 +33,20 @@ function ButtonGroup(props) {
               {detailsCTAText}
             </LinkWrapper>
           </div>
-
+        )
       }
       {
-        onCompare &&
-        <div>
-          <Spacer spacer={2} />
-          <Button
-            outline
-            onClick={onCompare}
-          >
+        onCompare && (
+          <div>
+            <Spacer spacer={2} />
+            <Button
+              outline
+              onClick={onCompare}
+            >
             Compare
-          </Button>
-        </div>
+            </Button>
+          </div>
+        )
       }
     </div>
   );

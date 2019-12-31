@@ -19,8 +19,9 @@ function wrapper(Component) {
     }
 
     render() {
+      const { value } = this.state;
       const newProps = {
-        value: this.state.value,
+        value,
         onChange: this.onChange,
       };
 

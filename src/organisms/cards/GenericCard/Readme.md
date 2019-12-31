@@ -5,7 +5,7 @@ Generic Card Example:
       icon='xIcon'
       onIconClick={() => alert('I feel so closed rn')}
       footerText='Edit'
-      onFooterLinkClick={() => alert("Ughhh~! You've clicked me")}
+      onFooterLinkClick={() => alert('Ughhh~! You\'ve clicked me')}
     >
       <Text size={5} font='a' color='primary-3'>Janis Ian</Text>
       <Text size={8} font='b' color='neutral-3'>Added to policy.</Text>

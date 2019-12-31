@@ -44,7 +44,7 @@ function FeaturedPolicyCard(props) {
       <div className={contentClasses}>
         { header && header }
         <Spacer small />
-        { premium.price ?
+        { premium.price ? (
           <div className={styles['premium']}>
             <div className={styles['value']}>
               <Text
@@ -66,7 +66,8 @@ function FeaturedPolicyCard(props) {
                 font='a'
                 className={styles['value-small']}
               >
-                .{cents}
+                .
+                {cents}
               </Text>
               <Text
                 tag='span'
@@ -84,9 +85,9 @@ function FeaturedPolicyCard(props) {
 
             {discount && discount}
           </div>
-            :
-          <Text type={7} color='neutral-2'className={styles['default-text']}>{premium.defaultText}</Text>
-          }
+        )
+          :
+          <Text type={7} color='neutral-2' className={styles['default-text']}>{premium.defaultText}</Text>}
 
         <Spacer spacer={6} />
 
@@ -109,8 +110,8 @@ function FeaturedPolicyCard(props) {
   );
 }
 
-
 FeaturedPolicyCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -177,10 +178,13 @@ FeaturedPolicyCard.propTypes = {
     ]).isRequired,
     hoverMessage: PropTypes.node.isRequired,
   })),
+
   /**
    * Setting this to true will add a 'hat' to the policy card
    */
   policyHat: PropTypes.bool,
+
+  detailsCTAText: PropTypes.string
 };
 
 FeaturedPolicyCard.defaultProps = {

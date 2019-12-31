@@ -46,37 +46,43 @@ function PartnerCard(props) {
   );
 }
 
-
 PartnerCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * The name of the icon to render
    */
   icon: PropTypes.string,
+
   /**
    * Text inside the 'Call to Action' button
    */
   actionCopy: PropTypes.string,
+
   /**
    * 'Call to Action' button link
    */
   actionLink: PropTypes.string,
+
   /**
    * Alternatively, may provide a callback for the button
    */
   onButtonClick: PropTypes.func,
+
   /**
    * Provides context for the center text
    */
   centerLabel: PropTypes.string,
+
   /**
    * Short and snappy center text
    */
-  centerText: PropTypes.string.isRequired
+  centerText: PropTypes.string
 };
 
 PartnerCard.defaultProps = {

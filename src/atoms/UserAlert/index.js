@@ -54,8 +54,8 @@ function UserAlert(props) {
                 icon='closeAccent'
                 onClick={onClick}
                 className={styles[`close-stroke-${closeColor}`]}
-                width={'12px'}
-                height={'12px'}
+                width='12px'
+                height='12px'
               />
             </Col>
           </Layout>
@@ -65,16 +65,18 @@ function UserAlert(props) {
   );
 }
 
-
 UserAlert.propTypes = {
+
   /**
    * sets background color for alert, must use our branded colors
    */
   alertColor: PropTypes.string,
+
   /**
    * sets color for X icon; must use our branded colors
    */
   closeColor: PropTypes.string,
+
   /**
    * this determines the top for the sticky component, can be a number or string representing a node
    */
@@ -82,6 +84,7 @@ UserAlert.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+
   /**
    * this determines the bottom boundary for the sticky component, can be a number or string represening a node
    */
@@ -89,18 +92,22 @@ UserAlert.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+
   /**
    * z-index for sticky component
    */
   innerZ: PropTypes.number,
+
   /**
    * determines if sticky component is sticky or not
    */
   enabled: PropTypes.bool,
+
   /**
    * click handler for the close icon
    */
   onClick: PropTypes.func,
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -110,9 +117,10 @@ UserAlert.propTypes = {
 
 UserAlert.defaultProps = {
   alertColor: 'accent-2',
+  alertTop: 0,
   closeColor: 'accent-1',
   enabled: true,
-  alertTop: 0,
+
   // Place any default props here.
 };
 

@@ -5,12 +5,14 @@ import Hide from 'wrappers/Hide';
 import Tooltip from 'atoms/Tooltip';
 import styles from './policy_card.module.scss';
 
-export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
+export const PolicyType = ({
+  label, value, tooltip, hoverMessage
+}) => (
   <div
     className={styles['policy-type']}
   >
     <Tooltip
-      text={
+      text={(
         <div>
           <Hide hideOn='mobile'>
             <Text
@@ -40,14 +42,14 @@ export const PolicyType = ({ label, value, tooltip, hoverMessage }) =>
             {tooltip}
           </Text>
         </div>
-      }
+      )}
       hoverMessageClassName={styles['policy-type-hover-message']}
       className={styles['policy-type-tooltip']}
     >
       { hoverMessage }
     </Tooltip>
   </div>
-;
+);
 
 PolicyType.propTypes = {
   label: PropTypes.string,

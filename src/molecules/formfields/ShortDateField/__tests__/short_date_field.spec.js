@@ -14,7 +14,7 @@ describe('<ShortDateField />', () => {
       label: 'a label',
       input: {
         name: 'aDate',
-        onChange: () => {},
+        onChange: jest.fn(),
         value: '',
         onFocus: jest.fn(),
       },
@@ -24,11 +24,12 @@ describe('<ShortDateField />', () => {
       },
       tooltip: 'some-tooltip',
       setScrollRef: jest.fn().mockReturnValue(jest.fn()),
-      render: ({ monthField, yearField }) =>
+      render: ({ monthField, yearField }) => (
         <React.Fragment>
           { monthField() }
           { yearField() }
         </React.Fragment>
+      )
       ,
     };
 

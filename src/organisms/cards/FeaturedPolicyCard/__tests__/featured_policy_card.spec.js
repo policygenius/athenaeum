@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import FeaturedPolicyCard from 'organisms/cards/FeaturedPolicyCard';
@@ -36,12 +35,6 @@ describe('<FeaturedPolicyCard />', () => {
       onDetails: jest.fn(),
       discount: <div />
     };
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<FeaturedPolicyCard {...defaultProps} />);
-
-    expect(wrapper.type()).toEqual(FeaturedPolicyCard);
   });
 
   it('renders correctly', () => {

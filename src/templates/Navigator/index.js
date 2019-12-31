@@ -23,7 +23,7 @@ function renderButton(buttonProps) {
   );
 }
 
-const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
+const NavigatorUserAlert = ({ userAlert, enabled, className }) => (
   <UserAlert
     enabled={enabled}
     onClick={userAlert.onClick}
@@ -40,7 +40,8 @@ const NavigatorUserAlert = ({ userAlert, enabled, className }) =>
     >
       {userAlert.text}
     </Text>
-  </UserAlert>;
+  </UserAlert>
+);
 
 function Navigator(props) {
   const {
@@ -56,7 +57,6 @@ function Navigator(props) {
     onMenuClick,
     userAlert,
   } = props;
-
 
   return (
     <div className={classnames(styles['navigator'], className)}>
@@ -79,7 +79,7 @@ function Navigator(props) {
                   <Sticky
                     enabled
                     top={36}
-                    bottomBoundary={'#sticky-bottom'}
+                    bottomBoundary='#sticky-bottom'
                     activeClass={styles['sticky']}
                   >
                     <Icon icon='pgLogoBlack' className={styles['logo']} />
@@ -124,19 +124,20 @@ function Navigator(props) {
               </div>
             </Col>
             {
-              contactProps &&
-              <div className={styles['contact-card']}>
-                <ContactCard {...contactProps} />
-              </div>
+              contactProps && (
+                <div className={styles['contact-card']}>
+                  <ContactCard {...contactProps} />
+                </div>
+              )
             }
           </Layout>
         </Col>
         <Col className={styles['main']}>
           <div className={styles['user-alert']}>
-            { userAlert.condition &&
+            { userAlert.condition && (
               <Sticky
                 enabled
-                bottomBoundary={'#mobile-bottom'}
+                bottomBoundary='#mobile-bottom'
                 activeClass={styles['sticky']}
               >
                 <NavigatorUserAlert
@@ -145,7 +146,7 @@ function Navigator(props) {
                   className='user-alert'
                 />
               </Sticky>
-            }
+            )}
           </div>
           <Layout
             className={styles['main-layout']}
@@ -170,10 +171,11 @@ function Navigator(props) {
               style={{ marginLeft: 'auto' }}
             >
               {
-                contactProps &&
-                <div className={styles['contact-card']}>
-                  <ContactCard {...contactProps} />
-                </div>
+                contactProps && (
+                  <div className={styles['contact-card']}>
+                    <ContactCard {...contactProps} />
+                  </div>
+                )
               }
               <Sticky
                 enabled
@@ -197,11 +199,13 @@ function Navigator(props) {
 }
 
 Navigator.propTypes = {
+
   /**
    * This prop will be add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Text to show up on left rail
    */
@@ -220,10 +224,12 @@ Navigator.propTypes = {
   mobileHeader: PropTypes.node,
   sidebar: PropTypes.node,
   footer: PropTypes.node,
+
   /**
    * Click handler for mobile menu hambuger
    */
   onMenuClick: PropTypes.func,
+
   /**
    * object to set all properties for user alert
    */

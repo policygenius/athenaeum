@@ -33,7 +33,7 @@ function SimpleFeaturedPolicyCard(props) {
   return (
     <div className={classnames(...classes)}>
       <div className={styles['content']}>
-        { premium.price ?
+        { premium.price ? (
           <div className={styles['premium']}>
             <Text
               type={3}
@@ -44,26 +44,27 @@ function SimpleFeaturedPolicyCard(props) {
 
             {premium.tooltip}
           </div>
+        )
           :
-          <Text type={7} font='a'>{premium.defaultText}</Text>
-        }
+          <Text type={7} font='a'>{premium.defaultText}</Text>}
 
         <Spacer size={24} />
 
         {
-          carrierLogo.type !== 'img' ?
+          carrierLogo.type !== 'img' ? (
             <div className={styles['carrier-info']}>
               { carrierLogo }
             </div>
-            :
-            <div className={styles['carrier-logo']}>
-              { carrierLogo }
-            </div>
+          )
+            : (
+              <div className={styles['carrier-logo']}>
+                { carrierLogo }
+              </div>
+            )
         }
 
-
         {
-          onContinue &&
+          onContinue && (
             <React.Fragment>
               <Spacer size={36} />
               <ButtonGroup
@@ -72,14 +73,14 @@ function SimpleFeaturedPolicyCard(props) {
                 continueCTAText={continueCTAText}
               />
             </React.Fragment>
-        }
+          )}
       </div>
     </div>
   );
 }
 
-
 SimpleFeaturedPolicyCard.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -103,6 +104,7 @@ SimpleFeaturedPolicyCard.propTypes = {
     ]),
     format: PropTypes.string,
     defaultText: PropTypes.node,
+    tooltip: PropTypes.string
   }),
 
   /**

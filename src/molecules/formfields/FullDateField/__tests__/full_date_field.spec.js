@@ -7,6 +7,7 @@ import FullDateField from 'molecules/formfields/FullDateField';
 
 describe('<FullDateField />', () => {
   let props;
+
   let component;
 
   beforeEach(() => {
@@ -14,7 +15,7 @@ describe('<FullDateField />', () => {
       label: 'a label',
       input: {
         name: 'aDate',
-        onChange: () => {},
+        onChange: jest.fn(),
         value: '',
         onFocus: jest.fn(),
       },
@@ -24,12 +25,13 @@ describe('<FullDateField />', () => {
       },
       tooltip: 'some-tooltip',
       setScrollRef: jest.fn().mockReturnValue(jest.fn()),
-      render: ({ dayField, monthField, yearField }) =>
+      render: ({ dayField, monthField, yearField }) => (
         <React.Fragment>
           { monthField() }
           { dayField() }
           { yearField() }
         </React.Fragment>
+      )
       ,
     };
   });

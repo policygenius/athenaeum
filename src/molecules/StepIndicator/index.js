@@ -15,25 +15,27 @@ function StepIndicator(props) {
   return (
     <div className={classnames(className)}>
       <div className={styles['step-indicator']}>
-        {steps.map((step, idx) =>
+        {steps.map((step, idx) => (
           <ProgressBarStep
             key={idx}
             step={step}
             navigateToPath={navigateToPath}
             staticBar={!clickable}
           />
-        )}
+        ))}
       </div>
     </div>
   );
 }
 
 StepIndicator.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * An array of the steps to display
    */
@@ -49,10 +51,12 @@ StepIndicator.propTypes = {
       clickable: PropTypes.bool,
     })
   ).isRequired,
+
   /**
    * Click handler for steps; expects to be called with path name
    */
   navigateToPath: PropTypes.func,
+
   /**
    * Bool will determine whether any steps are clickable. Set to `false` for non-functional, presentation-only progress bars
    */

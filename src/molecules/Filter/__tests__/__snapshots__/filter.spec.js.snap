@@ -16,7 +16,7 @@ exports[`<Filter /> renders correctly 1`] = `
     <select
       className="select"
       id={undefined}
-      onChange={[Function]}
+      onBlur={[Function]}
       value={2}
     >
       <option

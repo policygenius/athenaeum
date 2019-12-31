@@ -33,14 +33,17 @@ const Element = (props) => {
 };
 
 Element.propTypes = {
+
   /**
    * Tag name
    */
   tag: PropTypes.string,
+
   /**
    * Custom className
    */
   className: PropTypes.string,
+
   /**
    * Typography weight
    */
@@ -51,6 +54,7 @@ Element.propTypes = {
     'regular',
     'fineprint',
   ]),
+
   /**
    * Typography settings
    * 0: 68px,
@@ -63,6 +67,7 @@ Element.propTypes = {
    * 7: 13px
    */
   typography: PropTypes.oneOf([ 0, 1, 2, 3, 4, 5, 6, 7 ]),
+
   /**
    * Controls spacing below this element. Default is at 0. Increases by ru(.25) until spacer={10}.
    * spacer={11} yields ru(3). /n

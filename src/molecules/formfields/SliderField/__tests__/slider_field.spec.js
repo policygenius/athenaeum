@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import SliderField from 'molecules/formfields/SliderField';
@@ -15,12 +14,6 @@ describe('<SliderField />', () => {
         onChange: jest.fn(),
       }
     };
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<SliderField {...defaultProps} />);
-
-    expect(wrapper.type()).toEqual(SliderField);
   });
 
   it('renders correctly', () => {

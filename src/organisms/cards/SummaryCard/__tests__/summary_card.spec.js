@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import SummaryCard from 'organisms/cards/SummaryCard';
@@ -18,12 +17,6 @@ describe('<SummaryCard />', () => {
         { text: 'A link', onClick: jest.fn() }, { text: 'second link', onClick: jest.fn() }
       ]
     };
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<SummaryCard {...props} />);
-
-    expect(wrapper.type()).toEqual(SummaryCard);
   });
 
   it('renders correctly', () => {

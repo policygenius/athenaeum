@@ -39,7 +39,7 @@ Navigator Example:
         }
       }}
 
-      mobileHeader={
+      mobileHeader={(
         <div>
           <HeaderAmount
             label='So far so good'
@@ -48,17 +48,17 @@ Navigator Example:
             onClick={() => setState({ menuActive: !state.menuActive })}
             menuActive={state.menuActive}
           />
-          { state.menuActive &&
+          { state.menuActive && (
             <GenericCard variant='mobile'>
               <Button>hello, world</Button>
             </GenericCard>
-          }
+          )}
         </div>
-      }
+      )}
 
       sidebar={<div>Sidebar</div>}
 
-      footer={
+      footer={(
         <Footer
           phoneNumber='1 (855) 695-2255'
           links={[
@@ -74,7 +74,7 @@ Navigator Example:
             ]
           }
         />
-      }
+      )}
       onMenuClick={() => alert('menu clicked')}
     >
       <form>

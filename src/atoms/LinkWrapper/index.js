@@ -33,6 +33,7 @@ function LinkWrapper( props ) {
 }
 
 LinkWrapper.propTypes = {
+
   /**
    * This wrapper will take any props that you would use
    * for an anchor `<a>` tag. `href` is just an example.
@@ -48,14 +49,17 @@ LinkWrapper.propTypes = {
    * color of link; follows PG color naming. Neutral colors not available
    */
   color: PropTypes.string,
+
   /**
    * Possible variants are: `no-text-decoration`
    */
   variant: PropTypes.string,
+
   /**
    * Possible type attributes are: `primary` and `secondary`
    */
   type: PropTypes.string,
+
   /**
    * Possible type attributes are: `float`, `underline`
    */

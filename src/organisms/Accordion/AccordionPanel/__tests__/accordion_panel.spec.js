@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
 import renderer from 'react-test-renderer';
 
-import AccordionPanel from '../';
+import AccordionPanel from '..';
 
 describe('<AccordionPanel />', () => {
   // let defaultProps;
@@ -12,12 +12,6 @@ describe('<AccordionPanel />', () => {
   //     // Add default props here
   //   };
   // });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<AccordionPanel />);
-
-    expect(wrapper.type()).toEqual(AccordionPanel);
-  });
 
   it('renders correctly', () => {
     const actual = renderer.create(<AccordionPanel />).toJSON();

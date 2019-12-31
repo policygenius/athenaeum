@@ -45,6 +45,7 @@ function AddCard( props ) {
 }
 
 AddCard.propTypes = {
+
   /**
    * text to be displayed on card
    */

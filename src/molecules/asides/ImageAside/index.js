@@ -44,7 +44,7 @@ function ImageAside( props ) {
           className={styles['image']}
           src={image}
           data-src={dataSrc}
-          role='presentation'
+          alt=''
         />
       </div>
     );
@@ -78,6 +78,7 @@ function ImageAside( props ) {
 }
 
 ImageAside.propTypes = {
+
   /**
    * basic variant
    */
@@ -122,6 +123,7 @@ ImageAside.propTypes = {
    * bold variant
    */
   bold: PropTypes.bool,
+
   /**
    * text displayed below the main header
    */

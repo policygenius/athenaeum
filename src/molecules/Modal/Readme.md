@@ -28,6 +28,8 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
       }
 
       render() {
+        const { modalIsOpen } = this.state;
+
         return (
           <div>
             <Button onClick={this.openModal}>Open Modal</Button>
@@ -35,7 +37,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
             <Modal
               header={'Hmmm, we couldn\'t find your address'}
               onRequestClose={this.closeModal}
-              isOpen={this.state.modalIsOpen}
+              isOpen={modalIsOpen}
               contentLabel='Modal'
             >
               <div>
@@ -125,6 +127,8 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
       }
 
       render() {
+        const { modalIsOpen } = this.state;
+
         return (
           <div>
             <Button onClick={this.openModal}>Open No Header Modal</Button>
@@ -132,7 +136,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
             <Modal
               variant='x-large'
               onRequestClose={this.closeModal}
-              isOpen={this.state.modalIsOpen}
+              isOpen={modalIsOpen}
               contentLabel='Modal'
               hideHeader
             >
@@ -223,6 +227,8 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
       }
 
       render() {
+        const { modalIsOpen } = this.state;
+
         return (
           <div>
             <Button onClick={this.openModal}>Open Mobile Modal</Button>
@@ -230,7 +236,7 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
             <Modal
               header='Menu'
               onRequestClose={this.closeModal}
-              isOpen={this.state.modalIsOpen}
+              isOpen={modalIsOpen}
               contentLabel='Modal'
               variant='mobile'
             >
@@ -279,6 +285,8 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
       }
 
       render() {
+        const { modalIsOpen } = this.state;
+
         return (
           <div>
             <Button onClick={this.openModal}>Open Styled Sections Modal</Button>
@@ -286,17 +294,17 @@ This uses [`ReactModal`](https://github.com/reactjs/react-modal) under the hood 
             <Modal
               hideHeader
               onRequestClose={this.closeModal}
-              isOpen={this.state.modalIsOpen}
+              isOpen={modalIsOpen}
               contentLabel='Modal'
               sectionClassName='example-section-class'
             >
-            <div>'Child 1'</div>
-            <div>'Child 2'</div>
-            <div>'Child 3'</div>
-            <div>'Child 4'</div>
-            <div>'Child 5'</div>
+              <div>'Child 1'</div>
+              <div>'Child 2'</div>
+              <div>'Child 3'</div>
+              <div>'Child 4'</div>
+              <div>'Child 5'</div>
             </Modal>
-            </div>
+          </div>
         )
       }
     }

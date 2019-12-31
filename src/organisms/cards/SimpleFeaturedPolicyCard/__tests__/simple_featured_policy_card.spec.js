@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import SimpleFeaturedPolicyCard from 'organisms/cards/SimpleFeaturedPolicyCard';
@@ -21,12 +20,6 @@ describe('<SimpleFeaturedPolicyCard />', () => {
         name: 'a_unique_name',
       }
     };
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<SimpleFeaturedPolicyCard {...defaultProps} />);
-
-    expect(wrapper.type()).toEqual(SimpleFeaturedPolicyCard);
   });
 
   it('renders correctly', () => {

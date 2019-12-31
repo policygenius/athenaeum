@@ -2,12 +2,12 @@
 
 ```jsx
     <SimpleFeaturedPolicyCard
-      carrierLogo={
+      carrierLogo={(
         <img
           src='http://res.cloudinary.com/policygenius/image/upload/v1500328467/mutual-of-omaha-dark.svg'
           alt='hello'
         />
-      }
+      )}
       premium={{
         price: 26.73,
         format: 'mo',

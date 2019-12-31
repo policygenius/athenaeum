@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import Img from 'atoms/Img';
 
 describe('<Img />', () => {
-  const warn = console.warn;
+  const { warn } = console;
 
   beforeAll(() => {
     console.warn = jest.fn();

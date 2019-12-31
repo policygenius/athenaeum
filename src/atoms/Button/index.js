@@ -55,6 +55,7 @@ function Button( props ) {
 }
 
 Button.propTypes = {
+
   /**
    * Will append new classname to classSet
    */
@@ -94,14 +95,17 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 
   onClick: PropTypes.func,
+
   /**
    * Passes text into the button. Works the same way as passing children
    */
   text: PropTypes.string,
+
   /**
    * Will prevent the button from flexing to fill its parent container
    */
   unflex: PropTypes.bool,
+
   /**
    * Passes any link attributes onto the a tag.
    */

@@ -45,10 +45,12 @@ CheckBoxField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+
   /**
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+
   /**
    * The props under the input key are passed from `redux-form` and spread into `<input />`.
    */

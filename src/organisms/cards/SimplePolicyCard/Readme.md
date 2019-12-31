@@ -2,12 +2,12 @@
 
 ```jsx
     <SimplePolicyCard
-      carrierLogo={
+      carrierLogo={(
         <img
           src='https://cdn-staging.policygenius.com/assets/insurance-cards-logos/banner-life-dark-2x-c02aef5dc27115997f3185217e684806.png'
           alt='hello'
         />
-      }
+      )}
       premium={{
         price: 13,
         format: 'mo',
@@ -27,12 +27,12 @@ Selected Example:
 
 ```jsx
     <SimplePolicyCard
-      carrierLogo={
+      carrierLogo={(
         <img
           src='https://cdn-staging.policygenius.com/assets/insurance-cards-logos/banner-life-dark-2x-c02aef5dc27115997f3185217e684806.png'
           alt='hello'
         />
-      }
+      )}
       premium={{
         price: 13,
         format: 'mo',

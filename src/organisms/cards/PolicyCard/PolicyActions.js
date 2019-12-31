@@ -8,7 +8,7 @@ import Hide from 'wrappers/Hide';
 import Spacer from 'atoms/Spacer';
 import styles from './policy_card.module.scss';
 
-const ResponsiveText = ({ text, offset, size }) =>
+const ResponsiveText = ({ text, offset, size }) => (
   <svg
     width='100%'
     viewBox={`${offset} 0 ${size} 15`}
@@ -16,8 +16,7 @@ const ResponsiveText = ({ text, offset, size }) =>
   >
     <text x='0' y='12'>{text}</text>
   </svg>
-
-;
+);
 
 export const PolicyActions = (props) => {
   const {
@@ -31,7 +30,7 @@ export const PolicyActions = (props) => {
 
   return (
     <div className={styles['actions']}>
-      { premium.price ?
+      { premium.price ? (
         <div>
           <Text type={11} font='a' color='neutral-2' bold>
             <Text type={4} font='a' color='primary-3' bold>{formattedPremium}</Text>
@@ -40,9 +39,9 @@ export const PolicyActions = (props) => {
           </Text>
           {discount && discount}
         </div>
+      )
         :
-        premium.defaultText
-      }
+        premium.defaultText}
       <Spacer spacer={3} />
       <Layout smallCols={[ 12 ]} style={{ width: '100%' }}>
         <Button onClick={onContinue} className={styles['view-policy']}>

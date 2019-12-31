@@ -7,7 +7,7 @@ import Spacer from 'atoms/Spacer';
 import CheckBoxField from 'molecules/formfields/CheckBoxField';
 import styles from './policy_card.module.scss';
 
-const Compare = ({ compareSelected, onCompare, name }) =>
+const Compare = ({ compareSelected, onCompare, name }) => (
   <Hide hideOn='mobile' className={styles['compare']}>
     <div
       id={`${name}-checkbox-wrapper`}
@@ -33,8 +33,7 @@ const Compare = ({ compareSelected, onCompare, name }) =>
       />
     </div>
   </Hide>
-
-;
+);
 
 Compare.propTypes = {
   compareSelected: PropTypes.bool,

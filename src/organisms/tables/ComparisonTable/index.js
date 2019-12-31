@@ -13,7 +13,9 @@ import Tooltip from 'atoms/Tooltip';
 import styles from './comparison_table.module.scss';
 
 const ComparisonTable = (props) => {
-  const { children, expandable, expanded, tableItems } = props;
+  const {
+    children, expandable, expanded, tableItems
+  } = props;
   const expandableClass = expandable && !expanded ? 'table-expandable' : false;
   const tableClass = cx(
     styles['comparison-table'],
@@ -23,9 +25,9 @@ const ComparisonTable = (props) => {
   return (
     <div className={tableClass}>
       {
-        React.Children.map(children, child =>
+        React.Children.map(children, (child) => (
           React.isValidElement(child) ? React.cloneElement(child, { expandable, expanded, tableItems }) : child
-        )
+        ))
       }
     </div>
   );
@@ -42,7 +44,7 @@ class TableHeader extends React.Component {
     const childrenArray = React.Children.toArray(children);
 
     if (showMissing && tableItems === 1 && childrenArray.length === 1) {
-      return childrenArray.concat([ <Col /> ]);
+      return childrenArray.concat([ <Col key={childrenArray.length} /> ]);
     }
 
     return childrenArray;
@@ -84,7 +86,9 @@ class TableHeader extends React.Component {
   }
 
   render() {
-    const { children, expandable, expanded, offset, tableItems, showMissing } = this.props;
+    const {
+      children, expandable, expanded, offset, tableItems, showMissing
+    } = this.props;
 
     if (expandable && !expanded) {
       return (
@@ -93,9 +97,7 @@ class TableHeader extends React.Component {
           mediumCols={[ 8, 4 ]}
         >
           {
-            React.Children.map(children, (child, idx) =>
-              <Col key={idx} className={styles['header-expandable']}>{ child }</Col>
-            )
+            React.Children.map(children, (child, idx) => <Col key={idx} className={styles['header-expandable']}>{ child }</Col>)
           }
         </Layout>
       );
@@ -111,9 +113,9 @@ class TableHeader extends React.Component {
           <Col className={styles['col-offset-header']} />
 
           {
-            this.headerToRender.map((child, idx) =>
+            this.headerToRender.map((child, idx) => (
               <Col key={idx} className={styles['col-offset-header-cells']}>{ child }</Col>
-            )
+            ))
           }
         </Layout>
       );
@@ -128,7 +130,7 @@ class TableHeader extends React.Component {
 
         {
           showMissing && tableItems === 1 &&
-            <Col />
+          <Col />
         }
       </TableRow>
     );
@@ -215,7 +217,7 @@ class TableRow extends React.Component {
     const { tableItems, showMissing } = this.props;
 
     if (showMissing && tableItems === 1 && this.childrenArray.length === 2) {
-      return this.childrenArray.concat([ <Col /> ]);
+      return this.childrenArray.concat([ <Col key={this.childrenArray.length} /> ]);
     }
 
     return this.childrenArray;
@@ -260,7 +262,7 @@ class TableRow extends React.Component {
       subHeader,
     } = this.props;
 
-    const colClass = this.colClass;
+    const { colClass } = this;
 
     return (
       <Layout
@@ -269,7 +271,7 @@ class TableRow extends React.Component {
         { this.childrenToRender.map((child, idx) => this.renderCol(child, idx, colClass)) }
 
         {
-          subHeader &&
+          subHeader && (
             <Col
               className={styles['sub-header-mobile']}
             >
@@ -280,6 +282,7 @@ class TableRow extends React.Component {
                 {subHeader}
               </Text>
             </Col>
+          )
         }
       </Layout>
     );
@@ -326,6 +329,7 @@ TableRow.propTypes = {
 };
 
 ComparisonTable.propTypes = {
+
   /**
    * If true, allows for a header with an expand button. Must be used in conjunction with expanded.
    */
@@ -350,6 +354,7 @@ ComparisonTable.defaultProps = {
 };
 
 TableHeader.propTypes = {
+
   /**
    * If true, allows for a header with an expand button. Must be used in conjunction with expanded.
    */

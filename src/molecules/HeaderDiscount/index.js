@@ -30,11 +30,13 @@ function HeaderDiscount(props) {
 }
 
 HeaderDiscount.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * current amount
    */
@@ -42,10 +44,12 @@ HeaderDiscount.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+
   /**
    * denote unit (i.e /mo, per month, yr)
    */
   unit: PropTypes.string,
+
   /**
    *  previous amount. There are no checks to see that its lower than the current price.
    */

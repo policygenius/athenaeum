@@ -21,11 +21,13 @@ function Line(props) {
 }
 
 Line.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Border Type dotted or dashed.
    */
@@ -33,6 +35,7 @@ Line.propTypes = {
     'dotted',
     'dashed',
   ]),
+
   /**
    * Determines spacing between the line
    */

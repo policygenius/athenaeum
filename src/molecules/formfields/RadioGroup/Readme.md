@@ -19,6 +19,8 @@
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <RadioGroup
             label='Test label'
@@ -32,7 +34,7 @@
               radioValue='burgers'
               input={{
                 name: 'food',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
             />
@@ -41,7 +43,7 @@
               radioValue='dogs'
               input={{
                 name: 'food',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
             />

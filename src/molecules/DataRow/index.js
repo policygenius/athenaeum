@@ -63,11 +63,13 @@ function DataRow(props) {
 }
 
 DataRow.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Possible variants are: `large`, `sub` or (default)
    */
@@ -75,11 +77,13 @@ DataRow.propTypes = {
     'large',
     'sub',
   ]),
+
   /**
    * When passed `highlight`, the datarow wraps its value
    * with a highlight class & accordant styles
    */
   highlight: PropTypes.bool,
+
   /**
    * label/name for data
    */
@@ -87,6 +91,7 @@ DataRow.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]).isRequired,
+
   /**
    * description in small text under label.
    */
@@ -94,10 +99,12 @@ DataRow.propTypes = {
     PropTypes.string,
     PropTypes.node,
   ]),
+
   /**
    * value can be anything preferably `string`, `number`, or `node`.
    */
   value: PropTypes.node,
+
   /**
    * a number that will be transformed into a currency amount to $00.00 format.
    * amount takes precedence over value, use one or the other.
@@ -106,19 +113,23 @@ DataRow.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+
   /**
    * per unit for Amount displayed, used in conjuction with amount.
    */
   unit: PropTypes.string,
+
   /**
    * optional helper text describing this data, adds a hover-able tooltip.
    */
   tooltip: PropTypes.string,
+
   /**
    * indents datarow items. // Deprecated. Now instead of indenting datarow
    * items, prefer to pass in 'subitem' prop
    */
   indent: PropTypes.bool,
+
   /**
    * Mark row as supplementary information (ie. Jewelry line under Valuables header)
    */

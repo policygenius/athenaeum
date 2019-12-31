@@ -23,7 +23,7 @@ function formatText(text) {
       smallCols={cols}
     >
       {
-        text.map((t, idx) =>
+        text.map((t, idx) => (
           <div
             key={`summary-card-lockup-${idx}`}
           >
@@ -31,7 +31,7 @@ function formatText(text) {
             <Spacer size={6} />
             <Text size={8} font='b' color='neutral-3'>{t.subheader}</Text>
           </div>
-        )
+        ))
       }
     </Layout>
   );
@@ -50,7 +50,7 @@ function formatFooter(links) {
       className={styles['footer']}
     >
       {
-        links.map((l, idx) =>
+        links.map((l, idx) => (
           <LinkWrapper
             type='secondary'
             onClick={l.onClick}
@@ -60,7 +60,7 @@ function formatFooter(links) {
               { l.text }
             </Text>
           </LinkWrapper>
-        )
+        ))
       }
     </Layout>
   );
@@ -95,12 +95,13 @@ function SummaryCard( props ) {
         { formatText(text) }
 
         {
-            children &&
-              <Col>
-                <Spacer size={18} />
-                { children }
-              </Col>
-          }
+          children && (
+            <Col>
+              <Spacer size={18} />
+              { children }
+            </Col>
+          )
+        }
       </div>
 
       { footerLinks && formatFooter(footerLinks) }
@@ -109,6 +110,7 @@ function SummaryCard( props ) {
 }
 
 SummaryCard.propTypes = {
+
   /**
    * class name added to class set
    */

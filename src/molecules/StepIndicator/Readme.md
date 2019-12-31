@@ -4,25 +4,29 @@
     <div style={{ width: '100%' }}>
       <StepIndicator
         steps={[
-          { text: 'Basics',
+          {
+            text: 'Basics',
             path: '/basics',
             currentStepActive: false,
             clickable: true,
             nextStepAccessible: true
           },
-          { text: 'Health',
+          {
+            text: 'Health',
             path: '/health_profile',
             currentStepActive: false,
             clickable: true,
             nextStepAccessible: true
           },
-          { text: 'Lifestyle',
+          {
+            text: 'Lifestyle',
             path: '/lifestyle',
             currentStepActive: true,
             clickable: true,
             nextStepAccessible: false
           },
-          { text: 'Pick a policy',
+          {
+            text: 'Pick a policy',
             path: 'comparison',
             currentStepActive: false,
             clickable: false,

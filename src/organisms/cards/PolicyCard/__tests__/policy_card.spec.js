@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import PolicyCard from 'organisms/cards/PolicyCard';
@@ -40,18 +39,12 @@ describe('<PolicyCard />', () => {
         price: 19.8,
         format: 'mo'
       },
-      onContinue: () => {},
-      onDetails: () => {},
+      onContinue: jest.fn(),
+      onDetails: jest.fn(),
       compareCheckbox: {
-        onCompare: () => {},
+        onCompare: jest.fn(),
       },
     };
-  });
-
-  it('renders correctly', () => {
-    const wrapper = mount(<PolicyCard {...defaultProps} />);
-
-    expect(wrapper.type()).toEqual(PolicyCard);
   });
 
   it('renders correctly', () => {

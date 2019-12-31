@@ -35,7 +35,7 @@ export function processChild(child, layoutProps) {
   );
 
   return (
-    <Col {...colProps} >
+    <Col {...colProps}>
       { child }
     </Col>
   );
@@ -56,9 +56,13 @@ export function processChildren(props) {
 
   // start at -1 so can bump to 0 in the conditional below
   let smIdx = -1;
+
   let mdIdx = -1;
+
   let lgIdx = -1;
+
   let xlgIdx = -1;
+
   let xxlgIdx = -1;
 
   return React.Children.map( children, ( child ) => {

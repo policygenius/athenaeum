@@ -48,8 +48,9 @@ describe('Button', () => {
   it('renders the children correctly', () => {
     const wrapper = shallow(
       <Button {...defaultProps} icon='lock'>
-        {'hello world!'}
-      </Button>);
+        hello world!
+      </Button>
+    );
 
     expect(wrapper.contains('hello world!')).toBe(true);
     expect(wrapper.find(Icon).length).toEqual(1);

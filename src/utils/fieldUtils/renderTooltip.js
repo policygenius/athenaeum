@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Icon from 'atoms/Icon';
 import Tooltip from 'atoms/Tooltip';
 
@@ -19,12 +20,12 @@ export default function renderTooltip(tooltip, className, iconClassName) {
       <Tooltip
         className={className}
         right
-        text={
+        text={(
           <Icon
             icon='tooltip'
             className={iconClassName}
           />
-        }
+        )}
       >
         {tooltip}
       </Tooltip>
@@ -36,12 +37,12 @@ export default function renderTooltip(tooltip, className, iconClassName) {
       className={className}
       revealOnClick={tooltip.revealOnClick}
       right
-      text={
+      text={(
         <Icon
           icon='tooltip'
           className={iconClassName}
         />
-      }
+      )}
     >
       { tooltip.children }
     </Tooltip>

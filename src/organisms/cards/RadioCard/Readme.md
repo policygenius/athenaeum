@@ -8,7 +8,7 @@ No Image:
         super(props);
 
         this.state = {
-          radioValue: '',
+          value: '',
         };
 
         this.onChange = this.onChange.bind(this);
@@ -21,6 +21,8 @@ No Image:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <Layout
             mediumCols={[ 6 ]}
@@ -28,7 +30,7 @@ No Image:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -39,7 +41,7 @@ No Image:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -62,7 +64,7 @@ With Image:
         super(props);
 
         this.state = {
-          radioValue: '',
+          value: '',
         };
 
         this.onChange = this.onChange.bind(this);
@@ -75,6 +77,8 @@ With Image:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <Layout
             mediumCols={[ 6 ]}
@@ -82,7 +86,7 @@ With Image:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -94,7 +98,7 @@ With Image:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -118,7 +122,7 @@ With Bottom Sections:
         super(props);
 
         this.state = {
-          radioValue: '',
+          value: '',
         };
 
         this.onChange = this.onChange.bind(this);
@@ -131,6 +135,8 @@ With Bottom Sections:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <Layout
             mediumCols={[ 6 ]}
@@ -138,7 +144,7 @@ With Bottom Sections:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -153,7 +159,7 @@ With Bottom Sections:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -178,7 +184,7 @@ With Bottom Sections and Sublabels:
         super(props);
 
         this.state = {
-          radioValue: '',
+          value: '',
         };
 
         this.onChange = this.onChange.bind(this);
@@ -191,6 +197,8 @@ With Bottom Sections and Sublabels:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <Layout
             mediumCols={[ 6 ]}
@@ -198,7 +206,7 @@ With Bottom Sections and Sublabels:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'
@@ -213,7 +221,7 @@ With Bottom Sections and Sublabels:
             <RadioCard
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange,
               }}
               label='Donec lobortis dui'

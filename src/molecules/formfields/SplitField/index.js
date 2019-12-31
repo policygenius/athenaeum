@@ -49,15 +49,17 @@ function SplitField(props) {
         onFocus={input && input.onFocus}
       >
         <div className={styles.label}>
+          { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
           <label htmlFor='split-field'>{label}</label>
           {
-            subLabel &&
+            subLabel && (
               <Text
                 size={10}
                 font='b'
               >
                 {subLabel}
               </Text>
+            )
           }
         </div>
         <div className={styles['line-1']}>
@@ -74,27 +76,33 @@ function SplitField(props) {
 }
 
 SplitField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Label.
    */
   label: PropTypes.string,
+
   /**
    * Label text placed underneath label.
    */
   subLabel: PropTypes.string,
+
   /**
    * Meta object is passed from reduxForm
    */
   meta: PropTypes.object,
+
   /**
    * Input object is passed from reduxForm
    */
   input: PropTypes.object,
+
   /**
    * Any children passed to SplitField
    */

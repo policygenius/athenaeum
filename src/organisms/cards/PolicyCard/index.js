@@ -14,7 +14,7 @@ import PolicyType from './PolicyType';
 import PolicyInformation from './PolicyInformation';
 import PolicyActions from './PolicyActions';
 
-const objectToArray = obj => reduce(obj, (res, value) => {
+const objectToArray = (obj) => reduce(obj, (res, value) => {
   res.push(value);
 
   return res;
@@ -82,14 +82,16 @@ function PolicyCard(props) {
           />
         </div>
         {
-          !!footer.length &&
-            <div className={styles['footer']}>
-              {footer.map((node, idx) =>
-                <div className={styles['node']} key={`footer-${idx}`}>
-                  {node}
-                </div>
-              )}
-            </div>
+          !!footer.length
+            && (
+              <div className={styles['footer']}>
+                {footer.map((node, idx) => (
+                  <div className={styles['node']} key={`footer-${idx}`}>
+                    {node}
+                  </div>
+                ))}
+              </div>
+            )
         }
       </div>
     </div>

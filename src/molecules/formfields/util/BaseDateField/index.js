@@ -112,36 +112,39 @@ class BaseDateField extends React.Component {
   isValidMonthInput(monthValue) {
     const monthString = String(monthValue);
 
-
     return !monthString || inRange(+monthValue, 0, 13);
   }
 
   isValidDayInput(dayValue) {
+    const { monthValue } = this.state;
+
     const dayString = String(dayValue);
-    const maxDate = get(LAST_DATE_MONTH, `${Number(this.state.monthValue)}`, 32);
+    const maxDate = get(LAST_DATE_MONTH, `${Number(monthValue)}`, 32);
 
     return !dayString || inRange(+dayValue, 0, maxDate);
   }
 
-  set month(monthValue) {
+  set month(value) {
     const { input } = this.props;
+    const { monthValue } = this.state;
 
-    if (this.isValidMonthInput(monthValue)) {
-      this.setState({ monthValue });
-    } else if (this.isValidMonthInput(this.state.monthValue)) {
-      this.setState({ monthValue: this.state.monthValue });
+    if (this.isValidMonthInput(value)) {
+      this.setState({ monthValue: value });
+    } else if (this.isValidMonthInput(monthValue)) {
+      this.setState((prevState) => ({ monthValue: prevState.monthValue }));
     } else {
       input.onChange(null);
     }
   }
 
-  set day(dayValue) {
+  set day(value) {
     const { input } = this.props;
+    const { dayValue } = this.state;
 
-    if (this.isValidDayInput(dayValue)) {
-      this.setState({ dayValue });
-    } else if (this.isValidDayInput(this.state.dayValue)) {
-      this.setState({ dayValue: this.state.dayValue });
+    if (this.isValidDayInput(value)) {
+      this.setState({ dayValue: value });
+    } else if (this.isValidDayInput(dayValue)) {
+      this.setState((prevState) => ({ dayValue: prevState.dayValue }));
     } else {
       input.onChange(null);
     }
@@ -170,95 +173,92 @@ class BaseDateField extends React.Component {
 
   get monthField() {
     const { input: dateFieldInput } = this.props;
+    const { monthValue } = this.state;
 
-    return ({ input = {}, ...props } = {}) =>
-      this.wrapChild(
-        <TextField
-          type='text'
-          placeholder='mm'
-          id={`${dateFieldInput.name}Month`}
-          noBaseStyle
-          input={{
-            name: `${dateFieldInput.name}Month`,
-            ref: (ref) => { this.monthInput = ref; },
-            maxLength: 2,
-            noValidate: true,
-            onChange: (e) => {
-              input.onChange && input.onChange(e);
-              this.month = e.target.value;
-            },
-            onFocus: dateFieldInput.onFocus,
-            onBlur: this.blurIfLeaving,
-            pattern: '[0-9]*',
-            value: this.state.monthValue,
-            ...input,
-          }}
-          {...props}
-        />
-      )
-    ;
+    return ({ input = {}, ...props } = {}) => this.wrapChild(
+      <TextField
+        type='text'
+        placeholder='mm'
+        id={`${dateFieldInput.name}Month`}
+        noBaseStyle
+        input={{
+          name: `${dateFieldInput.name}Month`,
+          ref: (ref) => { this.monthInput = ref; },
+          maxLength: 2,
+          noValidate: true,
+          onChange: (e) => {
+            input.onChange && input.onChange(e);
+            this.month = e.target.value;
+          },
+          onFocus: dateFieldInput.onFocus,
+          onBlur: this.blurIfLeaving,
+          pattern: '[0-9]*',
+          value: monthValue,
+          ...input,
+        }}
+        {...props}
+      />
+    );
   }
 
   get dayField() {
     const { input: dateFieldInput } = this.props;
+    const { dayValue } = this.state;
 
-    return ({ input = {}, ...props } = {}) =>
-      this.wrapChild(
-        <TextField
-          type='text'
-          placeholder='dd'
-          id={`${dateFieldInput.name}Day`}
-          noBaseStyle
-          input={{
-            name: `${dateFieldInput.name}Day`,
-            ref: (ref) => { this.dayInput = ref; },
-            maxLength: 2,
-            noValidate: true,
-            onChange: (e) => {
-              input.onChange && input.onChange(e);
-              this.day = e.target.value;
-            },
-            onFocus: dateFieldInput.onFocus,
-            onBlur: this.blurIfLeaving,
-            pattern: '[0-9]*',
-            value: this.state.dayValue,
-            ...input,
-          }}
-          {...props}
-        />
-      )
-    ;
+    return ({ input = {}, ...props } = {}) => this.wrapChild(
+      <TextField
+        type='text'
+        placeholder='dd'
+        id={`${dateFieldInput.name}Day`}
+        noBaseStyle
+        input={{
+          name: `${dateFieldInput.name}Day`,
+          ref: (ref) => { this.dayInput = ref; },
+          maxLength: 2,
+          noValidate: true,
+          onChange: (e) => {
+            input.onChange && input.onChange(e);
+            this.day = e.target.value;
+          },
+          onFocus: dateFieldInput.onFocus,
+          onBlur: this.blurIfLeaving,
+          pattern: '[0-9]*',
+          value: dayValue,
+          ...input,
+        }}
+        {...props}
+      />
+    );
   }
 
   get yearField() {
     const { input: dateFieldInput } = this.props;
+    const { yearValue } = this.state;
 
-    return ({ input = {}, ...props } = {}) =>
-      this.wrapChild(
-        <TextField
-          type='text'
-          placeholder='yyyy'
-          id={`${dateFieldInput.name}Year`}
-          noBaseStyle
-          input={{
-            name: `${dateFieldInput.name}Year`,
-            ref: (ref) => { this.yearInput = ref; },
-            maxLength: 4,
-            noValidate: true,
-            onChange: (e) => {
-              input.onChange && input.onChange(e);
-              this.year = e.target.value;
-            },
-            onFocus: dateFieldInput.onFocus,
-            onBlur: this.blurIfLeaving,
-            pattern: '[0-9]*',
-            value: this.state.yearValue,
-            ...input,
-          }}
-          {...props}
-        />
-      )
-    ;
+    return ({ input = {}, ...props } = {}) => this.wrapChild(
+      <TextField
+        type='text'
+        placeholder='yyyy'
+        id={`${dateFieldInput.name}Year`}
+        noBaseStyle
+        input={{
+          name: `${dateFieldInput.name}Year`,
+          ref: (ref) => { this.yearInput = ref; },
+          maxLength: 4,
+          noValidate: true,
+          onChange: (e) => {
+            input.onChange && input.onChange(e);
+            this.year = e.target.value;
+          },
+          onFocus: dateFieldInput.onFocus,
+          onBlur: this.blurIfLeaving,
+          pattern: '[0-9]*',
+          value: yearValue,
+          ...input,
+        }}
+        {...props}
+      />
+    );
   }
 
   get numberOfChildren() {
@@ -277,13 +277,13 @@ class BaseDateField extends React.Component {
     ]);
   }
 
-  wrapChild = child =>
+  wrapChild = (child) => (
     <div
       className={this.childClasses}
     >
       {child}
     </div>
-    ;
+  );
 
   wrapper = (children) => {
     const {
@@ -323,17 +323,19 @@ class BaseDateField extends React.Component {
         >
           <div className={styles['label-wrapper']}>
             <div className={styles['label']}>
+              { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
               <label htmlFor='date'>{label}</label>
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
             {
-              subLabel &&
+              subLabel && (
                 <Text
                   size={10}
                   font='b'
                 >
                   {subLabel}
                 </Text>
+              )
             }
           </div>
           <div className={styles['line-1']}>
@@ -351,40 +353,49 @@ class BaseDateField extends React.Component {
 
   render() {
     return null;
+
     // throw Error('Child element should have its own call to .render');
   }
 }
 
 BaseDateField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Label.
    */
   label: PropTypes.string,
+
   /**
    * Label text placed underneath label.
    */
   subLabel: PropTypes.string,
+
   /**
    * Meta object is passed from reduxForm
    */
   meta: PropTypes.object,
+
   /**
    * Input object is passed from reduxForm
    */
   input: PropTypes.object,
+
   /**
    * Any children passed to DateField
    */
   children: PropTypes.node,
+
   /**
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
+
   /**
    * Adds a tooltip to the label. Provide string for text to be placed inside tooltip popup
    */
