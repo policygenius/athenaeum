@@ -31,16 +31,18 @@ steps:
 
   - wait
 
-  - name: ':sonar-scanner:'
-    branches: master
+  - name: ':sonarqube:'
+    branches: 'master'
     command: bin/sonar
     agents:
       queue: runner
     plugins:
       docker-compose:
         run: athenaeum
+    soft_fail:
+      - exit_status: 1
 
-  - name: ':speaker: :sparkle: Automated Code Review'
+  - name: ':sonarqube: Automated Code Review'
     branches: "!master !hotfix/*"
     command: bin/scan-pullrequest
     agents:
@@ -48,6 +50,8 @@ steps:
     plugins:
       docker-compose:
         run: athenaeum
+    soft_fail:
+      - exit_status: 1
 
   - wait
 
