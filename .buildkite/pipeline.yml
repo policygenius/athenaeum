@@ -38,7 +38,7 @@ steps:
       queue: runner
     plugins:
       docker-compose:
-        run: athenaeum
+        run: athenaeum-sonar
     soft_fail:
       - exit_status: 1
 
@@ -49,7 +49,7 @@ steps:
       queue: runner
     plugins:
       docker-compose:
-        run: athenaeum
+        run: athenaeum-sonar
     soft_fail:
       - exit_status: 1
 
