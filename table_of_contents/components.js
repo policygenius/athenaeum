@@ -49,12 +49,6 @@ module.exports = {
           name: 'Cards',
           components: 'src/organisms/cards/**/index.js'
         },
-        {
-          name: 'Other',
-          components: () => [
-            'src/organisms/Accordion/index.js',
-          ]
-        }
       ]
     },
     {
