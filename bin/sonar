@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 buildkite-agent artifact download coverage/lcov.info coverage/ --build ${BUILDKITE_BUILD_ID}
 
