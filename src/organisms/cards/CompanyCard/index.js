@@ -98,11 +98,11 @@ CompanyCard.propTypes = {
    * Possible card sizes are: 'large' or 'small'
   **/
   variant: PropTypes.string,
+
   /**
    * Can pass in react component
   **/
   gatsbyStars: PropTypes.element,
-
 
 };
 

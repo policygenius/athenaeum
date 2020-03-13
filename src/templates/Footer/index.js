@@ -141,7 +141,7 @@ function Footer(props) {
               size={8}
               font='a'
             >
-            Live chat
+              Live chat
             </Text>
           </LinkWrapper>
 
@@ -185,7 +185,7 @@ function Footer(props) {
             outline
             onClick={onClickChat}
           >
-          Live Chat
+            Live Chat
           </Button>
 
           <Spacer size={18} />
