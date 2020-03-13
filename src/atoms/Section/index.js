@@ -46,41 +46,49 @@ function Section(props) {
   );
 }
 
-
 Section.propTypes = {
+
   /**
    * HTML id attribute
    */
   id: PropTypes.string,
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Full string to be used with `url()` for the background-image
    */
   backgroundImageUrl: PropTypes.string,
+
   /**
    * Color style, see [Colors](#colors) for appropriate values
    */
   color: PropTypes.string,
+
   /**
    * Color style, see [Colors](#colors) for appropriate values
    */
   backgroundColor: PropTypes.string,
+
   /**
    * Spacer style, see [Spacers](#spacers) for appropriate values
    */
   spacing: PropTypes.number,
+
   /**
    * Center content
    */
   center: PropTypes.bool,
+
   /**
    * Padding, see [Spacers](#spacers) for appropriate values
    */
   padding: PropTypes.number,
+
   /**
    * React Style object
    */
@@ -88,6 +96,7 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
+
   // Place any default props here.
 };
 

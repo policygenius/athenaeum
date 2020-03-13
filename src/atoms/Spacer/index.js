@@ -20,10 +20,10 @@ const classes = (args) => {
   if (spacer) return [ styles[`top-${spacer}`], className ];
 
   return [
-    xSmall && styles['top-2'],  // ru(.5)
-    small && styles['top-4'],   // ru(1)
-    medium && styles['top-6'],  // ru(1.5)
-    large && styles['top-11'],  // ru(3)
+    xSmall && styles['top-2'], // ru(.5)
+    small && styles['top-4'], // ru(1)
+    medium && styles['top-6'], // ru(1.5)
+    large && styles['top-11'], // ru(3)
     xLarge && styles['top-12'], // ru(6)
     className,
   ];
@@ -34,6 +34,7 @@ function Spacer(props) {
 }
 
 Spacer.propTypes = {
+
   /**
    * extra small spacer
    */
@@ -70,6 +71,7 @@ Spacer.propTypes = {
    * additional className to be added to classSet
    */
   className: PropTypes.string,
+
   /**
    * Size of the spacer
    */

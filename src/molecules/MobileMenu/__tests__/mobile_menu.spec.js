@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Text from 'atoms/Text';
 import Icon from 'atoms/Icon';
 import renderer from 'react-test-renderer';
@@ -17,12 +17,6 @@ describe('<MobileMenu />', () => {
   });
 
   it('renders correctly', () => {
-    const wrapper = mount(<MobileMenu {...defaultProps} />);
-
-    expect(wrapper.type()).toEqual(MobileMenu);
-  });
-
-  it('renders correctly', () => {
     const actual = renderer.create(<MobileMenu {...defaultProps} />).toJSON();
 
     expect(actual).toMatchSnapshot();
@@ -30,8 +24,12 @@ describe('<MobileMenu />', () => {
 
   it('gives the correct color to Text component', () => {
     const tabs = [
-      { icon: 'phone', text: 'Expert Help', active: true, key: 1 },
-      { icon: 'user', text: 'Save My Progress', active: false, key: 2 }
+      {
+        icon: 'phone', text: 'Expert Help', active: true, key: 1
+      },
+      {
+        icon: 'user', text: 'Save My Progress', active: false, key: 2
+      }
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
@@ -46,8 +44,12 @@ describe('<MobileMenu />', () => {
 
   it('gives the correct className to Icon component', () => {
     const tabs = [
-      { icon: 'phone', text: 'Expert Help', active: true, key: 1 },
-      { icon: 'user', text: 'Save My Progress', active: false, key: 2 }
+      {
+        icon: 'phone', text: 'Expert Help', active: true, key: 1
+      },
+      {
+        icon: 'user', text: 'Save My Progress', active: false, key: 2
+      }
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);
@@ -62,8 +64,12 @@ describe('<MobileMenu />', () => {
 
   it('gives the correct classname to tab wrapper', () => {
     const tabs = [
-      { icon: 'phone', text: 'Expert Help', active: true, key: 1 },
-      { icon: 'user', text: 'Save My Progress', active: false, key: 2 }
+      {
+        icon: 'phone', text: 'Expert Help', active: true, key: 1
+      },
+      {
+        icon: 'user', text: 'Save My Progress', active: false, key: 2
+      }
     ];
 
     const wrapper = shallow(<MobileMenu {...defaultProps} tabs={tabs} />);

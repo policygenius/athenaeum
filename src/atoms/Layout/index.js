@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { processChildren } from './utils';
 import styles from './layout.module.scss';
 import Col from './Col';
+import GrayBox from './GrayBox';
 
 function Layout( props ) {
   const {
@@ -39,6 +40,7 @@ function Layout( props ) {
 }
 
 Layout.propTypes = {
+
   /**
    * Supply any additional class names.
    */
@@ -48,6 +50,7 @@ Layout.propTypes = {
    * Supply an id
    */
   id: PropTypes.string,
+
   /**
    * sets bottom spacing between children in Layout
    * - see [Spacer](#spacer) for appropriate values
@@ -155,12 +158,11 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
-  smallCols: [ 12 ],
-  mediumCols: [],
   largeCols: [],
+  mediumCols: [],
+  smallCols: [ 12 ],
   xLargeCols: [],
   xxLargeCols: [],
 };
 
-export { Layout as default, Layout, Col };
-export { GrayBox } from './GrayBox';
+export { Layout as default, Layout, Col, GrayBox };

@@ -19,13 +19,15 @@ RadioField Example:
       }
 
       render() {
+        const { value } = this.state;
+
         return (
           <div>
             <RadioField
               label='Fire extinguisher'
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange
               }}
               radioValue='fire_ext'
@@ -37,7 +39,7 @@ RadioField Example:
               label='Flame thrower'
               input={{
                 name: 'radio_test',
-                value: this.state.value,
+                value,
                 onChange: this.onChange
               }}
               radioValue='flame_throw'

@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import StyledWrapper from 'atoms/StyledWrapper';
 
 describe('<StyledWrapper />', () => {
-  const styles = variables => `
+  const styles = (variables) => `
     background: blue;
     color: white;
     height: 3em;

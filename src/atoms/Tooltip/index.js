@@ -28,10 +28,12 @@ class Tooltip extends React.Component {
   }
 
   openModal = (e) => {
+    const { onClick } = this.props;
+
     (window.innerWidth <= 768) && this.setState({
       modalIsOpen: true
     });
-    this.props.onClick && this.props.onClick(e, true);
+    onClick && onClick(e, true);
   }
 
   closeModal = () => {
@@ -41,9 +43,12 @@ class Tooltip extends React.Component {
   }
 
   toggleVisibility = (e) => {
+    const { onClick } = this.props;
+    const { visible } = this.state;
+
     e.stopPropagation();
-    this.setState({ visible: !this.state.visible });
-    this.props.onClick && this.props.onClick(e, !this.state.visible);
+    this.setState({ visible: !visible });
+    onClick && onClick(e, !visible);
   };
 
   hide = (e) => {
@@ -53,7 +58,7 @@ class Tooltip extends React.Component {
     }
   };
 
-  handleClick = e => window.innerWidth <= 768 ? this.openModal(e) : this.toggleVisibility(e);
+  handleClick = (e) => window.innerWidth <= 768 ? this.openModal(e) : this.toggleVisibility(e);
 
   render() {
     const {
@@ -69,20 +74,22 @@ class Tooltip extends React.Component {
       tooltipIconSize,
     } = this.props;
 
+    const { visible, modalIsOpen } = this.state;
+
     return (
       <span>
         <span
           onClick={revealOnClick ? this.handleClick : this.openModal}
           className={classnames(
             !revealOnClick && styles['tooltip-wrapper'],
-            this.state.visible && styles.reveal,
+            visible && styles.reveal,
             inline && styles[`inline-${inline}`],
             className
           )}
           ref={this.setWrapperRef}
         >
           {
-            text ||
+            text || (
               <Icon
                 icon='tooltip'
                 className={styles['tooltip']}
@@ -90,6 +97,7 @@ class Tooltip extends React.Component {
                 height={`${tooltipIconSize}px`}
                 width={`${tooltipIconSize}px`}
               />
+            )
           }
           <span
             className={classnames(
@@ -105,7 +113,7 @@ class Tooltip extends React.Component {
         <Modal
           header={headerText}
           onRequestClose={this.closeModal}
-          isOpen={this.state.modalIsOpen}
+          isOpen={modalIsOpen}
           contentLabel=''
         >
           {children}
@@ -115,7 +123,6 @@ class Tooltip extends React.Component {
     );
   }
 }
-
 
 Tooltip.propTypes = {
 
@@ -134,14 +141,17 @@ Tooltip.propTypes = {
    * render right-side variant
    */
   right: PropTypes.bool,
+
   /**
    * onClick will override the default `openModal` click handler
    */
   onClick: PropTypes.func,
+
   /**
    * defaults to a question mark Icon
    */
   text: PropTypes.node,
+
   /**
    * className for the hover message
    */

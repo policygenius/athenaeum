@@ -1,8 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import assign from 'lodash/assign';
-import { expect } from 'chai';
 
 import Icon from 'atoms/Icon';
 import Button from '../index';
@@ -12,7 +10,7 @@ describe('Button', () => {
 
   beforeEach(() => {
     defaultProps = {
-      onClick: sinon.spy(),
+      onClick: jest.fn(),
       shake: false,
       type: 'button',
       disabled: false
@@ -22,46 +20,47 @@ describe('Button', () => {
   it('is a <button> tag', () => {
     const wrapper = shallow(<Button />);
 
-    expect(wrapper.type()).to.equal('button');
+    expect(wrapper.type()).toEqual('button');
   });
 
   it('adds the variant prop as a className', () => {
     const props = assign({}, defaultProps, { variant: 'info' });
     const wrapper = shallow(<Button {...props} />);
 
-    expect(wrapper.hasClass(props.variant)).to.be.true;
+    expect(wrapper.hasClass(props.variant)).toBe(true);
   });
 
   it('adds a custom className to button if given in props', () => {
     const props = assign({}, defaultProps, { className: 'customClass' });
     const wrapper = shallow(<Button {...props} />);
 
-    expect(wrapper.hasClass(props.className)).to.be.true;
+    expect(wrapper.hasClass(props.className)).toBe(true);
   });
 
   it('passes button attributes to button if given in props', () => {
     const props = assign({}, defaultProps, { disabled: false, type: 'reset' });
     const wrapper = shallow(<Button {...props} />);
 
-    expect(wrapper.prop('disabled')).to.equal(props.disabled);
-    expect(wrapper.prop('type')).to.equal(props.type);
+    expect(wrapper.prop('disabled')).toEqual(props.disabled);
+    expect(wrapper.prop('type')).toEqual(props.type);
   });
 
   it('renders the children correctly', () => {
     const wrapper = shallow(
       <Button {...defaultProps} icon='lock'>
-        {'hello world!'}
-      </Button>);
+        hello world!
+      </Button>
+    );
 
-    expect(wrapper.contains('hello world!')).to.be.true;
-    expect(wrapper.find(Icon)).to.have.length(1);
-    expect(wrapper.find(Icon).prop('icon')).to.equal('lock');
+    expect(wrapper.contains('hello world!')).toBe(true);
+    expect(wrapper.find(Icon).length).toEqual(1);
+    expect(wrapper.find(Icon).prop('icon')).toEqual('lock');
   });
 
   it('triggers props.onClick when clicked', () => {
     const wrapper = shallow(<Button {...defaultProps} />);
 
     wrapper.find('button').simulate('click');
-    expect(defaultProps.onClick.calledOnce).to.be.true;
+    expect(defaultProps.onClick).toHaveBeenCalled();
   });
 });

@@ -39,24 +39,27 @@ function FeatureSquare(props) {
   );
 }
 
-
 FeatureSquare.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Color style, see [Colors](#colors) for appropriate values
    */
   backgroundColor: PropTypes.string,
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
+  buttonText: PropTypes.string,
+
   /**
    * Icon name, see [Icon](#icon) for appropriate values
    */
   icon: PropTypes.string.isRequired,
+
   /**
    * Button onClick function
    */
@@ -64,6 +67,7 @@ FeatureSquare.propTypes = {
 };
 
 FeatureSquare.defaultProps = {
+
   // Place any default props here.
   buttonText: 'Learn More'
 };

@@ -19,7 +19,7 @@ function MobileMenu(props) {
 
   return (
     <ul className={classnames(...classes)}>
-      { tabs.map((tab, idx) =>
+      { tabs.map((tab, idx) => (
         <li
           className={classnames(
             styles['tab'],
@@ -48,18 +48,19 @@ function MobileMenu(props) {
             {tab.text}
           </Text>
         </li>
-      )}
+      ))}
     </ul>
   );
 }
 
-
 MobileMenu.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Tab data
    */
@@ -70,6 +71,7 @@ MobileMenu.propTypes = {
       active: PropTypes.bool,
     })
   ).isRequired,
+
   /**
    * onClick handler for the tab
    */

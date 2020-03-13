@@ -3,6 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class BaseFieldGroup extends React.Component {
+  wrapperReference = null;
+
+  clickIsLeaving = true;
+
   static propTypes = {
     input: PropTypes.object,
     meta: PropTypes.object,
@@ -15,10 +19,6 @@ class BaseFieldGroup extends React.Component {
   componentWillUnmount() {
     document.removeEventListener('click', this.handleClickOutside, false);
   }
-
-  wrapperReference = null;
-
-  clickIsLeaving = true;
 
   handleClickOutside = (e) => {
     const { input } = this.props;

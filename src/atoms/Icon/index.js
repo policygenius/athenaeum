@@ -27,7 +27,7 @@ class Icon extends React.Component {
 
   getSVG = (count, option) => {
     fetch(this.svgSrc, option)
-      .then(data => data.text())
+      .then((data) => data.text())
       .then((svg) => {
         this.setState({
           svgString: svg,
@@ -67,6 +67,8 @@ class Icon extends React.Component {
       ...rest
     } = this.props;
 
+    const { svgString } = this.state;
+
     if (!icon) { return null; }
 
     const wrapperProps = {
@@ -85,23 +87,23 @@ class Icon extends React.Component {
       ...rest
     };
 
-    if (renderSVGDOM && this.state.svgString) {
+    if (renderSVGDOM && svgString) {
       return (
-        <span {...wrapperProps} >
+        <span {...wrapperProps}>
           <SVGInline
-            svg={this.state.svgString}
+            svg={svgString}
           />
         </span>
       );
     }
 
     const isLazy = lazy && checkLS();
-    const sanitizedIcon = this.sanitizedIcon;
+    const { sanitizedIcon } = this;
     const src = this.svgSrc;
 
     // lazyload css class comes from Img component
     return (
-      <span {...wrapperProps} >
+      <span {...wrapperProps}>
         <img
           className={cx(
             styles.img,
@@ -118,28 +120,33 @@ class Icon extends React.Component {
   }
 }
 
-
 Icon.propTypes = {
+
   /**
    * Supply any additional class names. Resize the icon via the parent's stylesheet.
    */
   className: PropTypes.string,
+
   /**
    * The icon you'd like to display from our cloud library.
    */
   icon: PropTypes.oneOf(ICONS).isRequired,
+
   /**
    * Click handler for the wrapper div around the svg
    */
   onClick: PropTypes.func,
+
   /**
    * Override the default height of the icon. Icon will maintain its proportions.
    */
   height: PropTypes.string,
+
   /**
    * Override the default width of the icon. Icon will maintain its proportions.
    */
   width: PropTypes.string,
+
   /**
    * For use with another component e.g. Text. Vertically aligns to the middle, adds margin.
    */
@@ -147,14 +154,17 @@ Icon.propTypes = {
     PropTypes.oneOf([ 'left', 'right' ]),
     PropTypes.bool
   ]),
+
   /**
    * Set to false to turn off lazyloading.
    */
   lazy: PropTypes.bool,
+
   /**
    * Defaults to icon name.
    */
   alt: PropTypes.string,
+
   /**
    * Defaults to icon name.
    */

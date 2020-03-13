@@ -92,7 +92,7 @@ describe('<Layout />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('wraps its child `<Col>` with column sizes', () => {
+  it('wraps its child `<Col>` with large column sizes', () => {
     const wrapper = shallow(
       <Layout
         largeCols={[ 7, 5 ]}
@@ -107,7 +107,7 @@ describe('<Layout />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('wraps its child `<Col>` with column sizes', () => {
+  it('wraps its child `<Col>` with small column sizes', () => {
     const wrapper = shallow(
       <Layout
         smallCols={[ 1 ]}

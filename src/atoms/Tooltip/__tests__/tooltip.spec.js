@@ -2,10 +2,11 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Icon from 'atoms/Icon';
 import Modal from 'molecules/Modal';
-import Tooltip from '../';
+import Tooltip from '..';
 
 describe('Tooltip', () => {
   let component;
+
   let props;
 
   it('defaults to Icon when text is not provided', () => {

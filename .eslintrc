@@ -1,31 +1,14 @@
 {
-  'parser': 'babel-eslint',
-  'extends': 'airbnb',
-  'plugins': [
-     'react',
-     'jsx-a11y',
-     'markdown'
+  'extends': [
+    'policygenius',
+    'policygenius/react',
+    'policygenius/jsx-a11y',
+    'policygenius/import',
+    'policygenius/jest'
   ],
-  'env': {
-    'mocha': true,
-    'browser': true,
-    'node': true,
-    'es6': true,
-    'jest': true
-  },
-  'globals': {
-        'React': true
-    },
-  'ecmaFeatures': {
-      'jsx': true
-  },
-  'parserOptions': {
-    'ecmaVersion': 6,
-    'sourceType': 'module',
-    'ecmaFeatures': {
-      'jsx': true
-    }
-  },
+  'plugins': [
+    'markdown'
+  ],
   'rules': {
     'array-bracket-spacing': [ 2, 'always' ],
     'array-callback-return': 2,
@@ -73,9 +56,9 @@
         'SwitchCase': 2
       }
     ],
+    'jest/valid-expect': 0,
     'jsx-a11y/aria-props': 2,
     'jsx-a11y/heading-has-content': 0,
-    'jsx-a11y/href-no-hash': 2,
     'jsx-a11y/label-has-for': 2,
     'jsx-a11y/mouse-events-have-key-events': 2,
     'jsx-a11y/no-static-element-interactions': 0,
@@ -84,7 +67,6 @@
     'jsx-quotes': [ 2, 'prefer-single' ],
     'key-spacing': 2,
     'max-len': 0,
-    'newline-after-var': [ 2, 'always' ],
     'newline-before-return': 2,
     'newline-per-chained-call': 0,
     'no-caller': 2,
@@ -129,7 +111,10 @@
       'multiline'
     ],
     'react/jsx-filename-extension': 0,
+    'react/jsx-handler-names': 0,
+    'react/jsx-max-depth': 0,
     'react/jsx-no-target-blank': 0,
+    'react/no-array-index-key': 0,
     'react/no-unused-prop-types': 0,
     'react/prop-types': [
       2,
@@ -138,17 +123,23 @@
       }
     ],
     'react/require-extension': 0,
+    'react/require-optimization': 0,
     'react/self-closing-comp': 0,
     'require-yield': 0,
     'space-before-function-paren': 2,
     'space-in-parens': [ 0, 'always' ],
     'spaced-comment': [ 2, 'always' ],
+    'react/sort-prop-types': 0,
     'vars-on-top': 2,
   },
   'settings': {
     'import/resolver': {
       'webpack': {
-        'config': './webpack.config.dev.js'
+        'path': 'webpack.config.dev.js'
+      },
+      'node':{
+        'extensions': ['.js'],
+        'moduleDirectory': ['node_modules', 'src/'],
       }
     }
   }

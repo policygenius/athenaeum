@@ -19,7 +19,7 @@ function IconList(props) {
   return (
     <ul className={classnames(styles['icon-list'], className)}>
       {
-        data.map( (item, idx) =>
+        data.map( (item, idx) => (
           <li
             className={styles.item}
             key={`iconlist-item-${idx}`}
@@ -40,45 +40,50 @@ function IconList(props) {
               />
               {item.text}
               {
-                item.tooltip ?
+                item.tooltip ? (
                   <Tooltip
                     className={styles.tooltip}
                     left
                     inline
                   >
                     {item.tooltip}
-                  </Tooltip> : ''
+                  </Tooltip>
+                ) : ''
               }
             </Text>
             <Text>
               {item.description}
             </Text>
           </li>
-        )
+        ))
       }
     </ul>
   );
 }
 
-
 IconList.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Text type prop -- see [Text](#text) for appropriate values
    */
   type: PropTypes.number,
+
   /**
    * Font type prop -- see [Text](#text) for appropriate values
    */
   font: PropTypes.string,
+
   /**
    * Sets the spacing between list items. Will default to 12px.
    */
   itemSpacing: PropTypes.string,
+
   /**
    * List of items to map over to create list
    */
@@ -90,8 +95,8 @@ IconList.propTypes = {
 };
 
 IconList.defaultProps = {
-  type: 8,
   font: 'a',
+  type: 8
 };
 
 export default IconList;

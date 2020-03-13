@@ -20,29 +20,30 @@ const renderLabels = (labels) => {
       className={styles['label-wrapper']}
     >
       {
-        labels.map((label, idx) =>
+        labels.map((label, idx) => (
           <div
             key={`field--label-${idx}`}
             className={styles['label']}
           >
             <label>{label.header}</label>
             {
-              label.subLabel &&
+              label.subLabel && (
                 <Text
                   size={10}
                   font='b'
                 >
                   {label.subLabel}
                 </Text>
+              )
             }
           </div>
-        )
+        ))
       }
     </Layout>
   );
 };
 
-const wrapChild = child =>
+const wrapChild = (child) => (
   <Col className={styles['field']}>
     {
       React.cloneElement(
@@ -52,7 +53,8 @@ const wrapChild = child =>
         }
       )
     }
-  </Col>;
+  </Col>
+);
 
 function FieldGroup(props) {
   const {
@@ -104,13 +106,14 @@ function FieldGroup(props) {
   );
 }
 
-
 FieldGroup.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * Labels to place above each field. The order of the labels must match the order of the child fields.
    */
@@ -118,10 +121,12 @@ FieldGroup.propTypes = {
     label: PropTypes.string,
     subLabel: PropTypes.string,
   })),
+
   /**
    * Meta object is passed from reduxForm
    */
   meta: PropTypes.object,
+
   /**
    * Input object is passed from reduxForm
    */
@@ -129,6 +134,7 @@ FieldGroup.propTypes = {
 };
 
 FieldGroup.defaultProps = {
+
   // Place any default props here.
 };
 

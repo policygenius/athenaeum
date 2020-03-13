@@ -1,4 +1,4 @@
-import { renderOption } from './';
+import { renderOption } from '.';
 
 function renderSelectOptions(options) {
   if (!options) return null;

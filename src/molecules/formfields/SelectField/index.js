@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -62,40 +63,43 @@ class SelectField extends React.Component {
     return (
       <div ref={fieldRef && fieldRef}>
         <div className={classnames(...classes)}>
-          { label &&
+          { label && (
+            /* eslint-disable-next-line jsx-a11y/label-has-for */
             <label className={styles['label']} htmlFor={id || forProp}>
               { label }
               { renderAdditionalInfo(onAdditionalInfoClick) }
               {
-                tooltip &&
+                tooltip && (
                   <div className={styles['tooltip-wrapper']}>
                     { renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
                   </div>
+                )
               }
               {
-                subLabel &&
+                subLabel && (
                   <Text size={10} font='b'>
                     { subLabel }
                   </Text>
+                )
               }
             </label>
-          }
+          )}
 
           { defaultValue ?
             <div className={styles['select']}>{defaultValue}</div>
-              :
-            <div className={styles['select-wrapper']}>
-              <select
-                className={styles['select']}
-                id={id || forProp}
-                {...requiredAttr()}
-                {...(omit(input, 'onClick'))}
-              >
-                { placeholder && renderPlaceholder(placeholder) }
-                { renderSelectOptions(selectOptions) }
-              </select>
-            </div>
-          }
+            : (
+              <div className={styles['select-wrapper']}>
+                <select
+                  className={styles['select']}
+                  id={id || forProp}
+                  {...requiredAttr()}
+                  {...(omit(input, 'onClick'))}
+                >
+                  { placeholder && renderPlaceholder(placeholder) }
+                  { renderSelectOptions(selectOptions) }
+                </select>
+              </div>
+            )}
         </div>
 
         <ErrorMessage
@@ -108,6 +112,7 @@ class SelectField extends React.Component {
 }
 
 SelectField.propTypes = {
+
   /**
    * Will append new classname to classSet
    */
@@ -135,11 +140,13 @@ SelectField.propTypes = {
    * Removes base field style, including border, from SelectField. Best for use in a group of fields.
    */
   noBaseStyle: PropTypes.bool,
+
   /**
    * To add an (i) icon to the label, pass in a function
    * (called when icon is clicked)
    */
   onAdditionalInfoClick: PropTypes.func,
+
   /**
    * placeholder text for select box
    */
@@ -172,18 +179,22 @@ SelectField.propTypes = {
    * contains anything you want to pass directly to input e.g. value, onChange, onBlur
    */
   input: PropTypes.object,
+
   /**
    * Content for tooltip
    */
   tooltip: PropTypes.node,
+
   /**
    * Default / non-changeable value
    */
   defaultValue: PropTypes.string,
+
   /**
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+
   /**
    * Make this field required. Defaults to required
    */
@@ -199,6 +210,8 @@ SelectField.propTypes = {
    * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
    */
   id: PropTypes.string.isRequired,
+
+  errorMessage: PropTypes.bool
 };
 
 SelectField.defaultProps = {

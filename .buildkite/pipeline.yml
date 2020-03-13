@@ -31,7 +31,7 @@ steps:
 
   - wait
 
-  - name: ':sonar-scanner:'
+  - name: ':sonarqube:'
     branches: 'v9.0.0'
     command: bin/sonar
     agents:
@@ -42,7 +42,7 @@ steps:
     soft_fail:
       - exit_status: 1
 
-  - name: ':speaker: :sparkle: Automated Code Review'
+  - name: ':sonarqube: Automated Code Review'
     branches: "!v9.0.0 !hotfix/*"
     command: bin/scan-pullrequest
     agents:
