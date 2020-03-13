@@ -48,5 +48,4 @@ describe('<Col />', () => {
     expect(wrapper.hasClass('col-xxlg-5')).to.be.true;
   });
 
-
 });

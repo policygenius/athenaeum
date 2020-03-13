@@ -55,10 +55,12 @@ function Col(props) {
 Col.rclName = 'COL';
 
 Col.propTypes = {
+
   /**
    * html id attribute
    */
   id: PropTypes.string,
+
   /**
    * Supply any additional class names.
    */
@@ -104,6 +106,7 @@ Col.propTypes = {
     PropTypes.number,
     PropTypes.oneOf([ 'auto' ])
   ]),
+
   /**
    * Sets col grid width in viewport from `1440px` up. Width can also be set to 'auto'.
    */
@@ -132,15 +135,18 @@ Col.propTypes = {
    * - For useful positional styles, [Checkout this Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
    */
   style: PropTypes.object,
+
   /**
    * onClick handler
    */
   onClick: PropTypes.func,
+
   /**
    * Sets the border color for the Col. To see a border, give the border a width and a style directly.
    * Can only be one of the named brand colors.
    */
   borderColor: PropTypes.string,
+
   /**
    * The number of columns to shift Col from the left
    */

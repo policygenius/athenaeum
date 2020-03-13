@@ -7,24 +7,28 @@ import spacing from './constants/spacing';
 
 const variables = { breakpoints, colors, spacing };
 
-function StyledWrapper({ children, css, component, ...props }) {
+function StyledWrapper({
+  children, css, component, ...props
+}) {
   return React.createElement(
     css
-    ? styled(component)(styledComponentsCss([
-      css(variables)
-    ]))
-    : component,
+      ? styled(component)(styledComponentsCss([
+        css(variables)
+      ]))
+      : component,
     props,
     children
   );
 }
 
 StyledWrapper.propTypes = {
+
   /**
    * Pass in a function that takes a single prop (variables)
    * and returns a template literal.
    */
   css: PropTypes.func,
+
   /**
    * Any component. Will also take an HTML5 tag name as a string.
    */

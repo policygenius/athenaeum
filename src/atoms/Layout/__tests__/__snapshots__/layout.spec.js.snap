@@ -2,24 +2,25 @@
 
 exports[`<Layout /> can create variant via props 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            12,
-          ]
+      Array [
+        12,
+      ]
     }
     variant="bordered-buckets"
     xLargeCols={Array []}
     xxLargeCols={Array []}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -57,39 +58,59 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;
 
 exports[`<Layout /> doesn't wrap Cols in \`<Col>\` 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <Col
-        borderColor="neutral-6"
-        className="child"
+      borderColor="neutral-6"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -109,11 +130,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -125,7 +146,7 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
-/>,
+        />,
       ],
       "className": "layout",
       "id": undefined,
@@ -142,7 +163,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -205,11 +226,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -221,7 +242,7 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
-/>,
+          />,
         ],
         "className": "layout",
         "id": undefined,
@@ -238,7 +259,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -289,50 +310,70 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;
 
 exports[`<Layout /> passes its \`col\` props down to its \`<Col>\` correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     bottomSpacing="xLarge"
     fullwidth={true}
     largeCols={
-        Array [
-            7,
-            5,
-          ]
+      Array [
+        7,
+        5,
+      ]
     }
     mediumCols={
-        Array [
-            6,
-          ]
+      Array [
+        6,
+      ]
     }
     padding={true}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -352,11 +393,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing="xLarge"
@@ -367,11 +408,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout padding",
       "id": undefined,
@@ -388,7 +429,7 @@ ShallowWrapper {
           "bottomSpacing": "xLarge",
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": true,
           "largeCols": 7,
@@ -420,7 +461,7 @@ ShallowWrapper {
           "bottomSpacing": "xLarge",
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": true,
           "largeCols": 5,
@@ -463,11 +504,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing="xLarge"
@@ -478,11 +519,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout padding",
         "id": undefined,
@@ -499,7 +540,7 @@ ShallowWrapper {
             "bottomSpacing": "xLarge",
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": true,
             "largeCols": 7,
@@ -531,7 +572,7 @@ ShallowWrapper {
             "bottomSpacing": "xLarge",
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": true,
             "largeCols": 5,
@@ -562,9 +603,28 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;
 
@@ -578,33 +638,34 @@ exports[`<Layout /> renders correctly 1`] = `
 
 exports[`<Layout /> renders its children 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="some-child"
+      className="some-child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -624,11 +685,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -639,11 +700,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="some-child"
+            className="some-child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -654,11 +715,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -675,7 +736,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -707,7 +768,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="some-child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -739,7 +800,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -782,11 +843,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -797,11 +858,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="some-child"
+              className="some-child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -812,11 +873,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -833,7 +894,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -865,7 +926,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="some-child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -897,7 +958,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -928,43 +989,63 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;
 
-exports[`<Layout /> wraps its child \`<Col>\` with column sizes 1`] = `
+exports[`<Layout /> wraps its child \`<Col>\` with large column sizes 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={
-        Array [
-            7,
-            5,
-          ]
+      Array [
+        7,
+        5,
+      ]
     }
     mediumCols={Array []}
     smallCols={
-        Array [
-            12,
-          ]
+      Array [
+        12,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -984,11 +1065,11 @@ ShallowWrapper {
           smallCols={12}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -999,11 +1080,11 @@ ShallowWrapper {
           smallCols={12}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -1020,7 +1101,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": 7,
@@ -1052,7 +1133,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": 5,
@@ -1095,11 +1176,11 @@ ShallowWrapper {
             smallCols={12}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -1110,11 +1191,11 @@ ShallowWrapper {
             smallCols={12}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -1131,7 +1212,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": 7,
@@ -1163,7 +1244,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": 5,
@@ -1194,46 +1275,66 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;
 
-exports[`<Layout /> wraps its child \`<Col>\` with column sizes 2`] = `
+exports[`<Layout /> wraps its child \`<Col>\` with small column sizes 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <Col
-        borderColor="neutral-6"
-        smallCols={3}
+      borderColor="neutral-6"
+      smallCols={3}
     >
-        <div
-            className="one-off"
-        />
+      <div
+        className="one-off"
+      />
     </Col>
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1253,11 +1354,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -1268,11 +1369,11 @@ ShallowWrapper {
           smallCols={3}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="one-off"
+            className="one-off"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -1283,11 +1384,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -1304,7 +1405,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1336,7 +1437,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="one-off"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1368,7 +1469,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1411,11 +1512,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -1426,11 +1527,11 @@ ShallowWrapper {
             smallCols={3}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="one-off"
+              className="one-off"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -1441,11 +1542,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -1462,7 +1563,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1494,7 +1595,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="one-off"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1526,7 +1627,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1557,41 +1658,61 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;
 
 exports[`<Layout /> wraps its children in \`<Col>\` 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Layout
     largeCols={Array []}
     mediumCols={Array []}
     smallCols={
-        Array [
-            1,
-          ]
+      Array [
+        1,
+      ]
     }
     xLargeCols={Array []}
     xxLargeCols={Array []}
->
+  >
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
     <div
-        className="child"
+      className="child"
     />
-</Layout>,
+  </Layout>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1611,11 +1732,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -1626,11 +1747,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
         <Col
           borderColor="neutral-6"
           bottomSpacing={undefined}
@@ -1641,11 +1762,11 @@ ShallowWrapper {
           smallCols={1}
           xLargeCols={undefined}
           xxLargeCols={undefined}
->
+        >
           <div
-                    className="child"
+            className="child"
           />
-</Col>,
+        </Col>,
       ],
       "className": "layout",
       "id": undefined,
@@ -1662,7 +1783,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1694,7 +1815,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1726,7 +1847,7 @@ ShallowWrapper {
           "bottomSpacing": undefined,
           "children": <div
             className="child"
-/>,
+          />,
           "flex": undefined,
           "fullwidth": undefined,
           "largeCols": undefined,
@@ -1769,11 +1890,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -1784,11 +1905,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
           <Col
             borderColor="neutral-6"
             bottomSpacing={undefined}
@@ -1799,11 +1920,11 @@ ShallowWrapper {
             smallCols={1}
             xLargeCols={undefined}
             xxLargeCols={undefined}
->
+          >
             <div
-                        className="child"
+              className="child"
             />
-</Col>,
+          </Col>,
         ],
         "className": "layout",
         "id": undefined,
@@ -1820,7 +1941,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1852,7 +1973,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1884,7 +2005,7 @@ ShallowWrapper {
             "bottomSpacing": undefined,
             "children": <div
               className="child"
-/>,
+            />,
             "flex": undefined,
             "fullwidth": undefined,
             "largeCols": undefined,
@@ -1915,8 +2036,27 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;

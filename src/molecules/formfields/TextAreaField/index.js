@@ -32,10 +32,8 @@ function TextAreaField(props) {
   return (
     <div ref={fieldRef && fieldRef}>
       <div className={classnames(...classes)}>
-        { label &&
-          <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
-        }
-
+        { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
+        { label && <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label> }
         <textarea
           className={styles['textarea']}
           placeholder={placeholder}
@@ -53,6 +51,7 @@ function TextAreaField(props) {
 }
 
 TextAreaField.propTypes = {
+
   /**
    * Label is optional. If not provided, component will reorganize accordingly.
    */
@@ -106,12 +105,14 @@ TextAreaField.propTypes = {
    * This prop is required to ensure the `label` and `input` follow best HTML5 accessibility practices as well as for testing purposes
    */
   id: PropTypes.string.isRequired,
+
+  errorMessage: PropTypes.bool
 };
 
 TextAreaField.defaultProps = {
+  errorMessage: false,
   placeholder: '',
   rows: 3,
-  errorMessage: false,
 };
 
 export default TextAreaField;

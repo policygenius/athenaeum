@@ -42,26 +42,28 @@ class RadioGroup extends React.Component {
         >
           <div className={styles['label-wrapper']}>
             <div className={styles['label']}>
+              { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
               <label htmlFor={input.name}>{label}</label>
               { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
             </div>
 
             {
-              subLabel &&
+              subLabel && (
                 <Text
                   size={10}
                   font='b'
                 >
                   {subLabel}
                 </Text>
+              )
             }
           </div>
           {
-            React.Children.map(children, child =>
+            React.Children.map(children, (child) => (
               <div className={styles['field']}>
                 { child }
               </div>
-            )
+            ))
           }
         </div>
 
@@ -74,8 +76,8 @@ class RadioGroup extends React.Component {
   }
 }
 
-
 RadioGroup.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.

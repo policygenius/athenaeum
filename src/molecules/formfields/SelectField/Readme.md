@@ -13,7 +13,7 @@ Label Example:
     <SelectField
       label='Hi Friend'
       selectOptions={selection}
-      tooltip={"I'm a tooltip"}
+      tooltip={'I\'m a tooltip'}
       subLabel='Optional subheader'
     />
 ```
@@ -33,7 +33,7 @@ No Label Example:
     <SelectField
       placeholder='Placeholder'
       selectOptions={selection}
-      tooltip={"I'm a tooltip"}
+      tooltip={'I\'m a tooltip'}
     />
 ```
 
@@ -51,7 +51,7 @@ Focused Example:
     <SelectField
       placeholder='Placeholder'
       label='Select Field'
-      tooltip={"I'm a tooltip"}
+      tooltip={'I\'m a tooltip'}
       selectOptions={selection}
       meta={{ active: true }}
     />
@@ -71,7 +71,7 @@ Error Example:
     <SelectField
       placeholder='Placeholder'
       label='Select Field'
-      tooltip={"I'm a tooltip"}
+      tooltip={'I\'m a tooltip'}
       selectOptions={selection}
       meta={{
         error: 'Some error',
@@ -89,7 +89,7 @@ NOTE: `selectOptions` array must contain objects structured as follows:
 ```jsx
 
     <SelectField
-      tooltip={"I'm a tooltip"}
+      tooltip={'I\'m a tooltip'}
       placeholder='Placeholder'
       label='Select Field'
       selectOptions={[

@@ -51,14 +51,14 @@ Checkbox List w/Footer Example:
     label='Pellentesque habitant'
     tooltip="I'm a tooltip!"
     subLabel='Test sublabel'
-    footerBox={
+    footerBox={(
       <CheckBoxField
         input={{
           name: 'none',
         }}
         label='None of the above'
       />
-    }
+    )}
     input={{
       onBlur: () => true,
       onFocus: () => true,

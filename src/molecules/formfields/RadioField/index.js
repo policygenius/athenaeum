@@ -43,8 +43,8 @@ function RadioField(props) {
   );
 }
 
-
 RadioField.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -58,10 +58,12 @@ RadioField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+
   /**
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+
   /**
    * The props under the input key are passed from `redux-form` and spread into `<input />`.
    */

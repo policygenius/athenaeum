@@ -21,7 +21,7 @@ function StarRating(props) {
   return (
     <span className={classes}>
       {
-        times(5, i =>
+        times(5, (i) => (
           <Icon
             key={i}
             className={classnames(
@@ -35,14 +35,14 @@ function StarRating(props) {
             height={size}
             renderSVGDOM
           />
-        )
+        ))
       }
     </span>
   );
 }
 
-
 StarRating.propTypes = {
+
   /**
    * This prop will add a new className to any inherent classNames
    * provided in the component's index.js file.
@@ -63,10 +63,13 @@ StarRating.propTypes = {
    * Number of stars that are filled in.
    */
   rating: PropTypes.number.isRequired,
+
+  height: PropTypes.string
 };
 
 StarRating.defaultProps = {
   height: '12px',
+
   // Place any default props here.
 };
 

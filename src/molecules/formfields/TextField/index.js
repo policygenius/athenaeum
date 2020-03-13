@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
@@ -63,9 +64,10 @@ class TextField extends React.Component {
     return (
       <div ref={fieldRef && fieldRef}>
         <div className={classnames(...classes)}>
-          { label &&
+          { label && (
             <div className={classnames(styles['header'])}>
               <div className={styles['label-wrapper']}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-for */}
                 <label className={styles['label']} htmlFor={id || htmlFor}>{ label }</label>
                 { secure && <Icon className={styles['icon-lock']} icon='lock' /> }
                 { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
@@ -74,36 +76,38 @@ class TextField extends React.Component {
                 { subLabel }
               </Text>
             </div>
-          }
+          )}
           <span
             data-prefix={prefix}
             data-postfix={postfix}
             className={classnames(...inputClasses)}
           >
             { swiftype && <Icon className={styles['icon-search']} icon='searchRebrand' /> }
-            { mask ?
-              <InputMask
-                className={styles['input']}
-                type={type}
-                placeholder={placeholder}
-                mask={mask}
-                maskChar={maskChar}
-                id={id}
-                {...input}
-              />
-                :
-              <input
-                className={classnames(
+            { mask
+              ? (
+                <InputMask
+                  className={styles['input']}
+                  type={type}
+                  placeholder={placeholder}
+                  mask={mask}
+                  maskChar={maskChar}
+                  id={id}
+                  {...input}
+                />
+              )
+              : (
+                <input
+                  className={classnames(
                     styles['input'],
                     swiftype && 'swiftype-search'
                   )}
-                type={type}
-                placeholder={placeholder}
-                id={id}
-                value={maskVal(input.value)}
-                {...omit(input, [ 'value' ])}
-              />
-            }
+                  type={type}
+                  placeholder={placeholder}
+                  id={id}
+                  value={maskVal(input.value)}
+                  {...omit(input, [ 'value' ])}
+                />
+              )}
             {inputTooltip && renderTooltip(inputTooltip, styles['input-tooltip'], styles['tooltip-icon'])}
           </span>
         </div>
@@ -119,6 +123,7 @@ class TextField extends React.Component {
 }
 
 TextField.propTypes = {
+
   /**
    * set to true to allow validation errors/warnings to occur `onChange`
    */
@@ -131,6 +136,7 @@ TextField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+
   /**
    * `for` prop on label.
    * Please use the `id` prop instead
@@ -151,15 +157,18 @@ TextField.propTypes = {
    * object with all necessary props for input
    */
   input: PropTypes.object,
+
   /**
    * The props under the meta key are metadata about the state of this field that `redux-form` tracks.
    */
   meta: PropTypes.object,
+
   /**
    * Passing `noBaseStyle=true` will omit the base class style
    * Fields may at times be wrapped up as a collection. In this case, the wrapper would control the styling for those fields as a group.
    */
   noBaseStyle: PropTypes.bool,
+
   /**
    * Mask the input
    */
@@ -196,6 +205,7 @@ TextField.propTypes = {
     PropTypes.string,
     PropTypes.object
   ]),
+
   /**
    * either a handler for clicking the tooltip, or text to go in the tooltip for the input
    */
@@ -229,6 +239,7 @@ TextField.propTypes = {
    * Options text displayed directly underneath label
    */
   subLabel: PropTypes.string,
+
   /**
    * Enables swiftype search
    */
@@ -238,13 +249,15 @@ TextField.propTypes = {
    * Applies a React ref to the wrapping node for this field
    */
   fieldRef: PropTypes.func,
+
+  errorMessage: PropTypes.bool
 };
 
 TextField.defaultProps = {
-  placeholder: 'Placeholder',
   errorMessage: false,
+  maskVal: (val) => val,
+  placeholder: 'Placeholder',
   type: 'text',
-  maskVal: val => val,
 };
 
 export default TextField;
