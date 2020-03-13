@@ -2273,15 +2273,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.5.2:
-  version "15.6.3"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
-cross-spawn@5.1.0, cross-spawn@^5.0.1:
+cross-spawn@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
   dependencies:
@@ -3372,18 +3364,6 @@ execa@^0.10.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
-  dependencies:
-    cross-spawn "^5.0.1"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
 execa@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
@@ -4412,7 +4392,7 @@ htmlescape@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/htmlescape/-/htmlescape-1.1.1.tgz#3a03edc2214bca3b66424a3e7959349509cb0351"
 
-htmlparser2@^3.9.0, htmlparser2@^3.9.1:
+htmlparser2@^3.9.1:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
   dependencies:
@@ -6208,12 +6188,6 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-mem@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mem/-/mem-1.1.0.tgz#5edd52b485ca1d900fe64895505399a0dfa45f76"
-  dependencies:
-    mimic-fn "^1.0.0"
-
 mem@^4.0.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/mem/-/mem-4.3.0.tgz#461af497bc4ae09608cdb2e60eefb69bff744178"
@@ -7041,14 +7015,6 @@ os-locale@^1.4.0:
   resolved "https://registry.yarnpkg.com/os-locale/-/os-locale-1.4.0.tgz#20f9f17ae29ed345e8bde583b13d2009803c14d9"
   dependencies:
     lcid "^1.0.0"
-
-os-locale@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/os-locale/-/os-locale-2.1.0.tgz#42bc2900a6b5b8bd17376c8e882b65afccf24bf2"
-  dependencies:
-    execa "^0.7.0"
-    lcid "^1.0.0"
-    mem "^1.1.0"
 
 os-locale@^3.0.0:
   version "3.1.0"
@@ -8231,15 +8197,6 @@ react-reconciler@^0.7.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
-
-react-showdown@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/react-showdown/-/react-showdown-1.6.0.tgz#01275752744a26a9dca83a9dd567079077251b51"
-  dependencies:
-    create-react-class "^15.5.2"
-    htmlparser2 "^3.9.0"
-    prop-types "^15.5.8"
-    showdown "^1.5.0"
 
 react-stickynode@^1.4.0:
   version "1.4.1"
@@ -9477,12 +9434,6 @@ shellwords@^0.1.1:
 shortid@^2.2.8:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.8.tgz#033b117d6a2e975804f6f0969dbe7d3d0b355131"
-
-showdown@^1.5.0:
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/showdown/-/showdown-1.8.6.tgz#91ea4ee3b7a5448aaca6820a4e27e690c6ad771c"
-  dependencies:
-    yargs "^10.0.3"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
@@ -11323,12 +11274,6 @@ yargs-parser@^5.0.0:
   dependencies:
     camelcase "^3.0.0"
 
-yargs-parser@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-8.1.0.tgz#f1376a33b6629a5d063782944da732631e966950"
-  dependencies:
-    camelcase "^4.1.0"
-
 yargs@12.0.2:
   version "12.0.2"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-12.0.2.tgz#fe58234369392af33ecbef53819171eff0f5aadc"
@@ -11367,23 +11312,6 @@ yargs@6.6.0, yargs@^6.0.0, yargs@^6.3.0:
 yargs@^1.2.6:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-1.3.3.tgz#054de8b61f22eefdb7207059eaef9d6b83fb931a"
-
-yargs@^10.0.3:
-  version "10.1.2"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-10.1.2.tgz#454d074c2b16a51a43e2fb7807e4f9de69ccb5c5"
-  dependencies:
-    cliui "^4.0.0"
-    decamelize "^1.1.1"
-    find-up "^2.1.0"
-    get-caller-file "^1.0.1"
-    os-locale "^2.0.0"
-    require-directory "^2.1.1"
-    require-main-filename "^1.0.1"
-    set-blocking "^2.0.0"
-    string-width "^2.0.0"
-    which-module "^2.0.0"
-    y18n "^3.2.1"
-    yargs-parser "^8.1.0"
 
 yargs@^3.5.4:
   version "3.32.0"
