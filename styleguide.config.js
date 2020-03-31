@@ -28,5 +28,6 @@ module.exports = {
     'holderjs',
     'assets/stylesheets/base.scss',
     path.join(__dirname, 'styleguide_assets/rcl_styles.module.scss')
-  ]
+  ],
+  pagePerSection: true,
 };
