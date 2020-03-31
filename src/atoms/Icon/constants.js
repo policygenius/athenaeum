@@ -129,6 +129,7 @@ module.exports = {
     'healthgenius',
     'healthgenius',
     'heart',
+    'heldHammer',
     'hmoPpo',
     'home',
     'homeAutoBundleColor',

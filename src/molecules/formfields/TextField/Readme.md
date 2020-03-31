@@ -113,7 +113,7 @@ Text field - phone number example:
   <TextField
     label='Phone Number'
     placeholder='In case of emergency'
-    tooltip={() => alert('I\'m a tooltip')}
+    tooltip={'I\'m a tooltip'}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
@@ -128,7 +128,7 @@ Text field - prefix example:
   <TextField
     label='Income'
     placeholder='Eg. 200,000'
-    tooltip={() => alert('I\'m a tooltip')}
+    tooltip={'I\'m a tooltip'}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
@@ -142,7 +142,7 @@ Text field - postfix example:
   <TextField
     label='Weight'
     placeholder='Enter your weight'
-    tooltip={() => alert('I\'m a tooltip')}
+    tooltip={'I\'m a tooltip'}
     input={{
       value: state.value,
       onChange: event => setState({ value: event.target.value })
