@@ -40,7 +40,7 @@ function Button( props ) {
         href={href}
         {...linkAttrs}
       >
-        { icon && <Icon icon={icon} className={styles['icon']} /> }
+        { icon && <Icon icon={icon} renderSVGDOM className={styles['icon']} /> }
         { children || text }
       </a>
     );
@@ -48,7 +48,7 @@ function Button( props ) {
 
   return (
     <button className={classnames(...classes)} type={type} disabled={disabled} {...rest}>
-      { icon && <Icon icon={icon} className={styles['icon']} /> }
+      { icon && <Icon icon={icon} renderSVGDOM className={styles['icon']} /> }
       { children || text }
     </button>
   );

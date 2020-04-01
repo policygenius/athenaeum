@@ -1,36 +1,102 @@
-Default Button Example:
+## Button Variants
+Buttons come in a few variants, which change their look-and-feel.
+The Buttons in these examples also have icons to demonstrate how the icon adapts to the variant.
 
+### Default
 ```jsx
-  <Button onClick={() => alert('Button clicked')} icon='lock'>Default Button</Button>
+<Button
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Default Button
+</Button>
 ```
 
-Info Button Example:
-
+#### Default Outlined
 ```jsx
-      <Button variant='info'>Info</Button>
+<Button
+  outline
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Outlined Default Button
+</Button>
 ```
 
-Outline Button Example:
-
+#### Default Disabled
 ```jsx
-      <Button outline>Outline Button</Button>
+<Button
+  disabled
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Disabled Default Button
+</Button>
 ```
 
-Outline Info Button Example:
-
+#### Default Outlined + Disabled
 ```jsx
-      <Button variant='info' outline>Info</Button>
+<Button
+  outline
+  disabled
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Disabled Outlined Default Button
+</Button>
 ```
 
-Disabled Unflexed Button Example:
-
+### Info
 ```jsx
-      <Button disabled unflex>Disabled</Button>
+<Button
+  variant='info'
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Info Button
+</Button>
 ```
 
-Disabled Unflexed Outline Button Example:
-
+#### Info Outlined
 ```jsx
-      <Button disabled unflex outline>Disabled</Button>
+<Button
+  outline
+  variant='info'
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Info Outlined Button
+</Button>
 ```
 
+#### Info Disabled
+```jsx
+<Button
+  disabled
+  variant='info'
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Disabled Info Button
+</Button>
+```
+
+#### Info Outlined + Disabled
+```jsx
+<Button
+  outline
+  disabled
+  variant='info'
+  icon='lock'
+  onClick={() => alert('Button clicked')}
+>
+  Disabled Outlined Info Button
+</Button>
+```
+
+## Unflexed Buttons
+Buttons can also be unflexed, so that they will not expand to fill their parent
+
+```jsx
+<Button unflex>Unflexed Button</Button>
+```
