@@ -70,6 +70,7 @@ module.exports = {
     'discountColor',
     'discountGreen',
     'discountGreenCircle',
+    'discountGreenCircle-1',
     'discountPill',
     'discover',
     'discoverSquare',
