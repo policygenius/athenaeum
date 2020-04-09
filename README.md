@@ -157,12 +157,7 @@ Our RCL is structured around the concepts put forth by [Atomic Design](http://br
 
 ## Adding New Icons
 
-Upload the icons to our Google Cloud Bucket:
-
-1. gzip the svg
-  - `gzip -9 -S 'z' newIcon.svg`
-2. Upload `newIcon.svgz`
-  - `gsutil -h "Content-Encoding:gzip" -h "Content-Type:image/svg+xml" -h "Cache-Control:public,max-age=31536000" cp newIcon.svgz gs://pg-static-assets/svgs/newIcon.svgz`
+Upload the icons to our Google Cloud Bucket [using these docs](https://github.com/policygenius/athenaeum/wiki/Uploading-new-icons).
 
 Add icon name to the list of possible icon values:
 
