@@ -117,7 +117,7 @@
     "url-loader": "^0.6.0",
     "watchify": "^3.9.0",
     "webpack": "2.2.1",
-    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-bundle-analyzer": "^3.7.0",
     "webpack-bundle-size-analyzer": "^2.7.0",
     "webpack-combine-loaders": "^2.0.3",
     "webpack-dev-middleware": "^1.8.4",
