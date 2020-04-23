@@ -53,7 +53,7 @@ No Compare Example:
 ```jsx
     <SimplePolicyCard
       carrierLogo={
-        <Text font='a' type={7}>Multiple companies available</Text>
+        <Text font='a' size={7}>Multiple companies available</Text>
       }
       premium={{
         price: 13,
@@ -62,9 +62,9 @@ No Compare Example:
         tooltip:
           <Tooltip text={<LinkWrapper type='secondary'>approx.</LinkWrapper>}>
             <div>
-              <Text font='a' type={10}>This is a header</Text>
+              <Text font='a' size={10}>This is a header</Text>
               <Spacer size={12} />
-              <Text type={10}>And here's more additional text</Text>
+              <Text size={10}>And here's more additional text</Text>
             </div>
           </Tooltip>
       }}
@@ -78,7 +78,7 @@ No CTA Example:
 ```jsx
     <SimplePolicyCard
       carrierLogo={
-        <Text font='a' type={7}>Multiple companies available</Text>
+        <Text font='a' size={7}>Multiple companies available</Text>
       }
       premium={{
         price: 13,
@@ -87,9 +87,9 @@ No CTA Example:
         tooltip:
           <Tooltip text={<LinkWrapper type='secondary'>approx.</LinkWrapper>}>
             <div>
-              <Text font='a' type={10}>This is a header</Text>
+              <Text font='a' size={10}>This is a header</Text>
               <Spacer size={12} />
-              <Text type={10}>And here's more additional text</Text>
+              <Text size={10}>And here's more additional text</Text>
             </div>
           </Tooltip>
       }}

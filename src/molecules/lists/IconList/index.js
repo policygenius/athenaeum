@@ -29,7 +29,7 @@ function IconList(props) {
           >
             <Text
               className={styles.text}
-              type={type}
+              size={type}
               font={font}
             >
               <Icon

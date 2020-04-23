@@ -21,7 +21,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       subHeader='These prices are very close! Rates are very competitive right now, especially for people with your profile.'
     >
     <Text
-      type={7}
+      size={7}
       font='a'
     >
       Cost
@@ -44,13 +44,13 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       subHeader='The amount of money your benficiaries would receive.'
     >
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Coverage Amount
       </Text>
       <Text
-        type={5}
+        size={5}
         font='a'
       >
         $500,000
@@ -58,13 +58,13 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
     </ComparisonTable.Row>
     <ComparisonTable.Row>
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Term
       </Text>
       <Text
-        type={5}
+        size={5}
         font='a'
       >
         20 Years
@@ -88,7 +88,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
 
   <ComparisonTable.Table>
     <ComparisonTable.Header>
-      <Text font='a' type={5}>Important Stuff</Text>
+      <Text font='a' size={5}>Important Stuff</Text>
       <div>
         <Icon
           icon='policygeniusSymbol'
@@ -102,7 +102,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
     </ComparisonTable.Header>
     <ComparisonTable.Row>
     <Text
-      type={7}
+      size={7}
       font='a'
     >
       Very imporant stuff
@@ -113,7 +113,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       subHeader='Important to know but not super important'
     >
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Some stuff you should know
@@ -151,7 +151,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       outlineMissing
     >
     <Text
-      type={7}
+      size={7}
       font='a'
     >
       Cost
@@ -175,13 +175,13 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       showMissing
     >
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Coverage Amount
       </Text>
       <Text
-        type={5}
+        size={5}
         font='a'
       >
         $500,000
@@ -191,13 +191,13 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       showMissing
     >
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Term
       </Text>
       <Text
-        type={5}
+        size={5}
         font='a'
       >
         20 Years
@@ -221,7 +221,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
 
   <ComparisonTable.Table tableItems={1}>
     <ComparisonTable.Header>
-      <Text font='a' type={5}>Important Stuff</Text>
+      <Text font='a' size={5}>Important Stuff</Text>
       <div>
         <Icon
           icon='policygeniusSymbol'
@@ -230,7 +230,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
     </ComparisonTable.Header>
     <ComparisonTable.Row>
     <Text
-      type={7}
+      size={7}
       font='a'
     >
       Very imporant stuff
@@ -241,7 +241,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       subHeader='Important to know but not super important'
     >
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Some stuff you should know
@@ -252,7 +252,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
 
   <ComparisonTable.Table tableItems={1}>
     <ComparisonTable.Header showMissing outlineMissing>
-      <Text font='a' type={5}>Important Stuff</Text>
+      <Text font='a' size={5}>Important Stuff</Text>
       <div>
         <Icon
           icon='policygeniusSymbol'
@@ -261,7 +261,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
     </ComparisonTable.Header>
     <ComparisonTable.Row showMissing outlineMissing>
     <Text
-      type={7}
+      size={7}
       font='a'
     >
       Very imporant stuff
@@ -274,7 +274,7 @@ const { Premium } = require('organisms/cards/SimplePolicyCard/Premium');
       outlineMissing
     >
       <Text
-        type={7}
+        size={7}
         font='a'
       >
         Some stuff you should know

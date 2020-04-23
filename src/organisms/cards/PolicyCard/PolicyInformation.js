@@ -14,10 +14,10 @@ export const PolicyInformation = ({ information }) => (
       information.map((item, idx) => (
         <Tooltip
           text={(
-            <Text type={11} bold spaced color='neutral-2' font='a'>
+            <Text size={11} bold spaced color='neutral-2' font='a'>
               <Layout smallCols={[ 7, 5 ]} fullwidth>
                 <div className={styles['policy-info-label']}>{item.label.toUpperCase()}</div>
-                <Text type={8} font='a' semibold>{formatValue(item.value)}</Text>
+                <Text size={8} font='a' semibold>{formatValue(item.value)}</Text>
               </Layout>
             </Text>
           )}

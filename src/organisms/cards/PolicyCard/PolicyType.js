@@ -26,7 +26,7 @@ export const PolicyType = ({
             </Text>
           </Hide>
           <Text
-            type={7}
+            size={7}
             font='a'
             semibold
             className={styles['policy-name']}
@@ -34,7 +34,7 @@ export const PolicyType = ({
             {value}
           </Text>
           <Text
-            type={7}
+            size={7}
             color='neutral-2'
             semibold
             className={styles['policy-tooltip']}

@@ -112,7 +112,7 @@ function CheckOut(props) {
                     <Col fullwidth className={styles['cost-price']}>
                       { curr && <sup>{curr}</sup> }
                       { value }
-                      { unit && <Text type={10} font='b' tag='span'>{unit}</Text> }
+                      { unit && <Text size={10} font='b' tag='span'>{unit}</Text> }
                     </Col>
                   </Layout>
                 </Col>

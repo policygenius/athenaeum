@@ -10,7 +10,7 @@ Primary Link:
 
 ```jsx
   <LinkWrapper type='primary' href='#'>
-    <Text type={8} font='b' bold inherit>This is a link!</Text>
+    <Text size={8} font='b' bold inherit>This is a link!</Text>
   </LinkWrapper>
 ```
 
@@ -18,7 +18,7 @@ Secondary Link:
 
 ```jsx
   <LinkWrapper type='secondary' href='#'>
-    <Text type={10} font='b'>This is a link!</Text>
+    <Text size={10} font='b'>This is a link!</Text>
   </LinkWrapper>
 ```
 

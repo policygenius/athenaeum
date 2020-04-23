@@ -71,7 +71,7 @@ function FeaturedPolicyCard(props) {
               </Text>
               <Text
                 tag='span'
-                type={11}
+                size={11}
                 font='a'
                 spaced
                 color='neutral-2'
@@ -87,7 +87,7 @@ function FeaturedPolicyCard(props) {
           </div>
         )
           :
-          <Text type={7} color='neutral-2' className={styles['default-text']}>{premium.defaultText}</Text>}
+          <Text size={7} color='neutral-2' className={styles['default-text']}>{premium.defaultText}</Text>}
 
         <Spacer spacer={6} />
 

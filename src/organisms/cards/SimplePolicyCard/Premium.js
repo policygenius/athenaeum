@@ -13,17 +13,17 @@ export const Premium = ({ premium }) => {
       {
         premium.price ? (
           <Text
-            type={4}
+            size={4}
             font='a'
             className={styles['premium-text']}
           >
             {formattedPremium}
             {' '}
-            <Text tag='span' type={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
+            <Text tag='span' size={11} font='a' spaced color='neutral-2'>{`/${premium.format.toUpperCase()}`}</Text>
           </Text>
         )
           :
-          <Text type={7} font='a'>{premium.defaultText}</Text>
+          <Text size={7} font='a'>{premium.defaultText}</Text>
       }
 
       {premium.tooltip}

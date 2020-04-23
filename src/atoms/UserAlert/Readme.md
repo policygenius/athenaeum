@@ -6,7 +6,7 @@
       onClick={() => alert('you clicked me')}
     >
       <Text
-        type={6}
+        size={6}
         color='neutral-8'
         semibold
       >
