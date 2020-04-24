@@ -48,8 +48,8 @@
         defaultText: 'Quote available from a PolicyGenius expert'
       }}
       discount={(
-        <Text color='neutral-3' type={7} light>
-          <Text semibold type={7}>Save 5%</Text>
+        <Text color='neutral-3' size={7} light>
+          <Text semibold size={7}>Save 5%</Text>
           { ' ' }
           when paying annually
         </Text>

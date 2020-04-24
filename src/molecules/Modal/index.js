@@ -147,7 +147,7 @@ class Modal extends React.Component {
                   </div>
 
                   <Text
-                    type={3}
+                    size={3}
                     font='a'
                   >
                     {header}

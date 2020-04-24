@@ -41,7 +41,7 @@ function MobileMenu(props) {
           <Text
             className={styles['tag-text']}
             tag='span'
-            type={7}
+            size={7}
             color='primary-3'
             font='a'
           >

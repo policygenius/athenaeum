@@ -24,7 +24,7 @@ const renderPolicyInformation = (info, idx) => (
           className={styles['policy-info-tooltip-icon']}
           text={(
             <Text
-              type={10}
+              size={10}
               font='b'
               tag='span'
               className={styles['policy-info-tooltip-label']}
@@ -36,7 +36,7 @@ const renderPolicyInformation = (info, idx) => (
           {info.hoverMessage}
         </Tooltip>
       </Col>
-      <Text type={8} font='a' semibold>{formatValue(info.value)}</Text>
+      <Text size={8} font='a' semibold>{formatValue(info.value)}</Text>
     </Layout>
     <Spacer spacer={2} />
   </div>

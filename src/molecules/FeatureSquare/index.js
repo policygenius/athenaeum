@@ -30,8 +30,8 @@ function FeatureSquare(props) {
   return (
     <div className={classnames(...classes)}>
       <Icon icon={icon} className={styles['icon']} width='100px' />
-      <Text type={5} font='a'>{ header }</Text>
-      <Text type={8} className={styles['subheader']}>{ subheader }</Text>
+      <Text size={5} font='a'>{ header }</Text>
+      <Text size={8} className={styles['subheader']}>{ subheader }</Text>
       <Layout smallCols={[ 6 ]} className={styles['button-wrapper']}>
         <Button onClick={onClick} outline className={styles['button']}>{ buttonText }</Button>
       </Layout>

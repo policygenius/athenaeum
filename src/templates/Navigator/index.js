@@ -85,7 +85,7 @@ function Navigator(props) {
                     <Icon icon='pgLogoBlack' className={styles['logo']} />
 
                     <Hide hideOn='mobile tablet'>
-                      <Text className={styles['logo-panel-text']} type={6} font='b'>
+                      <Text className={styles['logo-panel-text']} size={6} font='b'>
                         { leftRailText }
                       </Text>
                     </Hide>
@@ -106,7 +106,7 @@ function Navigator(props) {
                   />
 
                   <Hide hideOn='mobile desktop'>
-                    <Text className={styles['logo-panel-text']} type={6} font='b'>
+                    <Text className={styles['logo-panel-text']} size={6} font='b'>
                       { leftRailText }
                     </Text>
                   </Hide>

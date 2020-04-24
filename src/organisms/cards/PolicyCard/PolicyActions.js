@@ -32,8 +32,8 @@ export const PolicyActions = (props) => {
     <div className={styles['actions']}>
       { premium.price ? (
         <div>
-          <Text type={11} font='a' color='neutral-2' bold>
-            <Text type={4} font='a' color='primary-3' bold>{formattedPremium}</Text>
+          <Text size={11} font='a' color='neutral-2' bold>
+            <Text size={4} font='a' color='primary-3' bold>{formattedPremium}</Text>
             {'/'}
             {premium.format.toUpperCase()}
           </Text>

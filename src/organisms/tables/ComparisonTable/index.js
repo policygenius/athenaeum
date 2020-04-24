@@ -246,7 +246,7 @@ class TableRow extends React.Component {
           <Text
             className={styles['sub-header-text']}
             font='b'
-            type={10}
+            size={10}
           >
             {subHeader}
           </Text>

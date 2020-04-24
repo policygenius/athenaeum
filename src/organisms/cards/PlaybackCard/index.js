@@ -34,7 +34,7 @@ function PlaybackCard(props) {
           >
             <Text
               tag='span'
-              type={10}
+              size={10}
               font='b'
             >
               { editLinkText }
