@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import camelCase from 'lodash/camelCase';
 import omit from 'lodash/omit';
+import isUndefined from 'lodash/isUndefined';
 import classnames from 'classnames';
 
 import styles from './radio_field.module.scss';
@@ -19,10 +20,13 @@ function RadioField(props) {
     className,
   ];
 
+  const isChecked = !isUndefined(input.checked) ? input.checked
+    : input.value && input.value === radioValue;
+
   const labelClasses = [
     styles['label'],
-    input.value === radioValue && styles['checked'],
-    input.value && input.value !== radioValue && styles['not-selected'],
+    isChecked && styles['checked'],
+    !isChecked && styles['not-selected'],
   ];
 
   return (
@@ -67,7 +71,16 @@ RadioField.propTypes = {
   /**
    * The props under the input key are passed from `redux-form` and spread into `<input />`.
    */
-  input: PropTypes.object.isRequired,
+  input: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    checked: PropTypes.bool,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+      PropTypes.number
+    ]).isRequired,
+    onChange: PropTypes.func.isRequired
+  }).isRequired,
 
   /**
    * Value for radio field
