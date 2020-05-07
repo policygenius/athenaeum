@@ -83,6 +83,7 @@ module.exports = {
     'dogCone',
     'down',
     'downWhite',
+    'driver',
     'earch',
     'earchRebrand',
     'earthquake',
