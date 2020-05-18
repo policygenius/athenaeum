@@ -158,6 +158,7 @@ module.exports = {
     'lifestyle',
     'lifeColor3X',
     'lightbulb',
+    'lightning-bolt',
     'linkedin',
     'lock',
     'lockBlue',
