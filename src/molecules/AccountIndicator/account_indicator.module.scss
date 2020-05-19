@@ -1,0 +1,119 @@
+$default-spacing: rem-calc(16px);
+
+.container {
+  position: relative;
+  max-width: rem-calc(500px);
+}
+
+.indicator {
+  width: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+.close-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: rem-calc(24px);
+  width: rem-calc(24px);
+  margin: $default-spacing;
+}
+
+.circle-initial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: color('secondary-2');
+  border-radius: 100%;
+  height: rem-calc(32px);
+  width: rem-calc(32px);
+  margin: $default-spacing;
+}
+
+.menu {
+  position: absolute;
+  width: auto;
+  min-width: rem-calc(160px);
+  right: 0px;
+  max-width: rem-calc(270px);
+  height: auto;
+  padding-bottom: $default-spacing;
+  background: color('primary-2');
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+}
+
+.name-email {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: $default-spacing;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-link-container {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-link {
+  padding: $default-spacing $default-spacing 0px $default-spacing;
+}
+
+@media #{$mobile-only} {
+
+  .mobile-only {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .indicator {
+    min-width: rem-calc(16px);
+  }
+
+  .greeting {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    max-width: none;
+    top: rem-calc(50px);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: color('primary-2');
+    padding: 0 rem-calc(24px) rem-calc(42px) rem-calc(24px);
+    box-shadow: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-link-container {
+    padding-inline-start: rem-calc(0px);
+  }
+
+  .close-menu-button {
+    height: rem-calc(18px);
+    width: rem-calc(18px);
+    margin-right: rem-calc(24px);
+  }
+}
