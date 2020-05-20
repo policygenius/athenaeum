@@ -201,6 +201,7 @@ module.exports = {
     'plus',
     'policygeniusSymbol',
     'policygeniusSymbolCenter',
+    'policyScan',
     'priceRibbon',
     'priceSticker',
     'priceTag',
