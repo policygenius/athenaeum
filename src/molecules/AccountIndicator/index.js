@@ -209,4 +209,9 @@ AccountIndicator.propTypes = {
   onMenuLinkClick: PropTypes.func
 };
 
+AccountIndicator.defaultProps = {
+  dashboardPath: '/users/dashboard',
+  logoutPath: '/users/sign_out'
+};
+
 export default AccountIndicator;
