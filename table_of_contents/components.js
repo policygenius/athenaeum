@@ -66,6 +66,7 @@ module.exports = {
             'src/molecules/StepIndicator/index.js',
             'src/molecules/AgentCallout/index.js',
             'src/molecules/FeatureSquare/index.js',
+            'src/molecules/AccountIndicator/index.js'
           ]
         }
       ]
