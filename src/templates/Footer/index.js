@@ -242,7 +242,6 @@ Footer.propTypes = {
   /**
    * This prop will conditionally render the live chat button on mobile
    */
-
   hideChat: PropTypes.bool,
 
   /**
