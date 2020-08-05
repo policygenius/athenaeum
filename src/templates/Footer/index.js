@@ -100,6 +100,7 @@ function renderPhoneInfo(phoneNumber, hours) {
 function Footer(props) {
   const {
     className,
+    hideChat,
     phoneNumber,
     emailAddress,
     links,
@@ -180,13 +181,15 @@ function Footer(props) {
 
           <Spacer size={18} />
 
-          <Button
-            variant='info'
-            outline
-            onClick={onClickChat}
-          >
-          Live Chat
-          </Button>
+          {!hideChat && (
+            <Button
+              variant='info'
+              outline
+              onClick={onClickChat}
+            >
+            Live Chat
+            </Button>
+          )}
 
           <Spacer size={18} />
 
@@ -237,6 +240,11 @@ Footer.propTypes = {
   className: PropTypes.string,
 
   /**
+   * This prop will conditionally render the live chat button on mobile
+   */
+  hideChat: PropTypes.bool,
+
+  /**
    * Formatted Contact phone number. Can be wrapped in additional markup
    */
   phoneNumber: PropTypes.node,
@@ -273,7 +281,8 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-  emailAddress: 'team@policygenius.com'
+  emailAddress: 'team@policygenius.com',
+  hideChat: false
 };
 
 export default Footer;
