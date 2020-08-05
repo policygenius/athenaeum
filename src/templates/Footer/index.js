@@ -181,13 +181,15 @@ function Footer(props) {
 
           <Spacer size={18} />
 
-          { !hideChat && <Button
-            variant='info'
-            outline
-            onClick={onClickChat}
-          >
-          Live Chat
-          </Button> }
+          {!hideChat && (
+            <Button
+              variant='info'
+              outline
+              onClick={onClickChat}
+            >
+            Live Chat
+            </Button>
+          )}
 
           <Spacer size={18} />
 
@@ -236,10 +238,13 @@ Footer.propTypes = {
    * provided in the component's index.js file.
    */
   className: PropTypes.string,
+
   /**
    * This prop will conditionally render the live chat button on mobile
    */
+
   hideChat: PropTypes.bool,
+
   /**
    * Formatted Contact phone number. Can be wrapped in additional markup
    */
