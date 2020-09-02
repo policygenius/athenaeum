@@ -49,6 +49,7 @@ function ToggleField( props ) {
     label,
     tooltip,
     toggleChoices,
+    id,
     input,
     meta,
     noBorder,
@@ -71,7 +72,7 @@ function ToggleField( props ) {
   const buttonStyle = sideBySide ? styles['side-by-side'] : styles['button-wrapper'];
 
   return (
-    <div ref={fieldRef && fieldRef}>
+    <div ref={fieldRef && fieldRef} id={id}>
       <div className={classnames(...classes)}>
         <Layout
           nested={nested}
@@ -151,6 +152,11 @@ ToggleField.propTypes = {
       styles: PropTypes.object
     })
   ]),
+
+  /**
+   * id is optional to all us to target the specific togglefield
+   */
+  id: PropTypes.string,
 
   /**
    * input object contains any props to be passed directly to the button: value, onChange, onBlur etc.
