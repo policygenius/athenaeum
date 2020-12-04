@@ -11,6 +11,17 @@ steps:
 
   - wait
 
+  - name: "Run Snyk Scan"
+    command: "bin/snyk.sh"
+    timeout_in_minutes: 5
+    agents:
+      queue: runner
+    plugins:
+      docker-compose#v3.2.0:
+        run: athenaeum-snyk
+        config: docker-compose-snyk.yml
+
+
   - name: ':scsslint:'
     command: yarn lint
     agents:
