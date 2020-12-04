@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  athenaeum-snyk:
+    build:
+      context: .
+      dockerfile: Dockerfile.snyk
+    shm_size: 512M
+    environment:
+      - SNYK_AUTH_TOKEN
