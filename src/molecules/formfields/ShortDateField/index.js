@@ -73,9 +73,13 @@ ShortDateField.propTypes = {
   fieldRef: PropTypes.func,
 
   /**
-   * Adds a tooltip to the label. Provide string for text to be placed inside tooltip popup
+   * either a handler for clicking the tooltip, or text to go in the tooltip for the label
    */
-  tooltip: PropTypes.string,
+  tooltip: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.object
+  ]),
 
   /**
    * Passes dayInputProps, monthInputProps, yearInputProps and fieldClass to provided function
