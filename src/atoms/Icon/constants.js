@@ -41,6 +41,7 @@ module.exports = {
     'chatQuestionPadded',
     'checkBlackGreyCircle',
     'checkCircle',
+    'checkCircleBlue',
     'checkMark-1',
     'checklist',
     'checklistFolded',
