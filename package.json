@@ -63,7 +63,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^3.5.0",
     "css-loader": "^0.28.0",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.1.10",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^6.0.0",
