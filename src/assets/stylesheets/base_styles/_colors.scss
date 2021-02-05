@@ -1,61 +1,82 @@
 $transparent-neutral-2: rgba(77, 77, 77, .8);
 
 $colors-map: (
-  /* Grey. From dark to light. */
-  neutral-1: #504a4a,
-  neutral-2: #808080,
-  neutral-3: #b2b2b2,
-  neutral-4: #d6d6d6,
-  /*
-    This color is a new addition that came too late in the rebrand
-    In order to preserve neutral-5 across our styles, we are temporarily
-    adding this color as an in between
-   */
-  neutral-4-5: #ededed,
-  neutral-5: #f5f5f5,
+  /* Non-semantic brand color tints & utility colors */
+  brand-white: #FFFFFF,
+  brand-black: #000000,
+  brand-gray-100: #F1F1F1,
+  brand-gray-200: #D9D9D9,
+  brand-gray-300: #C0C0C0,
+  brand-gray-400: #707070,
+  brand-gray-500: #383838,
 
-  /* Orange, white, black */
-  primary-1: #ff700a,
-  primary-2: #fff,
-  primary-3: #2b2727,
+  brand-orange-100: #FBEDE7,
+  brand-orange-200: #ECA389,
+  brand-orange-300: #FF6E00,
+  brand-orange-400: #D44513,
 
-  /* Assorted accent colors */
-  secondary-1: #7023ff,
-  secondary-2: #00aeff,
-  secondary-3: #ff3ab9,
-  secondary-4: #0c0,
-  secondary-5: #ffc700,
+  brand-blue-100: #E5EEF1,
+  brand-blue-200: #A8C4D0,
+  brand-blue-300: #005473,
+  brand-blue-400: #003245,
+
+  brand-green-100: #E5F1EF,
+  brand-green-200: #80BAB0,
+  brand-green-300: #007562,
+  brand-green-400: #013F3A,
+
+  brand-maroon-100: #E6D7DC,
+  brand-maroon-200: #C09BA7,
+  brand-maroon-300: #730024,
+  brand-maroon-400: #470304,
+
+  utility-red: #AC0036,
+
+  /* Semantic names for raw color tints */
+  neutral-1: color('brand-gray-500'),
+  neutral-2: color('brand-gray-400'),
+  neutral-3: color('brand-gray-300'),
+  neutral-4: color('brand-gray-200'),
+  neutral-5: color('brand-gray-100'),
+
+  primary-1: color('brand-orange-400'),
+  primary-2: color('brand-white'),
+  primary-3: color('brand-gray-500'),
+
+  secondary-1: color('brand-blue-300'),
+  secondary-2: color('brand-orange-300'),
+  secondary-3: color('brand-green-300'),
 );
 
 $backwards-compat-colors-map: (
   /* Black. From dark to light. */
-  neutral-6: #f5f5f5,
-  neutral-7: #f5f5f5,
-  neutral-8: #fff,
+  neutral-6: color('brand-gray-100'),
+  neutral-7: color('brand-gray-100'),
+  neutral-8: color('brand-white'),
 
   /* Black. From dark to light. */
-  brand-1: #2b2727,
-  brand-2: #2b2727,
-  brand-3: #808080,
-  brand-4: #b2b2b2,
-  brand-5: #d6d6d6,
-  brand-6: #f5f5f5,
+  brand-1: color('brand-gray-500'),
+  brand-2: color('brand-gray-500'),
+  brand-3: color('brand-gray-400'),
+  brand-4: color('brand-gray-300'),
+  brand-5: color('brand-gray-200'),
+  brand-6: color('brand-gray-100'),
 
   /* Orange */
   accent-1: transparent,
-  accent-2: #ff700a,
-  accent-3: #ff700a,
-  accent-4: #ff700a,
-  accent-5: #ff700a,
-  accent-6: #ff700a,
+  accent-2: color('brand-orange-400'),
+  accent-3: color('brand-orange-400'),
+  accent-4: color('brand-orange-400'),
+  accent-5: color('brand-orange-400'),
+  accent-6: color('brand-orange-400'),
 
   /* Orange */
   action-1: transparent,
-  action-2: #ff700a,
-  action-3: #ff700a,
-  action-4: #ff700a,
-  action-5: #ff700a,
-  action-6: #ff700a,
+  action-2: color('brand-orange-400'),
+  action-3: color('brand-orange-400'),
+  action-4: color('brand-orange-400'),
+  action-5: color('brand-orange-400'),
+  action-6: color('brand-orange-400'),
 
   /* Modal overlay background */
   transparent-neutral-2: $transparent-neutral-2

@@ -33,9 +33,6 @@
   flex-wrap: wrap;
 }
 
-$color-type-list: 'neutral', 'primary', 'secondary';
-
-
 @keyframes swing {
   0% {
     transform: perspective(0) rotateX(0deg);
@@ -50,30 +47,25 @@ $color-type-list: 'neutral', 'primary', 'secondary';
   }
 }
 
-@each $type in $color-type-list {
-  @for $i from 1 through 8 {
-    @if map-has-key($colors-map, #{$type}-#{$i}) {
+@each $color-key in map-keys($colors-map) {
+  .#{$color-key} {
+    $color: #{map-get($colors-map, #{$color-key})};
+    color: $color;
+    @include color-props($color);
+    border-color: #fff;
+    transform-origin: center top;
 
-      .#{$type}-#{$i} {
-        $color: #{map-get($colors-map, #{$type}-#{$i})};
-        color: $color;
-        @include color-props($color);
-        border-color: #fff;
-        transform-origin: center top;
+    &:before {
+      @include before-props('#{$color-key}');
+    }
 
-        &:before {
-          @include before-props('#{$type}-#{$i}');
-        }
+    &:after {
+      @include after-props($color);
+    }
 
-        &:after {
-          @include after-props($color);
-        }
-
-        &:hover {
-          box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-          animation: swing 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-        }
-      }
+    &:hover {
+      box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+      animation: swing 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     }
   }
 }

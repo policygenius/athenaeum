@@ -34,7 +34,7 @@ function PlaybackCardWrapper(props) {
         <div className={classnames(styles['logo-wrapper'], styles['playback-wrapper-logo'])}>{logo}</div>
         <Col className={styles['amount']}>
           <CurrencyAmount
-            color='secondary-2'
+            color='secondary-1'
             amount={formattedNumber.toString()}
             unit={unit}
             size={5}

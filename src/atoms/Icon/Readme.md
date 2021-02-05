@@ -18,7 +18,7 @@ _xIcon example with full SVG DOM and css hover:_
 // You can't edit this. Sorry.
 .icon-hover-example {
   svg path {
-    fill: color('secondary-2');
+    fill: color('secondary-1');
     transition: all .3s;
   }
 

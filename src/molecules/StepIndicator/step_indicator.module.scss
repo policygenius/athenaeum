@@ -48,7 +48,7 @@
     width: 100%;
 
     background-size: 200%;
-    background-image: linear-gradient(to right, color('secondary-2') 50%, #ccc 50%);
+    background-image: linear-gradient(to right, color('secondary-1') 50%, #ccc 50%);
     transition: background-position 1s;
     background-position: right;
   }
@@ -73,12 +73,12 @@
 
   &-active {
     background: #fff;
-    border: 2px solid color('secondary-2');
+    border: 2px solid color('secondary-1');
   }
 
   &-completed {
-    background: color('secondary-2');
-    border: 1px solid color('secondary-2');
+    background: color('secondary-1');
+    border: 1px solid color('secondary-1');
   }
 }
 

@@ -22,17 +22,17 @@ const renderChoices = (choices, input) => {
   if (!choices) return null;
 
   const renderChoice = (choice, idx) => {
-    const variantName = () => toBoolean(input.value) === toBoolean(choice.value) ? 'toggle-selected' : 'toggle';  // eslint-disable-line
+    const variantName = toBoolean(input.value) === toBoolean(choice.value) ? 'toggle-selected' : 'toggle';
 
     return (
       <Button
         className={styles['button']}
-        variant={variantName()}
+        variant={variantName}
         key={`toggle-${idx}`}
-        onClick={() => input.onChange(toBoolean(choice.value))}
+        onClick={() => input.onChange && input.onChange(toBoolean(choice.value))}
         value={choice.value}
         {...omit(input, 'value')}
-        onBlur={() => input.onBlur(toBoolean(choice.value))}
+        onBlur={() => input.onBlur && input.onBlur(toBoolean(choice.value))}
       >
         { choice.label }
       </Button>
