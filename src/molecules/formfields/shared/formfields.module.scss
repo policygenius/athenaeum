@@ -11,8 +11,8 @@
  */
 
 $border: 1px solid color('neutral-4');
-$focused-border-color: color('secondary-2');
-$field-error-color: color('primary-1');
+$focused-border-color: color('secondary-1');
+$field-error-color: color('utility-red');
 
 // -- Base Style
 %form-field {

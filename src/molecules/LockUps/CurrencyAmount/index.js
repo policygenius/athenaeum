@@ -11,7 +11,7 @@ const CurrencyAmount = (props) => {
       <sup>{curr}</sup>
       <strong>{amount}</strong>
       {' '}
-      { unit && <Text tag='span' className={unitClassName} size={8} font='b' color={highlight ? 'secondary-2' : 'primary-3'}>{ unit }</Text> }
+      { unit && <Text tag='span' className={unitClassName} size={8} font='b' color={highlight ? 'secondary-1' : 'primary-3'}>{ unit }</Text> }
     </Text>
   );
 };

@@ -1,7 +1,7 @@
 ## What is an Element?
 An atomic element is a component which gives you access to standardized color, spacing, typography and font-weight as a component property. This allows you to compose new components with semantic HTML while adhering to the standard/branding of the RCL.
 
-An atomic element will reset it's styled margins, font-size and color.
+An atomic element will reset its styled margins, font-size and color.
 
 ```css
   .element {

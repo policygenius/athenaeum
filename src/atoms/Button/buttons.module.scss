@@ -1,6 +1,6 @@
 $info-color: color('primary-3');
 $action-color: color('primary-1');
-$selected-color: color('secondary-2');
+$selected-color: color('secondary-1');
 $unselected-color: color('neutral-4');
 $brand-white: color('primary-2');
 
@@ -63,9 +63,9 @@ $brand-white: color('primary-2');
 }
 
 .toggle-selected {
-  color: $brand-white;
-  border: 2px solid $selected-color;
-  background-color: $selected-color;
+  color: color('primary-1');
+  border: 2px solid color('primary-1');
+  background: color('brand-orange-100');
 
   &:hover {
     cursor: default;
@@ -98,10 +98,15 @@ $brand-white: color('primary-2');
 }
 
 .disabled {
+  color: color('neutral-2');
   background-color: color('neutral-4');
   border: 2px solid color('neutral-4');
   cursor: not-allowed;
   user-select: none;
+
+  .icon path {
+    fill: color('neutral-2');
+  }
 
   &.outline {
     background-color: transparent;

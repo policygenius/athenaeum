@@ -40,7 +40,7 @@ $checked-size: rem-calc(14px);
     width: $checked-size;
     height: $checked-size;
     border-radius: 50%;
-    background-color: color('secondary-2');
+    background-color: color('primary-1');
   }
 
   &.checked {

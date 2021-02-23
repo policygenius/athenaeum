@@ -49,7 +49,7 @@ $gap: ru(.5);
     }
 
     + .checkbox-label:after {
-      box-shadow: 3px 3px 0 0 color('secondary-2');
+      box-shadow: 3px 3px 0 0 color('secondary-1');
     }
   }
 }
@@ -71,7 +71,7 @@ $gap: ru(.5);
 
   transform: rotate(45deg);
   transform-origin: right;
-  box-shadow: 3px 3px 0 0 color('secondary-2');
+  box-shadow: 3px 3px 0 0 color('secondary-1');
   border-radius: 20%;
 
   opacity: 0;
