@@ -7,11 +7,11 @@ module.exports = {
     },
     {
       name: 'Typography',
-      content: 'src/branding/typography.md'
+      content: 'src/atoms/Text/Readme.md'
     },
     {
       name: 'Spacers',
-      content: 'src/branding/spacer.md'
+      content: 'src/atoms/Spacer/Readme.md'
     },
     {
       name: 'Grid',
