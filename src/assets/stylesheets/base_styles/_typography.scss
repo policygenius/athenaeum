@@ -1,9 +1,9 @@
 @import 'colors';
 
-$font-family-serif:           'PolicyGenius', Georgia, serif;
-$font-family-sans-serif:      'PolicyGenius', Arial, sans-serif;
-$font-family-sans-serif-bold: 'PolicyGenius', Arial, sans-serif;
-$font-family-c: Georgia;
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+$font-family-serif: Lora, Georgia, serif;
+$font-family-sans-serif: 'PolicyGenius', Arial, sans-serif;
 
 $main-font-color:             color('neutral-2');
 $label-font-color:            color('neutral-4');
@@ -29,7 +29,7 @@ $boldweight:                  900;
 }
 
 @mixin font-family-c() {
-  font-family: $font-family-c;
+  font-family: $font-family-serif;
   margin: 0;
 }
 
@@ -39,127 +39,102 @@ $boldweight:                  900;
 // Font A
 @mixin typography-a-1-bold() {
   @include font-family-a;
-  font-size: rem-calc(68px);
-  line-height: rem-calc(85px);
-  letter-spacing: 0.9px;
+  font-size: rem-calc(56px);
+  line-height: rem-calc(64px);
 }
 
 @mixin typography-a-2-bold() {
-  @include font-family-a;
-  font-size: rem-calc(54px);
-  line-height: rem-calc(67px);
-  letter-spacing: 0.9px;
+  @include typography-a-1-bold();
 }
 
 @mixin typography-a-3-bold() {
   @include font-family-a;
-  font-size: rem-calc(42px);
-  line-height: rem-calc(52px);
-  letter-spacing: 0.9px;
+  font-size: rem-calc(40px);
+  line-height: rem-calc(48px);
 }
 
 @mixin typography-a-4-bold() {
   @include font-family-a;
   font-size: rem-calc(32px);
   line-height: rem-calc(40px);
-  letter-spacing: 0.9px;
 }
 
 @mixin typography-a-5-bold() {
   @include font-family-a;
-  font-size: rem-calc(26px);
-  line-height: rem-calc(34px);
-  letter-spacing: 0.7px;
+  font-size: rem-calc(24px);
+  line-height: rem-calc(32px);
 }
 
 @mixin typography-a-6-bold() {
   @include font-family-a;
-  font-size: rem-calc(22px);
-  line-height: rem-calc(29px);
-  letter-spacing: 0.7px;
+  font-size: rem-calc(20px);
+  line-height: rem-calc(28px);
 }
 
 @mixin typography-a-7-bold() {
-  @include font-family-a;
-  font-size: rem-calc(19px);
-  line-height: rem-calc(25px);
-  letter-spacing: 0.7px;
+  @include typography-a-6-bold();
 }
 
 @mixin typography-a-8-bold() {
   @include font-family-a;
   font-size: rem-calc(16px);
-  line-height: rem-calc(21px);
-  letter-spacing: 0.7px;
+  line-height: rem-calc(28px);
 }
 
 @mixin typography-a-9-bold() {
-  @include font-family-a;
-  font-size: rem-calc(15px);
-  line-height: rem-calc(19px);
-  letter-spacing: 0.7px;
+  @include typography-a-8-bold();
 }
 
 @mixin typography-a-10-bold() {
   @include font-family-a;
-  font-size: rem-calc(13px);
-  line-height: rem-calc(17px);
-  letter-spacing: 0.7px;
+  font-size: rem-calc(14px);
+  line-height: rem-calc(24px);
 }
 
 @mixin typography-a-11-bold() {
   @include font-family-a;
   font-size: rem-calc(12px);
-  line-height: rem-calc(18px);
-  letter-spacing: 0.7px;
+  line-height: rem-calc(20px);
 }
 
 // Font B
 @mixin typography-b-5($bold: false) {
   @include font-family-b;
-  font-size: rem-calc(26px);
+  font-size: rem-calc(24px);
   font-weight: typography-b-weight($bold);
-  line-height: rem-calc(42px);
-  letter-spacing: 0.1px;
+  line-height: rem-calc(32px);
 }
 
 @mixin typography-b-6($bold: false) {
-  @include font-family-b;
-  font-size: rem-calc(22px);
-  font-weight: typography-b-weight($bold);
-  line-height: rem-calc(35px);
-  letter-spacing: 0.1px;
+  @include typography-b-5($bold);
 }
 
 @mixin typography-b-7($bold: false) {
   @include font-family-b;
-  font-size: rem-calc(19px);
+  font-size: rem-calc(20px);
   font-weight: typography-b-weight($bold);
-  line-height: rem-calc(30px);
-  letter-spacing: 0.1px;
+  line-height: rem-calc(28px);
 }
 
 @mixin typography-b-8($bold: false) {
   @include font-family-b;
   font-size: rem-calc(16px);
   font-weight: typography-b-weight($bold);
-  line-height: rem-calc(26px);
-  letter-spacing: 0.1px;
+  line-height: rem-calc(28px);
 }
 
 @mixin typography-b-10($bold: false) {
   @include font-family-b;
-  font-size: rem-calc(13px);
+  font-size: rem-calc(14px);
   font-weight: typography-b-weight($bold);
-  line-height: rem-calc(21px);
-  letter-spacing: 0.1px;
+  line-height: rem-calc(24px);
 }
 
 @mixin typography-b-12($bold: false) {
   @include font-family-b;
-  font-size: rem-calc(10px);
+  font-size: rem-calc(12px);
   font-weight: typography-b-weight($bold);
-  line-height: rem-calc(16px);
+  line-height: rem-calc(20px);
   letter-spacing: 0.1px;
 }
 
@@ -295,9 +270,7 @@ $boldweight:                  900;
 }
 
 @mixin typography-label {
-  @include typography-a-11-bold();
-  letter-spacing: rem-calc(1.8px);
-  text-transform: uppercase;
+  @include typography-a-8-bold();
 }
 
 @mixin fineprint {

@@ -1,5 +1,5 @@
 Note: Text is responsive - it will automatically change font-size based on screen size.
-(This is confusing, we know. You can refer to this for more context)[https://app.zeplin.io/project/59cd15548a18a8bb0bc48b4d/screen/59d67373e9f6f5ad28c9fd38]
+[This is confusing, we know. You can refer to this for more context](https://www.figma.com/file/iVP8PicuOCAkB7NpswyAWK/RCL---color-%26-type-updates?node-id=135%3A18&viewport=-423%2C177%2C0.8107635974884033)
 
 Text A Example:
 
