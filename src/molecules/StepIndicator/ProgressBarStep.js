@@ -11,7 +11,7 @@ export default class ProgressBarStep extends Component {
     } = this.props;
 
     return {
-      color: currentStepActive ? 'primary-3' : 'neutral-3',
+      color: currentStepActive ? 'primary-1' : 'neutral-3',
       bold: true
     };
   }
@@ -22,7 +22,7 @@ export default class ProgressBarStep extends Component {
     } = this.props;
 
     return {
-      color: currentStepActive ? 'primary-3' : 'neutral-3',
+      color: currentStepActive ? 'primary-1' : 'neutral-3',
       bold: currentStepActive
     };
   }
