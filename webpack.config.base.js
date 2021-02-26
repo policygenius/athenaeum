@@ -63,9 +63,6 @@ const baseRules = modulesName => [
           }
         },
         {
-          loader: 'resolve-url-loader'
-        },
-        {
           loader: 'sass-loader',
           options: {
             sourceMap: !isProd,
@@ -73,7 +70,10 @@ const baseRules = modulesName => [
             includePaths: [ baseDir ],
             data: "@import 'assets/stylesheets/global';"
           }
-        }
+        },
+        {
+          loader: 'resolve-url-loader'
+        },
       ]
     })
   },
