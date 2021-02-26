@@ -6,5 +6,6 @@ AccountIndicator Example:
     customerEmail='franklin_roosevelt@gmail.com'
     dashboardPath='/dashboard'
     logoutPath='/users/sign_out'
+    isAccountHolder
   />
 ```
