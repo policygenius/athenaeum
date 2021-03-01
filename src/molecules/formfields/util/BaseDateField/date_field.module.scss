@@ -13,7 +13,7 @@ $border: 1px solid color('neutral-4');
 }
 
 .label-wrapper {
-  @include typography-b-8(true);
+  @include typography-a-8-bold;
   color: color('primary-3');
   border-bottom: $border;
   position: relative;

@@ -34,7 +34,7 @@ $field-error-color: color('utility-red');
 
 /* -- Shared Field Elements -- */
 %label {
-  @include typography-b-8(true);
+  @include typography-a-8-bold;
 
   color: color('primary-3');
   position: relative;
