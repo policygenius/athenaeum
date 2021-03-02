@@ -4,16 +4,20 @@
   @extend %form-field;
 }
 
-.label-wrapper {
+.header {
   padding: ru(.5) ru(.75);
-
   border-bottom: 1px solid color('neutral-4');
 }
 
-.label {
-  @include typography-b-8(true);
-
+.label-wrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  @extend %label;
+  padding: 0;
 }
 
 .field {
@@ -45,6 +49,6 @@
 
 @media #{$tablet} {
   .label {
-    @include typography-b-8(true);
+    @include typography-a-8-bold;
   }
 }

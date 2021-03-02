@@ -94,7 +94,7 @@
   color: color('brand-2');
 
   .label {
-    @include typography-b-8(true);
+    @include typography-a-8-bold;
 
     padding: ru(.5) ru(1) 0;
     border: 0;

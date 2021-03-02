@@ -8,12 +8,13 @@ exports[`<RadioGroup /> renders correctly 1`] = `
     onFocus={undefined}
   >
     <div
-      className="label-wrapper"
+      className="header"
     >
       <div
-        className="label"
+        className="label-wrapper"
       >
         <label
+          className="label"
           htmlFor={undefined}
         >
           Test label
