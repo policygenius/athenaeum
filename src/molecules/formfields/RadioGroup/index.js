@@ -40,24 +40,26 @@ class RadioGroup extends React.Component {
           }}
           onFocus={input && input.onFocus}
         >
-          <div className={styles['header']}>
-            <div className={styles['label-wrapper']}>
-              { /* eslint-disable-next-line jsx-a11y/label-has-for */ }
-              <label htmlFor={input.name} className={styles['label']}>{label}</label>
-              { tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon']) }
-            </div>
+          {label && (
+            <div className={styles['header']}>
+              <div className={styles['label-wrapper']}>
+                { /* eslint-disable-next-line jsx-a11y/label-has-for */}
+                <label htmlFor={input.name} className={styles['label']}>{label}</label>
+                {tooltip && renderTooltip(tooltip, styles['tooltip'], styles['tooltip-icon'])}
+              </div>
 
-            {
-              subLabel && (
-                <Text
-                  size={10}
-                  font='b'
-                >
-                  {subLabel}
-                </Text>
-              )
-            }
-          </div>
+              {
+                subLabel && (
+                  <Text
+                    size={10}
+                    font='b'
+                  >
+                    {subLabel}
+                  </Text>
+                )
+              }
+            </div>
+          )}
           {
             React.Children.map(children, (child) => (
               <div className={styles['field']}>

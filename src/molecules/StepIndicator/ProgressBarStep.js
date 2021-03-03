@@ -85,7 +85,9 @@ export default class ProgressBarStep extends Component {
     return (
       <div className={styles['breadcrumb']} {...this.clickProps()}>
         <div className={classnames(this.textClasses())}>
-          <Text tag='span' size={11} font='a' spaced className={styles['step-title']} {...this.titleProps()}>{ step.text }</Text>
+          <Text tag='span' size={10} font='a' className={styles['step-title']} {...this.titleProps()}>
+            {step.text}
+          </Text>
         </div>
         <div className={classnames(...this.circleWrapperClasses())}>
           <div className={classnames(...this.circleClasses())} />
