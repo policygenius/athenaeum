@@ -49,19 +49,19 @@
     class RadioGroupExampleNoLabel extends React.Component {
       constructor(props) {
         super(props);
-    
+
         this.state = { value: '' };
-    
+
         this.onChange = this.onChange.bind(this);
       }
-    
+
       onChange(value) {
         this.setState({ value });
       }
-    
+
       render() {
         const { value } = this.state;
-    
+
         return (
           <RadioGroup meta={{}} input={{}}>
             <RadioField
@@ -78,6 +78,6 @@
         )
       }
     }
-    
+
     <RadioGroupExampleNoLabel />
 ```
