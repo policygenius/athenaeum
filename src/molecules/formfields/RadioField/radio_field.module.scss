@@ -45,13 +45,13 @@ $colored-dot-size: rem-calc(14px);
   }
 
   &.checked {
-    color: color('primary-3');
+    color: color('neutral-1');
 
     &:after { opacity: 1; }
   }
 
   &.not-selected {
-    color: color('neutral-3');
+    color: color('neutral-2');
   }
 }
 
