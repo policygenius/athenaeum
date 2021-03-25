@@ -139,6 +139,7 @@ module.exports = {
     'home',
     'homeAutoBundleColor',
     'homeBlack',
+    'homeOutline',
     'homeownersColor',
     'homeWhite',
     'hsaFsa',
