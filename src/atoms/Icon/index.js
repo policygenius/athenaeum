@@ -102,7 +102,7 @@ class Icon extends React.Component {
             styles.img,
             isLazy && 'lazyload'
           )}
-          alt={alt || sanitizedIcon}
+          alt={alt != null ? alt : sanitizedIcon}
           title={title || sanitizedIcon}
           data-src={isLazy ? src : undefined}
           src={isLazy ? undefined : src}
