@@ -50,4 +50,15 @@ describe('<Icon />', () => {
 
     expect(actual).toMatchSnapshot();
   });
+
+  it('accepts an empty string for alt text', () => {
+    const props = {
+      icon: 'xIcon',
+      alt: ''
+    };
+
+    const wrapper = mount(<Icon {...props} />);
+
+    expect(wrapper.find('img').prop('alt')).toBe('');
+  });
 });
