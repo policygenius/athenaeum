@@ -202,6 +202,7 @@ module.exports = {
     'pgLogoOrange',
     'phone',
     'phoneRebrand',
+    'phoneWhite',
     'pinterest',
     'plant',
     'plus',
