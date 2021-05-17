@@ -214,7 +214,7 @@ module.exports = {
     'priceTag',
     'questionBlackGreyCircle',
     'questionMark',
-    'questionMarkBlackOutline'
+    'questionMarkBlackOutline',
     'questionMarkWhite',
     'quoteCards',
     'quotes',
