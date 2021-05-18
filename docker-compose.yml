@@ -19,10 +19,7 @@ services:
       - BUILDKITE_BUILD_NUMBER
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
-      - NPM_USERNAME
-      - NPM_PASSWORD
       - NPM_TOKEN
-      - NPM_EMAIL
   athenaeum-sonar:
     image: us.gcr.io/pg-shared-v1/sonar-scanner:28
     working_dir: /app
