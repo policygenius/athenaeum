@@ -110,6 +110,7 @@ module.exports = {
     'flood',
     'forYou',
     'foundation',
+    'fountainPen',
     'fourBedroom',
     'furCoat',
     'furCoatGray',
