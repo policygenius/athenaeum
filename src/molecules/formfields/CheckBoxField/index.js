@@ -13,18 +13,28 @@ class CheckBoxField extends React.Component {
       textColor,
       fieldRef,
     } = this.props;
+    const {
+      name,
+      value
+    } = input;
+
+    let id = `checkbox-${name}`;
+
+    if (value) {
+      id += `-${value}`;
+    }
 
     return (
       <label
         className={styles['checkbox']}
-        htmlFor={`checkbox-${input.name}`}
+        htmlFor={id}
         ref={fieldRef && fieldRef}
       >
         <input
           type='checkbox'
-          id={`checkbox-${input.name}`}
+          id={id}
           className={styles['checkbox-input']}
-          checked={input.value}
+          checked={value}
           {...input}
         />
         <span className={styles['checkbox-label']}>
