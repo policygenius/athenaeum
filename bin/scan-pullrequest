@@ -10,7 +10,7 @@ fi
 buildkite-agent artifact download coverage/lcov.info coverage/ --build ${BUILDKITE_BUILD_ID}
 
 echo
-echo "Running automated code review with SonarQube..."
+echo "Running automated code review with SonarCloud..."
 echo
 echo "BuildKite Pull Request: ${BUILDKITE_PULL_REQUEST}"
 echo "BuildKite Branch: ${BUILDKITE_BRANCH}"

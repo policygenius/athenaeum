@@ -42,7 +42,7 @@ steps:
 
   - wait
 
-  - name: ':sonarqube:'
+  - name: ':sonarcloud:'
     branches: 'main'
     command: bin/sonar
     agents:
@@ -53,7 +53,7 @@ steps:
     soft_fail:
       - exit_status: 1
 
-  - name: ':sonarqube: Automated Code Review'
+  - name: ':sonarcloud: Automated Code Review'
     branches: "!main !hotfix/*"
     command: bin/scan-pullrequest
     agents:
