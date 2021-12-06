@@ -21,7 +21,7 @@ services:
       - AWS_SECRET_ACCESS_KEY
       - NPM_TOKEN
   athenaeum-sonar:
-    image: us.gcr.io/pg-shared-v1/sonar-scanner:28
+    image: sonarsource/sonar-scanner-cli
     working_dir: /app
     volumes:
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
