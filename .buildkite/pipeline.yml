@@ -22,6 +22,16 @@ steps:
         config: docker-compose-snyk.yml
     soft_fail: true
 
+  - name: "Run Semgrep Scan"
+    command: "bin/semgrep.sh"
+    timeout_in_minutes: 3
+    agents:
+      queue: runner
+    plugins:
+      docker-compose#v3.7.0:
+        run: athenaeum-semgrep
+    soft_fail: true
+
   - name: ':scsslint:'
     command: yarn lint
     agents:

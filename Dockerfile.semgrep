@@ -1,0 +1,5 @@
+FROM us.gcr.io/pg-shared-v1/semgrep_agent:latest
+
+WORKDIR /athenaeum
+
+COPY . .

@@ -37,3 +37,8 @@ services:
       - BUILDKITE_REPO
       - GITHUB_TOKEN
       - SONAR_LOGIN
+  anthenaeum-semgrep:
+    build:
+      context: .
+      dockerfile: Dockerfile.semgrep
+    shm_size: 512M
