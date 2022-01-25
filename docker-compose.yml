@@ -37,7 +37,7 @@ services:
       - BUILDKITE_REPO
       - GITHUB_TOKEN
       - SONAR_LOGIN
-  anthenaeum-semgrep:
+  athenaeum-semgrep:
     build:
       context: .
       dockerfile: Dockerfile.semgrep
