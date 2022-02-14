@@ -42,3 +42,5 @@ services:
       context: .
       dockerfile: Dockerfile.semgrep
     shm_size: 512M
+    environment:
+      - SEMGREP_TOKEN
