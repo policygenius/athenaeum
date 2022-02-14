@@ -30,7 +30,6 @@ steps:
     plugins:
       docker-compose#v3.7.0:
         run: athenaeum-semgrep
-    soft_fail: true
 
   - name: ':scsslint:'
     command: yarn lint

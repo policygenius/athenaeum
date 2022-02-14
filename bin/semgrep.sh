@@ -1,3 +1,3 @@
 #!/bin/sh
-
-python /app/src/semgrep_run.py
+set -euxo pipefail 
+semgrep-agent --baseline-ref $(git merge-base main HEAD) --publish-token $SEMGREP_TOKEN
