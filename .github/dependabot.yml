@@ -1,0 +1,57 @@
+version: 2
+registries:
+  git-github:
+    type: git
+    url: https://github.com
+    username: x-access-token
+    password: "${{secrets.DEPENDABOT_GITHUB_PAT}}" # from global GH secrets         # randy-the-robot 
+  ruby-gemfury:
+    type: rubygems-server
+    url: https://gem.fury.io/policygenius
+    token: "${{secrets.DEPENDABOT_GEMFURY_DEPLOY_TOKEN}}" # from global GH secrets  # robot@policygenius.com
+  ruby-sidekiq:
+    type: rubygems-server
+    url: https://gems.contribsys.com
+    token: "${{secrets.DEPENDABOT_SIDEKIQ_TOKEN}}" # from global GH secrets         # shared account
+  npm-npmjs:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: "${{secrets.DEPENDABOT_NPM_ACCESS_TOKEN}}" # from global GH secrets      # robot@policygenius.com
+updates:   # dependabot will only care about the ecosystems that are present and ignore the rest
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+    - ruby-gemfury
+    - ruby-sidekiq
+    - git-github
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+    - npm-npmjs
+    - git-github
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+    - git-github
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+    - git-github
+  - package-ecosystem: "terraform"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+    - git-github
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
