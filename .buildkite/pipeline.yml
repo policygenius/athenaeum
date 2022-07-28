@@ -29,14 +29,14 @@ steps:
         run: athenaeum
 
   - name: ':jest:'
-    command: yarn test --coverage
+    command: yarn test --coverage --out coverage/lcov.info
     agents:
       queue: runner
     plugins:
       docker-compose:
         run: athenaeum
     artifact_paths:
-      - "./coverage/lcov.info"
+      - "coverage/lcov.info"
 
   - wait
 
