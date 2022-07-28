@@ -36,7 +36,7 @@ steps:
       docker-compose:
         run: athenaeum
     artifact_paths:
-      - "coverage/lcov.info"
+      - "./coverage/lcov.info"
 
   - wait
 
