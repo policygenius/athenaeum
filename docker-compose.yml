@@ -25,7 +25,7 @@ services:
     working_dir: /app
     volumes:
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
-      - /app/coverage:./app/coverage
+      - /app/coverage:/app/coverage
       - ./:/app
       - .:/go/src/github.com/buildkite/agent
     environment:
