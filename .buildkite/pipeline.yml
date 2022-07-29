@@ -29,7 +29,7 @@ steps:
         run: athenaeum
 
   - name: ':jest:'
-    command: yarn test
+    command: yarn test --coverage
     agents:
       queue: runner
     plugins:
