@@ -41,19 +41,7 @@ steps:
   - wait
 
   - name: ':sonarcloud:'
-    branches: 'main'
     command: bin/sonar
-    agents:
-      queue: runner
-    plugins:
-      docker-compose:
-        run: athenaeum-sonar
-    soft_fail:
-      - exit_status: 1
-
-  - name: ':sonarcloud: Automated Code Review'
-    branches: "!main !hotfix/*"
-    command: bin/scan-pullrequest
     agents:
       queue: runner
     plugins:
