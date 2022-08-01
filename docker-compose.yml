@@ -6,7 +6,6 @@ services:
       - ./styleguide:/app/styleguide
       - .:/go/src/github.com/buildkite/agent
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
-      - ./:/app
       - ./coverage:/app/coverage
     command: yarn run build
     environment:
