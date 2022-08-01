@@ -6,6 +6,8 @@ services:
       - ./styleguide:/app/styleguide
       - .:/go/src/github.com/buildkite/agent
       - /usr/bin/buildkite-agent:/usr/bin/buildkite-agent
+      - ./:/app
+      - ./coverage:/app/coverage
     command: yarn run build
     environment:
       - BUILDKITE
@@ -28,7 +30,6 @@ services:
       - ./coverage:/app/coverage
       - ./:/app
       - .:/go/src/github.com/buildkite/agent
-      - ./sonar-project.properties:/app/sonar-project.properties
     environment:
       - BUILDKITE_BUILD_ID=$BUILDKITE_BUILD_ID
       - BUILDKITE_AGENT_ACCESS_TOKEN=$BUILDKITE_AGENT_ACCESS_TOKEN
