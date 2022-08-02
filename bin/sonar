@@ -1,5 +1,30 @@
 #!/bin/sh
 
+# Check if there is a pull request associated with the branch
+if [[ ${BUILDKITE_PULL_REQUEST} = "false" && ${BUILDKITE_BRANCH} != "main" ]]
+then
+  echo "No pull request found. Skipping automated code review..."
+  exit 0
+fi
+
 buildkite-agent artifact download coverage/lcov.info coverage/ --build ${BUILDKITE_BUILD_ID}
 
-sonar-scanner
+echo
+echo "Running automated code review with SonarCloud..."
+echo
+echo "BuildKite Pull Request: ${BUILDKITE_PULL_REQUEST}"
+echo "BuildKite Branch: ${BUILDKITE_BRANCH}"
+
+# If the Pull Request exists, perform an analysis, otherwise skip
+if [ ${BUILDKITE_PULL_REQUEST} != "false" ]
+then
+sonar-scanner \
+  -Dsonar.pullrequest.key=${BUILDKITE_PULL_REQUEST} \
+  -Dsonar.pullrequest.branch=${BUILDKITE_BRANCH} \
+  -Dsonar.pullrequest.base=${BUILDKITE_PULL_REQUEST_BASE_BRANCH}
+fi
+
+if [ ${BUILDKITE_BRANCH} = "main" ]
+then
+  sonar-scanner
+fi
