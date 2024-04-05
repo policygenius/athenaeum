@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This library is now inactive and will not be actively developed any further
+
 # Athenaeum - A React Component Library (RCL)
 
 ## Table of Contents
